@@ -1,18 +1,43 @@
 ---
 id: installation
-title: معرفی چابک
+title: افزودن کتابخانه چابک به پروژه
 layout: android
 permalink: android/installation.html
-prev: installation.html
-next: introducing.html
+prev: knowledge.html
 ---
 
-.شما می توانید از طریق سایت [ناگت](https://www.nuget.org/packages/ADPPushSDK) اقدام به دریافت این ابزار نمایید
+افزودن کتابخانه چابک به پروژه اندروید به دو روش امکان‌پذیر است.
 
- **نصب از طریق سایت ناگت**
- با استفاده از دستور زیر در Package Manager Console می توانید اقدام به نصب پکیج نمایید.
+## افزودن کتابخانه چابک از طریق jcenter
 
-    PM> Install-Package ADPPushSDK
-و یا از طریق Manage NuGet Package اقدام به نصب پگیج [Chabok Push](https://www.nuget.org/packages/ADPPushSDK) نمایید.
+برای این منظور ابتدا در فایل gradle اصلی پروژه بایستی jcenter را بعنوان repository اضافه نمایید، مطابق نمونه زیر:
 
-![enter image description here](http://uupload.ir/files/cuo4_nuget_package_manager.png)
+```javascript
+buildscript {
+  repositories {
+    jcenter()
+  }
+}
+  
+```
+
+حالا فایل build.gradle در مسیر app را بازکرده و در بخش dependencies خط زیر را وارد نمایید:
+
+```javascript
+dependencies {
+    compile 'com.adpdigital.push:chabok-lib:LATEST_CHABOK_VERSION'
+}
+```
+
+##  افزودن دستی فایل کتابخانه
+
+چنانچه قصد استفاده از jcenter را ندارید، می توانید آخرین نسخه فایل کتابخانه چابک را از اینجا دانلود کرده، سپس در پوشه‌ای با نام aars در داخل پوشه اصلی پروژه خود قرار دهید: 
+
+```bash
+project/app/aars
+```
+
+سپس خط زیر را در بخش dependencies فایل گریدل پروژه بیافزایید:
+
+
+

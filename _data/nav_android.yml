@@ -1,7 +1,6 @@
-- title: شروع سریعandroid
+- title: مفاهیم اولیه
   items:
+    - id: knowledge
+      title: مفاهیم اولیه
     - id: installation
-      title: نصب SDK
-    - id: introducing
-      title: معرفی چابک
-
+      title: افزودن کتابخانه
