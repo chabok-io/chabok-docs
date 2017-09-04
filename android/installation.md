@@ -1,7 +1,8 @@
 ---
-id: introducing
+id: installation
 title: معرفی چابک
-permalink: docs/introducing.html
+layout: android
+permalink: android/installation.html
 prev: installation.html
 next: introducing.html
 ---

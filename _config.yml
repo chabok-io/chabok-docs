@@ -18,8 +18,8 @@ defaults:
     path: android
     type: android
   values:
-    layout: docs
-    sectionid: docs
+    layout: android
+    sectionid: android
 #
 # Flags below are optional
 #

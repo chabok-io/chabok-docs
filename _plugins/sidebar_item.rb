@@ -8,8 +8,8 @@ module Jekyll
       return sidebar_helper(item, 'docs-old')
     end
 
-    def community_sidebar_link(item)
-      return sidebar_helper(item, 'community')
+    def android_sidebar_link(item)
+      return sidebar_helper(item, 'android')
     end
 
     def tutorial_sidebar_link(item)
