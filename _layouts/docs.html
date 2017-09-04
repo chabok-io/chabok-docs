@@ -1,0 +1,26 @@
+---
+layout: default
+sectionid: docs
+---
+
+<section class="post">
+  <div class="entry">
+    <h1>
+      {{ page.title }}
+    </h1>
+    <div class="subHeader">{{ page.description }}</div>
+
+    {{ content }}
+
+    <div class="docs-prevnext">
+      {% if page.prev %}
+        <a class="docs-prev" href="/docs/{{ page.prev }}">قبلی &larr;</a>
+      {% endif %}
+      {% if page.next %}
+        <a class="docs-next" href="/docs/{{ page.next }}">&rarr; بعدی </a>
+      {% endif %}
+    </div>
+  </div>
+
+  {% include nav_docs.html %}
+</section>

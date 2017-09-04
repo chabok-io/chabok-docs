@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="posts home">
+  {% for post in site.posts %}
+    <article class="post clearfix">
+      <h1>
+      	<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      <span>{{ post.date | jdate: "%d %b %Y"}}</span>
+      </h1>
+    </article>
+  {% endfor %}
+
+    {% include nav_docs.html %}
+</div>
