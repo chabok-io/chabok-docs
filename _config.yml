@@ -15,8 +15,8 @@ timezone: 'Asia/Tehran'
 
 defaults:
 - scope:
-    path: docs
-    type: pages
+    path: android
+    type: android
   values:
     layout: docs
     sectionid: docs
@@ -56,8 +56,7 @@ url: https://chabokpush.github.io
 # (http://yourusername.github.io/repository-name)
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
-baseurl: /chabok-docs
-#baseurl: ""
+baseurl: ""
 #
 # !! You don't need to change any of the configuration flags below !!
 #
