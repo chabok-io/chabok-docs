@@ -4,16 +4,16 @@ module Jekyll
       return sidebar_helper(item, 'docs')
     end
 
-    def docs_old_sidebar_link(item)
-      return sidebar_helper(item, 'docs-old')
+    def ios_sidebar_link(item)
+      return sidebar_helper(item, 'ios')
     end
 
     def android_sidebar_link(item)
       return sidebar_helper(item, 'android')
     end
 
-    def tutorial_sidebar_link(item)
-      return sidebar_helper(item, 'tutorial')
+    def windows_sidebar_link(item)
+      return sidebar_helper(item, 'windows')
     end
 
     def sidebar_helper(item, group)

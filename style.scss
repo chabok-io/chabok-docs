@@ -435,6 +435,30 @@ footer {
    float: left;  
 }
 
+.platfrombox {
+    background-color: #e4f1fa;
+    border: 1px solid #e6e6e6;
+    padding: 25px!important;
+    .androidplatform {
+        padding: 31px 0 0 0;
+        font-size: 30px;
+        vertical-align: top;
+        text-align: center;
+    }
+    .btnsdk {
+        width: 100%;
+        margin-top: 30px;
+        background-color: transparent;
+        border: 2px solid #007aff;
+        color: #007aff;
+        min-height: 40px;
+        border-radius: 4px;
+        a{
+            color: #007aff !important;
+        }
+    }
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";

@@ -20,6 +20,18 @@ defaults:
   values:
     layout: android
     sectionid: android
+- scope:
+    path: ios
+    type: ios
+  values:
+    layout: ios
+    sectionid: ios
+- scope:
+    path: windows
+    type: windows
+  values:
+    layout: windows
+    sectionid: windows
 #
 # Flags below are optional
 #

@@ -2,15 +2,102 @@
 layout: default
 ---
 
-<div class="posts home">
-  {% for post in site.posts %}
-    <article class="post clearfix">
-      <h1>
-      	<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-      <span>{{ post.date | jdate: "%d %b %Y"}}</span>
-      </h1>
-    </article>
-  {% endfor %}
 
-    {% include nav_android.html %}
-</div>
+
+  <div class="row pt-50 pb-50">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-4 ">
+        <div class="col-md-12 platfrombox p-25">
+          <div class="row">
+            <div class="col-md-6 text-center">
+              <img src="http://chabokpush.com/www/image/android-platform.svg" class="img-responsive">
+            </div>
+            <div class="col-md-6 androidplatform">Android</div>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2 pb-10 pt-15 border-bottom">
+              <a href="/android/installation.html" class="bold19 black-color">
+                مستندات
+              </a>
+            </div>
+            <div class="col-md-8 col-md-offset-2 pb-10 pt-15">
+              <a href="https://github.com/chabokpush/chabok-demo-android" class="bold19 black-color">
+                نمونه کد
+              </a>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2 pt-25 pb-10">
+              <button class="btnsdk">
+                <a href="https://dl.bintray.com/chabok/chabok-repo/com/adpdigital/push/chabok-lib/" class="bold19 btnsdkcolor">
+                  دریافت SDK
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="col-md-12 platfrombox p-25">
+          <div class="row">
+            <div class="col-md-6 text-center">
+              <img src="http://chabokpush.com/www/image/apple-platform.svg" class="img-responsive">
+            </div>
+            <div class="col-md-6 androidplatform">iOS</div>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2 pb-10 pt-15 border-bottom">
+              <a href="/ios/installation.html" class="bold19 black-color">
+                مستندات
+              </a>
+            </div>
+            <div class="col-md-8 col-md-offset-2 pb-10 pt-15">
+              <a href="https://github.com/chabokpush/chabok-demo-ios" class="bold19 black-color">
+                نمونه کد
+              </a>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2  pt-25 pb-10">
+              <button class="btnsdk">
+                <a href="http://chabokpush.com/dl/ChabokFramework.zip" class="bold19 btnsdkcolor">
+                  دریافت SDK
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="col-md-12 platfrombox p-25">
+          <div class="row">
+            <div class="col-md-6 text-center">
+              <img src="http://chabokpush.com/www/image/windows-platform.svg" class="img-responsive">
+            </div>
+            <div class="col-md-6 androidplatform">Windows</div>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2 pb-10 pt-15 border-bottom">
+              <a href="/windows/installation.html" class="bold19 black-color">
+                مستندات
+              </a>
+            </div>
+            <div class="col-md-8 col-md-offset-2 pb-10 pt-15">
+              <a href="https://github.com/chabokpush/chabok-demo-wp" class="bold19 black-color">
+                نمونه کد
+              </a>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2  bold19 pt-25 pb-10">
+              <button class="btnsdk">
+                <a href="https://www.nuget.org/packages/ADPPushSDK" class="bold19 btnsdkcolor">
+                  دریافت SDK
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
