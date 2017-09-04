@@ -21,7 +21,7 @@ module Jekyll
 
       pageID = @context.registers[:page]["id"]
       itemID = item["id"]
-      href = item["href"] || "#{baseurl}/#{group}/#{itemID}.html"
+      href = item["href"] || "#{group}/#{itemID}.html"
       classes = []
       if pageID == itemID
         classes.push("active")
