@@ -1,6 +1,24 @@
-- title: مفاهیم اولیه
+- title: نصب و راه ‌اندازی
   items:
-    - id: knowledge
-      title: مفاهیم اولیه
-    - id: installation
+    - id: required
+      title: پیش‌نیازها
+    - id: gradle-setup
       title: افزودن کتابخانه
+    - id: application-class
+      title:  مقداردهی اولیه
+    - id: manifest
+      title: تنظیمات
+    - id: chabok-messaging
+      title: پیام چابک
+    - id: customizzze
+      title: شخصی‌سازی
+    - id: event-handeling
+      title: ‌مدیریت رویدادها
+
+- title: SDK API
+  items:
+    - id: required
+      title: پیش‌نیازها
+    - id: gradle-setup
+      title: افزودن کتابخانه
+
