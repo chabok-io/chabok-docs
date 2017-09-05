@@ -1,9 +1,10 @@
 ---
-id: installation
-title: افزودن کتابخانه چابک به پروژه
+id: gradle-setup
+title: افزودن کتابخانه
 layout: android
-permalink: android/installation.html
-prev: knowledge.html
+permalink: android/gradle-setup.html
+prev: required.html
+next: application-class.html
 ---
 
 افزودن کتابخانه چابک به پروژه اندروید به دو روش امکان‌پذیر است.
@@ -29,15 +30,25 @@ dependencies {
 }
 ```
 
+
+
 ##  افزودن دستی فایل کتابخانه
 
 چنانچه قصد استفاده از jcenter را ندارید، می توانید آخرین نسخه فایل کتابخانه چابک را از اینجا دانلود کرده، سپس در پوشه‌ای با نام aars در داخل پوشه اصلی پروژه خود قرار دهید: 
 
-```bash
+```code
 project/app/aars
 ```
 
 سپس خط زیر را در بخش dependencies فایل گریدل پروژه بیافزایید:
 
+```javascript
+dependencies {
+    compile(name: 'chabok-lib-2.6.3', ext: 'aar')
+}
+   
+```
+
+در بالای صفحه سمت راست گزینه سینک را بزنید تا گریدل سینک شود.
 
 
