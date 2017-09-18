@@ -4,7 +4,7 @@ title: شخصی‌سازی
 layout: android
 permalink: android/customizzze.html
 prev: chabok-messaging.html
-next event-handeling.html
+next: event-handeling.html
 ---
 
 ## شخصی‌سازی نمایش اعلان
