@@ -1,6 +1,6 @@
 ---
 id: installation
-title:  نصب چابک
+title:  نصب ابزار چابک
 layout: ios
 permalink: ios/installation.html
 prev: installation.html
