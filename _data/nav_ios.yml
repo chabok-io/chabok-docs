@@ -6,5 +6,7 @@
       title: پیش‌نیازها
     - id: installation
       title: نصب ابزار چابک
+    - id: delegation
+      title: رویداد های چابک
     - id: location-tracking
       title: مکان یابی
