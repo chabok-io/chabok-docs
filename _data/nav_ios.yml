@@ -6,5 +6,13 @@
       title: پیش‌نیازها
     - id: installation
       title: نصب ابزار چابک
+    - id: notification
+      title: راه‌اندازی اعلان‌ها
+    - id: setup
+      title: راه‌اندازی چابک
+    - id: delegation
+      title: رویداد های چابک
+    - id: publishingMessages
+      title: انتشار پیام
     - id: location-tracking
-      title: مکان یابی
+      title: مکان‌یابی
