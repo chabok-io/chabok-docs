@@ -8,5 +8,7 @@
       title: نصب ابزار چابک
     - id: notification
       title: راه‌اندازی اعلان‌ها
+    - id: setup
+      title: راه‌اندازی چابک
     - id: location-tracking
       title: مکان‌یابی
