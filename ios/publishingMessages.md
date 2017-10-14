@@ -1,8 +1,8 @@
 ---
-id: PublishingMessages
+id: publishingMessages
 title: انتشار پیام
 layout: ios
-permalink: ios/PublishingMessages.html
+permalink: ios/publishingMessages.html
 prev: installation.html
 next: introducing.html
 ---
