@@ -1,6 +1,6 @@
 ---
 id: notification
-title:راه اندازی اعلان ها
+title: راه‌اندازی اعلان‌ها
 layout: ios
 permalink: ios/notification.html
 prev: installation.html
