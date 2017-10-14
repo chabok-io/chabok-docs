@@ -1,15 +1,16 @@
 ---
 id: setup
-title: راه اندازی چابک
+title: مقداردهی اولیه
 layout: ios
 permalink: ios/setup.html
 prev: installation.html
-next: introducing.html
+next: publishingMessages.html
 ---
 
 
 
- راه اندازی چابک
+مقداردهی اولیه
+
 -------------
 در متد `didFinishLaunchingWithOptions` در کلاس `AppDelegate` کدهای زیر را اضافه کنید:
 
@@ -18,9 +19,10 @@ next: introducing.html
 ```objc
 Objc:
 [PushClientManager setDevelopment:YES];
-
+```
+```swift
 Swift:  
-PushClientManager.setDevelopment(false)
+PushClientManager.setDevelopment(true)
 
 ```
 
@@ -29,7 +31,8 @@ PushClientManager.setDevelopment(false)
 ```objc
 Objc:
 self.manager = [PushClientManager defaultManager];
-
+```
+```swift
 Swift:
 self.manager = PushClientManager.default()
 
@@ -38,7 +41,8 @@ self.manager = PushClientManager.default()
 ```objc
 Objc:
 [self.manager addDelegate:self];
-
+```
+```swift
 Swift:
 self.manager.addDelegate(self)
 
@@ -47,7 +51,8 @@ self.manager.addDelegate(self)
 ```objc
 Objc:
 [self.manager application:application didFinishLaunchingWithOptions:launchOptions])
-
+```
+```swift
 Swift:
 self.manager.application(application, didFinishLaunchingWithOptions: launchOptions)
 
@@ -60,7 +65,8 @@ Objc:
 apiKey:@"YOUR_SDK_KEY"
 userName:@"SDK_USERNAME"
 password:@"SDK_PASSWORD"]
-
+```
+```swift
 Swift:
 self.manager.registerApplication(AppDelegate.applicationId(),
 apiKey : "YOUR_APP_ID",userName:"SDK_USERNAME" ,password:"SDK_PASSWORD" )
@@ -73,7 +79,8 @@ Objc:
 registrationHandler:^(BOOL isRegistered, NSString *userId, NSError *error) {
 // handle registration result from server
 }
-
+```
+```swift
 Swift:
 self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
 ```

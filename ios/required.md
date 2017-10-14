@@ -3,8 +3,9 @@ id: required
 title: پیش‌نیازها
 layout: ios
 permalink: ios/required.html
-prev: installation.html
-next: introducing.html
+prev: introducing.html
+next: installation.html
+
 ---
 
 پیش نیاز ها

@@ -1,17 +1,18 @@
 ---
 id: delegation
-title: رویدادهای چابک
+title: مدیریت رویدادها
 layout: ios
 permalink: ios/delegation.html
-prev: installation.html
-next: introducing.html
+prev: notification.html
+next: location-tracking.html
 ---
 
-PushClientManager Delegation Callback
+مدیریت رویدادها
+
 -------------
 
 
-پس از فراخوانی `manager.addDelegate (self)` همانطور که در بالا نشان داده شد، می توانید از متد زیر برای دریافت رویدادهای داخلی چارچوب Chabok استفاده کنید. شامل:
+پس از فراخوانی `manager.addDelegate` همانطور که در صفحه قبل نشان داده شد، می توانید از متد زیر برای دریافت رویدادهای داخلی چارچوب Chabok استفاده کنید:
 
 ```objc
 Objc:
@@ -44,7 +45,8 @@ NSLog(@"%@ %@",@(__PRETTY_FUNCTION__),self.manager.failureError);
 networkType:(PushClientServerReachabilityNetworkType)networkType{
 // Called When PushClientManager Server Reachiability has been Changed
 }
-
+```
+```swift
 Swift:
 func pushClientManagerDidRegisterUser(_ registration: Bool) {
 }

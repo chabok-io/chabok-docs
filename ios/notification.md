@@ -3,12 +3,12 @@ id: notification
 title: راه‌اندازی اعلان‌ها
 layout: ios
 permalink: ios/notification.html
-prev: installation.html
-next: introducing.html
+prev: publishingMessages.html
+next: delegation.html
 ---
 
 
-Notification فعال کردن
+ فعال کردن Notification 
 -------------
 
 کد زیر را درون AppDelegate خود وارد کنید. این به مشتری چابک کمک می کند تا remote و local notification  را مدیریت کند:
@@ -50,6 +50,8 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 [self.manager application:application didReceiveLocalNotification:notification];
 
 }
+```
+```swift
 
 Swift:
 
@@ -96,6 +98,8 @@ Objc:
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushClientServerConnectionStateHandler:) name:kPushClientDidChangeServerConnectionStateNotification object:nil];
 
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushClientServerReachabilityHandler:) name:kPushClientDidChangeServerReachabilityNotification object:nil];
+```
+```swift
 
 Swift:
 
