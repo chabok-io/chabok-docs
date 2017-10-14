@@ -10,7 +10,7 @@ next: notification.html
 پیام چابک
 
 -------------
-برای انتشار پیام از مشتری به سرور Chabok، از این استفاده کنید:
+برای انتشار پیام از مشتری به سرور چابک، از این استفاده کنید:
 
 ```objc
 Objc:
@@ -32,4 +32,24 @@ var message = PushClientMessage(message: "message body", withData: ["test": "val
 message.alertText = "New Message Alert Text"
 manager.publish(message)
 
+```
+رویدادهای پیام چابک:
+
+```objc
+Objc:
+
+- (void)pushClientManagerDidReceivedMessage:(PushClientMessage *)message{
+// Called When PushClientManager has been received new message from server
+}
+- (void)pushClientManagerDidReceivedDelivery:(DeliveryMessage *)delivery{
+// Called When PushClientManager has received new delivery from server
+}
+```
+```swift
+func pushClientManagerDidReceivedMessage(_ message: PushClientMessage!) {
+// Called When PushClientManager has been received new message from server
+}
+func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage!) {
+// Called When PushClientManager has received new delivery from server
+}
 ```
