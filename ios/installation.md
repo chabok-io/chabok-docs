@@ -12,10 +12,16 @@ Chabok Push فعال کردن
 
 چابک از طریق CocoaPods در دسترس است، برای نصب آن به سادگی خط زیر را به Podfile خود اضافه کنید:
 
-`pod 'ChabokPush'`
+``` ruby
+pod 'ChabokPush'
+
+```
 
 سپس با روش زیر نصب کنید :
 
-`pod install`
+``` ruby
+pod install
+
+```
 
 
