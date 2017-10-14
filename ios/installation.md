@@ -1,12 +1,12 @@
 ---
 id: installation
-title:  نصب ابزار چابک
+title:  نصب چابک
 layout: ios
 permalink: ios/installation.html
 prev: installation.html
 next: introducing.html
 ---
-Chabok Push فعال کردن
+نصب چابگ
 -------------
 
 

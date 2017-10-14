@@ -12,7 +12,7 @@ Notification فعال کردن
 -------------
 
 کد زیر را درون AppDelegate خود وارد کنید. این به مشتری چابک کمک می کند تا remote و local notification  را مدیریت کند:
-```
+```objc
 Objc:
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
@@ -84,7 +84,7 @@ self.manager.application(application, didReceive: notification)
 
 به عنوان یک جایگزین، می توانید از روش مشاهدات NSNotificationCenter برای دریافت رویدادها استفاده کنید. برای دریافت رویدادها به این روش، می توانید هر کدام از این ها را اضافه کنید:
 
-```
+```objc
 Objc:
 
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushClientFailureHandler:) name:kPushClientDidFailRegisterUserNotification object:nil];

@@ -7,11 +7,11 @@ prev: installation.html
 next: introducing.html
 ---
 
-Publishing Messages
+انتشار پیام
 -------------
 برای انتشار پیام از مشتری به سرور Chabok، از این استفاده کنید:
 
-```
+```objc
 Objc:
 
 PushClientMessage *message = [[PushClientMessage alloc]

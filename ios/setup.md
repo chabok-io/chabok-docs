@@ -9,13 +9,13 @@ next: introducing.html
 
 
 
-Chabok Push راه اندازی
+ راه اندازی چابک
 -------------
 در متد `didFinishLaunchingWithOptions` در کلاس `AppDelegate` کدهای زیر را اضافه کنید:
 
 
 برای انتخاب سرورهای chabok sandbox از کد زیر استفاده کنید:
-```
+```objc
 Objc:
 [PushClientManager setDevelopment:YES];
 
@@ -26,7 +26,7 @@ PushClientManager.setDevelopment(false)
 
 حالا یک singleton instance از PushClientManager با استفاده از `defaultManager` ایجاد کنید:
 
-```
+```objc
 Objc:
 self.manager = [PushClientManager defaultManager];
 
@@ -35,7 +35,7 @@ self.manager = PushClientManager.default()
 
 ```
 سپس delegate  را از  AppDelegate اضافه کنید:
-```
+```objc
 Objc:
 [self.manager addDelegate:self];
 
@@ -44,7 +44,7 @@ self.manager.addDelegate(self)
 
 ```
 سپس کد زیر را اضافه کنید :
-```
+```objc
 Objc:
 [self.manager application:application didFinishLaunchingWithOptions:launchOptions])
 
@@ -54,7 +54,7 @@ self.manager.application(application, didFinishLaunchingWithOptions: launchOptio
 ```
 اکنون حساب کاربری APP_ID، SDK_USERNAME و SDK_PASSWORD را تعریف کنید. شما می توانید SDK_KEY خود را از پنل وب chabok پیدا کنید:
 
-```
+```objc
 Objc:
 [self.manager registerApplication:@"YOUR_APP_ID"
 apiKey:@"YOUR_SDK_KEY"
@@ -67,7 +67,7 @@ apiKey : "YOUR_APP_ID",userName:"SDK_USERNAME" ,password:"SDK_PASSWORD" )
 ```
 
 زمان آن است که کاربر را با یک userId ثبت کنید
-```
+```objc
 Objc:
 [self.manager registerUser:@"USER_ID" channels:@[@"YOUR_CHANNEL" ]
 registrationHandler:^(BOOL isRegistered, NSString *userId, NSError *error) {

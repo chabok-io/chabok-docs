@@ -1,6 +1,6 @@
 ---
 id: delegation
-title: رویداد های چابک
+title: رویدادهای چابک
 layout: ios
 permalink: ios/delegation.html
 prev: installation.html
@@ -13,7 +13,7 @@ PushClientManager Delegation Callback
 
 پس از فراخوانی `manager.addDelegate (self)` همانطور که در بالا نشان داده شد، می توانید از متد زیر برای دریافت رویدادهای داخلی چارچوب Chabok استفاده کنید. شامل:
 
-```
+```objc
 Objc:
 - (void)pushClientManagerDidRegisterUser:(BOOL)registration{
 // called when PushClientManager Registered user Successfully
