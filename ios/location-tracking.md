@@ -246,6 +246,44 @@ var region: CLRegion? = CLCircularRegion(center: center, radius: 150, identifier
 
 locationManager.startMonitoringRegion(region)
 ```
+
+چنانچه می خواهید یک geofence را start کنید که بتوانید بصورت بسیار ساده آن را مدیریت کنید، می توانید از قطعه کد زیر استفاده کنید :
+
+`نکته` : زمان انقضای تاریخ geofence به صورت `unix millisecond` می باشد.
+
+``` objc
+Objective-C :
+
+NSInteger count = 20; // count for enter to region
+CLLocationDistance radius = 150; // per meter
+CLLocationDegrees lat = 35.759227;
+CLLocationDegrees lng = 51.401044;
+NSString *exit = @"You exit to AdpDigital company building.....";
+NSString *enter = @"Hi dear user, You are close to AdpDigital company building.....";
+CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(lat, lng);
+NSTimeInterval expireTs = [[NSDate dateWithTimeIntervalSinceNow:3600] timeIntervalSince1970];
+CLRegion *region = [[CLCircularRegion alloc] initWithCenter:coordinate
+                        radius:radius
+                        identifier:@"adpDigitalCompany"];
+    
+[_locationManager startMonitoringRegion:region expireCount:count expireTs:expireTs enterMessage:enter exitMessage:exit];
+```
+
+``` swift
+Swift :
+
+let count: Int = 20 // count for enter to region
+let radius: CLLocationDistance = 150 // per meter
+let lat: CLLocationDegrees = 35.759227
+let lng: CLLocationDegrees = 51.401044
+let exitMessage = "You exit to AdpDigital company building....."
+let enterMessage = "Hi dear user, You are close to AdpDigital company building....."
+let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat, lng)
+let expireTs: TimeInterval = Date(timeIntervalSinceNow: 3600).timeIntervalSince1970
+let region: CLRegion? = CLCircularRegion(center: coordinate, radius: radius, identifier: "adpDigitalCompany")
+
+locationManager.startMonitoringRegion(region!, expireCount: count, expireTs: expireTs, enterMessage: enterMessage, exitMessage: exitMessage)
+```
 ### رویدادهای Geofence
 پس از فراخوانی متد `startMonitoringRegion` رویدادهای زیر فرخوانی خواهند شد :
 
