@@ -10,5 +10,7 @@
       title: راه‌اندازی اعلان‌ها
     - id: setup
       title: راه‌اندازی چابک
+    - id: delegation
+      title: رویداد های چابک
     - id: location-tracking
       title: مکان‌یابی
