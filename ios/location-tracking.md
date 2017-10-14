@@ -7,11 +7,22 @@ permalink: ios/location-tracking.html
 ## کلاس CoreGeoLocation 
 در ابزار جدید چابک، امکان دریافت موقعیت مکانی کاربر امکان پذیر شده است. برای استفاده از کلاس `CoreGeoLocation` می توانید کلاس فوق را به کلاس خود import کنید:
 ``` objc
+Objective-C :
+
 #import "CoreGeoLocation.h"
 .
 .
 .
 CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
+```
+``` swift
+Swift :
+
+import AdpPushClient
+.
+.
+.
+let locationManager = CoreGeoLocation.sharedInstance()
 ```
 ----------
 `نکته :`  برای استفاده از قابلیت مکان یابی، پیکربندی های لازم که در بخش [پیکربندی](config) بیان شده را مطالعه کرده و از آن پیروی کنید.
@@ -19,6 +30,8 @@ CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 ### دریافت موقعیت مکانی
 ابتدا پیکربندی متناسب برای دریافت موقعیت مکانی را تعیین کرده و با استفاده از متد `startLocationUpdate` شروع به دریافت موقعیت مکانی کاربر کنید. به قطعه کد زیر دقت کنید‌:
 ``` objc
+Objective-C :
+
 CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 
 [locationManager addDelegate:self];
@@ -30,9 +43,25 @@ CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 
 [locationManager startLocationUpdate];
 ```
+``` swift
+Swift :
+
+let locationManager = CoreGeoLocation.sharedInstance()
+            
+locationManager.add(self)
+locationManager.distanceFilter = 50
+locationManager.pausesAutomaticUpdate = false
+locationManager.locationAutorization = kAlways
+locationManager.allowBackgroundLocationUpdates = true
+locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            
+locationManager.startUpdate()
+```
 ***رویداد دریافت موقعیت مکانی***
 جهت دریافت موقعیت های مکانی باید `CoreGeoLocationDelegate`  را به `@interface`  کلاس خود اضافه کنید و متد زیر را پیاده سازی کنید :
 ``` objc
+Objective-C :
+
 - (void) receivedLocationUpdates:(NSArray<CLLocation *> *)locations{
     NSInteger length = locations.count;
     CLLocation *lastLocation = [locations lastObject];
@@ -43,17 +72,40 @@ CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
         length,latitude,longitude);
 }
 ```
+``` swift
+Swift :
+
+func receivedLocationUpdates(_ locations: [CLLocation]) {
+    let length: Int = locations.count
+    let lastLocation: CLLocation? = locations.last
+    let latitude = lastLocation?.coordinate.latitude
+    let longitude = lastLocation?.coordinate.longitude
+    print("\(length) new locations was received, last location (lat:'\(latitude)') , (lng:'\(longitude)')")
+
+}
+```
+
 ### مکان یابی بر اساس مدت زمان و متر
 با استفاده از متد `trackMeUntil:byMeter` می توانید موقعیت کاربر را بر اساس متراژ و بازه زمانی تعیین شده دنبال کنید : 
 ``` objc
+Objective-C :
+
 CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 [locationManager trackMeUntil:3600 
 byMeter:kCLLocationAccuracyNearestTenMeters];
+```
+``` swift
+Swift :
+
+let locationManager = CoreGeoLocation.sharedInstance()
+locationManager.trackMe(until: 3600, byMeter: kCLLocationAccuracyNearestTenMeters)
 ```
 `نکته :`  متد فوق بعد از دریافت موقعیت مکانی، رویداد  `receivedLocationUpdates:locations` را فراخوانی می کند. همچنین پس از پایان زمان تعیین شد به صورت خودکار عملیات مکان یابی را متوقف می سازد، با متوقف کردن موقعیت کاربر رویداد `didStoppedTrackingMe` فراخوانی خواهد شد.
 
 برای بررسی وضعیت مکان یابی کاربر می توانید از متد زیر استفاده کنید :
 ``` objc
+Objective-C :
+
 trackingStateEnumType trackingState = [locationManager trackingMeState];
 if (trackingState == kTracking) {
     NSLog(@"We are tracking user...");
@@ -63,25 +115,63 @@ if (trackingState == kTracking) {
     NSLog(@"Tracking user interval was expired...");
 }
 ```
+``` swift
+Swift :
+
+let trackingState: trackingStateEnumType = locationManager.trackingMeState()
+if trackingState == kTracking {
+    print("We are tracking user...")
+} else if trackingState == kStopped {
+    print("Tracking user was stopped...")
+} else {
+    print("Tracking user interval was expired...")
+}
+```
 جهت متوقف سازی عملیات مکان یابی کار کاربر متد فوق را فراخوانی کنید :
 ``` objc
+Objective-C :
+
 [locationManager stopTracking];
+```
+
+``` swift 
+Swift :
+
+locationManager.stopTracking()
 ```
 ### دریافت یک موقعیت مکانی
 به کمک متد `requestSingleLocation` می توانید تنها یک موقعیت مکانی دریافت کنید.
 ``` objc
+Objective-C :
+
 [locationManager requestSingleLocation:^(CLLocation * _Nullable location, NSError * _Nullable error) {
     if (location != nil) {
         NSLog(@"Single location was received");
     }
 }];
 ```
+``` swift 
+Swift :
+
+locationManager.requestSingleLocation({(_ location: CLLocation?, _ error: Error?) -> Void in
+    if location != nil {
+        print("Single location was received")
+    }
+})
+```
 `نکته :` با فراخوانی متد فوق ممکن است به عملکرد متدهای  `trackMeUntil:byMeter` و `startLocationUpdate‍` اختلال ایجاد کند.
 
 ### دریافت موقعیت مکانی در حالت Terminated
 امکان دریافت موقعیت مکان در حتی در حالتی که اپلیکشن شما Terminate شده باشد نیز وجود دارد.
 ``` objc
-[locationManager startMonitoringSignificantLocationChanges]
+Objective-C :
+
+[locationManager startMonitoringSignificantLocationChanges];
+```
+``` swift
+Swift :
+
+locationManager.startMonitoringSignificantLocationChanges()
 ```
 `نکته :‍` برای فعال شدن این قابلیت باید حتما `authorization` مربوط به  location روی حالت `kAlways` باشد.
 
@@ -136,7 +226,7 @@ func startMonitoringRegion(_ center: CLLocationCoordinate2D, radius: CLLocationD
 func startMonitoringRegion(_ region: CLRegion, expireCount count: Int, expireTs ts: TimeInterval, enterMessage enter: String?, exitMessage exit: String?)
 ```
 
-`Note` : برای استفاده قابلیت Geofence شما نیاز به استفاده از startLocationUpdate و یا startMonitoringSignificantLocationChanges نیست.
+`نکته ` : برای استفاده قابلیت Geofence شما نیاز به استفاده از `startLocationUpdate` و یا `startMonitoringSignificantLocationChanges` نیست.
 
 نمونه کد فوق استفاده از قابلیت geofence را به شما نشان می دهد : 
 
