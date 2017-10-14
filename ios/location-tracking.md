@@ -86,7 +86,10 @@ if (trackingState == kTracking) {
 `نکته :‍` برای فعال شدن این قابلیت باید حتما `authorization` مربوط به  location روی حالت `kAlways` باشد.
 
 `نکته :` متد فوق ممکن است پس از پیمودن ۵۰۰ متر یا بیشتر اپلیکیشن را به صورت کامل در background اجرا کند. برای داشتن تغییرات موقعیت کاربری به صورت مداوم باید کلید `launchOptions` را از رویداد `didFinishLaunchingWithOptions` و در صورت اجرا شدن توسط `location` متد  `startLocationUpdate‍` را فراخوانی کنید. قطعه کد زیر بیانگر این نکته می باشد.
+
 ``` objc
+Objective-C :
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if ([launchOptions objectForKey:UIApplicationLaunchOptionsLocationKey]){
         //App was launch by location update
@@ -95,11 +98,25 @@ if (trackingState == kTracking) {
     }
 }
 ```
+``` swift
+Swift :
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    if launchOptions?[.location] != nil {
+        //App was launch by location update
+        let locationManager = CoreGeoLocation.sharedInstance()
+        locationManager.startUpdate()
+    }
+    return true
+}
+```
+
 ## Geofence 
 جهت استفاده از قابلیت Geofence باید متد `startMonitoringRegion` را فراخوانی کنید. متد فوق دارای سه overload می باشد :
 
-Objective-C :
 ``` objc
+Objective-C :
+
 -(void) startMonitoringRegion:(CLRegion *_Nonnull) region;
 
 -(void) startMonitoringRegion:(CLLocationCoordinate2D) center radius:(CLLocationDistance) radius identifier:(NSString *_Nonnull) identifier;
@@ -110,25 +127,29 @@ Objective-C :
                  enterMessage:(NSString *_Nullable) enter
                   exitMessage:(NSString *_Nullable) exit;
 ```
-Swift : 
+
 ``` swift
+Swift : 
+
 func startMonitoringRegion(_ region: CLRegion)
 func startMonitoringRegion(_ center: CLLocationCoordinate2D, radius: CLLocationDistance, identifier: String)
 func startMonitoringRegion(_ region: CLRegion, expireCount count: Int, expireTs ts: TimeInterval, enterMessage enter: String?, exitMessage exit: String?)
 ```
 
-> `Note` : برای استفاده قابلیت Geofence شما نیاز به استفاده از startLocationUpdate و یا startMonitoringSignificantLocationChanges نیست.
+`Note` : برای استفاده قابلیت Geofence شما نیاز به استفاده از startLocationUpdate و یا startMonitoringSignificantLocationChanges نیست.
 
 نمونه کد فوق استفاده از قابلیت geofence را به شما نشان می دهد : 
 
-Objective-C :
 ``` objc
+Objective-C :
+
 CLLocationCoordinate2D center = CLLocationCoordinate2DMake(35.759227, 51.401044);
     CLRegion *region = [[CLCircularRegion alloc] initWithCenter:center radius:150 identifier:@"adpDigitalCompany"];
 [_locationManager startMonitoringRegion:region];
 ```
-Swift :
 ``` swift
+Swift :
+
 var center: CLLocationCoordinate2D = CLLocationCoordinate2DMake(35.759227, 51.401044)
 
 var region: CLRegion? = CLCircularRegion(center: center, radius: 150, identifier: "adpDigitalCompany")
@@ -138,8 +159,9 @@ locationManager.startMonitoringRegion(region)
 ### رویدادهای Geofence
 پس از فراخوانی متد `startMonitoringRegion` رویدادهای زیر فرخوانی خواهند شد :
 
-Objective-C
 ``` objc
+Objective-C :
+
 -(void) didEnterToRegion:(CLRegion *)region{
     NSLog(@"Hi dear user, You are close to AdpDigital company building.....");
 }
@@ -152,8 +174,9 @@ Objective-C
     NSLog(@"Start monitoring %@ region",region.identifier);
 }
 ```
-Swift :
 ``` swift
+Swift :
+
 func didEnter(to region: CLRegion) {
     print("Hi dear user, You are close to AdpDigital company building.....")
 }
