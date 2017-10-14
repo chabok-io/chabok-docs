@@ -7,39 +7,62 @@
     {% include meta.html %}
     <link rel="stylesheet" type="text/css" href="http://chabokpush.com/www/lib/css/bootstrap.css">
     <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="https://cdn.rawgit.com/rastikerdar/vazir-font/v15.0.0/dist/font-face.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdn.rawgit.com/rastikerdar/vazir-code-font/v1.0.3/dist/font-face.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="stylesheet" type="text/css" href="http://chabokpush.com/www/css/main.css"/>
+    <link href="https://cdn.rawgit.com/rastikerdar/vazir-code-font/v1.0.3/dist/font-face.css" rel="stylesheet"
+          type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css"/>
 
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+          href="{{ site.baseurl }}/feed.xml"/>
+    <script src="http://chabokpush.com/bower_components/jQuery/dist/jquery.min.js"></script>
+    <script src="http://chabokpush.com/www/js/lib.js"></script>
 </head>
 
 <body>
-    <div class="wrapper-masthead">
-        <div>
-            <header class="masthead clearfix">
-                <a  href="{{ site.baseurl }}/"><img src="{{ site.avatar }}" class="chabokLogo">
+<div class="fullSlide">
+    <div class="chabokHeader static" style="opacity: 1" id="chabokheader">
+        <div class="toplinks">
+            <a class="med15 loginpanel" style="cursor: pointer;color:#00325d;margin-right: 40px"> ورود</a>
+        </div>
+        <div class="toplinks">
+            <a href="http://chabokpush.com/careers.html" class="med15"> فرصت های شغلی</a>
 
-        <div class="chabok">
-            <h1 class="chabokColor reg34">
-               {{ site.name }}
-            </h1>
         </div>
-    </a>
-            </header>
+        <div class="toplinks">
+
+            <a href="http://doc.chabokpush.com/" class="med15">پلتفرم‌ها</a>
+
         </div>
+        <div class="toplinks">
+
+            <a href="http://chabokpush.com/usage.html" class="med15"> موارد استفاده</a>
+
+        </div>
+        <div class="toplinks">
+
+            <a href="http://chabokpush.com/chabok.html" class="med15">قابلیت‌ها</a>
+
+        </div>
+        <a href="http://chabokpush.com/"><img src="{{ site.avatar }}" class="chabokLogo">
+
+            <div class="chabok">
+                <h1 class="chabokColor reg34">
+                    {{ site.name }}
+                </h1>
+            </div>
+        </a>
+
     </div>
 
-    <div id="main" role="main">
+    <div class="container-fluid" style="padding-top: 50px">
         {{ content }}
+
     </div>
-
-          {% include footer.html %}
-
-    {% include analytics.html %}
+    {% include footer.html %}
+</div>
+{% include analytics.html %}
 </body>
 
 </html>
