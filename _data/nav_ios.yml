@@ -12,5 +12,7 @@
       title: راه‌اندازی چابک
     - id: delegation
       title: رویداد های چابک
+    - id: publishingMessages
+      title: انتشار پیام
     - id: location-tracking
       title: مکان‌یابی
