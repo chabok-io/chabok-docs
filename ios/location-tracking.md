@@ -317,3 +317,21 @@ func didStartMonitoringRegion(_ region: CLRegion) {
     print("Start monitoring \(region.identifier) region")
 }
 ```
+
+### متوقف سازی geofence
+
+برای متوقف سازی geofence می توانید از متد های زیر استفاده کنید :
+
+``` objc
+Objective-C :
+
+[_locationManager stopMonitoringAllRegions];
+[_locationManager stopMonitoringRegion:region];
+```
+
+``` swift
+Swift : 
+
+locationManager.stopMonitoringAllRegions()
+locationManager.stopMonitoringRegion(region!)
+```
