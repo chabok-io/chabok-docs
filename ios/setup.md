@@ -1,8 +1,8 @@
 ---
-id: SettingUp
+id: setup
 title: راه اندازی چابک
 layout: ios
-permalink: ios/SettingUp.html
+permalink: ios/setup.html
 prev: installation.html
 next: introducing.html
 ---
@@ -11,7 +11,7 @@ next: introducing.html
 
 Chabok Push راه اندازی
 -------------
-سپس در متد `didFinishLaunchingWithOptions` در کلاس `AppDelegate` کدهای زیر را اضافه کنید:
+در متد `didFinishLaunchingWithOptions` در کلاس `AppDelegate` کدهای زیر را اضافه کنید:
 
 
 برای انتخاب سرورهای chabok sandbox از کد زیر استفاده کنید:

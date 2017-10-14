@@ -6,7 +6,7 @@
       title: پیش‌نیازها
     - id: installation
       title: نصب ابزار چابک
-   - id: SettingUp
-      title: راه اندازی چابک
+    - id: setup
+      title: راه‌اندازی چابک
     - id: location-tracking
-      title: مکان یابی
+      title: مکان‌یابی
