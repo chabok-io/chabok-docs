@@ -1,18 +1,18 @@
 - title: شروع سریع ios
   items:
     - id: introducing
-      title: معرفی چابک
+      title: مفاهیم اولیه
     - id: required
       title: پیش‌نیازها
     - id: installation
-      title: افزودن کتابخانه
-    - id: setup
-      title: مقداردهی اولیه
-    - id: publishingMessages
-      title: پیام چابک
+      title: نصب ابزار چابک
     - id: notification
       title: راه‌اندازی اعلان‌ها
+    - id: setup
+      title: راه‌اندازی چابک
     - id: delegation
-      title: مدیریت رویدادها
+      title: رویداد های چابک
+    - id: publishingMessages
+      title: انتشار پیام
     - id: location-tracking
       title: مکان‌یابی
