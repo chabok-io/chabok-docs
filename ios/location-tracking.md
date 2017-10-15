@@ -3,6 +3,9 @@ id: location-tracking
 title: مکان یابی 
 layout: ios 
 permalink: ios/location-tracking.html 
+prev: publishingMessages.html
+next: features.html
+
 --- 
 ## کلاس CoreGeoLocation 
 در ابزار جدید چابک، امکان دریافت موقعیت مکانی کاربر امکان پذیر شده است. برای استفاده از کلاس `CoreGeoLocation` می توانید کلاس فوق را به کلاس خود import کنید:
