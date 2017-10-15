@@ -3,12 +3,11 @@ id: publishingMessages
 title: پیام چابک
 layout: ios
 permalink: ios/publishingMessages.html
-prev: setup.html
-next: notification.html
+prev: delegation.html
+next: location-tracking.html
 ---
 
 پیام چابک
-
 -------------
 برای انتشار پیام از مشتری به سرور چابک، از این استفاده کنید:
 
@@ -22,7 +21,6 @@ withData:@{
 }
 topic:@"USER_ID/CHANNEL_NAME"];
 message.alertText = @"New Message Alert Text";
-
 [self.manager publish:message];
 ```
 ```swift
@@ -31,7 +29,6 @@ Swift:
 var message = PushClientMessage(message: "message body", withData: ["test": "value"], topic: "USER_ID/CHANNEL_NAME")
 message.alertText = "New Message Alert Text"
 manager.publish(message)
-
 ```
 رویدادهای پیام چابک:
 
@@ -53,3 +50,24 @@ func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage!) {
 // Called When PushClientManager has received new delivery from server
 }
 ```
+### Channel Subscription
+
+
+برای عضویت در یک کانال میتوانید از موارد زیر استفاده کنید: 
+
+``` objc
+Objc: 
+
+[self.manager subscribe:@"myAlerts"]; // private (personal) channel 
+[self.manager subscribe:@"public/sport"]; // public channel 
+[self.manager unsubscribe:@"public/+"]; // all public channels 
+
+```
+```swift
+Swift: 
+
+manager.subscribe("myAlerts") // private (personal) channel 
+manager.subscribe("public/sport") // public channel 
+manager.unsubscribe("public/+") // all public channels 
+
+``` 

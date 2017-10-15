@@ -4,13 +4,12 @@ title: مقداردهی اولیه
 layout: ios
 permalink: ios/setup.html
 prev: installation.html
-next: publishingMessages.html
+next: notification.html
 ---
 
 
 
 مقداردهی اولیه
-
 -------------
 در متد `didFinishLaunchingWithOptions` در کلاس `AppDelegate` کدهای زیر را اضافه کنید.
 
@@ -23,7 +22,6 @@ Objc:
 ```swift
 Swift:  
 PushClientManager.setDevelopment(true)
-
 ```
 
 حالا یک `singleton instance` از `PushClientManager` با استفاده از `defaultManager` ایجاد کنید:
@@ -35,7 +33,6 @@ self.manager = [PushClientManager defaultManager];
 ```swift
 Swift:
 self.manager = PushClientManager.default()
-
 ```
 سپس delegate  را از  AppDelegate اضافه کنید:
 ```objc
@@ -45,7 +42,6 @@ Objc:
 ```swift
 Swift:
 self.manager.addDelegate(self)
-
 ```
 سپس کد زیر را اضافه کنید :
 ```objc
@@ -55,7 +51,6 @@ Objc:
 ```swift
 Swift:
 self.manager.application(application, didFinishLaunchingWithOptions: launchOptions)
-
 ```
 اکنون حساب کاربری `APP_ID، SDK_USERNAME` و `SDK_PASSWORD` را تعریف کنید. شما می توانید `SDK_KEY` خود را از پنل وب چابک پیدا کنید:
 
@@ -94,7 +89,6 @@ Objc:
 - (void)pushClientManagerDidRegisterUser:(BOOL)registration{
 // called when PushClientManager Registered user Successfully
 }
-
 
 - (void)pushClientManagerDidFailRegisterUser:(NSError *)error{
 // Called When PushClientMangager fail in registerApplication:appVersion:userName:password:

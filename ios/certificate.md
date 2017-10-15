@@ -96,8 +96,15 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 
 ![عکس مربوطه](http://bayanbox.ir/view/8511862378341283401/File-Enter-your-usual-admin-password.png)
 
-برای ایجاد فایل p12. مربوط به Production هم همین مراحل را برای سرتیفیکت Production انجام دهید.
 
+پس از ایجاد فایل های cer. و p12. دستور زیر را اجرا کنید:
 
+```ruby
+openssl x509 -in Certificates.cer -inform der -out pushCert.pem
+openssl pkcs12 -nocerts -out pushKey.pem -in Certificates.p12 -nodes
+```
+فایل های ساخته شده را در پنل در بخش تنظیمات > تنظیمات پیشرفته آپلود کنید.
 
-به این ترتیب شما دو فایل سرتیفیکت یکی برای Development و یکی برای  Production خواهید داشت که پسوند هر دو p12. است. این دو فایل برای ارسال چابک به برنامه شما لازم است و شما این دو را باید برای ما بفرستید.
+فایل pushCert.pem را در قسمت گواهی و فایل pushKey.pem را در قسمت کلید اضافه کنید.
+
+![enter image description here](http://uupload.ir/files/yvqd_photo_2017-10-15_12-16-53.jpg)
