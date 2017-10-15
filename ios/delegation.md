@@ -8,5 +8,4 @@ next: publishingMessages.html
 ---
 
 مدیریت رویدادها
-
 -------------

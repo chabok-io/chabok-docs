@@ -7,8 +7,8 @@ prev: required.html
 next: setup.html
 
 ---
-افزودن کتابخانه 
 
+افزودن کتابخانه 
 -------------
 
 
