@@ -5,27 +5,6 @@ layout: ios
 permalink: ios/features.html
 prev: location-tracking.html
 ---
-Channel Subscription 
-------------- 
-
-برای عضویت در یک کانال میتوانید از موارد زیر استفاده کنید: 
-
-``` objc
-Objc: 
-
-[self.manager subscribe:@"myAlerts"]; // private (personal) channel 
-[self.manager subscribe:@"public/sport"]; // public channel 
-[self.manager unsubscribe:@"public/+"]; // all public channels 
-
-```
-```swift
-Swift: 
-
-manager.subscribe("myAlerts") // private (personal) channel 
-manager.subscribe("public/sport") // public channel 
-manager.unsubscribe("public/+") // all public channels 
-
-``` 
 
 Receive Deliveries 
 ------------- 
