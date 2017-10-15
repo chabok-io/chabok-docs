@@ -84,6 +84,10 @@ Objc
 Swift
 
 open func enableEventDelivery(_ eventName: String!)
+
+open func enableEventDelivery(_ eventName: String!, live: Bool)
+
+open func enableEventDelivery(_ eventName: String!, forPublic: Bool, live: Bool)
 ```
 ### دسترسی به لوکیشن
 

@@ -16,9 +16,16 @@ next: publishingMessages.html
 ```objc
 Objc:
 
+
 ```
 ```swift
 Swift:
 
 open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!) -> Bool
+
+open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool) -> Bool
+
+open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, stateful: Bool) -> Bool
+
+open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool, stateful: Bool) -> Bool
 ```
