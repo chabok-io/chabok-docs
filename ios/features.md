@@ -14,13 +14,11 @@ Receive Deliveries
 Objc: 
 
 self.manager.deliveryChannelEnabeled = YES; 
-
 ```
 ```swift
 Swift: 
 
 manager.deliveryChannelEnabeled = true 
-
 ``` 
 
 مدیریت Badge
@@ -36,7 +34,6 @@ Objc:
 - (void)applicationWillEnterForeground:(UIApplication *)application { 
 [PushClientManager resetBadge]; 
 }
-
 ```
 ```swift
 Swift: 
@@ -48,7 +45,6 @@ PushClientManager.resetBadge()
 func applicationWillEnterForeground(_ application: UIApplication) { 
 PushClientManager.resetBadge() 
 } 
-
 ``` 
 
 اتصال با سرور
@@ -57,6 +53,7 @@ PushClientManager.resetBadge()
 پس از فراخوانی `manager.addDelegate`، می توانید از متد زیر برای دریافت رویدادهای داخلی چارچوب چابک استفاده کنید:
 
 ```objc
+Objc:
 
 - (void)pushClientManagerDidChangedServerConnectionState{
 // Called When PushClientManager Connecting State has been Changed
