@@ -4,7 +4,7 @@ title: مقداردهی اولیه
 layout: ios
 permalink: ios/setup.html
 prev: installation.html
-next: publishingMessages.html
+next: notification.html
 ---
 
 

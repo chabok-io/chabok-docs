@@ -4,7 +4,7 @@ title: مدیریت رویدادها
 layout: ios
 permalink: ios/delegation.html
 prev: notification.html
-next: location-tracking.html
+next: publishingMessages.html
 ---
 
 مدیریت رویدادها
