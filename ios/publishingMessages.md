@@ -22,7 +22,6 @@ withData:@{
 }
 topic:@"USER_ID/CHANNEL_NAME"];
 message.alertText = @"New Message Alert Text";
-
 [self.manager publish:message];
 ```
 ```swift
@@ -31,7 +30,6 @@ Swift:
 var message = PushClientMessage(message: "message body", withData: ["test": "value"], topic: "USER_ID/CHANNEL_NAME")
 message.alertText = "New Message Alert Text"
 manager.publish(message)
-
 ```
 رویدادهای پیام چابک:
 

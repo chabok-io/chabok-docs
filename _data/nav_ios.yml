@@ -11,7 +11,7 @@
     - id: notification
       title: راه‌اندازی اعلان‌ها
     - id: delegation
-      title: رویداد های چابک
+      title: مدیریت رویدادها
     - id: publishingMessages
       title: انتشار پیام
     - id: location-tracking

@@ -16,6 +16,7 @@ Objc:
 [self.manager subscribe:@"myAlerts"]; // private (personal) channel 
 [self.manager subscribe:@"public/sport"]; // public channel 
 [self.manager unsubscribe:@"public/+"]; // all public channels 
+
 ```
 ```swift
 Swift: 
@@ -34,6 +35,7 @@ Receive Deliveries
 Objc: 
 
 self.manager.deliveryChannelEnabeled = YES; 
+
 ```
 ```swift
 Swift: 
@@ -42,7 +44,7 @@ manager.deliveryChannelEnabeled = true
 
 ``` 
 
-Badge مدیریت 
+مدیریت Badge
 ------------- 
 اگر می خواهید شماره badge برنامه خود را بازنشانی کنید،با روش زیر می توانید: 
 
@@ -54,7 +56,8 @@ Objc:
 } 
 - (void)applicationWillEnterForeground:(UIApplication *)application { 
 [PushClientManager resetBadge]; 
-} 
+}
+
 ```
 ```swift
 Swift: 
@@ -66,4 +69,33 @@ PushClientManager.resetBadge()
 func applicationWillEnterForeground(_ application: UIApplication) { 
 PushClientManager.resetBadge() 
 } 
+
 ``` 
+
+اتصال با سرور
+------------- 
+
+پس از فراخوانی `manager.addDelegate`، می توانید از متد زیر برای دریافت رویدادهای داخلی چارچوب چابک استفاده کنید:
+
+```objc
+
+- (void)pushClientManagerDidChangedServerConnectionState{
+// Called When PushClientManager Connecting State has been Changed
+}
+
+- (void)pushClientManagerDidChangeServerReachiability:(BOOL)reachable
+networkType:(PushClientServerReachabilityNetworkType)networkType{
+// Called When PushClientManager Server Reachiability has been Changed
+}
+```
+```swift
+Swift:
+
+func pushClientManagerDidChangedServerConnectionState() {
+// Called When PushClientManager Connecting State has been Changed
+}
+
+func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkType: PushClientServerReachabilityNetworkType) {
+// Called When PushClientManager Server Reachiability has been Changed
+}
+```

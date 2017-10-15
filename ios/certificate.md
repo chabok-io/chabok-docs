@@ -99,5 +99,3 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 برای ایجاد فایل p12. مربوط به Production هم همین مراحل را برای سرتیفیکت Production انجام دهید.
 
 
-
-به این ترتیب شما دو فایل سرتیفیکت یکی برای Development و یکی برای  Production خواهید داشت که پسوند هر دو p12. است. این دو فایل برای ارسال چابک به برنامه شما لازم است و شما این دو را باید برای ما بفرستید.
