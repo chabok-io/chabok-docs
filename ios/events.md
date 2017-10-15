@@ -66,11 +66,6 @@ Objective-C :
 }
 
 - (void) publishLocation:(CLLocation *) location data:(NSDictionary *) data{
-    if (location == nil) {
-        NSLog(@"## location was nil, Could not send nil location");
-        return;
-    }
-    
     NSDate *ts = location.timestamp;
     double lat = location.coordinate.latitude;
     double lng = location.coordinate.longitude;
@@ -110,9 +105,11 @@ func publishLocation(_ location: CLLocation!, data: [AnyHashable: Any]) {
      let lng = Double(location.coordinate.longitude)
      let milliseconds = (ts?.timeIntervalSince1970)! * 1000
      var geoLocationDic = [AnyHashable: Any]()
+     
      geoLocationDic["lat"] = lat
      geoLocationDic["lng"] = lng
      geoLocationDic["ts"] = milliseconds
+     
      if !data.isEmpty {
 	     geoLocationDic["data"] = data
      }
