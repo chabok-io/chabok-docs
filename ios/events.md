@@ -18,17 +18,31 @@ next: publishingMessages.html
 ```objc
 Objective-C:
 
-- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data;
-- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data live:(BOOL)live;
-- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data stateful:(BOOL)stateful;
-- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data live:(BOOL)live stateful:(BOOL)stateful;
+- (BOOL)publishEvent:(NSString*)eventName
+                data:(NSDictionary*)data;
+
+- (BOOL)publishEvent:(NSString*)eventName
+                data:(NSDictionary*)data
+                live:(BOOL)live;
+
+- (BOOL)publishEvent:(NSString*)eventName
+                data:(NSDictionary*)data
+            stateful:(BOOL)stateful;
+
+- (BOOL)publishEvent:(NSString*)eventName
+                data:(NSDictionary*)data
+                live:(BOOL)live
+            stateful:(BOOL)stateful;
 ```
 ```swift
 Swift:
 
 open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!) -> Bool
+
 open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool) -> Bool
+
 open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, stateful: Bool) -> Bool
+
 open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool, stateful: Bool) -> Bool
 ```
 ## نمونه کد انتشار رویداد
