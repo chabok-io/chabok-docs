@@ -46,7 +46,7 @@ open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, statefu
 open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool, stateful: Bool) -> Bool
 ```
 ## نمونه کد انتشار رویداد
-نمونه کد فوق یکی از کاربردهای انتشار رویداد را به شما نشان می دهد. به کمک کلاس [CoreGeoLocation](http://doc.chabokpush.com/ios/location-tracking.html)، می خواهیم موقعیت کاربر را به صورت لحظه ای ارسال کنیم.
+نمونه کد فوق یکی از کاربردهای انتشار رویداد را به شما نشان می دهد. به کمک کلاس [CoreGeoLocation](/ios/location-tracking.html)، می خواهیم موقعیت کاربر را به صورت لحظه ای ارسال کنیم.
 
 ``` objc
 Objective-C :
