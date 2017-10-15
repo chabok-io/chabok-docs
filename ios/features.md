@@ -75,3 +75,29 @@ func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkTyp
 // Called When PushClientManager Server Reachiability has been Changed
 }
 ```
+### وضعیت ارسال پیام
+
+```objc
+Objc
+```
+```swift
+Swift
+
+open func enableEventDelivery(_ eventName: String!)
+
+open func enableEventDelivery(_ eventName: String!, live: Bool)
+
+open func enableEventDelivery(_ eventName: String!, forPublic: Bool, live: Bool)
+```
+### دسترسی به لوکیشن
+
+```objc
+Objc:
+
+self.manager.enableLocationOnLaunch = YES
+```
+```swift
+Swift:
+
+manager.enableLocationOnLaunch = true
+```
