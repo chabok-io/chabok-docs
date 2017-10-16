@@ -3,7 +3,7 @@ id: publishingMessages
 title: پیام چابک
 layout: ios
 permalink: ios/publishingMessages.html
-prev: delegation.html
+prev: events.html
 next: location-tracking.html
 ---
 
