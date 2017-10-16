@@ -15,10 +15,3 @@
     - id: event-handeling
       title: ‌مدیریت رویدادها
 
-- title: SDK API
-  items:
-    - id: required
-      title: پیش‌نیازها
-    - id: gradle-setup
-      title: افزودن کتابخانه
-
