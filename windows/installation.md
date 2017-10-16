@@ -3,6 +3,8 @@ id: installation
 title: نصب چابک
 layout: windows
 permalink: windows/installation.html
+prev: introducing.html
+next: setup.html
 ---
 
 افزودن کتابخانه

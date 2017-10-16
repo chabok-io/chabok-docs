@@ -1,6 +1,6 @@
 ---
 id: certificate
-title: پیش‌نیازها
+title: ایجاد درخواست سرتیفیکیت
 layout: ios
 permalink: ios/certificate.html
 

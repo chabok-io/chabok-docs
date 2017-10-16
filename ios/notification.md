@@ -4,12 +4,11 @@ title: راه‌اندازی اعلان‌ها
 layout: ios
 permalink: ios/notification.html
 prev: setup.html
-next: events.html
+next: publishingMessages.html
 ---
 
+### Notification فعال کردن
 
- فعال کردن Notification 
--------------
 
 کد زیر را درون `AppDelegate` خود وارد کنید. این به مشتری چابک کمک می کند تا `remote` و `local notification`  را مدیریت کند:
 ```objc
@@ -71,8 +70,7 @@ self.manager.application(application, didReceive: notification)
 }
 ```
 
-NSNotificationCenter
--------------
+### NSNotificationCenter
 
 به عنوان یک جایگزین، می توانید از روش مشاهدات `NSNotificationCenter` برای دریافت رویدادها استفاده کنید. برای دریافت رویدادها به این روش، می توانید هر کدام از این ها را اضافه کنید:
 

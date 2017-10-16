@@ -6,8 +6,8 @@ permalink: windows/setup.html
 prev: installation.html
 ---
 
-مقداردهی اولیه
--------------
+## مقداردهی اولیه
+
 
 > `نکته` : کتابخانه چابک در حال حاضر برای Windows Phone 8.1، Windows 8.1
 > و Windows Universal 10 در دسترس می باشد
@@ -26,8 +26,9 @@ protected override async void OnLaunched(LaunchActivatedEventArgs e)
 	...
 }
 ```
-محیط چابک
-----------
+
+## محیط چابک
+
 با استفاده از متد زیر می توانید محیط عملیاتی و یا تستی را تعیین کنید :
 
 `نکته` : متد فوق را در کلاس `App.xaml.cs` و در رویداد `OnLaunched` فراخوانی کنید همانند کد زیر :
@@ -36,8 +37,8 @@ protected override async void OnLaunched(LaunchActivatedEventArgs e)
 ADPPushSDK.AdpPushClient.Instance.SetDevelopment(true);
 ```
 
-ثبت کاربر
-----------
+## ثبت کاربر
+
 در پایان شما باید برای کاربر خود یک `userId` تعیین نمایید، همانند قطعه کد زیر :
 
 ``` csharp

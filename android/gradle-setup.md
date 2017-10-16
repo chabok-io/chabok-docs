@@ -1,17 +1,15 @@
 ---
 id: gradle-setup
-title: افزودن کتابخانه
+title: نصب چابک
 layout: android
 permalink: android/gradle-setup.html
 prev: required.html
 next: application-class.html
 ---
 
-افزودن کتابخانه چابک به پروژه اندروید به دو روش امکان‌پذیر است.
+### افزودن کتابخانه
 
-## افزودن کتابخانه چابک از طریق jcenter
-
-برای این منظور ابتدا در فایل gradle اصلی پروژه بایستی jcenter را بعنوان repository اضافه نمایید، مطابق نمونه زیر:
+کتابخانه چابک از طریق `jcenter` در دسترس است. برای این منظور ابتدا در فایل `gradle` اصلی پروژه، `jcenter` را بعنوان `repository` مطابق قطعه کد زیر اضافه نمایید:
 
 ```javascript
 buildscript {
@@ -22,7 +20,7 @@ buildscript {
   
 ```
 
-حالا فایل build.gradle در مسیر app را بازکرده و در بخش dependencies خط زیر را وارد نمایید:
+سپس فایل `build.gradle` در مسیر app را بازکرده و در بخش `dependencies` خط زیر را اضافه نمایید:
 
 ```javascript
 dependencies {
@@ -30,25 +28,19 @@ dependencies {
 }
 ```
 
+آخرین نسخه فایل کتابخانه چابک از  [اینجا](https://bintray.com/bintray/jcenter?filterByPkgName=com.adpdigital.push) قابل دسترس می‌باشد.
+در انتها گزینه سینک را بزنید.
 
 
-##  افزودن دستی فایل کتابخانه
 
-چنانچه قصد استفاده از jcenter را ندارید، می توانید آخرین نسخه فایل کتابخانه چابک را از اینجا دانلود کرده، سپس در پوشه‌ای با نام aars در داخل پوشه اصلی پروژه خود قرار دهید: 
+### کتابخانه با قابلیت مکان‌یابی
 
-```code
-project/app/aars
-```
-
-سپس خط زیر را در بخش dependencies فایل گریدل پروژه بیافزایید:
-
-```javascript
+ چابک دارای دو کتابخانه استاندارد و با قابلیت مکان‌یابی می‌باشد. درصورتی که در برنامه خود نیاز به استفاده از موقعیت مکانی کاربر دارید لازم است از کتابخانه chabok-lib-geo-VERSION استفاده نمایید. 
+ باتوجه به اینکه در این کتابخانه از سرویس فیوز گوگل استفاده شده است لذا لازم است تا تغییرات زیر نیز در قسمت ‌‌‌`dependencies` اعمال شود:
+ 
+ ```javascript
 dependencies {
-    compile(name: 'chabok-lib-2.6.3', ext: 'aar')
-}
-   
+   compile 'com.google.android.gms:play-services-location:10.2.6'
+   compile 'com.github.arturogutierrez:badges:1.0.5@aar'
+}  
 ```
-
-در بالای صفحه سمت راست گزینه سینک را بزنید تا گریدل سینک شود.
-
-

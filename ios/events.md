@@ -3,12 +3,9 @@ id: events
 title: مدیریت رویدادها
 layout: ios
 permalink: ios/events.html
-prev: notification.html
-next: publishingMessages.html
+prev: publishingMessages.html
+next: location-tracking.html
 ---
-
-مدیریت رویدادها
--------------
 
 ### انتشار رویداد با داده ها
 با متد زیر می توانید رویداد های داخل اپ را منتشر کنید:

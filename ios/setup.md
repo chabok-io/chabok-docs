@@ -1,16 +1,14 @@
 ---
 id: setup
-title: مقداردهی اولیه
+title: راه‌اندازی چابک
 layout: ios
 permalink: ios/setup.html
 prev: installation.html
 next: notification.html
 ---
 
+### مقداردهی اولیه
 
-
-مقداردهی اولیه
--------------
 در متد `didFinishLaunchingWithOptions` در کلاس `AppDelegate` کدهای زیر را اضافه کنید.
 
 

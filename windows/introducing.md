@@ -1,9 +1,9 @@
 ---
-id: knowledge
+id: introducing
 title: مفاهیم اولیه
-layout: android
-permalink: android/knowledge.html
-next: required.html
+layout: windows
+permalink: windows/introducing.html
+next: installation.html
 ---
 
 ## پوش (Push)
@@ -22,4 +22,4 @@ next: required.html
 
 ## ارسال پیام (Publish)
 
-اپلیکیشن می تواند با استفاده از کلاینت چابک، به سمت سرور اطلاعات ارسال نماید. عمل ارسال پیام از کلاینت به سرور publish نامیده می‌شود.
+اپلیکیشن می تواند با استفاده از کلاینت چابک، به سمت سرور اطلاعات ارسال نماید. عمل ارسال پیام از کلاینت به سرور publish نامیده می‌شودs
