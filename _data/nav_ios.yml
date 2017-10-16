@@ -10,8 +10,6 @@
       title: راه‌اندازی چابک
     - id: notification
       title: راه‌اندازی اعلان‌ها
-    - id: setup
-      title: راه‌اندازی چابک
     - id: delegation
       title: مدیریت رویدادها
     - id: publishingMessages
