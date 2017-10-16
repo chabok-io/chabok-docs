@@ -111,7 +111,7 @@ func publishLocation(_ location: CLLocation!, data: [AnyHashable: Any]) {
      geoLocationDic["ts"] = milliseconds
      
      if !data.isEmpty {
-	     geoLocationDic["data"] = data
+         geoLocationDic["data"] = data
      }
      manager.publishEvent("geo", data: geoLocationDic, live: false, stateful: false)
 }
