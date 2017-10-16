@@ -75,3 +75,42 @@ func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkTyp
 // Called When PushClientManager Server Reachiability has been Changed
 }
 ```
+### وضعیت ارسال پیام
+ به استفاده از متدهای فوق می توانید روی یک رویداد خاص، subscribe کنید تا بتوانید رویدادهای مورد نیاز خود را دریافت کنید :
+ 
+```objc
+Objective-C:
+
+- (void)enableEventDelivery:(NSString*)eventName;
+
+- (void)enableEventDelivery:(NSString*)eventName
+                       live:(BOOL)live;
+
+- (void)enableEventDelivery:(NSString*)eventName
+                  forPublic:(BOOL)forPublic
+                       live:(BOOL)live;
+```
+```swift
+Swift
+
+open func enableEventDelivery(_ eventName: String!)
+
+open func enableEventDelivery(_ eventName: String!, live: Bool)
+
+open func enableEventDelivery(_ eventName: String!, forPublic: Bool, live: Bool)
+```
+### ارسال موقعیت مکانی در هنگام باز شدن برنامه
+
+با فعال کردن قابلیت `enableLocationOnLaunch`، کتابخانه چابک به هنگام باز شدن برنامه و در صورت پیدا کردن موقعیت مکانی کاربر،‌ موقعیت آن را توسط [انتشار رویداد](/ios/events.html) به سرور ارسال می کند.
+
+`نکته` : برای ارسال داده خاصی همراه با انتشار رویداد فوق می توانید داده خود را property به `locationOnLaunchWithDictionary` داده تا همراه با انتشار رویداد ارسال شود.
+```objc
+Objc:
+
+self.manager.enableLocationOnLaunch = YES
+```
+```swift
+Swift:
+
+manager.enableLocationOnLaunch = true
+```
