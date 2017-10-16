@@ -3,8 +3,8 @@ id: events
 title: مدیریت رویدادها
 layout: ios
 permalink: ios/events.html
-prev: notification.html
-next: publishingMessages.html
+prev: publishingMessages.html
+next: location-tracking.html
 ---
 
 ### انتشار رویداد با داده ها

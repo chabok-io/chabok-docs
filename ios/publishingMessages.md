@@ -3,8 +3,8 @@ id: publishingMessages
 title: پیام چابک
 layout: ios
 permalink: ios/publishingMessages.html
-prev: events.html
-next: location-tracking.html
+prev: notification.html
+next: events.html
 ---
 ### پیام چابک
 

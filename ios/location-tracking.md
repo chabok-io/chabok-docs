@@ -3,7 +3,7 @@ id: location-tracking
 title: مکان یابی 
 layout: ios 
 permalink: ios/location-tracking.html 
-prev: publishingMessages.html
+prev: events.html
 next: features.html
 
 ---
