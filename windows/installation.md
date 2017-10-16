@@ -1,18 +1,20 @@
 ---
 id: installation
-title: معرفی چابک
+title: نصب چابک
 layout: windows
 permalink: windows/installation.html
-prev: installation.html
-next: introducing.html
 ---
+کتابخانه چابک
+----------
+.شما می توانید از طریق سایت [ناگت](https://www.nuget.org/packages/ADPPushSDK) اقدام به دریافت کتابخانه چابک نمایید
 
-.شما می توانید از طریق سایت [ناگت](https://www.nuget.org/packages/ADPPushSDK) اقدام به دریافت این ابزار نمایید
+ **نصب از طریق Nuget**
+ با استفاده از دستور زیر در `Package Manager Console` می توانید اقدام به نصب پکیج نمایید.
 
- **نصب از طریق سایت ناگت**
- با استفاده از دستور زیر در Package Manager Console می توانید اقدام به نصب پکیج نمایید.
+``` ruby
+PM> Install-Package ADPPushSDK
+```
 
-    PM> Install-Package ADPPushSDK
-و یا از طریق Manage NuGet Package اقدام به نصب پگیج [Chabok Push](https://www.nuget.org/packages/ADPPushSDK) نمایید.
+و یا از طریق `Manage NuGet Package` اقدام به نصب کتابخانه [Chabok Push](https://www.nuget.org/packages/ADPPushSDK) نمایید.
 
-![enter image description here](http://uupload.ir/files/cuo4_nuget_package_manager.png)
+![](http://uupload.ir/files/cuo4_nuget_package_manager.png)
