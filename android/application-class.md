@@ -1,6 +1,6 @@
 ---
 id: application-class
-title: مقداردهی اولیه
+title: راه‌اندازی چابک
 layout: android
 permalink: android/application-class.html
 prev: gradle-setup.html
