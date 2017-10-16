@@ -86,7 +86,7 @@ Objective-C :
 Swift :
 
 func startTrackingUser() {
-	let locationManager = CoreGeoLocation.sharedInstance()
+    let locationManager = CoreGeoLocation.sharedInstance()
 	    
     locationManager.add(self)
     locationManager.locationAutorization = kWhileUseInApp
