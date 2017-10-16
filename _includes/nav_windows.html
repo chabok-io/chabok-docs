@@ -1,31 +1,30 @@
 <div class="nav-docs">
-  <!-- Docs Nav -->
-  {% for section in site.data.nav_windows %}
+    <!-- Docs Nav -->
+    {% for section in site.data.nav_windows %}
     <div class="nav-docs-section">
-      <h3>{{ section.title }}</h3>
-      <ul>
-        {% for item in section.items %}
-          <li>
-            {{ item | windows_sidebar_link}}
-            {% if item.subitems %}
-              <ul>
-                {% for subitem in item.subitems %}
-                  <li>
-                    {{ subitem | windows_sidebar_link }}
-                  </li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
+        <h3>Windows</h3>
+        <ul>
+            {% for item in section.items %}
+            <li>
+                {{ item | windows_sidebar_link}}
+                {% if item.subitems %}
+                <ul>
+                    {% for subitem in item.subitems %}
+                    <li>
+                        {{ subitem | windows_sidebar_link }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
     </div>
-  {% endfor %}
-  <div class="nav-docs-section">
-    <ul>
-      <li>
-        <a  style="color: dodgerblue; font-weight: bold" href="http://doc.chabokpush.com/">&rarr; بازگشت</a>
-      </li>
-    </ul>
-  </div>
+    {% endfor %}
+    <div class="nav-docs-section">
+        <h3><a href="/ios/introducing.html">iOS</a></h3>
+    </div>
+    <div class="nav-docs-section">
+        <h3><a href="/android/introducing.html">Android</a></h3>
+    </div>
 </div>
