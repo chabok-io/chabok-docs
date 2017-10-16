@@ -4,7 +4,7 @@ title: راه‌اندازی اعلان‌ها
 layout: ios
 permalink: ios/notification.html
 prev: setup.html
-next: delegation.html
+next: events.html
 ---
 
 
