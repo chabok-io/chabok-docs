@@ -2,8 +2,7 @@
 id: event-handeling
 title: مدیریت رویدادها
 layout: android
-permalink: android/event-handeling.html
-prev: customizzze.html
+permalink: android/event-handling.html
 ---
 
 ## ارسال وضعیت پیام‌های دریافتی

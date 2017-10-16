@@ -3,54 +3,45 @@ id: location-tracking
 title: مکان یابی
 layout: android
 permalink: android/location-tracking.html
-prev: gradle-setup.html
-next: manifest.html
+prev: event-handling.html
 ---
 
 ## استفاده از شیء LocationManager
-برای استفاده از امکانات مکان یابی چابک بایستی ابتدا از نمونه جاری کلاینت چابک، شیء locationManager را بگیرید:
+برای استفاده از امکانات مکان یابی چابک بایستی ابتدا شیء LocationManager را مقداردهی اولیه کنید، برای این کار متد init را با context موردنظر فراخوانی نمایید، به شکل زیر:
 
 ```java
-AdpPushClient client = ((PushApplication) getApplication()).getPushClient();
-LocationManager locationManger = client.getLocationManager();
+LocationManager locationManger = LocationManager.init(getApplicationContext());
 ```
 
 همه متدهای مورد نیاز برای بکارگیری امکانات مکان یابی در این شیء قرار دارد.
 
 ## درخواست شروع مکان یابی
-برای شروع شما باید متد start را با پارامترهای مربوط که در ادامه توضیح داده می شود، صدا بزنید:
+برای شروع شما باید متد startLocationUpdates  را با پارامترهای مربوط که در ادامه توضیح داده می شود، صدا بزنید:
 
 ```java
-public void start(OnLocationUpdateListener listener, LocationParams params, boolean backgroundService , boolean singleUpdate)
+public void startLocationUpdates(LocationParams params)
 ```
-## 1.OnLocationUpdateListener
-پارامتر اول این متد یک Listener است به شکل زیر:
+نکته:
+قبل از ادامه توضیحات، توجه داشته باشید که برای دریافت گزارش بروزرسانی مکان بایستی توسط متد addListener کلاس مورد نظر برای دریافت بروزرسانی مکان را معرفی نمایید.
 
-```java
-public interface OnLocationUpdateListener {
-    void onConnected(@Nullable Bundle bundle);
-    void onLocationUpdated(Location location);
-}
-```
-
-شما باید این اینترفیس را برای کلاس مورد نظر خود که قصد دریافت مکان را در آن دارید پیاده سازی نمایید.
-
-# متد onConnected
-وقتی کلاینت مکان‌یابی متصل شد، این متد فراخوانی خواهدشد
-معمولا در اینجا می توانید مقداردهی های اولیه در نمایش را انجام دهید، مثلا با فراخوانی متد getLastLocation از شیء locationManager می توانید آخرین مکان ثبت شده را برای نمایش نقطه اولیه روی نقشه دریافت نمایید.
-
-# متد onLocationUpdated
-هربار که مکان براساس تنظیمات اولیه بروزرسانی شود، این متد فراخوانی شده و شیء Location شامل اطلاعات نقطه جغرافیایی مورد نظر را می دهد.
-
-## 2.LocationParams
-پارامتر دوم متد فوق یک شیء برای تنظیمات اولیه مکان یاب می باشد.
+# پارامتر ورودی LocationParams
+پارامترهای مکان یابی برای تنظیم دقت، فاصله و دوره زمانی گزارش مکان توسط تنها پارامتر ورودی این متد انجام می شود.
+این شیء برای تنظیمات اولیه مکان یاب می باشد.
 بعنوان مثال نمونه زیر یک شیء برای ست کردن دقت مکان یابی، حداقل تغییر مکان و زمان تناوب بروزرسانی مکان را ست می کند:
 ```java
 LocationParams params = new Builder().setAccuracy(LocationAccuracy.HIGH).setDistance(0).setInterval(500).build();
 ```
+در این نمونه دقت مکان‌یابی حداکثر، جابجایی مکانی حداقل صفر و زمان تناوب گزارش مکان‌یابی ۵۰۰ میلی‌ثانیه می باشد.
+در ادامه توضیحات هریک از متدهای شیء LocationParams را مشاهده می کنید.
 
 # دقت مکان‌یابی
+متد
+```java
+setAccuracy(LocationAccuracy accuracy)
+```
+
 برای مقداردهی اولیه آن بایستی یکی از مقادیر enum ذیل را انتخاب نمایید:
+
 ```java
 enum LocationAccuracy {
     HIGH,
@@ -80,13 +71,106 @@ enum LocationAccuracy {
 با این تنظیم برنامه شما هیچ بروزرسانی مکان را درخواست نخواهد کرد،‌ولی درخواست بروزرسانی توسط برنامه های دیگر را دریافت خواهد نمود.
 
 # حداقل فاصله
+متد
+```java
+setDistance(float distance)
+```
+
 حداقل فاصله برای تریگر کردن مکان‌یابی براساس متر می تواند تنظیم شود.
 
 # دوره تناوب دریافت مکان‌یابی
+متد
+```java
+setInterval(long interval)
+```
 می توانید فاصله زمانی بین دریافت هر بروزرسانی مکان را براساس میلی‌ثانیه تنظیم نمایید.
 
-## 3.backgroundService
-پارامتر سوم یک متغییر
+### متد addListener
+برای دریافت گزارش بروزرسانی مکان بایستی توسط متد addListener کلاس مورد نظر برای دریافت بروزرسانی مکان را معرفی نمایید.
+```java
+public void addListener(OnLocationUpdateListener listener)
+```
+
+همچنین برای اینکه این listener را حذف نمایید، مثلا برای مدیریت lifecycle اکتیویتی در متد onPause می توانید متد removeListener را فراخوانی کنید:
+‍
+```java
+public void removeListener()
+```
+
+قبل از اینکه کلاس خود را با متد addListener معرفی کنید،
+ باید اینترفیس  OnLocationUpdateListener را برای کلاس مورد نظر خود که قصد دریافت مکان را در آن دارید پیاده سازی نمایید:
+
+## OnLocationUpdateListener
+
+```java
+public interface OnLocationUpdateListener {
+    void onConnected(@Nullable Bundle bundle);
+    void onLocationUpdated(Location location);
+    void onSuspended();
+    void onConnectionFailed(ConnectionResult connectionResult);
+    void onGeofencesRegisteredSuccessful();
+}
+```
 
 
-## 4.singleUpdate
+
+# متد onConnected
+وقتی کلاینت مکان‌یابی متصل شد، این متد فراخوانی خواهدشد
+معمولا در اینجا می توانید مقداردهی های اولیه در نمایش را انجام دهید، مثلا با فراخوانی متد getLastLocation از شیء locationManager می توانید آخرین مکان ثبت شده را برای نمایش نقطه اولیه روی نقشه دریافت نمایید.
+
+# متد onLocationUpdated
+هربار که مکان براساس تنظیمات اولیه بروزرسانی شود، این متد فراخوانی شده و شیء Location شامل اطلاعات نقطه جغرافیایی مورد نظر را می دهد.
+
+# متد onSuspended
+وقتی کلاینت مکان‌یابی بصورت موقت در وضعیت عدم اتصال قرار بگیرد، فراخوانی می شود.
+
+# متد onConnectionFailed
+وقتی کلاینت مکان‌یابی در عملیات اتصال ناموفق بود، فراخوانی می شود.
+
+# متد onGeofencesRegisteredSuccessful
+درصورتی که با متد setUpGeofence اقدام به تعریف geofence کرده باشید و با موفقیت ثبت شود، متد فوق فراخوانی خواهد شد.
+
+
+
+## public void requestSingleLocation(final LocationListener listener)
+```java
+public void requestSingleLocation(final LocationListener listener)
+```
+## Geofence
+```java
+public void setUpGeofence(final GeofenceParams params, String enterMessage, String exitMessage, int count)
+public void removeGeofenceById(String geofenceId)
+public void removeGeofencesByIds(List<String> geofenceIds)
+```
+
+## Timed tracking
+```java
+public void startTrackingMe(long duration, long interval, float distance)
+```
+
+## GetLastLocation
+```java
+public Location getLastLocation()
+```
+
+## publishLocation
+```java
+public void publishLocation(Location location)
+```
+
+## enableBackgroundMode
+```java
+public void enableBackgroundMode()
+```
+## disableBackgroundMode
+```java
+public void disableBackgroundMode()
+```
+
+## isBackgoundModeEnabled
+```java
+public boolean isBackgoundModeEnabled()
+```
+
+
+
