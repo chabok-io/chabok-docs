@@ -4,12 +4,13 @@ title: نصب چابک
 layout: windows
 permalink: windows/installation.html
 ---
-کتابخانه چابک
+
+افزودن کتابخانه
 ----------
 
 .شما می توانید از طریق سایت [ناگت](https://www.nuget.org/packages/ADPPushSDK) اقدام به دریافت کتابخانه چابک نمایید
 
- **نصب از طریق Nuget**
+### نصب از طریق Nuget
  
  با استفاده از دستور زیر در `Package Manager Console` می توانید اقدام به نصب پکیج نمایید.
 
