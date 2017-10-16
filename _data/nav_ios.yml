@@ -4,6 +4,9 @@
       title: مفاهیم اولیه
     - id: required
       title: پیش‌نیازها
+      items:
+        - id: certificate
+        title: ایجاد درخواست سرتیفیکیت
     - id: installation
       title: نصب چابک
     - id: setup
