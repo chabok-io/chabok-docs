@@ -21,7 +21,7 @@ LocationManager locationManger = client.getLocationManager();
 برای شروع شما باید متد start را با پارامترهای مربوط که در ادامه توضیح داده می شود، صدا بزنید:
 
 ```java
-public void start(OnLocationUpdateListener listener, LocationParams params, boolean startService , boolean singleUpdate)
+public void start(OnLocationUpdateListener listener, LocationParams params, boolean backgroundService , boolean singleUpdate)
 ```
 ## 1.OnLocationUpdateListener
 پارامتر اول این متد یک Listener است به شکل زیر:
@@ -79,3 +79,14 @@ enum LocationAccuracy {
 اگر مصرف باتری برایتان خیلی مهم است، ولی بروزرسانی مکان را فقط وقتی در دسترس باشد نیاز دارید، از این مقدار استفاده کنید.
 با این تنظیم برنامه شما هیچ بروزرسانی مکان را درخواست نخواهد کرد،‌ولی درخواست بروزرسانی توسط برنامه های دیگر را دریافت خواهد نمود.
 
+# حداقل فاصله
+حداقل فاصله برای تریگر کردن مکان‌یابی براساس متر می تواند تنظیم شود.
+
+# دوره تناوب دریافت مکان‌یابی
+می توانید فاصله زمانی بین دریافت هر بروزرسانی مکان را براساس میلی‌ثانیه تنظیم نمایید.
+
+## 3.backgroundService
+پارامتر سوم یک متغییر
+
+
+## 4.singleUpdate
