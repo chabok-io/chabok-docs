@@ -7,10 +7,8 @@ prev: installation.html
 next: notification.html
 ---
 
+### مقداردهی اولیه
 
-
-مقداردهی اولیه
--------------
 در متد `didFinishLaunchingWithOptions` در کلاس `AppDelegate` کدهای زیر را اضافه کنید.
 
 

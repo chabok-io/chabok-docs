@@ -8,8 +8,7 @@ next: installation.html
 
 ---
 
-پیش نیاز ها
--------------
+### پیش نیاز ها
 
 ابتدا اطمینان حاصل کنید که MobileCoreServices.framework، SystemConfiguration.framework و CoreData را از Linked Library   وارد کرده اید.
 

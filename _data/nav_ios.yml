@@ -12,10 +12,10 @@
       title: راه‌اندازی چابک
     - id: notification
       title: راه‌اندازی اعلان‌ها
-    - id: events
-      title: مدیریت رویدادها
     - id: publishingMessages
       title: پیام چابک
+    - id: events
+      title: مدیریت رویدادها
     - id: location-tracking
       title: مکان‌یابی
     - id: features

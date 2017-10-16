@@ -6,7 +6,7 @@ permalink: ios/location-tracking.html
 prev: publishingMessages.html
 next: features.html
 
---- 
+---
 ## کلاس CoreGeoLocation 
 در ابزار جدید چابک، امکان دریافت موقعیت مکانی کاربر امکان پذیر شده است. برای استفاده از کلاس `CoreGeoLocation` می توانید کلاس فوق را به کلاس خود import کنید:
 ``` objc
@@ -204,7 +204,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-## Geofence 
+## Geofence
 جهت استفاده از قابلیت Geofence باید متد `startMonitoringRegion` را فراخوانی کنید. متد فوق دارای سه overload می باشد :
 
 ``` objc

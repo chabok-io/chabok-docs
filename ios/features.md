@@ -6,8 +6,8 @@ permalink: ios/features.html
 prev: location-tracking.html
 ---
 
-Receive Deliveries 
-------------- 
+### Receive Deliveries
+
 برای فعال کردن دریافت تأییدیه تحویل یک پیام منتشر شده، باید تحویل را قبل از فعالسازی فعال کنید: 
 
 ``` objc
@@ -20,9 +20,8 @@ Swift:
 
 manager.deliveryChannelEnabeled = true 
 ``` 
+### Badge مدیریت
 
-مدیریت Badge
-------------- 
 اگر می خواهید شماره badge برنامه خود را بازنشانی کنید،با روش زیر می توانید: 
 
 ``` objc
@@ -46,9 +45,8 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 PushClientManager.resetBadge() 
 } 
 ``` 
+### اتصال با سرور
 
-اتصال با سرور
-------------- 
 
 پس از فراخوانی `manager.addDelegate`، می توانید از متد زیر برای دریافت رویدادهای داخلی چارچوب چابک استفاده کنید:
 

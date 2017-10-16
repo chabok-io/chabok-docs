@@ -6,9 +6,8 @@ permalink: ios/publishingMessages.html
 prev: events.html
 next: location-tracking.html
 ---
+### پیام چابک
 
-پیام چابک
--------------
 برای انتشار پیام از مشتری به سرور چابک، از این استفاده کنید:
 
 ```objc
