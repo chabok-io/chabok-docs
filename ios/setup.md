@@ -1,6 +1,6 @@
 ---
 id: setup
-title: مقداردهی اولیه
+title: راه‌اندازی چابک
 layout: ios
 permalink: ios/setup.html
 prev: installation.html

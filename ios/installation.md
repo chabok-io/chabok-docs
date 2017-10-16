@@ -1,6 +1,6 @@
 ---
 id: installation
-title: افزودن کتابخانه
+title: نصب چابک
 layout: ios
 permalink: ios/installation.html
 prev: required.html
