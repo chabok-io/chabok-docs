@@ -4,7 +4,7 @@ title: پیام چابک
 layout: android
 permalink: android/chabok-messaging.html
 prev: manifest.html
-next: customizzze.html
+next: customize.html
 ---
 
 ## دریافت پیام چابک

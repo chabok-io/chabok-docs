@@ -1,6 +1,20 @@
 - title: شروع سریع ios
   items:
-    - id: installation
-      title: نصب SDK
     - id: introducing
-      title: معرفی چابک
+      title: مفاهیم اولیه
+    - id: required
+      title: پیش‌نیازها
+    - id: installation
+      title: نصب چابک
+    - id: setup
+      title: راه‌اندازی چابک
+    - id: notification
+      title: راه‌اندازی اعلان‌ها
+    - id: events
+      title: مدیریت رویدادها
+    - id: publishingMessages
+      title: انتشار پیام
+    - id: location-tracking
+      title: مکان‌یابی
+    - id: features
+      title: امکانات‌ چابک
