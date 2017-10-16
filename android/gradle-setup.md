@@ -1,6 +1,6 @@
 ---
 id: gradle-setup
-title: افزودن کتابخانه
+title: نصب چابک
 layout: android
 permalink: android/gradle-setup.html
 prev: required.html
@@ -44,7 +44,7 @@ project/app/aars
 
 ```javascript
 dependencies {
-    compile(name: 'chabok-lib-2.6.3', ext: 'aar')
+    compile(name: 'chabok-lib-2.8.3', ext: 'aar')
 }
    
 ```
