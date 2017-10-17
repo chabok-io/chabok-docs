@@ -10,10 +10,10 @@
       title: نصب چابک
     - id: setup
       title: راه‌اندازی چابک
-    - id: notification
-      title: راه‌اندازی اعلان‌ها
     - id: publishingMessages
       title: پیام چابک
+    - id: notification
+      title: راه‌اندازی اعلان‌ها
     - id: events
       title: مدیریت رویدادها
     - id: location-tracking
