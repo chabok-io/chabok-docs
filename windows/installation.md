@@ -7,8 +7,7 @@ prev: introducing.html
 next: setup.html
 ---
 
-افزودن کتابخانه
-----------
+## افزودن کتابخانه
 
  با استفاده از دستور زیر در `Package Manager Console` می توانید کتابخانه چابک را به آسانی نصب کنید :
 

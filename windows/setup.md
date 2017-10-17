@@ -12,37 +12,38 @@ prev: installation.html
 > `نکته` : کتابخانه چابک در حال حاضر برای Windows Phone 8.1، Windows 8.1
 > و Windows Universal 10 در دسترس می باشد
 
-> `نکته` : امکان استفاده از `Push Notification (Cloud messaging)` در
+> `نکته` : امکان استفاده از (Push Notification (Cloud messaging در
 > پروژه های `UWP` در حال حاضر امکان پذیر نمی باشد (به زودی در دسترس قرار
 > خواهد گرفت).
 
 متد `Init`  برای مقدار دهی پارامتر های ضروری استفاده می شود. متد فوق را در کلاس `App.xaml.cs` و در رویداد `OnLaunched`  فراخوانی کنید همانند کد زیر :
 
 ``` csharp
+private AdpPushClient _chabokPush;
 protected override async void OnLaunched(LaunchActivatedEventArgs e)
 {
     ...
-	await ADPPushSDK.AdpPushClient.Instance.Init("APP_ID", "API_KEY", "USERNAME", "PASSWORD");
+    _chabokPush = ADPPushSDK.AdpPushClient.Instance;
+	await _chabokPush.Init("APP_ID", "API_KEY", "USERNAME", "PASSWORD");
 	...
 }
 ```
 
-## محیط چابک
+### محیط چابک
 
-با استفاده از متد زیر می توانید محیط عملیاتی و یا تستی را تعیین کنید :
-
+با استفاده از متد زیر می توانید محیط عملیاتی و یا تستی را تعیین کنید.
 `نکته` : متد فوق را در کلاس `App.xaml.cs` و در رویداد `OnLaunched` فراخوانی کنید همانند کد زیر :
 
 ``` csharp
-ADPPushSDK.AdpPushClient.Instance.SetDevelopment(true);
+_chabokPush.SetDevelopment(true);
 ```
 
-## ثبت کاربر
+### ثبت کاربر
 
 در پایان شما باید برای کاربر خود یک `userId` تعیین نمایید، همانند قطعه کد زیر :
 
 ``` csharp
-await ADPPushSDK.AdpPushClient.Instance.Register(userId: "USER_ID");
+await _chabokPush.Register(userId: "USER_ID");
 ```
 
 > `نکته` : `userId` می تواند هر عبارتی باشد ( شماره تلفن، ایمیل، کد ملی،
@@ -62,8 +63,7 @@ var channels = new[]
     "public/news"
 };
 
-await ADPPushSDK.AdpPushClient.Instance.Register(userId: "USER_ID",
-channelNames: channels);
+await _chabokPush.Register(userId: "USER_ID", channelNames: channels);
 ```
 
 
