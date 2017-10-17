@@ -24,6 +24,9 @@ public void startLocationUpdates(LocationParams params)
 نکته:
 قبل از ادامه توضیحات، توجه داشته باشید که برای دریافت گزارش بروزرسانی مکان بایستی توسط متد addListener کلاس مورد نظر برای دریافت بروزرسانی مکان را معرفی نمایید.
 
+نکته:
+درصورتی که نیازی به دریافت مداوم مکان ندارید، می توانید از روش های کم هزینه تر مانند درخواست فقط یکبار با استفاده از متد requestSingleLocation یا درخواست به مدت معین با استفاده از متد startTrackingMe و روشهای دیگری که توسط چابک ارائه می شود، استفاده نمایید.
+
 # پارامتر ورودی LocationParams
 پارامترهای مکان یابی برای تنظیم دقت، فاصله و دوره زمانی گزارش مکان توسط تنها پارامتر ورودی این متد انجام می شود.
 این شیء برای تنظیمات اولیه مکان یاب می باشد.
@@ -132,10 +135,32 @@ public interface OnLocationUpdateListener {
 
 
 
-## public void requestSingleLocation(final LocationListener listener)
+## enableLocationOnLaunch
+با استفاده از این متد می توانید گزارش مکان را در کلاس listener ‌خود برای یکبار دریافت نمایید، پس از یکبار گزارش، سرویس مکان یابی بصورت خودکار متوقف خواهد شد.
+می توانید این متد را در جای مناسبی مانند OnCreate اکتیویتی یا کلاس Application‌ فراخوانی نمایید.
+```java
+public void enableLocationOnLaunch()
+```
+توجه نمایید که برای دریافت گزارش مکان باید کلاس listener ‌خود  را برای دریافت این گزارش معرفی کرده باشید.
+
+## requestSingleLocation
+ هر باربا فراخوانی این متد می توانید مکان بروزشده را یکبار در کلاس listener خود دریافت نمایید.
+
 ```java
 public void requestSingleLocation(final LocationListener listener)
 ```
+با استفاده از این متد می توانید توسط پارامتر ورودی LocationListener یکبار درخواست مکان یابی نمایید و در متد مربوط در زمان فراخوانی آن، مکان بروز شده را دریافت و مورد استفاده قرار دهید، به این صورت:
+```java
+locationManager.requestSingleLocation(new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+                // Do what you want with location
+            }
+        });
+```
+نکته:
+درصورتی که با استفاده از متد startTrackingMe مکان یابی زماندار را فعال کرده باشید، تا زمانی که این مدت زمان به پایان نرسیده است، نمی متد requestSingleLocation عمل نخواهد کرد.
+
 ## Geofence
 ```java
 public void setUpGeofence(final GeofenceParams params, String enterMessage, String exitMessage, int count)
@@ -172,5 +197,5 @@ public void disableBackgroundMode()
 public boolean isBackgoundModeEnabled()
 ```
 
-
+[ ![Download](https://api.bintray.com/packages/chabok/chabok-repo/com.adpdigital.push/images/download.svg) ](https://bintray.com/chabok/chabok-repo/com.adpdigital.push/_latestVersion)
 
