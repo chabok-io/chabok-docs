@@ -1,6 +1,6 @@
 --- 
 id: location-config
-title: پیش نیاز های مکان‌یابی
+title: پیش نیازهای مکان‌یابی
 layout: ios 
 permalink: ios/location-config.html 
 prev: events.html
