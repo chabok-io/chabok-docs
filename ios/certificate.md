@@ -11,7 +11,7 @@ permalink: ios/certificate.html
 
 هر برنامه ی iOS که از پوش نوتیفیکیشن استفاده می کند باید یک App ID منحصر به خودش داشته باشد که بطور یکتا آن برنامه را مشخص کند. مراحل زیر روش ایجاد یک App ID را توضیح می دهد. اگر قبلا برای برنامه تان در اینجا App ID ایجاد کرده اید، از این مرحله گذر کنید.
 
-۱- در قسمت [پورتال برنامه نویسان اپل](https://idmsa.apple.com/IDMSWebAuth/login?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Faccount%2F&rv=1)   لاگین کنید. 
+۱- در قسمت [پورتال برنامه نویسان اپل](https://idmsa.apple.com/IDMSWebAuth/login?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Faccount%2F&rv=1)   لاگین کنید.
 
 ۲- روی منوی Certificates, Identifiers & Profiles کلیک کنید.
 
@@ -23,7 +23,7 @@ permalink: ios/certificate.html
 
 ۴- یک نام برای اپلیکیشن در قسمت ۱ و یک نام پکیج یا bundleID در قسمت ۲ مطابق شکل زیر وارد کنید. توجه کنید که باید حتما از Explicit App ID استفاده کنید. سپس دکمه ی Continue را بزنید.
 
-![عکس مربوطه](http://bayanbox.ir/view/6851324387876995449/Inputing-BundleID.jpg)
+![عکس مربوطه](http://uupload.ir/files/0meo_inputing-bundleid.jpg)
 
 ۵- در این مرحله اطلاعات App ID ای که در حال ساختش هستید را به شما نشان می دهد. دکمه ی Register را بزنید تا این مرحله تمام شود.
 
@@ -84,9 +84,9 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 
 ۲- برنامه  Keychain Access را روی Mac خود باز کنید. به قسمت login بروید و براساس دسته بندی Certificates محتوایش را فیلتر کنید. در اینجا گزینه ای به نام Apple Development iOS Push Services می بینید که با یک کلید خصوصی جفت شده است.
 
-![عکس مربوطه](http://bayanbox.ir/view/4974318213442530133/Keychain2.jpg)
+![عکس مربوطه](http://uupload.ir/files/lypn_keychain2.jpg)
 
-۳- روی این سرتیفیکیت پوش نوتیفیکشن جدیدتان کلیک راست کنید و  گزینه ی Export "Apple Development iOS Push Services را انتخاب کنید و فایل حاصل را با نام apns-dev-cert.p12 در جایی که در دسترس تان باشد ذخیره کنید. 
+۳- روی این سرتیفیکیت پوش نوتیفیکشن جدیدتان کلیک راست کنید و  گزینه ی Export "Apple Development iOS Push Services را انتخاب کنید و فایل حاصل را با نام apns-dev-cert.p12 در جایی که در دسترس تان باشد ذخیره کنید.
 
 برای اکسپورت کردن می توانید پسورد هم وارد کنید اما در اینصورت لازم است که همراه با ارسال فایل سرتیفیکیت به چابک، پسورد آن را هم ارسال کنید.
 
