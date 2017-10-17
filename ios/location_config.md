@@ -3,8 +3,8 @@ id: location-config
 title: پیش نیازهای مکان‌یابی
 layout: ios 
 permalink: ios/location-config.html 
-prev: events.html
-next: location-tracking.html
+prev: location-tracking.html
+next: features.html
 ---
 
 ## ۱) دسترسی به موقعیت مکانی
