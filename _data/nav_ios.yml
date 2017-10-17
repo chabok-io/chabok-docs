@@ -18,5 +18,7 @@
       title: مدیریت رویدادها
     - id: location-tracking
       title: مکان‌یابی
+    - id: location-config
+      title: پیش نیازهای مکان‌یابی
     - id: features
       title: امکانات‌ چابک
