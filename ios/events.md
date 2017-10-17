@@ -7,7 +7,7 @@ prev: notification.html
 next: location-tracking.html
 ---
 
-### انتشار رویداد با داده ها
+### انتشار رویداد به همراه داده
 با متد زیر می توانید رویداد های داخل اپ را منتشر کنید:
 
 > `نکته` :  پارامتر ورودی live به این معنی می باشد، کسانی این رویداد را
@@ -43,7 +43,40 @@ open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, statefu
 
 open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool, stateful: Bool) -> Bool
 ```
-## نمونه کد انتشار رویداد
+
+###  فعال کردن دریافت رویداد
+
+با استفاده از متد `enableEventDelivery` می توانید روی یک رویداد خاص `subscribe` کنید، به قطعه کد زیر دقت کنید : 
+``` objc 
+Objective-C :
+
+[_manager enableEventDelivery:@"geo"];
+```
+``` swift
+Swift :
+
+self.manager.enableEventDelivery("geo")
+```
+
+برای دریافت رویداد باید delegate method زیر را پیاده سازی کنید، تا بتوانید رویداد هایی که توسط متد `enableEventDelivery` بر روی یک رویداد خاص `subscribe` کرده اید دریافت کنید :
+
+``` objc
+Objective-C :
+
+- (void) pushClientManagerDidReceivedEventMessage:(EventMessage *)eventMessage{
+    NSLog(@"Event message (%@) was received .....",
+          eventMessage.data);
+}
+```
+``` swift
+Swift :
+
+func pushClientManagerDidReceivedEventMessage(_ eventMessage: EventMessage!) {
+        print("Event message \(eventMessage.data) was received .....")
+}
+```
+
+### نمونه کد انتشار رویداد
 نمونه کد فوق یکی از کاربردهای انتشار رویداد را به شما نشان می دهد. به کمک کلاس [CoreGeoLocation](/ios/location-tracking.html)، می خواهیم موقعیت کاربر را به صورت لحظه ای ارسال کنیم.
 
 ``` objc
