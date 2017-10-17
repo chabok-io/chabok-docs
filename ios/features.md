@@ -6,7 +6,7 @@ permalink: ios/features.html
 prev: location-tracking.html
 ---
 
-### Receive Deliveries
+### دریافت تأییدیه تحویل
 
 برای فعال کردن دریافت تأییدیه تحویل یک پیام منتشر شده، باید تحویل را قبل از فعالسازی فعال کنید: 
 
@@ -20,7 +20,7 @@ Swift:
 
 manager.deliveryChannelEnabeled = true 
 ``` 
-### Badge مدیریت
+###  مدیریت نشان
 
 اگر می خواهید شماره badge برنامه خود را بازنشانی کنید،با روش زیر می توانید: 
 
