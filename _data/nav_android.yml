@@ -16,6 +16,8 @@
       title: شخصی‌سازی
     - id: event-handling
       title: ‌مدیریت رویدادها
+    - id: location-config
+      title: ‌پیش‌نیازهای مکان‌یابی
     - id: location-tracking
       title: ‌مکان‌یابی
 

@@ -3,7 +3,7 @@ id: location-tracking
 title: مکان یابی
 layout: android
 permalink: android/location-tracking.html
-prev: event-handling.html
+prev: location-config.html
 ---
 
 ### استفاده از شیء LocationManager
@@ -21,11 +21,11 @@ LocationManager locationManger = LocationManager.init(getApplicationContext());
 ```java
 public void startLocationUpdates(LocationParams params)
 ```
-`نکته:`
-قبل از ادامه توضیحات، توجه داشته باشید که برای دریافت گزارش بروزرسانی مکان بایستی توسط متد `addListener` کلاس مورد نظر برای دریافت بروزرسانی مکان را معرفی نمایید.
+>`نکته:`
+>قبل از ادامه توضیحات، توجه داشته باشید که برای دریافت گزارش بروزرسانی مکان بایستی توسط متد `addListener` کلاس مورد نظر برای دریافت بروزرسانی مکان را معرفی نمایید.
 
-`نکته:`
-درصورتی که نیازی به دریافت مداوم مکان ندارید، می توانید از روش های کم هزینه تر مانند درخواست فقط یکبار با استفاده از متد `requestSingleLocation` یا درخواست به مدت معین با استفاده از متد `startTrackingMe` و روشهای دیگری که توسط چابک ارائه می شود، استفاده نمایید.
+>`نکته:`
+>درصورتی که نیازی به دریافت مداوم مکان ندارید، می توانید از روش های کم هزینه تر مانند درخواست فقط یکبار با استفاده از متد `requestSingleLocation` یا درخواست به مدت معین با استفاده از متد `startTrackingMe` و روشهای دیگری که توسط چابک ارائه می شود، استفاده نمایید.
 
 ### پارامتر ورودی LocationParams
 پارامترهای مکان یابی برای تنظیم دقت، فاصله و دوره زمانی گزارش مکان توسط تنها پارامتر ورودی این متد انجام می شود.
@@ -61,8 +61,8 @@ enum LocationAccuracy {
 ### MEDIUM
 این مقدار را برای دریافت دقت مکان‌یابی در یک بلاک شهری بکار ببرید، که دقتی در حدود تقریبی ۱۰۰ متر دارد، این مقدار، خطای نسبتا بزرگی درنظر گرفته می شود، و به احتمال زیاد باتری کمتری مصرف خواهد کرد. با این تنظیم سرویس مکان‌یابی به احتمال زیاد از Wifi‌ و دکل های مخابراتی برای مکان‌یابی استفاده خواهد کرد.
 
-`نکته:`
-انتخاب منبع دریافت مکان به فاکتورهای زیاد دیگری بستگی دارد، مثلا در دسترس بودن هر منبع، اگر به هر دلیلی منبع مورد نظر در دسترس نباشد، فاکتورها تغییر خواهد کرد.
+>`نکته:`
+>انتخاب منبع دریافت مکان به فاکتورهای زیاد دیگری بستگی دارد، مثلا در دسترس بودن هر منبع، اگر به هر دلیلی منبع مورد نظر در دسترس نباشد، فاکتورها تغییر خواهد کرد.
 
 
 ### LOW
@@ -198,42 +198,98 @@ locationManager.requestSingleLocation(new LocationListener() {
             }
         });
 ```
-`نکته:`
-درصورتی که با استفاده از متد `startTrackingMe` مکان یابی زماندار را فعال کرده باشید، تا زمانی که این مدت زمان به پایان نرسیده است، متد `requestSingleLocation` عمل نخواهد کرد.
+>`نکته:`
+>درصورتی که با استفاده از متد `startTrackingMe` مکان یابی زماندار را فعال کرده باشید، تا زمانی که این مدت زمان به پایان نرسیده است، متد `requestSingleLocation` عمل نخواهد کرد.
 
 ### مکان یابی براساس مدت زمان و متر
+با کمک متد startTrackingMe می توانید در طول زمان مشخصی و با یک دوره زمانی معین و حداقل فاصله جابجایی، گزارش مکانیابی را دریافت نمایید.
 ```java
 public void startTrackingMe(long duration, long interval, float distance)
 ```
+پارامتر اول `duration` مدت زمان انجام مکان یابی، پارامتر دوم `interval` دوره زمانی اعلام مکان و پارامتر سوم، `distance` حداقل میزان جابجایی مورد نیاز برای اعلام مکان می باشد.
 
+>`نکته:`
+>پس از پایان زمان تعیین شده، سرویس مکان یابی بصورت خودکار متوقف خواهد شد.
+
+>`نکته:`
+>توجه داشته باشید که در حالت Tracking متد `requestSingleLocation` عمل نخواهد کرد.
 
 ### Geofence
+قابلیت حصار جغرافیایی یا Geofence‌ برای تعریف یک محدوده مشخص برای مکان یابی کاربر استفاده می شود.
+با استفاده از متد `setUpGeofence` می توانید پارامترهای مورد نیاز Geofence‌ را تعریف و فعال نمایید،‌این 
+با تعریف Geofence می توان ورود و خروج کاربر به/از محدوده مورد نظر را تشخیص داد.
+
 ```java
 public void setUpGeofence(final GeofenceParams params, String enterMessage, String exitMessage, int count)
+```
+پارامتراول این متد یک شی، از نوع `GeofenceParams` می باشد که بایستی مانند نمونه زیر مقداردهی شود:
+
+```java
+GeofenceParams geofenceParams = new GeofenceParams.Builder()
+    .setCenter("geoFenceId", 35.759227, 51.401044)
+    .setExpire(1508239200264)
+    .setRadius(1200).build();
+```
+پارامتر دوم `setUpGeofence` یک پیام متنی برای نمایش در زمان ورود به محدوده مورد نظر است.
+پارامتر سوم نیز پیام متنی برای نمایش در زمان خروج از محدوده می باشد.
+پارامتر چهارم این متد نیز یک عدد برای تعیین حداکثر تعداد نمایش مجموع پیامهای ورود و خروج به محدوده است.
+
+### متدهای GeofenceParams
+*متد `setCenter`*
+با استفاده از متد `setCenter` بایستی مرکز محدوده مورد نظر را به همراه شناسه ای یکتا مشخص نمایید.
+پارامتر اول این متد یک مقدار String بعنوان شناسه یکتا و پارامترهای بعدی به ترتیب Latitude و Longitude مرکز محدوده مورد نظر می باشد.
+
+*متد `setExpire`*
+زمان منقضی شدن این Geofence برحسب میلی ثانیه در آینده، را با این متد ست کنید.
+
+*متد `setRadius`*
+شعاع محدوده تعیین شده را با این متد تنظیم نمایید.
+
+
+### حذف یک Geofence
+به کمک متد `removeGeofenceById` و با شناسه یکتای Geofence که در زمان ایجاد آن تعیین نمودید می توانید این Geofence را حذف نمایید.
+```java
 public void removeGeofenceById(String geofenceId)
+```
+
+### حذف گروهی Geofence ها
+با استفاده از متد `removeGeofencesByIds` و لیستی از شناسه های Geofence ها می توانید همه آنها را یکجا حذف کنید.
+```java
 public void removeGeofencesByIds(List<String> geofenceIds)
 ```
 
 ### GetLastLocation
+پس از اینکه کلاینت مکان یابی متصل شد، می توانید با استفاده از متد getLastLocation آخرین مکان ثبت شده کاربر را دریافت کنید که لزوما مکان بروزشده نمی باشد.
 ```java
 public Location getLastLocation()
 ```
 
 ### publishLocation
+به کمک متد publishLocation می توانید موقعیت مکانی کاربر را بعنوان رویدادی بنام geo ارسال نمایید.
 ```java
 public void publishLocation(Location location)
 ```
 
 ### enableBackgroundMode
+درصورتی که بخواهید سرویس مکان‌یابی حتی زمانی که برنامه شما Terminate شده یا وقتی که در background قرار دارد، عمل گزارش مکان را ادامه دهد، می توانید توسط متد enableBackgroundMode آن را فعال کنید.
 ```java
 public void enableBackgroundMode()
 ```
+
+
+
 ### disableBackgroundMode
+برای غیرفعالسازی امکان background service می توانید این متد را فراخوانی کنید.
 ```java
 public void disableBackgroundMode()
 ```
+با فراخوانی این متد درحالت kill‌ بودن برنامه سرویس مکانی فراخوانی نمی شود و شما به اطلاعات مکانی دسترسی نخواهید داشت.
+
+>`نکته:`
+>وقتی از امکان Geofence و Tracking استفاده می کنید حالت Background‌ بصورت خودکار فعال می شود.
 
 ### isBackgoundModeEnabled
+برای بررسی فعال بودن یا نبودن امکان background service می توانید از این متد استفاده کنید، مقدار بازگشتی یک boolean‌ می باشد.
 ```java
 public boolean isBackgoundModeEnabled()
 ```
