@@ -458,6 +458,18 @@ footer {
   background: #2b2f39;
   color: #fff;
   transition: all 0.3s;
+  position: relative;
+  .affix {
+    top: 0;
+    width: 250px;
+  }
+  .affix-top {
+    width: 250px;
+  }
+  .affix-bottom {
+    position: absolute;
+    width: 250px;
+  }
   &.active {
     margin-right: -250px;
   }
@@ -489,7 +501,7 @@ footer {
             right: 0;
             height: 100%;
             width: 2px;
-            top:0;
+            top: 0;
             background-color: #006fff;
           }
         }
