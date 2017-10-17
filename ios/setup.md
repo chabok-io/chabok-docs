@@ -4,53 +4,11 @@ title: راه‌اندازی چابک
 layout: ios
 permalink: ios/setup.html
 prev: installation.html
-next: notification.html
+next: publishingMessages.html
 ---
-
 ### مقداردهی اولیه
 
-در متد `didFinishLaunchingWithOptions` در کلاس `AppDelegate` کدهای زیر را اضافه کنید.
-
-
-برای انتخاب سرورهای `chabok sandbox` از کد زیر استفاده کنید:
-```objc
-Objc:
-[PushClientManager setDevelopment:YES];
-```
-```swift
-Swift:  
-PushClientManager.setDevelopment(true)
-```
-
-حالا یک `singleton instance` از `PushClientManager` با استفاده از `defaultManager` ایجاد کنید:
-
-```objc
-Objc:
-self.manager = [PushClientManager defaultManager];
-```
-```swift
-Swift:
-self.manager = PushClientManager.default()
-```
-سپس delegate  را از  AppDelegate اضافه کنید:
-```objc
-Objc:
-[self.manager addDelegate:self];
-```
-```swift
-Swift:
-self.manager.addDelegate(self)
-```
-سپس کد زیر را اضافه کنید :
-```objc
-Objc:
-[self.manager application:application didFinishLaunchingWithOptions:launchOptions])
-```
-```swift
-Swift:
-self.manager.application(application, didFinishLaunchingWithOptions: launchOptions)
-```
-اکنون حساب کاربری `APP_ID، SDK_USERNAME` و `SDK_PASSWORD` را تعریف کنید. شما می توانید `SDK_KEY` خود را از پنل وب چابک پیدا کنید:
+برای دریافت یا ارسال پیام از/به سرور چابک، بایستی یک نمونه از کلاس AdpPushClient بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست. برای این منظور در متد `didFinishLaunchingWithOptions` کلاس `AppDelegate`  کدهای زیر را اضافه کنید.
 
 ```objc
 Objc:
@@ -67,7 +25,46 @@ userName:"SDK_USERNAME" ,
 password:"SDK_PASSWORD" )
 ```
 
-زمان آن است که کاربر را با یک `userId` ثبت کنید.
+### پارامترها
+
+با استفاده از متد بالا یک نمونه از AdpPushClient مقدار دهی اولیه می شود. در این متد بجای پارامتر‌های YOUR_APP_ID, YOUR_API_KEY, SDK_USERNAME, SDK_PASSWORD مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش پیش‌نیازها توضیح داده شده است.
+
+
+`نکته:` ترکیب APP_ID/SENDERID به عنوان YOUR_APP_ID مورد استفاده قرار می‌گیرد.
+
+### توضیح متدها
+
+۱. متد setDevelopment
+
+مشخص می‌کند که برنامه به محیط تستی چابک متصل شود یا به محیط عملیاتی. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
+
+```objc
+Objc:
+[PushClientManager setDevelopment:YES];
+```
+```swift
+Swift:
+PushClientManager.setDevelopment(true)
+```
+
+
+۲. متد register
+
+با دو امضای متفاوت وجود دارد: امضای اول که تنها شناسه کاربر را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام میکند.
+
+```objc
+Objc:
+self.manager.registerUser = userId
+```
+```swift
+Swift:
+self.manager.registerUser(userId)
+```
+
+
+امضای دوم که علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی که کاربر باید روی آن‌ها عضو شود را نیز دریافت می کند. با ثبت نام در این کانال‌ها کاربر پیام‌های ارسالی روی آن‌ها را دریافت خواهد نمود.
+
+
 ```objc
 Objc:
 [self.manager registerUser:@"USER_ID" channels:@[@"YOUR_CHANNEL" ]
@@ -79,7 +76,7 @@ registrationHandler:^(BOOL isRegistered, NSString *userId, NSError *error) {
 Swift:
 self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
 ```
-بعد از ثبت نام برای اولین بار، `self.manager.userId` تنظیم خواهد شد و شما میتوانید پنل را بررسی کنید تا ببینید آیا `userId` ثبت شده است یا خیر.
+متغیر USER_ID شناسه کاربر برای ثبت نام در چابک می‌باشد و ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود شناسه کاربری می تواند هر فیلد باارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. شماره موبایل، کدملی، شماره حساب و یا ایمیل مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند.
 
 رویداد ها:
 ```objc
