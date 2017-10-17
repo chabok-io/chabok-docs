@@ -1,6 +1,6 @@
 ---
 id: certificate
-title: ایجاد درخواست سرتیفیکیت
+title: ایجاد گواهی اپل
 layout: ios
 permalink: ios/certificate.html
 
