@@ -11,6 +11,7 @@ next: location-tracking.html
 برای استفاده از موقعیت مکانی در حالت `Background Mode`، ابتدا وارد بخش `Capabilities` پروژه خود شده و از قسمت `Background Modes` گزینه `Location updates` را فعال کنید.
 
 > `نکته` : در صورت فعال نمودن گزینه فوق، کلید `location` باید به فایل `info.plist` اضافه شود، همانند کد زیر :
+
 ```xml
 <key>UIBackgroundModes</key>
 <array>
