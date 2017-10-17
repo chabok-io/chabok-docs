@@ -2,25 +2,22 @@
 layout: default
 sectionid: windows
 ---
+{% include nav_windows.html %}
 
-<section class="post container">
-  <div class="entry">
+<div class="entry" id="content">
     <h1>
-      {{ page.title }}
+        {{ page.title }}
     </h1>
     <div class="subHeader">{{ page.description }}</div>
 
     {{ content }}
 
     <div class="docs-prevnext">
-      {% if page.prev %}
+        {% if page.prev %}
         <a class="docs-prev" href="/windows/{{ page.prev }}">قبلی &larr;</a>
-      {% endif %}
-      {% if page.next %}
+        {% endif %}
+        {% if page.next %}
         <a class="docs-next" href="/windows/{{ page.next }}">&rarr; بعدی </a>
-      {% endif %}
+        {% endif %}
     </div>
-  </div>
-
-  {% include nav_windows.html %}
-</section>
+</div>

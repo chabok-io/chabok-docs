@@ -2,25 +2,22 @@
 layout: default
 sectionid: android
 ---
-
-<section class="post container">
-  <div class="entry">
+{% include nav_android.html %}
+<div class="entry" id="content">
     <h1>
-      {{ page.title }}
+        {{ page.title }}
     </h1>
     <div class="subHeader">{{ page.description }}</div>
 
     {{ content }}
 
     <div class="docs-prevnext">
-      {% if page.prev %}
+        {% if page.prev %}
         <a class="docs-prev" href="/android/{{ page.prev }}">قبلی &larr;</a>
-      {% endif %}
-      {% if page.next %}
+        {% endif %}
+        {% if page.next %}
         <a class="docs-next" href="/android/{{ page.next }}">&rarr; بعدی </a>
-      {% endif %}
+        {% endif %}
     </div>
-  </div>
+</div>
 
-  {% include nav_android.html %}
-</section>

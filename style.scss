@@ -16,19 +16,6 @@ html {
   min-height: 100%;
 }
 
-.container {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
 h1,
 h2,
 h3,
@@ -188,11 +175,6 @@ pre {
   right: 0;
   top: 0;
   min-width: 730px;
-
-  .container {
-    z-index: 1;
-    position: relative;
-  }
   .chabokLogo {
     float: right;
     margin: 10px 5px;
@@ -257,32 +239,6 @@ pre {
   }
 }
 
-nav {
-  float: left;
-  margin-top: 23px;
-  font-size: 18px;
-  @include mobile {
-    float: none;
-    margin-top: 9px;
-    display: block;
-    font-size: 14px;
-  }
-  a {
-    margin-left: 20px;
-    color: $darkGray;
-    text-align: right;
-    font-weight: 300;
-    @include mobile {
-      margin: 0 10px;
-      color: $blue;
-    }
-  }
-}
-
-//
-// .main
-//
-
 #main {
   margin-top: 70px;
 }
@@ -331,9 +287,9 @@ nav {
     direction: rtl;
   }
   .entry {
-    float: left;
-    width: 100%;
-    max-width: 650px;
+    p {
+      line-height: 200%;
+    }
   }
 }
 
@@ -435,11 +391,11 @@ footer {
 }
 
 .docs-next {
-  float: right;
+  float: left;
 }
 
 .docs-prev {
-  float: left;
+  float: right;
 }
 
 .platfrombox {
@@ -466,13 +422,153 @@ footer {
   }
 }
 
-.docs-prevnext{
+.docs-prevnext {
   margin: 25px 0 0;
-  border-top:1px solid #dddddd;
+  border-top: 1px solid #dddddd;
   padding: 25px 0 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.navbar {
+  padding: 15px 10px;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 40px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+/* ---------------------------------------------------
+    SIDE BAR
+----------------------------------------------------- */
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: #2b2f39;
+  color: #fff;
+  transition: all 0.3s;
+  &.active {
+    margin-right: -250px;
+  }
+  .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
+  }
+  ul {
+    background: #242730;
+    margin: 0;
+    padding: 0;
+    p {
+      color: #fff;
+      padding: 10px;
+    }
+    li {
+      padding: 10px 25px 10px 10px;
+      position: relative;
+      a {
+        font-size: 14px;
+        display: block;
+        color: #afafaf !important;
+        font-weight: 100;
+        &.active {
+          color: #FFF !important;
+          &:before {
+            position: absolute;
+            content: '';
+            right: 0;
+            height: 100%;
+            width: 2px;
+            top:0;
+            background-color: #006fff;
+          }
+        }
+      }
+      &:hover {
+        color: #fff;
+        background: #14161c;
+      }
+      &.active > a, a[aria-expanded="true"] {
+        color: #fff;
+        background: #6d7fcc;
+      }
+    }
+  }
+
+  h3 {
+    margin: 0;
+    line-height: 40px;
+    padding: 10px 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    position: relative;
+    a {
+      color: #fff;
+      display: block;
+    }
+    svg {
+      position: absolute;
+      left: 10px;
+      width: 16px;
+      top: 10px;
+    }
+  }
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+  padding: 10px 30px;
+  min-height: 100vh;
+  transition: all 0.3s;
+  width: 100%;
+  img {
+    max-width: 700px;
+    text-align: center;
+  }
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #sidebarCollapse span {
+    display: none;
+  }
+}
+
+.chabok-header {
+  position: relative;
+  height: 60px;
+  width: 100%;
+  z-index: 10;
+  padding: 0 20px 0 40px;
+  background: #f7f7f7;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  transition: all .3s ease-in;
+  right: 0;
+  top: 0;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
 @import "svg-icons";
+@import "highlights";
