@@ -14,6 +14,8 @@
       title: پیام چابک
     - id: customize
       title: شخصی‌سازی
-    - id: event-handeling
+    - id: event-handling
       title: ‌مدیریت رویدادها
+    - id: location-tracking
+      title: ‌مکان‌یابی
 
