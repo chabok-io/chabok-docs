@@ -12,7 +12,7 @@ prev: installation.html
 > `نکته` : کتابخانه چابک در حال حاضر برای Windows Phone 8.1، Windows 8.1
 > و Windows Universal 10 در دسترس می باشد
 
-> `نکته` : امکان استفاده از Push Notification (Cloud messaging) در
+> `نکته` : امکان استفاده از (Push Notification (Cloud messaging در
 > پروژه های `UWP` در حال حاضر امکان پذیر نمی باشد (به زودی در دسترس قرار
 > خواهد گرفت).
 
