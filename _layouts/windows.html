@@ -9,15 +9,17 @@ sectionid: windows
         {{ page.title }}
     </h1>
     <div class="subHeader">{{ page.description }}</div>
-
-    {{ content }}
-
-    <div class="docs-prevnext">
-        {% if page.prev %}
-        <a class="docs-prev" href="/windows/{{ page.prev }}">قبلی &larr;</a>
-        {% endif %}
-        {% if page.next %}
-        <a class="docs-next" href="/windows/{{ page.next }}">&rarr; بعدی </a>
-        {% endif %}
+    <div class="row">
+        <div class="col-md-12">
+            {{ content }}
+            <div class="docs-prevnext">
+                {% if page.prev %}
+                <a class="docs-prev" href="/windows/{{ page.prev }}">&rarr;قبلی </a>
+                {% endif %}
+                {% if page.next %}
+                <a class="docs-next" href="/windows/{{ page.next }}"> بعدی &larr;</a>
+                {% endif %}
+            </div>
+        </div>
     </div>
 </div>
