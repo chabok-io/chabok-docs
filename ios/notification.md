@@ -7,7 +7,7 @@ prev: publishingMessages.html
 next: events.html
 ---
 
- ###  راه‌اندازی اعلان‌ها
+ ### راه‌اندازی اعلان‌ها
 
 
 کد زیر را درون `AppDelegate` خود وارد کنید. این به مشتری چابک کمک می کند تا `remote` و `local notification`  را مدیریت کند:
