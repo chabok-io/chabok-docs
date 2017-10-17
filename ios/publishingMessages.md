@@ -3,12 +3,11 @@ id: publishingMessages
 title: پیام چابک
 layout: ios
 permalink: ios/publishingMessages.html
-prev: delegation.html
-next: location-tracking.html
+prev: notification.html
+next: events.html
 ---
+### پیام چابک
 
-پیام چابک
--------------
 برای انتشار پیام از مشتری به سرور چابک، از این استفاده کنید:
 
 ```objc
@@ -43,6 +42,7 @@ Objc:
 }
 ```
 ```swift
+Swift:
 func pushClientManagerDidReceivedMessage(_ message: PushClientMessage!) {
 // Called When PushClientManager has been received new message from server
 }
@@ -50,7 +50,7 @@ func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage!) {
 // Called When PushClientManager has received new delivery from server
 }
 ```
-### Channel Subscription
+### عضویت در کانال
 
 
 برای عضویت در یک کانال میتوانید از موارد زیر استفاده کنید: 
@@ -60,7 +60,7 @@ Objc:
 
 [self.manager subscribe:@"myAlerts"]; // private (personal) channel 
 [self.manager subscribe:@"public/sport"]; // public channel 
-[self.manager unsubscribe:@"public/+"]; // all public channels 
+[self.manager subscribe:@"public/+"]; // all public channels 
 
 ```
 ```swift
@@ -68,6 +68,24 @@ Swift:
 
 manager.subscribe("myAlerts") // private (personal) channel 
 manager.subscribe("public/sport") // public channel 
+manager.subscribe("public/+") // all public channels 
+
+``` 
+ همچنین برای لغو عضویت در یک کانال میتوانید از موارد زیر استفاده کنید:
+
+``` objc
+Objc: 
+
+[self.manager unsubscribe:@"myAlerts"]; // private (personal) channel 
+[self.manager unsubscribe:@"public/sport"]; // public channel 
+[self.manager unsubscribe:@"public/+"]; // all public channels 
+
+```
+```swift
+Swift: 
+
+manager.unsubscribe("myAlerts") // private (personal) channel 
+manager.unsubscribe("public/sport") // public channel 
 manager.unsubscribe("public/+") // all public channels 
 
 ``` 

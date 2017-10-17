@@ -1,6 +1,8 @@
 - title: شروع سریع windows
   items:
+    - id : introducing
+      title: مفاهیم اولیه
     - id: installation
-      title: نصب SDK
-    - id: introducing
-      title: معرفی چابک
+      title: نصب چابک
+    - id: setup
+      title: راه‌اندازی چابک

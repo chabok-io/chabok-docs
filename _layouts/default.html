@@ -7,39 +7,189 @@
     {% include meta.html %}
     <link rel="stylesheet" type="text/css" href="http://chabokpush.com/www/lib/css/bootstrap.css">
     <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="https://cdn.rawgit.com/rastikerdar/vazir-font/v15.0.0/dist/font-face.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdn.rawgit.com/rastikerdar/vazir-code-font/v1.0.3/dist/font-face.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="stylesheet" type="text/css" href="http://chabokpush.com/www/css/main.css"/>
+    <link href="https://cdn.rawgit.com/rastikerdar/vazir-code-font/v1.0.3/dist/font-face.css" rel="stylesheet"
+          type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css"/>
 
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+          href="{{ site.baseurl }}/feed.xml"/>
+    <script src="http://chabokpush.com/bower_components/jQuery/dist/jquery.min.js"></script>
+
 </head>
 
 <body>
-    <div class="wrapper-masthead">
-        <div>
-            <header class="masthead clearfix">
-                <a  href="{{ site.baseurl }}/"><img src="{{ site.avatar }}" class="chabokLogo">
+<div class="fullSlide">
+    <div class="chabokHeader static" style="opacity: 1" id="chabokheader">
+        <div class="toplinks">
+            <a class="med15 loginpanel" style="cursor: pointer;color:#00325d;margin-right: 40px"> ورود</a>
+        </div>
+        <div class="toplinks">
+            <a href="http://chabokpush.com/careers.html" class="med15"> فرصت های شغلی</a>
 
-        <div class="chabok">
-            <h1 class="chabokColor reg34">
-               {{ site.name }}
-            </h1>
         </div>
-    </a>
-            </header>
+        <div class="toplinks">
+            <a href="pricing.html" class="med15">قیمت‌گذاری</a>
         </div>
+        <div class="toplinks">
+
+            <a href="http://doc.chabokpush.com/" class="med15">پلتفرم‌ها</a>
+
+        </div>
+        <div class="toplinks">
+
+            <a href="http://chabokpush.com/usage.html" class="med15"> موارد استفاده</a>
+
+        </div>
+        <div class="toplinks">
+
+            <a href="http://chabokpush.com/chabok.html" class="med15">قابلیت‌ها</a>
+
+        </div>
+        <a href="http://chabokpush.com/"><img src="{{ site.avatar }}" class="chabokLogo">
+
+            <div class="chabok">
+                <h1 class="chabokColor reg34">
+                    {{ site.name }}
+                </h1>
+            </div>
+        </a>
+
     </div>
 
-    <div id="main" role="main">
+    <div class="container-fluid" style="padding-top: 50px">
         {{ content }}
+
     </div>
+    {% include footer.html %}
+</div>
+{% include analytics.html %}
 
-          {% include footer.html %}
+<script>$(document).ready(function () {
 
-    {% include analytics.html %}
+    var windowHeight = 0;
+    var windowWidth = 0;
+    window.direction = 'left';
+    var citysvg = 0;
+
+
+    function chnageSizeOfWindwo() {
+
+        if ($(window).height() > 600) {
+            windowHeight = $(window).height()
+        } else {
+            windowHeight = 600
+        }
+        if ($(window).width() > 1200) {
+            windowWidth = $(window).width()
+        } else {
+            windowWidth = 1200;
+        }
+        $('.border').css({
+            borderRight: windowWidth + 'px solid #fff'
+        })
+        var cityheight = windowWidth * .25
+        $('.citysvg').css({
+            height: cityheight
+        })
+        $('.background > .circle').css({
+            bottom: 165 + ((cityheight - 300 ) / 2)
+        });
+        $('.background > .threeg').css({
+            bottom: 165 + ((cityheight - 300 ) / 2)
+        });
+        $('.background > .bubble').css({
+            bottom: 165 + ((cityheight - 300 ) / 2)
+        });
+        $('.background > .antena').css({
+            bottom: 165 + ((cityheight - 300 ) / 2)
+        });
+
+        boatbottom = 20 + ((cityheight - 300 ) / 15);
+        $('.boatholder').css({
+            bottom: boatbottom
+        });
+        $('.car').css({
+            left: windowWidth / 4.8
+        });
+
+
+        $('.fullSlide').css({
+            width: windowWidth,
+            height: windowHeight
+        })
+        $('.halfSlide').css({
+            width: windowWidth,
+            height: windowHeight / 2
+        })
+        $('.halfSlidemin').css({
+            width: windowWidth,
+            minHeight: windowHeight / 2
+        })
+    }
+
+    function gotoSlide2() {
+        $('.gotoSlide2').click(function () {
+            $('html,body').animate({scrollTop: windowHeight}, '1000', 'linear')
+        })
+    }
+
+    function gotoDemoApp() {
+        var height = $(document).height() - windowHeight + 120;
+        console.log($(document).height());
+        $('.demo').click(function () {
+            $('html,body').animate({scrollTop: height}, '2000', 'linear')
+        })
+    }
+
+
+    function circle() {
+        $('.circle').hover(function () {
+            $(this).siblings(' .antena,.bubble,.threeg').removeClass('hide');
+            $(this).remove()
+        })
+    }
+
+
+    function khabarname() {
+        $('.khabrnamebutt').click(function () {
+            var userEmail = $('#khabrnameEmail').val();
+            if (!userEmail || userEmail == '' || !userEmail.match(/.+@.+\..+/)) {
+                return alert('Ø¢Ø¯Ø±Ø³ Ø§ÛŒÙ…ÛŒÙ„ Ø´Ù…Ø§ Ø¯Ø±Ø³Øª ÙˆØ§Ø±Ø¯ Ù†Ø´Ø¯Ù‡ Ø§Ø³Øª');
+            }
+            $.ajax({
+                url: 'https://push.adpdigital.com/api/email/subscribe',
+                type: 'POST',
+                data: {
+                    email: userEmail,
+                    list: 'users',
+                    appId: 'chabok-demo'
+                }
+            })
+                .done(function (request) {
+                    alert('Ø¢Ø¯Ø±Ø³ Ø§ÛŒÙ…ÛŒÙ„ Ø´Ù…Ø§ Ø¨Ø§ Ù…ÙˆÙÙ‚ÛŒØª Ø¨Ù‡ Ø®Ø¨Ø±Ù†Ø§Ù…Ù‡ Ú†Ø§Ø¨Ú© Ø§ÙØ²ÙˆØ¯Ù‡ Ø´Ø¯');
+                })
+                .fail(function (err) {
+                    alert('Ø®Ø·Ø§ Ø¯Ø± Ø§Ø±ØªØ¨Ø§Ø· Ø¨Ø§ Ø³Ø±ÙˆØ±ØŒ Ù„Ø·ÙÙ† Ø¨Ø¹Ø¯Ù† Ø¯ÙˆØ¨Ø§Ø±Ù‡ Ø§Ù…ØªØ­Ø§Ù† Ú©Ù†ÛŒØ¯');
+                    $('.loginError').html(JSON.parse(err.responseText).error.message)
+                })
+        })
+    }
+
+    $(window).resize(function () {
+        chnageSizeOfWindwo()
+    });
+
+    khabarname();
+    chnageSizeOfWindwo();
+    gotoSlide2();
+    gotoDemoApp();
+    circle();
+});
+
+</script>
 </body>
 
 </html>

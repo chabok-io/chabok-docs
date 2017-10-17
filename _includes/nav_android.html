@@ -1,24 +1,37 @@
 <div class="nav-docs">
-  <!-- Docs Nav -->
-  {% for section in site.data.nav_android %}
+    <!-- Docs Nav -->
     <div class="nav-docs-section">
-      <h3>{{ section.title }}</h3>
-      <ul>
-        {% for item in section.items %}
-          <li>
-            {{ item | android_sidebar_link}}
-            {% if item.subitems %}
-              <ul>
-                {% for subitem in item.subitems %}
-                  <li>
-                    {{ subitem | android_sidebar_link }}
-                  </li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
+        <h3><a href="/ios/introducing.html">iOS</a></h3>
     </div>
-  {% endfor %}
+    <div class="nav-docs-section">
+        <h3><a href="/android/introducing.html">Android</a></h3>
+    </div>
+    {% for section in site.data.nav_android %}
+    <div class="nav-docs-section">
+        <h3>{{ section.title }}</h3>
+        <ul>
+            {% for item in section.items %}
+            <li>
+                {{ item | android_sidebar_link}}
+                {% if item.subitems %}
+                <ul>
+                    {% for subitem in item.subitems %}
+                    <li>
+                        {{ subitem | android_sidebar_link }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+    <div class="nav-docs-section">
+        <ul>
+            <li>
+                <a style="color: dodgerblue; font-weight: bold" href="http://doc.chabokpush.com/">&rarr; بازگشت</a>
+            </li>
+        </ul>
+    </div>
 </div>

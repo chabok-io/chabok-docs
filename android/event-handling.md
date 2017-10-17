@@ -1,8 +1,10 @@
 ---
-id: event-handeling
+id: event-handling
 title: مدیریت رویدادها
 layout: android
 permalink: android/event-handling.html
+prev: customize.html
+next: location-tracking.html
 ---
 
 ## ارسال وضعیت پیام‌های دریافتی

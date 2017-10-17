@@ -1,6 +1,6 @@
 ---
 id: installation
-title: افزودن کتابخانه
+title: نصب چابک
 layout: ios
 permalink: ios/installation.html
 prev: required.html
@@ -8,9 +8,7 @@ next: setup.html
 
 ---
 
-افزودن کتابخانه 
--------------
-
+### افزودن کتابخانه
 
 چابک از طریق CocoaPods در دسترس است، برای نصب آن به سادگی خط زیر را به Podfile خود اضافه کنید:
 
