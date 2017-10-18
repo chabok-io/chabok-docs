@@ -69,6 +69,9 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 self.manager.application(application, didReceive: notification)
 }
 ```
+> `نکته:` کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی اعلان
+> (نوتیفیکیشن) نمایش می‌دهد. درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، کد
+> شخصی‌سازی مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
 
 ### NSNotificationCenter
 
