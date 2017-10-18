@@ -274,6 +274,21 @@ pre {
     padding: 0.5em 1em;
     color: #1f1f1f;
     font-size: 22px;
+    p{
+      padding: 0;
+    }
+  }
+
+  ul{
+    margin:0;
+    margin-right: 30px;
+    padding:0;
+    li{
+      list-style: disc;
+      padding:10px  0;
+      line-height: 200%;
+      font-family: $helveticaNeue;
+    }
   }
   .comments {
     margin-top: 10px;
