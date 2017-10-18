@@ -1,6 +1,6 @@
 --- 
 id: location-tracking 
-title: مکان یابی 
+title: مکان‌یابی 
 layout: ios 
 permalink: ios/location-tracking.html 
 prev: events.html
@@ -28,7 +28,10 @@ import AdpPushClient
 let locationManager = CoreGeoLocation.sharedInstance()
 ```
 ----------
-`نکته :`  برای استفاده از قابلیت مکان یابی، پیکربندی های لازم که در بخش [پیکربندی](/ios/location-config.html) بیان شده را مطالعه کرده و از آن پیروی کنید.
+
+> `نکته :`  برای استفاده از قابلیت مکان یابی، پیکربندی های لازم که در
+> بخش [پیش نیازهای مکان‌یابی](/ios/location-config.html) بیان شده را
+> مطالعه کرده و از آن پیروی کنید.
 
 ### دریافت موقعیت مکانی
 ابتدا پیکربندی متناسب برای دریافت موقعیت مکانی را تعیین کرده و با استفاده از متد `startLocationUpdate` شروع به دریافت موقعیت مکانی کاربر کنید. به قطعه کد زیر دقت کنید‌:
@@ -60,7 +63,7 @@ locationManager.desiredAccuracy = kCLLocationAccuracyBest
             
 locationManager.startUpdate()
 ```
-***رویداد دریافت موقعیت مکانی***
+### رویداد دریافت موقعیت مکانی
 جهت دریافت موقعیت های مکانی باید `CoreGeoLocationDelegate`  را به `@interface`  کلاس خود اضافه کنید و متد زیر را پیاده سازی کنید :
 ``` objc
 Objective-C :
@@ -103,7 +106,12 @@ Swift :
 let locationManager = CoreGeoLocation.sharedInstance()
 locationManager.trackMe(until: 3600, byMeter: kCLLocationAccuracyNearestTenMeters)
 ```
-`نکته :`  متد فوق بعد از دریافت موقعیت مکانی، رویداد  `receivedLocationUpdates:locations` را فراخوانی می کند. همچنین پس از پایان زمان تعیین شد به صورت خودکار عملیات مکان یابی را متوقف می سازد، با متوقف کردن موقعیت کاربر رویداد `didStoppedTrackingMe` فراخوانی خواهد شد.
+
+> `نکته :`  متد فوق بعد از دریافت موقعیت مکانی، رویداد 
+> `receivedLocationUpdates:locations` را فراخوانی می کند. همچنین پس از
+> پایان زمان تعیین شد به صورت خودکار عملیات مکان یابی را متوقف می سازد،
+> با متوقف کردن موقعیت کاربر رویداد `didStoppedTrackingMe` فراخوانی
+> خواهد شد.
 
 برای بررسی وضعیت مکان یابی کاربر می توانید از متد زیر استفاده کنید :
 ``` objc
@@ -162,10 +170,12 @@ locationManager.requestSingleLocation({(_ location: CLLocation?, _ error: Error?
     }
 })
 ```
-`نکته :` با فراخوانی متد فوق ممکن است به عملکرد متدهای  `trackMeUntil:byMeter` و `startLocationUpdate‍` اختلال ایجاد کند.
+
+> `نکته :` با فراخوانی متد فوق ممکن است به عملکرد متدهای 
+> `trackMeUntil:byMeter` و `startLocationUpdate‍` اختلال ایجاد کند.
 
 ### دریافت موقعیت مکانی در حالت Terminated
-امکان دریافت موقعیت مکان در حتی در حالتی که اپلیکشن شما Terminate شده باشد نیز وجود دارد.
+امکان دریافت موقعیت مکان در حتی در حالتی که اپلیکشن شما `Terminate` شده باشد نیز وجود دارد.
 ``` objc
 Objective-C :
 
@@ -176,9 +186,16 @@ Swift :
 
 locationManager.startMonitoringSignificantLocationChanges()
 ```
-`نکته :‍` برای فعال شدن این قابلیت باید حتما `authorization` مربوط به  location روی حالت `kAlways` باشد.
 
-`نکته :` متد فوق ممکن است پس از پیمودن ۵۰۰ متر یا بیشتر اپلیکیشن را به صورت کامل در background اجرا کند. برای داشتن تغییرات موقعیت کاربری به صورت مداوم باید کلید `launchOptions` را از رویداد `didFinishLaunchingWithOptions` و در صورت اجرا شدن توسط `location` متد  `startLocationUpdate‍` را فراخوانی کنید. قطعه کد زیر بیانگر این نکته می باشد.
+> `نکته :‍` برای فعال شدن این قابلیت باید حتما `authorization` مربوط به 
+> location روی حالت `kAlways` باشد.
+
+> `نکته :` متد فوق ممکن است پس از پیمودن ۵۰۰ متر یا بیشتر اپلیکیشن را به
+> صورت کامل در background اجرا کند. برای داشتن تغییرات موقعیت کاربری به
+> صورت مداوم باید کلید `launchOptions` را از رویداد
+> `didFinishLaunchingWithOptions` و در صورت اجرا شدن توسط `location` متد
+> `startLocationUpdate‍` را فراخوانی کنید. قطعه کد زیر بیانگر این نکته
+> می باشد.
 
 ``` objc
 Objective-C :
@@ -204,8 +221,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-## Geofence
-جهت استفاده از قابلیت Geofence باید متد `startMonitoringRegion` را فراخوانی کنید. متد فوق دارای سه overload می باشد :
+## محدوده جغرافیایی
+جهت استفاده از قابلیت `Geofence` باید متد `startMonitoringRegion` را فراخوانی کنید. متد فوق دارای سه overload می باشد :
 
 ``` objc
 Objective-C :
@@ -229,7 +246,9 @@ func startMonitoringRegion(_ center: CLLocationCoordinate2D, radius: CLLocationD
 func startMonitoringRegion(_ region: CLRegion, expireCount count: Int, expireTs ts: TimeInterval, enterMessage enter: String?, exitMessage exit: String?)
 ```
 
-`نکته ` : برای استفاده قابلیت Geofence شما نیاز به استفاده از `startLocationUpdate` و یا `startMonitoringSignificantLocationChanges` نیست.
+> `نکته ` : برای استفاده قابلیت Geofence شما نیاز به استفاده از
+> `startLocationUpdate` و یا `startMonitoringSignificantLocationChanges`
+> نیست.
 
 نمونه کد فوق استفاده از قابلیت geofence را به شما نشان می دهد : 
 
@@ -252,7 +271,8 @@ locationManager.startMonitoringRegion(region)
 
 چنانچه می خواهید یک geofence را start کنید که بتوانید بصورت بسیار ساده آن را مدیریت کنید، می توانید از قطعه کد زیر استفاده کنید :
 
-`نکته` : زمان انقضای تاریخ geofence به صورت `unix millisecond` می باشد.
+> `نکته` : زمان انقضای تاریخ geofence به صورت `unix millisecond` می
+> باشد.
 
 ``` objc
 Objective-C :
@@ -287,7 +307,7 @@ let region: CLRegion? = CLCircularRegion(center: coordinate, radius: radius, ide
 
 locationManager.startMonitoringRegion(region!, expireCount: count, expireTs: expireTs, enterMessage: enterMessage, exitMessage: exitMessage)
 ```
-### رویدادهای Geofence
+### رویدادهای محدوده جغرافیایی
 پس از فراخوانی متد `startMonitoringRegion` رویدادهای زیر فرخوانی خواهند شد :
 
 ``` objc
@@ -320,9 +340,6 @@ func didStartMonitoringRegion(_ region: CLRegion) {
     print("Start monitoring \(region.identifier) region")
 }
 ```
-
-### متوقف سازی geofence
-
 برای متوقف سازی geofence می توانید از متد های زیر استفاده کنید :
 
 ``` objc

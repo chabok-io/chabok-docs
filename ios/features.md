@@ -101,7 +101,10 @@ open func enableEventDelivery(_ eventName: String!, forPublic: Bool, live: Bool)
 
 با فعال کردن قابلیت `enableLocationOnLaunch`، کتابخانه چابک به هنگام باز شدن برنامه و در صورت پیدا کردن موقعیت مکانی کاربر،‌ موقعیت آن را توسط [انتشار رویداد](/ios/events.html) به سرور ارسال می کند.
 
-`نکته` : برای ارسال داده خاصی همراه با انتشار رویداد فوق می توانید داده خود را property به `locationOnLaunchWithDictionary` داده تا همراه با انتشار رویداد ارسال شود.
+> `نکته` : برای ارسال داده خاصی همراه با انتشار رویداد فوق می توانید
+> داده خود را property به `locationOnLaunchWithDictionary` داده تا همراه
+> با انتشار رویداد ارسال شود.
+
 ```objc
 Objc:
 
