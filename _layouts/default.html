@@ -22,49 +22,46 @@
 </head>
 
 <body>
-<div>
-    <div class="chabok-header" id="chabokheader">
-        <div class="toplinks">
-            <a class="med15 loginpanel" style="cursor: pointer;color:#00325d;margin-right: 40px"> ورود</a>
-        </div>
-        <div class="toplinks">
-            <a href="http://chabokpush.com/careers.html" class="med15"> فرصت های شغلی</a>
-
-        </div>
-        <div class="toplinks">
-            <a href="pricing.html" class="med15">قیمت‌گذاری</a>
-        </div>
-        <div class="toplinks">
-
-            <a href="http://doc.chabokpush.com/" class="med15">پلتفرم‌ها</a>
-
-        </div>
-        <div class="toplinks">
-
-            <a href="http://chabokpush.com/usage.html" class="med15"> موارد استفاده</a>
-
-        </div>
-        <div class="toplinks">
-            <a href="http://chabokpush.com/chabok.html" class="med15">قابلیت‌ها</a>
-        </div>
-        <a href="http://chabokpush.com/"><img src="{{ site.avatar }}" class="chabokLogo">
-
-            <div class="chabok">
-                <h1 class="chabokColor reg34">
-                    {{ site.name }}
-                </h1>
-            </div>
-        </a>
+<div class="chabok-header" id="chabokheader">
+    <div class="toplinks">
+        <a class="med15 loginpanel" style="cursor: pointer;color:#00325d;margin-right: 40px"> ورود</a>
+    </div>
+    <div class="toplinks">
+        <a href="http://chabokpush.com/careers.html" class="med15"> فرصت های شغلی</a>
 
     </div>
-
-    <div class="wrapper">
-        {{ content }}
+    <div class="toplinks">
+        <a href="pricing.html" class="med15">قیمت‌گذاری</a>
     </div>
-    {% include footer.html %}
+    <div class="toplinks">
+
+        <a href="http://doc.chabokpush.com/" class="med15">پلتفرم‌ها</a>
+
+    </div>
+    <div class="toplinks">
+
+        <a href="http://chabokpush.com/usage.html" class="med15"> موارد استفاده</a>
+
+    </div>
+    <div class="toplinks">
+        <a href="http://chabokpush.com/chabok.html" class="med15">قابلیت‌ها</a>
+    </div>
+    <a href="http://chabokpush.com/"><img src="{{ site.avatar }}" class="chabokLogo">
+
+        <div class="chabok">
+            <h1 class="chabokColor reg34">
+                {{ site.name }}
+            </h1>
+        </div>
+    </a>
+
 </div>
-{% include analytics.html %}
 
+<div class="wrapper">
+    {{ content }}
+</div>
+{% include footer.html %}
+{% include analytics.html %}
 <script src="http://chabokpush.com/bower_components/jQuery/dist/jquery.min.js"></script>
 {% javascript bootstrap.min.js %}
 {% javascript app.js %}

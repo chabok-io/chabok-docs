@@ -76,7 +76,7 @@ a {
 ul,
 ol {
   margin: 15px 0;
-  padding-left: 30px;
+  padding-right: 30px;
 }
 
 ul {
@@ -291,6 +291,16 @@ pre {
       font-family: $helveticaNeue;
     }
   }
+  ol{
+    margin:0;
+    margin-right: 30px;
+    padding:0;
+    li{
+      padding:10px  0;
+      line-height: 200%;
+      font-family: $helveticaNeue;
+    }
+  }
   .comments {
     margin-top: 10px;
   }
@@ -298,8 +308,10 @@ pre {
     font-size: 15px;
   }
   h1 {
-    text-align: center;
+    text-align: right;
     direction: rtl;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
   }
   .entry {
     p {
@@ -405,18 +417,33 @@ footer {
   }
 }
 
-.docs-next {
-  float: left;
+
+
+.docs-prevnext {
+  margin: 25px 0 ;
+  border-top: 1px solid #dddddd;
+  padding: 25px 0 ;
+
+  .docs-next {
+    float: left;
+  }
+
+  .docs-prev {
+    float: right;
+  }
 }
 
-.docs-prev {
-  float: right;
-}
 
-.platfrombox {
-  background-color: #e4f1fa;
-  border: 1px solid #e6e6e6;
+.platfrom-box {
+  background-color: #eee;
   padding: 25px !important;
+  border-radius: 5px;
+  box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
+
+  &.android{
+    background-color: gray;
+  }
+
   .androidplatform {
     padding: 31px 0 0 0;
     font-size: 30px;
@@ -437,11 +464,6 @@ footer {
   }
 }
 
-.docs-prevnext {
-  margin: 25px 0 0;
-  border-top: 1px solid #dddddd;
-  padding: 25px 0 0;
-}
 
 .wrapper {
   display: flex;
