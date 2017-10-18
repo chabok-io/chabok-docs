@@ -38,7 +38,9 @@ LocationParams params = new Builder().setAccuracy(LocationAccuracy.HIGH).setDist
 در ادامه توضیحات هریک از متدهای شیء `LocationParams` را مشاهده می کنید.
 
 ### دقت مکان‌یابی
-متد
+متد `setAccuracy`
+
+برای تعیین دقت مکان‌یابی از این متد استفاده کنید.
 ```java
 setAccuracy(LocationAccuracy accuracy)
 ```
@@ -73,19 +75,23 @@ enum LocationAccuracy {
 با این تنظیم برنامه شما هیچ بروزرسانی مکان را درخواست نخواهد کرد،‌ولی درخواست بروزرسانی توسط برنامه های دیگر را دریافت خواهد نمود.
 
 ### حداقل فاصله
-متد
+متد `setDistance`
+
+با استفاده از این متد حداقل فاصله برای تریگر کردن مکان‌یابی براساس متر می تواند تنظیم شود.
 ```java
 setDistance(float distance)
 ```
 
-حداقل فاصله برای تریگر کردن مکان‌یابی براساس متر می تواند تنظیم شود.
+
 
 ### دوره تناوب دریافت مکان‌یابی
-متد
+متد `setInterval`
+
+ می توانید فاصله زمانی بین دریافت هر بروزرسانی مکان را براساس میلی‌ثانیه با این متد تنظیم نمایید.
 ```java
 setInterval(long interval)
 ```
-می توانید فاصله زمانی بین دریافت هر بروزرسانی مکان را براساس میلی‌ثانیه تنظیم نمایید.
+
 
 ### متد addListener
 برای دریافت گزارش بروزرسانی مکان بایستی توسط متد `addListener` کلاس مورد نظر برای دریافت بروزرسانی مکان را معرفی نمایید.
@@ -102,15 +108,32 @@ public void removeListener()
 قبل از اینکه کلاس خود را با متد `addListener` معرفی کنید،
  باید اینترفیس  `OnLocationUpdateListener` را برای کلاس مورد نظر خود که قصد دریافت مکان را در آن دارید پیاده سازی نمایید.
  
-به عنوان مثال کلاس Fragment در نمونه کد زیر اینترفیس `OnLocationUpdateListener` را پیاده سازی نموده است:
+ ```java
+ public interface OnLocationUpdateListener {
+     void onConnected(@Nullable Bundle bundle);
+     void onLocationUpdated(Location location);
+     void onSuspended();
+     void onConnectionFailed(ConnectionResult connectionResult);
+     void onGeofencesRegisteredSuccessful();
+ }
+ ```
+ 
+به عنوان مثال کلاس GeoFragment در نمونه کد زیر اینترفیس `OnLocationUpdateListener` را پیاده سازی نموده است:
 
 ```java
 public class GeoFragment extends Fragment 
     implements OnLocationUpdateListener {
     
+    private LocationManager locationManger;
+    
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ...
+        view = inflater.inflate(R.layout.fragment_geo, container, false);
+        
+        locationManger = LocationManager.init(getContext());
+        locationManger.addListener(this);
+        
+        return view;
     }
     
     @Override
@@ -142,41 +165,33 @@ public class GeoFragment extends Fragment
 }
 ```
 
-
-### OnLocationUpdateListener
-
-```java
-public interface OnLocationUpdateListener {
-    void onConnected(@Nullable Bundle bundle);
-    void onLocationUpdated(Location location);
-    void onSuspended();
-    void onConnectionFailed(ConnectionResult connectionResult);
-    void onGeofencesRegisteredSuccessful();
-}
-```
-
 ### متدهای OnLocationUpdateListener
 
 متد `onConnected`
+
 وقتی کلاینت مکان‌یابی متصل شد، این متد فراخوانی خواهدشد
 معمولا در اینجا می توانید مقداردهی های اولیه در نمایش را انجام دهید، مثلا با فراخوانی متد `getLastLocation` از شیء `locationManager` می توانید آخرین مکان ثبت شده را برای نمایش نقطه اولیه روی نقشه دریافت نمایید.
 
 متد `onLocationUpdated`
+
 هربار که مکان براساس تنظیمات اولیه بروزرسانی شود، این متد فراخوانی شده و شیء `Location` شامل اطلاعات نقطه جغرافیایی مورد نظر را می دهد.
 
 متد `onSuspended`
+
 وقتی کلاینت مکان‌یابی بصورت موقت در وضعیت عدم اتصال قرار بگیرد، فراخوانی می شود.
 
 متد `onConnectionFailed`
+
 وقتی کلاینت مکان‌یابی در عملیات اتصال ناموفق بود، فراخوانی می شود.
 
 متد `onGeofencesRegisteredSuccessful`
+
 درصورتی که با متد `setUpGeofence` اقدام به تعریف geofence کرده باشید و با موفقیت ثبت شود، متد فوق فراخوانی خواهد شد.
 
 
 
-### enableLocationOnLaunch
-با استفاده از این متد می توانید گزارش مکان را در کلاس listener ‌خود برای یکبار دریافت نمایید، پس از یکبار گزارش، سرویس مکان یابی بصورت خودکار متوقف خواهد شد.
+### دریافت موقعیت مکانی یکبار در زمان شروع برنامه 
+با استفاده از متد `enableLocationOnLaunch` می توانید گزارش مکان را در کلاس listener ‌خود برای یکبار دریافت نمایید، پس از یکبار گزارش، سرویس مکان یابی بصورت خودکار متوقف خواهد شد.
 می توانید این متد را در جای مناسبی مانند `onCreate` اکتیویتی یا کلاس `Application‌` فراخوانی نمایید.
 ```java
 public void enableLocationOnLaunch()
@@ -184,7 +199,7 @@ public void enableLocationOnLaunch()
 توجه نمایید که برای دریافت گزارش مکان باید کلاس listener ‌خود  را برای دریافت این گزارش معرفی کرده باشید.
 
 ### دریافت یک موقعیت مکانی
- با هربار فراخوانی این متد می توانید مکان بروزشده را یکبار در کلاس listener خود دریافت نمایید.
+ با هربار فراخوانی متد `requestSingleLocation` می توانید مکان بروزشده را یکبار در کلاس listener خود دریافت نمایید.
 
 ```java
 public void requestSingleLocation(final LocationListener listener)
@@ -202,11 +217,11 @@ locationManager.requestSingleLocation(new LocationListener() {
 >درصورتی که با استفاده از متد `startTrackingMe` مکان یابی زماندار را فعال کرده باشید، تا زمانی که این مدت زمان به پایان نرسیده است، متد `requestSingleLocation` عمل نخواهد کرد.
 
 ### مکان یابی براساس مدت زمان و متر
-با کمک متد startTrackingMe می توانید در طول زمان مشخصی و با یک دوره زمانی معین و حداقل فاصله جابجایی، گزارش مکانیابی را دریافت نمایید.
+با کمک متد `startTrackingMe` می توانید در طول زمانی مشخص، با یک تناوب زمانی معین و حداقل فاصله جابجایی، گزارش مکان‌یابی را دریافت نمایید.
 ```java
 public void startTrackingMe(long duration, long interval, float distance)
 ```
-پارامتر اول `duration` مدت زمان انجام مکان یابی، پارامتر دوم `interval` دوره زمانی اعلام مکان و پارامتر سوم، `distance` حداقل میزان جابجایی مورد نیاز برای اعلام مکان می باشد.
+پارامتر اول `duration` مدت زمان انجام مکان یابی و پارامتر دوم `interval` دوره زمانی اعلام مکان برحسب ثانیه و پارامتر سوم، `distance` حداقل میزان جابجایی مورد نیاز برای اعلام مکان برحسب متر می باشد.
 
 >`نکته:`
 >پس از پایان زمان تعیین شده، سرویس مکان یابی بصورت خودکار متوقف خواهد شد.
@@ -236,13 +251,16 @@ GeofenceParams geofenceParams = new GeofenceParams.Builder()
 
 ### متدهای GeofenceParams
 متد `setCenter`
+
 با استفاده از متد `setCenter` بایستی مرکز محدوده مورد نظر را به همراه شناسه ای یکتا مشخص نمایید.
-پارامتر اول این متد یک مقدار String بعنوان شناسه یکتا و پارامترهای بعدی به ترتیب Latitude و Longitude مرکز محدوده مورد نظر می باشد.
+پارامتر اول این متد یک مقدار String بعنوان شناسه یکتا و پارامترهای بعدی به ترتیب طول و عرض جغرافیایی مرکز محدوده مورد نظر می باشد.
 
 متد `setExpire`
-زمان منقضی شدن این Geofence برحسب میلی ثانیه در آینده، را با این متد ست کنید.
+
+زمان منقضی شدن این Geofence برحسب میلی ثانیه در آینده، را با این متد تنظیم کنید.
 
 متد `setRadius`
+
 شعاع محدوده تعیین شده را با این متد تنظیم نمایید.
 
 
@@ -258,27 +276,25 @@ public void removeGeofenceById(String geofenceId)
 public void removeGeofencesByIds(List<String> geofenceIds)
 ```
 
-### GetLastLocation
+### دریافت آخرین مکان ثبت شده کاربر
 پس از اینکه کلاینت مکان یابی متصل شد، می توانید با استفاده از متد getLastLocation آخرین مکان ثبت شده کاربر را دریافت کنید که لزوما مکان بروزشده نمی باشد.
 ```java
 public Location getLastLocation()
 ```
 
-### publishLocation
+### ارسال موقعیت مکانی کاربر بعنوان یک رویداد
 به کمک متد publishLocation می توانید موقعیت مکانی کاربر را بعنوان رویدادی بنام geo ارسال نمایید.
 ```java
 public void publishLocation(Location location)
 ```
 
-### enableBackgroundMode
+### متد enableBackgroundMode
 درصورتی که بخواهید سرویس مکان‌یابی حتی زمانی که برنامه شما Terminate شده یا وقتی که در background قرار دارد، عمل گزارش مکان را ادامه دهد، می توانید توسط متد enableBackgroundMode آن را فعال کنید.
 ```java
 public void enableBackgroundMode()
 ```
 
-
-
-### disableBackgroundMode
+### متد disableBackgroundMode
 برای غیرفعالسازی امکان background service می توانید این متد را فراخوانی کنید.
 ```java
 public void disableBackgroundMode()
