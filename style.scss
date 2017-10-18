@@ -308,8 +308,10 @@ pre {
     font-size: 15px;
   }
   h1 {
-    text-align: center;
+    text-align: right;
     direction: rtl;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
   }
   .entry {
     p {
@@ -415,13 +417,22 @@ footer {
   }
 }
 
-.docs-next {
-  float: left;
+
+
+.docs-prevnext {
+  margin: 25px 0 ;
+  border-top: 1px solid #dddddd;
+  padding: 25px 0 ;
+
+  .docs-next {
+    float: left;
+  }
+
+  .docs-prev {
+    float: right;
+  }
 }
 
-.docs-prev {
-  float: right;
-}
 
 .platfrom-box {
   background-color: #eee;
@@ -453,11 +464,6 @@ footer {
   }
 }
 
-.docs-prevnext {
-  margin: 25px 0 0;
-  border-top: 1px solid #dddddd;
-  padding: 25px 0 0;
-}
 
 .wrapper {
   display: flex;
