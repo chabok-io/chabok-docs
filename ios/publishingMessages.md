@@ -12,19 +12,18 @@ next: notification.html
 برای ارسال پیام از مشتری به سرور چابک، از متد زیر استفاده کنید:
 
 ```objc
-Objc:
+//Objective-C:
 
-PushClientMessage *message = [[PushClientMessage alloc]
-initWithMessage:@"message body"
-withData:@{
-@"test": @"value"
-}
-topic:@"USER_ID/CHANNEL_NAME"];
+PushClientMessage *message = [[PushClientMessage alloc] initWithMessage:@"message body"
+        withData:@{
+                    @"test": @"value"
+                }
+        topic:@"USER_ID/CHANNEL_NAME"];
 message.alertText = @"New Message Alert Text";
 [self.manager publish:message];
 ```
 ```swift
-Swift:
+//Swift:
 
 var message = PushClientMessage(message: "message body", withData: ["test": "value"], topic: "USER_ID/CHANNEL_NAME")
 message.alertText = "New Message Alert Text"
@@ -35,13 +34,10 @@ manager.publish(message)
 
 
 ### دریافت پیام
-
 برای دریافت پیام از سرور چابک نیز میتوانید از متدهای زیر استفاده کنید:
 
-
-
 ```objc
-Objc:
+//Objective-C:
 
 - (void)pushClientManagerDidReceivedMessage:(PushClientMessage *)message{
 // Called When PushClientManager has been received new message from server
@@ -51,7 +47,8 @@ Objc:
 }
 ```
 ```swift
-Swift:
+//Swift:
+
 func pushClientManagerDidReceivedMessage(_ message: PushClientMessage!) {
 // Called When PushClientManager has been received new message from server
 }
@@ -61,40 +58,34 @@ func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage!) {
 ```
 
 ### عضویت در کانال
-
 برای عضویت در یک کانال میتوانید از موارد زیر استفاده کنید:
-
 ``` objc
-Objc:
+//Objective-C:
 
 [self.manager subscribe:@"myAlerts"]; // private (personal) channel
 [self.manager subscribe:@"public/sport"]; // public channel
 [self.manager subscribe:@"public/+"]; // all public channels
-
 ```
 ```swift
-Swift:
+//Swift:
 
 manager.subscribe("myAlerts") // private (personal) channel
 manager.subscribe("public/sport") // public channel
 manager.subscribe("public/+") // all public channels
-
 ```
 همچنین برای لغو عضویت در یک کانال میتوانید از موارد زیر استفاده کنید:
 
 ``` objc
-Objc:
+//Objective-C:
 
 [self.manager unsubscribe:@"myAlerts"]; // private (personal) channel
 [self.manager unsubscribe:@"public/sport"]; // public channel
 [self.manager unsubscribe:@"public/+"]; // all public channels
-
 ```
 ```swift
-Swift:
+//Swift:
 
 manager.unsubscribe("myAlerts") // private (personal) channel
 manager.unsubscribe("public/sport") // public channel
 manager.unsubscribe("public/+") // all public channels
-
 ```

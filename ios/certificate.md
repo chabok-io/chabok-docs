@@ -3,12 +3,8 @@ id: certificate
 title: ایجاد گواهی اپل
 layout: ios
 permalink: ios/certificate.html
-
 ---
-
-
-### مرحله اول : ایجاد App ID
-
+### مرحله اول : ایجاد شناسه برنامه
 هر برنامه ی iOS که از پوش نوتیفیکیشن استفاده می کند باید یک App ID منحصر به خودش داشته باشد که بطور یکتا آن برنامه را مشخص کند. مراحل زیر روش ایجاد یک App ID را توضیح می دهد. اگر قبلا برای برنامه تان در اینجا App ID ایجاد کرده اید، از این مرحله گذر کنید.
 
 ۱- در قسمت [پورتال برنامه نویسان اپل](https://idmsa.apple.com/IDMSWebAuth/login?appIdKey=891bd3417a7776362562d2197f89480a8547b108fd934911bcbea0110d07f757&path=%2Faccount%2F&rv=1)   لاگین کنید.
@@ -27,7 +23,7 @@ permalink: ios/certificate.html
 
 ۵- در این مرحله اطلاعات App ID ای که در حال ساختش هستید را به شما نشان می دهد. دکمه ی Register را بزنید تا این مرحله تمام شود.
 
-### مرحله ی دوم : ایجاد درخواست سرتیفیکیت (Certificate)
+### مرحله ی دوم : ایجاد درخواست گواهی اپل 
 شما باید یک فایل درخواست سرتیفیکت ایجاد کنید تا بعدا از آن برای درخواست سرتیفیکیت SSL برای مرحله ی کدنویسی و تست برنامه تان استفاده کنید.
 
 ۱- برنامه ی Keychain Access را در macOS خود باز کنید.
@@ -48,7 +44,7 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 
 ![عکس مربوطه](http://bayanbox.ir/view/3130890332012957922/Savesertdesktope.png)
 
-### مرحله ی سوم : تنظیم یک App ID برای استفاده از پوش نوتیفیکیشن
+### مرحله ی سوم : تنظیم یک شناسه برنامه، برای استفاده از پوش نوتیفیکیشن
 
 بعد از اینکه App ID را ایجاد کردید، باید تنظیمات دریافت پوش نوتیفیکیشن آن را فعال کنید.
 
@@ -78,9 +74,9 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 
 مراحل ایجاد Production Certificate هم به همین صورت هست.
 
-### مرحله ی چهارم : آماده کردن سرتیفیکت های APNS
+### مرحله ی چهارم : آماده کردن گواهی‌های اپل 
 
-۱- اسم سرتیفیکیت SSL ای که در انتهای مرحله قبل دانلود کرده اید، aps_development.cer است. روی آن کلیک کنید تا در برنامه  Keychain Access نصب شود. این سرتیفیکیت SSL باید توسط سرویس پوشه استفاده شود تا بتواند به APNS برای ارسال پوش نوتیفیکیشن به برنامه شما متصل شود. (APNS: Apple Push Notification Service)
+۱- اسم سرتیفیکیت SSL ای که در انتهای مرحله قبل دانلود کرده اید، aps_development.cer است. روی آن کلیک کنید تا در برنامه  Keychain Access نصب شود. این سرتیفیکیت SSL باید توسط سرویس پوشه استفاده شود تا بتواند به `APNS` برای ارسال پوش نوتیفیکیشن به برنامه شما متصل شود. (APNS: Apple Push Notification Service)
 
 ۲- برنامه  Keychain Access را روی Mac خود باز کنید. به قسمت login بروید و براساس دسته بندی Certificates محتوایش را فیلتر کنید. در اینجا گزینه ای به نام Apple Development iOS Push Services می بینید که با یک کلید خصوصی جفت شده است.
 
@@ -105,6 +101,6 @@ openssl pkcs12 -nocerts -out pushKey.pem -in Certificates.p12 -nodes
 ```
 فایل های ساخته شده را در پنل در بخش تنظیمات > تنظیمات پیشرفته آپلود کنید.
 
-فایل pushCert.pem را در قسمت گواهی و فایل pushKey.pem را در قسمت کلید اضافه کنید.
+فایل `pushCert.pem` را در قسمت گواهی و فایل `pushKey.pem` را در قسمت کلید اضافه کنید.
 
 ![enter image description here](http://uupload.ir/files/yvqd_photo_2017-10-15_12-16-53.jpg)

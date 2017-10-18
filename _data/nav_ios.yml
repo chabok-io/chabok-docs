@@ -5,7 +5,7 @@
     - id: required
       title: پیش‌نیازها
     - id: certificate
-      title: ایجاد درخواست سرتیفیکیت
+      title: ایجاد گواهی اپل
     - id: installation
       title: نصب چابک
     - id: setup

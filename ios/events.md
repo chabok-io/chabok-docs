@@ -14,7 +14,7 @@ next: location-tracking.html
 > دریافت خواهند کرد که در آن لحظه `Online` باشند.
 
 ```objc
-Objective-C:
+//Objective-C:
 
 - (BOOL)publishEvent:(NSString*)eventName
                 data:(NSDictionary*)data;
@@ -33,7 +33,7 @@ Objective-C:
             stateful:(BOOL)stateful;
 ```
 ```swift
-Swift:
+//Swift:
 
 open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!) -> Bool
 
@@ -45,15 +45,14 @@ open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: B
 ```
 
 ###  فعال کردن دریافت رویداد
-
 با استفاده از متد `enableEventDelivery` می توانید روی یک رویداد خاص `subscribe` کنید، به قطعه کد زیر دقت کنید : 
 ``` objc 
-Objective-C :
+//Objective-C :
 
 [_manager enableEventDelivery:@"geo"];
 ```
 ``` swift
-Swift :
+//Swift :
 
 self.manager.enableEventDelivery("geo")
 ```
@@ -61,7 +60,7 @@ self.manager.enableEventDelivery("geo")
 برای دریافت رویداد باید delegate method زیر را پیاده سازی کنید، تا بتوانید رویداد هایی که توسط متد `enableEventDelivery` بر روی یک رویداد خاص `subscribe` کرده اید دریافت کنید :
 
 ``` objc
-Objective-C :
+//Objective-C :
 
 - (void) pushClientManagerDidReceivedEventMessage:(EventMessage *)eventMessage{
     NSLog(@"Event message (%@) was received .....",
@@ -69,7 +68,7 @@ Objective-C :
 }
 ```
 ``` swift
-Swift :
+//Swift :
 
 func pushClientManagerDidReceivedEventMessage(_ eventMessage: EventMessage!) {
         print("Event message \(eventMessage.data) was received .....")
@@ -80,7 +79,7 @@ func pushClientManagerDidReceivedEventMessage(_ eventMessage: EventMessage!) {
 نمونه کد فوق یکی از کاربردهای انتشار رویداد را به شما نشان می دهد. به کمک کلاس [CoreGeoLocation](/ios/location-tracking.html)، می خواهیم موقعیت کاربر را به صورت لحظه ای ارسال کنیم.
 
 ``` objc
-Objective-C :
+//Objective-C :
 
 -(void) startTrackingUser{
     CoreGeoLocation *locationManager = [CoreGeoLocation sharedInstance];
@@ -114,7 +113,7 @@ Objective-C :
 }
 ```
 ``` swift
-Swift :
+//Swift :
 
 func startTrackingUser() {
     let locationManager = CoreGeoLocation.sharedInstance()
