@@ -16,6 +16,10 @@ module Jekyll
       return sidebar_helper(item, 'windows')
     end
 
+    def javascript_sidebar_link(item)
+          return sidebar_helper(item, 'javascript')
+    end
+
     def sidebar_helper(item, group)
       forceInternal = item["forceInternal"]
 

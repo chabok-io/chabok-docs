@@ -32,6 +32,12 @@ defaults:
   values:
     layout: windows
     sectionid: windows
+- scope:
+    path: javascript
+    type: javascript
+  values:
+    layout: javascript
+    sectionid: javascript
 #
 # Flags below are optional
 #
