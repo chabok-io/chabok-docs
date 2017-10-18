@@ -11,15 +11,68 @@ next: events.html
 
 
 کد زیر را درون `AppDelegate` خود وارد کنید. این به مشتری چابک کمک می کند تا `remote` و `local notification`  را مدیریت کند:
+
+
+```swift
+//Swift:
+
+func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+self.manager.application(application, didReceive: notification)
+}
+```
+
 ```objc
 //Objective-C:
 
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+
+// Manager Hook and handle receive iOS (4.0 and later) local notification
+[self.manager application:application didReceiveLocalNotification:notification];
+}
+```
+
+در متد زیر شما میتوانید مشخص کنید با کلیک روی اعلان کاربر به کجا هدایت شود.
+
+```objc
+//Objective-C:
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 
 // Hook and Handle New Remote Notification, must be use for remote payloads
 [self.manager application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
+```
+```swift
+//Swift:
+
+func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+// Hook and Handle New Remote Notification, must be use for remote payloads
+manager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+}
+```
+
+> `نکته:` کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی اعلان
+> (نوتیفیکیشن) نمایش می‌دهد. درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، کد
+> شخصی‌سازی مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
+
+```swift
+//Swift:
+
+func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+self.manager.application(application,didFailToRegisterForRemoteNotificationsWithError: error)
+}
+
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+self.manager.application(application,didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+}
+
+func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+self.manager.application(application, didRegister: notificationSettings)
+}
+```
+
+```objc
+//Objective-C:
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
 
@@ -39,39 +92,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 [self.manager application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-
-// Manager Hook and handle receive iOS (4.0 and later) local notification
-[self.manager application:application didReceiveLocalNotification:notification];
-}
 ```
-```swift
-//Swift:
-
-func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-// Hook and Handle New Remote Notification, must be use for remote payloads
-manager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
-}
-
-func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-self.manager.application(application,didFailToRegisterForRemoteNotificationsWithError: error)
-}
-
-func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-self.manager.application(application,didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
-}
-
-func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
-self.manager.application(application, didRegister: notificationSettings)
-}
-
-func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-self.manager.application(application, didReceive: notification)
-}
-```
-> `نکته:` کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی اعلان
-> (نوتیفیکیشن) نمایش می‌دهد. درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، کد
-> شخصی‌سازی مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
 
 ### NSNotificationCenter
 
@@ -103,3 +124,4 @@ NotificationCenter.default.addObserver(self, selector: #selector(self.pushClient
 
 NotificationCenter.default.addObserver(self, selector: #selector(self.pushClientServerReachabilityHandler), name: kPushClientDidChangeServerReachabilityNotification, object: nil)
 ```
+
