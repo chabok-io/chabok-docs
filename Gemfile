@@ -12,6 +12,7 @@ gem 'jekyll-paginate'
 gem 'jekyll-sitemap'
 gem 'jekyll-feed'
 gem 'jekyll-jalali'
+gem "jekyll-assets"
 # JSON
 gem 'json'
 
@@ -20,6 +21,8 @@ gem 'rb-fsevent'
 
 # For markdown header cleanup
 gem 'sanitize', '~>2.0'
+
+gem "uglifier"
 
 # Markdown
 gem 'redcarpet'
