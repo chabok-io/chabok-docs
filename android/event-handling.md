@@ -75,6 +75,7 @@ public void publishEvent(final String event, final JSONObject data,
     }
 ```
 به کمک نمونه کد فوق با دریافت هر گزارش مکان می توانید موقعیت مکانی کاربر را ارسال نمایید.
+در نمونه فوق رویدادی بنام geo با داده‌هایی که در شیٔ data‌ با فرمت JSONObject‌ قرار می گیرد، منتشر می شود.
 
 ### دریافت رویداد
 برای دریافت رویداد بایستی کلاس مورد نظر برای دریافت را بعنوان Listener‌ رویداد تعیین نمایید، مانند نمونه زیر:
@@ -83,7 +84,7 @@ public void publishEvent(final String event, final JSONObject data,
 AdpPushClient.get().addListener(MyActivity.this);
 ```
 
-سپس در متد onEvent‌به شکل زیر می توانید رویداد مورد نظر را دریافت کنید:
+سپس در متد `onEvent` ‌به شکل زیر می توانید رویداد مورد نظر را دریافت کنید:
 
 ```java
 public void onEvent(final EventMessage message) {

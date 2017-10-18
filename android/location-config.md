@@ -1,6 +1,6 @@
 ---
 id: location-config
-title: پیش‌نیازهای مکان‌یابی
+title: تنظیمات مکان‌یابی
 layout: android
 permalink: android/location-config.html
 next: location-tracking.html
