@@ -50,9 +50,9 @@ if(chabok.isForeground()) {
             
 ### انتشار رویداد با داده های دلخواه
 
-با متدهای زیر می توانید رویداد های داخل اپ را منتشر کنید:
+با متدهای زیر می توانید رویداد های داخل برنامه را منتشر کنید:
 
->نکته : پارامتر ورودی live به این معنی است: کسانی این رویداد را دریافت خواهند نمود که در آن لحظه Online باشند.
+>نکته : پارامتر ورودی live به این معنی است: کسانی این رویداد را دریافت خواهند نمود که در آن لحظه online باشند.
 
 ```java
 public void publishEvent(final String event, final JSONObject data)
@@ -75,7 +75,7 @@ public void publishEvent(final String event, final JSONObject data,
     }
 ```
 به کمک نمونه کد فوق با دریافت هر گزارش مکان می توانید موقعیت مکانی کاربر را ارسال نمایید.
-در نمونه فوق رویدادی بنام geo با داده‌هایی که در شیٔ data‌ با فرمت JSONObject‌ قرار می گیرد، منتشر می شود.
+در نمونه فوق رویدادی بنام geo با داده‌هایی که در شیٔ data‌ بصورت یک JSONObject‌ قرار می گیرد، منتشر می شود.
 
 ### دریافت رویداد
 برای دریافت رویداد بایستی کلاس مورد نظر برای دریافت را بعنوان Listener‌ رویداد تعیین نمایید، مانند نمونه زیر:
@@ -93,7 +93,8 @@ public void onEvent(final EventMessage message) {
                 @Override
                 public void run() {
                     Log.d(TAG, "run: onEvent" + message.getName());
-                    // get data: JSONObject data = message.getData();
+                    
+                    JSONObject data = message.getData();
                 }
             });
         }
