@@ -11,21 +11,21 @@ prev: location-tracking.html
 برای فعال کردن دریافت تأییدیه تحویل یک پیام منتشر شده، باید تحویل را قبل از فعالسازی فعال کنید: 
 
 ``` objc
-Objc: 
+//Objetive-C: 
 
 self.manager.deliveryChannelEnabeled = YES; 
 ```
 ```swift
-Swift: 
+//Swift: 
 
 manager.deliveryChannelEnabeled = true 
 ``` 
-###  مدیریت نشان
+###  مدیریت نشان‌ها
 
 اگر می خواهید شماره badge برنامه خود را بازنشانی کنید،با روش زیر می توانید: 
 
 ``` objc
-Objc: 
+//Objetive-C: 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application { 
 [PushClientManager resetBadge]; 
@@ -35,7 +35,7 @@ Objc:
 }
 ```
 ```swift
-Swift: 
+//Swift: 
 
 func applicationDidEnterBackground(_ application: UIApplication) { 
 PushClientManager.resetBadge() 
@@ -51,7 +51,7 @@ PushClientManager.resetBadge()
 پس از فراخوانی `manager.addDelegate`، می توانید از متد زیر برای دریافت رویدادهای داخلی چارچوب چابک استفاده کنید:
 
 ```objc
-Objc:
+//Objetive-C: 
 
 - (void)pushClientManagerDidChangedServerConnectionState{
 // Called When PushClientManager Connecting State has been Changed
@@ -63,7 +63,7 @@ networkType:(PushClientServerReachabilityNetworkType)networkType{
 }
 ```
 ```swift
-Swift:
+//Swift:
 
 func pushClientManagerDidChangedServerConnectionState() {
 // Called When PushClientManager Connecting State has been Changed
@@ -77,7 +77,7 @@ func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkTyp
  به استفاده از متدهای فوق می توانید روی یک رویداد خاص، subscribe کنید تا بتوانید رویدادهای مورد نیاز خود را دریافت کنید :
  
 ```objc
-Objective-C:
+//Objective-C:
 
 - (void)enableEventDelivery:(NSString*)eventName;
 
@@ -89,7 +89,7 @@ Objective-C:
                        live:(BOOL)live;
 ```
 ```swift
-Swift
+//Swift
 
 open func enableEventDelivery(_ eventName: String!)
 
@@ -106,12 +106,12 @@ open func enableEventDelivery(_ eventName: String!, forPublic: Bool, live: Bool)
 > با انتشار رویداد ارسال شود.
 
 ```objc
-Objc:
+//Objetive-C: 
 
 self.manager.enableLocationOnLaunch = YES
 ```
 ```swift
-Swift:
+//Swift:
 
 manager.enableLocationOnLaunch = true
 ```
