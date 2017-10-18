@@ -274,29 +274,29 @@ pre {
     padding: 0.5em 1em;
     color: #1f1f1f;
     font-size: 22px;
-    p{
+    p {
       padding: 0;
-      margin:0;
+      margin: 0;
     }
   }
 
-  ul{
-    margin:0;
+  ul {
+    margin: 0;
     margin-right: 30px;
-    padding:0;
-    li{
+    padding: 0;
+    li {
       list-style: disc;
-      padding:10px  0;
+      padding: 10px 0;
       line-height: 200%;
       font-family: $helveticaNeue;
     }
   }
-  ol{
-    margin:0;
+  ol {
+    margin: 0;
     margin-right: 30px;
-    padding:0;
-    li{
-      padding:10px  0;
+    padding: 0;
+    li {
+      padding: 10px 0;
       line-height: 200%;
       font-family: $helveticaNeue;
     }
@@ -417,12 +417,10 @@ footer {
   }
 }
 
-
-
 .docs-prevnext {
-  margin: 25px 0 ;
+  margin: 25px 0;
   border-top: 1px solid #dddddd;
-  padding: 25px 0 ;
+  padding: 25px 0;
 
   .docs-next {
     float: left;
@@ -433,15 +431,32 @@ footer {
   }
 }
 
-
 .platfrom-box {
   background-color: #eee;
   padding: 25px !important;
   border-radius: 5px;
   box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
-
-  &.android{
+  h2 {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 200;
+  }
+  &.android {
     background-color: #a4c639;
+  }
+  &.wp {
+    background-color: #006fff;
+  }
+  &.apple {
+    background-color: #9ea8ae;
+  }
+  .fillbutton {
+    padding: 6px 45px;
+    font-weight: 100;
+    &:hover{
+      background: darken(#00325d,5) ;
+      color: #ffffff;
+    }
   }
 
   .androidplatform {
@@ -463,7 +478,6 @@ footer {
     }
   }
 }
-
 
 .wrapper {
   display: flex;
