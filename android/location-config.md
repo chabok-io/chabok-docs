@@ -1,5 +1,5 @@
 ---
-id: introducing
+id: location-config
 title: پیش‌نیازهای مکان‌یابی
 layout: android
 permalink: android/location-config.html
