@@ -20,7 +20,7 @@ self.manager.deliveryChannelEnabeled = YES;
 
 manager.deliveryChannelEnabeled = true 
 ``` 
-###  مدیریت نشان
+###  مدیریت نشان‌ها
 
 اگر می خواهید شماره badge برنامه خود را بازنشانی کنید،با روش زیر می توانید: 
 

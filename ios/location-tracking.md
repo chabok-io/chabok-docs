@@ -26,7 +26,6 @@ import AdpPushClient
 .
 let locationManager = CoreGeoLocation.sharedInstance()
 ```
-----------
 
 > `نکته :`  برای استفاده از قابلیت مکان یابی، پیکربندی های لازم که در
 > بخش [پیش نیازهای مکان‌یابی](/ios/location-config.html) بیان شده را
