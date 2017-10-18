@@ -3,8 +3,8 @@ id: location-config
 title: پیش نیازهای مکان‌یابی
 layout: ios 
 permalink: ios/location-config.html 
-prev: location-tracking.html
-next: features.html
+prev: events.html
+next: location-tracking.html
 ---
 ### مجوز های مورد نیاز موقعیت مکانی
 برای استفاده از امکان موقعیت مکانی، نیازمند دریافت مجوزهای زیر می باشد که توضیحات لازم برای هر بخش در زیر آورده شده است :

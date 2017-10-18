@@ -3,7 +3,7 @@ id: location-tracking
 title: مکان‌یابی 
 layout: ios 
 permalink: ios/location-tracking.html 
-prev: events.html
+prev: location-config.html
 next: features.html
 ---
 ### کلاس CoreGeoLocation 
