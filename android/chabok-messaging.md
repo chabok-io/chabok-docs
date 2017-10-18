@@ -3,8 +3,8 @@ id: chabok-messaging
 title: پیام چابک
 layout: android
 permalink: android/chabok-messaging.html
-prev: manifest.html
-next: customize.html
+prev: gradle-setup.html
+next: notification-handling.html
 ---
 
 ## دریافت پیام چابک
@@ -45,12 +45,5 @@ public class PushMessageReceiver extends WakefulBroadcastReceiver {
 
 روی اتصال موجود چابک می‌توانید تعداد زیادی رویداد سمت سرور بفرستید، در واقع برای هر درخواست یک اتصال جدید ساخته نمی‌شود.
 تحویل اطلاعات را در سمت سرور، حتی در شرایطی که کاربر اینترنت ضعیف و یا قطع شده‌ای دارد، تضمین می‌کند. به این ترتیب که کلاینت چابک با استفاده از منطق سعی مجدد خود می‌تواند پیام‌ شما را حتی در شرایط بحرانی یک و فقط یک بار بفرستد.
-بهینه تر در مصرف باطری
+بهینه تر در مصرف باطری.
 
-```java
-
-chabok.enableDeliveryTopic();
-
-```
-
-برای دریافت تایید تحویل پیام‌های ارسالی بایستی این ویژگی را توسط متد enableDeliveryTopic فعال نمایید. سپس با پیاده‌سازی متد onEvent می‌توانید از تحویل پیام خود مطلع شوید.

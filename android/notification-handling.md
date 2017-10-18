@@ -1,13 +1,13 @@
 ---
-id: customize
-title: شخصی‌سازی
+id: notification-handling
+title: مدیریت اعلان‌ها
 layout: android
-permalink: android/customize.html
+permalink: android/notification-handling.html
 prev: chabok-messaging.html
 next: event-handling.html
 ---
 
-## شخصی‌سازی نمایش اعلان
+### شخصی‌سازی نمایش اعلان
 
 کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی اعلان (نوتیفیکیشن) نمایش می‌دهد. درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، کد شخصی‌سازی مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
 برای شخصی سازی می بایستی یک شیء از نوع NotificationHandler نمونه سازی کنید، مانند نمونه زیر:
