@@ -23,6 +23,7 @@ gem 'rb-fsevent'
 gem 'sanitize', '~>2.0'
 
 gem "uglifier"
+gem "execjs"
 
 # Markdown
 gem 'redcarpet'

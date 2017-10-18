@@ -85,6 +85,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  execjs
   jekyll (~> 3.1)
   jekyll-assets
   jekyll-feed
