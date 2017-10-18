@@ -7,7 +7,7 @@ prev: application-class.html
 next: chabok-messaging.html
 ---
 
-## تغییرات لازم در فایل manifest
+### تغییرات لازم در فایل manifest
 
 ۱. کدهای زیر را به فایل AndroidManifest.xml پروژه اضافه کنید:
 دربخش مجوز‌ها موارد زیر را اضافه کرده و نام کلاس Application خود را نیز بجای YOUR_APPLICATION_CLASS_NAME وارد کنید. عبارت YOUR_APPLICATION_PACKAGE_ID را با نام پکیج برنامه خود جایگزین کنید.

@@ -4,24 +4,93 @@ title: راه‌اندازی چابک
 layout: android
 permalink: android/application-class.html
 prev: gradle-setup.html
-next: manifest.html
+next: chabok-messaging.html
 ---
+
+
+
+### تغییرات لازم در فایل manifest
+
+۱. کدهای زیر را به فایل `AndroidManifest.xml` پروژه اضافه کنید:
+دربخش مجوز‌ها موارد زیر را اضافه کرده و نام کلاس `Application` خود را نیز بجای `YOUR_APPLICATION_CLASS_NAME` وارد کنید. عبارت `YOUR_APPLICATION_PACKAGE_ID` را با نام پکیج برنامه خود جایگزین کنید.
+
+```xml
+
+<manifest
+xmlns:android="http://schemas.android.com/apk/res/android"
+package="YOUR_APPLICATION_PACKAGE_ID">
+
+<permission
+android:name="YOUR_APPLICATION_PACKAGE_ID.permission.C2D_MESSAGE"
+android:protectionLevel="signature"/>
+
+<uses-permission android:name="YOUR_APPLICATION_PACKAGE_ID.permission.C2D_MESSAGE" />
+
+<application
+android:name=".YOUR_APPLICATION_CLASS_NAME"
+android:allowBackup="true"
+android:icon="@drawable/ic_launcher"
+android:label="@string/app_name"
+android:theme="@style/AppTheme">
+
+...
+
+</application>
+
+```
+
+در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارایه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.
+
+۲. کلاس رسیور `PushMessageReceiver` را نیز به پروژه خود اضافه نمایید.
+
+```xml
+
+<receiver android:name="PushMessageReceiver">
+<intent-filter>
+<category android:name="YOUR_APPLICATION_PACKAGE_ID"/>
+<action android:name="com.adpdigital.push.client.MSGRECEIVE"/>
+</intent-filter>
+</receiver>
+
+```
+
+۳. رسیور `GcmReceiver` را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
+
+```xml
+
+<receiver
+android:name="com.google.android.gms.gcm.GcmReceiver"
+android:enabled="true"
+android:exported="true"
+android:permission="com.google.android.c2dm.permission.SEND">
+<intent-filter>
+<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+<category android:name=" YOUR_APPLICATION_PACKAGE_ID" />
+</intent-filter>
+</receiver>
+
+```
+
+
+
+
+
+
 ### مقداردهی اولیه
 برای دریافت یا ارسال پیام از/به سرور چابک، بایستی یک نمونه از کلاس `AdpPushClient` بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست. برای این منظور در متد `onCreate` کلاس `Application` کدهای زیر را اضافه کنید.
 
 ```java
-                
+
 private AdpPushClient chabok = AdpPushClient.init(
-        getApplicationContext(),
-        YOUR_MAIN_ACTIVITY_CLASS.class,
-        YOUR_APP_ID,
-        YOUR_API_KEY,
-        SDK_USERNAME,
-        SDK_PASSWORD
+getApplicationContext(),
+YOUR_MAIN_ACTIVITY_CLASS.class,
+YOUR_APP_ID,
+YOUR_API_KEY,
+SDK_USERNAME,
+SDK_PASSWORD
 ); 
 ```
-
-در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارایه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.
 
 ### پارامترها
 
@@ -37,35 +106,35 @@ private AdpPushClient chabok = AdpPushClient.init(
 
 public class YourAppClass extends Application {
 
-  private AdpPushClient chabok = null;
+private AdpPushClient chabok = null;
 
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    getPushClient();
-  }
+@Override
+public void onCreate() {
+super.onCreate();
+getPushClient();
+}
 
-  public synchronized AdpPushClient getPushClient() {
-    if (chabok == null) {
-        chabok = AdpPushClient.init(
-            getApplicationContext(),
-            YOUR_MAIN_ACTIVITY_CLASS.class,
-            YOUR_APP_ID,
-            YOUR_API_KEY,
-            SDK_USERNAME,
-            SDK_PASSWORD
-        );
-        chabok.setDevelopment(DEV_MODE);
-        chabok.register(USER_ID, new String[]{CHANNEL_NAME});
-    }
-    return chabok;
-  }
+public synchronized AdpPushClient getPushClient() {
+if (chabok == null) {
+chabok = AdpPushClient.init(
+getApplicationContext(),
+YOUR_MAIN_ACTIVITY_CLASS.class,
+YOUR_APP_ID,
+YOUR_API_KEY,
+SDK_USERNAME,
+SDK_PASSWORD
+);
+chabok.setDevelopment(DEV_MODE);
+chabok.register(USER_ID, new String[]{CHANNEL_NAME});
+}
+return chabok;
+}
 }
 ```
 
 ### توضیح متدها
 
-۱. متد setDevelopment
+۱. متد `setDevelopment`
 
 مشخص می‌کند که برنامه به محیط تستی چابک متصل شود یا به محیط عملیاتی. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
 
@@ -74,7 +143,7 @@ chabok.setDevelopment(DEV_MODE);
 ```
 
 
-۲. متد register
+۲. متد `register`
 
 با دو امضای متفاوت وجود دارد:
 امضای اول که تنها شناسه کاربر را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام میکند.
@@ -83,15 +152,36 @@ chabok.setDevelopment(DEV_MODE);
 chabok.register(USER_ID);
 ```
 
+> `نکته` : متغیر `USER_ID` شناسه کاربر برای ثبت نام در چابک می‌باشد و ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود شناسه کاربری می تواند هر فیلد باارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. شماره موبایل، کدملی، شماره حساب و یا ایمیل مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. 
+>
+
+
 امضای دوم که علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی که کاربر باید روی آن‌ها عضو شود را نیز دریافت می کند. با ثبت نام در این کانال‌ها کاربر پیام‌های ارسالی روی آن‌ها را دریافت خواهد نمود.
 
 ```java
 chabok.register(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
 ```
 
-متغیر `USER_ID` شناسه کاربر برای ثبت نام در چابک می‌باشد و ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود شناسه کاربری می تواند هر فیلد باارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. شماره موبایل، کدملی، شماره حساب و یا ایمیل مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. 
+۳. متد `isRegistered`
 
-۳. متد dismiss
+به کاربر این امکان را می‌دهد که بررسی کند آیا عملیات ثبت‌نام انجام شده است یا خیر.
+
+
+```java
+chabok.isRegistered();
+```
+
+۴. متد `reRegister`
+
+امضاهای این متد دقیقا همانند متد `register` می‌باشد. زمانی که نیاز باشد شناسه کاربر به‌روزرسانی شود باید این متد فراخوانی شود.
+
+
+```java
+chabok.reRegister(USER_ID);
+chabok.reRegister(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
+```
+
+۵. متد `dismiss`
 
 در متد `onTerminate` کلاس اپلیکیشن (یا اگر بجای کلاس اپلیکیشن از یک اکتیویتی برای مدیریت کلاینت استفاده می کنید در متد `onDestroy`) که در واقع آخرین فراخوانی در چرخه حیات این کلاس است، متد `dismiss` از کلاینت چابک را فراخوانی نمایید تا منابع در اختیار آزاد شوند. واضح است بعد از فراخوانی این متد دیگر نمی توان از نمونه جاری کلاینت استفاده کرد و باید دوباره نمونه‌سازی کنید.
 
@@ -99,9 +189,9 @@ chabok.register(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
 
 @Override
 public void onTerminate() {
-    chabok.dismiss();
-    super.onTerminate();
+chabok.dismiss();
+super.onTerminate();
 }
-   
+
 ```
 
