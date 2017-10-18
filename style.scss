@@ -268,18 +268,33 @@ pre {
 .post {
   padding-bottom: 80px;
   blockquote {
-    margin: 1.8em .8em;
+    margin: 1.8em 0em;
     border-right: 2px solid #FFC463;
     background: #fff0d8;
     padding: 0.5em 1em;
     color: #1f1f1f;
     font-size: 22px;
+    p{
+      padding: 0;
+      margin:0;
+    }
+  }
+
+  ul{
+    margin:0;
+    margin-right: 30px;
+    padding:0;
+    li{
+      list-style: disc;
+      padding:10px  0;
+      line-height: 200%;
+      font-family: $helveticaNeue;
+    }
   }
   .comments {
     margin-top: 10px;
   }
   .read-more {
-    text-transform: uppercase;
     font-size: 15px;
   }
   h1 {
