@@ -10,7 +10,13 @@ next: events.html
 ### راه‌اندازی اعلان‌ها
 
 
-کد زیر را درون `AppDelegate` خود وارد کنید. این به مشتری چابک کمک می کند تا `remote` و `local notification`  را مدیریت کند:
+کدهای زیر را درون `AppDelegate` خود وارد کنید. این به مشتری چابک کمک می کند تا `remote` و `local notification`  را مدیریت کند:
+
+با اعلان های محلی (LocalNotification)، برنامه شما اطلاعات local را به صورت local تنظیم می کند و این اطلاعات را به سیستم منتقل می کند و سپس اعلان را هنگامی که برنامه شما در پیش زمینه نیست، مدیریت می کند. اعلان های محلی در iOS، tvOS، و WatchOS پشتیبانی می شوند.
+
+با اعلان های راه دور (remoteNotification)، شما از چابک برای انتقال داده ها به دستگاه های کاربر از طریق سرویس اطلاع رسانی اکسپرس Push استفاده می کنید. اعلان های راه دور در iOS، tvOS، watchOS و macOS پشتیبانی می شوند.
+
+> `نکته:`فرآیند LocalNotification در iOS 10 و بالاتر، قابل مشاهده میباشد.
 
 ```objc
 //Objective-C:
@@ -125,4 +131,5 @@ NotificationCenter.default.addObserver(self, selector: #selector(self.pushClient
 
 NotificationCenter.default.addObserver(self, selector: #selector(self.pushClientServerReachabilityHandler), name: kPushClientDidChangeServerReachabilityNotification, object: nil)
 ```
+
 
