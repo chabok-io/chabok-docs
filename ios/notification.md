@@ -51,7 +51,7 @@ self.manager.application(application, didRegister: notificationSettings)
 ```
 
 #### رویداد کلیک بر روی اعلان
-سرویس چابک دارای `Messageing` و `Push Notification`  می باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان باید، نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل باشد با کلیک بر روی اعلان، delegate متد `didReceiveRemoteNotification` را فراخوانی خواهد شد و همچنین برای فهمیدن رویداد کلیک بر روی یک Notification باید از delegate متد `didReceiveLocalNotification` استفاده کنید، همانطور که از نام متد فوق پیداست، برای `LocalNotification` کاربرد دارد.
+سرویس چابک دارای `Messageing` و `Push Notification`  می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل باشد با کلیک بر روی اعلان، delegate متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ باشد، از delegate متد `didReceiveLocalNotification` استفاده کنید.
 
 ##### ۱. LocalNotification
 
@@ -88,7 +88,7 @@ self.manager.application(application, didReceive: notification)
 
 delegate متد `didReceiveRemoteNotification` توسط سیستم عامل به هنگام کلیک بر روی Notification فرخوانی می شود. 
 
-> `نکته` : اگر برنامه شما `Terminate` بوده باشد، با کلیک بر روی
+> `نکته` : اگر برنامه شما `Terminate` شده باشد، با کلیک بر روی
 > Notification برنامه شما با کلید
 > `UIApplicationLaunchOptionsRemoteNotificationKey` در delegate متد
 > `didFinishLaunchingWithOptions` اجرا خواهد شد و پس از آن متد
@@ -117,11 +117,12 @@ manager.application(application, didReceiveRemoteNotification: userInfo, fetchCo
 }
 ```
 
-#### تنظیمات سفارشی اعلان
+#### تنظیمات نمایش اعلان
 
- کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی اعلان نمایش می‌دهد.
+ کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی اعلان نمایش می‌دهد. درصورت تمایل به تنظیم نمایش نوتیفیکیشن‌ها، کد مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
+
 > `نکته` : درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، از `delegate` متد
-> `pushClientManagerUILocalNotificationDidReceivedMessage:` استفاده کنید، به قطعه کد زیر دقت فرمایید. در صورت استفاده از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage:` کتابخانه چابک دیگر اقدام به نمایش `LocalNotification` نمی کند.
+> `pushClientManagerUILocalNotificationDidReceivedMessage` استفاده کنید، به قطعه کد زیر دقت فرمایید. در صورت استفاده از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` کتابخانه چابک دیگر اقدام به نمایش `LocalNotification` نمی کند.
 
 ``` objc
 //Objective-C:
