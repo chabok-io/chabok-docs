@@ -17,25 +17,25 @@ next: chabok-messaging.html
 ```xml
 
 <manifest
-xmlns:android="http://schemas.android.com/apk/res/android"
-package="YOUR_APPLICATION_PACKAGE_ID">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="YOUR_APPLICATION_PACKAGE_ID">
 
-<permission
-android:name="YOUR_APPLICATION_PACKAGE_ID.permission.C2D_MESSAGE"
-android:protectionLevel="signature"/>
+    <permission
+        android:name="YOUR_APPLICATION_PACKAGE_ID.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
 
-<uses-permission android:name="YOUR_APPLICATION_PACKAGE_ID.permission.C2D_MESSAGE" />
+    <uses-permission android:name="YOUR_APPLICATION_PACKAGE_ID.permission.C2D_MESSAGE" />
 
-<application
-android:name=".YOUR_APPLICATION_CLASS_NAME"
-android:allowBackup="true"
-android:icon="@drawable/ic_launcher"
-android:label="@string/app_name"
-android:theme="@style/AppTheme">
+    <application
+        android:name=".YOUR_APPLICATION_CLASS_NAME"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
 
 ...
 
-</application>
+    </application>
 
 ```
 
@@ -46,10 +46,10 @@ android:theme="@style/AppTheme">
 ```xml
 
 <receiver android:name="PushMessageReceiver">
-<intent-filter>
-<category android:name="YOUR_APPLICATION_PACKAGE_ID"/>
-<action android:name="com.adpdigital.push.client.MSGRECEIVE"/>
-</intent-filter>
+    <intent-filter>
+        <category android:name="YOUR_APPLICATION_PACKAGE_ID"/>
+        <action android:name="com.adpdigital.push.client.MSGRECEIVE"/>
+    </intent-filter>
 </receiver>
 
 ```
@@ -59,15 +59,15 @@ android:theme="@style/AppTheme">
 ```xml
 
 <receiver
-android:name="com.google.android.gms.gcm.GcmReceiver"
-android:enabled="true"
-android:exported="true"
-android:permission="com.google.android.c2dm.permission.SEND">
-<intent-filter>
-<action android:name="com.google.android.c2dm.intent.RECEIVE" />
-<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-<category android:name=" YOUR_APPLICATION_PACKAGE_ID" />
-</intent-filter>
+    android:name="com.google.android.gms.gcm.GcmReceiver"
+    android:enabled="true"
+    android:exported="true"
+    android:permission="com.google.android.c2dm.permission.SEND">
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+            <category android:name=" YOUR_APPLICATION_PACKAGE_ID" />
+        </intent-filter>
 </receiver>
 
 ```
@@ -83,12 +83,12 @@ android:permission="com.google.android.c2dm.permission.SEND">
 ```java
 
 private AdpPushClient chabok = AdpPushClient.init(
-getApplicationContext(),
-YOUR_MAIN_ACTIVITY_CLASS.class,
-YOUR_APP_ID,
-YOUR_API_KEY,
-SDK_USERNAME,
-SDK_PASSWORD
+    getApplicationContext(),
+    YOUR_MAIN_ACTIVITY_CLASS.class,
+    YOUR_APP_ID,
+    YOUR_API_KEY,
+    SDK_USERNAME,
+    SDK_PASSWORD
 ); 
 ```
 
@@ -108,27 +108,27 @@ public class YourAppClass extends Application {
 
 private AdpPushClient chabok = null;
 
-@Override
-public void onCreate() {
-super.onCreate();
-getPushClient();
-}
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        getPushClient();
+    }
 
-public synchronized AdpPushClient getPushClient() {
-if (chabok == null) {
-chabok = AdpPushClient.init(
-getApplicationContext(),
-YOUR_MAIN_ACTIVITY_CLASS.class,
-YOUR_APP_ID,
-YOUR_API_KEY,
-SDK_USERNAME,
-SDK_PASSWORD
-);
-chabok.setDevelopment(DEV_MODE);
-chabok.register(USER_ID, new String[]{CHANNEL_NAME});
-}
-return chabok;
-}
+    public synchronized AdpPushClient getPushClient() {
+        if (chabok == null) {
+            chabok = AdpPushClient.init(
+                getApplicationContext(),
+                YOUR_MAIN_ACTIVITY_CLASS.class,
+                YOUR_APP_ID,
+                YOUR_API_KEY,
+                SDK_USERNAME,
+                SDK_PASSWORD
+                );
+            chabok.setDevelopment(DEV_MODE);
+            chabok.register(USER_ID, new String[]{CHANNEL_NAME});
+        }
+    return chabok;
+    }
 }
 ```
 
@@ -189,8 +189,8 @@ chabok.reRegister(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
 
 @Override
 public void onTerminate() {
-chabok.dismiss();
-super.onTerminate();
+    chabok.dismiss();
+    super.onTerminate();
 }
 
 ```

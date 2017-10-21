@@ -7,9 +7,9 @@ prev: gradle-setup.html
 next: notification-handling.html
 ---
 
-## دریافت پیام چابک
+### دریافت پیام چابک
 
-شما می‌توانید از طریق یک رسیور پیام‌های جدید چابک را دریافت نمایید. برای این منظور کلاسی با همان نامی که در manifest استفاده کردید مثل PushMessageReceiver ایجاد نمایید که فرزند WakefulBroadcastReceiver باشد. 
+شما می‌توانید از طریق یک رسیور پیام‌های جدید چابک را دریافت نمایید. برای این منظور کلاسی با همان نامی که در `manifest` استفاده کردید مثل `PushMessageReceiver` ایجاد نمایید که فرزند `WakefulBroadcastReceiver` باشد. 
 
 ```java
 
@@ -27,22 +27,90 @@ public class PushMessageReceiver extends WakefulBroadcastReceiver {
 
 
     private void handleNewMessage(PushMessage message) {
-        // write your code to handle new message
+    // write your code to handle new message
     }
 
 
 }
 ```
 
+### عضویت روی کانال‌ها
 
-## عضویت روی کانال‌ها
+عضویت یک کاربر روی یک کانال برای دریافت پیام‌های ارسالی روی آن کانال `subscribe` نامیده می شود و لغو آن `unsubscribe` نامیده می شود. چابک به طور پیش فرض هر کاربر را روی یک کانال شخصی (بر اساس شناسه کاربر) و یک کانال گروهی (همه کاربران) ثبت نام می‌کند.
 
-عضویت یک کاربر روی یک کانال برای دریافت پیام‌های ارسالی روی آن کانال subscribe نامیده می شود و لغو آن unsubscribe نامیده می شود. چابک به طور پیش فرض هر کاربر را روی یک کانال شخصی (بر اساس شناسه کاربر) و یک کانال گروهی (همه کاربران) ثبت نام می‌کند.
+متد `subscribe`
 
-## ارسال پیام
+با دو امضای متفاوت وجود دارد: امضای اول که نام کانال و یک کال‌بک می‌گیرد و روی کانال دریافتی عضویت کاربر را ثبت می‌کند.
 
-متد Publish برای ارسال پیام از سمت کلاینت به سرور‌های چابک استفاده می‌شود. شما از این مکانیزم علاوه بر پیام‌های شخصی می‌توانید برای ارسال اطلاعات و داده‌های کاربر به سمت سرور خود (بجای ارسال با درخواست‌های کلاسیک HTTP) استفاده کنید. مزایای این روش در مقایسه با درخواست‌های کلاسیک HTTP به صورت زیر می باشد:
+```java
 
+chabok.subscribe(CHANNEL_NAME, new Callback() {
+    @Override
+    public void onSuccess(Object o) {
+
+    }
+
+    @Override
+    public void onFailure(Throwable throwable) {
+
+    }
+});
+```
+امضای دوم علاوه بر موارد قبلی یک پارامتر بولین نیز دریافت می‌کند، این پارامتر به این معناست که آیا کاربر فقط در حالتی که به چابک متصل است پیام‌های این کانال را دریافت کند و یا خیر .
+
+```java
+
+chabok.subscribe(CHANNEL_NAME, true, new Callback() {
+    @Override
+    public void onSuccess(Object o) {
+
+    }
+
+    @Override
+    public void onFailure(Throwable throwable) {
+
+    }
+});
+```
+
+متد `unsubscribe`
+
+نام کانال و یک کال‌بک می‌گیرد و عضویت کاربر را روی کانال دریافتی لغو می‌کند.
+
+```java
+chabok.unsubscribe(CHANNEL_NAME, new Callback() {
+    @Override
+    public void onSuccess(Object o) {
+
+    }
+
+    @Override
+    public void onFailure(Throwable throwable) {
+    
+    }
+});
+
+```
+
+### ارسال پیام
+
+متد `Publish` برای ارسال پیام از سمت کلاینت به سرور‌های چابک استفاده می‌شود. شما از این مکانیزم علاوه بر پیام‌های شخصی می‌توانید برای ارسال اطلاعات و داده‌های کاربر به سمت سرور خود (بجای ارسال با درخواست‌های کلاسیک HTTP) استفاده کنید. مزایای این روش در مقایسه با درخواست‌های کلاسیک HTTP به صورت زیر می باشد:
+
+```java
+
+chabok.publish(myPushMessage, new Callback() {
+    @Override
+    public void onSuccess(Object o) {
+    }
+
+    @Override
+    public void onFailure(Throwable throwable) {
+    
+    }
+
+});
+
+```
 روی اتصال موجود چابک می‌توانید تعداد زیادی رویداد سمت سرور بفرستید، در واقع برای هر درخواست یک اتصال جدید ساخته نمی‌شود.
 تحویل اطلاعات را در سمت سرور، حتی در شرایطی که کاربر اینترنت ضعیف و یا قطع شده‌ای دارد، تضمین می‌کند. به این ترتیب که کلاینت چابک با استفاده از منطق سعی مجدد خود می‌تواند پیام‌ شما را حتی در شرایط بحرانی یک و فقط یک بار بفرستد.
 بهینه تر در مصرف باطری.
