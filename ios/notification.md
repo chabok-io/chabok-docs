@@ -51,7 +51,7 @@ self.manager.application(application, didRegister: notificationSettings)
 ```
 
 #### رویداد کلیک بر روی اعلان
-سرویس چابک دارای `Messageing` و `Push Notification`  می باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان باید، نوع پیام دریافتی را تشخیص دهید. اپل برای فهمیدن دریافت پیام از طریق سرویس `APNs`، delegate متد `didReceiveRemoteNotification` را فراخوانی می کند و همچنین برای فهمیدن رویداد کلیک بر روی یک Notification باید از delegate متد `didReceiveLocalNotification` استفاده کنید، همانطور که از نام متد فوق پیداست، برای `LocalNotification` کاربرد دارد.
+سرویس چابک دارای `Messageing` و `Push Notification`  می باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان باید، نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل باشد با کلیک بر روی اعلان، delegate متد `didReceiveRemoteNotification` را فراخوانی خواهد شد و همچنین برای فهمیدن رویداد کلیک بر روی یک Notification باید از delegate متد `didReceiveLocalNotification` استفاده کنید، همانطور که از نام متد فوق پیداست، برای `LocalNotification` کاربرد دارد.
 
 ##### ۱. LocalNotification
 
