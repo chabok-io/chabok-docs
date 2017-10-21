@@ -13,11 +13,11 @@
     - id: publishingMessages
       title: پیام چابک
     - id: notification
-      title: راه‌اندازی اعلان‌ها
+      title: مدیریت اعلان‌ها
     - id: events
       title: مدیریت رویدادها
     - id: location-config
-      title: پیش نیازهای مکان‌یابی
+      title: تنظیمات مکان‌یابی
     - id: location-tracking
       title: مکان‌یابی
     - id: features

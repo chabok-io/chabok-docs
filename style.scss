@@ -430,8 +430,9 @@ footer {
     float: right;
   }
 }
-.platforms{
-  margin:100px 0;
+
+.platforms {
+  margin: 50px 0;
 }
 
 .platfrom-box {
@@ -441,7 +442,7 @@ footer {
   margin-bottom: 30px;
   box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.2);
   transition: all ease 0.25S;
-  &:hover{
+  &:hover {
     box-shadow: 0px 1px 45px 0px rgba(0, 0, 0, 0.3);
   }
   h2 {
@@ -470,15 +471,19 @@ footer {
   &.js {
     background-color: #FFFFFF;
     h2 {
-      color: darken(#f6da1d,10);
+      color: darken(#f6da1d, 10);
     }
   }
-  .fillbutton {
-    padding: 6px 25px;
-    font-weight: 100;
-    &:hover {
-      background: darken(#00325d, 5);
-      color: #ffffff;
+  .btn-bar {
+    margin-top: 10px;
+    .fillbutton {
+      padding: 10px 25px;
+      font-weight: 100;
+      margin: 5px;
+      &:hover {
+        background: darken(#00325d, 5);
+        color: #ffffff;
+      }
     }
   }
 

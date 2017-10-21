@@ -1,25 +1,70 @@
 ---
 id: notification
-title: راه‌اندازی اعلان‌ها
+title: مدیریت اعلان‌ها
 layout: ios
 permalink: ios/notification.html
 prev: publishingMessages.html
 next: events.html
 ---
 
-### راه‌اندازی اعلان‌ها
+### مدیریت اعلان‌ها
 
 
-کد زیر را درون `AppDelegate` خود وارد کنید. این به مشتری چابک کمک می کند تا `remote` و `local notification`  را مدیریت کند:
+کدهای زیر را درون `AppDelegate` خود وارد کنید. این به مشتری چابک کمک می کند تا `remote` و `local notification`  را مدیریت کند:
+
+با اعلان های محلی (LocalNotification)، برنامه شما اطلاعات local را به صورت local تنظیم می کند و این اطلاعات را به سیستم منتقل می کند و سپس اعلان را هنگامی که برنامه شما در پیش زمینه نیست، مدیریت می کند. اعلان های محلی در iOS، tvOS، و WatchOS پشتیبانی می شوند.
+
+با اعلان های راه دور (remoteNotification)، شما از چابک برای انتقال داده ها به دستگاه های کاربر از طریق سرویس اطلاع رسانی اکسپرس Push استفاده می کنید. اعلان های راه دور در iOS، tvOS، watchOS و macOS پشتیبانی می شوند.
+
+> `نکته:`فرآیند LocalNotification در iOS 10 و بالاتر، قابل مشاهده میباشد.
+
 ```objc
 //Objective-C:
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+
+// Manager Hook and handle receive iOS (4.0 and later) local notification
+[self.manager application:application didReceiveLocalNotification:notification];
+}
+```
+
+```swift
+//Swift:
+
+func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+self.manager.application(application, didReceive: notification)
+}
+```
+در متد زیر شما میتوانید مشخص کنید کاربر، با کلیک روی اعلان به کجا هدایت شود.
+
+```objc
+//Objective-C:
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 
 // Hook and Handle New Remote Notification, must be use for remote payloads
 [self.manager application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+
 }
+```
+```swift
+//Swift:
+
+func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+
+// Hook and Handle New Remote Notification, must be use for remote payloads
+manager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+
+}
+```
+
+> `نکته:` کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی اعلان
+> (نوتیفیکیشن) نمایش می‌دهد. درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، کد
+> شخصی‌سازی مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
+
+رویداد ها:
+
+```objc
+//Objective-C:
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
 
@@ -39,19 +84,10 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 [self.manager application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-
-// Manager Hook and handle receive iOS (4.0 and later) local notification
-[self.manager application:application didReceiveLocalNotification:notification];
-}
 ```
+
 ```swift
 //Swift:
-
-func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-// Hook and Handle New Remote Notification, must be use for remote payloads
-manager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
-}
 
 func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
 self.manager.application(application,didFailToRegisterForRemoteNotificationsWithError: error)
@@ -64,15 +100,7 @@ self.manager.application(application,didRegisterForRemoteNotificationsWithDevice
 func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
 self.manager.application(application, didRegister: notificationSettings)
 }
-
-func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-self.manager.application(application, didReceive: notification)
-}
 ```
-> `نکته:` کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی اعلان
-> (نوتیفیکیشن) نمایش می‌دهد. درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، کد
-> شخصی‌سازی مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
-
 ### NSNotificationCenter
 
 به عنوان یک جایگزین، می توانید از روش مشاهدات `NSNotificationCenter` برای دریافت رویدادها استفاده کنید. برای دریافت رویدادها به این روش، می توانید هر کدام از این ها را اضافه کنید:
@@ -103,3 +131,5 @@ NotificationCenter.default.addObserver(self, selector: #selector(self.pushClient
 
 NotificationCenter.default.addObserver(self, selector: #selector(self.pushClientServerReachabilityHandler), name: kPushClientDidChangeServerReachabilityNotification, object: nil)
 ```
+
+
