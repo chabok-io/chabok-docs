@@ -1,13 +1,13 @@
 ---
 id: notification
-title: راه‌اندازی اعلان‌ها
+title: مدیریت اعلان‌ها
 layout: ios
 permalink: ios/notification.html
 prev: publishingMessages.html
 next: events.html
 ---
 
-### راه‌اندازی اعلان‌ها
+### مدیریت اعلان‌ها
 
 
 کدهای زیر را درون `AppDelegate` خود وارد کنید. این به مشتری چابک کمک می کند تا `remote` و `local notification`  را مدیریت کند:
