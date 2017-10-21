@@ -173,7 +173,7 @@ locationManager.requestSingleLocation({(_ location: CLLocation?, _ error: Error?
 > `trackMeUntil:byMeter` و `startLocationUpdate‍` اختلال ایجاد کند.
 
 ### دریافت موقعیت مکانی در حالت Terminated
-امکان دریافت موقعیت مکان در حتی در حالتی که اپلیکشن شما `Terminate` شده باشد نیز وجود دارد.
+امکان دریافت موقعیت مکان حتی در حالتی که اپلیکشن شما `Terminate` شده باشد نیز وجود دارد.
 ``` objc
 //Objective-C :
 

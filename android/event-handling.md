@@ -59,9 +59,9 @@ if(chabok.isForeground()) {
 
 ### انتشار رویداد با داده های دلخواه
 
-با متدهای زیر می توانید رویداد های داخل اپ را منتشر کنید:
+با متدهای زیر می توانید رویداد های داخل برنامه را منتشر کنید:
 
->نکته : پارامتر ورودی live به این معنی است: کسانی این رویداد را دریافت خواهند نمود که در آن لحظه Online باشند.
+>نکته : پارامتر ورودی live به این معنی است: کسانی این رویداد را دریافت خواهند نمود که در آن لحظه online باشند.
 
 ```java
 public void publishEvent(final String event, final JSONObject data)
@@ -70,24 +70,26 @@ public void publishEvent(final String event, final JSONObject data,
 final boolean live, final boolean stateful)
 
 ```
-می توانید با استفاده از متدهای فوق یک رویداد بانام event که یک رشته متنی می باشد را با داده ای از نوع JSONObject منتشر کنید، مانند نمونه زیر:
+می توانید با استفاده از متدهای فوق یک رویداد بانام `event` که یک رشته متنی می باشد را با داده ای از نوع `JSONObject` منتشر کنید، مانند نمونه زیر:
 
 ```java
 try {
-JSONObject data = new JSONObject();
-data.put("lat", location.getLatitude());
-data.put("lng", location.getLongitude());
-data.put("ts", location.getTime());
-AdpPushClient.get().publishEvent("geo", data, false, true);
-} catch (JSONException e) {
-Logger.e(TAG, "Cant publish geo location event ", e);
+
+    JSONObject data = new JSONObject();
+    data.put("lat", location.getLatitude());
+    data.put("lng", location.getLongitude());
+    data.put("ts", location.getTime());
+    AdpPushClient.get().publishEvent("geo", data, false, true);
+
+    } catch (JSONException e) {
+    Logger.e(TAG, "Cant publish geo location event ", e);
 }
 ```
 به کمک نمونه کد فوق با دریافت هر گزارش مکان می توانید موقعیت مکانی کاربر را ارسال نمایید.
-در نمونه فوق رویدادی بنام geo با داده‌هایی که در شیٔ data‌ با فرمت JSONObject‌ قرار می گیرد، منتشر می شود.
+در نمونه فوق رویدادی بنام geo با داده‌هایی که در شیٔ data‌ بصورت یک JSONObject‌ قرار می گیرد، منتشر می شود.
 
 ### دریافت رویداد
-برای دریافت رویداد بایستی کلاس مورد نظر برای دریافت را بعنوان Listener‌ رویداد تعیین نمایید، مانند نمونه زیر:
+برای دریافت رویداد بایستی کلاس مورد نظر برای دریافت را بعنوان `Listener`‌ رویداد تعیین نمایید، مانند نمونه زیر:
 
 ```java
 AdpPushClient.get().addListener(MyActivity.this);
@@ -97,15 +99,16 @@ AdpPushClient.get().addListener(MyActivity.this);
 
 ```java
 public void onEvent(final EventMessage message) {
-if (message != null ) {
-runOnUiThread(new Runnable() {
-@Override
-public void run() {
-Log.d(TAG, "run: onEvent" + message.getName());
-// get data: JSONObject data = message.getData();
-}
-});
-}
-}
+        if (message != null ) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d(TAG, "run: onEvent" + message.getName());
+                    
+                    JSONObject data = message.getData();
+                }
+            });
+        }
+    }
 ```
-داده ارسال شده توسط فرستنده بصورت یک JSONObject از متد `getData` قابل بازیابی است.
+داده ارسال شده توسط فرستنده بصورت یک `JSONObject` از متد `getData` قابل بازیابی است.
