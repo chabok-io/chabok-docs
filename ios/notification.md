@@ -119,7 +119,7 @@ manager.application(application, didReceiveRemoteNotification: userInfo, fetchCo
 
 #### تنظیمات نمایش اعلان
 
- کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی اعلان نمایش می‌دهد. درصورت تمایل به تنظیم نمایش نوتیفیکیشن‌ها، کد مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
+ کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی اعلان نمایش می‌دهد. درصورت تمایل به تنظیم نمایش اعلان‌ها، کد مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
 
 > `نکته` : درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، از `delegate` متد
 > `pushClientManagerUILocalNotificationDidReceivedMessage` استفاده کنید، به قطعه کد زیر دقت فرمایید. در صورت استفاده از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` کتابخانه چابک دیگر اقدام به نمایش `LocalNotification` نمی کند.
