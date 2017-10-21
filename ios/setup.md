@@ -89,6 +89,7 @@ self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
 > کاربر `مسیج` و `پوش ` بفرستید.
 
 ۳. متد `unRegisterUser`
+
 برای لغو عضویت میتوانید از متد های زیر استفاده کنید:
 ```objc
 //Objective-C:
