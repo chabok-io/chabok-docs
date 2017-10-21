@@ -13,7 +13,7 @@ prev: location-tracking.html
 ``` objc
 //Objetive-C: 
 
-self.manager.deliveryChannelEnabeled = YES; 
+[self.manager.deliveryChannelEnabeled = YES]; 
 ```
 ```swift
 //Swift: 
@@ -108,7 +108,7 @@ open func enableEventDelivery(_ eventName: String!, forPublic: Bool, live: Bool)
 ```objc
 //Objetive-C: 
 
-self.manager.enableLocationOnLaunch = YES
+[self.manager.enableLocationOnLaunch = YES];
 ```
 ```swift
 //Swift:
