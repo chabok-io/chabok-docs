@@ -28,8 +28,8 @@ prev: event-handling.html
 ```
 
 ### ۲) دریافت موقعیت مکانی در حالت kill
-برای دریافت گزارش مکان درحالت kill لازمست یک IntentService با اکشن com.adpdigital.push.intent.action.PENDING_INTENT_SERVICE تعریف نمایید تا مانند نمونه کد زیر بتوانید از سرویس مکان یابی استفاده کنید.
-این IntentService در هر بروز رسانی مکان فراخوانی خواهد شد.
+برای دریافت گزارش مکان درحالت `kill` لازمست یک `IntentService` با اکشن com.adpdigital.push.intent.action.PENDING_INTENT_SERVICE تعریف نمایید تا مانند نمونه کد زیر بتوانید از سرویس مکان یابی استفاده کنید.
+این `IntentService` در هر بروز رسانی مکان فراخوانی خواهد شد.
 
 ```java
 public class LocationHostService extends IntentService {
@@ -66,14 +66,14 @@ public class LocationHostService extends IntentService {
 
 }
 ```
-سپس سرویس را در فایل AndroidManifest.xml نیز تعریف نمایید، توجه کنید که اکشن سرویس مطابق نمونه زیر باشد:
+سپس سرویس را در فایل `AndroidManifest.xml` نیز تعریف نمایید، توجه کنید که اکشن سرویس مطابق نمونه زیر باشد:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.adpdigital.push.demo" >
     
-<application
+    <application
         android:name=".app.DemoApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -81,15 +81,15 @@ public class LocationHostService extends IntentService {
         
         ...
         
-<service android:name=".service.LocationHostService" >
-    <intent-filter>
-        <action android:name="com.adpdigital.push.intent.action.PENDING_INTENT_SERVICE" />
-    </intent-filter>
-</service>
-</application>
+        <service android:name=".service.LocationHostService" >
+            <intent-filter>
+                <action android:name="com.adpdigital.push.intent.action.PENDING_INTENT_SERVICE" />
+            </intent-filter>
+        </service>
+    </application>
 
 </manifest>
 ```
 
-در متد onHandleIntent مانند نمونه فوق می توانید اطلاعات مکان بروزشده را استخراج نمایید.
+در متد `onHandleIntent` مانند نمونه فوق می توانید اطلاعات مکان بروزشده را استخراج نمایید.
 
