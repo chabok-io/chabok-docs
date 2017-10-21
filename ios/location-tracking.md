@@ -95,14 +95,13 @@ func receivedLocationUpdates(_ locations: [CLLocation]) {
 //Objective-C :
 
 CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
-[locationManager trackMeUntil:3600 
-byMeter:kCLLocationAccuracyNearestTenMeters];
+[locationManager trackMeUntil:3600 byMeter:100];
 ```
 ``` swift
 //Swift :
 
 let locationManager = CoreGeoLocation.sharedInstance()
-locationManager.trackMe(until: 3600, byMeter: kCLLocationAccuracyNearestTenMeters)
+locationManager.trackMe(until: 3600, byMeter:100)
 ```
 
 > `نکته :`  متد فوق بعد از دریافت موقعیت مکانی، رویداد 
