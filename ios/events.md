@@ -35,13 +35,13 @@ next: location-config.html
 ```swift
 //Swift:
 
-open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!) -> Bool
+func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!) -> Bool
 
-open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool) -> Bool
+func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool) -> Bool
 
-open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, stateful: Bool) -> Bool
+func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, stateful: Bool) -> Bool
 
-open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool, stateful: Bool) -> Bool
+func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool, stateful: Bool) -> Bool
 ```
 
 ###  فعال کردن دریافت رویداد

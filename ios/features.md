@@ -91,11 +91,11 @@ func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkTyp
 ```swift
 //Swift
 
-open func enableEventDelivery(_ eventName: String!)
+func enableEventDelivery(_ eventName: String!)
 
-open func enableEventDelivery(_ eventName: String!, live: Bool)
+func enableEventDelivery(_ eventName: String!, live: Bool)
 
-open func enableEventDelivery(_ eventName: String!, forPublic: Bool, live: Bool)
+func enableEventDelivery(_ eventName: String!, forPublic: Bool, live: Bool)
 ```
 ### ارسال موقعیت مکانی در هنگام باز شدن برنامه
 
