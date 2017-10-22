@@ -34,7 +34,9 @@ PushClientManager.resetBadge()
 ### اتصال با سرور
 
 
-پس از فراخوانی `manager.addDelegate`، می توانید از متد زیر برای دریافت رویدادهای داخلی چارچوب چابک استفاده کنید:
+پس از فراخوانی `manager.addDelegate`، می توانید از متد زیر برای دریافت رویدادهای داخلی چارچوب چابک استفاده کنید.
+
+برای اطلاع از وضعیت آنلاین یا آفلاین بودن،میتوانید از متد زیر استفاده کنید:
 
 ```objc
 //Objetive-C: 
@@ -57,6 +59,60 @@ func pushClientManagerDidChangedServerConnectionState() {
 
 func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkType: PushClientServerReachabilityNetworkType) {
 // Called When PushClientManager Server Reachiability has been Changed
+}
+```
+برای مثال میتوانید به نمونه کد زیر توجه کنید:
+```objc
+//Objective-C:
+
+- (void)pushClientManagerDidChangedServerConnectionState{
+switch (_connectionState) {
+case PushClientServerConnectingStartState:
+NSLog(@"Init");
+break;
+case PushClientServerConnectingState:
+NSLog(@"Connecting");
+break;
+case PushClientServerConnectedState:
+NSLog(@"Connected");
+break;
+case PushClientServerDisconnectedState:
+NSLog(@"Disconnected");
+break;
+case PushClientServerDisconnectedErrorState:
+NSLog(@"Error");
+break;
+default:
+NSLog(@"Unknown");
+break;
+};
+NSLog(@"Connection State = %@", @(self.manager.connectionState));
+}
+```
+```swift
+//Swift:
+
+fund pushClientManagerDidChangedServerConnectionState (){
+switch (_connectionState) {
+case PushClientServerConnectingStartState:
+return @"Init";
+break;
+case PushClientServerConnectingState:
+return @"Connecting";
+break;
+case PushClientServerConnectedState:
+return @"Connected";
+break;
+case PushClientServerDisconnectedState:
+return @"Disconnected";
+break;
+case PushClientServerDisconnectedErrorState:
+return @"Error";
+break;
+default:
+return @"Unknown";
+break;
+};
 }
 ```
 
