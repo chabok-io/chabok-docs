@@ -16,18 +16,12 @@ next: notification.html
 - (void)pushClientManagerDidReceivedMessage:(PushClientMessage *)message{
 // Called When PushClientManager has been received new message from server
 }
-- (void)pushClientManagerDidReceivedDelivery:(DeliveryMessage *)delivery{
-// Called When PushClientManager has received new delivery from server
-}
 ```
 ```swift
 //Swift:
 
 func pushClientManagerDidReceivedMessage(_ message: PushClientMessage!) {
 // Called When PushClientManager has been received new message from server
-}
-func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage!) {
-// Called When PushClientManager has received new delivery from server
 }
 ```
 
@@ -62,6 +56,39 @@ manager.subscribe("public/+") // all public channels
 manager.unsubscribe("myAlerts") // private (personal) channel
 manager.unsubscribe("public/sport") // public channel
 manager.unsubscribe("public/+") // all public channels
+```
+
+### دریافت تأییدیه تحویل
+
+برای فعال کردن دریافت تأییدیه تحویل یک پیام منتشر شده، باید تحویل را قبل از فعالسازی فعال کنید: 
+
+``` objc
+//Objetive-C: 
+
+[self.manager.deliveryChannelEnabeled = YES]; 
+```
+```swift
+//Swift: 
+
+manager.deliveryChannelEnabeled = true 
+``` 
+
+### رویداد دریافت تأییدیه تحویل
+برای دریافت تأییدیه تحویل، باید از رویداد زیر استفاده کنید :
+
+```objc
+//Objective-C:
+
+- (void)pushClientManagerDidReceivedDelivery:(DeliveryMessage *)delivery{
+// Called When PushClientManager has received new delivery from server
+}
+```
+```swift
+//Swift:
+
+func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage!) {
+// Called When PushClientManager has received new delivery from server
+}
 ```
 
 ### ارسال پیام
