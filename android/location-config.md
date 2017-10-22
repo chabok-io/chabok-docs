@@ -28,7 +28,7 @@ prev: event-handling.html
 ```
 
 ### ۲) دریافت موقعیت مکانی در حالت kill
-برای دریافت گزارش مکان درحالت `kill` لازمست یک `IntentService` با اکشن com.adpdigital.push.intent.action.PENDING_INTENT_SERVICE تعریف نمایید تا مانند نمونه کد زیر بتوانید از سرویس مکان یابی استفاده کنید.
+برای دریافت گزارش مکان درحالت `kill` لازم است یک `IntentService` با اکشن com.adpdigital.push.intent.action.PENDING_INTENT_SERVICE تعریف نمایید تا مانند نمونه کد زیر بتوانید از سرویس مکان یابی استفاده کنید.
 این `IntentService` در هر به‌روزرسانی مکان فراخوانی خواهد شد.
 
 ```java
