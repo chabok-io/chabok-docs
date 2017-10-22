@@ -4,6 +4,7 @@ title: مکان یابی
 layout: android
 permalink: android/location-tracking.html
 prev: location-config.html
+next: features.html
 ---
 
 ### استفاده از شیء LocationManager
