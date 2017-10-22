@@ -27,11 +27,11 @@ public class PushMessageReceiver extends WakefulBroadcastReceiver {
 
 
     private void handleNewMessage(PushMessage message) {
-    // write your code to handle new message
+        // write your code to handle new message
     }
 
-
 }
+
 ```
 
 ### عضویت روی کانال‌ها
@@ -55,6 +55,7 @@ chabok.subscribe(CHANNEL_NAME, new Callback() {
 
     }
 });
+
 ```
 امضای دوم علاوه بر موارد قبلی یک پارامتر بولین نیز دریافت می‌کند، این پارامتر به این معناست که آیا کاربر فقط در حالتی که به چابک متصل است پیام‌های این کانال را دریافت کند و یا خیر .
 
@@ -71,6 +72,7 @@ chabok.subscribe(CHANNEL_NAME, true, new Callback() {
 
     }
 });
+
 ```
 
 متد `unsubscribe`
@@ -118,10 +120,10 @@ chabok.publish(myPushMessage, new Callback() {
 
 ### دریافت رویداد تحویل پیام‌
 
-برای دریافت تایید تحویل پیام‌های ارسالی باید این ویژگی را توسط متد `enableDeliveryTopic` فعال نمایید. سپس با پیاده‌سازی متد onEvent می‌توانید از تحویل پیام خود مطلع شوید.
+با استفاده از متد `enableDeliveryTopic`، دریافت رویداد تایید تحویل پیام‌های ارسالی را فعال نمایید. سپس با پیاده‌سازی متد onEvent می‌توانید از تحویل پیام خود مطلع شوید.
 
 
-> `نکته` :  برای دریافت رویداد لازم است کلاس مورد نظر برای دریافت را بعنوان Listener‌ رویداد تعیین نمایید،
+> `نکته` :  برای دریافت رویداد لازم است کلاس مورد نظر برای دریافت را بعنوان Listener‌ رویداد تعیین نمایید.
 
 ```java
 
@@ -134,4 +136,31 @@ public void onEvent(DeliveryMessage message) {
     // write your code here
 
 }
+
 ```
+
+
+### ارسال وضعیت پیام‌های دریافتی
+
+شما می‌توانید عکس‌العمل کاربر به یک پیام چابک را (خوانده شدن، نادیده گرفته شدن، ...) با استفاده از کلاینت چابک مشخص کنید. 
+متد `markAsRead` برای ارسال رویداد خوانده شدن پیام توسط کاربر به سرور می تواند مورد استفاده قرار بگیرد. 
+متد `dismiss` نیز می‌تواند برای هر عملی که معنی باز نکردن یا نادیده گرفته شدن پیام را داشته باشد بکار رود. به دو طریق می توان این متدها را فراخوانی نمود:
+
+۱. اگر شی پیام چابک در دسترس است به صورت مستقیم متد را فراخوانی کنید:
+
+```java  
+
+pushMessage.markAsRead();
+pushMessage.dismiss();
+
+```               
+
+۲. اگر فقط شناسه پیام چابک در دسترس است می‌توانید نسخه استاتیک متد‌ها را فراخوانی کنید:
+
+```java  
+
+PushMessage.markAsRead("PUSH_MESSAGE_ID");
+PushMessage.messageDismissed("PUSH_MESSAGE_ID");
+
+```               
+
