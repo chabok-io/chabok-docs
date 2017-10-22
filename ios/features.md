@@ -45,8 +45,7 @@ PushClientManager.resetBadge()
 // Called When PushClientManager Connecting State has been Changed
 }
 
-- (void)pushClientManagerDidChangeServerReachiability:(BOOL)reachable
-networkType:(PushClientServerReachabilityNetworkType)networkType{
+- (void)pushClientManagerDidChangeServerReachiability:(BOOL)reachable networkType:(PushClientServerReachabilityNetworkType)networkType{
 // Called When PushClientManager Server Reachiability has been Changed
 }
 ```
