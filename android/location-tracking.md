@@ -4,10 +4,11 @@ title: مکان‌یابی
 layout: android
 permalink: android/location-tracking.html
 prev: location-config.html
+next: features.html
 ---
 
 ### استفاده از شیء LocationManager
-برای استفاده از امکانات مکان‌یابی چابک بایستی ابتدا شیء `LocationManager` را مقداردهی اولیه کنید، برای این کار متد `init` را با context موردنظر فراخوانی نمایید، به شکل زیر:
+برای استفاده از امکانات مکان‌یابی چابک لازم است ابتدا شیء `LocationManager` را مقداردهی اولیه کنید، برای این کار متد `init` را با context موردنظر فراخوانی نمایید، به شکل زیر:
 
 ```java
 LocationManager locationManger = LocationManager.init(getApplicationContext());
@@ -22,7 +23,7 @@ LocationManager locationManger = LocationManager.init(getApplicationContext());
 public void startLocationUpdates(LocationParams params)
 ```
 >`نکته:`
->قبل از ادامه توضیحات، توجه داشته باشید که برای دریافت گزارش به‌روزرسانی مکان بایستی توسط متد `addListener` کلاس مورد نظر برای دریافت به‌روزرسانی مکان را معرفی نمایید.
+>قبل از ادامه توضیحات، توجه داشته باشید که برای دریافت گزارش به‌روزرسانی مکان  توسط متد `addListener` کلاس مورد نظر برای دریافت به‌روزرسانی مکان را معرفی نمایید.
 
 >`نکته:`
 >درصورتی که نیازی به دریافت مداوم مکان ندارید، می توانید از روش های کم هزینه‌تر مانند درخواست فقط یکبار با استفاده از متد `requestSingleLocation` یا درخواست به مدت معین با استفاده از متد `startTrackingMe` و روش‌های دیگری که توسط چابک ارائه می شود، استفاده نمایید.
@@ -37,15 +38,16 @@ LocationParams params = new Builder().setAccuracy(LocationAccuracy.HIGH).setDist
 در این نمونه دقت مکان‌یابی حداکثر، جابجایی مکانی حداقل صفر و زمان تناوب گزارش مکان‌یابی ۵۰۰ میلی‌ثانیه می باشد.
 در ادامه توضیحات هریک از متدهای شیء `LocationParams` را مشاهده می‌کنید.
 
-### دقت مکان‌یابی
+#### دقت مکان‌یابی
 متد `setAccuracy`
 
 برای تعیین دقت مکان‌یابی از این متد استفاده کنید.
+
 ```java
 setAccuracy(LocationAccuracy accuracy)
 ```
 
-برای مقداردهی اولیه آن بایستی یکی از مقادیر enum ذیل را انتخاب نمایید:
+برای مقداردهی اولیه آن لازم است یکی از مقادیر enum ذیل را انتخاب نمایید:
 
 ```java
 enum LocationAccuracy {
@@ -74,27 +76,30 @@ enum LocationAccuracy {
 اگر مصرف باتری برایتان خیلی مهم است، ولی به‌روزرسانی مکان را فقط وقتی در دسترس باشد نیاز دارید، از این مقدار استفاده کنید.
 با این تنظیم برنامه شما هیچ به‌روزرسانی مکان را درخواست نخواهد کرد،‌ولی درخواست به‌روزرسانی توسط برنامه‌های دیگر را دریافت خواهدنمود.
 
-### حداقل فاصله
+#### حداقل فاصله
 متد `setDistance`
 
 با استفاده از این متد حداقل فاصله برای تریگر کردن مکان‌یابی براساس متر می‌تواند تنظیم شود.
+
 ```java
 setDistance(float distance)
 ```
 
 
 
-### دوره تناوب دریافت مکان‌یابی
+#### دوره تناوب دریافت مکان‌یابی
 متد `setInterval`
 
  می توانید فاصله زمانی بین دریافت هر به‌روزرسانی مکان را براساس میلی‌ثانیه با این متد تنظیم نمایید.
+
 ```java
 setInterval(long interval)
 ```
 
 
 ### متد addListener
-برای دریافت گزارش به‌روزرسانی مکان بایستی توسط متد `addListener` کلاس مورد نظر برای دریافت به‌روزرسانی مکان را معرفی نمایید.
+برای دریافت گزارش به‌روزرسانی مکان لازم است توسط متد `addListener` کلاس مورد نظر برای دریافت به‌روزرسانی مکان را معرفی نمایید.
+
 ```java
 public void addListener(OnLocationUpdateListener listener)
 ```
@@ -193,6 +198,7 @@ public class GeoFragment extends Fragment
 ### دریافت موقعیت مکانی یک‌بار در زمان شروع برنامه 
 با استفاده از متد `enableLocationOnLaunch` می توانید گزارش مکان را در کلاس listener ‌خود برای یک‌بار دریافت نمایید، پس از یکبار گزارش، سرویس مکان‌یابی بصورت خودکار متوقف خواهدشد.
 می توانید این متد را در جای مناسبی مانند `onCreate` اکتیویتی یا کلاس `Application‌` فراخوانی نمایید.
+
 ```java
 public void enableLocationOnLaunch()
 ```
@@ -218,6 +224,7 @@ locationManager.requestSingleLocation(new LocationListener() {
 
 ### مکان‌یابی براساس مدت زمان و جابجایی
 با کمک متد `startTrackingMe` می توانید در طول زمانی مشخص، با یک تناوب زمانی معین و حداقل فاصله جابجایی، گزارش مکان‌یابی را دریافت نمایید.
+
 ```java
 public void startTrackingMe(long duration, long interval, float distance)
 ```
@@ -230,14 +237,14 @@ public void startTrackingMe(long duration, long interval, float distance)
 >توجه داشته باشید که در حالت Tracking متد `requestSingleLocation` عمل نخواهدکرد.
 
 ### Geofence
-قابلیت حصار جغرافیایی یا Geofence‌ برای تعریف یک محدوده مشخص برای تشخیص ورود و خروج کاربر استفاده می شود.
+قابلیت تعیین محدوده جغرافیایی یا Geofence‌ برای تعریف یک محدوده مشخص برای تشخیص ورود و خروج کاربر استفاده می شود.
 
 با استفاده از متد `setUpGeofence` می‌توانید پارامترهای مورد نیاز Geofence‌ را تعریف و فعال نمایید، پس از تعریف Geofence می توان ورود و خروج کاربر به/از محدوده مورد نظر را تشخیص داد.
 
 ```java
 public void setUpGeofence(final GeofenceParams params, String enterMessage, String exitMessage, int count)
 ```
-پارامتراول این متد یک شی، از نوع `GeofenceParams` می باشد که بایستی مانند نمونه زیر مقداردهی شود:
+پارامتراول این متد یک شی، از نوع `GeofenceParams` می باشد که لازم است مانند نمونه زیر مقداردهی شود:
 
 ```java
 GeofenceParams geofenceParams = new GeofenceParams.Builder()
@@ -252,7 +259,7 @@ GeofenceParams geofenceParams = new GeofenceParams.Builder()
 ### متدهای GeofenceParams
 متد `setCenter`
 
-با استفاده از متد `setCenter` بایستی مرکز محدوده مورد نظر را به همراه شناسه ای یکتا مشخص نمایید.
+با استفاده از متد `setCenter` لازم است مرکز محدوده مورد نظر را به همراه شناسه ای یکتا مشخص نمایید.
 پارامتر اول این متد یک مقدار String بعنوان شناسه یکتا و پارامترهای بعدی به ترتیب طول و عرض جغرافیایی مرکز محدوده مورد نظر می باشد.
 
 متد `setExpire`
@@ -266,18 +273,21 @@ GeofenceParams geofenceParams = new GeofenceParams.Builder()
 
 ### حذف یک Geofence
 به کمک متد `removeGeofenceById` و با شناسه یکتای Geofence که در زمان ایجاد آن تعیین نمودید می‌توانید Geofence موردنظر را حذف نمایید.
+
 ```java
 public void removeGeofenceById(String geofenceId)
 ```
 
 ### حذف گروهی Geofence ها
 با استفاده از متد `removeGeofencesByIds` و لیستی از شناسه های Geofence ها می توانید همه آنها را یکجا حذف کنید.
+
 ```java
 public void removeGeofencesByIds(List<String> geofenceIds)
 ```
 
 ### دریافت آخرین مکان ثبت شده کاربر
 پس از اینکه کلاینت مکان‌یابی متصل شد، می توانید با استفاده از متد getLastLocation آخرین مکان ثبت شده کاربر را دریافت کنید که لزوما مکان به‌روزشده نمی‌باشد.
+
 ```java
 public Location getLastLocation()
 ```
@@ -290,12 +300,14 @@ public void publishLocation(Location location)
 
 ### متد enableBackgroundMode
 درصورتی که بخواهید سرویس مکان‌یابی حتی زمانی که برنامه شما Terminate شده یا وقتی که در background قرار دارد، عمل گزارش مکان را ادامه دهد، می‌توانید توسط متد enableBackgroundMode آن را فعال کنید.
+
 ```java
 public void enableBackgroundMode()
 ```
 
 ### متد disableBackgroundMode
 برای غیرفعال‌سازی امکان background service می‌توانید این متد را فراخوانی کنید.
+
 ```java
 public void disableBackgroundMode()
 ```
@@ -306,6 +318,7 @@ public void disableBackgroundMode()
 
 ### isBackgoundModeEnabled
 برای بررسی فعال بودن یا نبودن امکان background service می توانید از این متد استفاده کنید، مقدار بازگشتی یک boolean‌ می باشد.
+
 ```java
 public boolean isBackgoundModeEnabled()
 ```
