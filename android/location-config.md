@@ -8,7 +8,7 @@ prev: event-handling.html
 ---
 
 ### ۱) تعریف مجوزهای دسترسی به مکان
-برای استفاده از امکانات مکان‌یابی چابک بایستی دو مجوز ACCESS_FINE_LOCATION و ACCESS_COARSE_LOCATION  را در فایل AndroidManifest.xml قرار دهید:
+برای استفاده از امکانات مکان‌یابی چابک لازم است دو مجوز `ACCESS_FINE_LOCATION` و `ACCESS_COARSE_LOCATION`  را در فایل `AndroidManifest.xml` قرار دهید:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -29,7 +29,7 @@ prev: event-handling.html
 
 ### ۲) دریافت موقعیت مکانی در حالت kill
 برای دریافت گزارش مکان درحالت `kill` لازمست یک `IntentService` با اکشن com.adpdigital.push.intent.action.PENDING_INTENT_SERVICE تعریف نمایید تا مانند نمونه کد زیر بتوانید از سرویس مکان یابی استفاده کنید.
-این `IntentService` در هر بروز رسانی مکان فراخوانی خواهد شد.
+این `IntentService` در هر به‌روزرسانی مکان فراخوانی خواهد شد.
 
 ```java
 public class LocationHostService extends IntentService {
@@ -91,5 +91,5 @@ public class LocationHostService extends IntentService {
 </manifest>
 ```
 
-در متد `onHandleIntent` مانند نمونه فوق می توانید اطلاعات مکان بروزشده را استخراج نمایید.
+در متد `onHandleIntent` مانند نمونه فوق می‌توانید اطلاعات مکان به‌روزشده را استخراج نمایید.
 

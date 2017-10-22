@@ -124,14 +124,14 @@ manager.publish(message)
 متد `messageDismissed` نیز می‌تواند برای هر عملی که معنی باز نکردن یا نادیده گرفته شدن پیام را داشته باشد بکار رود. به دو طریق می توان این متدها را فراخوانی نمود:
 
 ```objc
-Objective-C:
+//Objective-C:
 
 [self.manager markAsRead:@"MESSAGE_ID"];
 [self.manager messageDismissed:@"MESSAGE_ID"];
 
 ```    
 ```swift
-Swift:
+//Swift:
 
 PushClientManager.default().mark(asRead: @"MESSAGE_ID");
 PushClientManager.default().messageDismissed(@"MESSAGE_ID");
