@@ -56,6 +56,29 @@ func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool, 
 
 self.manager.enableEventDelivery("geo")
 ```
+متد `enableEventDelivery` دارای سه overload می باشد که ورودی `forPublic` به این معنی است، اگر مقدار ‌`true` به آن داده شود، تمام رویدادهای مربوط به نام وارد شده را دریافت می کند.
+
+```objc
+//Objective-C:
+
+- (void)enableEventDelivery:(NSString*)eventName;
+
+- (void)enableEventDelivery:(NSString*)eventName
+                       live:(BOOL)live;
+
+- (void)enableEventDelivery:(NSString*)eventName
+                  forPublic:(BOOL)forPublic
+                       live:(BOOL)live;
+```
+```swift
+//Swift
+
+func enableEventDelivery(_ eventName: String!)
+
+func enableEventDelivery(_ eventName: String!, live: Bool)
+
+func enableEventDelivery(_ eventName: String!, forPublic: Bool, live: Bool)
+```
 
 برای دریافت رویداد باید delegate method زیر را پیاده سازی کنید، تا بتوانید رویداد هایی که توسط متد `enableEventDelivery` بر روی یک رویداد خاص `subscribe` کرده اید دریافت کنید :
 
