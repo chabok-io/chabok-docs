@@ -6,20 +6,6 @@ permalink: ios/features.html
 prev: location-tracking.html
 ---
 
-### دریافت تأییدیه تحویل
-
-برای فعال کردن دریافت تأییدیه تحویل یک پیام منتشر شده، باید تحویل را قبل از فعالسازی فعال کنید: 
-
-``` objc
-//Objetive-C: 
-
-[self.manager.deliveryChannelEnabeled = YES]; 
-```
-```swift
-//Swift: 
-
-manager.deliveryChannelEnabeled = true 
-``` 
 ###  مدیریت نشان‌ها
 
 اگر می خواهید شماره badge برنامه خود را بازنشانی کنید،با روش زیر می توانید: 
