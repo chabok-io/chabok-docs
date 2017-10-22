@@ -8,10 +8,10 @@ next: location-config.html
 ---
 
 ### انتشار رویداد به همراه داده
-با متد زیر می توانید رویداد های داخل اپ را منتشر کنید:
+با متد زیر می توانید رویداد های داخل برنامه را منتشر کنید:
 
-> `نکته` :  پارامتر ورودی live به این معنی می باشد، کسانی این رویداد را
-> دریافت خواهند کرد که در آن لحظه `Online` باشند.
+> `نکته` : پارامتر ورودی live به این معناست که کاربرانی که به چابک متصل هستند این رویداد را دریافت خواهند نمود.
+>
 
 ```objc
 //Objective-C:
@@ -35,13 +35,13 @@ next: location-config.html
 ```swift
 //Swift:
 
-open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!) -> Bool
+func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!) -> Bool
 
-open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool) -> Bool
+func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool) -> Bool
 
-open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, stateful: Bool) -> Bool
+func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, stateful: Bool) -> Bool
 
-open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool, stateful: Bool) -> Bool
+func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: Bool, stateful: Bool) -> Bool
 ```
 
 ###  فعال کردن دریافت رویداد
@@ -55,6 +55,29 @@ open func publishEvent(_ eventName: String!, data: [AnyHashable : Any]!, live: B
 //Swift :
 
 self.manager.enableEventDelivery("geo")
+```
+متد `enableEventDelivery` دارای سه overload می باشد که ورودی `forPublic` به این معنی است، اگر مقدار ‌`true` به آن داده شود، تمام رویدادهای مربوط به نام وارد شده را دریافت می کند.
+
+```objc
+//Objective-C:
+
+- (void)enableEventDelivery:(NSString*)eventName;
+
+- (void)enableEventDelivery:(NSString*)eventName
+                       live:(BOOL)live;
+
+- (void)enableEventDelivery:(NSString*)eventName
+                  forPublic:(BOOL)forPublic
+                       live:(BOOL)live;
+```
+```swift
+//Swift
+
+func enableEventDelivery(_ eventName: String!)
+
+func enableEventDelivery(_ eventName: String!, live: Bool)
+
+func enableEventDelivery(_ eventName: String!, forPublic: Bool, live: Bool)
 ```
 
 برای دریافت رویداد باید delegate method زیر را پیاده سازی کنید، تا بتوانید رویداد هایی که توسط متد `enableEventDelivery` بر روی یک رویداد خاص `subscribe` کرده اید دریافت کنید :
