@@ -7,7 +7,7 @@ prev: location-config.html
 next: features.html
 ---
 ### کلاس CoreGeoLocation 
-در ابزار جدید چابک، امکان دریافت موقعیت مکانی کاربر امکان پذیر شده است. برای استفاده از کلاس `CoreGeoLocation` می توانید کلاس فوق را به کلاس خود import کنید:
+در ابزار جدید چابک، امکان دریافت موقعیت مکانی کاربر فراهم شده است. برای استفاده از کلاس `CoreGeoLocation` می توانید کلاس فوق را به کلاس خود import کنید:
 ``` objc
 //Objective-C :
 
