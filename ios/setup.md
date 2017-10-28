@@ -6,36 +6,58 @@ permalink: ios/setup.html
 prev: installation.html
 next: publishingMessages.html
 ---
-### مقداردهی اولیه
+### مراحل راه‌اندازی چابک
+برای راه‌اندازی چابک باید سه مرحله زیر را به ترتیب انجام دهید تا بتوانید دستگاه خود را در پنل چابک مشاهده کنید :
 
-برای دریافت یا ارسال پیام از/به سرور چابک، بایستی یک نمونه از کلاس AdpPushClient بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست،‌‌ زیرا فراخوانی این متد فقط یکبار کافی ست. برای این منظور در متد `didFinishLaunchingWithOptions` کلاس `AppDelegate`  کدهای زیر را اضافه کنید.
+ 1. مقداردهی اولیه
+ 2. ثبت کاربر
+ 3. متدهای ضروری
+
+> `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید در کلاس `AppDelegate` قرار داده و متدهای چابک باید در delegate متد `didFinishLaunchingWithOptions` فراخوانی شوند.
+
+#### ۱- مقداردهی اولیه
+برای دریافت یا ارسال پیام از/به سرور چابک، بایستی یک نمونه از کلاس AdpPushClient بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست،‌‌ زیرا فراخوانی این متد فقط یکبار کافی ست. به قطعه کد زیر دقت کنید :
 
 ```objc
-//Objective-C:
+//Objective-C
 
-[self.manager registerApplication:@"YOUR_APP_ID"
-apiKey:@"YOUR_SDK_KEY"
-userName:@"SDK_USERNAME"
-password:@"SDK_PASSWORD"]
+#import <AdpPushClient/AdpPushClient.h>
+
+@interface AppDelegate () <PushClientManagerDelegate, PushClientManagerDelegate>
+@property (nonatomic, strong) PushClientManager *manager;
+@end
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    _manager = [PushClientManager defaultManager];
+    ...
+    return YES;
+}
+...
+@end
 ```
+
 ```swift
 //Swift:
 
-self.manager.registerApplication(AppDelegate.applicationId(),
-apiKey : "YOUR_APP_ID",
-userName:"SDK_USERNAME" ,
-password:"SDK_PASSWORD" )
+import AdpPushClient
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate {
+    
+    var window: UIWindow?
+    var manager: PushClientManager?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        manager = PushClientManager.default()
+        ...
+        return true
+    }
+...
+}
 ```
-
-### پارامترها
-
-با استفاده از متد بالا یک نمونه از AdpPushClient مقدار دهی اولیه می شود. در این متد بجای پارامتر‌های `YOUR_APP_ID`, `YOUR_API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را که در بخش تنظیمات پنل است، وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](required) توضیح داده شده است.
-
-### توضیح متدها
-
-۱. متد `setDevelopment`
-
-مشخص می‌کند که برنامه به محیط تستی چابک متصل شود یا به محیط عملیاتی. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
+متد `setDevelopment` مشخص می‌کند که برنامه به محیط [آزمایشی](https://sandbox.push.adpdigital.com) چابک متصل شود یا به محیط [عملیاتی](https://panel.push.adpdigital.com). این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
 
 ```objc
 //Objective-C:
@@ -47,11 +69,53 @@ password:"SDK_PASSWORD" )
 
 PushClientManager.setDevelopment(true)
 ```
+به منظور استفاده از سرویس چابک، ابتدا باید متد `registerApplication` را فراخوانی کرده و مقادیر مورد نیاز جهت فعال سازی کتابخانه چابک را وارد نمایید. در این متد بجای پارامتر‌های `YOUR_APP_ID`, `YOUR_API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را که در بخش تنظیمات پنل است، وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](required) توضیح داده شده است.
+همانند کد زیر، متد `registerApplication` را در کلاس `AppDelegate` و در متد `didFinishLaunchingWithOptions` فراخوانی کنید :
 
+```objc
+//Objective-C:
+  
+[_manager registerApplication:@"APP_ID"
+                           apiKey:@"API_KEY"
+                         userName:@"SDK_USERNAME"
+                         password:@"SDK_PASSWORD"];
+```
+```swift
+//Swift:
 
-۲. متد `registerUser`
+manager?.registerApplication("APP_ID", apiKey: "API_KEY", userName: "SDK_USERNAME", password: "SDK_PASSWORD")
+```
 
-با دو امضای متفاوت وجود دارد: امضای اول که تنها شناسه کاربر را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام میکند.
+جهت دسترسی به `delegate‌های` چابک باید متد `addDelegate`را همانند کد زیر فراخوانی کنید :
+
+```objc
+//Objective-C:
+
+[_manager addDelegate:self];
+```
+```swift
+//Swift :
+
+manager?.addDelegate(self)
+```
+چابک برای فهمیدن نحوه باز شدن برنامه نیاز به قطعه کد زیر دارد:
+```objc
+//Objective-C:
+//Check app was launch by clicking on Notification.
+if ([_manager application:application didFinishLaunchingWithOptions:launchOptions]) {
+	NSLog(@"Application was launch by clicking on Notification...");
+}
+```
+```swift
+//Swift:
+
+//Check app was launch by clicking on Notification.
+if manager?.application(application, didFinishLaunchingWithOptions: launchOptions) ?? false {
+	print("Application was launch by clicking on Notification...")
+}
+```
+#### ۲- ثبت کاربر
+با استفاده از متد `registerUser` می‌توانید یک نام کاربری به هر کاربر اختصاص دهید. این متد با دو امضای متفاوت وجود دارد: امضای اول که تنها `شناسه کاربر` را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام میکند.
 
 ```objc
 //Objective-C:
@@ -64,8 +128,7 @@ PushClientManager.setDevelopment(true)
 self.manager.registerUser("USER_ID")
 ```
 
-
-> `نکته` : متغیر `USER_ID` شناسه کاربر برای ثبت نام در چابک می‌باشد و ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود شناسه کاربری می تواند هر فیلد باارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. شماره موبایل، کدملی، شماره حساب و یا ایمیل مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند.
+> `نکته` : متغیر `USER_ID` شناسه کاربر برای ثبت نام در چابک می‌باشد و ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود شناسه کاربری می تواند هر فیلد باارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. `شماره موبایل، کدملی، شماره حساب و یا ایمیل` مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند.
 >
 
 امضای دوم که علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی که کاربر باید روی آن‌ها عضو شود را نیز دریافت می کند. با ثبت نام در این کانال‌ها کاربر پیام‌های ارسالی روی آن‌ها را دریافت خواهد نمود.
@@ -73,22 +136,65 @@ self.manager.registerUser("USER_ID")
 ```objc
 //Objective-C:
 
-[self.manager registerUser:@"USER_ID" channels:@[@"YOUR_CHANNEL" ]
-registrationHandler:^(BOOL isRegistered, NSString *userId, NSError *error) {
-// handle registration result from server
-}
+[self.manager registerUser:@"USER_ID" channels:@[@"YOUR_CHANNEL" ]];
 ```
 ```swift
 //Swift:
 
 self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
 ```
->`نکته`: اگر عملیات ثبت‌نام به درستی انجام شده باشد، پس از فراخوانی این متد،
+
+#### ۳- متدهای ضروری
+در مرحله آخر شما باید قطعه کد زیر را در کلاس `AppDelegate` قرار دهید تا کتابخانه چابک بتواند راه‌اندازی شود، سه متد فوق برای دریافت token از سرویس `APNs` اپل می‌باشد که چابک برای ارسال پوش نوتیفیکشن به آن نیازمند است.
+
+>`نکته`:پس از قرار دادن کدهای زیر در AppDelegate،
 > اطلاعات کاربر در `پنل`  چابک مربوط به [حساب](http://chabokpush.com)
 > برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به
 > کاربر `مسیج` و `پوش ` بفرستید.
 
-۳. متد `unRegisterUser`
+```objc
+//Objective-C:
+
+#pragma mark - Notification AppDelegation
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    // Hook and handle failure of get Device token from Apple APNS Server
+    [self.manager application:application
+                  didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    // Manager hook and handle receive Device Token From APNS Server
+    [self.manager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    // Manager hook and Handle iOS 8 remote Notificaiton Settings
+    [self.manager application:application didRegisterUserNotificationSettings:notificationSettings];
+}
+```
+```swift
+//Swift :
+
+//MARK : Notification AppDelegation
+    
+func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+	self.manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+}
+    
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+	self.manager?.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)        
+}
+    
+@available(iOS 8.0, *)
+func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+	self.manager?.application(application, didRegister: notificationSettings)
+}
+```
+
+### توضیح متدها
+
+۱. متد `unRegisterUser`
 
 برای لغو عضویت میتوانید از متد های زیر استفاده کنید:
 ```objc
@@ -99,7 +205,7 @@ self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
 //Swift:
 PushClientManager.unRegisterUser()
 ```
-۴. متد `registerAgainWithUserId`
+۲. متد `registerAgainWithUserId`
 
 برای رجیستر چندین  `USER_ID` میتوانید از متد زیر استفاده کنید.
 متد  `registerAgainWithUserId` هم مانند متد `registerUser` دارای دو امضای متفاوت است،امضای اول که تنها شناسه کاربر را گرفته و امضای دوم که علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی که کاربر باید روی آن‌ها عضو شود را نیز دریافت می کند.
@@ -124,7 +230,9 @@ self.manager.registerAgainWithUserId("USER_ID", channels: ["YOUR_CHANNEL"])
 
 ```
 
-رویداد ها:
+### رویداد ها:
+به استفاده از دو رویداد `pushClientManagerDidRegisterUser` و `pushClientManagerDidFailRegisterUser` می توانید از ثبت نام و یا مشکل به وجود آماده در عملیات ثبت نام اطلاعات لازم را دریافت کنید :
+
 ```objc
 //Objective-C:
 
