@@ -193,7 +193,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 }
 ```
 
-### توضیح متدها
+### متدهای ثبت/حذف کاربر
 
 ۱. متد `unRegisterUser`
 
