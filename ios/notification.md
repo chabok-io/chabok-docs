@@ -7,53 +7,10 @@ prev: publishingMessages.html
 next: events.html
 ---
 
-### مدیریت اعلان‌ها
-
-تمامی `متدها` و `delegateهایی` که در این بخش توضیح داده می شود، باید در کلاس `AppDelegate` قرار بگیرند تا کتابخانه چابک بتواند بدرستی نسبت به هر رویداد رفتار درستی نشان دهد.
-
-```objc
-//Objective-C:
-
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-
-// Hook and handle failure of get Device token from Apple APNS Server
-[self.manager application:application didFailToRegisterForRemoteNotificationsWithError:error];
-}
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-
-// Manager hook and handle receive Device Token From APNS Server
-[self.manager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
-}
-
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
-
-// Manager hook and Handle iOS 8 remote Notificaiton Settings
-[self.manager application:application didRegisterUserNotificationSettings:notificationSettings];
-}
-
-```
-
-```swift
-//Swift:
-
-func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-self.manager.application(application,didFailToRegisterForRemoteNotificationsWithError: error)
-}
-
-func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-self.manager.application(application,didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
-}
-
-func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
-self.manager.application(application, didRegister: notificationSettings)
-}
-```
-
-#### رویداد کلیک بر روی اعلان
+### رویداد کلیک بر روی اعلان
 سرویس چابک دارای `Messageing` و `Push Notification`  می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل باشد با کلیک بر روی اعلان، delegate متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ باشد، از delegate متد `didReceiveLocalNotification` استفاده کنید.
 
-##### ۱. LocalNotification
+#### ۱. LocalNotification
 
 > `نکته` : در iOS های ۱۰ به پایین امکان نمایش LocalNotification در حالت
 > Foreground وجود ندارد، اگر شما یک LocalNotification در حالت `Foreground`
@@ -84,7 +41,7 @@ self.manager.application(application, didReceive: notification)
 
 همچنین  delegate متد `didReceiveLocalNotification` به شما کمک می کند که، بعد از کلیک بر روی Notification به چه صفحه ای هدایت شود.
 
-##### ۲. ‌APNs Notification
+#### ۲. ‌APNs Notification
 
 delegate متد `didReceiveRemoteNotification` توسط سیستم عامل به هنگام کلیک بر روی Notification فرخوانی می شود. 
 
@@ -117,7 +74,7 @@ manager.application(application, didReceiveRemoteNotification: userInfo, fetchCo
 }
 ```
 
-#### تنظیمات نمایش اعلان
+### تنظیمات نمایش اعلان
 
  کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی اعلان نمایش می‌دهد. درصورت تمایل به تنظیم نمایش اعلان‌ها، کد مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
 
