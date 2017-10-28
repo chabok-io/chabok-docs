@@ -110,8 +110,9 @@ if ([_manager application:application didFinishLaunchingWithOptions:launchOption
 //Swift:
 
 //Check app was launch by clicking on Notification.
-if manager?.application(application, didFinishLaunchingWithOptions: launchOptions) ?? false {
-	print("Application was launch by clicking on Notification...")
+let launchByNotification = (manager?.application(application, didFinishLaunchingWithOptions: launchOptions))!
+if launchByNotification{
+    print("Application was launch by clicking on Notification...")
 }
 ```
 #### ۲- ثبت کاربر
