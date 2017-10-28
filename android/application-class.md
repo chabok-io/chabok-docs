@@ -170,6 +170,10 @@ chabok.register(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
 ```
 
 
+> `نکته :` هر بار که برنامه اجرا می‌شود لازم است این متد فراخوانی شود تا اتصال چابک برقرار گردد.
+
+
+
 ۳. متد `isRegistered`
 
 به کاربر این امکان را می‌دهد که بررسی کند آیا عملیات ثبت‌نام انجام شده است یا خیر.
@@ -188,10 +192,6 @@ chabok.isRegistered();
 chabok.reRegister(USER_ID);
 chabok.reRegister(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
 ```
-
-
-> `نکته :` هر بار که برنامه اجرا می‌شود لازم است این متد فراخوانی شود تا اتصال چابک برقرار گردد.
-
 
 ۵. متد `unregister`
 
