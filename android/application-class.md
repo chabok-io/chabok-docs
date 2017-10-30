@@ -39,7 +39,7 @@ next: chabok-messaging.html
 
 ```
 
-در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارایه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.
+در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارائه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.
 
 ۲. کلاس رسیور `PushMessageReceiver` را نیز به پروژه خود اضافه نمایید.
 
@@ -78,7 +78,7 @@ next: chabok-messaging.html
 
 
 ### مقداردهی اولیه
-برای دریافت یا ارسال پیام از/به سرور چابک، بایستی یک نمونه از کلاس `AdpPushClient` بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست. برای این منظور در متد `onCreate` کلاس `Application` کدهای زیر را اضافه کنید.
+برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس `AdpPushClient` بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست. برای این منظور در متد `onCreate` کلاس `Application` کدهای زیر را اضافه کنید.
 
 ```java
 
@@ -111,10 +111,10 @@ private AdpPushClient chabok = null;
     @Override
     public void onCreate() {
         super.onCreate();
-        getPushClient();
+        initPushClient();
     }
 
-    public synchronized AdpPushClient getPushClient() {
+    private synchronized void initPushClient() {
         if (chabok == null) {
             chabok = AdpPushClient.init(
                 getApplicationContext(),
@@ -125,9 +125,23 @@ private AdpPushClient chabok = null;
                 SDK_PASSWORD
                 );
             chabok.setDevelopment(DEV_MODE);
-            chabok.register(USER_ID, new String[]{CHANNEL_NAME});
+            chabok.register(USER_ID);
         }
-    return chabok;
+    }
+    
+    public synchronized AdpPushClient getPushClient() throws IllegalStateException {
+        if (chabok == null) {
+            throw new IllegalStateException("Adp Push Client not initialized");
+        }
+        return chabok;
+    }
+    
+    @Override
+    public void onTerminate() {
+        if (chabok != null)
+            chabok.dismiss();
+
+        super.onTerminate();
     }
 }
 ```
@@ -155,7 +169,7 @@ chabok.register(USER_ID);
 > `نکته`: متغیر `USER_ID` شناسه کاربر برای ثبت نام در چابک می‌باشد و ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود شناسه کاربری می تواند هر فیلد باارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. شماره موبایل، کدملی، شماره حساب و یا ایمیل مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. 
 >
 
-
+> `نکته`: هر بار که برنامه اجرا می‌شود لازم است این متد فراخوانی شود تا اتصال چابک برقرار گردد.
 
 > `نکته`: اگر عملیات ثبت‌نام به درستی انجام شده باشد، پس از فراخوانی این متد،
 > اطلاعات کاربر در `پنل`  چابک مربوط به [حساب](http://chabokpush.com)
@@ -188,10 +202,6 @@ chabok.isRegistered();
 chabok.reRegister(USER_ID);
 chabok.reRegister(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
 ```
-
-
-> `نکته :` هر بار که برنامه اجرا می‌شود لازم است این متد فراخوانی شود تا اتصال چابک برقرار گردد.
-
 
 ۵. متد `unregister`
 
