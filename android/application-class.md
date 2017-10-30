@@ -90,6 +90,7 @@ private AdpPushClient chabok = AdpPushClient.init(
     SDK_USERNAME,
     SDK_PASSWORD
 ); 
+
 ```
 
 ### پارامترها
@@ -144,6 +145,7 @@ private AdpPushClient chabok = null;
         super.onTerminate();
     }
 }
+
 ```
 
 ### توضیح متدها
