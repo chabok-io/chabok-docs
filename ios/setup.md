@@ -13,10 +13,10 @@ next: publishingMessages.html
  2. ثبت کاربر
  3. متدهای ضروری
 
-> `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید در کلاس `AppDelegate` قرار داده و متدهای چابک باید در delegate متد `didFinishLaunchingWithOptions` فراخوانی شوند.
+> `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در delegate متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
 #### ۱- مقداردهی اولیه
-برای دریافت یا ارسال پیام از/به سرور چابک، بایستی یک نمونه از کلاس AdpPushClient بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست،‌‌ زیرا فراخوانی این متد فقط یکبار کافی ست. به قطعه کد زیر دقت کنید :
+برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس AdpPushClient بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست،‌‌ زیرا فراخوانی این متد فقط یکبار کافی ست. به قطعه کد زیر دقت کنید :
 
 ```objc
 //Objective-C
@@ -86,7 +86,7 @@ PushClientManager.setDevelopment(true)
 manager?.registerApplication("APP_ID", apiKey: "API_KEY", userName: "SDK_USERNAME", password: "SDK_PASSWORD")
 ```
 
-جهت دسترسی به `delegate‌های` چابک باید متد `addDelegate`را همانند کد زیر فراخوانی کنید :
+جهت دسترسی به `delegate‌های` چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید :
 
 ```objc
 //Objective-C:
@@ -232,7 +232,7 @@ self.manager.registerAgainWithUserId("USER_ID", channels: ["YOUR_CHANNEL"])
 ```
 
 ### رویداد ها:
-به استفاده از دو رویداد `pushClientManagerDidRegisterUser` و `pushClientManagerDidFailRegisterUser` می توانید از ثبت نام و یا مشکل به وجود آماده در عملیات ثبت نام اطلاعات لازم را دریافت کنید :
+با استفاده از دو رویداد `pushClientManagerDidRegisterUser` و `pushClientManagerDidFailRegisterUser` می توانید از ثبت نام و یا مشکل به وجود آماده در عملیات ثبت نام اطلاعات لازم را دریافت کنید :
 
 ```objc
 //Objective-C:

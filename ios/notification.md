@@ -19,7 +19,7 @@ next: events.html
 
 > `نکته` : اگر از LocalNotification در حالت `Background` استفاده شود، زمانی
 > متد `didReceiveLocalNotification` فرخوانی خواهد شد که بر روی
-> Notification عمل کلیک صورت گرفته باشد.
+> Notification کلیک شده باشد.
 
 ```objc
 //Objective-C:
@@ -39,7 +39,7 @@ self.manager.application(application, didReceive: notification)
 }
 ```
 
-همچنین  delegate متد `didReceiveLocalNotification` به شما کمک می کند که، بعد از کلیک بر روی Notification به چه صفحه ای هدایت شود.
+همچنین  delegate متد `didReceiveLocalNotification` به شما کمک می کند که، بعد از کلیک بر روی Notification به چه صفحه‌ای هدایت شود.
 
 #### ۲. ‌APNs Notification
 
