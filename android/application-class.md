@@ -111,10 +111,10 @@ private AdpPushClient chabok = null;
     @Override
     public void onCreate() {
         super.onCreate();
-        getPushClient();
+        initPushClient();
     }
 
-    public synchronized AdpPushClient getPushClient() {
+    private synchronized void initPushClient() {
         if (chabok == null) {
             chabok = AdpPushClient.init(
                 getApplicationContext(),
@@ -125,9 +125,23 @@ private AdpPushClient chabok = null;
                 SDK_PASSWORD
                 );
             chabok.setDevelopment(DEV_MODE);
-            chabok.register(USER_ID, new String[]{CHANNEL_NAME});
+            chabok.register(USER_ID);
         }
-    return chabok;
+    }
+    
+    public synchronized AdpPushClient getPushClient() throws IllegalStateException {
+        if (chabok == null) {
+            throw new IllegalStateException("Adp Push Client not initialized");
+        }
+        return chabok;
+    }
+    
+    @Override
+    public void onTerminate() {
+        if (chabok != null)
+            chabok.dismiss();
+
+        super.onTerminate();
     }
 }
 ```
