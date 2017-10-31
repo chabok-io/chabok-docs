@@ -24,6 +24,8 @@ buildscript {
 
 ```javascript
 dependencies {
+    compile 'com.github.arturogutierrez:badges:1.0.5@aar'
+    compile 'me.leolin:ShortcutBadger:1.1.18@aar'
     compile 'com.adpdigital.push:chabok-lib:LATEST_CHABOK_VERSION'
 }
 ```
@@ -31,7 +33,14 @@ dependencies {
 آخرین نسخه فایل کتابخانه چابک از  [اینجا](https://bintray.com/bintray/jcenter?filterByPkgName=com.adpdigital.push) قابل دسترس می‌باشد.
 در انتها گزینه سینک را بزنید.
 
+> نکته: برای استفاده از سرویس جی‌سی‌ام گوگل لازم است خط زیر نیز در بخش
+> `dependencies`  اضافه شود:
 
+```javascript
+dependencies {
+    compile "com.google.android.gms:play-services-gcm:10.0.1" 
+}
+```
 
 ### کتابخانه با قابلیت مکان‌یابی
 
@@ -41,6 +50,5 @@ dependencies {
  ```javascript
 dependencies {
    compile 'com.google.android.gms:play-services-location:10.2.6'
-   compile 'com.github.arturogutierrez:badges:1.0.5@aar'
 }  
 ```
