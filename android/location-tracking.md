@@ -22,6 +22,7 @@ LocationManager locationManger = LocationManager.init(getApplicationContext());
 ```java
 public void startLocationUpdates(LocationParams params)
 ```
+
 >`نکته:`
 > توجه داشته باشید که برای دریافت تغییرات موقعیت مکانی، کلاس مورد نظر برای دریافت آن را توسط متد `addListener` معرفی نمایید.
 
@@ -36,6 +37,7 @@ public void startLocationUpdates(LocationParams params)
 ```java
 LocationParams params = new Builder().setAccuracy(LocationAccuracy.HIGH).setDistance(0).setInterval(500).build();
 ```
+
 در این نمونه دقت مکان‌یابی حداکثر، جابجایی موقعیت مکانی حداقل صفر و زمان تناوب گزارش مکان‌یابی ۵۰۰ میلی‌ثانیه می‌باشد.
 در ادامه توضیحات هریک از متدهای شیء `LocationParams` را مشاهده می‌کنید.
 

@@ -42,7 +42,7 @@ next: chabok-messaging.html
 
 در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارائه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.
 
-۲. کلاس رسیور `PushMessageReceiver` را نیز به پروژه خود اضافه نمایید.
+۲.  کلاس رسیور `PushMessageReceiver`  که نحوه ایجاد آن در بخش [پیام چابک](chabok-messaging.html) توضیح داده شده را نیز به پروژه خود اضافه نمایید.
 
 ```xml
 
