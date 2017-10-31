@@ -66,7 +66,7 @@ next: chabok-messaging.html
         <intent-filter>
             <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-            <category android:name=" YOUR_APPLICATION_PACKAGE_ID" />
+            <category android:name="YOUR_APPLICATION_PACKAGE_ID" />
         </intent-filter>
 </receiver>
 
