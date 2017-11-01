@@ -133,8 +133,8 @@ manager.publish(message)
 ```swift
 //Swift:
 
-PushClientManager.default().mark(asRead: @"MESSAGE_ID");
-PushClientManager.default().messageDismissed(@"MESSAGE_ID");
+PushClientManager.default().mark(asRead: @"MESSAGE_ID")
+PushClientManager.default().messageDismissed(@"MESSAGE_ID")
 
 ```    
             
