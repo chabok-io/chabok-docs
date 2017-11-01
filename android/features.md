@@ -41,36 +41,74 @@ if(chabok.isForeground()) {
 
 ```java
 
+private AdpPushClient chabok;
 
-chabok.setPushListener(this);
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    chabok = ((DemoApplication) getApplication()).getPushClient();
+
+}
+
+@Override
+protected void onResume() {
+    super.onResume();
+    attachPushClient();
+}
+
+
+@Override
+protected void onPause() {
+    super.onPause();
+    detachPushClient();
+}
+
+@Override
+    protected void onDestroy() {
+    detachPushClient();
+    super.onDestroy();
+}
+
+private void attachPushClient() {
+    if (chabok != null) {
+        chabok.setPushListener(this);
+    }
+}
+
+private void detachPushClient() {
+    if (chabok != null) {
+        chabok.removePushListener(this);
+    }
+}
 
 public void onEvent(final ConnectionStatus status) {
     runOnUiThread(new Runnable() {
         @Override
-            public void run() {
-                updateConnectionStatus(status);
-            }
+        public void run() {
+            updateConnectionStatus(status);
+        }
     });
 }
 
-protected void updateConnectionStatus(ConnectionStatus status) {
+private void updateConnectionStatus(ConnectionStatus status) {
 
-if (connectionStatus != null && status != null) {
-    switch (status) {
-        case CONNECTED:
-        // your logic
-        break;
-        
-        case CONNECTING:
-        // your logic
-        break;
+    if (connectionStatus != null && status != null) {
+        switch (status) {
+            case CONNECTED:
+            // your logic
+            break;
 
-        case DISCONNECTED:
-        // your logic
-        break;
+            case CONNECTING:
+            // your logic
+            break;
+
+            case DISCONNECTED:
+            // your logic
+            break;
         }
     }
 }
+
 
 ```
 
