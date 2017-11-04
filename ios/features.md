@@ -94,24 +94,24 @@ NSLog(@"Connection State = %@", @(self.manager.connectionState));
 fund pushClientManagerDidChangedServerConnectionState (){
 switch (_connectionState) {
 case PushClientServerConnectingStartState:
-return @"Init";
-break;
+return @"Init"
+break
 case PushClientServerConnectingState:
-return @"Connecting";
-break;
+return @"Connecting"
+break
 case PushClientServerConnectedState:
-return @"Connected";
-break;
+return @"Connected"
+break
 case PushClientServerDisconnectedState:
-return @"Disconnected";
-break;
+return @"Disconnected"
+break
 case PushClientServerDisconnectedErrorState:
-return @"Error";
-break;
+return @"Error"
+break
 default:
-return @"Unknown";
-break;
-};
+return @"Unknown"
+break
+}
 }
 ```
 
@@ -131,5 +131,5 @@ break;
 ```swift
 //Swift:
 
-manager.enableLocationOnLaunch = true
+manager?.enableLocationOnLaunch = true
 ```
