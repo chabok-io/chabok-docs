@@ -14,110 +14,55 @@ layout: default
                     بر روی هر پلتفرمی
                 </strong></p>
         </div>
-        <div class="col-md-8 col-md-offset-2 pt-30 pb-20 explain-platform">
-            قابلیت های چابک بر روی هر پلتفرمی قابل پیاده سازی هستند.ما برای هر پلتفرم،راهنمای
-            کاملی ایجاد کرده ایم تا با کمترین مشکل SDKچابک را نصب و شروع به استفاده
-            از قابلیت های آن کنید.
+        <div class="col-md-8 col-md-offset-2">
+            <h3 class="text-center"> چابک روی هر پلتفرمی قابل استفاده است</h3>
+
+            <p class="text-center">
+                ما برای هر پلتفرم راهنمای
+                کاملی ایجاد کرده‌ایم تا شما در کوتاه‌ترین زمان چابک را به برنامه یا نرم‌افزار خود اضافه کنید.
+            </p>
         </div>
     </div>
 
     <div class="row platforms">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-8 col-md-offset-2">
+            {% for platform in site.data.platforms %}
+            <div class="col-md-4">
+                <div class="col-md-12 platfrom-box android p-25" style="height: 185px">
+                    <div class="text-center">
 
-            <div class="col-md-3 ">
-                <div class="col-md-12 platfrom-box android p-25">
-                    <div class="text-center">
-                        <img src="{{ site.baseurl }}/images/android.svg" width="64"/>
-                        <div class="text-center btn-bar">
-                            <a target="_blank" href="/android/introducing.html" class="fillbutton col-md-12">
+                        <div class="col-md-8">
+                            <a target="_blank" href="{{ platform.document }}"
+                               class="btn btn-primary btn-block">
                                 مستندات
                             </a>
-                            <a target="_blank" href="https://github.com/chabokpush/chabok-demo-android"
-                               class="fillbutton reg16 col-md-12">
-                                نمونه کد
+                            {% if platform.issue %}
+                            <a target="_blank" href="{{ platform.issue }}"
+                               class="btn btn-default btn-block">
+                                پشتیبانی
                             </a>
+                            {% endif %}
+                            {% if platform.demo %}
+                            <a target="_blank" href="{{ platform.demo }}"
+                               class="btn btn-default btn-block">
+                                دمو
+                            </a>
+                            {% endif %}
+                            {% if platform.starter %}
+                            <a target="_blank" href="{{ platform.starter }}"
+                               class="btn btn-default btn-block">
+                                پروژه شروع
+                            </a>
+                            {% endif %}
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="col-md-12 platfrom-box apple">
-                    <div class="text-center">
-                        <img src="{{ site.baseurl }}/images/apple.svg" width="64"/>
-                        <div class="text-center btn-bar">
-                            <a target="_blank" href="/ios/introducing.html" class="fillbutton reg16 col-md-12">
-                                مستندات
-                            </a>
-                            <a target="_blank" href="https://github.com/chabokpush/chabok-demo-ios"
-                               class="fillbutton reg16 col-md-12">
-                                نمونه کد
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="col-md-12 platfrom-box wp">
-                    <div class="text-center">
-                        <img src="{{ site.baseurl }}/images/wp.svg" width="64"/>
-                        <div class="text-center btn-bar">
-                            <a target="_blank" href="/windows/introducing.html" class="fillbutton reg16 col-md-12">
-                                مستندات
-                            </a>
-                            <a target="_blank" href="https://github.com/chabokpush/chabok-demo-wp"
-                               class="fillbutton reg16 col-md-12">
-                                نمونه کد
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="col-md-12 platfrom-box js">
-                    <div class="text-center">
-                        <img src="{{ site.baseurl }}/images/js.svg" width="64"/>
-                        <div class="text-center btn-bar">
-                            <a target="_blank" href="/javascript/introducing.html" class="fillbutton reg16 col-md-12">
-                                مستندات
-                            </a>
-                            <a target="_blank" href="https://github.com/chabokpush/chabok-demo-map"
-                               class="fillbutton reg16 col-md-12">
-                                نمونه کد
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-3 ">
-                <div class="col-md-12 platfrom-box js">
-                    <div class="text-center">
-                        <img src="{{ site.baseurl }}/images/php.png" height="64"/>
-                        <div class="text-center btn-bar">
-                            <a target="_blank" href="http://api.doc.chabokpush.com" class="fillbutton reg16 col-md-12">
-                                مستندات
-                            </a>
-                            <a target="_blank" href="https://github.com/chabokpush/chabok-php-demo"
-                               class="fillbutton reg16 col-md-12">
-                                نمونه کد
-                            </a>
+                        <div class="col-md-4">
+                            <img src="{{ site.baseurl }}/images/{{ platform.image }}"/>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-3 ">
-                <div class="col-md-12 platfrom-box js">
-                    <div class="text-center">
-                        <img src="{{ site.baseurl }}/images/api.png" height=64/>
-                        <div class="text-center btn-bar" style="margin-top: 55px">
-                            <a target="_blank" href="http://api.doc.chabokpush.com" class="fillbutton reg16 col-md-12">
-                                مستندات
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
 
         </div>
     </div>

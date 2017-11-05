@@ -1,0 +1,38 @@
+- name: Android
+  image: android.svg
+  document: /android/introducing.html
+  demo: https://github.com/chabokpush/chabok-demo-android
+  starter: https://github.com/chabokpush/chabok-starter-android
+  issue: https://github.com/chabokpush/chabok-demo-android/issues
+
+- name: iOS
+  image: apple.svg
+  document: /ios/introducing.html
+  demo: https://github.com/chabokpush/chabok-demo-ios
+  starter: https://github.com/chabokpush/chabok-starter-ios
+  issue: https://github.com/chabokpush/chabok-client-ios/issues
+
+- name: Windows
+  image: wp.svg
+  document: /windows/introducing.html
+  demo: https://github.com/chabokpush/chabok-demo-wp
+  starter:
+
+- name: JavaScript
+  image: js.svg
+  document: /javascript/introducing.html
+  demo: https://github.com/chabokpush/chabok-demo-map
+  starter:
+  issue: https://github.com/chabokpush/chabok-demo-map/issues
+
+- name: PHP
+  image: php.svg
+  document: http://api.doc.chabokpush.com
+  demo: https://github.com/chabokpush/chabok-php-demo
+  starter:
+
+- name: API
+  image: api.png
+  document: http://api.doc.chabokpush.com
+  demo:
+  starter:
