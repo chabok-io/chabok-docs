@@ -5,7 +5,59 @@ layout: ios
 permalink: ios/features.html
 prev: location-tracking.html
 ---
+### مدیریت تگ ها
+یکی از مهمترین ابزارهای دسته‌بندی کاربران، استفاده از `Tag` می باشد. به عنوان مثال می‌توانید کاربران خود را بر اساس جنسیت دسته‌بندی کرده و بر اساس جنسیت آنها پیام خاصی را ارسال کنید و یا کاربرانی که از پرداخت درون برنامه‌ای شما استفاده می‌کنند، یک `Tag` با عنوان `Premium_User` به آنها اختصاص دهید.
 
+#### افزودن تگ
+با استفاده از متد زیر، شما می‌توانید به کاربر فعلی یک `Tag` اختصاص دهید :
+
+```objc
+//Objective-C:
+
+[self.manager addTag:@"Premium_User"];
+```
+```swift
+//Swift:
+
+manager?.addTag("Premium_User")
+```
+همچنین می‌توانید با استفاده از overload دیگر این متد، از افزودن و یا خطا در عملیات با خبر شوید :
+```objc
+//Objective-C:
+
+[self.manager addTag:@"Premium_User" success:^(NSInteger count) {
+        NSLog(@"%@ tag was assign to '%@' user with [%zd] devices",@"Premium_User",self.manager.userId,count);
+    } failure:^(NSError *error) {
+        NSLog(@"An error happend adding tag ...");
+    }];
+```
+```swift
+//Swift:
+
+manager?.addTag("Premium_User",
+        success: {(_ count: Int) -> Void in
+	                 print("\("Premium_User") tag was assign to '\(self.manager?.userId)' user with [\(count)] devices")
+},
+        failure: {(_ error: Error?) -> Void in
+	                 print("An error happend adding tag ...")
+})
+```
+اگر عملیات افزودن تگ با موفقیت انجام شود، می‌توانید از طریق پنل چابک، تگ اضافه شده به کاربر را در بخش مشترکین همانند تصویر زیر مشاهده کنید :
+
+![مشترک چابک](http://uupload.ir/files/g3u__2x-group_2.png)
+#### حذف تگ
+با استفاده از متد زیر، می‌توانید یک `Tag` خاص از کاربر جاری را حذف کنید :
+
+```objc
+//Objective-C:
+
+[self.manager removeTag:@"Premium_User"];
+```
+```swift
+//Swift:
+
+manager?.removeTag("Premium_User")
+```
 ###  مدیریت نشان‌ها
 
 اگر می خواهید شماره badge برنامه خود را بازنشانی کنید،با روش زیر می توانید: 
@@ -14,21 +66,21 @@ prev: location-tracking.html
 //Objetive-C: 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application { 
-[PushClientManager resetBadge]; 
+	[PushClientManager resetBadge]; 
 } 
 - (void)applicationWillEnterForeground:(UIApplication *)application { 
-[PushClientManager resetBadge]; 
+	[PushClientManager resetBadge]; 
 }
 ```
 ```swift
 //Swift: 
 
 func applicationDidEnterBackground(_ application: UIApplication) { 
-PushClientManager.resetBadge() 
+	PushClientManager.resetBadge() 
 } 
 
 func applicationWillEnterForeground(_ application: UIApplication) { 
-PushClientManager.resetBadge() 
+	PushClientManager.resetBadge() 
 } 
 ``` 
 ### اتصال با سرور
@@ -42,22 +94,22 @@ PushClientManager.resetBadge()
 //Objetive-C: 
 
 - (void)pushClientManagerDidChangedServerConnectionState{
-// Called When PushClientManager Connecting State has been Changed
+	// Called When PushClientManager Connecting State has been Changed
 }
 
 - (void)pushClientManagerDidChangeServerReachiability:(BOOL)reachable networkType:(PushClientServerReachabilityNetworkType)networkType{
-// Called When PushClientManager Server Reachiability has been Changed
+	// Called When PushClientManager Server Reachiability has been Changed
 }
 ```
 ```swift
 //Swift:
 
 func pushClientManagerDidChangedServerConnectionState() {
-// Called When PushClientManager Connecting State has been Changed
+	// Called When PushClientManager Connecting State has been Changed
 }
 
 func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkType: PushClientServerReachabilityNetworkType) {
-// Called When PushClientManager Server Reachiability has been Changed
+	// Called When PushClientManager Server Reachiability has been Changed
 }
 ```
 برای مثال میتوانید به نمونه کد زیر توجه کنید:
@@ -65,53 +117,48 @@ func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkTyp
 //Objective-C:
 
 - (void)pushClientManagerDidChangedServerConnectionState{
-switch (_connectionState) {
-case PushClientServerConnectingStartState:
-NSLog(@"Init");
-break;
-case PushClientServerConnectingState:
-NSLog(@"Connecting");
-break;
-case PushClientServerConnectedState:
-NSLog(@"Connected");
-break;
-case PushClientServerDisconnectedState:
-NSLog(@"Disconnected");
-break;
-case PushClientServerDisconnectedErrorState:
-NSLog(@"Error");
-break;
-default:
-NSLog(@"Unknown");
-break;
-};
-NSLog(@"Connection State = %@", @(self.manager.connectionState));
+    PushClientServerConnectionState _connectionState = self.manager.connectionState;
+    switch (_connectionState) {
+        case PushClientServerConnectingStartState:
+            NSLog(@"Init");
+            break;
+        case PushClientServerConnectingState:
+            NSLog(@"Connecting");
+            break;
+        case PushClientServerConnectedState:
+            NSLog(@"Connected");
+            break;
+        case PushClientServerDisconnectedState:
+            NSLog(@"Disconnected");
+            break;
+        case PushClientServerDisconnectedErrorState:
+            NSLog(@"Error");
+            break;
+        default:
+            NSLog(@"Unknown");
+            break;
+    };
 }
 ```
 ```swift
 //Swift:
 
-fund pushClientManagerDidChangedServerConnectionState (){
-switch (_connectionState) {
-case PushClientServerConnectingStartState:
-return @"Init"
-break
-case PushClientServerConnectingState:
-return @"Connecting"
-break
-case PushClientServerConnectedState:
-return @"Connected"
-break
-case PushClientServerDisconnectedState:
-return @"Disconnected"
-break
-case PushClientServerDisconnectedErrorState:
-return @"Error"
-break
-default:
-return @"Unknown"
-break
-}
+func pushClientManagerDidChangedServerConnectionState (){
+    let connectionState = self.manager?.connectionState as! PushClientServerConnectionState
+    switch connectionState {
+    case .connectingStartState:
+        print("Init")
+    case .connectingState:
+        print("Connecting")
+    case .connectedState:
+        print("Connected")
+    case .disconnectedState:
+        print("Disconnected")
+    case .disconnectedErrorState:
+        print("Error")
+    default:
+        print("Unknown")
+    }
 }
 ```
 
@@ -131,5 +178,5 @@ break
 ```swift
 //Swift:
 
-manager?.enableLocationOnLaunch = true
+self.manager?.enableLocationOnLaunch = true
 ```
