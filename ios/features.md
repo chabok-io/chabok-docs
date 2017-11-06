@@ -19,7 +19,7 @@ prev: location-tracking.html
 ```swift
 //Swift:
 
-self.manager?.addTag("Premium_User")
+manager?.addTag("Premium_User")
 ```
 همچنین می‌توانید با استفاده از overload دیگر این متد، از افزودن و یا خطا در عملیات با خبر شوید :
 ```objc
@@ -34,7 +34,7 @@ self.manager?.addTag("Premium_User")
 ```swift
 //Swift:
 
-self.manager?.addTag("Premium_User",
+manager?.addTag("Premium_User",
         success: {(_ count: Int) -> Void in
 	                 print("\("Premium_User") tag was assign to '\(self.manager?.userId)' user with [\(count)] devices")
 },
@@ -42,6 +42,9 @@ self.manager?.addTag("Premium_User",
 	                 print("An error happend adding tag ...")
 })
 ```
+اگر عملیات افزودن تگ با موفقیت انجام شود، می‌توانید از طریق پنل چابک، تگ اضافه شده به کاربر را در بخش مشترکین همانند تصویر زیر مشاهده کنید :
+
+![مشترک چابک](http://uupload.ir/files/g3u__2x-group_2.png)
 #### حذف تگ
 با استفاده از متد زیر، می‌توانید یک `Tag` خاص از کاربر جاری را حذف کنید :
 
@@ -53,7 +56,7 @@ self.manager?.addTag("Premium_User",
 ```swift
 //Swift:
 
-self.manager?.removeTag("Premium_User")
+manager?.removeTag("Premium_User")
 ```
 ###  مدیریت نشان‌ها
 
