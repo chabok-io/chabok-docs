@@ -5,6 +5,44 @@ layout: ios
 permalink: ios/features.html
 prev: location-tracking.html
 ---
+### مدیریت تگ ها
+یکی از مهمترین ابزارهای دسته‌بندی کاربران، استفاده از `Tag` می باشد. به عنوان مثال می‌توانید کاربران خود را بر اساس جنسیت دسته‌بندی کرده و بر اساس جنسیت آنها پیام خاصی را ارسال کنید و یا کاربرانی که از پرداخت درون برنامه‌ای شما استفاده می‌کنند، یک `Tag` با عنوان `Premium_User` به آنها اختصاص دهید.
+
+#### افزودن تگ
+با استفاده از متد زیر، شما می‌توانید به کاربر فعلی یک `Tag` اختصاص دهید :
+
+```objc
+//Objective-C:
+
+[self.manager addTag:@"Premium_User"];
+```
+```swift
+//Swift:
+
+manager?.addTag("Premium_User")
+```
+همچنین می‌توانید با استفاده از overload دیگر این متد، از افزودن و یا خطا در عملیات با خبر شوید :
+```objc
+//Objective-C:
+
+[self.manager addTag:@"Premium_User" success:^(NSInteger count) {
+        NSLog(@"%@ tag was assign to '%@' user with [%zd] devices",@"Premium_User",self.manager.userId,count);
+    } failure:^(NSError *error) {
+        NSLog(@"An error happend adding tag ...");
+    }];
+```
+```swift
+//Swift:
+
+manager?.addTag("Premium_User",
+        success: {(_ count: Int) -> Void in
+	                 print("\("Premium_User") tag was assign to '\(self.manager?.userId)' user with [\(count)] devices")
+},
+        failure: {(_ error: Error?) -> Void in
+	                 print("An error happend adding tag ...")
+})
+```
+#### حذف تگ
 
 ###  مدیریت نشان‌ها
 
