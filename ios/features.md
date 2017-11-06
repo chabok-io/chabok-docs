@@ -14,21 +14,21 @@ prev: location-tracking.html
 //Objetive-C: 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application { 
-[PushClientManager resetBadge]; 
+	[PushClientManager resetBadge]; 
 } 
 - (void)applicationWillEnterForeground:(UIApplication *)application { 
-[PushClientManager resetBadge]; 
+	[PushClientManager resetBadge]; 
 }
 ```
 ```swift
 //Swift: 
 
 func applicationDidEnterBackground(_ application: UIApplication) { 
-PushClientManager.resetBadge() 
+	PushClientManager.resetBadge() 
 } 
 
 func applicationWillEnterForeground(_ application: UIApplication) { 
-PushClientManager.resetBadge() 
+	PushClientManager.resetBadge() 
 } 
 ``` 
 ### اتصال با سرور
@@ -42,22 +42,22 @@ PushClientManager.resetBadge()
 //Objetive-C: 
 
 - (void)pushClientManagerDidChangedServerConnectionState{
-// Called When PushClientManager Connecting State has been Changed
+	// Called When PushClientManager Connecting State has been Changed
 }
 
 - (void)pushClientManagerDidChangeServerReachiability:(BOOL)reachable networkType:(PushClientServerReachabilityNetworkType)networkType{
-// Called When PushClientManager Server Reachiability has been Changed
+	// Called When PushClientManager Server Reachiability has been Changed
 }
 ```
 ```swift
 //Swift:
 
 func pushClientManagerDidChangedServerConnectionState() {
-// Called When PushClientManager Connecting State has been Changed
+	// Called When PushClientManager Connecting State has been Changed
 }
 
 func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkType: PushClientServerReachabilityNetworkType) {
-// Called When PushClientManager Server Reachiability has been Changed
+	// Called When PushClientManager Server Reachiability has been Changed
 }
 ```
 برای مثال میتوانید به نمونه کد زیر توجه کنید:
@@ -65,53 +65,48 @@ func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkTyp
 //Objective-C:
 
 - (void)pushClientManagerDidChangedServerConnectionState{
-switch (_connectionState) {
-case PushClientServerConnectingStartState:
-NSLog(@"Init");
-break;
-case PushClientServerConnectingState:
-NSLog(@"Connecting");
-break;
-case PushClientServerConnectedState:
-NSLog(@"Connected");
-break;
-case PushClientServerDisconnectedState:
-NSLog(@"Disconnected");
-break;
-case PushClientServerDisconnectedErrorState:
-NSLog(@"Error");
-break;
-default:
-NSLog(@"Unknown");
-break;
-};
-NSLog(@"Connection State = %@", @(self.manager.connectionState));
+    PushClientServerConnectionState _connectionState = self.manager.connectionState;
+    switch (_connectionState) {
+        case PushClientServerConnectingStartState:
+            NSLog(@"Init");
+            break;
+        case PushClientServerConnectingState:
+            NSLog(@"Connecting");
+            break;
+        case PushClientServerConnectedState:
+            NSLog(@"Connected");
+            break;
+        case PushClientServerDisconnectedState:
+            NSLog(@"Disconnected");
+            break;
+        case PushClientServerDisconnectedErrorState:
+            NSLog(@"Error");
+            break;
+        default:
+            NSLog(@"Unknown");
+            break;
+    };
 }
 ```
 ```swift
 //Swift:
 
-fund pushClientManagerDidChangedServerConnectionState (){
-switch (_connectionState) {
-case PushClientServerConnectingStartState:
-return @"Init"
-break
-case PushClientServerConnectingState:
-return @"Connecting"
-break
-case PushClientServerConnectedState:
-return @"Connected"
-break
-case PushClientServerDisconnectedState:
-return @"Disconnected"
-break
-case PushClientServerDisconnectedErrorState:
-return @"Error"
-break
-default:
-return @"Unknown"
-break
-}
+func pushClientManagerDidChangedServerConnectionState (){
+    let connectionState = self.manager?.connectionState as! PushClientServerConnectionState
+    switch connectionState {
+    case .connectingStartState:
+        print("Init")
+    case .connectingState:
+        print("Connecting")
+    case .connectedState:
+        print("Connected")
+    case .disconnectedState:
+        print("Disconnected")
+    case .disconnectedErrorState:
+        print("Error")
+    default:
+        print("Unknown")
+    }
 }
 ```
 
@@ -131,5 +126,5 @@ break
 ```swift
 //Swift:
 
-manager?.enableLocationOnLaunch = true
+self.manager?.enableLocationOnLaunch = true
 ```
