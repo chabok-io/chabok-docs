@@ -93,7 +93,7 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 ![عکس مربوطه](http://bayanbox.ir/view/8511862378341283401/File-Enter-your-usual-admin-password.png)
 
 
-پس از ایجاد فایل های cer. و p12. دستور زیر را اجرا کنید:
+پس از ایجاد فایل های cer. و p12. دستور زیر را در terminal اجرا کنید:
 
 ```ruby
 openssl x509 -in Certificates.cer -inform der -out pushCert.pem
