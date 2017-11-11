@@ -9,7 +9,7 @@ name: چابک
 description: سرویس چابک امکان ارسال و دریافت دو سویه پیام های درون‌برنامه ای و اعلان های آگاهی رسانی یا پوش نوتیفیکیشن را به روی پلت فرم های اندروید، آی او اس،  ویندوزفون و وب پوش فراهم می کند. چابک ارتباط با کاربران موبایل را سرعت و بهبود می بخشد.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: http://doc.chabokpush.com/images/chabok.png
+avatar: https://doc.chabokpush.com/images/chabok.png
 
 timezone: 'Asia/Tehran'
 
