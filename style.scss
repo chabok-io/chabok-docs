@@ -437,13 +437,17 @@ footer {
 
 .platfrom-box {
   background-color: #eee;
-  padding: 25px !important;
+  padding: 15px !important;
   border-radius: 5px;
   margin-bottom: 30px;
-  box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
   transition: all ease 0.25S;
   &:hover {
-    box-shadow: 0px 1px 45px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.2);
+  }
+  .btn-default {
+    border-color: #ddd;
+    color: #222;
   }
   h2 {
     font-size: 20px;
