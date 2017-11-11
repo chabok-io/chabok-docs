@@ -13,7 +13,10 @@ next: publishingMessages.html
  2. ثبت کاربر
  3. متدهای ضروری
 
-> `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در delegate متد `didFinishLaunchingWithOptions` فراخوانی شوند.
+> `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
+
+> همچنین تمامی مراحلی که در زیر بیان خواهد شد، در یک پروژه [Starter](https://github.com/chabokpush/chabok-starter-ios) 
+> پیاده سازی شده از است.
 
 #### ۱- مقداردهی اولیه
 برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس AdpPushClient بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست،‌‌ زیرا فراخوانی این متد فقط یکبار کافی ست. به قطعه کد زیر دقت کنید :
@@ -193,6 +196,8 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 }
 ```
 
+> نحوه صحیح پیاده سازی متدها در قالب پروژه [Starter](https://github.com/chabokpush/chabok-starter-ios) پیاده سازی شده است.
+
 ### متدهای ثبت/حذف کاربر
 
 ۱. متد `unRegisterUser`
@@ -258,3 +263,5 @@ func pushClientManagerDidRegisterUser(_ registration: Bool) {
 func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 }
 ```
+
+
