@@ -24,7 +24,6 @@ buildscript {
 
 ```javascript
 dependencies {
-    compile 'com.github.arturogutierrez:badges:1.0.5@aar'
     compile 'me.leolin:ShortcutBadger:1.1.18@aar'
     compile 'com.adpdigital.push:chabok-lib:LATEST_CHABOK_VERSION'
 }
@@ -38,7 +37,7 @@ dependencies {
 
 ```javascript
 dependencies {
-    compile "com.google.android.gms:play-services-gcm:10.0.1" 
+    compile "com.google.android.gms:play-services-gcm:10.2.6" 
 }
 ```
 
