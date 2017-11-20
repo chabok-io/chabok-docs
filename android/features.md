@@ -6,6 +6,50 @@ permalink: android/features.html
 prev: location-tracking.html
 ---
 
+### مدیریت تگ ها
+یکی از مهمترین ابزارهای دسته‌بندی کاربران، استفاده از `Tag` می باشد. به عنوان مثال می‌توانید کاربران خود را بر اساس جنسیت دسته‌بندی کرده و بر اساس جنسیت آنها پیام خاصی را ارسال کنید و یا کاربرانی که از پرداخت درون برنامه‌ای شما استفاده می‌کنند، یک `Tag` با عنوان `Premium_User` به آنها اختصاص دهید.
+
+#### افزودن تگ
+با استفاده از متد زیر، شما می‌توانید به کاربر فعلی یک `Tag` اختصاص دهید :
+```java
+public void addTag(String tagName, VoidCallback callback)
+```
+پارامتر اول تگ موردنظر و پارامتر دوم یک Callback برای بررسی نتیجه این عمل می‌باشد به شکل زیر:
+```java
+chabok.addTag("Premium_User", new VoidCallback() {
+            @Override
+            public void onSuccess() {
+                Log.d(TAG, "addTag onSuccess: called");
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                Log.d(TAG, "addTag onError: called, message: " + t.getMessage());
+            }
+        });
+```
+کدفوق تگی بنام Premium_User را به کاربر فعلی اضافه می‌کند.
+اگر عملیات افزودن تگ با موفقیت انجام شود، می‌توانید از طریق پنل چابک، تگ اضافه شده به کاربر را در بخش مشترکین همانند تصویر زیر مشاهده کنید :
+
+![مشترک چابک](http://uupload.ir/files/p3w3_tag.jpg)
+
+#### حذف تگ
+با استفاده از متد زیر، می‌توانید یک `Tag` خاص از کاربر فعلی را حذف کنید :
+
+```java
+chabok.removeTag("Premium_User", new VoidCallback() {
+            @Override
+            public void onSuccess() {
+                Log.d(TAG, "removeTag onSuccess: called");
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                Log.d(TAG, "removeTag onError: called, message: " + t.getMessage());
+            }
+        });
+```
+کدفوق تگی بنام Premium_User را از کاربر فعلی حذف می کند.
 
 ###  مدیریت نشان‌ها
 
