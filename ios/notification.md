@@ -3,7 +3,7 @@ id: notification
 title: مدیریت اعلان‌ها
 layout: ios
 permalink: ios/notification.html
-prev: publishingMessages.html
+prev: validation.html
 next: events.html
 ---
 
