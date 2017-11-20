@@ -3,7 +3,7 @@ id: notification-handling
 title: مدیریت اعلان‌ها
 layout: android
 permalink: android/notification-handling.html
-prev: chabok-messaging.html
+prev: verification.html
 next: event-handling.html
 ---
 

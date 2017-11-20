@@ -4,7 +4,7 @@ title: پیام چابک
 layout: android
 permalink: android/chabok-messaging.html
 prev: gradle-setup.html
-next: notification-handling.html
+next: verification.html
 ---
 
 ### دریافت پیام چابک

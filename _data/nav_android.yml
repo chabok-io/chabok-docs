@@ -10,6 +10,8 @@
       title:  راه‌اندازی چابک
     - id: chabok-messaging
       title: پیام چابک
+    - id: verification
+      title: تایید پیامکی کاربر
     - id: notification-handling
       title: مدیریت اعلان‌ها
     - id: event-handling
