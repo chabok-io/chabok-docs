@@ -11,7 +11,7 @@
     - id: chabok-messaging
       title: پیام چابک
     - id: verification
-      title: تایید پیامکی کاربر
+      title: اعتبارسنجی
     - id: notification-handling
       title: مدیریت اعلان‌ها
     - id: event-handling
