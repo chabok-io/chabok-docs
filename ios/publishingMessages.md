@@ -4,7 +4,7 @@ title: پیام چابک
 layout: ios
 permalink: ios/publishingMessages.html
 prev: setup.html
-next: notification.html
+next: validation.html
 ---
 
 ### دریافت پیام

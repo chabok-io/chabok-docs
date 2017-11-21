@@ -12,6 +12,8 @@
       title: راه‌اندازی چابک
     - id: publishingMessages
       title: پیام چابک
+    - id: validation
+      title: اعتبار سنجی
     - id: notification
       title: مدیریت اعلان‌ها
     - id: events
