@@ -156,3 +156,40 @@ private void updateConnectionStatus(ConnectionStatus status) {
 
 ```
 
+> نکته: اگر می‌خواهید تغییرات وضعیت اتصال به سرور چابک را در سمت لایه UI
+> نشان دهید، چون ممکن است قبل از اینکه کلاس شما به عنوان listener معرفی
+> شود، ایونت تغییر وضعیت اتصال به شما برسد و شما آن را از دست بدهید،
+> بهتر است برای اولین بار وضعیت اتصال را با استفاده از متد `getStatus`
+> از چابک دریافت نمایید.
+
+```java
+
+private void attachPushClient() {
+    if (chabok != null) {
+        chabok.addListener(this);
+    }
+
+    fetchAndUpdateConnectionStatus();
+}
+
+
+private void fetchAndUpdateConnectionStatus() {
+    if (chabok == null) {
+        return;
+    }
+    chabok.getStatus(new Callback<ConnectionStatus>() {
+        @Override
+        public void onSuccess(ConnectionStatus connectionStatus) {
+            Log.i(TAG + "_fetch", connectionStatus.name());
+            updateConnectionStatus(connectionStatus);
+        }
+
+        @Override
+        public void onFailure(Throwable throwable) {
+            Log.i(TAG, "errrror ");
+        }
+    });
+}
+
+```
+
