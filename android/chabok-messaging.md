@@ -100,6 +100,18 @@ chabok.unsubscribe(CHANNEL_NAME, new Callback() {
 
 ```java
 
+PushMessage myPushMessage = new PushMessage();
+myPushMessage.setBody("YOUR_MESSAGE_TEXT");
+
+JSONObject jsonObject = new JSONObject();
+jsonObject.put("KEY", "VALUE");
+myPushMessage.setData(jsonObject);
+
+myPushMessage.setTopicName(CHANNEL_NAME);
+myPushMessage.setId(UUID.randomUUID().toString());
+myPushMessage.setUseAsAlert(true);
+myPushMessage.setAlertText("ALERT_TEXT");
+
 chabok.publish(myPushMessage, new Callback() {
     @Override
     public void onSuccess(Object o) {
