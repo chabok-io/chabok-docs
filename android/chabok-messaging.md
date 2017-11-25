@@ -4,7 +4,7 @@ title: پیام چابک
 layout: android
 permalink: android/chabok-messaging.html
 prev: gradle-setup.html
-next: notification-handling.html
+next: verification.html
 ---
 
 ### دریافت پیام چابک
@@ -99,6 +99,18 @@ chabok.unsubscribe(CHANNEL_NAME, new Callback() {
 متد `Publish` برای ارسال پیام از سمت کلاینت به سرور‌های چابک استفاده می‌شود. شما از این مکانیزم علاوه بر پیام‌های شخصی می‌توانید برای ارسال اطلاعات و داده‌های کاربر به سمت سرور خود (بجای ارسال با درخواست‌های کلاسیک HTTP) استفاده کنید. مزایای این روش در مقایسه با درخواست‌های کلاسیک HTTP به صورت زیر می باشد:
 
 ```java
+
+PushMessage myPushMessage = new PushMessage();
+myPushMessage.setBody("YOUR_MESSAGE_TEXT");
+
+JSONObject jsonObject = new JSONObject();
+jsonObject.put("KEY", "VALUE");
+myPushMessage.setData(jsonObject);
+
+myPushMessage.setTopicName(CHANNEL_NAME);
+myPushMessage.setId(UUID.randomUUID().toString());
+myPushMessage.setUseAsAlert(true);
+myPushMessage.setAlertText("ALERT_TEXT");
 
 chabok.publish(myPushMessage, new Callback() {
     @Override
