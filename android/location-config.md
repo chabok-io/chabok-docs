@@ -28,14 +28,19 @@ prev: event-handling.html
 ```
 
 ### ۲) دریافت موقعیت مکانی در حالت kill
-برای دریافت گزارش مکان درحالت `kill` لازم است یک `IntentService` با اکشن com.adpdigital.push.intent.action.PENDING_INTENT_SERVICE تعریف نمایید تا مانند نمونه کد زیر بتوانید از سرویس مکان‌یابی استفاده کنید.
+برای دریافت گزارش مکان درحالت `kill` لازم است یک `IntentService`  تعریف نمایید تا مانند نمونه کد زیر بتوانید از سرویس مکان‌یابی استفاده کنید.
+سپس با استفاده از متد `addCallbackIntent` بایستی Intent فراخوانی سرویس خود را به شیء LocationManager‌ معرفی کنید، مانند نمونه زیر:
+‍
+```java
+Intent intent = new Intent(getContext(), LocationHostService.class);
+        locationManger.addCallbackIntent(intent);
+```
+پس از این کار، Intent موردنظر توسط چابک ذخیره و مورد استفاده قرار خواهد گرفت، مگراینکه با استفاده از متد `removeCallbackIntent` آن را غیرفعال نمایید.
 این `IntentService` در هر به‌روزرسانی مکان فراخوانی خواهد شد.
-
+شیء مکان با کلید `LocationManager.LOCATION_KEY` از Intent قابل دریافت است، در متد `onHandleIntent` مانند نمونه زیر می‌توانید اطلاعات مکان به‌روزشده را استخراج نمایید.
 ```java
 public class LocationHostService extends IntentService {
 
-    private static final String hostServiceAction =
-            "com.adpdigital.push.intent.action.PENDING_INTENT_SERVICE";
     private static final String TAG = "LocationHostService";
 
     public LocationHostService() {super("LocationHostService");}
@@ -56,17 +61,20 @@ public class LocationHostService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        boolean result = LocationResult.hasResult(intent);
-        LocationResult resultData = LocationResult.extractResult(intent);
-        if(resultData != null) {
-            Location location = resultData.getLastLocation();
-            // TODO your location is here
+
+        Bundle extras = intent.getExtras();
+
+        if(extras != null) {
+            Location location = extras.getParcelable(LocationManager.LOCATION_KEY);
+            if(location != null) {
+                // use location here
+            }
         }
     }
 
 }
 ```
-سپس سرویس را در فایل `AndroidManifest.xml` نیز تعریف نمایید، توجه کنید که اکشن سرویس مطابق نمونه زیر باشد:
+ سرویس را در فایل `AndroidManifest.xml` نیز تعریف نمایید،:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -82,14 +90,17 @@ public class LocationHostService extends IntentService {
         ...
         
         <service android:name=".service.LocationHostService" >
-            <intent-filter>
-                <action android:name="com.adpdigital.push.intent.action.PENDING_INTENT_SERVICE" />
-            </intent-filter>
         </service>
     </application>
 
 </manifest>
 ```
 
-در متد `onHandleIntent` مانند نمونه فوق می‌توانید اطلاعات مکان به‌روزشده را استخراج نمایید.
+>`‍‍نکته:`
+>
+>برای غیرفعال کردن دریافت موقعیت مکانی در سرویس خود بایستی متد `removeCallbackIntent` را فراخوانی کنید:
+> ```
+> locationManger.removeCallbackIntent();
+> ```
+
 
