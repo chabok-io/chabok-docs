@@ -28,16 +28,16 @@ prev: event-handling.html
 ```
 
 ### ۲) دریافت موقعیت مکانی در حالت kill
-برای دریافت گزارش مکان درحالت `kill` لازم است یک `IntentService`  تعریف نمایید تا بتوانید از سرویس مکان‌یابی استفاده کنید.
+برای دریافت گزارش موقعیت مکانی درحالت `kill` لازم است یک `IntentService`  تعریف نمایید تا بتوانید از سرویس مکان‌یابی استفاده کنید.
 سپس با استفاده از متد `addCallbackIntent` بایستی Intent فراخوانی سرویس خود را به شیء `LocationManager‌` معرفی کنید، مانند نمونه زیر:
 ‍
 ```java
 Intent intent = new Intent(getContext(), LocationHostService.class);
-        locationManger.addCallbackIntent(intent);
+locationManger.addCallbackIntent(intent);
 ```
 پس از این کار، Intent موردنظر توسط چابک ذخیره و مورد استفاده قرار خواهد گرفت، مگراینکه با استفاده از متد `removeCallbackIntent` آن را غیرفعال نمایید.
-این `IntentService` در هر به‌روزرسانی مکان فراخوانی خواهد شد.
-موقعیت مکانی با کلید `LocationManager.LOCATION_KEY` از Intent قابل دریافت است، در متد `onHandleIntent` مانند نمونه زیر می‌توانید اطلاعات مکان به‌روزشده را استخراج نمایید.
+این `IntentService` در هر به‌روزرسانی موقعیت مکانی فراخوانی خواهد شد.
+موقعیت مکانی با کلید `LocationManager.LOCATION_KEY` از Intent قابل دریافت است، در متد `onHandleIntent` مانند نمونه زیر می‌توانید اطلاعات موقعیت مکانی به‌روزشده را استخراج نمایید:
 ```java
 public class LocationHostService extends IntentService {
 
@@ -74,7 +74,7 @@ public class LocationHostService extends IntentService {
 
 }
 ```
- سرویس را در فایل `AndroidManifest.xml` نیز تعریف نمایید،:
+ کلاس سرویس تعریف شده را به فایل `AndroidManifest.xml` نیز اضافه نمایید،:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -96,11 +96,11 @@ public class LocationHostService extends IntentService {
 </manifest>
 ```
 
->`‍‍ نکته:`
->
->برای غیرفعال کردن دریافت موقعیت مکانی در سرویس خود بایستی متد `removeCallbackIntent` را فراخوانی کنید:
-> ```
-> locationManger.removeCallbackIntent();
-> ```
+برای غیرفعال کردن دریافت موقعیت مکانی در سرویس خود متد `removeCallbackIntent` را فراخوانی کنید:
+
+```java
+locationManger.removeCallbackIntent();
+
+```
 
 
