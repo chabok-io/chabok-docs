@@ -58,6 +58,20 @@ self.manager?.addTag("Premium_User",
 
 self.manager?.removeTag("Premium_User")
 ```
+### شناسه دستگاه در چابک
+هر دستگاه در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید :
+``` objc
+//Objective-C:
+
+NSString *installationId = [self.manager getInstallationId];
+```
+``` swift
+//Swift:
+
+let installationId:NSString = manager?.getInstallationId() as! NSString
+
+```
+
 ###  مدیریت نشان‌ها
 
 اگر می خواهید شماره badge برنامه خود را بازنشانی کنید،با روش زیر می توانید: 
