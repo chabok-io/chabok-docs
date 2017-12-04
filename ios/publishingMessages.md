@@ -29,6 +29,24 @@ manager?.publish("USER_ID", toChannel: "CHANNEL_NAME", withText: "Hello World!")
 
 > `نکته`: برای ارسال پیام به صورت عمومی بر روی یک کانال بجای عبارت `USER_ID` کاراکتر `*` را وارد نمایید و سپس نام کانال خصوصی خود را وارد کنید.
 
+در صورت خطا در publish پیام delegate method زیر فراخوانی خواهد شد :
+
+``` objc
+//Objective-C:
+
+-(void) pushClientManagerDidFailInPublish:(NSError *)error{
+    NSLog(@"Error in publishing message %@",error);
+}
+```
+
+``` swift
+//Swift:
+
+func pushClientManagerDidFail(inPublish error: Error!) {
+	print("Error in publishing message %@",error)
+}
+```
+
 ### عضویت در کانال
 
 کانال‌ها در چابک به بخش خصوصی و عمومی تقسیم می‌شوند قالب کانال بصورت زیر می‌باشد:
@@ -54,6 +72,30 @@ manager.subscribe("public/sport") // public channel
 manager.subscribe("private/league") // private (personal) channel
 ```
 
+در صورت رخ دادن خطا به هنگام subscribe با استفاده از delegate method زیر می‌توانید از عضویت یا خطا رخ داده شده با خبر شوید :
+
+```obj-c
+//Objective-C:
+
+-(void) pushClientManagerDidSubscribed:(NSString *)channel{
+    NSLog(@"Subscribed on '%@' channel",channel);
+}
+-(void) pushClientManagerDidFailInSubscribe:(NSError *)error{
+    NSLog(@"Error subscribe to channel %@",error);
+}
+```
+
+``` swift
+//Swift:
+
+func pushClientManagerDidSubscribed(_ channel: String!) {
+	print("Subscribed on '%@' channel",channel)
+}
+func pushClientManagerDidFail(inSubscribe error: Error!) {
+	print("Error subscribe to channel %@",error)
+}
+```
+
 همچنین برای لغو عضویت در یک کانال میتوانید از موارد زیر استفاده کنید:
 
 ```objc
@@ -70,6 +112,30 @@ manager.subscribe("private/league") // private (personal) channel
 manager.unsubscribe("alert") // public channel
 manager.unsubscribe("public/sport") // public channel
 manager.unsubscribe("private/league") // private (personal) channel
+```
+
+در صورت رخ دادن خطا به هنگام unsubscribe با استفاده از delegate method زیر می‌توانید از عدم عضویت یا خطا رخ داده شده با خبر شوید :
+
+```obj-c
+//Objective-C:
+
+-(void) pushClientManagerDidUnsubscribed:(NSString *)channel{
+    NSLog(@"Unsubscribed on '%@' channel",channel);
+}
+-(void) pushClientManagerDidFailInUnsubscribe:(NSError *)error{
+    NSLog(@"Error in unsubscribe to channel %@",error);
+}
+```
+
+```swift
+//Swift:
+
+func pushClientManagerDidUnsubscribed(_ channel: String!) {
+	print("Unsubscribed on '%@' channel",channel)
+}
+func pushClientManagerDidFail(inUnsubscribe error: Error!) {
+	print("Error in unsubscribe to channel %@",error)
+}
 ```
 
 ### دریافت پیام
