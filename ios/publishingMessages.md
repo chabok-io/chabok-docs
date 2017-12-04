@@ -29,6 +29,35 @@ manager?.publish("USER_ID", toChannel: "CHANNEL_NAME", withText: "Hello World!")
 
 > `نکته`: برای ارسال پیام به صورت عمومی بر روی یک کانال بجای عبارت `USER_ID` کاراکتر `*` را وارد نمایید و سپس نام کانال خصوصی خود را وارد کنید.
 
+برای ارسال پیام با جزئیات بیشتر می‌توانید از signiture دیگر متد publish استفاده کنید، همانند نمونه کد زیر :
+
+```objc
+//Objective-C:
+
+PushClientMessage *message = [[PushClientMessage alloc]
+                                  initWithMessage:@"message body"
+                                  withData:@{
+                                             @"KEY": @"VALUE"
+                                             }
+                                  toUserId:@"USER_ID"
+                                  channel:@"CHANNEL_NAME"];
+message.alertText = @"New Message Alert Text";
+
+[self.manager publish:message];
+```
+
+```swift
+//Swift:
+
+var message = PushClientMessage(message: "message body",
+                                withData: ["KEY": "VALUE"],
+                                toUserId: "USER_ID",
+                                channel: "CHANNEL_NAME")
+message?.alertText = "New Message Alert Text"
+
+manager?.publish(message)
+```
+
 در صورت خطا در publish پیام delegate method زیر فراخوانی خواهد شد :
 
 ``` objc
