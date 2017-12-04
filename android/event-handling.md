@@ -14,7 +14,7 @@ next: location-config.html
 
 ```java
 public void publishEvent(final String event, final JSONObject data)
-public void publishEvent(final String event, final JSONObject data, final boolean stateful)
+public void publishEvent(final String event, final JSONObject data, final boolean live)
 public void publishEvent(final String event, final JSONObject data,
 final boolean live, final boolean stateful)
 
