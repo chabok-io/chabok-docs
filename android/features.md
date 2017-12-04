@@ -4,6 +4,7 @@ title: امکانات‌ چابک
 layout: android
 permalink: android/features.html
 prev: location-tracking.html
+next: release-note.html
 ---
 
 ### مدیریت تگ ها
