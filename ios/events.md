@@ -34,6 +34,8 @@ manager?.publishEvent("geo", data: geoData)
 - رویداد **عمومی**
 - رویداد **خصوصی** به کمک `installationId`
 
+> `نکته` : installationId در بخش [امکانات‌ چابک](/ios/features.html) توضیح داده شده است.
+
 با استفاده از متد `subscribeEvent` می توانید روی یک رویداد خاص `subscribe` کنید، به قطعه کد زیر دقت کنید : 
 
 ``` objc 
@@ -50,8 +52,6 @@ manager?.subscribeEvent("geo") //public event
 manager?.subscribeEvent("talk",
              installationId: "INSTALLATION_ID") //private event
 ```
-> `نکته` : installationId شناسه منحصر به فرد دستگاه کاربر می‌باشد. که با استفاده از متد `getInstallationId` می‌توانید شناسه منحصر به فرد دستگاه خود را دریافت کنید.
-
 ### لغو عضویت برروی یک رویداد
 
 با استفاده از متد زیر می‌توانید اقدام به لغو عضویت بر روی یک رویداد کنید :
