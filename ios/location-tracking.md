@@ -1,4 +1,4 @@
---- 
+---
 id: location-tracking 
 title: مکان‌یابی 
 layout: ios 
@@ -71,9 +71,17 @@ locationManager.startUpdate()
     CLLocation *lastLocation = [locations lastObject];
     double latitude = lastLocation.coordinate.latitude;
     double longitude = lastLocation.coordinate.longitude;
-
+    
     NSLog(@"%zd new locations was received, last location (lat:'%f') , (lng:'%f')",
-        length,latitude,longitude);
+          length,latitude,longitude);
+    
+    self.locationManager.customizeGeoData = ^NSDictionary * _Nullable
+    (CLLocation * _Nullable location) {
+        NSDictionary *data = @{@"speed":@(location.speed),
+                               @"user":@"ADP"
+                               };
+        return data;
+    };
 }
 ```
 ``` swift
@@ -84,12 +92,23 @@ func receivedLocationUpdates(_ locations: [CLLocation]) {
     let lastLocation: CLLocation? = locations.last
     let latitude = lastLocation?.coordinate.latitude
     let longitude = lastLocation?.coordinate.longitude
+  
     print("\(length) new locations was received, last location (lat:'\(latitude)') , (lng:'\(longitude)')")
-
+  
+  	locationManager?.customizeGeoData = {
+            (location: CLLocation?) -> [AnyHashable: Any] in
+            let data = ["speed": location?.speed, "user": "ADP"] as [String : Any]
+            return data
+    }
 }
 ```
 
+> `نکته`: چابک بصورت خودکار اقدام به publish موقعیت مکانی می‌کند، برای افزودن داده مورد نیاز همراه با موقعیت مکانی، باید Closures `customizeGeoData` را پیاده سازی کنید.
+>
+> `نکته` : برای جلوگیری publish موقعیت مکانی توسط چابک، مقدار بازگشتی Closures `customizeGeoData`‌ را ‌**nil** قرار دهید.
+
 ### مکان یابی بر اساس مدت زمان و فاصله
+
 با استفاده از متد `trackMeUntil:byMeter` می توانید موقعیت کاربر را بر اساس فاصله و بازه زمانی تعیین شده دنبال کنید : 
 ``` objc
 //Objective-C :
@@ -170,6 +189,8 @@ locationManager.requestSingleLocation({(_ location: CLLocation?, _ error: Error?
 
 > `نکته :` با فراخوانی متد فوق ممکن است به عملکرد متدهای 
 > `trackMeUntil:byMeter` و `startLocationUpdate‍` اختلال ایجاد کند.
+>
+> `نکته` : با فراخوانی متد `requestSingleLocation` چابک اقدام به publish موقعیت مکانی نمی‌کند.
 
 ### دریافت موقعیت مکانی در حالت Terminated
 امکان دریافت موقعیت مکان حتی در حالتی که اپلیکشن شما `Terminate` شده باشد نیز وجود دارد.
