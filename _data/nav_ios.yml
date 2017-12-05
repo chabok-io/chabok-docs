@@ -13,7 +13,7 @@
     - id: publishingMessages
       title: پیام چابک
     - id: validation
-      title: اعتبار سنجی
+      title: اعتبارسنجی شناسه کاربری
     - id: notification
       title: مدیریت اعلان‌ها
     - id: events
