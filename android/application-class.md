@@ -182,6 +182,11 @@ chabok.register(USER_ID);
 chabok.register(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
 ```
 
+> `نکته امنیتی`: مقدار `USER_ID` را هرگز به صورت خام در `SharedPreferences`
+> ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن کاربر
+> را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `getUserId`
+> چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.
+
 
 ۳. متد `isRegistered`
 
