@@ -14,7 +14,7 @@ next: location-config.html
 
 ```java
 public void publishEvent(final String event, final JSONObject data)
-public void publishEvent(final String event, final JSONObject data, final boolean stateful)
+public void publishEvent(final String event, final JSONObject data, final boolean live)
 public void publishEvent(final String event, final JSONObject data,
 final boolean live, final boolean stateful)
 
@@ -41,13 +41,43 @@ try {
 در نمونه فوق رویدادی بنام geo با داده‌هایی که در شیٔ data‌ بصورت یک JSONObject‌ قرار می‌گیرد، منتشر می‌شود.
 
 ### دریافت رویداد
-برای دریافت رویداد لازم است کلاس مورد نظر برای دریافت را بعنوان `Listener`‌ رویداد تعیین نمایید، مانند نمونه زیر:
+برای دریافت رویداد لازم است کلاس مورد نظر برای دریافت را بعنوان `Listener`‌ رویداد تعیین نمایید و با استفاده از متد subscribeEvent روی رویداد موردنظر subscribe کنید، به قطعه کد زیر توجه نمایید :
 
 ```java
 AdpPushClient.get().addListener(MyActivity.this);
+
+
+chabok.subscribeEvent(EVENT_NAME, new Callback() {
+    @Override
+    public void onSuccess(Object value) {
+
+    }
+
+    @Override
+    public void onFailure(Throwable value) {
+
+    }
+});
+
 ```
 
-سپس در متد `onEvent` ‌به شکل زیر می‌توانید رویداد مورد نظر را دریافت کنید:
+متد subscribeEvent با امضاهای زیر موجود است که بر اساس نیاز خود می‌توانید آن‌ها را فراخوانی نمایید:
+
+```java
+public void subscribeEvent(String eventName, final Callback clbk)
+public void subscribeEvent(String eventName, boolean live, final Callback clbk)
+public void subscribeEvent(String eventName, String installationId, final Callback clbk)
+public void subscribeEvent(final String eventName, final String installationId, final boolean live, final Callback clbk)
+
+```
+> `نکته :` پارامتر ورودی `live` به این معناست که کاربرانی که به چابک
+> `متصل` هستند این رویداد را دریافت خواهند نمود، مقدار
+> `installiationId`  نیز برابر `شناسه منحصر به فرد دستگاه کاربر` می‌باشد و
+> از طریق متد  `getInstallationId` به دست می‌آید.
+
+در صورت استفاده از امضاهای حاوی installiationId تمامی رویدادهای مربوط به نام وارد شده به عنوان eventName که توسط آن دستگاه منتشر می‌شود را دریافت خواهید نمود.
+
+پس از ثبت‌نام برای دریافت رویداد،‌با استفاده از متد `onEvent` ‌می‌توانید رویداد مورد نظر را دریافت کنید:
 
 ```java
 public void onEvent(final EventMessage message) {
@@ -64,3 +94,14 @@ public void onEvent(final EventMessage message) {
     }
 ```
 داده ارسال شده توسط فرستنده بصورت یک `JSONObject` از متد `getData` قابل بازیابی است.
+
+### غیرفعال کردن دریافت رویداد
+ برای غیرفعال کردن دریافت رویداد کافی است متد `unsubscribeEvent`  را که با دو امضای مختلف وجود دارد،  برا اساس نیاز خود فراخوانی نمایید.
+
+
+```java
+
+public void unsubscribeEvent(String eventName, final Callback clbk)
+public void unsubscribeEvent(final String eventName, final String installationId, final Callback clbk)
+
+```
