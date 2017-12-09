@@ -103,7 +103,7 @@ manager.subscribe("private/league") // private (personal) channel
 
 در صورت رخ دادن خطا به هنگام subscribe با استفاده از delegate method زیر می‌توانید از عضویت یا خطا رخ داده شده با خبر شوید :
 
-```obj-c
+```objc
 //Objective-C:
 
 -(void) pushClientManagerDidSubscribed:(NSString *)channel{
@@ -145,7 +145,7 @@ manager.unsubscribe("private/league") // private (personal) channel
 
 در صورت رخ دادن خطا به هنگام unsubscribe با استفاده از delegate method زیر می‌توانید از عدم عضویت یا خطا رخ داده شده با خبر شوید :
 
-```obj-c
+```objc
 //Objective-C:
 
 -(void) pushClientManagerDidUnsubscribed:(NSString *)channel{
