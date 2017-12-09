@@ -86,74 +86,24 @@ if(chabok.isForeground()) {
 
 ```java
 
-private AdpPushClient chabok;
-
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    chabok = ((DemoApplication) getApplication()).getPushClient();
-
-}
-
-@Override
-protected void onResume() {
-    super.onResume();
-    attachPushClient();
-}
-
-
-@Override
-protected void onPause() {
-    super.onPause();
-    detachPushClient();
-}
-
-@Override
-    protected void onDestroy() {
-    detachPushClient();
-    super.onDestroy();
-}
-
-private void attachPushClient() {
-    if (chabok != null) {
-        chabok.setPushListener(this);
-    }
-}
-
-private void detachPushClient() {
-    if (chabok != null) {
-        chabok.removePushListener(this);
-    }
-}
 
 public void onEvent(final ConnectionStatus status) {
-    runOnUiThread(new Runnable() {
-        @Override
-        public void run() {
-            updateConnectionStatus(status);
-        }
-    });
-}
+if (status != null) {
+    switch (status) {
+        case CONNECTED:
+        // your logic
+        break;
 
-private void updateConnectionStatus(ConnectionStatus status) {
+    case CONNECTING:
+        // your logic
+        break;
 
-    if (connectionStatus != null && status != null) {
-        switch (status) {
-            case CONNECTED:
-            // your logic
-            break;
-
-            case CONNECTING:
-            // your logic
-            break;
-
-            case DISCONNECTED:
-            // your logic
-            break;
+    case DISCONNECTED:
+        // your logic
+        break;
         }
     }
 }
-
 
 ```
 
@@ -165,32 +115,18 @@ private void updateConnectionStatus(ConnectionStatus status) {
 
 ```java
 
-private void attachPushClient() {
-    if (chabok != null) {
-        chabok.addListener(this);
+chabok.getStatus(new Callback<ConnectionStatus>() {
+    @Override
+    public void onSuccess(ConnectionStatus connectionStatus) {
+        Log.i(TAG + "_fetch", connectionStatus.name());
     }
 
-    fetchAndUpdateConnectionStatus();
-}
-
-
-private void fetchAndUpdateConnectionStatus() {
-    if (chabok == null) {
-        return;
+    @Override
+    public void onFailure(Throwable throwable) {
+        Log.i(TAG, "errrror ");
     }
-    chabok.getStatus(new Callback<ConnectionStatus>() {
-        @Override
-        public void onSuccess(ConnectionStatus connectionStatus) {
-            Log.i(TAG + "_fetch", connectionStatus.name());
-            updateConnectionStatus(connectionStatus);
-        }
+});
 
-        @Override
-        public void onFailure(Throwable throwable) {
-            Log.i(TAG, "errrror ");
-        }
-    });
-}
 
 ```
 
