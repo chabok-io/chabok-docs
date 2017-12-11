@@ -6,15 +6,17 @@ permalink: android/release-note.html
 prev: features.html
 ---
 
-### ارتقا به نسخه ۲.۹.۱ 
+### ارتقا به نسخه ۲.۹.۰ 
 
   * عضویت در کانال عمومی به صورت `CHANNEL_NAME` و در کانال خصوصی به صورت `private/CHANNEL_NAME` امکان پذیر است.
-* `حذف` امضای  زیر از متد publish، بنابراین اگر بخواهید پیام چابک دارای مقدار دیتا باشد باید دیتای خود را به شکل json برای آن ست کنید.
+* متد `getSubscriptions` لیست کانال‌ها را بر اساس الگوی جدبد برمی‌گرداند.
+* `حذف` امضای  زیر از متد publish، بنابراین اگر بخواهید پیام چابک دارای مقدار دیتا باشد باید دیتای خود را به شکل json برای آن ست کنید و از امضایی که پیام چابک می‌گیرد استفاده نمایید.
 
 ```java
 public void publish(String channel, String text, JSONObject data, Callback clbk) 
 ```
 
+* تفییر نام متدهای `set/getTopicName` به `set/getChannel`
 * تغییر نام متد `enableEventDelivery` به `subscribeEvent`
 * پارامتر سوم در متد `publishEvent` از  `stateful` به `live` تغییر نمود
 
