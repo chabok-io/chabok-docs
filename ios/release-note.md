@@ -6,15 +6,18 @@ permalink: ios/release-note.html
 prev: features.html
 ---
 
+### نسخه ۱.۱۴.۱
+
+* `publish` موقعیت مکانی به صورت `live`
+
 ### ارتقا به نسخه ۱.۱۴.۰ 
 
-* * عضویت در کانال عمومی به صورت `CHANNEL_NAME` و در کانال خصوصی به صورت `private/CHANNEL_NAME` امکان پذیر است.
-* 
-* تغییر نام متد `enableEventDelivery:forPublic:` به `subscribeEvent:` 
-* تغییر نام متد `enableEventDelivery:` به `subscribeEvent:installationId:` 
-* تغییر نام متد `getRegistrationId` به `getInstallationId`
-* اجباری کردن property `messageBody` در کلاس `PushClientMessage`
- 
+*  عضویت در کانال عمومی به صورت `CHANNEL_NAME` و در کانال خصوصی به صورت `private/CHANNEL_NAME` امکان پذیر است.
+*  تغییر نام متد `enableEventDelivery:forPublic:` به `subscribeEvent:` 
+*  تغییر نام متد `enableEventDelivery:` به `subscribeEvent:installationId:` 
+*  تغییر نام متد `getRegistrationId` به `getInstallationId`
+*  اجباری کردن property `messageBody` در کلاس `PushClientMessage`
+
 ### تغییرات
 
 - افزودن متد جدید برای عضویت روی یک رویداد (`unsubscribeEvent:` و `unsubscribeEvent:installationId:`)
