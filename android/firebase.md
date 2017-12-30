@@ -4,6 +4,7 @@ title:  ایجاد کلیدهای گوگل
 layout: android
 permalink: android/firebase.html
 prev: required.html
+next: gradle-setup.html
 
 ---
 ### ایجاد کلیدهای گوگل
@@ -12,17 +13,21 @@ prev: required.html
 
 ![عکس مربوطه](http://uupload.ir/files/189r_console.png)
 
+
 روی نام پروژه خود کلیک کرده و سپس از منوی کناری با کلیک روی آیکون ستینگ، گزینه Projet setting را انتخاب نمایید.
 
 ![عکس مربوطه](http://uupload.ir/files/4zw7_screen_shot_2017-12-30_at_11.49.18_am.png)
 
-تب CLOAUD MESSAGING را انتخاب نمایید
+
+تب CLOUD MESSAGING را انتخاب نمایید
 
 ![عکس مربوطه](http://uupload.ir/files/vjyi_clousd.png)
+
 
 کلیدهای Legacy server key و Sender ID را به ترتیب در فیلدهای مربوطه در بخش تنظیمات پیشرفته حساب خود در پنل چابک وارد نمایید
 
 ![عکس مربوطه](http://uupload.ir/files/b6mg_screen_shot_2017-12-30_at_11.58.08_am.png)
+
 
 مقدار Sender ID علاوه بر این قسمت به عنوان یکی از پارامترهای مقداردهی اولیه چابک نیز مورد استفاده قرار خواهد گرفت.
 

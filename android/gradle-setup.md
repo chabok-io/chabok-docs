@@ -3,7 +3,7 @@ id: gradle-setup
 title: نصب چابک
 layout: android
 permalink: android/gradle-setup.html
-prev: required.html
+prev: firebasehtml
 next: application-class.html
 ---
 

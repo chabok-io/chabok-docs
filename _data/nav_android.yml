@@ -4,6 +4,8 @@
       title: مفاهیم اولیه
     - id: required
       title: پیش‌نیازها
+    - id: firebase
+      title: ایجاد کلیدهای گوگل
     - id: gradle-setup
       title: نصب چابک
     - id: application-class

@@ -3,8 +3,8 @@ id: required
 title: پیش‌نیازها
 layout: android
 permalink: android/required.html
-prev: knowledge.html
-next: gradle-setup.html
+prev: introducing.html
+next: firebase.html
 ---
 
 ### ایجاد حساب چابک
