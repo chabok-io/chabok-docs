@@ -61,6 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 ```
 متد `setDevelopment` مشخص می‌کند که برنامه به محیط [آزمایشی](https://sandbox.push.adpdigital.com) چابک متصل شود یا به محیط [عملیاتی](https://panel.push.adpdigital.com). این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
 
+>` نکته` : توجه داشته باشید پس از اتصال به محیط عملیاتی امکان تست پوش
+> نوتیفیکیشن روی `TestFlight` مقدور است.
+
 ```objc
 //Objective-C:
 
