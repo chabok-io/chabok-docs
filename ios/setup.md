@@ -62,12 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 متد `setDevelopment` مشخص می‌کند که برنامه به محیط [آزمایشی](https://sandbox.push.adpdigital.com) چابک متصل شود یا به محیط [عملیاتی](https://panel.push.adpdigital.com). این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
 
 
-> `نکته `: توجه داشته باشید هنگامی که گواهی `sandbox` اپل را در پنل تستی
-> قرار می‌دهید، فقط امکان دریافت `Cloud Messaging` در حالت `debug` وجود
-> خواهد داشت. اما اگر گواهی `production` اپل را در محیط عملیاتی قرار دهید،
-> زمانی `Cloud Messaging` را دریافت خواهید کرد که اقدام به ساخت `ipa`از
-> پروژه خود کرده و از طریق `TestFlight` یا `Enterprise` اپلیکیشن خود را نصب
-> کنید.
+>`نکته` : توجه داشته باشید هنگامی که **گواهی sandbox اپل** را در پنل تستی قرار می‌دهید، فقط امکان دریافت `Cloud Messaging` در حالت `debug` وجود خواهد داشت. اما اگر **گواهی production اپل** را در محیط عملیاتی قرار دهید، زمانی `Cloud Messaging` را دریافت خواهید کرد که اقدام به ساخت **ipa** از پروژه خود کرده و از طریق TestFlight یا Enterprise اپلیکیشن خود را نصب کنید.
+
 
 ```objc
 //Objective-C:
