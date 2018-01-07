@@ -117,7 +117,7 @@ func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClien
 
 ### حذف اعلان
 
-برای حذف یا پاک کردن یک اعلان خاص در `Notification Center` میتوانید از متد زیر استفاده کنید:
+برای حذف یا پاک کردن یک اعلان خاص در `Notification Center` می‌توانید از متد زیر استفاده کنید:
 
 ```objc
 //Objective-C:
@@ -129,7 +129,7 @@ func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClien
 
 UIApplication.shared.cancelLocalNotification(UILocalNotification)
 ```
-همچنین برای حذف یا پاک کردن تمام اعلان ها میتوانید از متد زیر استفاده کنید:
+همچنین برای حذف یا پاک کردن تمام اعلان ها می‌توانید از متد زیر استفاده کنید:
 
 ```objc
 //Objective-C:
