@@ -5,29 +5,30 @@ layout: android
 permalink: android/release-note.html
 prev: features.html
 ---
-### نسخه ۲.۱۰.۰
+## نسخه ۲.۱۰.۰
 
-ارتقا ####
+### ارتقا
+
 *‌مقدار پیش‌فرض برای حالت `devMode` وجود نداشت که برابر `true` در نظر گرفته شد.
 * عدم اتصال مجدد سرویس چابک با روشن شدن صفحه گوشی.
 * حذف متد `reRegister`. کافیست به جای این متد از متد `register` استفاده شود.
 
-#### تغییرات
+### تغییرات
 
 * بهبود connection handling
 * افزودن متد `hasProtectedAppSupport`. با استفاده از این متد می‌توان بررسی نمود آیا گوشی استفاده شده برنامه را در لیست  protectedApp قرار می‌دهد یا خیر.
 * افزودن متد `showProtectedAppSettings` برای نمایش پیغام مربوط به برنامه‌های محافظت شده
 
 
-### نسخه ۲.۹.۱
+## نسخه ۲.۹.۱
 
-#### تغییرات
+### تغییرات
 
 * افزودن متد `addCallbackIntent` برای دسترسی به موقعیت مکانی در حالت `kill` و `background`
 
-### نسخه ۲.۹.۰
+## نسخه ۲.۹.۰
 
-ارتقا ####
+### ارتقا
 
   * عضویت در کانال عمومی به صورت `CHANNEL_NAME` و در کانال خصوصی به صورت `private/CHANNEL_NAME` امکان پذیر است.
 * متد `getSubscriptions` لیست کانال‌ها را بر اساس الگوی جدبد برمی‌گرداند.
@@ -46,7 +47,7 @@ public void publish(String channel, String text, JSONObject data, Callback clbk)
  public void publishEvent(final String event, final JSONObject data, final boolean live)
 ```
 
-#### تغییرات
+### تغییرات
 
 
 * در پیام چابک مقدار پیش‌فرض برای نام کانال برابر default و مقدار پیش‌فرض برای user مقدار * می‌باشد. 
