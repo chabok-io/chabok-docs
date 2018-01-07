@@ -115,6 +115,33 @@ func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClien
 }
 ```
 
+### حذف اعلان
+
+برای حذف یا پاک کردن یک اعلان خاص در `Notification Center` می‌توانید از متد زیر استفاده کنید:
+
+```objc
+//Objective-C:
+
+[[UIApplication sharedApplication] cancelLocalNotification:(nonnull UILocalNotification *)];
+```
+```swift
+//Swift:
+
+UIApplication.shared.cancelLocalNotification(UILocalNotification)
+```
+همچنین برای حذف یا پاک کردن تمام اعلان ها می‌توانید از متد زیر استفاده کنید:
+
+```objc
+//Objective-C:
+
+[[UIApplication sharedApplication] cancelAllLocalNotifications];
+```
+```swift
+//Swift:
+
+UIApplication.shared.cancelAllLocalNotifications()
+```
+
 ### NSNotificationCenter
 
 به عنوان یک جایگزین، می توانید از روش مشاهدات `NSNotificationCenter` برای دریافت رویدادها استفاده کنید. برای دریافت رویدادها به این روش، می توانید هر کدام از این ها را اضافه کنید:
