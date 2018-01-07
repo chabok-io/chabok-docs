@@ -65,6 +65,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 >`نکته` : توجه داشته باشید هنگامی که **گواهی sandbox اپل** را در پنل تستی قرار می‌دهید، فقط امکان دریافت `Cloud Messaging` در حالت `debug` وجود خواهد داشت. اما اگر **گواهی production اپل** را در محیط عملیاتی قرار دهید، زمانی `Cloud Messaging` را دریافت خواهید کرد که اقدام به ساخت **ipa** از پروژه خود کرده و از طریق TestFlight یا Enterprise اپلیکیشن خود را نصب کنید.
 
 
+> `نکته` : کلاینت چابک به صورت پیش‌فرض بر روی حالت **تست (sandbox)** می‌باشد. برای استفاده از محیط **عملیاتی (production)** مقدار `setDevelopment` را `NO` قرار دهید.
+
 ```objc
 //Objective-C:
 
@@ -208,11 +210,9 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 > نحوه صحیح پیاده سازی متدها در قالب پروژه [Starter](https://github.com/chabokpush/chabok-starter-ios) پیاده سازی شده است.
 
-### متدهای ثبت/حذف کاربر
+### متد حذف کاربر
 
-۱. متد `unRegisterUser`
-
-برای لغو عضویت میتوانید از متد های زیر استفاده کنید:
+برای حذف دستگاه کاربر از سرور چابک می‌توانید از متدهای زیر استفاده کنید:
 ```objc
 //Objective-C:
 [PushClientManager unRegisterUser];
@@ -220,30 +220,6 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 ```swift
 //Swift:
 PushClientManager.unRegisterUser()
-```
-۲. متد `registerAgainWithUserId`
-
-برای رجیستر چندین  `USER_ID` میتوانید از متد زیر استفاده کنید.
-متد  `registerAgainWithUserId` هم مانند متد `registerUser` دارای دو امضای متفاوت است،امضای اول که تنها شناسه کاربر را گرفته و امضای دوم که علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی که کاربر باید روی آن‌ها عضو شود را نیز دریافت می کند.
-
-```objc
-//Objective-C:
-
-[self.manager registerAgainWithUserId:@"USER_ID"];
-
-[self.manager registerAgainWithUserId:@"USER_ID" channels:@[@"YOUR_CHANNEL" ]
-registrationHandler:^(BOOL isRegistered, NSString *userId, NSError *error) {
-// handle registration result from server
-}
-
-```
-```swift
-//Swift:
-
-self.manager.registerAgainWithUserId("USER_ID")
-
-self.manager.registerAgainWithUserId("USER_ID", channels: ["YOUR_CHANNEL"])
-
 ```
 
 ### رویداد ها:
@@ -273,5 +249,4 @@ func pushClientManagerDidRegisterUser(_ registration: Bool) {
 func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 }
 ```
-
 
