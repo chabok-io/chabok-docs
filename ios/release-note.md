@@ -6,11 +6,25 @@ permalink: ios/release-note.html
 prev: features.html
 ---
 
-### نسخه ۱.۱۴.۱
+## نسخه ۱.۱۵.۰
+### ارتقا
+
+* از متد `registerUser:` بجای متد `registerAgainWithUserId:`، جهت تغییر `userId` استفاده کنید. برای تغییر نام کاربری، چابک به صورت خودکار `userId` قدیمی را به صورت کامل پاک کرده و `userId` جدید را در سرور ثبت می‌کند.
+* تغییر پیش فرض متد `SetDevelopment` به مقدار `YES`،‌ به این معنی که محیط کلاینت چابک بصورت پیش‌فرض حالت تست (sandbox) می‌باشد.
+
+### تغییرات
+
+* تغییر پیش فرض متد `SetDevelopment` به مقدار `YES`.
+* حل مشکل نمایش هشدار background
+* حذف متد `registerAgainWithUserId:`.
+
+## نسخه ۱.۱۴.۱
+### تغییرات
 
 * `publish` موقعیت مکانی به صورت `live`
 
-### ارتقا به نسخه ۱.۱۴.۰ 
+## نسخه ۱.۱۴.۰
+### ارتقا
 
 *  عضویت در کانال عمومی به صورت `CHANNEL_NAME` و در کانال خصوصی به صورت `private/CHANNEL_NAME` امکان پذیر است.
 *  تغییر نام متد `enableEventDelivery:forPublic:` به `subscribeEvent:` 
