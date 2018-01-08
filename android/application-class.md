@@ -150,7 +150,7 @@ private AdpPushClient chabok = null;
 
 مشخص می‌کند که برنامه به محیط [تستی](https://sandbox.push.adpdigital.com) چابک متصل شود یا به محیط [عملیاتی](https://panel.push.adpdigital.com). این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
 
-> `نکته`:  مقدار `پیش‌فرض` برابر `true` در نظر گرفته شده است.
+> `نکته`:  مقدار پیش‌فرض  برابر `true` در نظر گرفته شده است.
 
 ```java
 chabok.setDevelopment(DEV_MODE);
