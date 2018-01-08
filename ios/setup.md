@@ -9,9 +9,9 @@ next: publishingMessages.html
 ### مراحل راه‌اندازی چابک
 برای راه‌اندازی چابک باید سه مرحله زیر را به ترتیب انجام دهید تا بتوانید دستگاه خود را در پنل چابک مشاهده کنید :
 
- 1. مقداردهی اولیه
- 2. ثبت کاربر
- 3. متدهای ضروری
+    1. مقداردهی اولیه
+    2. ثبت کاربر
+    3. متدهای ضروری
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
@@ -60,6 +60,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 }
 ```
 متد `setDevelopment` مشخص می‌کند که برنامه به محیط [آزمایشی](https://sandbox.push.adpdigital.com) چابک متصل شود یا به محیط [عملیاتی](https://panel.push.adpdigital.com). این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
+
+
+>`نکته` : توجه داشته باشید هنگامی که **گواهی sandbox اپل** را در پنل تستی قرار می‌دهید، فقط امکان دریافت `Cloud Messaging` در حالت `debug` وجود خواهد داشت. اما اگر **گواهی production اپل** را در محیط عملیاتی قرار دهید، زمانی `Cloud Messaging` را دریافت خواهید کرد که اقدام به ساخت **ipa** از پروژه خود کرده و از طریق TestFlight یا Enterprise اپلیکیشن خود را نصب کنید.
+
+
+> `نکته` : کلاینت چابک به صورت پیش‌فرض بر روی حالت **تست (sandbox)** می‌باشد. برای استفاده از محیط **عملیاتی (production)** مقدار `setDevelopment` را `NO` قرار دهید.
 
 ```objc
 //Objective-C:
@@ -120,7 +126,9 @@ if launchByNotification{
 #### ۲- ثبت کاربر
 با استفاده از متد `registerUser` می‌توانید یک نام کاربری به هر کاربر اختصاص دهید. این متد با دو امضای متفاوت وجود دارد: امضای اول که تنها `شناسه کاربر` را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام میکند.
 
->   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `Userdefault` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن  کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `getUserId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.
+> `نکته` : متد `registerUser` باید فقط **یک بار** در طول اجرا اپلیکیشن فراخوانی شود. بعنوان مثال، اگر اپلیکیشن شما دارای صفحه **ثبت نام** است، متد `registerUser` را در این `UIViewController` فراخوانی کنید و و هم پس از ثبت نام، در `AppDelegate`، متد `registerUser` را فراخوانی کنید تا با **شناسه ثبت نام** شده هر بار به سرور چابک متصل شود.
+
+>   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `NSUserDefaults` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن  کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `PushClientManager.default().userId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.
 
 ```objc
 //Objective-C:
@@ -202,11 +210,9 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 > نحوه صحیح پیاده سازی متدها در قالب پروژه [Starter](https://github.com/chabokpush/chabok-starter-ios) پیاده سازی شده است.
 
-### متدهای ثبت/حذف کاربر
+### متد حذف کاربر
 
-۱. متد `unRegisterUser`
-
-برای لغو عضویت میتوانید از متد های زیر استفاده کنید:
+برای حذف دستگاه کاربر از سرور چابک می‌توانید از متدهای زیر استفاده کنید:
 ```objc
 //Objective-C:
 [PushClientManager unRegisterUser];
@@ -214,30 +220,6 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 ```swift
 //Swift:
 PushClientManager.unRegisterUser()
-```
-۲. متد `registerAgainWithUserId`
-
-برای رجیستر چندین  `USER_ID` میتوانید از متد زیر استفاده کنید.
-متد  `registerAgainWithUserId` هم مانند متد `registerUser` دارای دو امضای متفاوت است،امضای اول که تنها شناسه کاربر را گرفته و امضای دوم که علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی که کاربر باید روی آن‌ها عضو شود را نیز دریافت می کند.
-
-```objc
-//Objective-C:
-
-[self.manager registerAgainWithUserId:@"USER_ID"];
-
-[self.manager registerAgainWithUserId:@"USER_ID" channels:@[@"YOUR_CHANNEL" ]
-registrationHandler:^(BOOL isRegistered, NSString *userId, NSError *error) {
-// handle registration result from server
-}
-
-```
-```swift
-//Swift:
-
-self.manager.registerAgainWithUserId("USER_ID")
-
-self.manager.registerAgainWithUserId("USER_ID", channels: ["YOUR_CHANNEL"])
-
 ```
 
 ### رویداد ها:
@@ -267,5 +249,4 @@ func pushClientManagerDidRegisterUser(_ registration: Bool) {
 func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 }
 ```
-
 

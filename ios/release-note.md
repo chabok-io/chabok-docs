@@ -6,15 +6,32 @@ permalink: ios/release-note.html
 prev: features.html
 ---
 
-### ارتقا به نسخه ۱.۱۴.۰ 
+## نسخه ۱.۱۵.۰
+### ارتقا
 
-* * عضویت در کانال عمومی به صورت `CHANNEL_NAME` و در کانال خصوصی به صورت `private/CHANNEL_NAME` امکان پذیر است.
-* 
-* تغییر نام متد `enableEventDelivery:forPublic:` به `subscribeEvent:` 
-* تغییر نام متد `enableEventDelivery:` به `subscribeEvent:installationId:` 
-* تغییر نام متد `getRegistrationId` به `getInstallationId`
-* اجباری کردن property `messageBody` در کلاس `PushClientMessage`
- 
+* از متد `registerUser:` بجای متد `registerAgainWithUserId:`، جهت تغییر `userId` استفاده کنید. برای تغییر نام کاربری، چابک به صورت خودکار `userId` قدیمی را به صورت کامل پاک کرده و `userId` جدید را در سرور ثبت می‌کند.
+* تغییر پیش فرض متد `SetDevelopment` به مقدار `YES`،‌ به این معنی که محیط کلاینت چابک بصورت پیش‌فرض حالت تست (sandbox) می‌باشد.
+
+### تغییرات
+
+* تغییر پیش فرض متد `SetDevelopment` به مقدار `YES`.
+* حل مشکل نمایش هشدار background
+* حذف متد `registerAgainWithUserId:`.
+
+## نسخه ۱.۱۴.۱
+### تغییرات
+
+* `publish` موقعیت مکانی به صورت `live`
+
+## نسخه ۱.۱۴.۰
+### ارتقا
+
+*  عضویت در کانال عمومی به صورت `CHANNEL_NAME` و در کانال خصوصی به صورت `private/CHANNEL_NAME` امکان پذیر است.
+*  تغییر نام متد `enableEventDelivery:forPublic:` به `subscribeEvent:` 
+*  تغییر نام متد `enableEventDelivery:` به `subscribeEvent:installationId:` 
+*  تغییر نام متد `getRegistrationId` به `getInstallationId`
+*  اجباری کردن property `messageBody` در کلاس `PushClientMessage`
+
 ### تغییرات
 
 - افزودن متد جدید برای عضویت روی یک رویداد (`unsubscribeEvent:` و `unsubscribeEvent:installationId:`)
