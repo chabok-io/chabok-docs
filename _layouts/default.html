@@ -6,12 +6,10 @@
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
     <link rel="icon" type="image/svg+xml" href="{{ site.avatar }}">
     {% include meta.html %}
-    <link rel="stylesheet" type="text/css" href="https://chabokpush.com/www/lib/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://chabokpush.com/css/style.min.css">
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="https://www.bayanbox.ir/download/301824450467824011/fontiran.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://chabokpush.com/www/css/main.css"/>
     <link href="https://cdn.rawgit.com/rastikerdar/vazir-code-font/v1.0.3/dist/font-face.css" rel="stylesheet"
           type="text/css"/>
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css"/>
@@ -22,46 +20,37 @@
 </head>
 
 <body>
-<div class="chabok-header" id="chabokheader">
-    <div class="toplinks">
-        <a class="med15 loginpanel" style="cursor: pointer;color:#00325d;margin-right: 40px"> ورود</a>
-    </div>
-
-    <div class="toplinks">
-        <a href="http://chabokpush.com/pricing.html" class="med15">قیمت‌گذاری</a>
-    </div>
-    <div class="toplinks">
-
-        <a href="http://doc.chabokpush.com/" class="med15">پلتفرم‌ها</a>
-
-    </div>
-    <div class="toplinks">
-
-        <a href="http://chabokpush.com/usage.html" class="med15"> موارد استفاده</a>
-
-    </div>
-    <div class="toplinks">
-        <a href="http://chabokpush.com/chabok.html" class="med15">قابلیت‌ها</a>
-    </div>
-    <a href="http://chabokpush.com/"><img src="{{ site.avatar }}" class="chabokLogo">
-
-        <div class="chabok">
-            <h1 class="chabokColor reg34">
-                {{ site.name }}
-            </h1>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top chabok-nav">
+    <div class=container><a class=navbar-brand href="https://chabokpush.com/">
+        <img src=https://chabokpush.com/images/chabok-logo.svg height=40
+             class="d-inline-block align-top"
+             alt="سرویس ارتباط آنی چابک"></a>
+        <button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarToggler
+                aria-controls=navbarToggler aria-expanded=false aria-label="Toggle navigation"><span
+                class=navbar-toggler-icon></span></button>
+        <div class="collapse navbar-collapse" dir=rtl id=navbarToggler>
+            <ul class="navbar-nav mt-2 nav-links">
+                <li class=nav-item><a class=nav-link href="https://chabokpush.com/chabok/">قابلیت‌ها</a></li>
+                <li class=nav-item><a class=nav-link href=https://chabokpush.com/usage.html>موارد استفاده</a></li>
+                <li class=nav-item><a class=nav-link href="http://doc.chabokpush.com/">توسعه دهندگان</a></li>
+                <li class=nav-item><a class=nav-link href=https://chabokpush.com/pricing.html>قیمت</a></li>
+            </ul>
+            <ul class="navbar-nav mr-auto mt-2">
+                <li class=nav-item><a class=nav-link href=http://sandbox.push.adpdigital.com/login>ورود</a></li>
+                <li class=nav-item><a class=register-btn href=register.html>شروع کنید</a></li>
+            </ul>
         </div>
-    </a>
+    </div>
+</nav>
 
-</div>
-
-<div class="wrapper">
+<div>
     {{ content }}
 </div>
 {% include footer.html %}
 {% include analytics.html %}
-<script src="https://chabokpush.com/bower_components/jQuery/dist/jquery.min.js"></script>
-{% javascript bootstrap.min.js %}
-{% javascript app.js %}
+<script src=https://chabokpush.com/js/library.min.js></script>
+<script src=https://lib.arvancloud.com/ar/twitter-bootstrap/4.0.0-beta.3/js/bootstrap.min.js></script>
+<script src=https://chabokpush.com/js/chabok.min.js></script>
 </body>
 
 </html>

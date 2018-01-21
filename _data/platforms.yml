@@ -29,10 +29,12 @@
   image: php.svg
   document: http://api.doc.chabokpush.com
   demo: https://github.com/chabokpush/chabok-php-demo
+  issue: https://github.com/chabokpush/chabok-php-demo/issues
   starter:
 
-- name: API
-  image: api.png
+- name: REST API
+  image: api.svg
   document: http://api.doc.chabokpush.com
   demo:
   starter:
+  issue: https://github.com/chabokpush/chabok-php-demo/issues
