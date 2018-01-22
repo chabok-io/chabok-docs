@@ -2,23 +2,34 @@
 layout: default
 sectionid: windows
 ---
-{% include nav_windows.html %}
+<div class="row">
+    <div class="container-fluid">
+        <div class="row">
+            {% include nav_windows.html %}
 
-<div class="entry post" id="content">
-    <h1>
-        {{ page.title }}
-    </h1>
-    <div class="subHeader">{{ page.description }}</div>
-    <div class="row">
-        <div class="col-md-12">
-            {{ content }}
-            <div class="docs-prevnext clearfix">
-                {% if page.prev %}
-                <a class="docs-prev" href="/windows/{{ page.prev }}"> &rarr;قبلی </a>
-                {% endif %}
-                {% if page.next %}
-                <a class="docs-next" href="/windows/{{ page.next }}"> بعدی &larr; </a>
-                {% endif %}
+            <div class="entry post col-12 col-lg-9" id="content">
+                <h1>
+                    <a id="sideMenuHandler">
+                        <img src="../images/menu.svg" width="32" class="d-inline-block d-lg-none"/>
+                    </a>
+                    {{ page.title }}
+                </h1>
+                <div class="subHeader">{{ page.description }}</div>
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-12">
+                        <div class="doc-content">
+                            {{ content }}
+                        </div>
+                        <div class="docs-prevnext clearfix">
+                            {% if page.prev %}
+                            <a class="docs-prev" href="/windows/{{ page.prev }}"> &rarr;قبلی </a>
+                            {% endif %}
+                            {% if page.next %}
+                            <a class="docs-next" href="/windows/{{ page.next }}"> بعدی &larr; </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
