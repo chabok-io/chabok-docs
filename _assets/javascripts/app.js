@@ -31,7 +31,7 @@ function sideMenu() {
         $html = $('html'),
         $sidebar = $('#sidebar');
 
-    $body.on('click', '.overlayModal', function () {
+    $body.on('click touch', '.overlayModal', function () {
         var $overlayModal = $('.overlayModal');
 
         if ($overlayModal.length) {
@@ -42,7 +42,7 @@ function sideMenu() {
 
     });
 
-    $('#sideMenuHandler').on('click', function () {
+    $('#sideMenuHandler').on('click touch', function () {
         var $overlayModal = $('.overlayModal');
         $sidebar.addClass('drawer-menu-active');
         $html.addClass('noScroll');
