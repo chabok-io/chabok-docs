@@ -1,69 +1,59 @@
 ---
 layout: default
 ---
-<div class="container-fluid" style="width: 100%;">
-    <div class="row">
-        <div class="Pageheader">
-            <div class="med20 chabokColor">
-                پلتفرم‌ها
-            </div>
-            ‌
-            <p class="subtitle color4d font-40" style="margin: 0 0 10px 0px">
-                پیاده سازی راحت
-                <strong class="font-40 color4d">
-                    بر روی هر پلتفرمی
-                </strong></p>
-        </div>
-        <div class="col-md-8 col-md-offset-2">
-            <h3 class="text-center"> چابک روی هر پلتفرمی قابل استفاده است</h3>
-
-            <p class="text-center">
-                ما برای هر پلتفرم راهنمای
-                کاملی ایجاد کرده‌ایم تا شما در کوتاه‌ترین زمان چابک را به برنامه یا نرم‌افزار خود اضافه کنید.
-            </p>
-        </div>
+<section class="page-head row mt-50">
+    <div class="container">
+        <h1 class="col-12 text-right"> پلتفرم‌ها</h1>
+        <h2 class="col-12 text-right">پیاده سازی راحت بر روی هر پلتفرمی</h2>
     </div>
-
-    <div class="row platforms">
-        <div class="col-md-8 col-md-offset-2">
+</section>
+<div class="row pt-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center"> چابک روی هر پلتفرمی قابل استفاده است</h3>
+                <p class="text-center">
+                    ما برای هر پلتفرم راهنمای
+                    کاملی ایجاد کرده‌ایم تا شما در کوتاه‌ترین زمان چابک را به برنامه یا نرم‌افزار خود اضافه کنید.
+                </p>
+            </div>
+        </div>
+        <div class="row mt-15 mb-30">
             {% for platform in site.data.platforms %}
             <div class="col-md-4">
-                <div class="col-md-12 platfrom-box android p-25" style="height: 185px">
-                    <div class="text-center">
-
-                        <div class="col-md-8">
-                            <a target="_blank" href="{{ platform.document }}"
-                               class="btn btn-primary btn-block">
-                                مستندات
-                            </a>
-                            {% if platform.issue %}
-                            <a target="_blank" href="{{ platform.issue }}"
-                               class="btn btn-default btn-block">
-                                پشتیبانی
-                            </a>
-                            {% endif %}
-                            {% if platform.demo %}
-                            <a target="_blank" href="{{ platform.demo }}"
-                               class="btn btn-default btn-block">
-                                دمو
-                            </a>
-                            {% endif %}
-                            {% if platform.starter %}
-                            <a target="_blank" href="{{ platform.starter }}"
-                               class="btn btn-default btn-block">
-                                پروژه شروع
-                            </a>
-                            {% endif %}
+                <div class="col-md-11 platfrom-box android">
+                    <div class="row">
+                        <div class="col-6 my-auto text-center">
+                            <img src="{{ site.baseurl }}/images/{{ platform.image }}" height="36"/>
+                            <h6>{{ platform.name }}</h6>
                         </div>
+                        <div class="col-6 btn-bar">
+                            <div class="nav flex-column">
+                                <a target="_blank" href="{{ platform.document }}"
+                                   class="nav-link {% if platform.document %} {% else %} disabled {% endif %}">
+                                    مستندات
+                                </a>
 
-                        <div class="col-md-4">
-                            <img src="{{ site.baseurl }}/images/{{ platform.image }}"/>
+                                <a target="_blank" href="{{ platform.issue }}"
+                                   class="nav-link {% if platform.issue %} {% else %} disabled {% endif %}">
+                                    پشتیبانی
+                                </a>
+
+                                <a target="_blank" href="{{ platform.demo }}"
+                                   class="nav-link {% if platform.demo %} {% else %} disabled {% endif %}">
+                                    دمو
+                                </a>
+                                <a target="_blank" href="{{ platform.starter }}"
+                                   class="nav-link {% if platform.starter %} {% else %} disabled {% endif %}">
+                                    پروژه شروع
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             {% endfor %}
-
         </div>
+
     </div>
 </div>
