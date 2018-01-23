@@ -1,3 +1,4 @@
+
 ---
 id: release-note
 title: لیست تغییرات کتابخانه
@@ -5,6 +6,15 @@ layout: ios
 permalink: ios/release-note.html
 prev: features.html
 ---
+
+## نسخه ۱.۱۵.۱ 
+
+### تغییرات
+
+ - استفاده از کلیدهای *title* و *body* به منظور نمایش عنوان و متن در `Notification`
+ - تشخیص نصب جدید و باز شدن برنامه (دسترسی به این رویدادها به کمک کلیدهای `kPushClientDetectAppNewInstall` و `kPushClientDetectAppWasLaunched`)
+ - حل مشکل متد `deviceSubscriptions` به هنگام فراخوانی قبل از متد `registerUser:` 
+ - اعلان خطا به هنگام فراخوانی متد `updateNotificationSettings:sound:alert:` قبل از رجیستر شدن کاربر
 
 ## نسخه ۱.۱۵.۰
 ### ارتقا
