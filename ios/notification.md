@@ -21,7 +21,7 @@ next: events.html
 > متد `didReceiveLocalNotification` فرخوانی خواهد شد که بر روی
 > Notification کلیک شده باشد.
 
-```objc
+```objectivec
 //Objective-C:
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
@@ -53,7 +53,7 @@ delegate متد `didReceiveRemoteNotification` توسط سیستم عامل به
 > کد مربوط به `Navigate` به یک صفحه خاص را در متد
 > `didReceiveRemoteNotification` استفاده کنید.
 
-```objc
+```objectivec
 //Objective-C:
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
@@ -81,7 +81,7 @@ manager.application(application, didReceiveRemoteNotification: userInfo, fetchCo
 > `نکته` : درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، از `delegate` متد
 > `pushClientManagerUILocalNotificationDidReceivedMessage` استفاده کنید، به قطعه کد زیر دقت فرمایید. در صورت استفاده از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` کتابخانه چابک دیگر اقدام به نمایش `LocalNotification` نمی کند.
 
-``` objc
+```objectivec
 //Objective-C:
 
 -(void)pushClientManagerUILocalNotificationDidReceivedMessage:(PushClientMessage *)message
@@ -119,7 +119,7 @@ func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClien
 
 برای حذف یا پاک کردن یک اعلان خاص در `Notification Center` می‌توانید از متد زیر استفاده کنید:
 
-```objc
+```objectivec
 //Objective-C:
 
 [[UIApplication sharedApplication] cancelLocalNotification:(nonnull UILocalNotification *)];
@@ -131,7 +131,7 @@ UIApplication.shared.cancelLocalNotification(UILocalNotification)
 ```
 همچنین برای حذف یا پاک کردن تمام اعلان ها می‌توانید از متد زیر استفاده کنید:
 
-```objc
+```objectivec
 //Objective-C:
 
 [[UIApplication sharedApplication] cancelAllLocalNotifications];
@@ -146,7 +146,7 @@ UIApplication.shared.cancelAllLocalNotifications()
 
 به عنوان یک جایگزین، می توانید از روش مشاهدات `NSNotificationCenter` برای دریافت رویدادها استفاده کنید. برای دریافت رویدادها به این روش، می توانید هر کدام از این ها را اضافه کنید:
 
-```objc
+```objectivec
 //Objective-C:
 
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushClientFailureHandler:) name:kPushClientDidFailRegisterUserNotification object:nil];

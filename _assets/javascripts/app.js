@@ -57,6 +57,8 @@ $(document).ready(function () {
     khabarname();
     sideMenu();
 
+    FastClick.attach(document.body);
+
     var elem = window.location.hash ? $('#' + decodeURIComponent(window.location.hash.replace('#', ''))) : ''
     var HEADER_HEIGHT = 75;
 
@@ -69,6 +71,14 @@ $(document).ready(function () {
             scrollTop: elem.offset().top - HEADER_HEIGHT
         }, 1000);
     }
+
+    $('pre').each(function () {
+        $(this).addClass('line-numbers')
+    });
+
+    Prism.highlightAll();
+
+    $(".line-numbers-rows span:last-child").remove()
 
     $('a[href^="#"]').click(function () {
         var href = $.attr(this, 'href');

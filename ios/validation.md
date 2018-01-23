@@ -20,7 +20,7 @@ next: notification.html
 
 برای این منظور لازم است تا متد `requestVerificationCode` فراخوانی شود:
 
- ```objc
+ ```objectivec
 //Objective-C
 
 [self.manager requestVerificationCode:@"USER_ID" completionBlock:^(BOOL sent, NSError *error) {
@@ -59,7 +59,7 @@ manager?.requestVerificationCode("USER_ID", completionBlock: {(_ sent: Bool, _ e
 
 پس از ارسال کد تایید لازم است این کد برای چابک ارسال شود تا صحت آن بررسی گردد. برای این منظور باید متد `verifyUserCode` فراخوانی شود.
 
-```objc
+```objectivec
 //Objective-C
 
 [self.manager verifyUserCode:@"USER_ID" userCode:@"Verfication_Code" completionBlock:^(BOOL isVerify, NSError *error) {

@@ -11,7 +11,7 @@ next: validation.html
 
 برای ارسال پیام از مشتری به سرور چابک، از متد زیر استفاده کنید:
 
-```objc
+```objectivec
 //Objective-C:
 
 [self.manager publish:@"USER_ID"
@@ -31,7 +31,7 @@ manager?.publish("USER_ID", toChannel: "CHANNEL_NAME", withText: "Hello World!")
 
 برای ارسال پیام با جزئیات بیشتر می‌توانید از signature دیگر متد publish استفاده کنید، همانند نمونه کد زیر :
 
-```objc
+```objectivec
 //Objective-C:
 
 PushClientMessage *message = [[PushClientMessage alloc]
@@ -60,7 +60,7 @@ manager?.publish(message)
 
 در صورت خطا در publish پیام delegate method زیر فراخوانی خواهد شد :
 
-``` objc
+```objectivec
 //Objective-C:
 
 -(void) pushClientManagerDidFailInPublish:(NSError *)error{
@@ -85,7 +85,7 @@ func pushClientManagerDidFail(inPublish error: Error!) {
 
 برای عضویت در یک کانال میتوانید از موارد زیر استفاده کنید:
 
-```objc
+```objectivec
 //Objective-C:
 
 [self.manager subscribe:@"alert"]; // public channel
@@ -103,7 +103,7 @@ manager.subscribe("private/league") // private (personal) channel
 
 در صورت رخ دادن خطا به هنگام subscribe با استفاده از delegate method زیر می‌توانید از عضویت یا خطا رخ داده شده با خبر شوید :
 
-```objc
+```objectivec
 //Objective-C:
 
 -(void) pushClientManagerDidSubscribed:(NSString *)channel{
@@ -127,7 +127,7 @@ func pushClientManagerDidFail(inSubscribe error: Error!) {
 
 همچنین برای لغو عضویت در یک کانال میتوانید از موارد زیر استفاده کنید:
 
-```objc
+```objectivec
 //Objective-C:
 
 [self.manager unsubscribe:@"alert"]; // public channel
@@ -145,7 +145,7 @@ manager.unsubscribe("private/league") // private (personal) channel
 
 در صورت رخ دادن خطا به هنگام unsubscribe با استفاده از delegate method زیر می‌توانید از عدم عضویت یا خطا رخ داده شده با خبر شوید :
 
-```objc
+```objectivec
 //Objective-C:
 
 -(void) pushClientManagerDidUnsubscribed:(NSString *)channel{
@@ -171,7 +171,7 @@ func pushClientManagerDidFail(inUnsubscribe error: Error!) {
 
 برای دریافت پیام از سرور چابک نیز میتوانید از متدهای زیر استفاده کنید:
 
-```objc
+```objectivec
 //Objective-C:
 
 - (void)pushClientManagerDidReceivedMessage:(PushClientMessage *)message{
@@ -190,7 +190,7 @@ func pushClientManagerDidReceivedMessage(_ message: PushClientMessage!) {
 
 برای فعال کردن دریافت تأییدیه تحویل یک پیام منتشر شده، باید تحویل را قبل از فعالسازی فعال کنید: 
 
-``` objc
+```objectivec
 //Objetive-C: 
 
 [self.manager.deliveryChannelEnabeled = YES]; 
@@ -204,7 +204,7 @@ manager.deliveryChannelEnabeled = true
 ### رویداد دریافت تأییدیه تحویل
 برای دریافت تأییدیه تحویل، باید از رویداد زیر استفاده کنید :
 
-```objc
+```objectivec
 //Objective-C:
 
 - (void)pushClientManagerDidReceivedDelivery:(DeliveryMessage *)delivery{
@@ -226,7 +226,7 @@ func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage!) {
 متد `markAsRead` برای ارسال رویداد خوانده شدن پیام توسط کاربر به سرور می تواند مورد استفاده قرار بگیرد. 
 متد `messageDismissed` نیز می‌تواند برای هر عملی که معنی باز نکردن یا نادیده گرفته شدن پیام را داشته باشد بکار رود. به دو طریق می توان این متدها را فراخوانی نمود:
 
-```objc
+```objectivec
 //Objective-C:
 
 [self.manager markAsRead:@"MESSAGE_ID"];

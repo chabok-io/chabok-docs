@@ -30,6 +30,8 @@ ul,
 ol {
   margin: 15px 0;
   padding-right: 30px;
+  direction: rtl;
+  text-align: right;
 }
 
 ul {
@@ -212,7 +214,7 @@ pre {
     margin: 1.8em 0em;
     border-right: 2px solid #FFC463;
     background: #fff0d8;
-    padding: 0.5em 1em;
+    padding: 2em 1em;
     color: #1f1f1f;
     p {
       padding: 0;
@@ -458,7 +460,7 @@ footer {
   transition: all 0.3s;
   border-left: 1px solid #dddddd;
   padding-left: 0;
-  margin-top: 70px;
+  margin-top: 67px;
 
   @media (max-width: 992px) {
     top: 0 !important;
@@ -510,7 +512,7 @@ footer {
     margin: 0;
     padding: 0;
     border-bottom: 1px solid #dddddd;
-    background: #fafafa;
+    background: #fff;
     p {
       color: #333;
       padding: 10px;
@@ -565,7 +567,10 @@ footer {
     position: relative;
     text-align: right;
     border-bottom: 1px solid #dddddd;
-
+    background: #f0f0f0;
+    &.selected {
+      border-bottom: none;
+    }
     a {
       color: #333;
       display: block;
@@ -593,6 +598,7 @@ footer {
     text-align: center;
   }
   .doc-content {
+    padding-right: 15px;
     p {
       direction: rtl;
       text-align: right;
@@ -600,6 +606,7 @@ footer {
     h1, h2, h3, h4, h5, h6 {
       direction: rtl;
       text-align: right;
+      margin-top: 30px;
 
       a {
         color: #333333;

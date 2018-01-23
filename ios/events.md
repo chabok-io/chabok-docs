@@ -9,7 +9,7 @@ next: location-config.html
 
 ### انتشار رویداد به همراه داده
 با متدهای زیر می توانید رویداد های داخل برنامه را منتشر کنید:
-```objc
+```objectivec
 //Objective-C:
 
 - (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data;
@@ -29,7 +29,7 @@ manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!, live: Bool
 
 جهت انتشار یک رویداد می‌توانید از نمونه کد زیر پیروی کنید :
 
-```objc
+```objectivec
 //Objective-C:
 
 NSDictionary *geoData = @{@"lat":@35.7590822,
@@ -47,7 +47,7 @@ manager?.publishEvent("geo", data: geoData)
 ###  عضویت بر روی یک رویداد
 
 متد subscribeEvent با امضاهای زیر موجود است که بر اساس نیاز خود می‌توانید آن‌ها را فراخوانی نمایید:
-``` objc 
+```objectivec 
 //Objective-C :
 
 - (void)subscribeEvent:(NSString*)eventName;
@@ -69,7 +69,7 @@ manager?.subscribeEvent(eventName: String!, installationId: String!, live: Bool)
 > `نکته` : installationId در بخش [امکانات‌ چابک](/ios/features.html) توضیح داده شده است.
 جهت عضویت روی یک رویداد، می‌توانید از نمونه کد زیر پیروی کنید :
 
-``` objc 
+```objectivec 
 //Objective-C :
 
 [self.manager subscribeEvent:@"geo"]; //Public event    
@@ -88,7 +88,7 @@ manager?.subscribeEvent("talk",
 
 با استفاده از متد زیر می‌توانید اقدام به لغو عضویت بر روی یک رویداد کنید :
 
-```objc 
+```objectivec 
 //Objective-C :
 
 [self.manager unsubscribeEvent:@"geo"]; //Public event
@@ -106,7 +106,7 @@ manager?.unsubscribeEvent("talk",
 
 برای دریافت رویداد باید delegate method زیر را پیاده سازی کنید، تا بتوانید رویداد هایی که توسط متد `subscribeEvent` بر روی یک رویداد خاص `subscribe` کرده اید دریافت کنید :
 
-``` objc
+```objectivec
 //Objective-C :
 
 - (void) pushClientManagerDidReceivedEventMessage:(EventMessage *)eventMessage{

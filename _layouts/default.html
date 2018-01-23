@@ -6,14 +6,17 @@
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
     <link rel="icon" type="image/svg+xml" href="{{ site.avatar }}">
     {% include meta.html %}
+
     <link rel="stylesheet" type="text/css" href="https://chabokpush.com/css/style.min.css">
+
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link href="https://cdn.rawgit.com/rastikerdar/vazir-code-font/v1.0.3/dist/font-face.css" rel="stylesheet"
           type="text/css"/>
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css"/>
-
+    <link rel="stylesheet" type="text/css"
+          href="https://lib.arvancloud.com/ar/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.css">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
           href="{{ site.baseurl }}/feed.xml"/>
 
@@ -49,7 +52,18 @@
 {% include footer.html %}
 {% include analytics.html %}
 <script src=https://chabokpush.com/js/library.min.js></script>
-<script src=https://lib.arvancloud.com/ar/twitter-bootstrap/4.0.0-beta.3/js/bootstrap.min.js></script>
+
+{% javascript fastclick.js %}
+<script src=https://lib.arvancloud.com/ar/prism/9000.0.1/prism.min.js></script>
+<script src=https://lib.arvancloud.com/ar/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.js></script>
+<script src=https://lib.arvancloud.com/ar/prism/9000.0.1/components/prism-java.min.js></script>
+<script src=https://lib.arvancloud.com/ar/prism/9000.0.1/components/prism-c.min.js></script>
+<script src=https://lib.arvancloud.com/ar/prism/9000.0.1/components/prism-csharp.min.js></script>
+<script src=https://lib.arvancloud.com/ar/prism/9000.0.1/components/prism-swift.min.js></script>
+<script src=https://lib.arvancloud.com/ar/prism/9000.0.1/components/prism-javascript.min.js></script>
+<script src=https://lib.arvancloud.com/ar/prism/9000.0.1/components/prism-objectivec.min.js></script>
+
+<script src=https://lib.arvancloud.com/ar/twitter-bootstrap/4.0.0/js/bootstrap.min.js></script>
 {% javascript app.js %}
 </body>
 
