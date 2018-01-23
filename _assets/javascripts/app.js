@@ -57,6 +57,8 @@ $(document).ready(function () {
     khabarname();
     sideMenu();
 
+    FastClick.attach(document.body);
+
     var elem = window.location.hash ? $('#' + decodeURIComponent(window.location.hash.replace('#', ''))) : ''
     var HEADER_HEIGHT = 75;
 
