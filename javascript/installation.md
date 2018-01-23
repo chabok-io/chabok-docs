@@ -11,7 +11,7 @@ next: setup.html
 
 برای نصب از طریق `npm` :
 
-```
+```bash
 npm install chabokpush --save
 ```
 ```bash

@@ -17,7 +17,7 @@ next: location-tracking.html
 
 > `نکته` : در صورت فعال نمودن گزینه فوق، کلید `location` باید به فایل `info.plist` اضافه شود، همانند کد زیر :
 
-```xml
+```markup
 <key>UIBackgroundModes</key>
 <array>
     ....
@@ -33,7 +33,7 @@ next: location-tracking.html
  - **Always** : استفاده از موقعیت مکانی، در تمام حالات اجرای نرم افزار (`Foreground`, `Background`)
 
 برای استفاده از هر یک از این حالات کلید دلخواه را در فایل `info.plist` قرار دهید، متن قرار گرفته شده در تگ `string` متن پیامی است که پس از اعلان دریافت مجوز موقعیت مکانی به کاربر نشان داده خواهد شد.
-```xml
+```markup
 <key>NSLocationAlwaysUsageDescription</key>
 <string>App would like to use your location.</string>
 <key>NSLocationWhenInUseUsageDescription</key>
@@ -42,7 +42,7 @@ next: location-tracking.html
 
 > `نکته` : در نسخه `iOS 11` باید تمام کلید ها به همراه کلید `NSLocationAlwaysAndWhenInUseUsageDescription` در فایل `info.plist` قرار داده شود.
 
-```xml
+```markup
 <key>NSLocationAlwaysUsageDescription</key>
 <string>App would like to use your location.</string>
 <key>NSLocationWhenInUseUsageDescription</key>

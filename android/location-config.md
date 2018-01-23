@@ -10,7 +10,7 @@ prev: event-handling.html
 ### ۱) تعریف مجوزهای دسترسی به مکان
 برای استفاده از امکانات مکان‌یابی چابک لازم است دو مجوز `ACCESS_FINE_LOCATION` و `ACCESS_COARSE_LOCATION`  را در فایل `AndroidManifest.xml` قرار دهید:
 
-```xml
+```markup
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.adpdigital.push.demo" >

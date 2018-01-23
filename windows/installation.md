@@ -11,7 +11,7 @@ next: setup.html
 
  با استفاده از دستور زیر در `Package Manager Console` می توانید کتابخانه چابک را به آسانی نصب کنید :
 
-``` 
+```bash 
 PM> Install-Package ADPPushSDK
 ```
 
