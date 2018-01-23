@@ -8,7 +8,7 @@ next: features.html
 ---
 ### کلاس CoreGeoLocation 
 در ابزار جدید چابک، امکان دریافت موقعیت مکانی کاربر فراهم شده است. برای استفاده از کلاس `CoreGeoLocation` می توانید کلاس فوق را به کلاس خود import کنید:
-``` objc
+```objectivec
 //Objective-C :
 
 #import "CoreGeoLocation.h"
@@ -33,7 +33,7 @@ let locationManager = CoreGeoLocation.sharedInstance()
 
 ### دریافت موقعیت مکانی
 ابتدا پیکربندی متناسب برای دریافت موقعیت مکانی را تعیین کرده و با استفاده از متد `startLocationUpdate` شروع به دریافت موقعیت مکانی کاربر کنید. به قطعه کد زیر دقت کنید‌:
-``` objc
+```objectivec
 //Objective-C :
 
 CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
@@ -63,7 +63,7 @@ locationManager.startUpdate()
 ```
 ### رویداد دریافت موقعیت مکانی
 جهت دریافت موقعیت های مکانی باید `CoreGeoLocationDelegate`  را به `@interface`  کلاس خود اضافه کنید و متد زیر را پیاده سازی کنید :
-``` objc
+```objectivec
 //Objective-C :
 
 - (void) receivedLocationUpdates:(NSArray<CLLocation *> *)locations{
@@ -110,7 +110,7 @@ func receivedLocationUpdates(_ locations: [CLLocation]) {
 ### مکان یابی بر اساس مدت زمان و فاصله
 
 با استفاده از متد `trackMeUntil:byMeter` می توانید موقعیت کاربر را بر اساس فاصله و بازه زمانی تعیین شده دنبال کنید : 
-``` objc
+```objectivec
 //Objective-C :
 
 CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
@@ -130,7 +130,7 @@ locationManager.trackMe(until: 3600, byMeter:100)
 > خواهد شد.
 
 برای بررسی وضعیت مکان یابی کاربر می توانید از متد زیر استفاده کنید :
-``` objc
+```objectivec
 //Objective-C :
 
 trackingStateEnumType trackingState = [locationManager trackingMeState];
@@ -155,7 +155,7 @@ if trackingState == kTracking {
 }
 ```
 جهت متوقف سازی عملیات مکان یابی کار کاربر متد فوق را فراخوانی کنید :
-``` objc
+```objectivec
 //Objective-C :
 
 [locationManager stopTracking];
@@ -168,7 +168,7 @@ locationManager.stopTracking()
 ```
 ### دریافت یک موقعیت مکانی
 به کمک متد `requestSingleLocation` می توانید تنها یک موقعیت مکانی دریافت کنید.
-``` objc
+```objectivec
 //Objective-C :
 
 [locationManager requestSingleLocation:^(CLLocation * _Nullable location, NSError * _Nullable error) {
@@ -194,7 +194,7 @@ locationManager.requestSingleLocation({(_ location: CLLocation?, _ error: Error?
 
 ### دریافت موقعیت مکانی در حالت Terminated
 امکان دریافت موقعیت مکان حتی در حالتی که اپلیکشن شما `Terminate` شده باشد نیز وجود دارد.
-``` objc
+```objectivec
 //Objective-C :
 
 [locationManager startMonitoringSignificantLocationChanges];
@@ -215,7 +215,7 @@ locationManager.startMonitoringSignificantLocationChanges()
 > `startLocationUpdate‍` را فراخوانی کنید. قطعه کد زیر بیانگر این نکته
 > می باشد.
 
-``` objc
+```objectivec
 //Objective-C :
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -242,7 +242,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ### محدوده جغرافیایی
 جهت استفاده از قابلیت `Geofence` باید متد `startMonitoringRegion` را فراخوانی کنید. متد فوق دارای سه overload می باشد :
 
-``` objc
+```objectivec
 //Objective-C :
 
 -(void) startMonitoringRegion:(CLRegion *_Nonnull) region;
@@ -270,7 +270,7 @@ func startMonitoringRegion(_ region: CLRegion, expireCount count: Int, expireTs 
 
 نمونه کد فوق استفاده از قابلیت geofence را به شما نشان می دهد : 
 
-``` objc
+```objectivec
 //Objective-C :
 
 CLLocationCoordinate2D center = CLLocationCoordinate2DMake(35.759227, 51.401044);
@@ -292,7 +292,7 @@ locationManager.startMonitoringRegion(region)
 > `نکته` : زمان انقضای تاریخ geofence به صورت `unix millisecond` می
 > باشد.
 
-``` objc
+```objectivec
 //Objective-C :
 
 NSInteger count = 20; // count for enter to region
@@ -328,7 +328,7 @@ locationManager.startMonitoringRegion(region!, expireCount: count, expireTs: exp
 ### رویدادهای محدوده جغرافیایی
 پس از فراخوانی متد `startMonitoringRegion` رویدادهای زیر فرخوانی خواهند شد :
 
-``` objc
+```objectivec
 //Objective-C :
 
 -(void) didEnterToRegion:(CLRegion *)region{
@@ -360,7 +360,7 @@ func didStartMonitoringRegion(_ region: CLRegion) {
 ```
 برای متوقف سازی geofence می توانید از متد های زیر استفاده کنید :
 
-``` objc
+```objectivec
 //Objective-C :
 
 [_locationManager stopMonitoringAllRegions];

@@ -20,7 +20,7 @@ next: publishingMessages.html
 #### ۱- مقداردهی اولیه
 برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس AdpPushClient بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست،‌‌ زیرا فراخوانی این متد فقط یکبار کافی ست. به قطعه کد زیر دقت کنید :
 
-```objc
+```objectivec
 //Objective-C
 
 #import <AdpPushClient/AdpPushClient.h>
@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
 > `نکته` : کلاینت چابک به صورت پیش‌فرض بر روی حالت **تست (sandbox)** می‌باشد. برای استفاده از محیط **عملیاتی (production)** مقدار `setDevelopment` را `NO` قرار دهید.
 
-```objc
+```objectivec
 //Objective-C:
 
 [PushClientManager setDevelopment:YES];
@@ -80,7 +80,7 @@ PushClientManager.setDevelopment(true)
 به منظور استفاده از سرویس چابک، ابتدا باید متد `registerApplication` را فراخوانی کرده و مقادیر مورد نیاز جهت فعال سازی کتابخانه چابک را وارد نمایید. در این متد بجای پارامتر‌های `YOUR_APP_ID`, `YOUR_API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را که در بخش تنظیمات پنل است، وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](required) توضیح داده شده است.
 همانند کد زیر، متد `registerApplication` را در کلاس `AppDelegate` و در متد `didFinishLaunchingWithOptions` فراخوانی کنید :
 
-```objc
+```objectivec
 //Objective-C:
   
 [_manager registerApplication:@"APP_ID"
@@ -96,7 +96,7 @@ manager?.registerApplication("APP_ID", apiKey: "API_KEY", userName: "SDK_USERNAM
 
 جهت دسترسی به `delegate‌های` چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید :
 
-```objc
+```objectivec
 //Objective-C:
 
 [_manager addDelegate:self];
@@ -107,7 +107,7 @@ manager?.registerApplication("APP_ID", apiKey: "API_KEY", userName: "SDK_USERNAM
 manager?.addDelegate(self)
 ```
 چابک برای فهمیدن نحوه باز شدن برنامه نیاز به قطعه کد زیر دارد:
-```objc
+```objectivec
 //Objective-C:
 //Check app was launch by clicking on Notification.
 if ([_manager application:application didFinishLaunchingWithOptions:launchOptions]) {
@@ -130,7 +130,7 @@ if launchByNotification{
 
 >   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `NSUserDefaults` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن  کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `PushClientManager.default().userId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.
 
-```objc
+```objectivec
 //Objective-C:
 
 [self.manager registerUser:@"USER_ID"];
@@ -149,7 +149,7 @@ self.manager?.registerUser("USER_ID")
 
 امضای دوم که علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی که کاربر باید روی آن‌ها عضو شود را نیز دریافت می کند. با ثبت نام در این کانال‌ها کاربر پیام‌های ارسالی روی آن‌ها را دریافت خواهد نمود.
 
-```objc
+```objectivec
 //Objective-C:
 
 [self.manager registerUser:@"USER_ID" channels:@[@"YOUR_CHANNEL" ]];
@@ -168,7 +168,7 @@ self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
 > برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به
 > کاربر `مسیج` و `پوش ` بفرستید.
 
-```objc
+```objectivec
 //Objective-C:
 
 #pragma mark - Notification AppDelegation
@@ -213,7 +213,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 ### متد حذف کاربر
 
 برای حذف دستگاه کاربر از سرور چابک می‌توانید از متدهای زیر استفاده کنید:
-```objc
+```objectivec
 //Objective-C:
 [PushClientManager unRegisterUser];
 ```
@@ -225,7 +225,7 @@ PushClientManager.unRegisterUser()
 ### رویداد ها:
 با استفاده از دو رویداد `pushClientManagerDidRegisterUser` و `pushClientManagerDidFailRegisterUser` می توانید از ثبت نام و یا مشکل به وجود آماده در عملیات ثبت نام اطلاعات لازم را دریافت کنید :
 
-```objc
+```objectivec
 //Objective-C:
 
 - (void)pushClientManagerDidRegisterUser:(BOOL)registration{

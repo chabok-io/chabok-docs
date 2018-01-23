@@ -11,7 +11,7 @@ prev: location-tracking.html
 #### افزودن تگ
 با استفاده از متد زیر، شما می‌توانید به کاربر فعلی یک `Tag` اختصاص دهید :
 
-```objc
+```objectivec
 //Objective-C:
 
 [self.manager addTag:@"Premium_User"];
@@ -22,7 +22,7 @@ prev: location-tracking.html
 self.manager?.addTag("Premium_User")
 ```
 همچنین می‌توانید با استفاده از overload دیگر این متد، از افزودن و یا خطا در عملیات با خبر شوید :
-```objc
+```objectivec
 //Objective-C:
 
 [self.manager addTag:@"Premium_User" success:^(NSInteger count) {
@@ -48,7 +48,7 @@ self.manager?.addTag("Premium_User",
 #### حذف تگ
 با استفاده از متد زیر، می‌توانید یک `Tag` خاص از کاربر فعلی را حذف کنید :
 
-```objc
+```objectivec
 //Objective-C:
 
 [self.manager removeTag:@"Premium_User"];
@@ -60,7 +60,7 @@ self.manager?.removeTag("Premium_User")
 ```
 ### شناسه دستگاه در چابک
 هر دستگاه در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید :
-``` objc
+```objectivec
 //Objective-C:
 
 NSString *installationId = [self.manager getInstallationId];
@@ -76,7 +76,7 @@ let installationId:NSString = manager?.getInstallationId() as! NSString
 
 اگر می خواهید شماره badge برنامه خود را بازنشانی کنید،با روش زیر می توانید: 
 
-``` objc
+```objectivec
 //Objetive-C: 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application { 
@@ -104,7 +104,7 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 
 برای اطلاع از وضعیت آنلاین یا آفلاین بودن،میتوانید از متد زیر استفاده کنید:
 
-```objc
+```objectivec
 //Objetive-C: 
 
 - (void)pushClientManagerDidChangedServerConnectionState{
@@ -127,7 +127,7 @@ func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkTyp
 }
 ```
 برای مثال میتوانید به نمونه کد زیر توجه کنید:
-```objc
+```objectivec
 //Objective-C:
 
 - (void)pushClientManagerDidChangedServerConnectionState{
@@ -184,7 +184,7 @@ func pushClientManagerDidChangedServerConnectionState (){
 > داده خود را property به `locationOnLaunchWithDictionary` داده تا همراه
 > با انتشار رویداد ارسال شود.
 
-```objc
+```objectivec
 //Objetive-C: 
 
 [self.manager.enableLocationOnLaunch = YES];
