@@ -95,7 +95,7 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 
 پس از ایجاد فایل های cer. و p12. دستور زیر را در terminal اجرا کنید:
 
-```ruby
+```bash
 openssl x509 -in Certificates.cer -inform der -out pushCert.pem
 openssl pkcs12 -nocerts -out pushKey.pem -in Certificates.p12 -nodes
 ```

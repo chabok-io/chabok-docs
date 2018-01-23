@@ -15,7 +15,7 @@ next: chabok-messaging.html
 
 دربخش مجوز‌ها موارد زیر را اضافه کرده و نام کلاس `Application` خود را نیز بجای `YOUR_APPLICATION_CLASS_NAME` وارد کنید. عبارت `YOUR_APPLICATION_PACKAGE_ID` را با نام پکیج برنامه خود جایگزین کنید.
 
-```xml
+```markup
 
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -44,7 +44,7 @@ next: chabok-messaging.html
 
 ۲.  کلاس رسیور `PushMessageReceiver`  که نحوه ایجاد آن در بخش [پیام چابک](chabok-messaging.html) توضیح داده شده را نیز به پروژه خود اضافه نمایید.
 
-```xml
+```markup
 
 <receiver android:name="PushMessageReceiver">
     <intent-filter>
@@ -57,7 +57,7 @@ next: chabok-messaging.html
 
 ۳. رسیور `GcmReceiver` را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
-```xml
+```markup
 
 <receiver
     android:name="com.google.android.gms.gcm.GcmReceiver"
