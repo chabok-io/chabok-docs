@@ -72,6 +72,10 @@ $(document).ready(function () {
         }, 1000);
     }
 
+    $('.entry').find('img').each(function () {
+        $(this).addClass('img-fluid')
+    });
+
     $('pre').each(function () {
         $(this).addClass('line-numbers')
     });

@@ -568,14 +568,26 @@ footer {
     text-align: right;
     border-bottom: 1px solid #dddddd;
     background: #f0f0f0;
+
     &.selected {
       border-bottom: none;
     }
     a {
       color: #333;
       display: block;
+      padding-right: 24px;
+      position: relative;
+
+      svg {
+        width: 16px;
+        margin-left: 5px;
+        position: absolute;
+        right: 0;
+        top: 9px;
+      }
     }
-    svg {
+
+    > svg {
       position: absolute;
       left: 10px;
       width: 16px;
@@ -594,7 +606,6 @@ footer {
   transition: all 0.3s;
   width: 100%;
   img {
-    max-width: 700px;
     text-align: center;
   }
   .doc-content {
