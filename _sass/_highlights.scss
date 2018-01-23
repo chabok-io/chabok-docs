@@ -1,9 +1,13 @@
 
 .code[class*="language-"], pre[class*="language-"] {
   background-color: #f0f0f0;
-  padding: 7px 7px 7px 10px;
   border: 1px solid #ddd;
+  line-height: 1.5rem;
   margin: 20px 0 20px 0;
-  overflow: scroll;
   font-family: 'Vazir Code', 'Courier', monospace;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  line-height: 1.5rem;
 }

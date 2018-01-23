@@ -72,6 +72,14 @@ $(document).ready(function () {
         }, 1000);
     }
 
+    $('pre').each(function () {
+        $(this).addClass('line-numbers')
+    });
+
+    Prism.highlightAll();
+
+    $(".line-numbers-rows span:last-child").remove()
+
     $('a[href^="#"]').click(function () {
         var href = $.attr(this, 'href');
 
