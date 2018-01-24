@@ -4,6 +4,7 @@ title: مفاهیم اولیه
 layout: android
 permalink: android/introducing.html
 next: required.html
+prev: release-note.html
 ---
 
 ### پوش

@@ -1,5 +1,7 @@
 - title: نصب و راه ‌اندازی
   items:
+    - id: release-note
+      title: لیست تغییرات کتابخانه
     - id: introducing
       title: مفاهیم اولیه
     - id: required
@@ -24,6 +26,4 @@
       title: ‌مکان‌یابی
     - id: features
       title: امکانات‌ چابک
-    - id: release-note
-      title: لیست تغییرات کتابخانه
 
