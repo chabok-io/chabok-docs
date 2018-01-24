@@ -3,7 +3,7 @@ id: release-note
 title: لیست تغییرات کتابخانه
 layout: ios
 permalink: ios/release-note.html
-prev: features.html
+next: introducing.html
 ---
 
 ## نسخه ۱.۱۵.۱ 

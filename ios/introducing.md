@@ -4,6 +4,7 @@ title:  مفاهیم اولیه
 layout: ios
 permalink: ios/introducing.html
 next: required.html
+prev: release-note.html
 ---
 
 ### پوش
