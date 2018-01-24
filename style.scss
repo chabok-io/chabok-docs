@@ -483,6 +483,7 @@ footer {
     right: 0;
     transform: translateX(0px);
     transition: all ease 0.5S;
+    padding: 0;
   }
 
   .affix {
@@ -518,7 +519,7 @@ footer {
       padding: 10px;
     }
     li {
-      padding: 10px 25px 10px 10px;
+      padding: 10px 40px 10px 10px;
       position: relative;
       text-align: right;
       a {
@@ -544,7 +545,7 @@ footer {
         &:before {
           position: absolute;
           content: '';
-          left: 0;
+          right: 0;
           height: 100%;
           width: 2px;
           top: 0;
@@ -563,7 +564,6 @@ footer {
     line-height: 40px;
     padding: 10px 10px;
     font-size: 16px;
-    font-weight: normal;
     position: relative;
     text-align: right;
     border-bottom: 1px solid #dddddd;
@@ -575,14 +575,14 @@ footer {
     a {
       color: #333;
       display: block;
-      padding-right: 24px;
+      padding-right: 30px;
       position: relative;
 
       svg {
         width: 16px;
         margin-left: 5px;
         position: absolute;
-        right: 0;
+        right: 4px;
         top: 9px;
       }
     }
