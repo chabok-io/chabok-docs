@@ -1,4 +1,3 @@
-
 ---
 id: release-note
 title: لیست تغییرات کتابخانه
