@@ -3,7 +3,7 @@ id: introducing
 title: مفاهیم اولیه
 layout: javascript
 permalink: javascript/introducing.html
-next: installation.html
+next: required.html
 ---
 
 ### پوش

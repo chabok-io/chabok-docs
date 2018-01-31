@@ -2,6 +2,8 @@
   items:
     - id : introducing
       title: مفاهیم اولیه
+    - id: required
+      title: پیش‌نیازها
     - id: installation
       title: نصب چابک
     - id: setup
