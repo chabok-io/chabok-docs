@@ -20,6 +20,10 @@ module Jekyll
           return sidebar_helper(item, 'javascript')
     end
 
+    def react_native_sidebar_link(item)
+          return sidebar_helper(item, 'react-native')
+     end
+
     def sidebar_helper(item, group)
       forceInternal = item["forceInternal"]
 

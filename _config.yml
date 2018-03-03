@@ -38,6 +38,12 @@ defaults:
   values:
     layout: javascript
     sectionid: javascript
+- scope:
+    path: react-native
+    type: react-native
+  values:
+    layout: react-native
+    sectionid: react-native
 #
 # Flags below are optional
 #
@@ -98,6 +104,8 @@ kramdown:
 sass:
   style: :compressed
 
+sources:
+  - assets/javascripts
 
 assets:
   compress:
