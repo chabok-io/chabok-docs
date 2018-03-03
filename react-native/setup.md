@@ -28,6 +28,26 @@ chabok.register('012345678910111213')
 
 > `نکته ` : در صورتی که مقداردهی اولیه به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
 
+### رویدادهای وضعیت اتصال
+
+`connecting`: دریافت وضیت در حال اتصال
+
+```javascript
+chabok.on('connecting', _ => {status = 'Connecting ...'}); 
+```
+
+`connected`: دریافت وضعیت اتصال برقرار شده است
+
+```javascript
+chabok.on('connected', _ => {status = 'connected ...'}); 
+```
+
+`disconnected`: دریافت وضعیت اتصال قطع شده است
+
+```javascript
+chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
+```
+
 ## تنظیمات اولیه
 
 | توضیحات | نوع | پیش فرض | پارامتر |

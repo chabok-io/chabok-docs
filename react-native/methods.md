@@ -26,7 +26,7 @@ chabok.register(USER_ID);
  برنامه، در قسمت `مشترکین`، قابل مشاهده خواهد بود و شما می‌توانید از پنل به
 کاربر `مسیج` و `پوش ` بفرستید.
 
-### `getUserId`
+### دریافت اطلاعات کاربر
 id کاربر جاری را دریافت می کنید. می توانید از این متد برای بررسی کاربر فعال استفاده نمایید.
 
 ```javascript
@@ -36,7 +36,7 @@ chabok.getUserId()
      })
 ```
 
-### `Unregister`
+### حذف کاربر
 
 تمامی اطلاعات مربوط به کاربر جاری را حذف می‌نماید.
 
@@ -52,22 +52,3 @@ chabok.dismiss();
 ```
 
 
-### Events
-
-`connecting`: دریافت وضیت در حال اتصال
-
-```javascript
-chabok.on('connecting', _ => {status = 'Connecting ...'}); 
-```
-
-`connected`: دریافت وضعیت اتصال برقرار شده است
-
-```javascript
-chabok.on('connected', _ => {status = 'connected ...'}); 
-```
-
-`disconnected`: دریافت وضعیت اتصال قطع شده است
-
-```javascript
-chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
-```
