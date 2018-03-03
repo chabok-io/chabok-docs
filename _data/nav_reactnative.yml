@@ -8,3 +8,9 @@
       title: نصب چابک
     - id: setup
       title: راه‌اندازی چابک
+    - id: methods
+      title: متدهای چابک
+    - id: verification
+      title: اعتبارسنجی شناسه کاربری
+    - id: chabok-messaging
+      title: پیام چابک

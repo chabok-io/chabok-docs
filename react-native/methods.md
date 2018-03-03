@@ -1,8 +1,8 @@
 ---
 id: methods
 title: متدهای چابک
-layout: javascript
-permalink: javascript/methods.html
+layout: react-native
+permalink: react-native/methods.html
 prev: setup.html
 ---
 
@@ -26,6 +26,16 @@ chabok.register(USER_ID);
  برنامه، در قسمت `مشترکین`، قابل مشاهده خواهد بود و شما می‌توانید از پنل به
 کاربر `مسیج` و `پوش ` بفرستید.
 
+### `getUserId`
+id کاربر جاری را دریافت می کنید. می توانید از این متد برای بررسی کاربر فعال استفاده نمایید.
+
+```javascript
+chabok.getUserId()
+    .then(res => {
+        chabok.register(res);
+     })
+```
+
 ### `Unregister`
 
 تمامی اطلاعات مربوط به کاربر جاری را حذف می‌نماید.
@@ -40,6 +50,7 @@ chabok.unregister();
 ```javascript
 chabok.dismiss();
 ```
+
 
 ### Events
 

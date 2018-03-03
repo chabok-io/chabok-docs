@@ -9,7 +9,7 @@ next: setup.html
 
 ## افزودن کتابخانه
 
-برای نصب از طریق `npm` :
+برای نصب از طریق `npm` یا `yarn`:
 
 ```bash
 npm install chabokpush --save
@@ -17,4 +17,17 @@ npm install chabokpush --save
 ```bash
 yarn add chabokpush
 ```
-و یا با استفاده از [CDN](https://unpkg.com/chabokpush@0.1.6/dist/chabokpush.min.js) ، چابک را به پروژه ی خود اضافه کنید.
+> `نکته ` : در اندروید می‌بایست `AndroidManifest.xml` را به صورت دستی تغییر دهید. 
+
+
+### نصب دستی اندروید
+
+دسترسی زیر را به `AndroidManifest.xml` اضافه کنید:
+
+```markup
+.....
+
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+<application ....>
+```

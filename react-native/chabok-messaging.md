@@ -1,8 +1,8 @@
 ---
 id: chabok-messaging
 title: پیام چابک
-layout: javascript
-permalink: javascript/chabok-messaging.html
+layout: react-native
+permalink: react-native/chabok-messaging.html
 prev: gradle-setup.html
 next: verification.html
 ---
