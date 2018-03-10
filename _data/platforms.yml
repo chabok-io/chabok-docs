@@ -30,7 +30,7 @@
   document: /javascript/introducing.html
   demo: https://webpush.chabokpush.com/
   starter:
-  issue: https://github.com/chabokpush/chabok-demo-map/issues
+  issue: https://github.com/chabokpush/chabok-client-js/issues
 
 - name: PHP
   image: php.svg
