@@ -1,8 +1,8 @@
 ---
 id: setup
 title: راه‌اندازی چابک
-layout: javascript
-permalink: javascript/setup.html
+layout: react-native
+permalink: react-native/setup.html
 prev: installation.html
 next: methods.html
 ---
@@ -19,7 +19,6 @@ const auth = {
   password: 'PASSWORD',
   devMode:true
 }
-const options={silent: true}
 const chabok = new chabokpush.Chabok(auth, options)
 
 chabok.register('012345678910111213')
@@ -55,6 +54,3 @@ chabok.on('disconnected', _ => {status = 'disconnected ...'});
 | --- | --- | --- | --- |
 |  |  | `Object` | **[options]** |
 | فعال/غیرفعال سازی ارتباط آنی | <code>True</code> | <code>Object</code> | **[options.realtime]** |
-|  |  | <code>Object</code> | **[options.webpush]** |
-| فعال‌سازی پوش ‌نوتیفیکیشن | <code>False</code> | <code>Object</code> | **[options.webpush.enabled]** |
-| دریافت مخفی پیام | <code>True</code> | <code>Boolean</code> | **[options.silent]** |

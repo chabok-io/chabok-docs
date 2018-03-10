@@ -1,8 +1,8 @@
 ---
 id: introducing
 title: مفاهیم اولیه
-layout: javascript
-permalink: javascript/introducing.html
+layout: react-native
+permalink: react-native/introducing.html
 next: required.html
 ---
 

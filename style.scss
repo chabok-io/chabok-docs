@@ -73,6 +73,16 @@ pre {
   font-family: Vazir Code;
 }
 
+div > p > code {
+  font-size: 87.5%;
+  color: #e83e8c;
+  word-break: break-word;
+  background: #f0f0f0;
+  padding: 3px 10px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {
   max-width: none;
@@ -369,7 +379,7 @@ footer {
   transition: all ease 0.25S;
 
   h6 {
-    color: #a5b3cd;
+    color: #6c768a;
     margin-top: 1rem;
   }
 
