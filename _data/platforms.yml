@@ -28,7 +28,7 @@
 - name: JavaScript
   image: js.svg
   document: /javascript/introducing.html
-  demo: https://github.com/chabokpush/chabok-demo-map
+  demo: https://webpush.chabokpush.com/
   starter:
   issue: https://github.com/chabokpush/chabok-demo-map/issues
 
