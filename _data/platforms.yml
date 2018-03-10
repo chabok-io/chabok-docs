@@ -18,11 +18,18 @@
   demo: https://github.com/chabokpush/chabok-demo-wp
   starter:
 
-- name: React Native
+- name: React Native (Pure JS)
   image: react.svg
   document: /react-native/introducing.html
   demo: https://github.com/chabokpush/chabok-rn-chat
   issue: https://github.com/chabokpush/chabok-client-rn-js/issues
+  starter:
+
+- name: React Native (Bridge)
+  image: react.svg
+  document:
+  demo:
+  issue: https://github.com/chabokpush/chabok-client-rn/issues
   starter:
 
 - name: JavaScript
