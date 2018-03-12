@@ -22,7 +22,11 @@ module Jekyll
 
     def react_native_sidebar_link(item)
           return sidebar_helper(item, 'react-native')
-     end
+    end
+
+    def react_native_bridge_sidebar_link(item)
+          return sidebar_helper(item, 'react-native-bridge')
+    end
 
     def sidebar_helper(item, group)
       forceInternal = item["forceInternal"]

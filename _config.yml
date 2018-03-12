@@ -44,6 +44,12 @@ defaults:
   values:
     layout: react-native
     sectionid: react-native
+- scope:
+    path: react-native-bridge
+    type: react-native-bridge
+  values:
+    layout: react-native-bridge
+    sectionid: react-native-bridge
 #
 # Flags below are optional
 #
