@@ -9,15 +9,13 @@ next: verification.html
 
 بعد از نصب می توانید ماژول `react-native-chabok` را مانند هر ماژول node‌ دیگری import‌ نمایید:
 
-### module import
-```javascript
-import * as chabok from 'react-native-chabok';
-```
 
 ### نحوه استفاده
 
 برای بکارگیری این ماژول مانند نمونه کد زیر عمل کنید:
 ```javascript
+import * as chabok from 'react-native-chabok';
+
 var client = new chabok.AdpPushClient();
 var playServicesAvailability = chabok.playServicesAvailability;
 ```
