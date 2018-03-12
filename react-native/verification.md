@@ -7,7 +7,7 @@ prev: methods.html
 next: chabok-messaging.html
 ---
 
-> `نکته`: به زودی این امکان برای **JavaScript SDK** پیاده سازی می‌شود.
+> `نکته`: به زودی این امکان برای **React Native SDK** پیاده سازی می‌شود.
 
 ### اعتبارسنجی
 
