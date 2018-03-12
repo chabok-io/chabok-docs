@@ -12,10 +12,14 @@ next: setup.html
 برای نصب از طریق `npm` یا `yarn`:
 
 ```bash
-npm install chabokpush --save
+npm install chabokpush-rn --save
 ```
 ```bash
-yarn add chabokpush
+yarn add chabokpush-rn
+```
+بعد از نصب دستور زیر را اجرا کنید:
+```bash
+react-native link
 ```
 > `نکته ` : در اندروید می‌بایست `AndroidManifest.xml` را به صورت دستی تغییر دهید. 
 

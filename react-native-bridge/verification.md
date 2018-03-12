@@ -1,8 +1,8 @@
 ---
 id: verification
 title: اعتبارسنجی شناسه کاربری
-layout: react-native
-permalink: react-native/verification.html
+layout: react-native-bridge
+permalink: react-native-bridge/verification.html
 prev: methods.html
 next: chabok-messaging.html
 ---

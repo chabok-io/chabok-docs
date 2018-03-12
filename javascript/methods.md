@@ -4,6 +4,7 @@ title: متدهای چابک
 layout: javascript
 permalink: javascript/methods.html
 prev: setup.html
+next: verification.html
 ---
 
 ### `Register`
