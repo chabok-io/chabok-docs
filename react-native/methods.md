@@ -4,6 +4,7 @@ title: متدهای چابک
 layout: react-native
 permalink: react-native/methods.html
 prev: setup.html
+next: verification.html
 ---
 
 ### `Register`
