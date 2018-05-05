@@ -28,7 +28,6 @@ yarn add chabokpush
 اگر از **Webpack** استفاده می‌کنید می توانید از پلاگین [CopyWebpackPlugin](https://github.com/webpack-contrib/copy-webpack-plugin)‍ برای انتقال service worker به پوشه dist استفاده کنید.
 
 ```javascript
-
  new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '/node_modules/chabokpush/dist/ChabokSDKWorker.js'),
