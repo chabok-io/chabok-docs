@@ -19,6 +19,9 @@ yarn add chabokpush
 ```
 و یا با استفاده از [CDN](https://unpkg.com/chabokpush/dist/chabokpush.min.js) ، چابک را به پروژه ی خود اضافه کنید.
 
+```bash
+<script src="https://unpkg.com/chabokpush/dist/chabokpush.min.js"></script>
+```
 
 ###  افزودن Service Worker
  برای ارسال پوش نوتیفیکشن در پس‌زمینه باید فایل `ChabokSDKWorker.js` را از این [لینک](https://raw.githubusercontent.com/chabokpush/chabok-client-js/master/dist/ChabokSDKWorker.js) دریافت نموده و در root پروژه قرار دهید.

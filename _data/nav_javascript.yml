@@ -10,9 +10,9 @@
       title: راه‌اندازی چابک
     - id: publishingMessages
       title: پیام چابک
-    - id: verification
-      title: اعتبارسنجی شناسه کاربری
     - id: notification
       title: مدیریت اعلان‌ها
+    - id: verification
+      title: اعتبارسنجی شناسه کاربری
     - id: features
       title: امکانات‌ چابک

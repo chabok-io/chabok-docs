@@ -13,10 +13,10 @@ next: validation.html
 
 ```javascript
 chabok.publish({
-            content: "Hello World!",
-            channel: "CHANNEL_NAME",
-            user: "USER_ID"
-        })
+    content: "Hello World!",
+    channel: "CHANNEL_NAME",
+    user: "USER_ID"
+})
 ```
 
 روی اتصال موجود چابک می‌توانید تعداد زیادی رویداد سمت سرور بفرستید، در واقع برای هر درخواست یک اتصال جدید ساخته نمی‌شود. تحویل اطلاعات را در سمت سرور، حتی در شرایطی که کاربر اینترنت ضعیف و یا قطع شده‌ای دارد، تضمین می‌کند. به این ترتیب که کلاینت چابک با استفاده از منطق سعی مجدد خود می‌تواند پیام‌ شما را حتی در شرایط بحرانی یک و فقط یک بار بفرستد.
@@ -56,6 +56,7 @@ chabok.on('message', msg => {
   console.log(`${msg.content} - ${msg.createdAt}`)
 })
 ```
+<!---
 
 ### رویداد دریافت تأییدیه تحویل
 برای دریافت تأییدیه تحویل، باید از رویداد زیر استفاده کنید :
@@ -76,3 +77,4 @@ chabok.on('messageDelivery', msg => {
 chabok.messageMarkAsRead("MESSAGE_ID")
 chabok.messageDismissed("MESSAGE_ID")
 ```
+-->
