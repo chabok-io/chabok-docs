@@ -12,7 +12,7 @@
       title: پیام چابک
     - id: verification
       title: اعتبارسنجی شناسه کاربری
-    - id: methods
-      title: متدهای چابک
-    - id: chabok-messaging
-      title: پیام چابک
+    - id: notification
+      title: مدیریت اعلان‌ها
+    - id: features
+      title: امکانات‌ چابک
