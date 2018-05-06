@@ -16,7 +16,7 @@ next: validation.html
 
 [self.manager publish:@"USER_ID"
                     toChannel:@"CHANNEL_NAME"
-                     withText:@"Hello World!"];
+                     withText:@"`Hello World!`"];
 ```
 
 ```swift
