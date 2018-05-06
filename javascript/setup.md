@@ -30,9 +30,27 @@ const auth = {
   password: 'PASSWORD',
   devMode:true
 }
-const options={silent: true}
+const options = {
+      webpush: {
+        enabled: true,
+        publicKey: 'BE1mAxNaNRBTyoMoE4JoxdK2q4HxVMyYq8HFfIuIo6KQVvcELHuXcmXM86aMD89XjdZguzmwotOkBBDlRUrhcIw'
+      },
+      silent: false,
+    };
 const chabok = new chabokpush.Chabok(auth, options)
 ```
+
+##### تنظیمات اولیه
+
+| توضیحات | پیش‌فرض | نوع | پارامتر |
+| --- | --- | --- | --- |
+|  |  | `Object` | **[options]** |
+| فعال/غیرفعال سازی ارتباط آنی | <code>True</code> | <code>Object</code> | **[options.realtime]** |
+|  |  | <code>Object</code> | **[options.webpush]** |
+| فعال‌سازی پوش ‌نوتیفیکیشن | <code>False</code> | <code>Object</code> | **[options.webpush.enabled]** |
+| پوش‌نوتیفیکیشن Public Key | <code>null</code> | <code>String</code> | **[options.webpush.publicKey]** |
+| دریافت مخفی پیام | <code>True</code> | <code>Boolean</code> | **[options.silent]** |
+
 
 > `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `False` کنید. 
 
@@ -43,7 +61,7 @@ const chabok = new chabokpush.Chabok(auth, options)
 
 > `نکته` : متد `register` باید فقط **یک بار** در طول اجرا اپلیکیشن فراخوانی شود.
 
->   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `NSUserDefaults` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن  کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `chabok.getUserId()` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.
+>   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `LocalStorage` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن  کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `()chabok.getUserId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.
 
 ```javascript
 chabok.register('012345678910111213')
@@ -80,12 +98,4 @@ chabok.on('connected', _ => {status = 'connected ...'});
 chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
 ```
 
-## تنظیمات اولیه
-
-| توضیحات | نوع | پیش فرض | پارامتر |
-| --- | --- | --- | --- |
-|  |  | `Object` | **[options]** |
-| فعال/غیرفعال سازی ارتباط آنی | <code>True</code> | <code>Object</code> | **[options.realtime]** |
-|  |  | <code>Object</code> | **[options.webpush]** |
-| فعال‌سازی پوش ‌نوتیفیکیشن | <code>False</code> | <code>Object</code> | **[options.webpush.enabled]** |
-| دریافت مخفی پیام | <code>True</code> | <code>Boolean</code> | **[options.silent]** |
+> نحوه صحیح پیاده سازی متد و رویدادها در قالب پروژه [دمو](https://webpush.chabokpush.com/) پیاده سازی شده است.
