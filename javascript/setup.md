@@ -11,7 +11,6 @@ next: methods.html
 
 1. مقداردهی اولیه
 2. ثبت کاربر
-3. متدهای ضروری
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود،  
 
@@ -33,7 +32,7 @@ const auth = {
 const options = {
       webpush: {
         enabled: true,
-        publicKey: 'BE1mAxNaNRBTyoMoE4JoxdK2q4HxVMyYq8HFfIuIo6KQVvcELHuXcmXM86aMD89XjdZguzmwotOkBBDlRUrhcIw'
+        publicKey: 'VAPID_Public_Key'
       },
       silent: false,
     };
@@ -80,19 +79,19 @@ chabok.unregister()
 
 ### رویداد ها:
 
-`connecting`: دریافت وضیت در حال اتصال
+`connecting`: رویداد در هنگام برقراری اتصال به چابک
 
 ```javascript
 chabok.on('connecting', _ => {status = 'Connecting ...'}); 
 ```
 
-`connected`: دریافت وضعیت اتصال برقرار شده است
+`connected`: رویداد در حالت برقراری اتصال به چابک
 
 ```javascript
 chabok.on('connected', _ => {status = 'connected ...'}); 
 ```
 
-`disconnected`: دریافت وضعیت اتصال قطع شده است
+`disconnected`: رویداد در حالت قطع اتصال چابک
 
 ```javascript
 chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
