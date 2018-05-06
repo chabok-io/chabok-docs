@@ -56,6 +56,7 @@ chabok.on('message', msg => {
   console.log(`${msg.content} - ${msg.createdAt}`)
 })
 ```
+
 <!---
 
 ### رویداد دریافت تأییدیه تحویل
