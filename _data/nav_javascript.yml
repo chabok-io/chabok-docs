@@ -1,4 +1,4 @@
-- title: شروع سریع windows
+- title: شروع سریع Javascript
   items:
     - id : introducing
       title: مفاهیم اولیه
@@ -8,9 +8,11 @@
       title: نصب چابک
     - id: setup
       title: راه‌اندازی چابک
-    - id: methods
-      title: متدهای چابک
+    - id: publishingMessages
+      title: پیام چابک
     - id: verification
       title: اعتبارسنجی شناسه کاربری
+    - id: methods
+      title: متدهای چابک
     - id: chabok-messaging
       title: پیام چابک
