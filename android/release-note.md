@@ -5,11 +5,11 @@ layout: android
 permalink: android/release-note.html
 next: introducing.html
 ---
-## نسخه ۳.۱۰.۲
+## نسخه ۲.۱۰.۳
 
 ### تغییرات
 
-- حل مشکل متد `unRegister` با **USER_ID** `NULL`
+- حل مشکل متد `unRegister` با **USER_ID**، `NULL`
 
 ## نسخه ۲.۱۰.۲
 
