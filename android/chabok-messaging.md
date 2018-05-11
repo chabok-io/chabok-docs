@@ -52,12 +52,12 @@ public class PushMessageReceiver extends WakefulBroadcastReceiver {
 chabok.subscribe(CHANNEL_NAME, new Callback() {
     @Override
     public void onSuccess(Object o) {
-
-
+        //Add some codes for find out subscribe was successfully done
+    }
 
     @Override
     public void onFailure(Throwable throwable) {
-
+        //Add some codes for showing an error happened
     }
 });
 
@@ -69,12 +69,12 @@ chabok.subscribe(CHANNEL_NAME, new Callback() {
 chabok.subscribe(CHANNEL_NAME, true, new Callback() {
     @Override
     public void onSuccess(Object o) {
-
+        //Add some codes for find out subscribe was successfully done
     }
 
     @Override
     public void onFailure(Throwable throwable) {
-
+        //Add some codes for showing an error happened
     }
 });
 
@@ -88,12 +88,12 @@ chabok.subscribe(CHANNEL_NAME, true, new Callback() {
 chabok.unsubscribe(CHANNEL_NAME, new Callback() {
     @Override
     public void onSuccess(Object o) {
-
+        //Add some codes for find out unsubscribe was successfully done
     }
 
     @Override
     public void onFailure(Throwable throwable) {
-    
+        //Add some codes for showing an error happened
     }
 });
 
@@ -133,11 +133,12 @@ myPushMessage.setUser(TO_USER_ID);
 chabok.publish(myPushMessage, new Callback() {
     @Override
     public void onSuccess(Object o) {
+        //Add some codes to show publish was successfully done
     }
 
     @Override
     public void onFailure(Throwable throwable) {
-    
+        //Add some codes for showing an error happened
     }
 
 });
@@ -157,12 +158,12 @@ chabok.publish(myPushMessage, new Callback() {
 chabok.publish(CHANNEL_NAME, TEXT, new Callback() {
     @Override
     public void onSuccess(Object o) {
-
+        //Add some codes to show publish was successfully done
     }
 
     @Override
     public void onFailure(Throwable throwable) {
-
+        //Add some codes for showing an error happened
     }
 });
 
@@ -176,12 +177,12 @@ chabok.publish(CHANNEL_NAME, TEXT, new Callback() {
 chabok.publish(USER, CHANNEL_NAME, TEXT, new Callback() {
     @Override
     public void onSuccess(Object o) {
-
+        //Add some codes to show publish was successfully done
     }
 
     @Override
     public void onFailure(Throwable throwable) {
-    
+        //Add some codes for showing an error happened
     }
 });
 
