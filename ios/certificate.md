@@ -11,15 +11,15 @@ permalink: ios/certificate.html
 
 ۲- روی منوی Certificates, Identifiers & Profiles کلیک کنید.
 
-![عکس مربوطه](http://uupload.ir/files/zvei_selecting_the_module.png.jpg)
+![عکس مربوطه](http://uupload.ir/files/kbty_01-selecting-the-module.jpg)
 
 ۳- برای اضافه کردن یک App ID جدید روی منوی App IDs کلیک کنید و بعد دکمه ی + را بزنید.
 
-![عکس مربوطه](http://bayanbox.ir/view/1490261004272402286/Create-AppID.png.jpg)
+![عکس مربوطه](http://uupload.ir/files/loyg_02-create-appid.png)
 
 ۴- یک نام برای اپلیکیشن در قسمت ۱ و یک نام پکیج یا bundleID در قسمت ۲ مطابق شکل زیر وارد کنید. توجه کنید که باید حتما از Explicit App ID استفاده کنید. سپس دکمه ی Continue را بزنید.
 
-![عکس مربوطه](http://uupload.ir/files/0meo_inputing-bundleid.jpg)
+![عکس مربوطه](http://uupload.ir/files/ygkr_03-inputing-bundleid.png)
 
 ۵- در این مرحله اطلاعات App ID ای که در حال ساختش هستید را به شما نشان می دهد. دکمه ی Register را بزنید تا این مرحله تمام شود.
 
@@ -28,21 +28,21 @@ permalink: ios/certificate.html
 
 ۱- برنامه ی Keychain Access را در macOS خود باز کنید.
 
-![عکس مربوطه](http://bayanbox.ir/view/1779708111711163821/Keychainaccess.png)
+![عکس مربوطه](http://uupload.ir/files/eod_04-keychainaccess.png)
 
 ۲- مسیر زیر را در برنامه انتخاب کنید.
 
 Keychain Access -> Certificate Assistant -> Request a Certificate From a Certificate Authority
 
-![عکس مربوطه](http://bayanbox.ir/view/7339941578567240303/Request-sert.png)
+![عکس مربوطه](http://uupload.ir/files/ioy9_05-request-sert.png)
 
 ۴- اطلاعات لازم را وارد کنید و گزینه ی Save to disk را تیک بزنید و بعد دکمه ی Continue را بزنید.
 
-![عکس مربوطه](http://bayanbox.ir/view/3130890332012957922/Savesertdesktope.png)
+![عکس مربوطه](http://uupload.ir/files/73ud_06-savesertdesktop.png)
 
 ۵- درخواست سرتیفیکیت را با همان نامی که برایش پیشنهاد شده، ذخیره کنید. در صفحه ی بعد دکمه ی Done را بزنید.
 
-![عکس مربوطه](http://bayanbox.ir/view/3130890332012957922/Savesertdesktope.png)
+![عکس مربوطه](http://uupload.ir/files/73ud_06-savesertdesktop.png)
 
 ### مرحله ی سوم : تنظیم یک شناسه برنامه، برای استفاده از پوش نوتیفیکیشن
 
@@ -50,27 +50,27 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 
 ۱- برای تنظیم دریافت پوش نوتیفیکیشن یک App ID ، باید آن اپ را در لیست App IDs انتخاب کنید. بعد در قسمت Application Services دکمه ی Edit مربوط به آن App ID را بزنید.
 
-![عکس مربوطه](http://bayanbox.ir/view/5680371853899590674/App-settings.png)
+![عکس مربوطه](http://uupload.ir/files/rcb_08-app-settings.png)
 
 ۲- با این کار صفحه ی تنظیمات نشان داده می شود. صفحه را اسکرول کنید تا قسمت Push Notifications را ببینید. چک باکس آن را تیک بزنید (شماره ۱ در عکس زیر) و دکمه Create Certificate را کلیک کنید.
 
-![عکس مربوطه](http://bayanbox.ir/view/5128664118357539891/PushNotificationSettings.png)
+![عکس مربوطه](http://uupload.ir/files/74e7_09-pushnotificationsettings.png)
 
 ۳- یک ویزارد نمایش داده می شود. دکمه  Continue را بزنید.
 
-![عکس مربوطه](http://bayanbox.ir/view/8878575710405019872/CSR.png)
+![عکس مربوطه](http://uupload.ir/files/i1mu_10-csr.png)
 
 ۴- دکمه ی Choose File را بزنید و فایل درخواست سرتیفیکیت که در مرحله دوم ایجاد کردید را انتخاب کنید. دکمه Generate را بزنید.
 
-![عکس مربوطه](http://bayanbox.ir/view/7047098200909611658/Generation-certificate.png)
+![عکس مربوطه](http://uupload.ir/files/axjs_11-generation-certificate.png)
 
 ۵- سرتیفیکیت SSL شما ایجاد خواهد شد. حالا می توانید دکمه ی Download را بزنید و آن را دانلود کنید.
 
-![عکس مربوطه](http://uupload.ir/files/hh3n_certificate-is-ready.png.jpeg)
+![عکس مربوطه](http://uupload.ir/files/786h_12-certificate-is-ready.png)
 
 سرتیفیکیت ایجاد شده را از لیست Application Services هم می توانید دانلود کنید.
 
-![عکس مربوطه](http://bayanbox.ir/view/5803013104963660436/DownloadCert.png)
+![عکس مربوطه](http://uupload.ir/files/qwrm_13-downloadcert.png)
 
 مراحل ایجاد Production Certificate هم به همین صورت هست.
 
@@ -80,17 +80,17 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 
 ۲- برنامه  Keychain Access را روی Mac خود باز کنید. به قسمت login بروید و براساس دسته بندی Certificates محتوایش را فیلتر کنید. در اینجا گزینه ای به نام Apple Development iOS Push Services می بینید که با یک کلید خصوصی جفت شده است.
 
-![عکس مربوطه](http://uupload.ir/files/lypn_keychain2.jpg)
+![عکس مربوطه](http://uupload.ir/files/kl3t_14-keychain2.png)
 
 ۳- روی این سرتیفیکیت پوش نوتیفیکشن جدیدتان کلیک راست کنید و  گزینه ی Export "Apple Development iOS Push Services را انتخاب کنید و فایل حاصل را با نام apns-dev-cert.p12 در جایی که در دسترس تان باشد ذخیره کنید.
 
 برای اکسپورت کردن می توانید پسورد هم وارد کنید اما در اینصورت لازم است که همراه با ارسال فایل سرتیفیکیت به چابک، پسورد آن را هم ارسال کنید.
 
-![عکس مربوطه](http://bayanbox.ir/view/3470455199681879504/Enter-the-password-for-exporting.png)
+![عکس مربوطه](http://uupload.ir/files/sxee_15-enter-the-password-for-exporting.png)
 
 برای نهایی شدن فرآیند اکسپورت کردن سرتیفیکیت، پسورد ادمین سیستم خود را بزنید.
 
-![عکس مربوطه](http://bayanbox.ir/view/8511862378341283401/File-Enter-your-usual-admin-password.png)
+![عکس مربوطه](http://uupload.ir/files/1pkl_16-file-enter-your-usual-admin-password.png)
 
 
 پس از ایجاد فایل های cer. و p12. دستور زیر را در terminal اجرا کنید:
@@ -101,6 +101,8 @@ openssl pkcs12 -nocerts -out pushKey.pem -in Certificates.p12 -nodes
 ```
 فایل های ساخته شده را در پنل در بخش تنظیمات > تنظیمات پیشرفته آپلود کنید.
 
+![پنل چابک](http://uupload.ir/files/ymdf_17-chabok-panel-setting.png)
+
 فایل `pushCert.pem` را در قسمت گواهی و فایل `pushKey.pem` را در قسمت کلید اضافه کنید.
 
-![enter image description here](http://uupload.ir/files/yvqd_photo_2017-10-15_12-16-53.jpg)
+![پنل چابک](http://uupload.ir/files/hs4n_18-chabok-panel-apns-setting.png)
