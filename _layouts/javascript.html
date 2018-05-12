@@ -6,7 +6,6 @@ sectionid: javascript
     <div class="container-fluid">
         <div class="row">
             {% include nav_javascript.html %}
-
             <div class="entry post col-12 col-lg-9" id="content">
                 <h1>
                     <a id="sideMenuHandler">
@@ -16,11 +15,10 @@ sectionid: javascript
                 </h1>
                 <div class="subHeader">{{ page.description }}</div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-lg-9 col-md-9 col-12">
-                            <div class="doc-content">
-                                {{ content }}
-                            </div>
+                    <div class="col-lg-9 col-md-9 col-12">
+                        <div class="doc-content">
+                            {{ content }}
+                        </div>
                         <div class="docs-prevnext clearfix">
                             {% if page.prev %}
                             <a class="docs-prev" href="/javascript/{{ page.prev }}"> &rarr;قبلی </a>
@@ -30,6 +28,7 @@ sectionid: javascript
                             {% endif %}
                         </div>
                     </div>
+                    <div id="toc" class="col-lg-3 col-md-3 d-md-block d-none"></div>
                 </div>
             </div>
         </div>

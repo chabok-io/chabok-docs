@@ -16,22 +16,22 @@ sectionid: react-native-bridge
                 </h1>
                 <div class="subHeader">{{ page.description }}</div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-lg-9 col-md-9 col-12">
-                            <div class="doc-content">
-                                {{ content }}
-                            </div>
-                            <div class="docs-prevnext clearfix">
-                                {% if page.prev %}
-                                <a class="docs-prev" href="/react-native-bridge/{{ page.prev }}"> &rarr;قبلی </a>
-                                {% endif %}
-                                {% if page.next %}
-                                <a class="docs-next" href="/react-native-bridge/{{ page.next }}"> بعدی &larr; </a>
-                                {% endif %}
-                            </div>
+                    <div class="col-lg-9 col-md-9 col-12">
+                        <div class="doc-content">
+                            {{ content }}
+                        </div>
+                        <div class="docs-prevnext clearfix">
+                            {% if page.prev %}
+                            <a class="docs-prev" href="/react-native-bridge/{{ page.prev }}"> &rarr;قبلی </a>
+                            {% endif %}
+                            {% if page.next %}
+                            <a class="docs-next" href="/react-native-bridge/{{ page.next }}"> بعدی &larr; </a>
+                            {% endif %}
                         </div>
                     </div>
+                    <div id="toc" class="col-lg-3 col-md-3 d-md-block d-none"></div>
                 </div>
             </div>
         </div>
     </div>
+</div>
