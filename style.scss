@@ -679,3 +679,26 @@ footer {
   }
 }
 
+.affix {
+  position: fixed;
+  top: 4rem;
+}
+
+.affix-bottom {
+  position: absolute;
+}
+
+.toc-list {
+
+  li {
+    list-style: none !important;
+    font-size: 14px;
+    line-height: 150% !important;
+    border-right: 1px solid #eee;
+    padding-right: 15px !important;
+    a {
+      display: block;
+    }
+  }
+
+}

@@ -16,11 +16,10 @@ sectionid: react-native
                 </h1>
                 <div class="subHeader">{{ page.description }}</div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="col-lg-9 col-md-9 col-12">
-                            <div class="doc-content">
-                                {{ content }}
-                            </div>
+                    <div class="col-lg-9 col-md-9 col-12">
+                        <div class="doc-content">
+                            {{ content }}
+                        </div>
                         <div class="docs-prevnext clearfix">
                             {% if page.prev %}
                             <a class="docs-prev" href="/react-native/{{ page.prev }}"> &rarr;قبلی </a>
@@ -30,6 +29,7 @@ sectionid: react-native
                             {% endif %}
                         </div>
                     </div>
+                    <div id="toc" class="col-lg-3 col-md-3 d-md-block d-none"></div>
                 </div>
             </div>
         </div>
