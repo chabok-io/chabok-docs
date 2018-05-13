@@ -242,7 +242,7 @@
         }
         else if (this_level > level) { // lower level than before; expand the previous to contain a ol
           for (i = this_level; i > level; i--) {
-            html += "<" + settings.listType + " class=\"" + settings.classes.list + "\">" +
+            html += "<" + settings.listType + " class=\"" + settings.classes.list + " sub-li \">" +
               "<li class=\"" + settings.classes.item + "\">"
           }
           html += createLink(header);
