@@ -1,11 +1,10 @@
-
 ---
 id: rich_notification
 title: پوش نوتیفیکیشن محتوا
 layout: ios
 permalink: ios/rich_notification.html
-prev: -----
-next: ------
+prev: setup.html
+next: publishingMessages.html
 ---
 ### مراحل راه‌اندازی پوش نوتیفیکیشن محتوا
 
