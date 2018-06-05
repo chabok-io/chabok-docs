@@ -13,6 +13,8 @@ next: publishingMessages.html
 2. ثبت کاربر
 3. متدهای ضروری
 
+> `نکته :` جهت راه‌اندازی و استفاده پوش محتوا (`Rich Notification`) وارد صفحه [پوش محتوا](rich_notification.html) شوید.
+
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
 > پروژه [Starter](https://github.com/chabokpush/chabok-starter-ios)، به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرا آن، از سرویس چابک استفاده کنید. همچنین به کمک پروژه فوق از نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.
