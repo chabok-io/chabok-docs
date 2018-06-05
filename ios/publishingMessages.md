@@ -3,7 +3,7 @@ id: publishingMessages
 title: پیام چابک
 layout: ios
 permalink: ios/publishingMessages.html
-prev: setup.html
+prev: rich_notification.html
 next: validation.html
 ---
 
