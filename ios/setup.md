@@ -4,7 +4,7 @@ title: راه‌اندازی چابک
 layout: ios
 permalink: ios/setup.html
 prev: installation.html
-next: publishingMessages.html
+next: rich_notification.html
 ---
 ### مراحل راه‌اندازی چابک
 برای راه‌اندازی چابک باید سه مرحله زیر را به ترتیب انجام دهید تا بتوانید دستگاه خود را در پنل چابک مشاهده کنید :
