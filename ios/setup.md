@@ -4,7 +4,7 @@ title: راه‌اندازی چابک
 layout: ios
 permalink: ios/setup.html
 prev: installation.html
-next: publishingMessages.html
+next: rich_notification.html
 ---
 ### مراحل راه‌اندازی چابک
 برای راه‌اندازی چابک باید سه مرحله زیر را به ترتیب انجام دهید تا بتوانید دستگاه خود را در پنل چابک مشاهده کنید :
@@ -12,6 +12,8 @@ next: publishingMessages.html
 1. مقداردهی اولیه
 2. ثبت کاربر
 3. متدهای ضروری
+
+> `نکته :` جهت راه‌اندازی و استفاده پوش محتوا (`Rich Notification`) وارد صفحه [پوش محتوا](rich_notification.html) شوید.
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 

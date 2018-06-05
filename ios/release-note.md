@@ -5,6 +5,15 @@ layout: ios
 permalink: ios/release-note.html
 next: introducing.html
 ---
+## نسخه ۱.۱۶.۰ 
+
+### تغییرات
+
+- پشتیبانی از قابلیت **Rich Notification** برای **iOS 10** به بالا
+- قابلیت تشخیص غیرفعال کردن پوش نوتیفیکیشن توسط کاربر `DENIED`
+- افزودن property `enableLog` جهت فعال/غیرفعال سازی گزارش‌های چابک
+- تشخیص زمان نصب اپلیکیشن
+- تشخیص شناسه اپلیکیشن `bundleIdentifier` 
 
 ## نسخه ۱.۱۵.۱ 
 

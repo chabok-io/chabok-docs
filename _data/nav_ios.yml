@@ -12,6 +12,8 @@
       title: نصب چابک
     - id: setup
       title: راه‌اندازی چابک
+    - id: rich_notification
+      title: پوش محتوا
     - id: publishingMessages
       title: پیام چابک
     - id: validation

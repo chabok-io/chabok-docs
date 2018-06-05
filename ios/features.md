@@ -5,7 +5,7 @@ layout: ios
 permalink: ios/features.html
 prev: location-tracking.html
 ---
-### مدیریت تگ ها
+### مدیریت تگ‌ها
 یکی از مهمترین ابزارهای دسته‌بندی کاربران، استفاده از `Tag` می باشد. به عنوان مثال می‌توانید کاربران خود را بر اساس جنسیت دسته‌بندی کرده و بر اساس جنسیت آنها پیام خاصی را ارسال کنید و یا کاربرانی که از پرداخت درون برنامه‌ای شما استفاده می‌کنند، یک `Tag` با عنوان `Premium_User` به آنها اختصاص دهید.
 
 #### افزودن تگ
@@ -193,4 +193,16 @@ func pushClientManagerDidChangedServerConnectionState (){
 //Swift:
 
 self.manager?.enableLocationOnLaunch = true
+```
+
+### فعال‌سازی گزارش‌های چابک
+
+با استفاده از `property`، `enableLog`  می‌توانید گزارش‌های چابک را در بخش `Debugger Output` مشاهده کنید
+```objectivec
+//Objective-C
+PushClientManager.defaultManager.enableLog = YES;
+```
+```swift
+//Swift
+PushClientManager.default().enableLog = true
 ```
