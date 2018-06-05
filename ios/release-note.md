@@ -1,4 +1,3 @@
-
 ---
 id: release-note
 title: لیست تغییرات کتابخانه
@@ -6,7 +5,6 @@ layout: ios
 permalink: ios/release-note.html
 next: introducing.html
 ---
-
 ## نسخه ۱.۱۶.۰ 
 
 ### تغییرات
