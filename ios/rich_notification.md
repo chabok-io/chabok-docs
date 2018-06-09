@@ -1,29 +1,30 @@
 ---
 id: rich_notification
-title: پوش نوتیفیکیشن محتوا
+title: نوتیفیکیشن چندرسانه‌ای
 layout: ios
 permalink: ios/rich_notification.html
 prev: setup.html
 next: publishingMessages.html
 ---
-### مراحل راه‌اندازی پوش نوتیفیکیشن محتوا
+### مراحل راه‌اندازی نوتیفیکیشن چندرسانه‌ای
 
- 1. ابتدا از منو محیط **Xcode** بر روی گزینه File در بخش New بروی Target...
-   کلیک کنید
+ 1. ابتدا از منو محیط **Xcode** بر روی گزینه `File` در بخش `New` بروی `Target...`
+   کلیک کنید.
  2. در صفحه باز شده `Notification Service Extension` را انتخاب کنید
     و بر روی دکمه `Next` کلیک کنید.
-![انتخاب تارگت سرویس نوتیفیکیشن](http://uupload.ir/files/dvcx_choose_target.png)
- 3. سپس همانند تصویر زیر اطلاعات مورد نیاز را پر کرده و بر روی دکمه
-    `Finish` کلیک کنید
 
-![پر کردن اطلاعات مورد نیاز برای تارگت سرویس نوتیفیکیشن](http://uupload.ir/files/xni_target_options.png)
+ ![انتخاب تارگت سرویس نوتیفیکیشن](http://uupload.ir/files/dvcx_choose_target.png)
+ 3. سپس همانند تصویر زیر اطلاعات مورد نیاز را پر کرده و بر روی دکمه `Finish` کلیک کنید.
 
-4. همانند تصویر زیر وارد صفحه تنظیمات Target خواهید شد.
+ ![پر کردن اطلاعات مورد نیاز برای تارگت سرویس نوتیفیکیشن](http://uupload.ir/files/xni_target_options.png)
+ 4. همانند تصویر زیر وارد صفحه تنظیمات Target خواهید شد.
+ > `نکته :` در بخش `Deployment Info` گزینه `Deployment Target` را `iOS 10` قرار دهید.
 
-> `نکته :` در بخش `Deployment Info` گزینه `Deployment Target` را `iOS 10` قرار دهید
-![تنظیمات تارگ](http://uupload.ir/files/51rz_project_settings.png)
- 6. فایل `NotificationService.m` یا `NotificationService.swift` را
-    باز کرده و کد زیر را در آن قرار دهید
+ ![تنظیمات تارگ](http://uupload.ir/files/51rz_project_settings.png)
+
+ 5. فایل `NotificationService.m` یا `NotificationService.swift` را
+    باز کرده و کد زیر را در آن قرار دهید.
+
 
 ```objectivec
 //Objective-C
@@ -83,7 +84,7 @@ class NotificationService: UNNotificationServiceExtension {
 }
 ```
 ### مدیریت رویداد کلیک بر روی هر اکشن
-با قرار دادن متد `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` در فایل `AppDelegate` همانند کد زیر می‌تواند عملیات متناسب برای هر دکمه را پیاده‌سازی کنید :
+با قرار دادن متد `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` در فایل `AppDelegate` همانند کد زیر می‌توانید عملیات متناسب بر روی هر دکمه را پیاده‌سازی کنید :
 ``` objectivec
 //Objective-C
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center
@@ -114,4 +115,4 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
     completionHandler()
 }
 ```
-![نمونه پوش محتوا](http://uupload.ir/files/p3ax_rich_notification_screenshot.png)
+![نمونه نوتیفیکیشن چندرسانه‌ای](http://uupload.ir/files/ph2d_rich_notification_screenshot-small.png)
