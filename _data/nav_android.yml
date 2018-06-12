@@ -12,6 +12,8 @@
       title: نصب چابک
     - id: application-class
       title:  راه‌اندازی چابک
+    - id: rich_notification
+      title: نوتیفیکیشن چندرسانه‌ای
     - id: chabok-messaging
       title: پیام چابک
     - id: verification
