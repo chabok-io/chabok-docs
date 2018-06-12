@@ -79,4 +79,4 @@ public class NotificationReceiver extends BroadcastReceiver {
 }
 ```
 
-
+![نوتیفیکیشن چندرسانه‌ای](http://uupload.ir/files/z8bi_rich_notification_screenshot-android-small.png)
