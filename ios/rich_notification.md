@@ -8,17 +8,26 @@ next: publishingMessages.html
 ---
 ### مراحل راه‌اندازی نوتیفیکیشن چندرسانه‌ای
 
- 1. ابتدا از منو محیط **Xcode** بر روی گزینه `File` در بخش `New` بروی `Target...`
+ 1) ابتدا از منو محیط **Xcode** بر روی گزینه `File` در بخش `New` بروی `Target...`
    کلیک کنید.
- 2. در صفحه باز شده `Notification Service Extension` را انتخاب کنید
+   
+ 2) در صفحه باز شده `Notification Service Extension` را انتخاب کنید
     و بر روی دکمه `Next` کلیک کنید.
+    
  ![انتخاب تارگت سرویس نوتیفیکیشن](http://uupload.ir/files/dvcx_choose_target.png)
- 3. سپس همانند تصویر زیر اطلاعات مورد نیاز را پر کرده و بر روی دکمه `Finish` کلیک کنید.
- ![پر کردن اطلاعات مورد نیاز برای تارگت سرویس نوتیفیکیشن](http://uupload.ir/files/xni_target_options.png)
- 4. همانند تصویر زیر وارد صفحه تنظیمات Target خواهید شد.
+ 
+ 3) سپس همانند تصویر زیر اطلاعات مورد نیاز را پر کرده و بر روی دکمه `Finish` کلیک کنید.
+ 
+ ![پر کردن اطلاعات مورد نیاز برای تارگت سرویس نوتیفیکیشن](http://uupload.ir/files/xni_target_options.png
+ )
+ 
+ 4) همانند تصویر زیر وارد صفحه تنظیمات Target خواهید شد.
+ 
  > `نکته :` در بخش `Deployment Info` گزینه `Deployment Target` را `iOS 10` قرار دهید.
  ![تنظیمات تارگ](http://uupload.ir/files/51rz_project_settings.png)
- 5. فایل `Info.plist` تارگت ساخته شده را به صورت `Source Code` باز کرده و کلید زیر را در آن قرار دهید :
+ 
+ 5) فایل `Info.plist` تارگت ساخته شده را به صورت `Source Code` باز کرده و کلید زیر را در آن قرار دهید :
+
 ```xml
 <key>NSAppTransportSecurity</key>
 <dict>
@@ -27,7 +36,7 @@ next: publishingMessages.html
 </dict>
 ```
 
- 6. فایل `NotificationService.m` یا `NotificationService.swift` را
+ 6) فایل `NotificationService.m` یا `NotificationService.swift` را
     باز کرده و کد زیر را در آن قرار دهید.
 
 ```objectivec
@@ -87,8 +96,10 @@ class NotificationService: UNNotificationServiceExtension {
 	}
 }
 ```
+
 ### مدیریت رویداد کلیک بر روی هر اکشن
 با قرار دادن متد `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` در فایل `AppDelegate` همانند کد زیر می‌توانید عملیات متناسب بر روی هر دکمه را پیاده‌سازی کنید :
+
 ``` objectivec
 //Objective-C
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center
@@ -119,4 +130,5 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
     completionHandler()
 }
 ```
+
 ![نمونه نوتیفیکیشن چندرسانه‌ای](http://uupload.ir/files/ph2d_rich_notification_screenshot-small.png)
