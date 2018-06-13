@@ -4,7 +4,7 @@ title: راه‌اندازی چابک
 layout: android
 permalink: android/application-class.html
 prev: gradle-setup.html
-next: chabok-messaging.html
+next: rich_notification.html
 ---
 
 
