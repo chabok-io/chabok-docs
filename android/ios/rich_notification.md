@@ -3,7 +3,7 @@ id: rich_notification
 title: نوتیفیکیشن چندرسانه‌ای
 layout: android
 permalink: android/rich_notification.html
-prev: gradle-setup.html
+prev: application-class.html
 next: publishingMessages.html
 ---
 
