@@ -10,7 +10,7 @@ next: chabok-messaging.html
 ### مراحل راه‌اندازی نوتیفیکیشن چندرسانه‌ای
 1) ابتدا در فایل `AndroidManifest.xml` اکشن‌های خود را برای `‌BroadcastReceiver` تعیین کنید تا بتوانید برای هر اکشن عملیات مناسب را اعمال کنید :
 
-```xml
+```markup
 <receiver android:name="NOTIFICATION_RECEIVER_CLASS">  
 	<intent-filter> 
 		<action android:name="YOUR_ACTION_01"/>  
@@ -44,7 +44,7 @@ public class NOTIFICATION_RECEIVER_CLASS extends BroadcastReceiver {
 
 #### نمونه کد نوتیفیکیشن چندرسانه‌ای
 قطعه کد زیر را در فایل `AndroidManifest.xml` قرار دهید  :
-```xml
+```markup
 <receiver android:name=".NotificationReceiver">  
 	<intent-filter> 
 		<action android:name="demoAction"/>  
