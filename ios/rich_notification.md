@@ -28,7 +28,7 @@ next: publishingMessages.html
  
  5) فایل `Info.plist` تارگت ساخته شده را به صورت `Source Code` باز کرده و کلید زیر را در آن قرار دهید :
 
-```xml
+```markup
 <key>NSAppTransportSecurity</key>
 <dict>
     <key>NSAllowsArbitraryLoads</key>
