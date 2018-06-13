@@ -4,7 +4,7 @@ title: نوتیفیکیشن چندرسانه‌ای
 layout: android
 permalink: android/rich_notification.html
 prev: application-class.html
-next: publishingMessages.html
+next: chabok-messaging.html
 ---
 
 ### مراحل راه‌اندازی نوتیفیکیشن چندرسانه‌ای
