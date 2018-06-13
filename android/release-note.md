@@ -5,6 +5,13 @@ layout: android
 permalink: android/release-note.html
 next: introducing.html
 ---
+## نسخه ۲.۱۱.۰
+
+### تغییرات
+
+- پشتیبانی از نمایش تصویر در پوش نوتیفیکیشن
+- امکان اضافه کردن `action` به پوش نوتیفیکیشن
+
 ## نسخه ۲.۱۰.۳
 
 ### تغییرات
