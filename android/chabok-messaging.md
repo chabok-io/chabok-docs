@@ -3,7 +3,7 @@ id: chabok-messaging
 title: پیام چابک
 layout: android
 permalink: android/chabok-messaging.html
-prev: gradle-setup.html
+prev: rich_notification.html
 next: verification.html
 ---
 
