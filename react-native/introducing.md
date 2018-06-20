@@ -4,6 +4,7 @@ title: مفاهیم اولیه
 layout: react-native
 permalink: react-native/introducing.html
 next: required.html
+prev: release-note.html
 ---
 
 ### پوش
