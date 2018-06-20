@@ -1,0 +1,15 @@
+---
+id: release-note
+title: لیست تغییرات کتابخانه
+layout: react-native
+permalink: react-native/release-note.html
+next: introducing.html
+---
+## نسخه ۱.۱.۰
+
+* `subscribe` افزودن متد جدید برای عضویت روی یک کانال 
+* `unSubscribe` افزودن متد جدید برای لغو عضویت از یک کانال 
+
+## نسخه ۱.۰.۰
+
+* حل مشکل نوع اتصال بر روی پلتفرم **اندروید** و **ios**
