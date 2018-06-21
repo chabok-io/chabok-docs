@@ -3,7 +3,7 @@ id: chabok-messaging
 title: پیام چابک
 layout: react-native
 permalink: react-native/chabok-messaging.html
-prev: gradle-setup.html
+prev: setup.html
 next: verification.html
 ---
 
@@ -41,9 +41,9 @@ chabok.subscribe("private/league") // private (personal) channel
 همچنین برای لغو عضویت در یک کانال میتوانید از موارد زیر استفاده کنید:
 
 ```javascript
-chabok.unsubscribe("alert") // public channel
-chabok.unsubscribe("public/sport") // public channel
-chabok.unsubscribe("private/league") // private (personal) channel
+chabok.unSubscribe("alert") // public channel
+chabok.unSubscribe("public/sport") // public channel
+chabok.unSubscribe("private/league") // private (personal) channel
 ```
 
 ### دریافت پیام

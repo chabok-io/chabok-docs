@@ -5,6 +5,12 @@ layout: ios
 permalink: ios/release-note.html
 next: introducing.html
 ---
+## نسخه ۱.۱۶.۱ 
+
+### تغییرات
+
+- حل مشکل عدم ارسال پوش نوتیفیکیشن برای کاربرانی که دسترسی `DENIED` داده‌اند.
+
 ## نسخه ۱.۱۶.۰ 
 
 ### تغییرات

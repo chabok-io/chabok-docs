@@ -4,7 +4,7 @@ title: راه‌اندازی چابک
 layout: react-native
 permalink: react-native/setup.html
 prev: installation.html
-next: methods.html
+next: chabok-messaging.html
 ---
 
 ### مراحل راه‌اندازی چابک
