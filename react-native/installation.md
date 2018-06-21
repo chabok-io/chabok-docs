@@ -3,7 +3,7 @@ id: installation
 title: نصب چابک
 layout: react-native
 permalink: react-native/installation.html
-prev: introducing.html
+prev: required.html
 next: setup.html
 ---
 

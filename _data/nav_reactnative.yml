@@ -14,5 +14,7 @@
       title: پیام چابک
     - id: verification
       title: اعتبارسنجی شناسه کاربری
+    - id: events
+      title: مدیریت رویدادها
     - id: features
       title: امکانات‌ چابک
