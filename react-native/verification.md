@@ -4,7 +4,7 @@ title: اعتبارسنجی شناسه کاربری
 layout: react-native
 permalink: react-native/verification.html
 prev: methods.html
-next: chabok-messaging.html
+next: events.html
 ---
 
 > `نکته`: به زودی **ReactNative SDK** این امکان را به طور کامل پیاده‌سازی می‌کند..
