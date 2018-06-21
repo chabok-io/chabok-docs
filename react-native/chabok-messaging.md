@@ -3,7 +3,7 @@ id: chabok-messaging
 title: پیام چابک
 layout: react-native
 permalink: react-native/chabok-messaging.html
-prev: gradle-setup.html
+prev: setup.html
 next: verification.html
 ---
 

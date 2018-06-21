@@ -3,7 +3,7 @@ id: verification
 title: اعتبارسنجی شناسه کاربری
 layout: react-native
 permalink: react-native/verification.html
-prev: methods.html
+prev: chabok-messaging.html
 next: events.html
 ---
 
