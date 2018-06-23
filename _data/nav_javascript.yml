@@ -1,5 +1,7 @@
 - title: شروع سریع Javascript
   items:
+    - id: release-note
+      title: لیست تغییرات کتابخانه
     - id : introducing
       title: مفاهیم اولیه
     - id: required
