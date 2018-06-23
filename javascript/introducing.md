@@ -4,6 +4,7 @@ title: مفاهیم اولیه
 layout: javascript
 permalink: javascript/introducing.html
 next: required.html
+prev: release-note.html
 ---
 
 ### پوش
