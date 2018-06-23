@@ -5,6 +5,10 @@ layout: javascript
 permalink: javascript/release-note.html
 next: introducing.html
 ---
+## نسخه ۰.۴.۱
+* حذف متد `enableEventDelivery`
+> در صورت استفاده از متد `enableEventDelivery` باید آن را با متد `subscribeEvent` جایگزین نمایید.
+
 ## نسخه ۰.۴.۰
 
 * افزودن قابلیت عضویت و لغو عضویت از یک **کانال** با استفاده از متد‌های `subscribe` و `unSubscribe`
