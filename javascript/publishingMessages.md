@@ -4,7 +4,7 @@ title: پیام چابک
 layout: javascript
 permalink: javascript/publishingMessages.html
 prev: setup.html
-next: validation.html
+next: notification.html
 ---
 
 ### ارسال پیام

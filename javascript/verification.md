@@ -3,8 +3,8 @@ id: verification
 title: اعتبارسنجی شناسه کاربری
 layout: javascript
 permalink: javascript/verification.html
-prev: methods.html
-next: chabok-messaging.html
+prev: notification.html
+next: events.html
 ---
 
 > `نکته`: به زودی **JavaScript SDK** این امکان را به طور کامل پیاده‌سازی می‌کند..
