@@ -3,8 +3,8 @@ id: notification
 title: مدیریت اعلان‌ها
 layout: javascript
 permalink: javascript/notification.html
-prev: verification.html
-next: events.html
+prev: publishingMessages.html
+next: verification.html
 ---
 
  سرویس چابک دارای `Messageing` و `Push Notification`  می‌باشد،‌ به همین جهت برای دریافت اعلام در پس‌زمینه می‌بایست فایل `ChabokSDKWorker.js` را در پروژه خود قرار دهید.

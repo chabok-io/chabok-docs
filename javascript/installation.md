@@ -3,7 +3,7 @@ id: installation
 title: نصب چابک
 layout: javascript
 permalink: javascript/installation.html
-prev: introducing.html
+prev: required.html
 next: setup.html
 ---
 
