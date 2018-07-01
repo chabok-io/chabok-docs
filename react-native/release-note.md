@@ -5,6 +5,18 @@ layout: react-native
 permalink: react-native/release-note.html
 next: introducing.html
 ---
+
+## نسخه ۱.۲.۰
+### ارتقا
+* در صورت استفاده از متد `enableEventDelivery`  آن را با متد `subscribeEvent` جایگزین نمایید.
+
+### تغییرات
+* رفع مشکل عضویت بر روی کانال‌های عمومی توسط متد `subscribe`
+* بهبود عملکرد ارسال پیام به وسیله متد `publish`
+* حذف متد `enableEventDelivery`
+
+
+
 ## نسخه ۱.۱.۲
 ### ارتقا
 * افزودن امکان عضویت بر روی یک رویداد با استفاده از متد `subscribeEvent`
