@@ -8,8 +8,8 @@ next: introducing.html
 
 ## نسخه ۱.۲.۰
 ### تغییرات
-* حل مشکل ارسال پیام به **userId** اشتباه
-* حل مشکل `subscribe` بر روی کانال‌های عمومی
+* رفع مشکل عضویت بر روی کانال‌های عمومی توسط متد `subscribe`
+* بهبود عملکرد ارسال پیام به وسیله متد `publish`
 * حذف متد `enableEventDelivery`
 
 > در صورت استفاده از متد `enableEventDelivery` باید آن را با متد `subscribeEvent` جایگزین نمایید.
