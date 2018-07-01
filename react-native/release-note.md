@@ -7,12 +7,13 @@ next: introducing.html
 ---
 
 ## نسخه ۱.۲.۰
+### ارتقا
+* در صورت استفاده از متد `enableEventDelivery`  آن را با متد `subscribeEvent` جایگزین نمایید.
+
 ### تغییرات
 * رفع مشکل عضویت بر روی کانال‌های عمومی توسط متد `subscribe`
 * بهبود عملکرد ارسال پیام به وسیله متد `publish`
 * حذف متد `enableEventDelivery`
-
-> در صورت استفاده از متد `enableEventDelivery` باید آن را با متد `subscribeEvent` جایگزین نمایید.
 
 
 
