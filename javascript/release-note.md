@@ -5,6 +5,10 @@ layout: javascript
 permalink: javascript/release-note.html
 next: introducing.html
 ---
+## نسخه ۰.۴.۳
+* رفع مشکل ارسال پیام توسط متد `publish`
+
+
 ## نسخه ۰.۴.۲
 * رفع مشکل عضویت بر روی کانال‌های عمومی توسط متد `subscribe`
 * بهبود عملکرد ارسال پیام به وسیله متد `publish`
