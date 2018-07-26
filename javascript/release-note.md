@@ -6,7 +6,7 @@ permalink: javascript/release-note.html
 next: introducing.html
 ---
 ## نسخه ۰.۴.۳
-* رفع مشکل ارسال پیام توسط متد `publish`
+* رفع مشکل ارسال پیام توسط متد `publishEvent`
 
 
 ## نسخه ۰.۴.۲
