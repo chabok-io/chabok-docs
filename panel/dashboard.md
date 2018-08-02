@@ -3,7 +3,6 @@ id: dashboard
 title: داشبورد
 layout: panel
 permalink: panel/dashboard.html
-prev: introducing.html
+next: introducing.html
 ---
 
-### test ^^
