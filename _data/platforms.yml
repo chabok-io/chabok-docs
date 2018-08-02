@@ -52,3 +52,10 @@
   demo:
   starter:
   issue: https://github.com/chabokpush/chabok-php-demo/issues
+
+- name: Panel
+  image: api.svg
+  document: /panel/introducing.html
+  demo:
+  starter:
+  issue:
