@@ -54,7 +54,7 @@
   issue: https://github.com/chabokpush/chabok-php-demo/issues
 
 - name: Panel
-  image: api.svg
+  image: panel.svg
   document: /panel/introducing.html
   demo:
   starter:
