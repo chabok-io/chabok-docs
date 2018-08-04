@@ -16,6 +16,10 @@ module Jekyll
       return sidebar_helper(item, 'windows')
     end
 
+    def panel_sidebar_link(item)
+        return sidebar_helper(item, 'panel')
+    end
+
     def javascript_sidebar_link(item)
           return sidebar_helper(item, 'javascript')
     end
