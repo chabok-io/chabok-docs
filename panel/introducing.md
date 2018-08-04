@@ -1,10 +1,9 @@
 ---
 id: introducing
 title: مفاهیم اولیه
-layout: android
-permalink: android/introducing.html
-next: required.html
-prev: release-note.html
+layout: panel
+permalink: panel/introducing.html
+next: dashboard.html
 ---
 
 ### پوش
