@@ -1,22 +1,14 @@
 - title: شروع سریع panel
   items:
-    - id: release-note
-      title: لیست تغییرات کتابخانه
     - id : introducing
       title: مفاهیم اولیه
-    - id: sample
-      title: پیش‌نیازها
-    - id: installation
-      title: نصب چابک
-    - id: setup
-      title: راه‌اندازی چابک
-    - id: publishingMessages
-      title: پیام چابک
-    - id: notification
-      title: مدیریت اعلان‌ها
-    - id: verification
-      title: اعتبارسنجی شناسه کاربری
-    - id: events
-      title: مدیریت رویدادها
-    - id: features
-      title: امکانات‌ چابک
+    - id: dashboard
+      title: داشبورد
+    - id: send
+      title: ارسال
+    - id: subscribers
+      title: مشترکین
+    - id: inbox
+      title: پیام ها
+    - id: settings
+      title: تنظیمات
