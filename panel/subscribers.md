@@ -1,6 +1,6 @@
 ---
 id: subscribers
-title: ارسال
+title: مشترکین
 layout: panel
 permalink: panel/subscribers.html
 prev: send.html
