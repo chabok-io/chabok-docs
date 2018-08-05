@@ -40,4 +40,4 @@ prev: inbox.html
 
 در این قسمت می‌توانید **توکن‌هایتان** را از سرویس‌های **وان سیگنال** و **پوش ووش** به چابک ایمپورت کنید. 
 
-![عکس مربوطه](http://uupload.ir/files/5usb_import.png)
+![عکس مربوطه](http://uupload.ir/files/7wqc_import.png)
