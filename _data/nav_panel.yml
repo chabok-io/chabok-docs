@@ -1,12 +1,14 @@
-- title: شروع سریع panel
-  items:
-    - id: dashboard
-      title: داشبورد
-    - id: send
-      title: ارسال
-    - id: subscribers
-      title: مشترکین
-    - id: inbox
-      title: پیام‌ها
-    - id: settings
-      title: تنظیمات
+title: شروع سریع panel
+items:
+- id : introducing
+  title: مفاهیم اولیه
+- id: dashboard
+  title: داشبورد
+- id: send
+  title: ارسال
+- id: subscribers
+  title: مشترکین
+- id: inbox
+  title: پیام‌ها
+- id: settings
+  title: تنظیمات
