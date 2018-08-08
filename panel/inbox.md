@@ -22,4 +22,4 @@ next: settings.html
 
 این قسمت برای **پیام‌های فردی** است که شما برای هر کاربر **جداگانه** ارسال می‌کنید. برای این قسمت هم جزئیات بالا در هر پیام آمده است.
 
-![عکس مربوطه](http://uupload.ir/files/oc98_messageb.png)
+![عکس مربوطه](http://uupload.ir/files/7hvb_messageb.png)
