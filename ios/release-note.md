@@ -5,6 +5,22 @@ layout: ios
 permalink: ios/release-note.html
 next: introducing.html
 ---
+## نسخه ۱.۱۷.۰
+
+### تغییرات
+
+- افزودن متد `track:data`  برای رصد  تعامل کاربر
+- افزودن متد `screenView` برای ذخیره رفتار کاربر در هر صفحه با مدت هر `session`
+- افزودن قابلیت `automaticallyTrackScreens` برای رصد **خودکار** صفحه 
+- افزودن قابلیت `sessionTimeout` برای تعیین زمان پایان هر `session` در **background**
+- حل مشکل چک کردن **NULL** در **payload** `RichNotification`
+
+### ارتقا
+
+- تفییر پیش‌فرض `live` برای متد `PublishEvent` به `YES`
+
+>`نکته :` کسانی که در نسخه‌های پایین‌تر از پیش‌فرض **default** متد `PublishEvent` استفاده می‌کردند برای حفظ تنظیمات قبلی‌شان بهتر است اکنون از پیش‌فرض `PublishEvent:data:live`  با  مقدار `NO` برای `live` استفاده کنند.
+
 ## نسخه ۱.۱۶.۲ 
 
 ### تغییرات
