@@ -6,6 +6,7 @@ permalink: windows/setup.html
 prev: installation.html
 ---
 
+
 ## مقداردهی اولیه
 
 
@@ -29,11 +30,14 @@ protected override async void OnLaunched(LaunchActivatedEventArgs e)
 ### محیط چابک
 
 با استفاده از متد زیر می توانید محیط عملیاتی و یا تستی را تعیین کنید.
+
 `نکته` : متد فوق را در کلاس `App.xaml.cs` و در رویداد `OnLaunched` فراخوانی کنید همانند کد زیر :
 
 ``` csharp
 _chabokPush.SetDevelopment(true);
 ```
+
+> `نکته ` : به طور کلی چابک شامل ۲ محیط تستی (سندباکس) و عملیاتی می‌باشد. حساب‌های رایگان چابک (تا ۳۰ هزار کاربر) بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. مقدار `true` برای ‌`devMode` باعث اتصال به محیط سندباکس و مقدار `false` باعث اتصال به محیط عملیاتی ما می‌شود.
 
 ### ثبت کاربر
 
@@ -62,5 +66,3 @@ var channels = new[]
 
 await _chabokPush.Register(userId: "USER_ID", channelNames: channels);
 ```
-
-
