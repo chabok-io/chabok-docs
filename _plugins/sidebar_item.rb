@@ -32,6 +32,10 @@ module Jekyll
           return sidebar_helper(item, 'react-native-bridge')
     end
 
+    def rest_api_sidebar_link(item)
+          return sidebar_helper(item, 'rest-api')
+    end
+
     def sidebar_helper(item, group)
       forceInternal = item["forceInternal"]
 
