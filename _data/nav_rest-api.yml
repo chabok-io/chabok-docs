@@ -1,13 +1,4 @@
 - title: شروع سریع REST API
   items:
-    - id: user
-      title: کاربر
-    - id : messages
-      title: پیام‌ها
-    - id: push
-      title: ارسال پیام چابک
-    - id: verification
-      title: اعتبارسنجی
-    - id: sms
-      title: ارسال پیامک
-    
+    - id: guide
+      title: راهنما
