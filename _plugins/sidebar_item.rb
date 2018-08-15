@@ -16,7 +16,7 @@ module Jekyll
       return sidebar_helper(item, 'windows')
     end
     
-     def rest-api_sidebar_link(item)
+     def rest_api_sidebar_link(item)
       return sidebar_helper(item, 'rest-api')
     end
 
