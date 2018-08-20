@@ -5,6 +5,12 @@ layout: javascript
 permalink: javascript/release-note.html
 next: introducing.html
 ---
+## نسخه ۰.۴.۵
+* بهبود عملکرد تنظیم آیکون **Notification**
+
+## نسخه ۰.۴.۴
+* افزودن قابلیت تنظیم title و آیکون **Notification**
+
 ## نسخه ۰.۴.۳
 * رفع مشکل ارسال پیام توسط متد `publishEvent`
 
