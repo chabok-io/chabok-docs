@@ -14,11 +14,10 @@ next: verification.html
 
 روش اول، استفاده از متد `addListener`: 
 
-این متد را در همه کلاس‌ها می‌توانید اضافه کنید.
+این متد را در هر کلاسی می‌توانید اضافه کنید.
 
 ```java
 client.addListener(this);
-
 ```
 
  پس از آن با کد زیر می‌توانید پیام‌ها را دریافت نمایید.
@@ -27,8 +26,9 @@ client.addListener(this);
 public void onEvent(PushMessage message) {
     Log.d(TAG, "Got push message " + message);
 }
-
 ```
+
+> `نکته:` دقت کنید که کلاس `WakefulBroadcastReceiver` برای **BuildTools ۲۶ به بالا** برداشته شده است، بنابراین پیشنهاد می‌کنیم در آن صورت از همان روش اول یعنی متد `addListener` استفاده کنید.
 
 
 روش دوم، استفاده از کلاس `WakefulBroadcastReceiver`:
