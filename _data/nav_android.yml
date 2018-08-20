@@ -3,7 +3,7 @@
     - id: release-note
       title: لیست تغییرات کتابخانه
     - id: introducing
-      title: مفاهیم اولیه
+      title: معرفی چابک
     - id: required
       title: پیش‌نیازها
     - id: firebase
@@ -27,5 +27,5 @@
     - id: location-tracking
       title: ‌مکان‌یابی
     - id: features
-      title: امکانات‌ چابک
+      title: امکانات‌ دیگر چابک
 
