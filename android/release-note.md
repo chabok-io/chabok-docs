@@ -5,6 +5,16 @@ layout: android
 permalink: android/release-note.html
 next: introducing.html
 ---
+##  نسخه ۰۲.۱۲.۰ - ۱۳۹۷/۰۵/۲۹
+
+### تغییرات
+
+- `Push service` چابک، به دسترسی اجرا سرویس در `background` **اندروید O** احترام می‌گذارد
+- حل مشکل نمایش پوش نوتیفیکیشن در `targetSdkVersion >= 26`
+
+### ارتقا
+- چابک پوش‌نوتفیکیشن دریافتی از **FCM/GCM** را در حالت `foreground` نمایش می‌دهد.
+
 
 ##  نسخه ۲.۱۱.۳ - ۱۳۹۷/۰۵/۱۶
 
