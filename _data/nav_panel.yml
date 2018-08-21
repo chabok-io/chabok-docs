@@ -1,7 +1,5 @@
 - title: شروع سریع panel
   items:
-    - id : introducing
-      title: مفاهیم اولیه
     - id: dashboard
       title: داشبورد
     - id: send
