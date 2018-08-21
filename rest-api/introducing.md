@@ -1,7 +1,7 @@
 ---
 id: introducing
 title: معرفی چابک
-layout: REST API
+layout: rest-api
 permalink: rest-api/introducing.html
 next: guide.html
 ---
