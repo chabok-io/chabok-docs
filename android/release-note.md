@@ -5,11 +5,11 @@ layout: android
 permalink: android/release-note.html
 next: introducing.html
 ---
-##  نسخه ۰۲.۱۲.۰ - ۱۳۹۷/۰۵/۲۹
+##  نسخه ۲.۱۲.۰ - ۱۳۹۷/۰۵/۲۹
 
 ### تغییرات
 
-- `Push service` چابک، به دسترسی اجرا سرویس در `background` **اندروید O** احترام می‌گذارد
+- از این پس `push service` چابک، از اجازه اجرا در `Background` **اندروید O** پیروی می کند.
 - حل مشکل نمایش پوش نوتیفیکیشن در `targetSdkVersion >= 26`
 
 ### ارتقا
