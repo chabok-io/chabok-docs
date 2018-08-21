@@ -1,7 +1,7 @@
 ---
 id: introducing
 title: معرفی چابک
-layout: android
+layout: panel
 permalink: panel/introducing.html
 next: dashboard.html
 ---
