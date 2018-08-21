@@ -55,7 +55,7 @@
 
 - name: Panel
   image: panel.svg
-  document: /panel/dashboard.html
+  document: /panel/introducing.html
   demo:
   starter:
   issue:
