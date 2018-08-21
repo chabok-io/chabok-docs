@@ -48,14 +48,14 @@
 
 - name: REST API
   image: api.svg
-  document: /rest-api/guide.html
+  document: /rest-api/introducing.html
   demo: http://api.doc.chabokpush.com
   starter:
   issue: https://github.com/chabokpush/chabok-php-demo/issues
 
 - name: Panel
   image: panel.svg
-  document: /panel/introducing.html
+  document: /panel/dashboard.html
   demo:
   starter:
   issue:
