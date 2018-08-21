@@ -3,7 +3,7 @@
     - id: release-note
       title: لیست تغییرات کتابخانه
     - id : introducing
-      title: مفاهیم اولیه
+      title: معرفی چابک
     - id: required
       title: پیش‌نیازها
     - id: installation
@@ -17,4 +17,4 @@
     - id: events
       title: مدیریت رویدادها
     - id: features
-      title: امکانات‌ چابک
+      title: امکانات‌ دیگر چابک
