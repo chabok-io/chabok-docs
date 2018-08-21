@@ -9,6 +9,30 @@ next: verification.html
 
 ### دریافت پیام چابک
 
+شما برای دریافت پیام چابک، از ۲ روش می‌توانید استفاده کنید. روش اول، استفاده از متد `addListener` و روش دوم استفاده از کلاس `WakefulBroadcastReceiver` است.
+
+
+روش اول، استفاده از متد `addListener`: 
+
+این متد را در هر کلاسی می‌توانید اضافه کنید.
+
+```java
+client.addListener(this);
+```
+
+ پس از آن با کد زیر می‌توانید پیام‌ها را دریافت نمایید.
+
+```java
+public void onEvent(PushMessage message) {
+    Log.d(TAG, "Got push message " + message);
+}
+```
+
+> `نکته:` دقت کنید که کلاس `WakefulBroadcastReceiver` برای **BuildTools ۲۶ به بالا** برداشته شده است، بنابراین پیشنهاد می‌کنیم در آن صورت از همان روش اول یعنی متد `addListener` استفاده کنید.
+
+
+روش دوم، استفاده از کلاس `WakefulBroadcastReceiver`:
+
 شما می‌توانید از طریق یک رسیور پیام‌های جدید چابک را دریافت نمایید. برای این منظور کلاسی با همان نامی که در `manifest` استفاده کردید مثل `PushMessageReceiver` ایجاد نمایید که فرزند `WakefulBroadcastReceiver` باشد. 
 
 ```java
