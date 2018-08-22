@@ -5,6 +5,12 @@ layout: android
 permalink: android/release-note.html
 next: introducing.html
 ---
+##  نسخه ۲.۱۲.۱ - ۱۳۹۷/۰۵/۳۰
+
+### تغییرات
+
+- حل مشکل نمایش نوتیفیکیشن در اندروید 8.1 برای `buildToolsVersion>=26`
+
 ##  نسخه ۲.۱۲.۰ - ۱۳۹۷/۰۵/۲۹
 
 ### تغییرات
