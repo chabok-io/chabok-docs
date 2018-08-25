@@ -1,6 +1,6 @@
 ---
 id: usecase-push-notification
-title:  موارد استفاده: ارسال پوش
+title:  موارد استفاده- ارسال پوش
 layout: panel
 permalink: panel/usecase-push-notification.html
 ---
