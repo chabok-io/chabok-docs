@@ -1,8 +1,8 @@
 ---
-id: usecase-push-notification
+id: usecase
 title:  موارد استفاده: ارسال پوش
 layout: panel
-permalink: panel/usecase-push-notification.html
+permalink: panel/usecase.html
 ---
 
 مورد استفاده: **بازگشت کاربران**
