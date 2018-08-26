@@ -19,7 +19,7 @@ next: introducing.html
 * غیرفعال سازی `register` خودکار توسط چابک در هنگام بارگذاری صفحه.
  > نکته: فرایند **register** مجدد کاربر در هنگام بارگذاری صفحه باید توسط شما و با به کارگیری از متد `isRegistered` انجام شود.
  نمونه:
- ```javascript
+```javascript
 if (chabok.isRegistered()) {
     chabok.register(chabok.getUserId())
 } else {
