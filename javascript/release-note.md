@@ -6,7 +6,7 @@ permalink: javascript/release-note.html
 next: introducing.html
 ---
 
-## نسخه ۱.۰.۰
+## نسخه ۱.۰.۰ - ۱۳۹۷/۰۶/۰۳
 ### تغییرات 
 * افزودن متد `track` برای رصد تعامل کاربر.
 * حل مشکل مقدار بازگشتی در متد `isRegistered`.
