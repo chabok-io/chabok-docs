@@ -3,7 +3,7 @@
   document: /android/introducing.html
   demo: https://github.com/chabokpush/chabok-demo-android
   starter: https://github.com/chabokpush/chabok-starter-android
-  issue: https://github.com/chabokpush/chabok-demo-android/issues
+  issue: https://github.com/chabokpush/chabok-client-android/issues
 
 - name: iOS
   image: apple.svg
@@ -17,6 +17,7 @@
   document: /windows/introducing.html
   demo: https://github.com/chabokpush/chabok-demo-wp
   starter:
+  issue: https://github.com/chabokpush/chabok-client-wp/issues
 
 - name: React Native (Pure JS)
   image: react.svg
@@ -58,4 +59,4 @@
   document: /panel/introducing.html
   demo:
   starter:
-  issue:
+  issue: https://github.com/chabokpush/chabok-panel/issues
