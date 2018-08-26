@@ -7,9 +7,6 @@ prev: gradle-setup.html
 next: rich_notification.html
 ---
 
-
-
-
 ### تغییرات لازم در فایل manifest
 
 ۱. کدهای زیر را به فایل `AndroidManifest.xml` پروژه اضافه کنید:
@@ -200,7 +197,6 @@ chabok.register(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
 برای اینکه از ثبت شدن کاربرتان اطمینان یابید، می‌توانید از رویداد زیر استفاده کنید. علاوه بر آن، این رویداد داده‌هایی مانند **نصب** و **بازدید** را در اختیار شما قرار می‌دهد.
 
 ```java
-
  public void onEvent(AppState state){
         switch (state) {
             case REGISTERED:
@@ -216,7 +212,6 @@ chabok.register(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
                 Log.d(TAG, "Protected grant needed");
         }
     }
-
 ```
 
 #### ۳- متد `isRegistered`
@@ -250,4 +245,3 @@ public void onTerminate() {
 }
 
 ```
-
