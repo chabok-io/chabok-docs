@@ -28,10 +28,11 @@ public void onEvent(PushMessage message) {
 }
 ```
 
-> `نکته:` دقت کنید که کلاس `WakefulBroadcastReceiver` برای **BuildTools ۲۶ به بالا** برداشته شده است، بنابراین پیشنهاد می‌کنیم در آن صورت از همان روش اول یعنی متد `addListener` استفاده کنید.
-
 
 روش دوم، استفاده از کلاس `WakefulBroadcastReceiver`:
+
+> `نکته:` دقت کنید که کلاس `WakefulBroadcastReceiver` برای **BuildTools ۲۶ به بالا** برداشته شده است، بنابراین پیشنهاد می‌کنیم در آن صورت از همان روش اول یعنی متد `addListener` استفاده کنید.
+
 
 شما می‌توانید از طریق یک رسیور پیام‌های جدید چابک را دریافت نمایید. برای این منظور کلاسی با همان نامی که در `manifest` استفاده کردید مثل `PushMessageReceiver` ایجاد نمایید که فرزند `WakefulBroadcastReceiver` باشد. 
 
