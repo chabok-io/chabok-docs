@@ -7,9 +7,6 @@ prev: gradle-setup.html
 next: rich_notification.html
 ---
 
-
-
-
 ### تغییرات لازم در فایل manifest
 
 ۱. کدهای زیر را به فایل `AndroidManifest.xml` پروژه اضافه کنید:
@@ -147,7 +144,7 @@ private AdpPushClient chabok = null;
 
 ### توضیح متدها
 
-۱. متد `setDevelopment`
+#### ۱- متد `setDevelopment` 
 
 مشخص می‌کند که برنامه به محیط [تستی](https://sandbox.push.adpdigital.com) چابک متصل شود یا به محیط [عملیاتی](https://panel.push.adpdigital.com). این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
 
@@ -160,8 +157,7 @@ private AdpPushClient chabok = null;
 chabok.setDevelopment(DEV_MODE);
 ```
 
-
-۲. متد `register`
+#### ۲- متد `register`
 
 با استفاده از این متد شما می‌توانید کاربر را با شناسه کاربری وی روی سرور چابک ثبت‌نام نمایید. شناسه کاربر می تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. شماره موبایل، کدملی، شماره‌حساب، ایمیل  و یا حتی یک کد UUID مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند.  ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود.
 
@@ -196,8 +192,29 @@ chabok.register(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
 > را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `getUserId`
 > چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.
 
+#### رویداد تایید ثبت کاربر
 
-۳. متد `isRegistered`
+برای اینکه از ثبت شدن کاربرتان اطمینان یابید، می‌توانید از رویداد زیر استفاده کنید. علاوه بر آن، این رویداد داده‌هایی مانند **نصب** و **بازدید** را در اختیار شما قرار می‌دهد.
+
+```java
+ public void onEvent(AppState state){
+        switch (state) {
+            case REGISTERED:
+                Log.d(TAG, "Registered");
+                break;
+            case INSTALL:
+                Log.d(TAG, "Install");
+                break;
+            case LAUNCH:
+                Log.d(TAG, "Launch");
+                break;
+            default:
+                Log.d(TAG, "Protected grant needed");
+        }
+    }
+```
+
+#### ۳- متد `isRegistered`
 
 به کاربر این امکان را می‌دهد که بررسی کند آیا عملیات ثبت‌نام انجام شده است یا خیر.
 
@@ -206,7 +223,7 @@ chabok.register(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
 chabok.isRegistered();
 ```
 
-۴. متد `unregister`
+#### ۴- متد `unregister`
 
 تمامی اطلاعات مربوط به کاربر جاری را حذف می‌نماید.
 
@@ -215,7 +232,7 @@ chabok.isRegistered();
 chabok.unregister();
 ```
 
-۵. متد `dismiss`
+#### ۵- متد `dismiss`
 
 در متد `onTerminate` کلاس اپلیکیشن (یا اگر بجای کلاس اپلیکیشن از یک اکتیویتی برای مدیریت کلاینت استفاده می کنید در متد `onDestroy`) که در واقع آخرین فراخوانی در چرخه حیات این کلاس است، متد `dismiss` از کلاینت چابک را فراخوانی نمایید تا منابع در اختیار آزاد شوند. واضح است بعد از فراخوانی این متد دیگر نمی توان از نمونه جاری کلاینت استفاده کرد و باید دوباره نمونه‌سازی کنید.
 
@@ -228,4 +245,3 @@ public void onTerminate() {
 }
 
 ```
-
