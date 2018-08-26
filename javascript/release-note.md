@@ -5,6 +5,29 @@ layout: javascript
 permalink: javascript/release-note.html
 next: introducing.html
 ---
+
+## نسخه ۱.۰.۰ - ۱۳۹۷/۰۶/۰۳
+### تغییرات 
+* افزودن متد `track` برای رصد تعامل کاربر.
+* حل مشکل مقدار بازگشتی در متد `isRegistered`.
+* حل مشکل عدم **resolve** شدن پرامیس در متد `register`.
+* عدم نمایش پیام‌های **silent** درون برنامه‌ای چابک.
+
+### ارتقا
+* تغییر مقدار پیش‌فرض `live` برای متد `publishEvent` به `true`.
+ > نکته : اگر در نسخه‌های پایین‌تر از پیش‌فرض `default` متد `publishEvent` استفاده می‌کردید برای حفظ تنظیمات قبلی‌، بهتر است اکنون از پیش‌فرض با مقدار `false` برای `live` استفاده کنید.
+* غیرفعال سازی `register` خودکار توسط چابک در هنگام بارگذاری صفحه.
+ > نکته: فرایند **register** مجدد کاربر در هنگام بارگذاری صفحه باید توسط شما و با به کارگیری از متد `isRegistered` انجام شود.
+
+ نمونه:
+```javascript
+if (chabok.isRegistered()) {
+    chabok.register(chabok.getUserId())
+} else {
+    chabok.register('<userId>')
+}
+```
+
 ## نسخه ۰.۴.۵
 * بهبود عملکرد تنظیم آیکون **Notification**
 
