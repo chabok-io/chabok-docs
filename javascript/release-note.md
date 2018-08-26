@@ -23,7 +23,7 @@ next: introducing.html
 if (chabok.isRegistered()) {
     chabok.register(chabok.getUserId())
 } else {
-    chabok.register('your-userId')
+    chabok.register('<userId>')
 }
 ```
 ## نسخه ۰.۴.۵
