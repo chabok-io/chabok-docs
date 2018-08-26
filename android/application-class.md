@@ -122,8 +122,8 @@ private AdpPushClient chabok = null;
                 "SDK_USERNAME",
                 "SDK_PASSWORD"
                 );
-            chabok.setDevelopment(DEV_MODE);
-            chabok.register(USER_ID);
+            chabok.setDevelopment("DEV_MODE");
+            chabok.register("USER_ID");
         }
     }
     
