@@ -42,7 +42,7 @@ next: rich_notification.html
 
 ۲.  کلاس رسیور `PushMessageReceiver`  که نحوه ایجاد آن در بخش [پیام چابک](chabok-messaging.html) توضیح داده شده را نیز به پروژه خود اضافه نمایید.
 
-> `نکته`:  دقت کنید که کلاس `PushMessageReceiver` برای **BuildTools ۲۶ به بالا** برداشته شده‌است، در آن صورت می‌توانید از متد `addListener` برای دریافت پیام‌ها استفاده کنید.
+> `نکته`:  دقت کنید که کلاس `PushMessageReceiver` برای **BuildTools ۲۶ به بالا** برداشته شده‌است، در آن صورت باید از متد `addListener` برای دریافت پیام‌ها استفاده کنید و دیگر نیازی به اضافه نمودن قطعه کد زیر ندارید.
 
 
 ```markup
@@ -122,8 +122,8 @@ private AdpPushClient chabok = null;
                 "SDK_USERNAME",
                 "SDK_PASSWORD"
                 );
-            chabok.setDevelopment(DEV_MODE);
-            chabok.register(USER_ID);
+            chabok.setDevelopment("DEV_MODE");
+            chabok.register("USER_ID");
         }
     }
     
