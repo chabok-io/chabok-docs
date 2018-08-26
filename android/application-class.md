@@ -42,6 +42,9 @@ next: rich_notification.html
 
 ۲.  کلاس رسیور `PushMessageReceiver`  که نحوه ایجاد آن در بخش [پیام چابک](chabok-messaging.html) توضیح داده شده را نیز به پروژه خود اضافه نمایید.
 
+> `نکته`:  دقت کنید که کلاس `PushMessageReceiver` برای **BuildTools ۲۶ به بالا** برداشته شده‌است، در آن صورت باید از متد `addListener` برای دریافت پیام‌ها استفاده کنید و دیگر نیازی به اضافه نمودن قطعه کد زیر ندارید.
+
+
 ```markup
 
 <receiver android:name="PushMessageReceiver">
@@ -79,19 +82,19 @@ next: rich_notification.html
 private AdpPushClient chabok = AdpPushClient.init(
     getApplicationContext(),
     YOUR_MAIN_ACTIVITY_CLASS.class,
-    YOUR_APP_ID,
-    YOUR_API_KEY,
-    SDK_USERNAME,
-    SDK_PASSWORD
+    "YOUR_APP_ID",
+    "YOUR_API_KEY",
+    "SDK_USERNAME",
+    "SDK_PASSWORD"
 ); 
 
 ```
 
 #### پارامترها
 
-با استفاده از متد init یک نمونه از AdpPushClient مقدار دهی اولیه می شود. در این متد بجای پارامتر‌های `YOUR_APP_ID`, `YOUR_API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](required.html) توضیح داده شده است.
+با استفاده از متد `init` یک نمونه از `AdpPushClient` مقدار دهی اولیه می شود. در این متد بجای پارامتر‌های `YOUR_APP_ID`, `YOUR_API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](required.html) توضیح داده شده است.
 
-> `نکته`: ترکیب APP_ID/SENDERID به عنوان YOUR_APP_ID مورد استفاده قرار می‌گیرد.
+> `نکته`: ترکیب `APP_ID/SENDERID` به عنوان `YOUR_APP_ID` مورد استفاده قرار می‌گیرد.
 
 به عنوان مثال به کد زیر توجه کنید که همیشه یک سینگلتن از کلاس `AdpPushClient` را مدیریت می‌کند. 
 در کد زیر متد `getPushClient` برای نمونه گیری و تنظیمات مربوط به `AdpPushClient` تعریف شده است، شما کافیست بجای `YOUR_MAIN_ACTIVITY_CLASS` نام اکتیویتی اصلی (چابک به طور پیش‌فرض بعد از کلیک شدن روی نوتیفیکیشن، این اکتیویتی را باز می‌کند) خود را قرار دهید.
@@ -114,13 +117,13 @@ private AdpPushClient chabok = null;
             chabok = AdpPushClient.init(
                 getApplicationContext(),
                 YOUR_MAIN_ACTIVITY_CLASS.class,
-                YOUR_APP_ID,
-                YOUR_API_KEY,
-                SDK_USERNAME,
-                SDK_PASSWORD
+                "YOUR_APP_ID",
+                "YOUR_API_KEY",
+                "SDK_USERNAME",
+                "SDK_PASSWORD"
                 );
-            chabok.setDevelopment(DEV_MODE);
-            chabok.register(USER_ID);
+            chabok.setDevelopment("DEV_MODE");
+            chabok.register("USER_ID");
         }
     }
     
@@ -151,10 +154,10 @@ private AdpPushClient chabok = null;
 > `نکته`:  مقدار پیش‌فرض  برابر `true` در نظر گرفته شده است.
 
 
-> `نکته ` : به طور کلی چابک شامل ۲ محیط سندباکس و عملیاتی می‌باشد. حساب‌های رایگان چابک (تا ۳۰ هزار کاربر) بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. مقدار `true` برای ‌`devMode` باعث اتصال به محیط سندباکس و مقدار `false` باعث اتصال به محیط عملیاتی ما می‌شود.
+> `نکته ` : به طور کلی چابک شامل ۲ محیط سندباکس و عملیاتی می‌باشد. حساب‌های رایگان چابک بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. مقدار `true` برای ‌`devMode` باعث اتصال به محیط سندباکس و مقدار `false` باعث اتصال به محیط عملیاتی ما می‌شود.
 
 ```java
-chabok.setDevelopment(DEV_MODE);
+chabok.setDevelopment("DEV_MODE");
 ```
 
 #### ۲- متد `register`
@@ -165,7 +168,7 @@ chabok.setDevelopment(DEV_MODE);
 امضای اول که تنها شناسه کاربر را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام میکند.
 
 ```java
-chabok.register(USER_ID);
+chabok.register("USER_ID");
 ```
 
 کاراکترهای ‍`#,+,*,\,/` و فاصله در `USER_ID` مجاز نیستند، همچنین طول این رشته نباید کمتر از ۳ و بیشتر از ۳۲ کاراکتر باشد.
@@ -184,7 +187,7 @@ chabok.register(USER_ID);
 امضای دوم که علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی که کاربر باید روی آن‌ها عضو شود را نیز دریافت می کند. با ثبت نام در این کانال‌ها کاربر پیام‌های ارسالی روی آن‌ها را دریافت خواهد نمود.
 
 ```java
-chabok.register(USER_ID, new String[]{CHANNEL_NAME1, CHANNEL_NAME2, ...});
+chabok.register("USER_ID", new String[]{"CHANNEL_NAME1", "CHANNEL_NAME2", ...});
 ```
 
 > `نکته امنیتی`: مقدار `USER_ID` را هرگز به صورت خام در `SharedPreferences`
