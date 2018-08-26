@@ -26,6 +26,7 @@ if (chabok.isRegistered()) {
     chabok.register('<userId>')
 }
 ```
+
 ## نسخه ۰.۴.۵
 * بهبود عملکرد تنظیم آیکون **Notification**
 
