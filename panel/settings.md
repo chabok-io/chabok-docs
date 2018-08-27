@@ -45,7 +45,7 @@ prev: inbox.html
 
 > `نکته ` : قابلیت ایمپورت فقط مخصوص دستگاه‌های **android** و **ios** می‌باشد.
 
-> `نکته ` : برای ایمپورت موفقیت‌آمیز فایل از **وان‌سیگنال** به چابک، [ مستندات آن را با دقت مطالعه فرمایید](https://documentation.onesignal.com/reference#csv-export).
+> `نکته ` : برای ایمپورت موفقیت‌آمیز فایل از **وان‌سیگنال** به چابک، حتما [ مستندات آن را با دقت مطالعه فرمایید](https://documentation.onesignal.com/reference#csv-export).
 
 > `نکته ` : در ایمپورت از وان سیگنال دقت داشته باشید که فیلد‌های `id` ، `identifier` ، `device_type` ، `device_model` و `session_count` **اجباری** و  فیلد‌های `game_version` ، `created_at` ، `last_active` ، `device_os` و `tags`  **اختیاری** می‌باشند.
 
