@@ -14,7 +14,7 @@ next: gradle-setup.html
 ![عکس مربوطه](http://uupload.ir/files/189r_console.png)
 
 
-روی نام پروژه خود کلیک کرده و سپس از منوی کناری با کلیک روی آیکون ستینگ، گزینه Projet setting را انتخاب نمایید.
+روی نام پروژه خود کلیک کرده و سپس از منوی کناری با کلیک روی آیکون ستینگ، گزینه Project settings را انتخاب نمایید.
 
 ![عکس مربوطه](http://uupload.ir/files/4zw7_screen_shot_2017-12-30_at_11.49.18_am.png)
 

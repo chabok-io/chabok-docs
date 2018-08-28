@@ -3,7 +3,7 @@ id: location-config
 title: تنظیمات مکان‌یابی
 layout: ios 
 permalink: ios/location-config.html 
-prev: events.html
+prev: event-tracking.html
 next: location-tracking.html
 ---
 ### مجوز های مورد نیاز موقعیت مکانی
