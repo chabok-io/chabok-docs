@@ -4,7 +4,7 @@ title: مدیریت رویدادها
 layout: ios
 permalink: ios/events.html
 prev: notification.html
-next: location-config.html
+next: event-tracking.html
 ---
 
 ### انتشار رویداد به همراه داده

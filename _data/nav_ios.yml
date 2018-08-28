@@ -22,9 +22,13 @@
       title: مدیریت اعلان‌ها
     - id: events
       title: مدیریت رویدادها
+    - id: event-tracking
+      title: ‌رصد رویدادها
     - id: location-config
       title: تنظیمات مکان‌یابی
     - id: location-tracking
       title: مکان‌یابی
     - id: features
       title: امکانات‌ دیگر چابک
+
+
