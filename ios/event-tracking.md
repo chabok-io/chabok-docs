@@ -22,7 +22,7 @@ next: location-config.html
 
 
 ```objectivec
-//ObjectiveC
+//Objective-C
 [self.manager track:@"YOUR_TRACK_NAME" data:@{@"KEY":@"VALUE"}];
 ```
 ```swift
@@ -39,7 +39,7 @@ self.manager.track("YOUR_TRACK_NAME", data: ["KEY":"VALUE"])
 
 نمونه:
 ```objectivec
-//ObjectiveC
+//Objective-C
 [self.manager track:@"purchase-clothing" data:@{@"clothes_id":@"35147652"}];
 ```
 ```swift
