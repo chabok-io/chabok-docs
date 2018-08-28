@@ -1,13 +1,11 @@
 ---
-id: event-handling
+id: event-tracking
 title: رصد رویدادها
 layout: android
 permalink: android/event-tracking.html
 prev: event-handling.html
 next: location-config.html
 ---
-
-
 
 ## رصد رویداد (Event Tracking)
 
