@@ -1,6 +1,6 @@
 ---
 id: event-tracking
-title: مدیریت رویدادها
+title: رصد رویدادها
 layout: ios
 permalink: ios/event-tracking.html
 prev: events.html
