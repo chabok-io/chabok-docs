@@ -21,9 +21,13 @@ next: location-config.html
 برای رصد رویداد‌ها باید از متد `tracking` استفاده کنید. این متد دارای ورودی **نام** و **داده** رویداد‌ (`name`,`data`) می‌باشد.
 
 
-```java
-
-
+```objective-c
+//Objective-C
+[self.manager track:@"YOUR_TRACK_NAME" data:@{@"KEY":@"VALUE"}];
+```
+```swift
+//Swift
+self.manager.track("YOUR_TRACK_NAME", data: ["KEY":"VALUE"])
 ```
 
 > نکته : مقدار `data` در متد `tracking` یک داده مربوط به رویداد‌ می‌تواند باشد. شما این مقدار را می‌توانید به عنوان دیکشنری همراه رویداد‌ در نظر بگیرید.
@@ -32,6 +36,17 @@ next: location-config.html
 پس از اعمال کد بالا، رویداد با هر بار رخ دادن به همراه زمان وقوع ذخیره خواهد شد.
 
  به عنوان مثال می‌خواهید رویداد‌ **خرید‌های پوشاک** از فروشگاه اینترنتی خودتان را رصد کنید. برای ثبت این رویداد کد زیر را با الگوی بالا وارد می‌نماییم.
+
+نمونه:
+```objective-c
+//Objective-C
+[self.manager track:@"purchase-clothing" data:@{@"clothes_id":@"35147652"}];
+```
+```swift
+//Swift
+self.manager.track("purchase-clothing", data: ["clothes_id":"35147652"])
+```
+
 
 
 ### ارسال پیام براساس رویداد
