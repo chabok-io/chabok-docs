@@ -1,15 +1,12 @@
 ---
 id: event-tracking
-title: رصد رویدادها
+title: رصد رویدادها (Event Tracking)
 layout: ios
 permalink: ios/event-tracking.html
 prev: events.html
 next: location-config.html
 ---
 
-
-
-## رصد رویداد (Event Tracking)
 
 شما می‌توانید برای **درک الگوی استفاده از اپلیکیشنتان** و شناخت کاربرانتان، **رفتار آن‌ها را به طور لحظه‌ای رصد کنید** و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را **دسته‌بندی کنید** و **پیام بفرستید**.
 
@@ -41,11 +38,11 @@ self.manager.track("YOUR_TRACK_NAME", data: ["KEY":"VALUE"])
 نمونه:
 ```objectivec
 //Objective-C
-[self.manager track:@"purchase-clothing" data:@{@"clothes_id":@"35147652"}];
+[self.manager track:@"purchase-clothing" data:@{@"clothes_id":@(35147652)}];
 ```
 ```swift
 //Swift
-self.manager.track("purchase-clothing", data: ["clothes_id":"35147652"])
+self.manager.track("purchase-clothing", data: ["clothes_id":35147652])
 ```
 
 
