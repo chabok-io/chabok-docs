@@ -17,13 +17,13 @@ prev: guide.html
 
 برای این کار فقط به `userId` و **نام تگی** است که می‌خواهید اضافه کنید، دارید. همان طور که بالا هم گفتیم تگ ما قرار است که جنسیت مرد باشد برای همین نام تگ را **male** می گذاریم. همینطور `userId` کاربر ما هم **starter** می باشد. 
 
-```curl
+```bash
 curl -X GET "https://sandbox.push.adpdigital.com/api/installations/addTag/starter/male?access_token=*************************" -H "accept: application/json"
 ```
 
 #### پاسخ
 
-```
+```json
 {
   "count": 2
 }
@@ -44,13 +44,13 @@ curl -X GET "https://sandbox.push.adpdigital.com/api/installations/addTag/starte
 
 در اینجا هم مانند مثال قبل فقط به `userId` و **نام‌های تگی** که می‌خواهید اضافه کنید، دارید. این بار تگ‌های **کاربر طلایی** و **نوجوان** را به همان کاربر**starter** اضافه می‌کنیم. 
 
-```curl
+```bash
 curl -X POST "https://sandbox.push.adpdigital.com/api/installations/addTags?access_token=*************************" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"userId\": \"starter\", \"tags\": [ \"golden\", \"teenage\" ]}"
 ```
 
 #### پاسخ
 
-```
+```json
 {
   "count": 2
 }
