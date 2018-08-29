@@ -22,6 +22,8 @@
       title: مدیریت اعلان‌ها
     - id: event-handling
       title: ‌مدیریت رویدادها
+    - id: event-tracking
+      title: ‌رصد رویدادها
     - id: location-config
       title: ‌تنظیمات مکان‌یابی
     - id: location-tracking
