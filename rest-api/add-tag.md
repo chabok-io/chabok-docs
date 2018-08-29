@@ -18,7 +18,7 @@ prev: guide.html
 
 #### درخواست
 
-برای این کار فقط به `userId` و **نام تگی** است که می‌خواهید اضافه کنید، دارید. به عنوان مثال، تگ ما قرار است که جنسیت مرد باشد برای همین نام تگ را **male** می گذاریم. همینطور `userId` کاربر ما هم **starter** می باشد. 
+برای این کار فقط نیاز به `userId` و **نام تگی** است که می‌خواهید اضافه کنید، دارید. به عنوان مثال، تگ ما قرار است که جنسیت مرد باشد، برای همین نام تگ را **male** می گذاریم. همینطور `userId` کاربر ما هم **starter** می باشد. 
 ```bash
 curl -X GET \
 "https://sandbox.push.adpdigital.com/api/installations/addTag/starter/male?access_token=<ACCESS_TOKEN>" \
@@ -37,7 +37,10 @@ curl -X GET \
 ```
 حالا می‌توانید در بخش **مشترکین قسمت جزییات کاربر** تگ خود را مشاهده کنید.
 
+
 ![عکس مربوطه](http://uupload.ir/files/jdf5_tag.png)
+
+> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/installation/installation_addTag) مراجعه فرمایید.
 
 
 ### افزودن چند تگ به تمام دستگاه‌های یک کاربر
@@ -72,3 +75,6 @@ curl -X POST/
 حالا می‌توانید در بخش **مشترکین قسمت جزییات کاربر** تگ خود را مشاهده کنید.
 
 ![عکس مربوطه](http://uupload.ir/files/so9x_tag2.png)
+
+> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/installation/installation_addTags) مراجعه فرمایید.
+
