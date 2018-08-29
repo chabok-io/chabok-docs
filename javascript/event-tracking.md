@@ -1,5 +1,5 @@
 ---
-id: events
+id: event-tracking
 title: رصد رویدادها (Event Tracking)
 layout: javascript
 permalink: javascript/event-tracking.html
