@@ -1,14 +1,12 @@
 ---
 id: event-tracking
-title: رصد رویدادها
+title: رصد رویدادها (Event Tracking)
 layout: ios
 permalink: ios/event-tracking.html
 prev: events.html
 next: location-config.html
 ---
 
-
-## رصد رویداد (Event Tracking)
 
 شما می‌توانید برای **درک الگوی استفاده از اپلیکیشنتان** و شناخت کاربرانتان، **رفتار آن‌ها را به طور لحظه‌ای رصد کنید** و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را **دسته‌بندی کنید** و **پیام بفرستید**.
 
@@ -30,7 +28,7 @@ next: location-config.html
 self.manager.track("YOUR_TRACK_NAME", data: ["KEY":"VALUE"])
 ```
 
-> نکته : مقدار `data` در متد `track` یک داده مربوط به رویداد‌ می‌تواند باشد. شما این مقدار را می‌توانید به عنوان دیکشنری همراه رویداد‌ در نظر بگیرید.
+> نکته : مقدار `data` در متد `track` یک داده مربوط به رویداد‌ می‌تواند باشد. شما این مقدار را می‌توانید به عنوان `NSDictionary` همراه رویداد‌ در نظر بگیرید.
 
 
 پس از اعمال کد بالا، رویداد با هر بار رخ دادن به همراه زمان وقوع ذخیره خواهد شد.
@@ -40,11 +38,11 @@ self.manager.track("YOUR_TRACK_NAME", data: ["KEY":"VALUE"])
 نمونه:
 ```objectivec
 //Objective-C
-[self.manager track:@"purchase-clothing" data:@{@"clothes_id":@"35147652"}];
+[self.manager track:@"purchase-clothing" data:@{@"clothes_id":@(35147652)}];
 ```
 ```swift
 //Swift
-self.manager.track("purchase-clothing", data: ["clothes_id":"35147652"])
+self.manager.track("purchase-clothing", data: ["clothes_id":35147652])
 ```
 
 

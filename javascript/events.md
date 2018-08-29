@@ -4,7 +4,7 @@ title: مدیریت رویدادها
 layout: javascript
 permalink: javascript/events.html
 prev: verification.html
-next: features.html
+next: events-tracking.html
 ---
 
 ### عضویت بر روی یک رویداد
