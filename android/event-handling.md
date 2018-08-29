@@ -4,7 +4,7 @@ title: مدیریت رویدادها
 layout: android
 permalink: android/event-handling.html
 prev: notification-handling.html
-next: location-config.html
+next: event-tracking.html
 ---
 
 ### انتشار رویداد با داده‌های دلخواه
