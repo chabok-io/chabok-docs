@@ -57,6 +57,6 @@
 - name: Panel
   image: panel.svg
   document: /panel/introducing.html
-  demo:
+  demo: https://sandbox.push.adpdigital.com/front/dashboard/Analytical?token=ff7cb06dbcc4e46ff6c6f0d0e943d8fb8180efff-%7C-5a07f2d46fd7d7f040c6c766
   starter:
   issue: https://github.com/chabokpush/chabok-panel/issues
