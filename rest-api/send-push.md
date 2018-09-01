@@ -4,6 +4,7 @@ title: ارسال‌ پوش
 layout: rest-api
 permalink: rest-api/send-push.html
 prev: add-tag.html
+
 ---
 
 ### ارسال پوش به یک کاربر
@@ -22,7 +23,7 @@ prev: add-tag.html
 curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" -H "Content-Type: application/json" \
--d "{ \"user\": \"Test\", \"channel\": \"*\", \"content\": \"پرواز شما دچار نیم ساعت تاخیر شده است.\", \"useAsAlert\": true}"
+-d "{ \"user\": \"Test\", \"content\": \"پرواز شما دچار نیم ساعت تاخیر شده است.\", \"useAsAlert\": true}"
 ```
 
 #### پاسخ
@@ -41,11 +42,11 @@ curl -X POST \
 > `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/push/push_toUsers) مراجعه فرمایید.
 
 
-### ارسال پوش به دسته‌ای از دستگاه‌های کاربران
+### ارسال پوش به دسته‌ای از کاربران (Segmented Push)
 
 در این قسمت به جای ارسال پیام به **یک کاربر** می‌خواهیم به **دسته‌ای از کاربران** ارسال کنیم.
 
-نکته : دقت داشته باشید که این عمل با متد `POST` انجام می‌شود.
+> `نکته :` دقت داشته باشید که این عمل با متد `POST` انجام می‌شود.
 
 #### درخواست
 
@@ -53,11 +54,11 @@ curl -X POST \
 
 > `نکته :` از پارامتر‌هایی که در این عمل استفاده می‌شوند، `target` و `content` (ویژگی‌های دسته و محتوای پیام) **الزامی** هستند و بدون آن‌ها درخواست شما صورت نمی‌گیرد.
 
-> `نکته :` در قسمت سگمنت فیلترهای پیش‌فرض چابک ‍‍‍‍‍‍‍‍‍‍‍‍‍`installDate` (اولین بازدید یا نصب) ، `launchTime` (آخرین بازدید) ،‌ `launchCount` (تعداد بازدید) ، `clientVersion` (نسخه برنامه) ،‌ `osVersion` (نسخه سیستم‌عامل) ، `deviceType` (نوع دستگاه) ، `tags` (تگ‌ها) ، `nearBy` (موقعیت مکانی) می‌باشند. درصورت اضافه کردن سگمنت خودتان هم فقط کافیه نام آن را وارد نمایید.
+> `نکته :` در قسمت سگمنت، فیلترهای پیش‌فرض چابک ‍‍‍‍‍‍‍‍‍‍‍‍‍`installDate` (اولین بازدید یا نصب) ، `launchTime` (آخرین بازدید) ،‌ `launchCount` (تعداد بازدید) ، `clientVersion` (نسخه برنامه) ،‌ `osVersion` (نسخه سیستم‌عامل) ، `deviceType` (نوع دستگاه) ، `tags` (تگ‌ها) ، `nearBy` (موقعیت مکانی) می‌باشند. درصورت اضافه کردن سگمنت از سوی خودتان هم فقط کافی‌‌ست نام آن را وارد نمایید.
 
 
-```curl
-url -X POST \
+```bash
+curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/byQuery?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" -H "Content-Type: application/json" \
 -d "{\t\"target\": {\t\t\"deviceType\": {\"inq\": [\"android\", \"ios\"]}\t},\t\"content\": \"سلام به اپلیکیشن ما خوش‌آمدید. برای خرید اولتان از اپلیکیشن می‌توانید از کد تخفیف 10٪ استفاده کنید. کد تخفیف: NewApp10 \",\t\"useAsAlert\": true}"
