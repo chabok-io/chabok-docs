@@ -83,20 +83,23 @@ curl -X POST \
 > `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/push/push_byQuery) مراجعه فرمایید.
 
 
+
 ### پارامترها
 
 | پارامترها | توضیح| نوع مقدار|مثال  |          
 | -----------------: |-------------:| :-----:|  ---------:|
 | `User`      | شناسه کاربر ثبت شده یا * برای کانال عمومی | string|     Test    |
-|`target`| دسته‌بندی مخاطبان (سگمنت)| array of strings| {"deviceType": {"inq": ["android", "ios"]}}
+|`target` | دسته‌بندی مخاطبان (سگمنت)| array of strings| {"deviceType": {"inq": ["android", "ios"]}}
 | `channel`     | کانال ارسال پوش      |   string |     Public        |
 | `content` | متن پیام     |    string |     سلام     |
-| `data`| دیتای پیام به صورت جی‌سان| JSON |{"offer": "10", "discountCode": "Newapp10"} 
-| `trackId`| تعیین شناسه ردگیری جداگانه برای رصد پیام | string| adp-1397-6-11
-| `inApp`| کاربران در زمان باز بودن برنامه پیام را دریافت می‌کنند (درون‌برنامه‌ای)| boolean | true 
-| `live`| فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده) |boolean| false
-| `useAsAlert`|استفاده متن پیام به عنوان متن اعلان| boolean| true
-| `alertText`|  استفاده از متن جداگانه برای اعلان| string| سلام خوبی
-| `ttl`| زمان انقضای پیام پس از درخواست (ثانیه)|number| 40
-| `fallback`|  کار گذاشتن پیامک جایگزین در صورت ارسال نشدن پیام| JSON|   {"fallback": {"fallbackDelay": "30", "fallbackText": "سلام" }}
-| `silent`| پیام بدون اعلان ارسال شود| boolean| false
+| `data` | دیتای پیام به صورت جی‌سان| JSON |{"offer": "10", "discountCode": "Newapp10"} 
+| `trackId` | تعیین شناسه ردگیری جداگانه برای رصد پیام | string| adp-1397-6-11
+| `inApp` | کاربران در زمان باز بودن برنامه پیام را دریافت می‌کنند (درون‌برنامه‌ای)| boolean | true 
+| `live` | فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده) |boolean| false
+| `useAsAlert` |استفاده متن پیام به عنوان متن اعلان| boolean| true
+| `alertText` |  استفاده از متن جداگانه برای اعلان| string| سلام خوبی
+| `ttl` | زمان انقضای پیام پس از درخواست (ثانیه)|number| 40
+| `fallback` |  کار گذاشتن پیامک جایگزین در صورت ارسال نشدن پیام| JSON|   {"fallback": {"fallbackDelay": "30", "fallbackText": "سلام" }}
+| `silent` | پیام بدون اعلان ارسال شود| boolean| false
+
+
