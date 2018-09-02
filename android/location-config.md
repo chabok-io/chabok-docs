@@ -4,7 +4,7 @@ title: تنظیمات مکان‌یابی
 layout: android
 permalink: android/location-config.html
 next: location-tracking.html
-prev: event-handling.html
+prev: event-tracking.html
 ---
 
 ### ۱) تعریف مجوزهای دسترسی به مکان

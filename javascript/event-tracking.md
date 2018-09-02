@@ -1,10 +1,10 @@
 ---
 id: event-tracking
 title: رصد رویدادها (Event Tracking)
-layout: android
-permalink: android/event-tracking.html
-prev: event-handling.html
-next: location-config.html
+layout: javascript
+permalink: javascript/event-tracking.html
+prev: events.html
+next: features.html
 ---
 
 
@@ -16,14 +16,14 @@ next: location-config.html
 
 ### متد رصد 
 
-برای رصد رویداد‌ها باید از متد `track` استفاده کنید. این متد دارای ورودی **نام** و **داده** رویداد‌ (`eventName`,`data`) می‌باشد.
+برای رصد رویداد‌ها باید از متد `track` استفاده کنید. این متد دارای ورودی **نام** و **داده** رویداد‌ (`YOUR_TRACK_NAME`,`data`) می‌باشد.
 
 
-```java
-public void track(final String eventName, JSONObject data)
+```javascript
+chabok.track('YOUR_TRACK_NAME', {"KEY":"VALUE"})
 ```
 
-> نکته : مقدار `data` در متد `track` یک داده مربوط به رویداد‌ می‌تواند باشد. شما این مقدار را می‌توانید به عنوان `JSONObject` همراه رویداد‌ در نظر بگیرید.
+> نکته : مقدار `data` در متد `track` یک داده مربوط به رویداد‌ می‌تواند باشد. شما این مقدار را می‌توانید به عنوان `Object` همراه رویداد‌ در نظر بگیرید.
 
 
 پس از اعمال کد بالا، رویداد با هر بار رخ دادن به همراه زمان وقوع ذخیره خواهد شد.
@@ -31,11 +31,12 @@ public void track(final String eventName, JSONObject data)
  به عنوان مثال می‌خواهید رویداد‌ **خرید‌های پوشاک** از فروشگاه اینترنتی خودتان را رصد کنید. برای ثبت این رویداد کد زیر را با الگوی بالا وارد می‌نماییم.
 
 نمونه:
-```java
-JSONObject data = new JSONObject();
-data.put("clothes_id",35147652);
+```javascript
+const data = {
+  "clothes_id": 35147652
+}
 
-AdpPushClient.get().track("purchase-clothing", data);
+chabok.track('purchase-clothing', data)
 ```
 
 
