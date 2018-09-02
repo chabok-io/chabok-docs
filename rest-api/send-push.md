@@ -90,7 +90,7 @@ curl -X POST \
 | :-----------------: |-------------:| :-----:|  ---------:|
 |`  User      `| شناسه کاربر ثبت شده یا * برای کانال عمومی | string|     Test    |
 |`target   `| دسته‌بندی مخاطبان (سگمنت)| array of strings| {"deviceType": {"inq": ["android", "ios"]}}
-|`  channel`     | کانال ارسال پوش      |   string |     Public        |
+|  channel     | کانال ارسال پوش      |   string |     Public        |
 |`  content  `| متن پیام     |    string |     سلام     |
 |`  data  `| دیتای پیام به صورت جی‌سان| JSON |{"offer": "10", "discountCode": "Newapp10"} 
 |`  trackId  `| تعیین شناسه ردگیری جداگانه برای رصد پیام | string| adp-1397-6-11
