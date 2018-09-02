@@ -102,4 +102,23 @@ curl -X POST \
 | `fallback` |  کار گذاشتن پیامک جایگزین در صورت ارسال نشدن پیام| JSON|   {"fallback": {"fallbackDelay": "30", "fallbackText": "سلام" }}
 | `silent` | پیام بدون اعلان ارسال شود| boolean| false
 
+#### پارامترهای اعلان
+
+| پارامترها | توضیح| نوع مقدار|مثال  |          
+| :-----------------: |-------------:| :-----:|  ---------:|
+|  * title      | عنوان اعلان | string|  ثبت درخواست |
+|body| متن اعلان|string| سفارش شما ثبت شد
+|icon| تصویر اعلان      |  string | "نام تصویر"|
+|* sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | "نام صدا"   |
+|clickUrl| لینک هنگام کلیک|string|"لینک"
+|id (action)| شناسه اکشن | string| check
+|title (action)| عنوان اکشن|string| status
+|options (action)| رفتار اکشن (فقط برای آی‌او‌اس) |number| 1
+|icon (action)| نام آیکون در فولدر drawable  (فقط در اندروید)| string| "نام فایل"
+|mediaType|  نوع رسانه| string| jpeg
+|mediaUrl| لینک رسانه|string| "لینک"
+|contentAvailable|  برای انجام یک آپدیت بی‌صدا در بک‌گراند یا فورگراند مقدار 1 را بگذارید | boolean|  1 
+|mutableContent| برای پشتیبانی از اعلان چندرسانه‌ای مقدار 1 را حتما قرار دهید| boolean| 1
+|category| شناسه اعلان برای ذخیره آن|string| delivery
+
 
