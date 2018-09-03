@@ -3,8 +3,8 @@ id: send-push
 title: ارسال‌ پوش
 layout: rest-api
 permalink: rest-api/send-push.html
-prev: add-tag.html
-
+next: add-tag.html
+prev: guide.html
 ---
  در این صفحه راهنمای استفاده صحیح و آسان برای ارسال پوش از طریق API را با هم بررسی خواهیم کرد. برای این کار دو متد post (پست) **toUsers** و **byQuery** وجود دارد که در ادامه به هر دوی آن‌ها خواهیم پرداخت.
 
