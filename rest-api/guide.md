@@ -4,7 +4,7 @@ title: راهنمای API
 layout: rest-api
 permalink: rest-api/guide.html
 prev: introducing.html
-next: add-tag.html
+next: send-push.html
 ---
 
 در این صفحه با استفاده صحیح و آسان از API چابک آشنا خواهیم شد. 
