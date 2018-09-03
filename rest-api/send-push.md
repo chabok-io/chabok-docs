@@ -6,9 +6,8 @@ permalink: rest-api/send-push.html
 prev: add-tag.html
 
 ---
- در این صفحه راهنمای استفاده صحیح و آسان برای ارسال پوش از طریق API را با هم بررسی خواهیم کرد. برای این کار دو متد post (پست) **toUsers** و **byquery** وجود دارد که در ادامه به هر دوی آن‌ها خواهیم پرداخت.
+ در این صفحه راهنمای استفاده صحیح و آسان برای ارسال پوش از طریق API را با هم بررسی خواهیم کرد. برای این کار دو متد post (پست) **toUsers** و **byQuery** وجود دارد که در ادامه به هر دوی آن‌ها خواهیم پرداخت.
 
-<br><br>
 
 ### ارسال پوش از طریق کانال‌های چابک 
 
@@ -16,14 +15,15 @@ prev: add-tag.html
 
 #### ساختار درخواست
 
-لینک پایه: `sandbox.push.adpdigital.com/api/push/toUsers`
+لینک پایه: `https://sandbox.push.adpdigital.com/api/push/toUsers`
 
 نمونه cURL:
 
 ```bash
 curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
--H "accept: application/json" -H "Content-Type: application/json" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
 -d "@payload.json"
 ```
 
@@ -85,7 +85,8 @@ curl -X POST \
 ```bash
 curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
--H "accept: application/json" -H "Content-Type: application/json" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
 -d "{ \"user\": \"Test\", \"content\": \"پرواز شما دچار نیم ساعت تاخیر شده است.\", \"useAsAlert\": true}"
 ```
 
@@ -106,22 +107,23 @@ curl -X POST \
 
 > `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/push/push_toUsers) مراجعه فرمایید.
 
-<br><br><br><br>
+<br><br>
 
 ### ارسال پوش از طریق گروه‌بندی کاربران (Segmented Push)
 
-در این متد (**byquery**) به جای ارسال پیام به صورت خصوصی یا عمومی می‌خواهیم به **گروهی از کاربران** ارسال کنیم.
+در این متد (**byQuery**) به جای ارسال پیام به صورت خصوصی یا عمومی می‌خواهیم به **گروهی از کاربران** ارسال کنیم.
 
 #### ساختار درخواست
 
-لینک پایه: `sandbox.push.adpdigital.com/api/push/byquery`
+لینک پایه: `https://sandbox.push.adpdigital.com/api/push/byquery`
 
 نمونه cURL:
 
 ```bash
 curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/byQuery?access_token=<ACCESS_TOKEN>" \
--H "accept: application/json" -H "Content-Type: application/json" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
 -d "@payload.json"
 ```
 
@@ -172,7 +174,7 @@ curl -X POST \
 ```
 <br><br>
 
-### مثال از متد byquery
+### مثال از متد byQuery
 
 #### درخواست
 
@@ -186,8 +188,9 @@ curl -X POST \
 ```bash
 curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/byQuery?access_token=<ACCESS_TOKEN>" \
--H "accept: application/json" -H "Content-Type: application/json" \
--d "{\t\"target\": {\t\t\"deviceType\": {"android\"]}\t},\t\"content\": \"سلام به اپلیکیشن ما خوش‌آمدید. برای خرید اولتان از اپلیکیشن می‌توانید از کد تخفیف 10٪ استفاده کنید. کد تخفیف: NewApp10 \",\t\"useAsAlert\": true}"
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
+-d "{\t\"target\": {\t\t\"deviceType\": {"ios\"]}\t},\t\"content\": \"سلام به اپلیکیشن ما خوش‌آمدید. برای خرید اولتان از اپلیکیشن می‌توانید از کد تخفیف 10٪ استفاده کنید. کد تخفیف: NewApp10 \",\t\"useAsAlert\": true}"
 ```
 
 #### پاسخ
