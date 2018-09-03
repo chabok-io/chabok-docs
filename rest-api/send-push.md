@@ -28,20 +28,93 @@ curl -X POST \
 ```
 #### پارامترها
 
-| پارامترها | توضیح| نوع مقدار|مثال  |          
-| -----------------: |-------------:| :-----:|  ---------:|
-| User      | شناسه کاربر ثبت شده یا * برای کانال عمومی | string|     userTest    |
-| channel    | کانال ارسال پوش      |   string |     Public        |
-| content | متن پیام     |    string |     سلام     |
-| data | دیتای پیام به صورت جی‌سان| JSON |{"offer": "10", "discountCode": "Newapp10"} 
-| trackId | تعیین شناسه ردگیری جداگانه برای رصد پیام | string| adp-1397-6-11
-| inApp | کاربران در زمان باز بودن برنامه پیام را دریافت می‌کنند (درون‌برنامه‌ای)| boolean | true 
-| live | فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده) |boolean| false
-|useAsAlert |استفاده متن پیام به عنوان متن اعلان| boolean| true
-| alertText |  استفاده از متن جداگانه برای اعلان| string| سلام خوبی
-| ttl | زمان انقضای پیام پس از درخواست (ثانیه)|number| 40
-| data | دیتای پیام به صورت جی‌سان| JSON | {"fallback": {"fallbackDelay": "30", "fallbackText": "سلام"
-| silent | پیام بدون اعلان ارسال شود| boolean| false
+<table>
+<thead>
+<tr>
+<th style="text-align: center">پارامترها</th>
+<th style="text-align: right">توضیح</th>
+<th style="text-align: center">نوع مقدار</th>
+<th style="text-align: right">مثال</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">User</td>
+<td align="right">شناسه کاربر ثبت شده یا * برای کانال عمومی</td>
+<td align="center">string</td>
+<td align="right">userTest</td>
+</tr>
+<tr>
+<td align="center">channel</td>
+<td align="right">کانال ارسال پوش</td>
+<td align="center">string</td>
+<td align="right">Public</td>
+</tr>
+<tr>
+<td align="center">content</td>
+<td align="right">متن پیام</td>
+<td align="center">string</td>
+<td align="right">سلام</td>
+</tr>
+<tr>
+<td align="center">data</td>
+<td align="right">دیتای پیام به صورت جی‌سان</td>
+<td align="center">JSON</td>
+<td align="left" dir="ltr">{&quot;offer&quot;: &quot;10&quot;, &quot;discountCode&quot;: &quot;Newapp10&quot;}</td>
+</tr>
+<tr>
+<td align="center">trackId</td>
+<td align="right">تعیین شناسه ردگیری جداگانه برای رصد پیام</td>
+<td align="center">string</td>
+<td align="right">adp-1397-6-11</td>
+</tr>
+<tr>
+<td align="center">inApp</td>
+<td align="right">کاربران در زمان باز بودن برنامه پیام را دریافت می‌کنند (درون‌برنامه‌ای)</td>
+<td align="center">boolean</td>
+<td align="right">true</td>
+</tr>
+<tr>
+<td align="center">live</td>
+<td align="right">فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده)</td>
+<td align="center">boolean</td>
+<td align="right">false</td>
+</tr>
+<tr>
+<td align="center">useAsAlert</td>
+<td align="right">استفاده متن پیام به عنوان متن اعلان</td>
+<td align="center">boolean</td>
+<td align="right">true</td>
+</tr>
+<tr>
+<td align="center">alertText</td>
+<td align="right">استفاده از متن جداگانه برای اعلان</td>
+<td align="center">string</td>
+<td align="right">سلام خوبی</td>
+</tr>
+<tr>
+<td align="center">ttl</td>
+<td align="right">زمان انقضای پیام پس از درخواست (ثانیه)</td>
+<td align="center">number</td>
+<td align="right">40</td>
+</tr>
+<tr>
+<td align="center">fallback</td>
+<td align="right">دیتای پیام به صورت جی‌سان</td>
+<td align="center">JSON</td>
+<td align="left" dir="ltr">{
+                           &quot;content&quot;: &quot;salam&quot;,
+                           &quot;delay&quot;: 5,
+                           &quot;media&quot;: &quot;sms&quot;
+                           }</td>
+</tr>
+<tr>
+<td align="center">silent</td>
+<td align="right">پیام بدون اعلان ارسال شود</td>
+<td align="center">boolean</td>
+<td align="right">false</td>
+</tr>
+</tbody></table>
+
 
 {"fallback": {"fallbackDelay": "30", "fallbackText
 #### پارامترهای اعلان (Notification)
