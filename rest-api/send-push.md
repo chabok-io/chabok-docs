@@ -42,7 +42,6 @@ curl -X POST \
 | data | دیتای پیام به صورت جی‌سان| JSON | {"fallback": {"fallbackDelay": "30", "fallbackText": "سلام"
 | silent | پیام بدون اعلان ارسال شود| boolean| false
 
-{"fallback": {"fallbackDelay": "30", "fallbackText
 #### پارامترهای اعلان (Notification)
 
 | پارامترها | توضیح| نوع مقدار|مثال  |          
