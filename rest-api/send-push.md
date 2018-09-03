@@ -347,8 +347,9 @@ curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/byQuery?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
--d "{\t\"target\": {\t\t\"deviceType\": {"ios\"]}\t},\t\"content\": \"سلام به اپلیکیشن ما خوش‌آمدید. برای خرید اولتان از اپلیکیشن می‌توانید از کد تخفیف 10٪ استفاده کنید. کد تخفیف: NewApp10 \",\t\"useAsAlert\": true}"
+-d "{\t\"target\": {\t\t\"deviceType\": \"ios\"\t},\t\"content\": \"سلام به اپلیکیشن ما خوش‌آمدید. برای خرید اولتان از اپلیکیشن می‌توانید از کد تخفیف 10٪ استفاده کنید. کد تخفیف: NewApp10\",\t\"useAsAlert\": true}"
 ```
+
 
 #### پاسخ
 
