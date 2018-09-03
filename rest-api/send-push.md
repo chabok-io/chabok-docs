@@ -27,20 +27,98 @@ curl -X POST \
 ```
 #### پارامترها
 
-| پارامترها | توضیح| نوع مقدار|مثال  |          
-| -----------------: |-------------:| :-----:|  ---------:|
-| User      | شناسه کاربر ثبت شده یا * برای کانال عمومی | string|     userTest    |
-| channel    | کانال ارسال پوش      |   string |     Public        |
-| content | متن پیام     |    string |     سلام     |
-| data | دیتای پیام به صورت جی‌سان| JSON |{"offer": "10", "discountCode": "Newapp10"} 
-| trackId | تعیین شناسه ردگیری جداگانه برای رصد پیام | string| adp-1397-6-11
-| inApp | کاربران در زمان باز بودن برنامه پیام را دریافت می‌کنند (درون‌برنامه‌ای)| boolean | true 
-| live | فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده) |boolean| false
-|useAsAlert |استفاده متن پیام به عنوان متن اعلان| boolean| true
-| alertText |  استفاده از متن جداگانه برای اعلان| string| سلام خوبی
-| ttl | زمان انقضای پیام پس از درخواست (ثانیه)|number| 40
-| data | دیتای پیام به صورت جی‌سان| JSON | {"fallback": {"fallbackDelay": "30", "fallbackText": "سلام"
-| silent | پیام بدون اعلان ارسال شود| boolean| false
+<table>
+<thead>
+<tr>
+<th style="text-align: center">پارامترها</th>
+<th style="text-align: right">توضیح</th>
+<th style="text-align: center">نوع مقدار</th>
+<th style="text-align: right">مثال</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">User</td>
+<td align="right">شناسه کاربر ثبت شده یا * برای کانال عمومی</td>
+<td align="center">string</td>
+<td align="right">userTest</td>
+</tr>
+<tr>
+<td align="center">channel</td>
+<td align="right">کانال ارسال پوش</td>
+<td align="center">string</td>
+<td align="right">default</td>
+</tr>
+<tr>
+<td align="center">content</td>
+<td align="right">متن پیام</td>
+<td align="center">string</td>
+<td align="right">سلام</td>
+</tr>
+<tr>
+<td align="center">data</td>
+<td align="right">دیتای پیام به صورت json</td>
+<td align="center">JSON</td>
+<td align="left" dir="ltr">{&quot;offer&quot;: &quot;10&quot;, &quot;discountCode&quot;: &quot;Newapp10&quot;}</td>
+</tr>
+<tr>
+<td align="center">trackId</td>
+<td align="right">تعیین شناسه ردگیری جداگانه برای رصد پیام</td>
+<td align="center">string</td>
+<td align="right">adp-1397-6-11</td>
+</tr>
+<tr>
+<td align="center">inApp</td>
+<td align="right">کاربران در زمان باز بودن برنامه پیام را دریافت می‌کنند (درون‌برنامه‌ای)</td>
+<td align="center">boolean</td>
+<td align="right">true</td>
+</tr>
+<tr>
+<td align="center">live</td>
+<td align="right">فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده)</td>
+<td align="center">boolean</td>
+<td align="right">false</td>
+</tr>
+<tr>
+<td align="center">useAsAlert</td>
+<td align="right">استفاده متن پیام به عنوان متن اعلان</td>
+<td align="center">boolean</td>
+<td align="right">true</td>
+</tr>
+<tr>
+<td align="center">alertText</td>
+<td align="right">استفاده از متن جداگانه برای اعلان</td>
+<td align="center">string</td>
+<td align="right">سلام خوبی</td>
+</tr>
+<tr>
+<td align="center">ttl</td>
+<td align="right">زمان انقضای پیام پس از درخواست (ثانیه)</td>
+<td align="center">number</td>
+<td align="right">40</td>
+</tr>
+<tr>
+<td align="center">fallback</td>
+<td align="right">پیامک جایگزین</td>
+<td align="center">JSON</td>
+<td align="left" dir="ltr">{
+                           &quot;content&quot;: &quot;سلام&quot;,
+                           &quot;delay&quot;: 5,
+                           &quot;media&quot;: &quot;sms&quot;
+                           }</td>
+</tr>
+<tr>
+<td align="center">notification</td>
+<td align="right">تنظیمات اعلان</td>
+<td align="center">payload</td>
+<td align="right">مثال در جدول زیر</td>
+</tr>
+<tr>
+<td align="center">silent</td>
+<td align="right">پیام بدون اعلان ارسال شود</td>
+<td align="center">boolean</td>
+<td align="right">false</td>
+</tr>
+</tbody></table>
 
 #### پارامترهای اعلان (Notification)
 
@@ -48,15 +126,15 @@ curl -X POST \
 | :-----------------: |-------------:| :-----:|  ---------:|
 |   title      | عنوان اعلان | string|  ثبت درخواست |
 |body| متن اعلان|string| سفارش شما ثبت شد
-|icon| تصویر اعلان      |  string | "نام تصویر"|
-| sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | "نام صدا"   |
-|clickUrl| لینک هنگام کلیک|string|"لینک"
+|icon| تصویر اعلان      |  string | نام تصویر|
+| sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | نام صدا   |
+|clickUrl| لینک هنگام کلیک|string|لینک
 |(id (action| شناسه اکشن | string| check
 |(title (action| عنوان اکشن|string| status
 |(options (action| رفتار اکشن (فقط برای آی‌او‌اس) |number| 1
-|(icon (action| نام آیکون در فولدر drawable  (فقط در اندروید)| string| "نام فایل"
+|(icon (action| نام آیکون در فولدر drawable  (فقط در اندروید)| string| نام آیکون
 |mediaType|  نوع رسانه| string| jpeg
-|mediaUrl| لینک رسانه|string| "لینک"
+|mediaUrl| لینک رسانه|string| لینک
 |contentAvailable|  برای انجام یک آپدیت بی‌صدا در بک‌گراند یا فورگراند مقدار 1 را بگذارید | boolean|  1 
 |mutableContent| برای پشتیبانی از اعلان چندرسانه‌ای مقدار 1 را حتما قرار دهید| boolean| 1
 |category| شناسه اعلان برای ذخیره آن|string| delivery
@@ -72,7 +150,7 @@ curl -X POST \
 ```
 <br><br>
 
-### مثال از متد byUsers
+### مثال از متد toUsers
 
 #### درخواست
 
@@ -127,20 +205,101 @@ curl -X POST \
 
 #### پارامترها
 
-| پارامترها | توضیح| نوع مقدار|مثال  |          
-| -----------------: |-------------:| :-----:|  ---------:|
-|target | گروه‌بندی مخاطبان (سگمنت)| array of strings| {"deviceType": "android"}
-| channel    | کانال ارسال پوش      |   string |     Public        |
-| content | متن پیام     |    string |     سلام     |
-| data | دیتای پیام به صورت جی‌سان| JSON |{"offer": "10", "discountCode": "Newapp10"} 
-| trackId | تعیین شناسه ردگیری جداگانه برای رصد پیام | string| adp-1397-6-11
-| inApp | کاربران در زمان باز بودن برنامه پیام را دریافت می‌کنند (درون‌برنامه‌ای)| boolean | true 
-| live | فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده) |boolean| false
-|useAsAlert |استفاده متن پیام به عنوان متن اعلان| boolean| true
-| alertText |  استفاده از متن جداگانه برای اعلان| string| سلام خوبی
-| ttl | زمان انقضای پیام پس از درخواست (ثانیه)|number| 40
-| data | دیتای پیام به صورت جی‌سان| JSON | {"fallback": {"fallbackDelay": "30", "fallbackText": "سلام"
-| silent | پیام بدون اعلان ارسال شود| boolean| false
+<table>
+<thead>
+<tr>
+<th style="text-align: center">پارامترها</th>
+<th style="text-align: right">توضیح</th>
+<th style="text-align: center">نوع مقدار</th>
+<th style="text-align: right">مثال</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">target</td>
+<td align="right">ویژگی‌های گروه‌بندی</td>
+<td align="center">object</td>
+<td align="left" dir="ltr">{&quot;target&quot;:{
+  &quot;deviceType&quot;: &quot;ios&quot;
+}}</td>
+</tr>
+<tr>
+<td align="center">channel</td>
+<td align="right">کانال ارسال پوش</td>
+<td align="center">string</td>
+<td align="right">default</td>
+</tr>
+<tr>
+<td align="center">content</td>
+<td align="right">متن پیام</td>
+<td align="center">string</td>
+<td align="right">سلام</td>
+</tr>
+<tr>
+<td align="center">data</td>
+<td align="right">دیتای پیام به صورت json</td>
+<td align="center">JSON</td>
+<td align="left" dir="ltr">{&quot;offer&quot;: &quot;10&quot;, &quot;discountCode&quot;: &quot;Newapp10&quot;}</td>
+</tr>
+<tr>
+<td align="center">trackId</td>
+<td align="right">تعیین شناسه ردگیری جداگانه برای رصد پیام</td>
+<td align="center">string</td>
+<td align="right">adp-1397-6-11</td>
+</tr>
+<tr>
+<td align="center">inApp</td>
+<td align="right">کاربران در زمان باز بودن برنامه پیام را دریافت می‌کنند (درون‌برنامه‌ای)</td>
+<td align="center">boolean</td>
+<td align="right">true</td>
+</tr>
+<tr>
+<td align="center">live</td>
+<td align="right">فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده)</td>
+<td align="center">boolean</td>
+<td align="right">false</td>
+</tr>
+<tr>
+<td align="center">useAsAlert</td>
+<td align="right">استفاده متن پیام به عنوان متن اعلان</td>
+<td align="center">boolean</td>
+<td align="right">true</td>
+</tr>
+<tr>
+<td align="center">alertText</td>
+<td align="right">استفاده از متن جداگانه برای اعلان</td>
+<td align="center">string</td>
+<td align="right">سلام خوبی</td>
+</tr>
+<tr>
+<td align="center">ttl</td>
+<td align="right">زمان انقضای پیام پس از درخواست (ثانیه)</td>
+<td align="center">number</td>
+<td align="right">40</td>
+</tr>
+<tr>
+<td align="center">fallback</td>
+<td align="right">پیامک جایگزین</td>
+<td align="center">JSON</td>
+<td align="left" dir="ltr">{
+                           &quot;content&quot;: &quot;سلام&quot;,
+                           &quot;delay&quot;: 5,
+                           &quot;media&quot;: &quot;sms&quot;
+                           }</td>
+</tr>
+<tr>
+<td align="center">notification</td>
+<td align="right">تنظیمات اعلان</td>
+<td align="center">payload</td>
+<td align="right">مثال در جدول زیر</td>
+</tr>
+<tr>
+<td align="center">silent</td>
+<td align="right">پیام بدون اعلان ارسال شود</td>
+<td align="center">boolean</td>
+<td align="right">false</td>
+</tr>
+</tbody></table>
+
 
 #### پارامترهای اعلان (Notification)
 
@@ -148,15 +307,15 @@ curl -X POST \
 | :-----------------: |-------------:| :-----:|  ---------:|
 |   title      | عنوان اعلان | string|  ثبت درخواست |
 |body| متن اعلان|string| سفارش شما ثبت شد
-|icon| تصویر اعلان      |  string | "نام تصویر"|
-| sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | "نام صدا"   |
-|clickUrl| لینک هنگام کلیک|string|"لینک"
+|icon| تصویر اعلان      |  string | نام تصویر|
+| sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | نام صدا   |
+|clickUrl| لینک هنگام کلیک|string|لینک
 |(id (action| شناسه اکشن | string| check
 |(title (action| عنوان اکشن|string| status
 |(options (action| رفتار اکشن (فقط برای آی‌او‌اس) |number| 1
-|(icon (action| نام آیکون در فولدر drawable  (فقط در اندروید)| string| "نام فایل"
+|(icon (action| نام آیکون در فولدر drawable  (فقط در اندروید)| string| نام آیکون
 |mediaType|  نوع رسانه| string| jpeg
-|mediaUrl| لینک رسانه|string| "لینک"
+|mediaUrl| لینک رسانه|string| لینک
 |contentAvailable|  برای انجام یک آپدیت بی‌صدا در بک‌گراند یا فورگراند مقدار 1 را بگذارید | boolean|  1 
 |mutableContent| برای پشتیبانی از اعلان چندرسانه‌ای مقدار 1 را حتما قرار دهید| boolean| 1
 |category| شناسه اعلان برای ذخیره آن|string| delivery
