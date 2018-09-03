@@ -3,8 +3,8 @@ id: send-push
 title: ارسال‌ پوش
 layout: rest-api
 permalink: rest-api/send-push.html
-next: add-tag.html
-prev: guide.html
+prev: add-tag.html
+
 ---
  در این صفحه راهنمای استفاده صحیح و آسان برای ارسال پوش از طریق API را با هم بررسی خواهیم کرد. برای این کار دو متد post (پست) **toUsers** و **byQuery** وجود دارد که در ادامه به هر دوی آن‌ها خواهیم پرداخت.
 
@@ -26,7 +26,6 @@ curl -X POST \
 -H "Content-Type: application/json" \
 -d "@payload.json"
 ```
-
 #### پارامترها
 
 | پارامترها | توضیح| نوع مقدار|مثال  |          
@@ -41,7 +40,7 @@ curl -X POST \
 |useAsAlert |استفاده متن پیام به عنوان متن اعلان| boolean| true
 | alertText |  استفاده از متن جداگانه برای اعلان| string| سلام خوبی
 | ttl | زمان انقضای پیام پس از درخواست (ثانیه)|number| 40
-| fallback |  کار گذاشتن پیامک جایگزین در صورت ارسال نشدن پیام| JSON|   {"fallback": {"fallbackDelay": "30", "fallbackText": "سلام" }}
+| fallback |  کار گذاشتن پیامک جایگزین در صورت ارسال نشدن پیام| {{"سلام" :"JSON|   {"fallback": {"fallbackDelay": "30", "fallbackText
 | silent | پیام بدون اعلان ارسال شود| boolean| false
 
 #### پارامترهای اعلان (Notification)
@@ -131,17 +130,17 @@ curl -X POST \
 
 | پارامترها | توضیح| نوع مقدار|مثال  |          
 | -----------------: |-------------:| :-----:|  ---------:|
-|target | گروه‌بندی مخاطبان (سگمنت)| array of strings| {"deviceType": {"inq": ["android", "ios"]}}
+|target | گروه‌بندی مخاطبان (سگمنت)| array of strings| {"deviceType": "android"}
 | channel    | کانال ارسال پوش      |   string |     Public        |
 | content | متن پیام     |    string |     سلام     |
-| data | دیتای پیام به صورت جی‌سان| JSON |{"offer": "10", "discountCode": "Newapp10"} 
+| data | دیتای پیام به صورت جی‌سان| {"JSON |{"offer": "10", "discountCode": "Newapp10 
 | trackId | تعیین شناسه ردگیری جداگانه برای رصد پیام | string| adp-1397-6-11
 | inApp | کاربران در زمان باز بودن برنامه پیام را دریافت می‌کنند (درون‌برنامه‌ای)| boolean | true 
 | live | فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده) |boolean| false
 |useAsAlert |استفاده متن پیام به عنوان متن اعلان| boolean| true
 | alertText |  استفاده از متن جداگانه برای اعلان| string| سلام خوبی
 | ttl | زمان انقضای پیام پس از درخواست (ثانیه)|number| 40
-| fallback |  کار گذاشتن پیامک جایگزین در صورت ارسال نشدن پیام| JSON|   {"fallback": {"fallbackDelay": "30", "fallbackText": "سلام" }}
+| fallback |  کار گذاشتن پیامک جایگزین در صورت ارسال نشدن پیام| {{"سلام" :"JSON|   {"fallback": {"fallbackDelay": "30", "fallbackText
 | silent | پیام بدون اعلان ارسال شود| boolean| false
 
 #### پارامترهای اعلان (Notification)
