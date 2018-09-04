@@ -12,9 +12,9 @@ next: introducing.html
 
 - افزودن متد `track` برای رصد تعامل کاربر
 - پشتیبانی از **ledColor** و **smallIcon** در نوتیفیکیشن
-- پشتیبانی پارامتر **sound**  در `payload` نوتیفیکیشن از پسوند فایل
-- پشتیبانی متد‌های `addTag` و `removeTag‍` از array در overload جدید
-- بهبود register مجدد کاربر با تغییر `userId`  از متد `register`
+- پشتیبانی پارامتر **sound**  در `payload` نوتیفیکیشن از پسوند فایل( نام فایل **sound** را می‌توانید در هر دو حالت با پسوند و بدون پسوند وارد کنید)
+- پشتیبانی آرایه‌ای از تگ‌ها برای متد‌های `addTag` و `removeTag‍` در overload جدید
+- بهبود **register مجدد کاربر** با تغییر `userId`  از متد `register`
 
 ### ارتقا
 - تغییر پیش‌فرض متد `publishEvent` به `live`
