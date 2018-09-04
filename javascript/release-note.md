@@ -6,7 +6,7 @@ permalink: javascript/release-note.html
 next: introducing.html
 ---
 
-## نسخه ۱.۰.۱ - ۱۳۹۷/۰۶/۱۱
+## نسخه ۱.۰.۱ - ۱۳۹۷/۰۶/۱۳
 ### تغییرات 
 * افزودن متد‌های `setUserInfo` و `getUserInfo`  
 * افزودن متدهای `addTag ` و `addTags `
