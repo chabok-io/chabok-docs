@@ -5,6 +5,21 @@ layout: android
 permalink: android/release-note.html
 next: introducing.html
 ---
+
+##  نسخه ۲.۱۳.۰ - ۱۳۹۷/۰۶/۱۳
+
+### تغییرات
+
+- افزودن متد `track` برای رصد تعامل کاربر
+- پشتیبانی از **ledColor** و **smallIcon** در نوتیفیکیشن
+- پشتیبانی پارامتر **sound**  در `payload` نوتیفیکیشن از پسوند فایل
+- پشتیبانی متد‌های `addTag` و `removeTag‍` از array در overload جدید
+- بهبود register مجدد کاربر با تغییر `userId`  از متد `register`
+
+### ارتقا
+- تغییر پیش‌فرض متد `publishEvent` به `live`
+
+
 ##  نسخه ۲.۱۲.۱ - ۱۳۹۷/۰۵/۳۰
 
 ### تغییرات
