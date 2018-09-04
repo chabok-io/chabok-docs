@@ -11,7 +11,7 @@ next: introducing.html
 * افزودن متد‌های `setUserInfo` و `getUserInfo`  
 * افزودن متدهای `addTag ` و `addTags `
 * افزودن متدهای `removeTag` و `removeTags`
-* حل مشکل حذف کاربر با `Unregister `
+* حل مشکل حذف کاربر با متد `unregister `
 
 ### ارتقا
 * قابلیت **register مجدد کاربر** با متد `register` 
