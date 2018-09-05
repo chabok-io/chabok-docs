@@ -1,4 +1,4 @@
- ---
+---
 id: settings
 title: تنظیمات
 layout: panel
