@@ -277,16 +277,6 @@ curl -X POST \
 <td align="right">40</td>
 </tr>
 <tr>
-<td align="center">fallback</td>
-<td align="right">پیامک جایگزین</td>
-<td align="center">JSON</td>
-<td align="left" dir="ltr">{
-                           &quot;content&quot;: &quot;سلام&quot;,
-                           &quot;delay&quot;: 5,
-                           &quot;media&quot;: &quot;sms&quot;
-                           }</td>
-</tr>
-<tr>
 <td align="center">notification</td>
 <td align="right">تنظیمات اعلان</td>
 <td align="center">payload</td>
@@ -320,6 +310,7 @@ curl -X POST \
 |mutableContent| برای پشتیبانی از اعلان چندرسانه‌ای مقدار 1 را حتما قرار دهید| boolean| 1
 |category| شناسه اعلان برای ذخیره آن|string| delivery
 
+> `نکته :` در پارامترهای اعلان، پارامتر `options` یا همان رفتار اکشن (فقط در آی‌او‌اس) می‌توانید عدد ۱ برای اکشن [Authentication Required (اکشن در صورت قفل نبودن دستگاه اجرا می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired?language=objc)،‌ ۲ برای [Destructive (اکشن تسک مخرب انجام می‌دهد)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive?language=objc)، [Foreground (اکشن موجب باز شدن اپ در فورگراند می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground?language=objc) و جمع این اعداد برای ترکیب آن‌ها با هم قرار دهید.
 
 #### پاسخ
 پاسخ درخواست‌های ارسال پیام به صورت تعداد دستگاه‌هایی که پیام به آن‌ها ارسال می‌شود، می باشد.
