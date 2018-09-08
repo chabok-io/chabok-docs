@@ -42,7 +42,7 @@ next: rich_notification.html
 
 #### برداشتن مجوز‌های غیر ضروری برای نمایش نشان (Badge) روی آیکون
 
-با توجه به حجم زیاد این مجوزها ممکن است کاربر حس منفی پیدا کند برای همین می‌توانید از دستور‌های زیر هر کدام آن‌ها را با اختیار خود بردارید.
+با توجه به حجم زیاد این مجوزها امکان دارد کاربر حس منفی پیدا کند برای همین می‌توانید از دستور‌های زیر هر کدام آن‌ها را با اختیار خود بردارید.
 
 ```markup
 <uses-permission android:name="com.sec.android.provider.badge.permission.READ" tools:node="remove" />
@@ -65,6 +65,15 @@ next: rich_notification.html
 
 ``` markup
 xmlns:tools="http://schemas.android.com/tools"
+```
+ 
+نمونه اضافه کد به فایل manifest: 
+```markup
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.chabok.example">
+          ...
+</manifest>
 ```
 
 #### ۲.  تعریف رسیور `PushMessageReceiver`
