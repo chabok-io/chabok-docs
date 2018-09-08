@@ -8,11 +8,11 @@ prev: features.html
 
 ## اعلان‌ها
 ### اعلان‌ها نمایش داده نمی‌شوند:
-در این قسمت به خطاهای احتمالی نشان ندادن اعلان روی دستگاه‌های مخاطب می‌پردازیم: 
+در این قسمت به دلایل احتمالی نشان ندادن اعلان روی دستگاه‌های مخاطب می‌پردازیم: 
 
 
 #### ۱- اپلکیشن روی صفحه نمایش باز است
-در حالت پیش‌فرض اعلان‌ها در زمانی که اپلیکیشن روی دستگاه شما **باز** و **نمایان** است، نشان داده نمی‌شوند.
+در حالت پیش‌فرض، اعلان‌ها در زمانی که اپلیکیشن روی دستگاه شما **باز** و **نمایان** است نشان داده نمی‌شوند.
 
 <Br>
 
@@ -24,15 +24,15 @@ prev: features.html
 - استفاده از یک برنامه برای بستن اپلیکیشن‌ها (App Killers)
 - swipe اپلیکیشن حین دیباگ از دور (Remote Debugging)
 - swipe اپلیکیشن از لیست Recent Apps در دستگاه‌های شیائومی
-- به صورت خودکار از سوی بعضی برندهای گوشی برای بهینه سازی مصرف باتری. برای فیرفعال کردن آن قدم‌های زیر انجام دهید:
+- به صورت خودکار از سوی بعضی برندهای گوشی برای بهینه سازی مصرف باتری. برای غیرفعال کردن آن قدم‌های زیر انجام دهید:
 
 **سامسونگ:** غیرفعال کردن [battery usage optimization](https://android.gadgethacks.com/how-to/fix-delayed-notifications-your-galaxy-s8-s8-0177437/) 
 
-**هواوی:** قدم اول: به settings --> advanced settings --> battery manager بروید و اپ را انتخاب کنید.
+**هواوی:** قدم اول: به settings > advanced settings > battery manager بروید و اپ را انتخاب کنید.
 
- قدم دوم: به settings --> apps --> advanced --> ignore battery optimizations بروید و اپ را انتخاب کنید.
+ قدم دوم: به settings > apps > advanced > ignore battery optimizations بروید و اپ را انتخاب کنید.
 
- قدم سوم: به settings --> notification panel & status bar --> notification center بروید و اپ را انتخاب کنید، "allow notifications" و "priority display" را فعال کنید.
+ قدم سوم: به settings > notification panel & status bar > notification center بروید و پس از انتخاب اپ، "allow notifications" و "priority display" را فعال کنید.
 
 برای EMUI 5.0 / Android 7 پایین‌تر به Settings > Protected apps بروید و اپ خود را چک کنید. [راهنمای کامل](http://phandroid.com/2017/02/02/huawei-honor-emui-first-thing/)
 
@@ -51,7 +51,7 @@ prev: features.html
 <Br>
 
 #### ۳- گزینه دریافت پوش برای اپلیکیشن غیر‌فعال شده است
- تنظیمات نوتیفیکیشن در صفحه Settings > Apps را چک کنید.
+ تنظیمات نوتیفیکیشن در صفحه Settings > Apps را چک کنید. در صورت خاموش بودن گزینه نوتیفیکیشن، آن را فعال نمایید.
 
 <Br>
 
