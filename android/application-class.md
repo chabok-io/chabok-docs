@@ -40,7 +40,35 @@ next: rich_notification.html
 
 در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارائه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.
 
-۲.  کلاس رسیور `PushMessageReceiver`  که نحوه ایجاد آن در بخش [پیام چابک](chabok-messaging.html) توضیح داده شده را نیز به پروژه خود اضافه نمایید.
+#### برداشتن مجوز‌های غیر ضروری برای نمایش نشان (Badge) روی آیکون
+
+با توجه به حجم زیاد این مجوزها ممکن است کاربر حس منفی پیدا کند برای همین می‌توانید از دستور‌های زیر هر کدام آن‌ها را با اختیار خود بردارید.
+
+```markup
+<uses-permission android:name="com.sec.android.provider.badge.permission.READ" tools:node="remove" />
+<uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" tools:node="remove" />
+<uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" tools:node="remove" />
+<uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" tools:node="remove" />
+<uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" tools:node="remove" />
+<uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" tools:node="remove" />
+<uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" tools:node="remove" />
+<uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" tools:node="remove" />
+<uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" tools:node="remove"/>
+<uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" tools:node="remove" />
+<uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" tools:node="remove" />
+<uses-permission android:name="android.permission.READ_APP_BADGE" tools:node="remove" />
+<uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" tools:node="remove" />
+<uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" tools:node="remove" />
+```
+
+همچنین باید کد زیر را به تگ manifest در بالای فایل اضافه کنید.
+
+``` markup
+xmlns:tools="http://schemas.android.com/tools"
+```
+
+#### ۲.  تعریف رسیور `PushMessageReceiver`
+کلاس رسیور `PushMessageReceiver`  که نحوه ایجاد آن در بخش [پیام چابک](chabok-messaging.html) توضیح داده شده را نیز به پروژه خود اضافه نمایید.
 
 > `نکته`:  دقت کنید که کلاس `PushMessageReceiver` برای **BuildTools ۲۶ به بالا** برداشته شده‌است، در آن صورت باید از متد `addListener` برای دریافت پیام‌ها استفاده کنید و دیگر نیازی به اضافه نمودن قطعه کد زیر ندارید.
 
@@ -55,8 +83,9 @@ next: rich_notification.html
 </receiver>
 
 ```
+#### ۳. تعریف رسیور `GcmReceiver`
 
-۳. رسیور `GcmReceiver` را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
+رسیور `GcmReceiver` را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
 ```markup
 
