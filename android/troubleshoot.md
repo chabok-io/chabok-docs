@@ -47,6 +47,7 @@ prev: features.html
 **شیائومی**: به Security (App) > Permissions > Autostart بروید و اپ خود را فعال کنید.
 
 **ردمی**: به Settings > Developer Options بروید و "memory optimization" را غیرفعال کنید. [راهنمای کامل](https://www.forbes.com/sites/bensin/2016/11/17/how-to-fix-push-notifications-on-xiaomis-miui-8-for-real/#384f6af97572)
+
 <Br>
 
 #### گزینه دریافت پوش برای اپلیکیشن غیر‌فعال شده است
