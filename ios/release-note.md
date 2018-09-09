@@ -5,6 +5,14 @@ layout: ios
 permalink: ios/release-note.html
 next: introducing.html
 ---
+## نسخه ۱.۱۷.۱ - ۱۳۹۷/۰۶/۱۸ 
+
+### تغییرات
+
+- افزودن متدهای `addTags` و `removeTags` برای پشتیبانی از آرایه‌ای از تگ‌ها
+- بهبود Register مجدد کاربر با قابلیت تغییر `userId` از متد `register`
+- حل مشکل `LaunchCount` و `LaunchTime` برای زمانی که اپ از طریق ‌Location  در Background باز می‌شود
+ 
 ## نسخه ۱.۱۷.۰ - ۱۳۹۷/۰۵/۱۷ 
 
 ### تغییرات
