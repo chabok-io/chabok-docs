@@ -52,13 +52,51 @@ chabok.removeTag("Premium_User", new VoidCallback() {
 ```
 کدفوق تگی بنام Premium_User را از کاربر حذف می کند.
 
-###  مدیریت نشان‌ها
+###  مدیریت نشان‌ها (Badge)
 
 اگر می‌خواهید شماره badge برنامه خود را بازنشانی کنید، با روش زیر می‌توانید: 
 
 
 ```java
 chabok.resetBadge();
+```
+
+#### برداشتن مجوز‌های غیر ضروری برای نمایش نشان (Badge) روی آیکون
+
+با توجه به حجم زیاد این مجوزها امکان دارد کاربر حس منفی پیدا کند برای همین می‌توانید از دستور‌های زیر هر کدام آن‌ها را با اختیار خود بردارید.
+
+```markup
+<uses-permission android:name="com.sec.android.provider.badge.permission.READ" tools:node="remove" />
+<uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" tools:node="remove" />
+<uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" tools:node="remove" />
+<uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" tools:node="remove" />
+<uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" tools:node="remove" />
+<uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" tools:node="remove" />
+<uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" tools:node="remove" />
+<uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" tools:node="remove" />
+<uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" tools:node="remove"/>
+<uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" tools:node="remove" />
+<uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" tools:node="remove" />
+<uses-permission android:name="android.permission.READ_APP_BADGE" tools:node="remove" />
+<uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" tools:node="remove" />
+<uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" tools:node="remove" />
+<uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" tools:node="remove" />
+<uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" tools:node="remove"/> 
+```
+
+همچنین باید کد زیر را به تگ manifest در بالای فایل اضافه کنید.
+
+``` markup
+xmlns:tools="http://schemas.android.com/tools"
+```
+ 
+نمونه اضافه کد به فایل manifest: 
+```markup
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.chabok.example">
+          ...
+</manifest>
 ```
 
 ### دریافت وضعیت برنامه
@@ -129,4 +167,16 @@ chabok.getStatus(new Callback<ConnectionStatus>() {
 
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
 
