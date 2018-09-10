@@ -15,7 +15,6 @@ next: event-tracking.html
 chabok.publishEvent(eventName, {
 live: false,
 }
-
 ```
 ### دریافت رویداد
 به منظور دریافت رویدادها شما ابتدا باید با استفاده از متد `subscribeEvent` بر روی رویداد عضو شوید.
