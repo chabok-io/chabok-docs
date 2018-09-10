@@ -4,7 +4,7 @@ title: مدیریت رویدادها
 layout: react-native
 permalink: react-native/events.html
 prev: verification.html
-next: features.html
+next: event-tracking.html
 ---
 
 ### انتشار رویداد با داده‌های دلخواه
