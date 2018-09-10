@@ -31,10 +31,6 @@ const auth = {
   devMode:true
 }
 const options = {
-      webpush: {
-        enabled: true,
-        publicKey: 'VAPID_Public_Key'
-      },
       silent: false,
     };
 const chabok = new chabokpush.Chabok(auth, options)
@@ -48,9 +44,6 @@ const chabok = new chabokpush.Chabok(auth, options)
 | --- | --- | --- | --- |
 |  |  | `Object` | **[options]** |
 | فعال/غیرفعال سازی ارتباط آنی | <code>True</code> | <code>Object</code> | **[options.realtime]** |
-|  |  | <code>Object</code> | **[options.webpush]** |
-| فعال‌سازی پوش ‌نوتیفیکیشن | <code>False</code> | <code>Object</code> | **[options.webpush.enabled]** |
-| پوش‌نوتیفیکیشن Public Key | <code>null</code> | <code>String</code> | **[options.webpush.publicKey]** |
 | دریافت مخفی پیام | <code>True</code> | <code>Boolean</code> | **[options.silent]** |
 
 
@@ -100,4 +93,16 @@ chabok.on('connected', _ => {status = 'connected ...'});
 chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
 ```
 
-> نحوه صحیح پیاده سازی متد و رویدادها در قالب پروژه [دمو](https://webpush.chabokpush.com/) پیاده سازی شده است.
+`closed`: رویداد در حالت بسته شدن اتصال چابک
+
+```javascript
+chabok.on('closed', _ => {status = 'closed ...'}); 
+```
+
+`error`: رویداد خطا‌ها 
+
+```javascript
+chabok.on('error', _ => {status = 'error ...'}); 
+```
+
+> نحوه صحیح پیاده سازی متد و رویدادها در قالب پروژه [دمو](https://github.com/chabokpush/chabok-rn-chat) پیاده سازی شده است.
