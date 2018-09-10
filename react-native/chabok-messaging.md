@@ -76,4 +76,3 @@ chabok.on('messageDelivery', msg => {
 chabok.messageMarkAsRead("MESSAGE_ID")
 chabok.messageDismissed("MESSAGE_ID")
 ```
--->
