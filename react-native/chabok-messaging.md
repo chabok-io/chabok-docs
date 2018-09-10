@@ -57,8 +57,6 @@ chabok.on('message', msg => {
 })
 ```
 
-<!---
-
 ### رویداد دریافت تأییدیه تحویل
 برای دریافت تأییدیه تحویل، باید از رویداد زیر استفاده کنید :
 
@@ -78,4 +76,3 @@ chabok.on('messageDelivery', msg => {
 chabok.messageMarkAsRead("MESSAGE_ID")
 chabok.messageDismissed("MESSAGE_ID")
 ```
--->

@@ -3,7 +3,7 @@ id: features
 title: امکانات‌ چابک 
 layout: react-native
 permalink: react-native/features.html
-prev: events.html
+prev: event-tracking.html
 ---
 ### مدیریت تگ ها
 یکی از مهمترین ابزارهای دسته‌بندی کاربران، استفاده از `Tag` می باشد. به عنوان مثال می‌توانید کاربران خود را بر اساس جنسیت دسته‌بندی کرده و بر اساس جنسیت آنها پیام خاصی را ارسال کنید و یا کاربرانی که از پرداخت درون برنامه‌ای شما استفاده می‌کنند، یک `Tag` با عنوان `Premium_User` به آنها اختصاص دهید.
@@ -14,7 +14,7 @@ prev: events.html
 ```javascript
 chabok.addTag("Premium_User")
 ```
-همچنین می‌توانید با استفاده از overload دیگر این متد، از افزودن و یا خطا در عملیات با خبر شوید :
+همچنین می‌توانید با استفاده از این متد، از افزودن و یا خطا در عملیات با خبر شوید :
 ```javascript
 
 chabok.addTag("Premium_User")
