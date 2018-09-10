@@ -14,7 +14,7 @@ prev: event-tracking.html
 ```javascript
 chabok.addTag("Premium_User")
 ```
-همچنین می‌توانید با استفاده از overload دیگر این متد، از افزودن و یا خطا در عملیات با خبر شوید :
+همچنین می‌توانید با استفاده از این متد، از افزودن و یا خطا در عملیات با خبر شوید :
 ```javascript
 
 chabok.addTag("Premium_User")
