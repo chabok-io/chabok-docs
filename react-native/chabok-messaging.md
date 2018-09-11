@@ -53,7 +53,7 @@ chabok.unSubscribe("private/league") // private (personal) channel
 ```javascript
 chabok.on('message', msg => {
   // Called When PushClientManager has been received new message from server
-  console.log(`${msg.content} - ${msg.createdAt}`)
+  console.log("${msg.content} - ${msg.createdAt}")
 })
 ```
 
