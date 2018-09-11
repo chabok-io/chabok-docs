@@ -44,7 +44,6 @@ react-native link
 رسیور GcmReceiver را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
 ```xml
-
 <receiver
      android:name="com.google.android.gms.gcm.GcmReceiver"
      android:enabled="true"
@@ -55,6 +54,5 @@ react-native link
         <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
         <category android:name=" YOUR_APPLICATION_PACKAGE_ID" />
      </intent-filter>
-</receiver>
-                
+</receiver>           
 ```
