@@ -3,7 +3,7 @@ id: features
 title: امکانات‌ چابک 
 layout: react-native
 permalink: react-native/features.html
-prev: events.html
+prev: event-tracking.html
 ---
 ### مدیریت تگ ها
 یکی از مهمترین ابزارهای دسته‌بندی کاربران، استفاده از `Tag` می باشد. به عنوان مثال می‌توانید کاربران خود را بر اساس جنسیت دسته‌بندی کرده و بر اساس جنسیت آنها پیام خاصی را ارسال کنید و یا کاربرانی که از پرداخت درون برنامه‌ای شما استفاده می‌کنند، یک `Tag` با عنوان `Premium_User` به آنها اختصاص دهید.
@@ -14,28 +14,36 @@ prev: events.html
 ```javascript
 chabok.addTag("Premium_User")
 ```
-همچنین می‌توانید با استفاده از overload دیگر این متد، از افزودن و یا خطا در عملیات با خبر شوید :
+اگر هم می‌خواهید به کاربرتان چند `Tag` یکجا اضافه کنید، می‌توانید از کد زیر استفاده کنید:
+
+```javascript
+chabok.addTags("Premium_User", "Male", "Teenage")
+```
+
+همچنین می‌توانید با استفاده از این متد، از افزودن و یا خطا در عملیات با خبر شوید :
 ```javascript
 
 chabok.addTag("Premium_User")
   .then( count => {
-    console.log(`Premium tag was assign to ${chabok.getUserId} user with ${count} devices")
+    console.log("Premium tag was assign to ${chabok.getUserId} user with ${count} devices")
   })
   .catch( err => console.log("An error happend adding tag ..."))
 ```
 اگر عملیات افزودن تگ با موفقیت انجام شود، می‌توانید از طریق پنل چابک، تگ اضافه شده به کاربر را در بخش مشترکین همانند تصویر زیر مشاهده کنید :
 
 ![مشترک چابک](http://uupload.ir/files/ujp8__1x-ios_device.png)
+
 #### حذف تگ
 با استفاده از متد زیر، می‌توانید یک `Tag` خاص از کاربر فعلی را حذف کنید :
 
 ```javascript
 chabok.removeTag("Premium_User")
 ```
-### شناسه دستگاه در چابک
-هر دستگاه در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید :
+
+اگر هم می‌خواهید به کاربرتان چند `Tag` یکجا حذف کنید، می‌توانید از کد زیر استفاده کنید:
+
 ```javascript
-chabok.getInstallationId()
+chabok.removeTags("Premium_User", "Male", "Teenage")
 ```
 
 ### اتصال با سرور
@@ -58,3 +66,39 @@ chabok.on('connected', _ => {status = 'connected ...'});
 ```javascript
 chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
 ```
+`closed`: دریافت وضعیت اتصال بسته شده است
+
+```javascript
+chabok.on('closed', _ => {status = 'closed ...'}); 
+```
+
+`error`: رویداد دریافت خطا‌ها 
+
+```javascript
+chabok.on('error', _ => {status = 'error ...'}); 
+```
+
+### شناسه دستگاه در چابک
+هر دستگاه در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
+```javascript
+chabok.getInstallationId()
+```
+### مدیریت اطلاعات کاربر
+شما با دو متد زیر می‌توانید اطلاعات کاربر را تنظیم و دریافت کنید. 
+
+- متد `setUserInfo` برای تنظیم اطلاعات کاربر:
+
+```javascript
+chabok.setUserInfo({
+ firstname: 'ahmad',
+ lastname: 'mirzaee',
+ email: 'ahmad.m@gmail.com',
+ age: 17
+})
+```
+- متد `getUserInfo` برای دریافت اطلاعات کاربر:
+
+```javascript
+chabok.getUserInfo()
+```
+

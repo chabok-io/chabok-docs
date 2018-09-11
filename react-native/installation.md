@@ -17,6 +17,9 @@ npm install chabokpush-rn --save
 ```bash
 yarn add chabokpush-rn
 ```
+
+> `نکته ` : دقت داشته باشید که چابک به طور پیش‌فرض **توکن پوش** نمی‌گیرد، بنابراین برای **تنظیم پوش‌نوتیفیکیشن** می‌توانید با استفاده از [این پکیج](https://github.com/zo0r/react-native-push-notification#readme) آن را روی پروژه خود پیاده‌سازی کنید.
+
 بعد از نصب دستور زیر را اجرا کنید:
 ```bash
 react-native link
@@ -24,7 +27,7 @@ react-native link
 > `نکته ` : در اندروید می‌بایست `AndroidManifest.xml` را به صورت دستی تغییر دهید. 
 
 
-### نصب دستی اندروید
+### نصب اندروید
 
 دسترسی زیر را به `AndroidManifest.xml` اضافه کنید:
 
@@ -34,4 +37,4 @@ react-native link
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 <application ....>
-```
+``` 

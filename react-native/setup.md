@@ -8,17 +8,44 @@ next: chabok-messaging.html
 ---
 
 ## مراحل راه‌اندازی چابک
-برای راه‌اندازی چابک باید دو مرحله زیر را به ترتیب انجام دهید تا بتوانید دستگاه خود را در پنل چابک مشاهده کنید :
 
-1. مقداردهی اولیه
-2. ثبت کاربر
+برای راه‌اندازی چابک باید سه مرحله زیر را به ترتیب انجام دهید:
+
+۱. تنظیم پوش‌نوتیفیکشن 
+
+۲. مقداردهی اولیه
+
+۳. ثبت کاربر
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود.  
 
+### ۱- تعریف رسیور GCM برای دریافت پوش‌نوتیفیکیشن در اندروید
 
-### ۱- مقدار‌دهی اولیه
+رسیور GcmReceiver را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
+
+```markup
+<receiver
+     android:name="com.google.android.gms.gcm.GcmReceiver"
+     android:enabled="true"
+     android:exported="true"
+     android:permission="com.google.android.c2dm.permission.SEND">
+     <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+        <category android:name=" YOUR_APPLICATION_PACKAGE_ID" />
+     </intent-filter>
+</receiver>           
+```
+### ایجاد دسترسی دریافت پوش در آی‌او‌اس
+
+لطفا `Push Notifications` را در `Setting > Capabilities` فعال کنید .
+
+و علامت `Remote Notifications` ها را در `Setting > Capabilities > Background Modes` چک کنید.
+
+
+### ۲- مقدار‌دهی اولیه
 برای ارتباط با سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقدار‌دهی کنید.
-برای مقدار‌دهی اولیه می‌بایست از طریق متد `chabok` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید.ایجاد حساب در بخش [پیش‌نیازها](required.html) توضیح داده شده است.
+برای مقدار‌دهی اولیه می‌بایست از طریق متد `chabok` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. ایجاد حساب در بخش [پیش‌نیازها](required.html) توضیح داده شده است.
 
 برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقداردهی نمایید. فراخوانی این متد فقط یکبار کافی است. به قطعه کد زیر دقت کنید :
 
@@ -31,11 +58,8 @@ const auth = {
   devMode:true
 }
 const options = {
-      webpush: {
-        enabled: true,
-        publicKey: 'VAPID_Public_Key'
-      },
       silent: false,
+      realtime: true
     };
 const chabok = new chabokpush.Chabok(auth, options)
 ```
@@ -47,18 +71,22 @@ const chabok = new chabokpush.Chabok(auth, options)
 | توضیحات | پیش‌فرض | نوع | پارامتر |
 | --- | --- | --- | --- |
 |  |  | `Object` | **[options]** |
-| فعال/غیرفعال سازی ارتباط آنی | <code>True</code> | <code>Object</code> | **[options.realtime]** |
-|  |  | <code>Object</code> | **[options.webpush]** |
-| فعال‌سازی پوش ‌نوتیفیکیشن | <code>False</code> | <code>Object</code> | **[options.webpush.enabled]** |
-| پوش‌نوتیفیکیشن Public Key | <code>null</code> | <code>String</code> | **[options.webpush.publicKey]** |
-| دریافت مخفی پیام | <code>True</code> | <code>Boolean</code> | **[options.silent]** |
+| فعال/غیرفعال سازی ارتباط آنی | <code>true</code> | <code>Boolean</code> | **[options.realtime]** |
+| دریافت مخفی پیام | <code>true</code> | <code>Boolean</code> | **[options.silent]** |
 
 
-> `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `False` کنید. 
+> `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `false` کنید. 
 
 > `نکته ` : در صورتی که مقداردهی اولیه به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
 
-### ۲- ثبت کاربر
+#### متد افزودن توکن برای ارسال پوش
+
+برای ارسال پوش‌نوتیفیکشن می‌توانید با متد زیر توکن‌ها را به چابک اضافه کنید:
+
+```javascript
+this.chabok.setPushNotificationToken("TOKEN")
+```
+### ۳- ثبت کاربر
 با استفاده از متد `register` می‌توانید یک نام کاربری به هر کاربر اختصاص دهید. این متد `شناسه کاربر` را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت‌نام می‌کند.
 
 > `نکته` : متد `register` باید فقط **یک بار** در طول اجرا اپلیکیشن فراخوانی شود.
@@ -66,7 +94,7 @@ const chabok = new chabokpush.Chabok(auth, options)
 >   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `LocalStorage` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `()chabok.getUserId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.
 
 ```javascript
-chabok.register('012345678910111213')
+chabok.register('USER_ID')
 ```
 
 > `نکته` : متغیر `USER_ID` شناسه کاربر برای ثبت نام در چابک می‌باشد و ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود شناسه کاربری می تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. `شماره موبایل، کدملی، شماره حساب و یا ایمیل` مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند.
@@ -74,30 +102,22 @@ chabok.register('012345678910111213')
 
 > `نکته`: کاراکترهای ‍`#,+,*,\,/` و فاصله در `USER_ID` مجاز نیستند، همچنین طول این رشته نباید کمتر از ۳ و بیشتر از ۳۲ کاراکتر باشد.
 
+### متد تایید ثبت کاربر
+
+متد `isRegistered` یا همان تایید ثبت کاربر به شما این امکان را می‌دهد که بررسی کنید آیا عملیات ثبت‌نام انجام شده است یا خیر.
+
+```javascript
+chabok.isRegistered()
+```
+
 ### متد حذف کاربر
 برای حذف دستگاه کاربر از سرور چابک می‌توانید از متد زیر استفاده کنید:
 ```javascript
 chabok.unregister()
 ```
 
-### رویداد‌ها : 
+پس از اتمام این مراحل شما می‌توانید با فراخوانی [این رویدادها](https://doc.chabokpush.com/react-native/features.html#اتصال-با-سرور) از اتصال دستگاه به چابک اطمینان یابید.
 
-`connecting`: رویداد در هنگام برقراری اتصال به چابک
+> نحوه صحیح پیاده سازی متد و رویدادها در قالب پروژه [دمو](https://github.com/chabokpush/chabok-rn-chat) پیاده سازی شده است.
 
-```javascript
-chabok.on('connecting', _ => {status = 'Connecting ...'}); 
-```
 
-`connected`: رویداد در حالت برقراری اتصال به چابک
-
-```javascript
-chabok.on('connected', _ => {status = 'connected ...'}); 
-```
-
-`disconnected`: رویداد در حالت قطع اتصال چابک
-
-```javascript
-chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
-```
-
-> نحوه صحیح پیاده سازی متد و رویدادها در قالب پروژه [دمو](https://webpush.chabokpush.com/) پیاده سازی شده است.
