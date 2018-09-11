@@ -38,21 +38,3 @@ react-native link
 
 <application ....>
 ``` 
-
-### تعریف رسیور GCM برای دریافت پوش‌نوتیفیکیشن
-
-رسیور GcmReceiver را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
-
-```xml
-<receiver
-     android:name="com.google.android.gms.gcm.GcmReceiver"
-     android:enabled="true"
-     android:exported="true"
-     android:permission="com.google.android.c2dm.permission.SEND">
-     <intent-filter>
-        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-        <category android:name=" YOUR_APPLICATION_PACKAGE_ID" />
-     </intent-filter>
-</receiver>           
-```
