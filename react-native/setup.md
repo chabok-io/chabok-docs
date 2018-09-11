@@ -8,15 +8,42 @@ next: chabok-messaging.html
 ---
 
 ## مراحل راه‌اندازی چابک
-برای راه‌اندازی چابک باید دو مرحله زیر را به ترتیب انجام دهید تا بتوانید دستگاه خود را در پنل چابک مشاهده کنید :
 
-1. مقداردهی اولیه
-2. ثبت کاربر
+برای راه‌اندازی چابک باید سه مرحله زیر را به ترتیب انجام دهید تا بتوانید دستگاه خود را در پنل چابک مشاهده کنید :
+
+۱. تنظیم دریافت پوش‌نوتیفیکشن در اندروید و آی‌او‌اس
+
+۲. مقداردهی اولیه
+
+۳. ثبت کاربر
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود.  
 
+### ۱- تعریف رسیور GCM برای دریافت پوش‌نوتیفیکیشن در اندروید
 
-### ۱- مقدار‌دهی اولیه
+رسیور GcmReceiver را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
+
+```xml
+<receiver
+     android:name="com.google.android.gms.gcm.GcmReceiver"
+     android:enabled="true"
+     android:exported="true"
+     android:permission="com.google.android.c2dm.permission.SEND">
+     <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+        <category android:name=" YOUR_APPLICATION_PACKAGE_ID" />
+     </intent-filter>
+</receiver>           
+```
+### ایجاد دسترسی دریافت پوش در آی‌او‌اس
+
+لطفا `Push Notifications` را در `Setting > Capabilities` فعال کنید .
+
+و علامت `Remote Notifications` ها را در `Setting > Capabilities > Background Modes` چک کنید.
+
+
+### ۲- مقدار‌دهی اولیه
 برای ارتباط با سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقدار‌دهی کنید.
 برای مقدار‌دهی اولیه می‌بایست از طریق متد `chabok` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید.ایجاد حساب در بخش [پیش‌نیازها](required.html) توضیح داده شده است.
 
@@ -59,7 +86,7 @@ const chabok = new chabokpush.Chabok(auth, options)
 ```javascript
 this.chabok.setPushNotificationToken("TOKEN")
 ```
-### ۲- ثبت کاربر
+### ۳- ثبت کاربر
 با استفاده از متد `register` می‌توانید یک نام کاربری به هر کاربر اختصاص دهید. این متد `شناسه کاربر` را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت‌نام می‌کند.
 
 > `نکته` : متد `register` باید فقط **یک بار** در طول اجرا اپلیکیشن فراخوانی شود.
@@ -89,5 +116,8 @@ chabok.isRegistered()
 chabok.unregister()
 ```
 
+پس از اتمام این مراحل شما می‌توانید با فراخوانی [این رویدادها](https://doc.chabokpush.com/react-native/features.html#اتصال-با-سرور) از اتصال دستگاه به چابک اطمینان یابید.
+
 > نحوه صحیح پیاده سازی متد و رویدادها در قالب پروژه [دمو](https://github.com/chabokpush/chabok-rn-chat) پیاده سازی شده است.
+
 

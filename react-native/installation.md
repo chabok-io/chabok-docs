@@ -18,7 +18,7 @@ npm install chabokpush-rn --save
 yarn add chabokpush-rn
 ```
 
-> `نکته ` : دقت داشته باشید که چابک به طور پیش‌فرض توکن نمی‌گیرد، بنابراین برای **تنظیم پوش‌نوتیفیکیشن** می‌توانید با استفاده از [این پکیج](https://github.com/zo0r/react-native-push-notification#readme) آن را روی پروژه خود پیاده‌سازی کنید.
+> `نکته ` : دقت داشته باشید که چابک به طور پیش‌فرض **توکن پوش** نمی‌گیرد، بنابراین برای **تنظیم پوش‌نوتیفیکیشن** می‌توانید با استفاده از [این پکیج](https://github.com/zo0r/react-native-push-notification#readme) آن را روی پروژه خود پیاده‌سازی کنید.
 
 بعد از نصب دستور زیر را اجرا کنید:
 ```bash
@@ -38,21 +38,3 @@ react-native link
 
 <application ....>
 ``` 
-
-### تعریف رسیور GCM برای دریافت پوش‌نوتیفیکیشن
-
-رسیور GcmReceiver را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
-
-```bash
-<receiver
-     android:name="com.google.android.gms.gcm.GcmReceiver"
-     android:enabled="true"
-     android:exported="true"
-     android:permission="com.google.android.c2dm.permission.SEND">
-     <intent-filter>
-        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-        <category android:name=" YOUR_APPLICATION_PACKAGE_ID" />
-     </intent-filter>
-</receiver>           
-```
