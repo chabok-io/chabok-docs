@@ -90,7 +90,7 @@ chabok.on('connected', _ => {status = 'connected ...'});
 ```javascript
 chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
 ```
-`closed`: رویداد دریافت وضعیت اتصال بسته شده است
+`closed`: دریافت وضعیت اتصال بسته شده است
 
 ```javascript
 chabok.on('closed', _ => {status = 'closed ...'}); 
