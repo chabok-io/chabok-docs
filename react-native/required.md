@@ -27,3 +27,8 @@ next: installation.html
 برای ارسال پوش به برنامه ی iOS لازم هست که اجازه نامه (certificate) ارسال پوش را برای برنامه‌تان ایجاد کنید. روش این کار در این [پست](https://dev.doc.chabokpush.com/ios/certificate.html) توضیح داده شده است.
 
 همینطور اطمینان یابید که `MobileCoreServices.framework` ،`SystemConfiguration.framework` و `CoreData` را از Linked Library وارد کرده‌اید.
+
+لطفا `Push Notifications` را در `Setting > Capabilities` فعال کنید .
+
+و علامت `Remote Notifications` ها را در `Setting > Capabilities > Background Modes` چک کنید.
+
