@@ -9,4 +9,4 @@ permalink: panel/usecase-chabok-push-channel.html
 
 به عنوان مثال می‌توانید به سناریوی استفاده یکی از مشتری‌های چابک از این قابلیت را به خوبی مشاهده کنید.
 
-![عکس مربوطه](http://uupload.ir/files/p6y3_notokenll.png)
+![عکس مربوطه](http://uupload.ir/files/93xb_notokenk.png)
