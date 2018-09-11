@@ -2,7 +2,7 @@
 id: usecase-chabok-push-channel
 title:  موارد استفاده - ارسال پوش از کانال چابک
 layout: panel
-permalink: usecase-chabok-push-channel.html
+permalink: panel/usecase-chabok-push-channel.html
 ---
 
 ## ارسال پوش از کانال چابک
