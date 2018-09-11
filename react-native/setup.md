@@ -23,7 +23,7 @@ next: chabok-messaging.html
 
 رسیور GcmReceiver را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
-```xml
+```markup
 <receiver
      android:name="com.google.android.gms.gcm.GcmReceiver"
      android:enabled="true"
