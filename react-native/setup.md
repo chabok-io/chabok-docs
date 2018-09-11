@@ -32,6 +32,7 @@ const auth = {
 }
 const options = {
       silent: false,
+      realtime: true
     };
 const chabok = new chabokpush.Chabok(auth, options)
 ```
@@ -43,11 +44,11 @@ const chabok = new chabokpush.Chabok(auth, options)
 | توضیحات | پیش‌فرض | نوع | پارامتر |
 | --- | --- | --- | --- |
 |  |  | `Object` | **[options]** |
-| فعال/غیرفعال سازی ارتباط آنی | <code>True</code> | <code>Object</code> | **[options.realtime]** |
-| دریافت مخفی پیام | <code>True</code> | <code>Boolean</code> | **[options.silent]** |
+| فعال/غیرفعال سازی ارتباط آنی | <code>true</code> | <code>Boolean</code> | **[options.realtime]** |
+| دریافت مخفی پیام | <code>true</code> | <code>Boolean</code> | **[options.silent]** |
 
 
-> `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `False` کنید. 
+> `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `false` کنید. 
 
 > `نکته ` : در صورتی که مقداردهی اولیه به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
 
@@ -59,7 +60,7 @@ const chabok = new chabokpush.Chabok(auth, options)
 >   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `LocalStorage` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `()chabok.getUserId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.
 
 ```javascript
-chabok.register('012345678910111213')
+chabok.register('USER_ID')
 ```
 
 > `نکته` : متغیر `USER_ID` شناسه کاربر برای ثبت نام در چابک می‌باشد و ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود شناسه کاربری می تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. `شماره موبایل، کدملی، شماره حساب و یا ایمیل` مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند.
