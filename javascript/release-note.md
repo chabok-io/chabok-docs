@@ -6,6 +6,16 @@ permalink: javascript/release-note.html
 next: introducing.html
 ---
 
+## نسخه ۱.۰.۱ - ۱۳۹۷/۰۶/۱۳
+### تغییرات 
+* افزودن متد‌های `setUserInfo` و `getUserInfo`  
+* افزودن متدهای `addTag ` و `addTags `
+* افزودن متدهای `removeTag` و `removeTags`
+* حل مشکل حذف کاربر با متد `unregister `
+
+### ارتقا
+* قابلیت **register مجدد کاربر** با متد `register` 
+
 ## نسخه ۱.۰.۰ - ۱۳۹۷/۰۶/۰۳
 ### تغییرات 
 * افزودن متد `track` برای رصد تعامل کاربر.

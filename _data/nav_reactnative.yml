@@ -16,5 +16,7 @@
       title: اعتبارسنجی شناسه کاربری
     - id: events
       title: مدیریت رویدادها
+    - id: event-tracking
+      title: رصد رویدادها
     - id: features
       title: امکانات‌ دیگر چابک
