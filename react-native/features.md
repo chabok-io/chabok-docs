@@ -25,7 +25,7 @@ chabok.addTags("Premium_User", "Male", "Teenage")
 
 chabok.addTag("Premium_User")
   .then( count => {
-    console.log(`Premium tag was assign to ${chabok.getUserId} user with ${count} devices")
+    console.log("Premium tag was assign to ${chabok.getUserId} user with ${count} devices")
   })
   .catch( err => console.log("An error happend adding tag ..."))
 ```
@@ -44,6 +44,38 @@ chabok.removeTag("Premium_User")
 
 ```javascript
 chabok.removeTags("Premium_User", "Male", "Teenage")
+```
+
+### اتصال با سرور
+برای اطلاع از وضعیت آنلاین یا آفلاین بودن،میتوانید از متد زیر استفاده کنید:
+
+`connecting`: دریافت وضیت در حال اتصال
+
+```javascript
+chabok.on('connecting', _ => {status = 'Connecting ...'}); 
+```
+
+`connected`: دریافت وضعیت اتصال برقرار شده است
+
+```javascript
+chabok.on('connected', _ => {status = 'connected ...'}); 
+```
+
+`disconnected`: دریافت وضعیت اتصال قطع شده است
+
+```javascript
+chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
+```
+`closed`: دریافت وضعیت اتصال بسته شده است
+
+```javascript
+chabok.on('closed', _ => {status = 'closed ...'}); 
+```
+
+`error`: رویداد دریافت خطا‌ها 
+
+```javascript
+chabok.on('error', _ => {status = 'error ...'}); 
 ```
 
 ### شناسه دستگاه در چابک
@@ -69,42 +101,4 @@ chabok.setUserInfo({
 ```javascript
 chabok.getUserInfo()
 ```
-
-### اتصال با سرور
-برای اطلاع از وضعیت آنلاین یا آفلاین بودن،میتوانید از متد زیر استفاده کنید:
-
-`connecting`: دریافت وضیت در حال اتصال
-
-```javascript
-chabok.on('connecting', _ => {status = 'Connecting ...'}); 
-```
-
-`connected`: دریافت وضعیت اتصال برقرار شده است
-
-```javascript
-chabok.on('connected', _ => {status = 'connected ...'}); 
-```
-
-`disconnected`: دریافت وضعیت اتصال قطع شده است
-
-```javascript
-chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
-```
-`closed`: رویداد دریافت وضعیت اتصال بسته شده است
-
-```javascript
-chabok.on('closed', _ => {status = 'closed ...'}); 
-```
-
-`error`: رویداد دریافت خطا‌ها 
-
-```javascript
-chabok.on('error', _ => {status = 'error ...'}); 
-```
-
-
-
-
-
-
 
