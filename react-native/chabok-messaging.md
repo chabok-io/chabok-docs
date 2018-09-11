@@ -57,22 +57,3 @@ chabok.on('message', msg => {
 })
 ```
 
-### رویداد دریافت تأییدیه تحویل
-برای دریافت تأییدیه تحویل، باید از رویداد زیر استفاده کنید :
-
-```javascript
-chabok.on('messageDelivery', msg => {
- // Called When PushClientManager has received new delivery from server
-})
-```
-
-### ارسال وضعیت پیام‌های دریافتی
-
-شما می‌توانید عکس‌العمل کاربر به یک پیام چابک را (خوانده شدن، نادیده گرفته شدن، ...) با استفاده از کلاینت چابک مشخص کنید. 
-متد `markAsRead` برای ارسال رویداد خوانده شدن پیام توسط کاربر به سرور می تواند مورد استفاده قرار بگیرد. 
-متد `messageDismissed` نیز می‌تواند برای هر عملی که معنی باز نکردن یا نادیده گرفته شدن پیام را داشته باشد بکار رود. به دو طریق می توان این متدها را فراخوانی نمود:
-
-```javascript
-chabok.messageMarkAsRead("MESSAGE_ID")
-chabok.messageDismissed("MESSAGE_ID")
-```
