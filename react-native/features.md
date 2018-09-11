@@ -47,9 +47,27 @@ chabok.removeTags("Premium_User", "Male", "Teenage")
 ```
 
 ### شناسه دستگاه در چابک
-هر دستگاه در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید :
+هر دستگاه در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
 ```javascript
 chabok.getInstallationId()
+```
+### مدیریت اطلاعات کاربر
+شما با دو متد زیر می‌توانید اطلاعات کاربر را تنظیم و دریافت کنید. 
+
+- متد `setUserInfo` برای تنظیم اطلاعات کاربر:
+
+```javascript
+chabok.setUserInfo({
+ firstname: 'ahmad',
+ lastname: 'mirzaee',
+ email: 'ahmad.m@gmail.com',
+ age: 17
+})
+```
+- متد `getUserInfo` برای دریافت اطلاعات کاربر:
+
+```javascript
+chabok.getUserInfo()
 ```
 
 ### اتصال با سرور
@@ -72,3 +90,21 @@ chabok.on('connected', _ => {status = 'connected ...'});
 ```javascript
 chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
 ```
+`closed`: رویداد دریافت وضعیت اتصال بسته شده است
+
+```javascript
+chabok.on('closed', _ => {status = 'closed ...'}); 
+```
+
+`error`: رویداد دریافت خطا‌ها 
+
+```javascript
+chabok.on('error', _ => {status = 'error ...'}); 
+```
+
+
+
+
+
+
+

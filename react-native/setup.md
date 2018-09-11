@@ -67,42 +67,19 @@ chabok.register('012345678910111213')
 
 > `نکته`: کاراکترهای ‍`#,+,*,\,/` و فاصله در `USER_ID` مجاز نیستند، همچنین طول این رشته نباید کمتر از ۳ و بیشتر از ۳۲ کاراکتر باشد.
 
+### متد تایید ثبت کاربر
+
+متد `isRegistered` یا همان تایید ثبت کاربر به شما این امکان را می‌دهد که بررسی کنید آیا عملیات ثبت‌نام انجام شده است یا خیر.
+
+```javascript
+chabok.isRegistered()
+```
+
 ### متد حذف کاربر
 برای حذف دستگاه کاربر از سرور چابک می‌توانید از متد زیر استفاده کنید:
 ```javascript
 chabok.unregister()
 ```
 
-### رویداد‌ها : 
-
-`connecting`: رویداد در هنگام برقراری اتصال به چابک
-
-```javascript
-chabok.on('connecting', _ => {status = 'Connecting ...'}); 
-```
-
-`connected`: رویداد در حالت برقراری اتصال به چابک
-
-```javascript
-chabok.on('connected', _ => {status = 'connected ...'}); 
-```
-
-`disconnected`: رویداد در حالت قطع اتصال چابک
-
-```javascript
-chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
-```
-
-`closed`: رویداد در حالت بسته شدن اتصال چابک
-
-```javascript
-chabok.on('closed', _ => {status = 'closed ...'}); 
-```
-
-`error`: رویداد خطا‌ها 
-
-```javascript
-chabok.on('error', _ => {status = 'error ...'}); 
-```
-
 > نحوه صحیح پیاده سازی متد و رویدادها در قالب پروژه [دمو](https://github.com/chabokpush/chabok-rn-chat) پیاده سازی شده است.
+
