@@ -62,7 +62,7 @@ const options = {
       silent: false,
       realtime: true
     };
-const chabok = new chabokpush.Chabok(auth, options)
+const chabok = new chabokpush(auth, options)
 ```
 
 > `نکته ` : به طور کلی چابک شامل ۲ محیط سندباکس و عملیاتی می‌باشد. حساب‌های رایگان چابک (تا ۳۰ هزار کاربر) بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. مقدار `true` برای ‌`devMode` باعث اتصال به محیط سندباکس و مقدار `false` باعث اتصال به محیط عملیاتی ما می‌شود.
