@@ -24,7 +24,7 @@
   document: /react-native/introducing.html
   demo: https://github.com/chabokpush/chabok-rn-chat
   issue: https://github.com/chabokpush/chabok-client-rn-js/issues
-  starter:
+  starter: https://github.com/chabokpush/chabok-starter-rn-js
 
 - name: React Native (Bridge)
   image: react.svg
