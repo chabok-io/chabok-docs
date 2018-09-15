@@ -11,7 +11,7 @@ permalink: panel/usecase-tracking-custom-events.html
 
 ### رصد رفتار
 
- برای شروع، رخدادی که مد نظرتان هست را برای رصد انتخاب و به چابک معرفی کنید. برای این کار می‌توانید صفحه رصد رویدادها را درمستندات [اندروید](https://doc.chabokpush.com/android/event-tracking.html)، [آی‌اواس](https://doc.chabokpush.com/ios/event-tracking.html) و [وب](https://dev.doc.chabokpush.com/javascript/event-tracking.html) مطالعه کنید. در اینجا ما نام رخداد را **Purchase** در نظر می‌گیریم.
+ برای شروع، رخدادی که مد نظرتان هست را برای رصد انتخاب و به چابک معرفی کنید. برای این کار می‌توانید صفحه رصد رویدادها را در مستندات [اندروید](https://doc.chabokpush.com/android/event-tracking.html)، [آی‌اواس](https://doc.chabokpush.com/ios/event-tracking.html) و [وب](https://dev.doc.chabokpush.com/javascript/event-tracking.html) مطالعه کنید. در اینجا ما نام رخداد را **Purchase** در نظر می‌گیریم.
 
 
 ### ارسال کمپین برمبنای رفتار
