@@ -20,13 +20,13 @@ Link Binary With Libraries: libRCTPushNotification.a
 در آخر هم  برای پشتیبانی از نوتیفیکیشن و ثبت رویدادها باید به  کلاس **AppDelegate** خود دو قطعه کد زیر را اضافه کنید:
 - در بالای `AppDelegate.m` :
 
-```
+```objectivec
 #import <React/RCTPushNotificationManager.h>
 ```
 
 - در پیاده‌سازی کلاس **AppDelegate**:
 
-```
+```objectivec
 // Required to register for notifications
  - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
  {
