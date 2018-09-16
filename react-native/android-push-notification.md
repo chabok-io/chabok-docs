@@ -89,3 +89,5 @@ ext {
         <!-- </Else> -->
      .....
 ```
+
+> `نکته:` برای اطلاعات بیشتر می‌توانید [لینک مرجع](https://github.com/zo0r/react-native-push-notification#android-manual-installation) را مطالعه نمایید.
