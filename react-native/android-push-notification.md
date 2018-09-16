@@ -5,7 +5,7 @@ layout: react-native
 permalink: react-native/android-push-notification.html
 ---
 
-در کلاس `android/build.gradle`:
+در کلاس `android/build.gradle` کد زیر اضافه کنید:
 
 ```java
 ext {
@@ -23,7 +23,7 @@ ext {
 > `نکته:` `localNotification()` بدون انجام تغییرات در اپلیکیشن کار می‌کند اما برای کار کردن `localNotificationSchedule()` نیاز به تغییرات زیر دارید.
 
 
-در فایل `AndroidManifest.xml`:
+در فایل `AndroidManifest.xml`کد زیر اضافه کنید:
 
 ```java
 
