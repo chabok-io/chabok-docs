@@ -17,14 +17,14 @@ node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcod
 ```bash
 Link Binary With Libraries: libRCTPushNotification.a
 ```
-در آخر هم  برای پشتیبانی از نوتیفیکیشن و ثبت رویدادها باید به  **AppDelegate** خود دو قطعه کد زیر را اضافه کنید:
+در آخر هم  برای پشتیبانی از نوتیفیکیشن و ثبت رویدادها باید به  کلاس **AppDelegate** خود دو قطعه کد زیر را اضافه کنید:
 - در بالای `AppDelegate.m` :
 
 ```
 #import <React/RCTPushNotificationManager.h>
 ```
 
-- در پیاده‌سازی **AppDelegate**:
+- در پیاده‌سازی کلاس **AppDelegate**:
 
 ```
 // Required to register for notifications
