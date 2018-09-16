@@ -45,14 +45,15 @@ next: chabok-messaging.html
 
 ### ۲- مقدار‌دهی اولیه
 برای ارتباط با سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقدار‌دهی کنید.
-برای مقدار‌دهی اولیه می‌بایست از طریق متد `chabok` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. ایجاد حساب در بخش [پیش‌نیازها](required.html) توضیح داده شده است.
+برای مقدار‌دهی اولیه می‌بایست از طریق متد `chabok` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. ایجاد حساب در بخش [پیش‌نیازها](https://doc.chabokpush.com/react-native/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
+
 
 برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقداردهی نمایید. فراخوانی این متد فقط یکبار کافی است. به قطعه کد زیر دقت کنید :
 
 ```javascript
 const auth = {
   appId: 'APP_ID',
-  apiKey: 'API_KEY',
+  apiKey: 'API_KEY(SDK_KEY)',
   username: 'USERNAME',
   password: 'PASSWORD',
   devMode:true
@@ -61,7 +62,7 @@ const options = {
       silent: false,
       realtime: true
     };
-const chabok = new chabokpush.Chabok(auth, options)
+const chabok = new chabokpush(auth, options)
 ```
 
 > `نکته ` : به طور کلی چابک شامل ۲ محیط سندباکس و عملیاتی می‌باشد. حساب‌های رایگان چابک (تا ۳۰ هزار کاربر) بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. مقدار `true` برای ‌`devMode` باعث اتصال به محیط سندباکس و مقدار `false` باعث اتصال به محیط عملیاتی ما می‌شود.
@@ -119,5 +120,3 @@ chabok.unregister()
 پس از اتمام این مراحل شما می‌توانید با فراخوانی [این رویدادها](https://doc.chabokpush.com/react-native/features.html#اتصال-با-سرور) از اتصال دستگاه به چابک اطمینان یابید.
 
 > نحوه صحیح پیاده سازی متد و رویدادها در قالب پروژه [دمو](https://github.com/chabokpush/chabok-rn-chat) پیاده سازی شده است.
-
-

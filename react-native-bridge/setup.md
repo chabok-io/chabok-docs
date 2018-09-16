@@ -87,7 +87,8 @@ private AdpPushClient chabok = AdpPushClient.init(
 
 #### پارامترها
 
-با استفاده از متد init یک نمونه از AdpPushClient مقدار دهی اولیه می شود. در این متد بجای پارامتر‌های `YOUR_APP_ID`, `YOUR_API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](required.html) توضیح داده شده است.
+با استفاده از متد init یک نمونه از AdpPushClient مقدار دهی اولیه می شود. در این متد بجای پارامتر‌های `YOUR_APP_ID`, `YOUR_API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](https://doc.chabokpush.com/react-native-bridge/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
+
 
 > `نکته`: ترکیب APP_ID/SENDERID به عنوان YOUR_APP_ID مورد استفاده قرار می‌گیرد.
 
@@ -112,7 +113,7 @@ private AdpPushClient chabok = null;
                 getApplicationContext(),
                 YOUR_MAIN_ACTIVITY_CLASS.class,
                 YOUR_APP_ID,
-                YOUR_API_KEY,
+                YOUR_API_KEY(SDK_KEY),
                 SDK_USERNAME,
                 SDK_PASSWORD
                 );

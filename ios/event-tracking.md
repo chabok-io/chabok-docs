@@ -53,7 +53,7 @@ self.manager.track("purchase-clothing", data: ["clothes_id":35147652])
 
 در ادامه مثال بالا، اکنون می‌خواهید برای کسانی که پوشاک خریداری کرده‌اند پیامی بفرستید که آن‌ها را از رسیدن کالکشن‌های جدید فصل خبردار کنید.
 
-![عکس مربوطه](http://uupload.ir/files/dzqa_sending.png)
+![عکس مربوطه](http://uupload.ir/files/2oig_track.png)
 
 ### مشاهده تاریخچه رویداد‌ها از پنل
 
