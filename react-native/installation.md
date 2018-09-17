@@ -23,7 +23,7 @@ yarn add chabokpush-rn
 بعد از نصب دستور زیر را اجرا کنید:
 
 ```bash
-react-native link
+react-native link chabokpush-rn
 ```
 
 نصب **دریافت اطلاعات دستگاه** از طریق `npm` یا `yarn`: 
