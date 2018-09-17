@@ -7,8 +7,7 @@ prev: installation.html
 next: setup.html
 ---
 
-
-## تنظیم پوش‌نوتیفیکیشن اندروید
+### اندروید
 
 برای استفاده از سرویس پوش‌نوتیفیکیشن در اندروید (GCM یا Firebase) مراحل زیر را باید طی کنید.
 
@@ -128,7 +127,7 @@ public class MainApplication extends Application implements ReactApplication {
 > `نکته:` برای اطلاعات بیشتر می‌توانید [لینک مرجع](https://github.com/zo0r/react-native-push-notification#android-manual-installation) را مطالعه نمایید.
 
 
-## تنظیم پوش‌نوتیفیکیشن آی‌او‌اس
+### آی‌او‌اس
 
 این قسمت مخصوص پروژه‌هایی است که با `react-native init` یا **Create React Native App** ساخته شده‌اند. 
 برای شروع ابتدا گواهی‌ها و دسترسی‌های اپل را همانطور که در [صفحه پیش‌نیاز](https://doc.chabokpush.com/react-native/required.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%BE%D9%88%D8%B4%D9%86%D9%88%D8%AA%DB%8C%D9%81%DB%8C%DA%A9%DB%8C%D8%B4%D9%86-%D8%A2%DB%8C%D8%A7%D9%88%D8%A7%D8%B3) توضیح دادیم، تنظیم نمایید.
@@ -145,13 +144,13 @@ Link Binary With Libraries: libRCTPushNotification.a
 در آخر هم  برای پشتیبانی از نوتیفیکیشن و ثبت رویدادها باید به  کلاس **AppDelegate** خود دو قطعه کد زیر را اضافه کنید:
 - در بالای `AppDelegate.m` :
 
-```
+```objectivec
 #import <React/RCTPushNotificationManager.h>
 ```
 
 - در پیاده‌سازی کلاس **AppDelegate**:
 
-```
+```objectivec
 // Required to register for notifications
  - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
  {
