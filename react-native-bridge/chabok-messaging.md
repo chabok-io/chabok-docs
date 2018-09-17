@@ -1,8 +1,8 @@
 ---
 id: chabok-messaging
 title: پیام چابک
-layout: react-native
-permalink: react-native/chabok-messaging.html
+layout: react-native-bridge
+permalink: react-native-bridge/chabok-messaging.html
 prev: setup.html
 next: verification.html
 ---
