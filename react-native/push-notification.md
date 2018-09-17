@@ -32,8 +32,8 @@ ext {
 
 در فایل `AndroidManifest.xml`کد زیر اضافه کنید:
 
-```xml
 
+```java
 .....
     <!-- < Only if you're using GCM or localNotificationSchedule() > -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -126,6 +126,7 @@ public class MainApplication extends Application implements ReactApplication {
 ```
 
 > `نکته:` برای اطلاعات بیشتر می‌توانید [لینک مرجع](https://github.com/zo0r/react-native-push-notification#android-manual-installation) را مطالعه نمایید.
+
 
 ## تنظیم پوش‌نوتیفیکیشن آی‌او‌اس
 

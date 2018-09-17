@@ -17,14 +17,15 @@ next: publishingMessages.html
 
 ### ۱- مقدار‌دهی اولیه
 برای ارتباط با سرور چابک، لازم است یک نمونه از کلاس  `chabokpush` بسازید و آن را مقدار‌دهی کنید.
-برای مقدار‌دهی اولیه می‌بایست از طریق متد `chabok` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. ایجاد حساب در بخش [پیش‌نیازها](required.html) توضیح داده شده است.
+برای مقدار‌دهی اولیه می‌بایست از طریق متد `chabok` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. ایجاد حساب در بخش [پیش‌نیازها](https://doc.chabokpush.com/javascript/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
+
 
 برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقدار‌دهی نمایید.  فراخوانی این متد فقط یکبار کافی‌ است. به قطعه کد زیر دقت کنید :
 
 ```javascript
 const auth = {
   appId: 'APP_ID',
-  apiKey: 'API_KEY',
+  apiKey: 'API_KEY(SDK_KEY)',
   username: 'USERNAME',
   password: 'PASSWORD',
   devMode:true
@@ -46,14 +47,14 @@ const chabok = new chabokpush.Chabok(auth, options)
 | توضیحات | پیش‌فرض | نوع | پارامتر |
 | --- | --- | --- | --- |
 |  |  | `Object` | **[options]** |
-| فعال/غیرفعال‌سازی ارتباط آنی | <code>True</code> | <code>Object</code> | **[options.realtime]** |
+| فعال/غیرفعال‌سازی ارتباط آنی | <code>true</code> | <code>Boolean</code> | **[options.realtime]** |
 |  |  | <code>Object</code> | **[options.webpush]** |
-| فعال‌سازی پوش ‌نوتیفیکیشن | <code>False</code> | <code>Object</code> | **[options.webpush.enabled]** |
+| فعال‌سازی پوش ‌نوتیفیکیشن | <code>false</code> | <code>Object</code> | **[options.webpush.enabled]** |
 | پوش‌نوتیفیکیشن Public Key | <code>null</code> | <code>String</code> | **[options.webpush.publicKey]** |
-| دریافت مخفی پیام | <code>True</code> | <code>Boolean</code> | **[options.silent]** |
+| دریافت مخفی پیام | <code>true</code> | <code>Boolean</code> | **[options.silent]** |
 
 
-> `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `False` کنید. 
+> `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `false` کنید. 
 
 > `نکته ` : در صورتی که مقدار‌دهی اولیه به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
 
@@ -61,7 +62,7 @@ const chabok = new chabokpush.Chabok(auth, options)
 با استفاده از متد `register` می‌توانید یک نام کاربری به هر کاربر اختصاص دهید. این متد `شناسه کاربر` را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام می‌کند.
 
 ```javascript
-    chabok.register('<userId>')
+    chabok.register('<USER_ID>')
 ```
 
 > `نکته` : متد `register` باید فقط **یک بار** در طول اجرا اپلیکیشن فراخوانی شود.
@@ -72,7 +73,7 @@ const chabok = new chabokpush.Chabok(auth, options)
 if (chabok.isRegistered()) {
     chabok.register(chabok.getUserId())
 } else {
-    chabok.register('<userId>')
+    chabok.register('<USER_ID>')
 }
 ```
 

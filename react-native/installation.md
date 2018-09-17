@@ -27,7 +27,7 @@ yarn add chabokpush-rn
 react-native link chabokpush-rn
 ```
 
-نصب **دریافت اطلاعات دستگاه** از طریق `npm` یا `yarn`: 
+برای **دریافت اطلاعات دستگاه** از طریق `npm` یا `yarn`: 
 
 ```bash
 npm install react-native-device-info --save
@@ -44,7 +44,7 @@ yarn add react-native-device-info
 react-native link react-native-device-info
 ```
 
-**تنظیم پوش‌نوتیفیکیشن** از طریق `npm` یا `yarn` (اختیاری): 
+برای **تنظیم پوش‌نوتیفیکیشن** از طریق `npm` یا `yarn` (اختیاری): 
 
 ```bash
 npm install react-native-push-notification --save
