@@ -96,4 +96,9 @@ chabok.setUserInfo({
  age: 17
 })
 ```
+- متد `getUserInfo` برای دریافت اطلاعات کاربر:
+
+```javascript
+chabok.getUserInfo()
+```
 
