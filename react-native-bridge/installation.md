@@ -87,3 +87,38 @@ dependencies {
 
 ### نصب آی‌اواس
 
+چابک از طریق CocoaPods در دسترس است. بنابراین برای نصب، در فایل `ios` پروژه خود یک Podfile اضافه کنید:
+
+
+```bash
+$ cd ios
+$ pod init
+```
+سپس dependency` chabokPush` را به Podfile خود مانند زیر اضافه کنید:
+
+```bash
+use_frameworks!
+platform :ios, '9.0'
+
+target 'YOUR_TARGET_NAME' do
+
+  # Pods for AwesomeProject
+  pod 'ChabokPush'
+
+end
+```
+
+پس از آن با روش زیر Podfile را نصب کنید :
+
+```bash
+$ pod install
+```
+پس از اجرای دستورات بالا اگر با خطایی روبه رو شدید ، دستور زیر را وارد کنید سپس `pod install` را دوباره اجرا کنید.
+
+```bash
+$ pod update
+```
+حالا برای اطمینان از نصب ، پروژه را در xcode باز کنید ، اگر header فایل چابک را مشاهده کردید افزودن کتابخانه موفقیت آمیز بوده است.
+
+
+
