@@ -3,7 +3,11 @@ id: android-push-notification
 title: تنظیم پوش‌نوتیفیکیشن Android
 layout: react-native
 permalink: react-native/android-push-notification.html
+prev: setup.html
+next: ios-push-notification.html
 ---
+
+برای استفاده از سرویس پوش‌نوتیفیکیشن در اندروید (GCM یا Firebase) مراحل زیر را باید طی کنید.
 
 در کلاس `android/build.gradle` کد زیر اضافه کنید:
 
@@ -25,7 +29,7 @@ ext {
 
 در فایل `AndroidManifest.xml`کد زیر اضافه کنید:
 
-```java
+```xml
 
 .....
     <!-- < Only if you're using GCM or localNotificationSchedule() > -->
@@ -88,6 +92,34 @@ ext {
         </service>
         <!-- </Else> -->
      .....
+```
+
+اگر از `react-native link` استفاده نکردید، پکیج را دستی در `MainApplication.java` ثبت کنید:
+
+```java
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;  // <--- Import Package
+
+public class MainApplication extends Application implements ReactApplication {
+
+  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+      @Override
+      protected boolean getUseDeveloperSupport() {
+        return BuildConfig.DEBUG;
+      }
+
+      @Override
+      protected List<ReactPackage> getPackages() {
+
+      return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+          new ReactNativePushNotificationPackage() // <---- Add the Package
+      );
+    }
+  };
+
+  ....
+}
+
 ```
 
 > `نکته:` برای اطلاعات بیشتر می‌توانید [لینک مرجع](https://github.com/zo0r/react-native-push-notification#android-manual-installation) را مطالعه نمایید.
