@@ -10,6 +10,10 @@
       title: نصب چابک
     - id: setup
       title: راه‌اندازی چابک
+    - id: android-push-notification
+      title: تنظیم پوش‌نوتیفیکیشن اندروید
+    - id: ios-push-notification
+      title: تنظیم پوش‌نوتیفیکیشن آی‌او‌اس
     - id: chabok-messaging
       title: پیام چابک
     - id: verification
