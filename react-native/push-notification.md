@@ -1,10 +1,10 @@
 ---
-id: android-push-notification
-title: تنظیم پوش‌نوتیفیکیشن Android
+id: push-notification
+title: تنظیم پوش‌نوتیفیکیشن 
 layout: react-native
-permalink: react-native/android-push-notification.html
+permalink: react-native/push-notification.html
 prev: installation.html
-next: ios-push-notification.html
+next: setup.html
 ---
 
 برای استفاده از سرویس پوش‌نوتیفیکیشن در اندروید (GCM یا Firebase) مراحل زیر را باید طی کنید.
