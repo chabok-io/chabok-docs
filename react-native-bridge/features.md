@@ -12,22 +12,22 @@ prev: event-tracking.html
 با استفاده از متد زیر، شما می‌توانید به کاربر فعلی یک `Tag` اختصاص دهید :
 
 ```javascript
-chabok.addTag("Premium_User")
+this.chabok.addTag("Premium_User")
 ```
 اگر هم می‌خواهید به کاربرتان چند `Tag` یکجا اضافه کنید، می‌توانید از کد زیر استفاده کنید:
 
 ```javascript
-chabok.addTags("Premium_User", "Male", "Teenage")
+this.chabok.addTags("Premium_User", "Male", "Teenage")
 ```
 
 همچنین می‌توانید با استفاده از این متد، از افزودن و یا خطا در عملیات با خبر شوید :
 ```javascript
 
-this.chabok.addTag(this.state.tagName)
-                .then(({count}) => {
-                    alert(this.state.tagName + ' tag was assign to ' + this.getUserId() + ' user with '+ count + ' devices');
-                })
-                .catch(_ => console.warn("An error happend adding tag ..."));
+this.chabok.addTag('TAG_NAME')
+    .then(res => {
+        alert('This tag was assign to ' + this.chabok.getUserId() + ' user');
+        })
+    .catch(_ => console.warn("An error happend adding tag ...",_));
 ```
 اگر عملیات افزودن تگ با موفقیت انجام شود، می‌توانید از طریق پنل چابک، تگ اضافه شده به کاربر را در بخش مشترکین همانند تصویر زیر مشاهده کنید :
 
@@ -37,51 +37,51 @@ this.chabok.addTag(this.state.tagName)
 با استفاده از متد زیر، می‌توانید یک `Tag` خاص از کاربر فعلی را حذف کنید :
 
 ```javascript
-chabok.removeTag("Premium_User")
+this.chabok.removeTag("Premium_User")
 ```
 
 اگر هم می‌خواهید به کاربرتان چند `Tag` یکجا حذف کنید، می‌توانید از کد زیر استفاده کنید:
 
 ```javascript
-chabok.removeTags("Premium_User", "Male", "Teenage")
+this.chabok.removeTags("Premium_User", "Male", "Teenage")
 ```
+
+###  مدیریت نشان‌ها (Badge)
+
+اگر می‌خواهید شماره badge برنامه خود را بازنشانی کنید، با روش زیر می‌توانید: 
+
+
+```java
+this.chabok.resetBadge()
+``` 
+> `نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](https://doc.chabokpush.com/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید. 
+
 
 ### اتصال با سرور
-برای اطلاع از وضعیت آنلاین یا آفلاین بودن،میتوانید از متد زیر استفاده کنید:
-
-`connecting`: دریافت وضیت در حال اتصال
+برای دریافت از وضعیت آنلاین یا آفلاین بودن، باید یک listener به رویداد `connectionStatus` مانند زیر اضافه کنید:
 
 ```javascript
-chabok.on('connecting', _ => {status = 'Connecting ...'}); 
-```
+const chabokEmitter = new NativeEventEmitter(NativeModules.AdpPushClient);
 
-`connected`: دریافت وضعیت اتصال برقرار شده است
-
-```javascript
-chabok.on('connected', _ => {status = 'connected ...'}); 
-```
-
-`disconnected`: دریافت وضعیت اتصال قطع شده است
-
-```javascript
-chabok.on('disconnected', _ => {status = 'disconnected ...'}); 
-```
-`closed`: دریافت وضعیت اتصال بسته شده است
-
-```javascript
-chabok.on('closed', _ => {status = 'closed ...'}); 
-```
-
-`error`: رویداد دریافت خطا‌ها 
-
-```javascript
-chabok.on('error', _ => {status = 'error ...'}); 
+chabokEmitter.addListener(
+    'connectionStatus',
+        (status) => {
+            if (status === 'CONNECTED') {
+                //Connected to chabok
+            } else if (status === 'CONNECTING') {
+                //Connecting to chabok
+            } else if (status === 'DISCONNECTED') {
+                //Disconnected
+            } else {
+                // Closed
+            }
+    });
 ```
 
 ### شناسه دستگاه در چابک
 هر دستگاه در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
 ```javascript
-chabok.getInstallationId()
+this.chabok.getInstallationId()
 ```
 ### مدیریت اطلاعات کاربر
 شما با دو متد زیر می‌توانید اطلاعات کاربر را تنظیم و دریافت کنید. 
@@ -89,7 +89,7 @@ chabok.getInstallationId()
 - متد `setUserInfo` برای تنظیم اطلاعات کاربر:
 
 ```javascript
-chabok.setUserInfo({
+this.chabok.setUserInfo({
  firstname: 'ahmad',
  lastname: 'mirzaee',
  email: 'ahmad.m@gmail.com',
@@ -99,6 +99,6 @@ chabok.setUserInfo({
 - متد `getUserInfo` برای دریافت اطلاعات کاربر:
 
 ```javascript
-chabok.getUserInfo()
+this.chabok.getUserInfo()
 ```
 
