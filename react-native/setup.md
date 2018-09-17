@@ -3,7 +3,7 @@ id: setup
 title: راه‌اندازی چابک
 layout: react-native
 permalink: react-native/setup.html
-prev: installation.html
+prev: push-notification.html
 next: chabok-messaging.html
 ---
 
@@ -11,17 +11,51 @@ next: chabok-messaging.html
 
 برای راه‌اندازی چابک باید سه مرحله زیر را به ترتیب انجام دهید:
 
-۱. تنظیم پوش‌نوتیفیکشن 
+۱. مقداردهی اولیه
 
-۲. مقداردهی اولیه
+۲. تنظیم پوش‌نوتیفیکشن 
 
 ۳. ثبت کاربر
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود.  
 
-### ۱- تعریف رسیور GCM برای دریافت پوش‌نوتیفیکیشن در اندروید
+### ۱- مقدار‌دهی اولیه
+برای ارتباط با سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقدار‌دهی کنید.
+برای مقدار‌دهی اولیه می‌بایست از طریق متد `chabok` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. ایجاد حساب در بخش [پیش‌نیازها](required.html) توضیح داده شده است.
 
-رسیور GcmReceiver را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
+برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقداردهی نمایید. فراخوانی این متد فقط یکبار کافی است. به قطعه کد زیر دقت کنید :
+
+```javascript
+const auth = {
+  appId: 'APP_ID',
+  apiKey: 'API_KEY',
+  username: 'USERNAME',
+  password: 'PASSWORD',
+  devMode:true
+}
+const options = {
+      silent: false,
+      realtime: true
+    };
+const chabok = new chabokpush.Chabok(auth, options)
+```
+
+> `نکته ` : به طور کلی چابک شامل ۲ محیط سندباکس و عملیاتی می‌باشد. حساب‌های رایگان چابک (تا ۳۰ هزار کاربر) بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. مقدار `true` برای ‌`devMode` باعث اتصال به محیط سندباکس و مقدار `false` باعث اتصال به محیط عملیاتی ما می‌شود.
+
+##### تنظیمات اولیه
+
+| توضیحات | پیش‌فرض | نوع | پارامتر |
+| --- | --- | --- | --- |
+|  |  | `Object` | **[options]** |
+| فعال/غیرفعال سازی ارتباط آنی | <code>true</code> | <code>Boolean</code> | **[options.realtime]** |
+| دریافت مخفی پیام | <code>true</code> | <code>Boolean</code> | **[options.silent]** |
+
+
+> `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `false` کنید. 
+
+### ۲- تعریف رسیور GCM برای دریافت پوش‌نوتیفیکیشن در اندروید
+
+رسیور GcmReceiver را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می‌شوند را نیز دریافت کنید.
 
 ```markup
 <receiver
@@ -42,44 +76,6 @@ next: chabok-messaging.html
 
 و علامت `Remote Notifications` ها را در `Setting > Capabilities > Background Modes` چک کنید.
 
-
-### ۲- مقدار‌دهی اولیه
-برای ارتباط با سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقدار‌دهی کنید.
-برای مقدار‌دهی اولیه می‌بایست از طریق متد `chabok` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. ایجاد حساب در بخش [پیش‌نیازها](https://doc.chabokpush.com/react-native/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
-
-
-برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقداردهی نمایید. فراخوانی این متد فقط یکبار کافی است. به قطعه کد زیر دقت کنید :
-
-```javascript
-const auth = {
-  appId: 'APP_ID',
-  apiKey: 'API_KEY(SDK_KEY)',
-  username: 'USERNAME',
-  password: 'PASSWORD',
-  devMode:true
-}
-const options = {
-      silent: false,
-      realtime: true
-    };
-const chabok = new chabokpush(auth, options)
-```
-
-> `نکته ` : به طور کلی چابک شامل ۲ محیط سندباکس و عملیاتی می‌باشد. حساب‌های رایگان چابک (تا ۳۰ هزار کاربر) بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. مقدار `true` برای ‌`devMode` باعث اتصال به محیط سندباکس و مقدار `false` باعث اتصال به محیط عملیاتی ما می‌شود.
-
-##### تنظیمات اولیه
-
-| توضیحات | پیش‌فرض | نوع | پارامتر |
-| --- | --- | --- | --- |
-|  |  | `Object` | **[options]** |
-| فعال/غیرفعال سازی ارتباط آنی | <code>true</code> | <code>Boolean</code> | **[options.realtime]** |
-| دریافت مخفی پیام | <code>true</code> | <code>Boolean</code> | **[options.silent]** |
-
-
-> `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `false` کنید. 
-
-> `نکته ` : در صورتی که مقداردهی اولیه به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
-
 #### متد افزودن توکن برای ارسال پوش
 
 برای ارسال پوش‌نوتیفیکشن می‌توانید با متد زیر توکن‌ها را به چابک اضافه کنید:
@@ -87,21 +83,58 @@ const chabok = new chabokpush(auth, options)
 ```javascript
 this.chabok.setPushNotificationToken("TOKEN")
 ```
+
+برای نمایش اعلان باید دسترسی‌های زیر را برای دستگاهتان در اندروید و آی‌اواس ایجاد کنید:
+
+```javascript
+var PushNotification = require('react-native-push-notification');
+
+PushNotification.configure({
+            onRegister:  ({token}) => {
+                if(token){
+                    this.chabok.setPushNotificationToken(token)
+                }
+            },
+            // (required) Called when a remote or local notification is opened or received
+            onNotification: function(notification) {
+                console.warn( 'NOTIFICATION:', notification );
+                // required on iOS only (see fetchCompletionHandler docs: https://facebook.github.io/react-native/docs/pushnotificationios.html)
+                notification.finish(PushNotificationIOS.FetchResult.NoData);
+            },
+            senderID: "GCM_SenderID", // ANDROID ONLY: (optional) GCM Sender ID.
+            permissions: {
+                alert: true,
+                badge: true,
+                sound: true
+            },
+            popInitialNotification: true,
+            requestPermissions: true,
+        });
+```
+
+
 ### ۳- ثبت کاربر
 با استفاده از متد `register` می‌توانید یک نام کاربری به هر کاربر اختصاص دهید. این متد `شناسه کاربر` را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت‌نام می‌کند.
 
 > `نکته` : متد `register` باید فقط **یک بار** در طول اجرا اپلیکیشن فراخوانی شود.
 
->   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `LocalStorage` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `()chabok.getUserId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.
 
 ```javascript
 chabok.register('USER_ID')
+```
+>   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `LocalStorage` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد زیر استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد:
+
+
+```javascript
+chabok.getUserId()
 ```
 
 > `نکته` : متغیر `USER_ID` شناسه کاربر برای ثبت نام در چابک می‌باشد و ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود شناسه کاربری می تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. `شماره موبایل، کدملی، شماره حساب و یا ایمیل` مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند.
 >
 
 > `نکته`: کاراکترهای ‍`#,+,*,\,/` و فاصله در `USER_ID` مجاز نیستند، همچنین طول این رشته نباید کمتر از ۳ و بیشتر از ۳۲ کاراکتر باشد.
+
+> `نکته ` : در صورتی که مقداردهی اولیه و ثبت کاربر به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
 
 ### متد تایید ثبت کاربر
 
@@ -120,3 +153,5 @@ chabok.unregister()
 پس از اتمام این مراحل شما می‌توانید با فراخوانی [این رویدادها](https://doc.chabokpush.com/react-native/features.html#اتصال-با-سرور) از اتصال دستگاه به چابک اطمینان یابید.
 
 > نحوه صحیح پیاده سازی متد و رویدادها در قالب پروژه [دمو](https://github.com/chabokpush/chabok-rn-chat) پیاده سازی شده است.
+
+

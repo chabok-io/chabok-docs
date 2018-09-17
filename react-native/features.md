@@ -23,11 +23,11 @@ chabok.addTags("Premium_User", "Male", "Teenage")
 همچنین می‌توانید با استفاده از این متد، از افزودن و یا خطا در عملیات با خبر شوید :
 ```javascript
 
-chabok.addTag("Premium_User")
-  .then( count => {
-    console.log("Premium tag was assign to ${chabok.getUserId} user with ${count} devices")
-  })
-  .catch( err => console.log("An error happend adding tag ..."))
+this.chabok.addTag(this.state.tagName)
+                .then(({count}) => {
+                    alert(this.state.tagName + ' tag was assign to ' + this.getUserId() + ' user with '+ count + ' devices');
+                })
+                .catch(_ => console.warn("An error happend adding tag ..."));
 ```
 اگر عملیات افزودن تگ با موفقیت انجام شود، می‌توانید از طریق پنل چابک، تگ اضافه شده به کاربر را در بخش مشترکین همانند تصویر زیر مشاهده کنید :
 
