@@ -3,7 +3,7 @@ id: event-tracking
 title: رصد رویدادها (Event Tracking)
 layout: react-native-bridge
 permalink: react-native-bridge/event-tracking.html
-prev: events.html
+prev: verification.html
 next: features.html
 ---
 
