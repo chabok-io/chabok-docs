@@ -92,7 +92,7 @@ ext {
      .....
 ```
 
-اگر از `react-native link` استفاده نکردید، ماژول را دستی در `MainApplication.java` ثبت کنید:
+اگر از `react-native link` استفاده نکردید، پکیج را دستی در `MainApplication.java` ثبت کنید:
 
 ```java
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;  // <--- Import Package
