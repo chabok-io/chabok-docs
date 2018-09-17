@@ -4,7 +4,7 @@ title: تنظیم پوش‌نوتیفیکیشن IOS
 layout: react-native
 permalink: react-native/ios-push-notification.html
 prev: android-push-notification.html
-next: chabok-messaging.html
+next: setup.html
 ---
 
 این قسمت مخصوص پروژه‌هایی است که با `react-native init` یا **Create React Native App** ساخته شده‌اند. 

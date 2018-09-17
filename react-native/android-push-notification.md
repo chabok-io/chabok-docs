@@ -3,7 +3,7 @@ id: android-push-notification
 title: تنظیم پوش‌نوتیفیکیشن Android
 layout: react-native
 permalink: react-native/android-push-notification.html
-prev: setup.html
+prev: installation.html
 next: ios-push-notification.html
 ---
 
