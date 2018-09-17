@@ -1,0 +1,72 @@
+---
+id: release-note
+title: لیست تغییرات کتابخانه
+layout: react-native-bridge
+permalink: react-native-bridge/release-note.html
+next: introducing.html
+---
+
+## نسخه ۱.۳.۰ - ۱۳۹۷/۰۶/۱۷
+### تغییرات
+- به روز رسانی به نسخه ۱.۰.۱ SDK جاوا‌ اسکریپت چابک
+- افزودن متدهای `setUserInfo` و `getUserInfo` 
+- افزودن متدهای `addTag` و `addTags`
+- افزودن متدهای `removeTag` و `removeTags`
+- تغییر اکثر متدها به شکل **promise** 
+- بهبود متد `setPushNotificationToken` در دستگاه‌های آی‌او‌اس 
+- حل مشکل متد `isRegistered` در دادن پاسخ درست
+- به روز رسانی اطلاعات نصب کاربر روی متدهای `subscribe` و `unSubscribe`
+- افزودن `clientVersion` به اطلاعات هر کاربر
+- افزودن `appBundleId` به اطلاعات هر کاربر
+
+### ارتقا
+- تغییر مقدار پیش‌فرض `live` برای متد `publishEvent` به `true`.
+
+> `نکته: ` اگر در نسخه‌های پایین‌تر از پیش‌فرض `default` متد `publishEvent` استفاده می‌کردید برای حفظ تنظیمات قبلی‌، بهتر است اکنون از پیش‌فرض با مقدار `false` برای `live` استفاده کنید.
+
+- غیرفعال سازی `register` خودکار توسط چابک در هنگام بارگذاری صفحه.
+
+> `نکته: ` فرایند **register** مجدد کاربر در هنگام بارگذاری صفحه باید توسط شما و با به کارگیری از متد `isRegistered` انجام شود.
+
+نمونه:
+
+```javascript
+if (chabok.isRegistered()) {
+    chabok.register(chabok.getUserId())
+} else {
+    chabok.register('<userId>')
+}
+```
+
+## نسخه ۱.۲.۰
+### ارتقا
+* در صورت استفاده از متد `enableEventDelivery`  آن را با متد `subscribeEvent` جایگزین نمایید.
+
+### تغییرات
+* رفع مشکل عضویت بر روی کانال‌های عمومی توسط متد `subscribe`
+* بهبود عملکرد ارسال پیام به وسیله متد `publish`
+* حذف متد `enableEventDelivery`
+
+
+
+## نسخه ۱.۱.۲
+### ارتقا
+* افزودن امکان عضویت بر روی یک رویداد با استفاده از متد `subscribeEvent`
+* افزودن امکان لغو عضویت از روی یک رویداد با استفاده از متد `unSubscribeEvent`
+
+
+
+## نسخه ۱.۱.۱
+### تغییرات
+* بهبود عملکرد داخلی متد `subscribe`
+
+
+## نسخه ۱.۱.۰
+### ارتقا
+*  افزودن متد جدید برای عضویت روی یک کانال  (`subscribe`)
+* افزودن متد جدید برای لغو عضویت از یک کانال (`unSubscribe`)
+
+
+## نسخه ۱.۰.۰
+
+* حل مشکل نوع اتصال بر روی پلتفرم **اندروید** و **ios**
