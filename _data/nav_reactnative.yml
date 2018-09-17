@@ -8,10 +8,8 @@
       title: پیش‌نیازها
     - id: installation
       title: نصب چابک
-    - id: android-push-notification
-      title: تنظیم پوش‌نوتیفیکیشن اندروید
-    - id: ios-push-notification
-      title: تنظیم پوش‌نوتیفیکیشن آی‌او‌اس
+    - id: push-notification
+      title: تنظیم پوش‌نوتیفیکیشن
     - id: setup
       title: راه‌اندازی چابک
     - id: chabok-messaging
