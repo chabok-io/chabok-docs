@@ -29,7 +29,7 @@ ext {
 
 در فایل `AndroidManifest.xml`کد زیر اضافه کنید:
 
-```xml
+```java
 
 .....
     <!-- < Only if you're using GCM or localNotificationSchedule() > -->
