@@ -4,7 +4,7 @@ title: نصب چابک
 layout: react-native
 permalink: react-native/installation.html
 prev: required.html
-next: android-push-notification.html
+next: push-notification.html
 
 ---
 
@@ -15,6 +15,7 @@ next: android-push-notification.html
 ```bash
 npm install chabokpush-rn --save
 ```
+یا
 
 ```bash
 yarn add chabokpush-rn
@@ -31,6 +32,7 @@ react-native link chabokpush-rn
 ```bash
 npm install react-native-device-info --save
 ```
+یا
 
 ```bash
 yarn add react-native-device-info
@@ -47,6 +49,7 @@ react-native link react-native-device-info
 ```bash
 npm install react-native-push-notification --save
 ```
+یا
 
 ```bash
 yarn add react-native-push-notification
@@ -58,7 +61,7 @@ yarn add react-native-push-notification
 react-native link react-native-push-notification
 ```
 
-> `نکته ` : دقت داشته باشید که چابک به طور پیش‌فرض **توکن پوش** نمی‌گیرد، بنابراین برای **تنظیم پوش‌نوتیفیکیشن** می‌توانید با استفاده از مستندات [اندروید](https://doc.chabokpush.com/react-native/android-push-notification.html) و [آی‌اواس](https://doc.chabokpush.com/react-native/ios-push-notification.html)  آن را روی پروژه خود پیاده‌سازی کنید.
+> `نکته ` : دقت داشته باشید که چابک به طور پیش‌فرض **توکن پوش** نمی‌گیرد، بنابراین برای **تنظیم پوش‌نوتیفیکیشن** می‌توانید با استفاده از مستندات [اندروید](https://doc.chabokpush.com/react-native/push-notification.html) و [آی‌اواس](https://doc.chabokpush.com/react-native/push-notification.html)  آن را روی پروژه خود پیاده‌سازی کنید.
 
 > `نکته ` : در اندروید می‌بایست `AndroidManifest.xml` را به صورت دستی تغییر دهید. 
 
