@@ -5,8 +5,7 @@ layout: react-native
 permalink: react-native/android-push-notification.html
 ---
 
-
-برای تنظیم پوش‌نوتیفیکیشن در اندروید (GCM یا Firebase) مراحل زیر را باید طی کنید.
+برای استفاده از سرویس پوش‌نوتیفیکیشن در اندروید (GCM یا Firebase) مراحل زیر را باید طی کنید.
 
 در کلاس `android/build.gradle` کد زیر اضافه کنید:
 
