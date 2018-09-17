@@ -8,11 +8,8 @@ next: setup.html
 ---
 
 
-### نصب روی پلتفرم موردنظر
-هم Android و هم iOS نیازمند نصب جداگانه هستند.
-
-### افزودن کتابخانه - Android
-ماژول chabok-client-chabok را مانند دستور زیر نصب کنید:
+### افزودن کتابخانه 
+برای نصب از طریق `npm` یا `yarn`:
 
 ```bash
 yarn add react-native-chabok
@@ -22,54 +19,31 @@ yarn add react-native-chabok
 npm install react-native-chabok --save
 ```
 
-### عمل link
-بعد از اتمام نصب، دستور زیر را اجرا کنید تا ماژول به پروژه شما link‌ شود:
+### لینک کردن کتابخانه
+بعد از اتمام نصب، دستور زیر را اجرا کنید تا ماژول به پروژه شما لینک شود:
 
 ```bash
 react-native link react-native-chabok
 ```
-پس از این کار در کلاس Application پروژه‌تان در نمونه `ReactNativeHost` پکیج `ChabokReactPackage` مانند کد زیر افزوده خواهد شد:
-```java
-private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
-    @Override
-    public boolean getUseDeveloperSupport() {
-      return BuildConfig.DEBUG;
-    }
 
-    @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-              new ChabokReactPackage()
-      );
-    }
+>`نکته:` دقت داشته باشید که هم اندروید و هم آی‌اواس نیازمند نصب جداگانه دارند که در ادامه به هر دو پرداخته می‌شود.
 
-    @Override
-    protected String getJSMainModuleName() {
-      return "index";
-    }
-  };
-```
+### نصب اندروید
 
-
-### افزودن در gradle
-کتابخانه چابک از طریق `jcenter` در دسترس است. برای این منظور ابتدا در فایل `gradle` اصلی پروژه، `jcenter` را بعنوان `repository` مطابق قطعه کد زیر اضافه نمایید:
+فایل `build.gradle` در پوشه android/app را به صورت زیر ویرایش نمایید:
 
 ```javascript
-buildscript {
-  repositories {
-    jcenter()
-  }
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    ...
 }
-  
-```
-
-سپس فایل `build.gradle` در پوشه android/app را بازکرده و در بخش `dependencies` خط زیر را اضافه نمایید:
-
-```javascript
 dependencies {
-    compile 'me.leolin:ShortcutBadger:1.1.18@aar'
-    compile 'com.adpdigital.push:chabok-lib-VERSION'
+    ...
+    compile "com.google.android.gms:play-services-gcm:10.2.6"
+    compile 'me.leolin:ShortcutBadger:1.1.22@aar'
+    compile 'com.adpdigital.push:chabok-lib:+'
+    ...
 }
 ```
 
@@ -79,11 +53,72 @@ dependencies {
 آخرین نسخه فایل کتابخانه چابک از  [اینجا](https://bintray.com/bintray/jcenter?filterByPkgName=com.adpdigital.push) قابل دسترس می‌باشد.
 در انتها گزینه سینک را بزنید.
 
-> `نکته`: برای استفاده از سرویس جی‌سی‌ام گوگل لازم است خط زیر نیز در بخش
-> `dependencies`  اضافه شود:
+پس از آن فایل `AndroidManifest.xml` را مانند نمونه زیر آپدیت کنید:
 
-```javascript
-dependencies {
-    compile "com.google.android.gms:play-services-gcm:10.2.6" 
-}
+```markup
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="YOUR_APPLICATION_PACKAGE_ID">
+
+    <permission
+        android:name="YOUR_APPLICATION_PACKAGE_ID.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+
+    <uses-permission android:name="YOUR_APPLICATION_PACKAGE_ID.permission.C2D_MESSAGE" />
+
+    <application>
+        
+        <receiver
+                android:name="com.google.android.gms.gcm.GcmReceiver"
+                android:enabled="true"
+                android:exported="true"
+                android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="YOUR_APPLICATION_PACKAGE_ID"/>
+            </intent-filter>
+        </receiver>
+
+...
+
+    </application>
 ```
+
+### نصب آی‌اواس
+
+چابک از طریق CocoaPods در دسترس است. بنابراین برای نصب، در فایل `ios` پروژه خود یک Podfile اضافه کنید:
+
+
+```bash
+$ cd ios
+$ pod init
+```
+سپس dependency` chabokPush` را به Podfile خود مانند زیر اضافه کنید:
+
+```bash
+use_frameworks!
+platform :ios, '9.0'
+
+target 'YOUR_TARGET_NAME' do
+
+  # Pods for AwesomeProject
+  pod 'ChabokPush'
+
+end
+```
+
+پس از آن با روش زیر Podfile را نصب کنید :
+
+```bash
+$ pod install
+```
+پس از اجرای دستورات بالا اگر با خطایی روبه رو شدید ، دستور زیر را وارد کنید سپس `pod install` را دوباره اجرا کنید.
+
+```bash
+$ pod update
+```
+حالا برای اطمینان از نصب ، پروژه را در xcode باز کنید ، اگر header فایل چابک را مشاهده کردید افزودن کتابخانه موفقیت آمیز بوده است.
+
+
+

@@ -1,16 +1,22 @@
 - title: شروع سریع react native
   items:
+    - id: release-note
+      title: لیست تغییرات کتابخانه
     - id : introducing
       title: معرفی چابک
     - id: required
       title: پیش‌نیازها
     - id: installation
       title: نصب چابک
+    - id: push-notification
+      title: تنظیم پوش‌نوتیفیکیشن
     - id: setup
       title: راه‌اندازی چابک
-    - id: methods
-      title: متدهای چابک
-    - id: verification
-      title: اعتبارسنجی شناسه کاربری
     - id: chabok-messaging
       title: پیام چابک
+    - id: verification
+      title: اعتبارسنجی شناسه کاربری
+    - id: event-tracking
+      title: رصد رویدادها
+    - id: features
+      title: امکانات‌ دیگر چابک
