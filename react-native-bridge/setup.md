@@ -174,10 +174,6 @@ chabok.getUserId()
 
 > `نکته ` : در صورتی که مقداردهی اولیه و ثبت کاربر به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
 
-```javascript
-chabok.isRegistered()
-```
-
 ### متد حذف کاربر
 برای حذف دستگاه کاربر از سرور چابک می‌توانید از متد زیر استفاده کنید:
 ```javascript
