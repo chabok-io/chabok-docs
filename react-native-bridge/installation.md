@@ -53,7 +53,7 @@ dependencies {
 آخرین نسخه فایل کتابخانه چابک از  [اینجا](https://bintray.com/bintray/jcenter?filterByPkgName=com.adpdigital.push) قابل دسترس می‌باشد.
 در انتها گزینه سینک را بزنید.
 
-پس از آن فایل `AndroidManifest.xml` را مانند نمونه زیر آپدیت کنید:
+پس از آن، فایل `AndroidManifest.xml` را برای ایجاد رسیور دریافت پوش نوتیفیکیشن مانند نمونه زیر آپدیت کنید:
 
 ```markup
 <manifest
@@ -153,3 +153,9 @@ didFailToRegisterForRemoteNotificationsWithError:error];
   [PushClientManager.defaultManager application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 ```
+
+پس از آن برای دریافت پوش در آی‌او‌اس دو مرحله زیر را انجام دهید:
+
+لطفا `Push Notifications` را در `Setting > Capabilities` فعال کنید .
+
+و علامت `Remote Notifications` ها را در `Setting > Capabilities > Background Modes` چک کنید.
