@@ -8,8 +8,6 @@
       title: پیش‌نیازها
     - id: installation
       title: نصب چابک
-    - id: push-notification
-      title: تنظیم پوش‌نوتیفیکیشن
     - id: setup
       title: راه‌اندازی چابک
     - id: chabok-messaging

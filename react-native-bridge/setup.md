@@ -3,7 +3,7 @@ id: setup
 title: راه‌اندازی چابک
 layout: react-native-bridge
 permalink: react-native-bridge/setup.html
-prev: push-notification.html
+prev: installation.html
 next: chabok-messaging.html
 ---
 
