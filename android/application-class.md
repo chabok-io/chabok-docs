@@ -163,7 +163,7 @@ private AdpPushClient chabok = null;
 ```java
 chabok.setDevelopment("DEV_MODE");
 ```
-> `نکته`:  مقدار پیش‌فرض  برابر `true` در نظر گرفته شده است. دقت داشته باشید که اگر محیط چابک را تغییر می‌دهید حتما باید اطلاعات حساب چابک (AppId, APIKey, Username و Password) را هم تغییر دهید. 
+> `نکته`:  مقدار پیش‌فرض  برابر `true` در نظر گرفته شده است. دقت داشته باشید که اگر محیط چابک را تغییر می‌دهید حتما باید اطلاعات حساب چابک (AppId ،Username ،APIKey و Password) را هم تغییر دهید.
 
 
 #### ۲- متد `register`
