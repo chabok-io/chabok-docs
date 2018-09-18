@@ -54,7 +54,8 @@ const chabok = new chabokpush.Chabok(auth, options)
 | دریافت مخفی پیام | <code>true</code> | <code>Boolean</code> | **[options.silent]** |
 
 
-> `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `false` کنید. 
+> `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `false` کنید. دقت داشته باشید که اگر محیط چابک را تغییر می‌دهید حتما باید اطلاعات حساب چابک (AppId, APIKey, Username و Password) را هم تغییر دهید. 
+
 
 > `نکته ` : در صورتی که مقدار‌دهی اولیه به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
 
