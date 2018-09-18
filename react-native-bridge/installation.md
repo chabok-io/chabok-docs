@@ -26,7 +26,7 @@ npm install react-native-chabok --save
 react-native link react-native-chabok
 ```
 
->`نکته:` دقت داشته باشید که هم اندروید و هم آی‌اواس نیازمند نصب جداگانه دارند که در ادامه به هر دو پرداخته می‌شود.
+>`نکته:` دقت داشته باشید که هم اندروید و هم آی‌اواس نیاز به نصب جداگانه دارند که در ادامه به هر دو پرداخته می‌شود.
 
 ### نصب اندروید
 
@@ -121,7 +121,7 @@ $ pod update
 حالا برای اطمینان از نصب ، پروژه را در xcode باز کنید ، اگر header فایل چابک را مشاهده کردید افزودن کتابخانه موفقیت آمیز بوده است.
 
 
-پس از آن پروژه آی‌اواس خود را در `.xcworkspace` با Xcode  و همینطور `node_modules/react-native-chabok/` را باز کنید. فایل‌های `ios/AdpPushClient.h` و `ios/AdpPushClient.m` را به پروژه خود اضافه کنید.
+پس از آن پروژه آی‌اواس خود را در `xcworkspace.` با Xcode  و همینطور `node_modules/react-native-chabok/` را باز کنید. فایل‌های `ios/AdpPushClient.h` و `ios/AdpPushClient.m` را به پروژه خود اضافه کنید.
 
 اکنون داخل کلاس `AppDelegate` ایمپورت را مانند زیر انجام دهید:
 
