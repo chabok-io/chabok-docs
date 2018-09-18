@@ -35,7 +35,7 @@ const data = {
   "clothes_id": 35147652
 }
 
-chabok.track('purchase-clothing', data)
+this.chabok.track('purchase-clothing', data)
 ```
 
 ### ارسال پیام براساس رویداد
