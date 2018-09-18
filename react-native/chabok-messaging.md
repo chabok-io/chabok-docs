@@ -57,8 +57,8 @@ chabok.on('message', msg => {
 })
 ```
 
-#### تنظیم Local Notifications
-برای نمایش اعلان (notification) به صورت Local در دستگاه خود باید دستور زیر را اجرا کنید.
+#### نمایش Local Notifications
+برای نمایش اعلان (notification) به صورت Local روی پیام‌های بالا ([دقت داشته باشید که dependency آن را اعمال کرده‌باشید](https://doc.chabokpush.com/react-native/setup.html#%D9%85%D8%AA%D8%AF-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D8%AA%D9%88%DA%A9%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D9%BE%D9%88%D8%B4)) باید دستور زیر را اجرا کنید.
 
 
 ```bash
