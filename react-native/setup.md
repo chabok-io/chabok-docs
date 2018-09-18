@@ -51,7 +51,8 @@ this.chabok = new chabokpush(auth, options);
 | دریافت مخفی پیام | <code>true</code> | <code>Boolean</code> | **[options.silent]** |
 
 
-> `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `false` کنید. دقت داشته باشید که اگر محیط چابک را تغییر می‌دهید، حتما باید اطلاعات حساب چابک (AppId ،Username ،APIKey و Password) را هم تغییر دهید.
+> `نکته ` : برای تغییر به محیط عملیاتی (`devMode:false`) باید از [**پنل بخش تنظیمات**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA-%D8%AD%D8%B3%D8%A7%D8%A8-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C) درخواست خود را ثبت نمایید تا پس از تایید، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد. 
+
 
 ### ۲- تعریف رسیور GCM برای دریافت پوش‌نوتیفیکیشن در اندروید
 
