@@ -12,10 +12,12 @@ next: troubleshoot.html
 
 #### افزودن تگ
 با استفاده از متد زیر، شما می‌توانید به کاربر یک `Tag` اختصاص دهید :
+
 ```java
 public void addTag(String tagName, VoidCallback callback)
 ```
 پارامتر اول نام تگ موردنظر و پارامتر دوم یک Callback برای بررسی نتیجه این عمل می‌باشد. برای مثال به قطعه کد زیر توجه کنید:
+
 ```java
 chabok.addTag("Premium_User", new VoidCallback() {
             @Override
@@ -50,7 +52,7 @@ client.addTag(tagsName, new Callback() {
 		Log.d(TAG, "add array of tags onError: called, message: " + t.getMessage());
 	}
 });
-‍‍‍```
+```
 
 #### حذف تگ
 با استفاده از متد زیر، می‌توانید یک `Tag` خاص از کاربر را حذف کنید :
