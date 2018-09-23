@@ -63,7 +63,7 @@ dependencies {
 به علت محدودیت‌‌های اندروید ۸ به بالا دقت کنید حتما مطابق جدول فوق پیکربندی نسخه‌ها را بدرستی انجام دهید. 
 > `نکته :` در صورت رعایت نکردن مقادیر وارد شده زمانی که اپلیکیشن **kill** شده باشد به هنگام دریافت نوتیفیکیشن با خطا مواجه خواهد شد.
 
-|  BuildToolsVersion  |  compileSdkVersion  |  targetSdkVersion  |  GooglePlayerService  |
+| BuildToolsVersion | compileSdkVersion | targetSdkVersion | GooglePlayerService |
 |--|--|--|--|
-| 26.x.x | 26 | >= 23 | >= 9.6.0 |
-| 27.x.x | 27 | >= 23 | >= 10.2.1 |
+| x.x.26 | 26 | 23 =< | 9.6.0 =< |
+| x.x.27 | 27 | 23 =< | 10.2.1 =< |
