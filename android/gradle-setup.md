@@ -65,23 +65,25 @@ dependencies {
 
 <table dir="ltr">
     <thead>
-    <tr>
-        <th>BuildToolsVersion</th>
+    <tr align="center">
+        <th>buildToolsVersion</th>
         <th>compileSdkVersion</th>
         <th>targetSdkVersion</th>
-        <th>GooglePlayerService</th>
+        <th>googlePlayerService</th>
     </tr>
     </thead>
-    <tbody><tr>
+    <tbody>
+    <tr align="center">
         <td>26.x.x</td>
         <td>26</td>
         <td>&gt;= 23</td>
         <td>&gt;= 9.6.0</td>
     </tr>
-    <tr>
+    <tr align="center">
         <td>27.x.x</td>
         <td>27</td>
         <td>&gt;= 23</td>
         <td>&gt;= 10.2.1</td>
     </tr>
-    </tbody></table>
+    </tbody>
+</table>
