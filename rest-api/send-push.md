@@ -128,16 +128,20 @@ curl -X POST \
 |icon| تصویر اعلان      |  string | نام تصویر|
 | sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | نام صدا   |
 |clickUrl| لینک هنگام کلیک|string|لینک
+|ledColor|تنظیم رنگ led (فقط اندروید)|string|کد رنگ HEX
+|smallIcon| آیکون کوچک اعلان (فقط اندروید)|string|نام آیکون
 |(id (action| شناسه اکشن | string| check
 |(title (action| عنوان اکشن|string| status
-|(options (action| رفتار اکشن (فقط برای آی‌او‌اس) |number| 1
-|(icon (action| نام آیکون در فولدر drawable  (فقط در اندروید)| string| نام آیکون
+|(options (action| رفتار اکشن (فقط آی‌او‌اس) |number| 1
+|(icon (action| نام آیکون در فولدر drawable  (فقط اندروید)| string| نام آیکون
 |mediaType|  نوع رسانه| string| jpeg
 |mediaUrl| لینک رسانه|string| لینک
 |contentAvailable|  برای انجام یک آپدیت بی‌صدا در بک‌گراند یا فورگراند مقدار 1 را بگذارید | boolean|  1 
 |mutableContent| برای پشتیبانی از اعلان چندرسانه‌ای مقدار 1 را حتما قرار دهید| boolean| 1
 |category| شناسه اعلان برای ذخیره آن|string| delivery
 
+
+> `نکته :` در پارامترهای اعلان، پارامتر `options` یا همان رفتار اکشن (فقط در آی‌او‌اس) می‌توانید عدد ۱ برای اکشن [Authentication Required (اکشن در صورت قفل نبودن دستگاه اجرا می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired?language=objc)،‌ ۲ برای اکشن [Destructive (اکشن تسک مخرب انجام می‌دهد)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive?language=objc)، ۴ برای اکشن [Foreground (اکشن موجب باز شدن اپ در فورگراند می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground?language=objc) و جمع این اعداد را برای ترکیب آن‌ها با هم قرار دهید.
 
 #### پاسخ
 پاسخ درخواست‌های ارسال پیام به صورت تعداد دستگاه‌هایی که پیام به آن‌ها ارسال می‌شود، می باشد.
@@ -299,15 +303,18 @@ curl -X POST \
 |icon| تصویر اعلان      |  string | نام تصویر|
 | sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | نام صدا   |
 |clickUrl| لینک هنگام کلیک|string|لینک
+|ledColor|تنظیم رنگ led (فقط اندروید)|string|کد رنگ HEX
+|smallIcon| آیکون کوچک اعلان (فقط اندروید)|string|نام آیکون
 |(id (action| شناسه اکشن | string| check
 |(title (action| عنوان اکشن|string| status
-|(options (action| رفتار اکشن (فقط برای آی‌او‌اس) |number| 1
-|(icon (action| نام آیکون در فولدر drawable  (فقط در اندروید)| string| نام آیکون
+|(options (action| رفتار اکشن (فقط آی‌او‌اس) |number| 1
+|(icon (action| نام آیکون در فولدر drawable  (فقط اندروید)| string| نام آیکون
 |mediaType|  نوع رسانه| string| jpeg
 |mediaUrl| لینک رسانه|string| لینک
 |contentAvailable|  برای انجام یک آپدیت بی‌صدا در بک‌گراند یا فورگراند مقدار 1 را بگذارید | boolean|  1 
 |mutableContent| برای پشتیبانی از اعلان چندرسانه‌ای مقدار 1 را حتما قرار دهید| boolean| 1
 |category| شناسه اعلان برای ذخیره آن|string| delivery
+
 
 > `نکته :` در پارامترهای اعلان، پارامتر `options` یا همان رفتار اکشن (فقط در آی‌او‌اس) می‌توانید عدد ۱ برای اکشن [Authentication Required (اکشن در صورت قفل نبودن دستگاه اجرا می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired?language=objc)،‌ ۲ برای اکشن [Destructive (اکشن تسک مخرب انجام می‌دهد)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive?language=objc)، ۴ برای اکشن [Foreground (اکشن موجب باز شدن اپ در فورگراند می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground?language=objc) و جمع این اعداد را برای ترکیب آن‌ها با هم قرار دهید.
 
