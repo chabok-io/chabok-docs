@@ -41,7 +41,7 @@ prev: features.html
 
 در صورت دریافت خطای فوق در **logcat** یا **xcode log** از وارد کردن اطلاعات حساب (`appId`, `APIKey`, `username`, `password`) خود اطمینان یابید.
 
-#### حالت Terminated
+#### حالت Terminated اپلیکیشن
 
 #### ۱- عدم پیاده‌سازی مراحل ۱ و ۲ بالا
 
@@ -64,7 +64,7 @@ prev: features.html
  اطمینان یابید که [کد GcmReceiver در فایل AndroidManifes.xml قرار داده شده باشد.](https://doc.chabokpush.com/android/application-class.html#%DB%B3-%D8%AA%D8%B9%D8%B1%DB%8C%D9%81-%D8%B1%D8%B3%DB%8C%D9%88%D8%B1-gcmreceiver)
 همچنین برای `YOUR_APPLICATION_PACKAGE_ID` حتما باید `bundleId` اپلیکیشن خود را قرار دهید.
 
-#### ۵- فراخوانی متد `init`
+#### ۵- عدم فراخوانی متد `init`
 
 متد `init` چابک حتما باید در کلاس `application` و در متد `onCreate` در هر شرایطی فراخوانی شود و در صورت عدم فراخوانی متد فوق با خطای زیر مواجه خواهید شد.
 
@@ -73,7 +73,7 @@ prev: features.html
 AdpPushClient not initialized yet, please first call AdpPushClient.get with parameters
 ```
 
-#### ۶- نسخه صحیح **buildTool** و **play service**
+#### ۶- نسخه غیر صحیح **buildTool** و **play service**
 
 نسخه buildTool و play service شما باید بدرستی انتخاب شود.
 
@@ -81,7 +81,7 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 AdpPushClient not initialized yet, please first call AdpPushClient.get with parameters
 ```
 
-#### ۷- باز نبودن اپ
+#### ۷- باز نبودن اپلیکیشن
 
 در پنل حساب کاربری خود در بخش پیام‌ها، **دایره زرد رنگ** به معنی **در صف بود پیام** شما می‌باشد و زمانی که کاربر به چابک متصل شود (اپ را باز کند) پیام را دریافت می‌کند. در بخش نوتیفیکیشن در صورت ارسال موفق پوش نوتیفیکیشن به سرور هر پلتفرم تیک سبز رنگ به همراه لوگو پلتفرم به معنی ارسال موفق پیام به سرور پلتفرم برای ارسال پوش‌نوتیفیکیشن است. همچنین در صورت مشاهد خطای **GONE** یا **device unregistered** به این معنی است که کاربر اپلیکیشن شما را حذف کرده است. در صورت مشاهده خطای **deviceTokenNotForTopic** به این معنی است که اطلاعات پلتفرم آی‌او‌اس که در پنل ما قرار داده‌اید با اپلیکیشنی روی دستگاه خودت نصب کرده‌اید همخوانی ندارد.
 
