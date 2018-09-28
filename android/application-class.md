@@ -44,23 +44,7 @@ next: rich_notification.html
 > `نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](https://doc.chabokpush.com/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید. 
 
 
-#### ۲.  تعریف رسیور `PushMessageReceiver`
-کلاس رسیور `PushMessageReceiver`  که نحوه ایجاد آن در بخش [پیام چابک](chabok-messaging.html) توضیح داده شده را نیز به پروژه خود اضافه نمایید.
-
-> `نکته`:  دقت کنید که کلاس `PushMessageReceiver` برای **BuildTools ۲۶ به بالا** برداشته شده‌است، در آن صورت باید از متد `addListener` برای دریافت پیام‌ها استفاده کنید و دیگر نیازی به اضافه نمودن قطعه کد زیر ندارید.
-
-
-```markup
-
-<receiver android:name="PushMessageReceiver">
-    <intent-filter>
-        <category android:name="YOUR_APPLICATION_PACKAGE_ID"/>
-        <action android:name="com.adpdigital.push.client.MSGRECEIVE"/>
-    </intent-filter>
-</receiver>
-
-```
-#### ۳. تعریف رسیور `GcmReceiver`
+#### ۲. تعریف رسیور `GcmReceiver`
 
 رسیور `GcmReceiver` را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
@@ -102,9 +86,8 @@ private AdpPushClient chabok = AdpPushClient.init(
 
 > `نکته`: ترکیب `APP_ID/SENDERID` به عنوان `YOUR_APP_ID` مورد استفاده قرار می‌گیرد.
 
-به عنوان مثال به کد زیر توجه کنید که همیشه یک سینگلتن از کلاس `AdpPushClient` را مدیریت می‌کند. 
-در کد زیر متد `getPushClient` برای نمونه گیری و تنظیمات مربوط به `AdpPushClient` تعریف شده است، شما کافیست بجای `YOUR_MAIN_ACTIVITY_CLASS` نام اکتیویتی اصلی (چابک به طور پیش‌فرض بعد از کلیک شدن روی نوتیفیکیشن، این اکتیویتی را باز می‌کند) خود را قرار دهید.
-
+در کد زیر متد `initPushClient` برای نمونه گیری و تنظیمات مربوط به `AdpPushClient` تعریف شده است، شما کافیست بجای `YOUR_MAIN_ACTIVITY_CLASS` نام اکتیویتی اصلی (چابک به طور پیش‌فرض بعد از کلیک شدن روی نوتیفیکیشن، این اکتیویتی را باز می‌کند) خود را قرار دهید.
+> `نکته`:  توجه داشته باشید متد `AdpPushClient.init` تحت هر شرایط **حتما** باید در کلاس `Application` و در متد `onCreate` فراخوانی شود.متد فوق برای مقداردهی پارامتر‌های ضروری چابک می‌باشد و در صورت عدم فراخوانی آن با خطا در حالت **Kill** بودن اپلیکیشن مواجه خواهید شد.
 
 ```java
 
@@ -116,6 +99,11 @@ private AdpPushClient chabok = null;
     public void onCreate() {
         super.onCreate();
         initPushClient();
+
+        String userId = chabok.getUserId();
+        if (userId != null && !userId.isEmpty()) {
+            chabok.register(userId);
+        }
     }
 
     private synchronized void initPushClient() {
@@ -129,15 +117,7 @@ private AdpPushClient chabok = null;
                 "SDK_PASSWORD"
                 );
             chabok.setDevelopment("DEV_MODE");
-            chabok.register("USER_ID");
         }
-    }
-    
-    public synchronized AdpPushClient getPushClient() throws IllegalStateException {
-        if (chabok == null) {
-            throw new IllegalStateException("Adp Push Client not initialized");
-        }
-        return chabok;
     }
     
     @Override
