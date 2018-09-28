@@ -74,7 +74,7 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 
 #### ۶- نسخه غیر صحیح **buildTool** و **play service**
 
-نسخه buildTool و play service شما باید بدرستی انتخاب شود.
+نسخه buildTool و play service شما باید به درستی انتخاب شود.
 
 ```bash
 AdpPushClient not initialized yet, please first call AdpPushClient.get with parameters
