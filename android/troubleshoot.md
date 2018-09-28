@@ -51,11 +51,11 @@ prev: features.html
 از وارد کردن صحیح اطلاعات دسترسی پوش‌نوتیفیکیشن در هر پلتفرم از [بخش تنظیمات پنل قسمت پلتفرم‌ها](https://doc.chabokpush.com/panel/settings.html#%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85%D9%87%D8%A7) اطمینان یابید.
 در صورت مشاهده متن **غیرفعال** در کارت تنظیمات هر پلتفرم، دستگاه به بخش مشترکین اضافه نشده است. برای مثال اگر تنظیمات پوش‌نوتیفیکیشن اندروید را به درستی انجام داده باشید ولی دستگاه اندروید‌ به بخش مشترکین اضافه نشده باشد بر روی کارت تنظیمات پوش‌نوتیفیکیشن اندروید متن غیرفعال را مشاهده خواهید کرد.
 
-#### ۳- یکسان نبودن `senderId` و `appId` در پنل و متد `init` 
+#### ۳- یکسان نبودن `senderId` در پنل و متد `init` 
 
-دقت داشته باشید `senderId` و `appId`  که در پنل قرار داده‌اید با `senderId` و `appId` که در متد `init` چابک داده‌اید، یکسان باشد.
+دقت داشته باشید `senderId` که در پنل قرار داده‌اید با `senderId` که در متد `init` همراه با `appId` به چابک داده‌اید، یکسان باشد.
 
-> `نکته:` ترکیب `APP_ID` و `SENDERID` به عنوان `YOUR_APP_ID` مورد استفاده قرار می‌گیرد.
+> `نکته:` ترکیب `app_Id` و `senderId` به عنوان `your_app_Id` مورد استفاده قرار می‌گیرد.
 
 
 #### ۴- عدم تعریف GCMReceiver 
@@ -74,7 +74,7 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 
 #### ۶- نسخه غیر صحیح **buildTool** و **play service**
 
-نسخه buildTool و play service شما باید به درستی انتخاب شود.
+نسخه buildTool و play service شما باید به درستی انتخاب شود. برای انتخاب صحیح [مطابق این جدول](https://doc.chabokpush.com/android/gradle-setup.html#%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87) عمل کنید.
 
 ```bash
 AdpPushClient not initialized yet, please first call AdpPushClient.get with parameters
