@@ -93,7 +93,7 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 یکی دیگر از مشکلات متداول عدم نمایش اعلان (نوتیفیکیشن) در دستگاه مخاطب است. در این قسمت به دلایل احتمالی این مشکل اشاره‌ خواهیم کرد.
 
 
--##### اپلکیشن روی صفحه نمایش باز است
+- ##### اپلکیشن روی صفحه نمایش باز است
 در حالت پیش‌فرض، اعلان‌ها در زمانی که اپلیکیشن روی دستگاه شما **باز** و **نمایان** است نشان داده نمی‌شوند.
 
 - ##### اپلیکیشن در حالت Force Stop است
@@ -128,7 +128,7 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 
 **ردمی**: به Settings > Developer Options بروید و "memory optimization" را غیرفعال کنید. [راهنمای کامل](https://www.forbes.com/sites/bensin/2016/11/17/how-to-fix-push-notifications-on-xiaomis-miui-8-for-real/#384f6af97572)
 
-- #### گزینه دریافت پوش برای اپلیکیشن غیر‌فعال شده است
+- ##### گزینه دریافت پوش برای اپلیکیشن غیر‌فعال شده است
  تنظیمات نوتیفیکیشن در صفحه Settings > Apps را چک کنید. در صورت خاموش بودن گزینه نوتیفیکیشن، آن را فعال نمایید.
 
 
