@@ -25,7 +25,7 @@ NotificationHandler myHandler = new NotificationHandler() {
     public boolean buildNotification(ChabokNotification chabokNotification, NotificationCompat.Builder builder) {
     // use builder to customize the notification object
     // return false to prevent this notification to be shown to the user, otherwise true
-    return false;
+    return true;
     }
 };
 

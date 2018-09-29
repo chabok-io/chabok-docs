@@ -9,54 +9,18 @@ next: verification.html
 
 ### دریافت پیام چابک
 
-شما برای دریافت پیام چابک، از ۲ روش می‌توانید استفاده کنید. روش اول، استفاده از متد `addListener` و روش دوم استفاده از کلاس `WakefulBroadcastReceiver` است.
-
-
-روش اول، استفاده از متد `addListener`: 
-
-این متد را در هر کلاسی می‌توانید اضافه کنید.
+با فراخوانی متد `addListener` و پیاده‌سازی متد `onEvent`  در کلاس مورد نظر خود (در زیر به آن اشاره شده است) پیام چابک را دریافت کنید. متد `addListener` را در هر کلاسی می‌توانید اضافه کنید.
 
 ```java
 client.addListener(this);
 ```
 
- پس از آن با کد زیر می‌توانید پیام‌ها را دریافت نمایید.
+ پس از آن با پیاده‌سازی متد زیر می‌توانید پیام‌ها را دریافت نمایید.
 
 ```java
 public void onEvent(PushMessage message) {
     Log.d(TAG, "Got push message " + message);
 }
-```
-
-
-روش دوم، استفاده از کلاس `WakefulBroadcastReceiver`:
-
-> `نکته:` دقت کنید که کلاس `WakefulBroadcastReceiver` برای **BuildTools ۲۶ به بالا** برداشته شده است، بنابراین پیشنهاد می‌کنیم در آن صورت از همان روش اول یعنی متد `addListener` استفاده کنید.
-
-
-شما می‌توانید از طریق یک رسیور پیام‌های جدید چابک را دریافت نمایید. برای این منظور کلاسی با همان نامی که در `manifest` استفاده کردید مثل `PushMessageReceiver` ایجاد نمایید که فرزند `WakefulBroadcastReceiver` باشد. 
-
-```java
-
-public class PushMessageReceiver extends WakefulBroadcastReceiver {
-
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        Bundle messageData = intent.getExtras();
-        String channel = messageData.getString(AdpPushClient.PUSH_MSG_RECEIVED_TOPIC);
-        String body = messageData.getString(AdpPushClient.PUSH_MSG_RECEIVED_MSG);
-        PushMessage push = PushMessage.fromJson(body, channel);
-        handleNewMessage(push);
-        completeWakefulIntent(intent);
-    }
-
-
-    private void handleNewMessage(PushMessage message) {
-        // write your code to handle new message
-    }
-
-}
-
 ```
 
 ### عضویت روی کانال‌ها
@@ -259,4 +223,3 @@ PushMessage.markAsRead("PUSH_MESSAGE_ID");
 PushMessage.messageDismissed("PUSH_MESSAGE_ID");
 
 ```               
-

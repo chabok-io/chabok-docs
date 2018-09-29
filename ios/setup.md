@@ -112,7 +112,7 @@ manager?.registerApplication("APP_ID", apiKey: "API_KEY(SDK_KEY)", userName: "SD
 
 manager?.addDelegate(self)
 ```
-چابک برای فهمیدن نحوه باز شدن برنامه نیاز به قطعه کد زیر دارد:
+چابک برای فهمیدن نحوه باز شدن برنامه نیاز به قطعه کد زیر دارد، بنابراین فراخوانی این کد **ضروری** می‌باشد:
 ```objectivec
 //Objective-C:
 //Check app was launch by clicking on Notification.
@@ -219,6 +219,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 ### متد حذف کاربر
 
 برای حذف دستگاه کاربر از سرور چابک می‌توانید از متدهای زیر استفاده کنید:
+
 ```objectivec
 //Objective-C:
 [PushClientManager unRegisterUser];
