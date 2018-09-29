@@ -9,7 +9,8 @@ next: send-push.html
 
 در این صفحه با استفاده صحیح و آسان از API چابک آشنا خواهیم شد. 
 
- قبل از شروع باید ابتدا API key یا همان **access_token** را از **پنل چابک منوی تنظیمات تب دسترسی‌ها و توکن‌ها** کپی کنید و در بخش **Authorize** در [بخش دمو](https://api.doc.chabokpush.com) آن را قرار دهید.
+قبل از شروع باید ابتدا **access_token** را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
+ کپی کنید و در بخش **Authorize** در [بخش دمو](https://api.doc.chabokpush.com) آن را قرار دهید.
 
 ![عکس مربوطه](http://uupload.ir/files/q4fa_authorize.png)
 

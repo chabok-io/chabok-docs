@@ -7,9 +7,9 @@ prev: gradle-setup.html
 next: rich_notification.html
 ---
 
-### تغییرات لازم در فایل manifest
+### ۱. تغییرات لازم در فایل manifest
 
-۱. کدهای زیر را به فایل `AndroidManifest.xml` پروژه اضافه کنید:
+کدهای زیر را به فایل `AndroidManifest.xml` پروژه اضافه کنید:
 
 دربخش مجوز‌ها موارد زیر را اضافه کرده و نام کلاس `Application` خود را نیز بجای `YOUR_APPLICATION_CLASS_NAME` وارد کنید. عبارت `YOUR_APPLICATION_PACKAGE_ID` را با نام پکیج برنامه خود جایگزین کنید.
 
@@ -44,23 +44,7 @@ next: rich_notification.html
 > `نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](https://doc.chabokpush.com/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید. 
 
 
-#### ۲.  تعریف رسیور `PushMessageReceiver`
-کلاس رسیور `PushMessageReceiver`  که نحوه ایجاد آن در بخش [پیام چابک](chabok-messaging.html) توضیح داده شده را نیز به پروژه خود اضافه نمایید.
-
-> `نکته`:  دقت کنید که کلاس `PushMessageReceiver` برای **BuildTools ۲۶ به بالا** برداشته شده‌است، در آن صورت باید از متد `addListener` برای دریافت پیام‌ها استفاده کنید و دیگر نیازی به اضافه نمودن قطعه کد زیر ندارید.
-
-
-```markup
-
-<receiver android:name="PushMessageReceiver">
-    <intent-filter>
-        <category android:name="YOUR_APPLICATION_PACKAGE_ID"/>
-        <action android:name="com.adpdigital.push.client.MSGRECEIVE"/>
-    </intent-filter>
-</receiver>
-
-```
-#### ۳. تعریف رسیور `GcmReceiver`
+### ۲. تعریف رسیور `GcmReceiver`
 
 رسیور `GcmReceiver` را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
@@ -80,7 +64,7 @@ next: rich_notification.html
 
 ```
 
-### مقداردهی اولیه
+### ۳. مقداردهی اولیه
 برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس `AdpPushClient` بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست. برای این منظور در متد `onCreate` کلاس `Application` کدهای زیر را اضافه کنید.
 
 ```java
@@ -89,7 +73,7 @@ private AdpPushClient chabok = AdpPushClient.init(
     getApplicationContext(),
     YOUR_MAIN_ACTIVITY_CLASS.class,
     "YOUR_APP_ID",
-    "YOUR_API_KEY",
+    "YOUR_API_KEY(SDK_KEY)",
     "SDK_USERNAME",
     "SDK_PASSWORD"
 ); 
@@ -98,13 +82,12 @@ private AdpPushClient chabok = AdpPushClient.init(
 
 #### پارامترها
 
-با استفاده از متد `init` یک نمونه از `AdpPushClient` مقدار دهی اولیه می شود. در این متد بجای پارامتر‌های `YOUR_APP_ID`, `YOUR_API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](required.html) توضیح داده شده است.
+با استفاده از متد `init` یک نمونه از `AdpPushClient` مقداردهی اولیه می شود. در این متد بجای پارامتر‌های `YOUR_APP_ID`, `YOUR_API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
 
 > `نکته`: ترکیب `APP_ID/SENDERID` به عنوان `YOUR_APP_ID` مورد استفاده قرار می‌گیرد.
 
-به عنوان مثال به کد زیر توجه کنید که همیشه یک سینگلتن از کلاس `AdpPushClient` را مدیریت می‌کند. 
-در کد زیر متد `getPushClient` برای نمونه گیری و تنظیمات مربوط به `AdpPushClient` تعریف شده است، شما کافیست بجای `YOUR_MAIN_ACTIVITY_CLASS` نام اکتیویتی اصلی (چابک به طور پیش‌فرض بعد از کلیک شدن روی نوتیفیکیشن، این اکتیویتی را باز می‌کند) خود را قرار دهید.
-
+در کد زیر متد `initPushClient` برای نمونه‌گیری و تنظیمات مربوط به `AdpPushClient` تعریف شده است، شما کافی‌ست به جای `YOUR_MAIN_ACTIVITY_CLASS` نام اکتیویتی اصلی (چابک به طور پیش‌فرض بعد از کلیک شدن روی نوتیفیکیشن، این اکتیویتی را باز می‌کند) خود را قرار دهید.
+> `نکته`:  توجه داشته باشید متد `AdpPushClient.init` تحت هر شرایط **حتما** باید در کلاس `Application` و در متد `onCreate` فراخوانی شود. متد فوق برای مقداردهی پارامتر‌های ضروری چابک می‌باشد و در صورت عدم فراخوانی آن در حالت **Kill** بودن اپلیکیشن با خطا مواجه خواهید شد.
 
 ```java
 
@@ -116,6 +99,11 @@ private AdpPushClient chabok = null;
     public void onCreate() {
         super.onCreate();
         initPushClient();
+
+        String userId = chabok.getUserId();
+        if (userId != null && !userId.isEmpty()) {
+            chabok.register(userId);
+        }
     }
 
     private synchronized void initPushClient() {
@@ -129,15 +117,7 @@ private AdpPushClient chabok = null;
                 "SDK_PASSWORD"
                 );
             chabok.setDevelopment("DEV_MODE");
-            chabok.register("USER_ID");
         }
-    }
-    
-    public synchronized AdpPushClient getPushClient() throws IllegalStateException {
-        if (chabok == null) {
-            throw new IllegalStateException("Adp Push Client not initialized");
-        }
-        return chabok;
     }
     
     @Override
@@ -157,14 +137,14 @@ private AdpPushClient chabok = null;
 
 مشخص می‌کند که برنامه به محیط [تستی](https://sandbox.push.adpdigital.com) چابک متصل شود یا به محیط [عملیاتی](https://panel.push.adpdigital.com). این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
 
-> `نکته`:  مقدار پیش‌فرض  برابر `true` در نظر گرفته شده است.
-
 
 > `نکته ` : به طور کلی چابک شامل ۲ محیط سندباکس و عملیاتی می‌باشد. حساب‌های رایگان چابک بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. مقدار `true` برای ‌`devMode` باعث اتصال به محیط سندباکس و مقدار `false` باعث اتصال به محیط عملیاتی ما می‌شود.
 
 ```java
 chabok.setDevelopment("DEV_MODE");
 ```
+
+> `نکته`:  مقدار پیش‌فرض  برابر `true` در نظر گرفته شده است. برای تغییر به محیط عملیاتی (`false`) باید از [**پنل بخش تنظیمات**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA-%D8%AD%D8%B3%D8%A7%D8%A8-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C) درخواست خود را ثبت نمایید تا پس از تایید، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد. 
 
 #### ۲- متد `register`
 

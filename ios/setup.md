@@ -69,7 +69,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 >`نکته` : توجه داشته باشید هنگامی که **گواهی sandbox اپل** را در پنل تستی قرار می‌دهید، فقط امکان دریافت `Cloud Messaging` در حالت `debug` وجود خواهد داشت. اما اگر **گواهی production اپل** را در محیط عملیاتی قرار دهید، زمانی `Cloud Messaging` را دریافت خواهید کرد که اقدام به ساخت **ipa** از پروژه خود کرده و از طریق TestFlight یا Enterprise اپلیکیشن خود را نصب کنید.
 
 
-> `نکته` : به طور کلی چابک شامل ۲ محیط تست (سندباکس) و عملیاتی می‌باشد. حساب‌های رایگان چابک (تا ۳۰ هزار کاربر) بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. کلاینت چابک به صورت پیش‌فرض بر روی حالت **تست (sandbox)** می‌باشد. برای استفاده از محیط **عملیاتی (production)** مقدار `setDevelopment` را `NO` قرار دهید.
+> `نکته` : به طور کلی چابک شامل ۲ محیط تست (سندباکس) و عملیاتی می‌باشد. حساب‌های رایگان چابک (تا ۳۰ هزار کاربر) بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. کلاینت چابک به صورت پیش‌فرض بر روی حالت **تست (sandbox)** می‌باشد. برای تغییر به محیط عملیاتی (`setDevelopment:NO`) باید از [**پنل بخش تنظیمات**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA-%D8%AD%D8%B3%D8%A7%D8%A8-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C) درخواست خود را ثبت نمایید تا پس از تایید، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد. 
+
 
 ```objectivec
 //Objective-C:
@@ -81,21 +82,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
 PushClientManager.setDevelopment(true)
 ```
-به منظور استفاده از سرویس چابک، ابتدا باید متد `registerApplication` را فراخوانی کرده و مقادیر مورد نیاز جهت فعال سازی کتابخانه چابک را وارد نمایید. در این متد بجای پارامتر‌های `YOUR_APP_ID`, `YOUR_API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را که در بخش تنظیمات پنل است، وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](required) توضیح داده شده است.
+به منظور استفاده از سرویس چابک، ابتدا باید متد `registerApplication` را فراخوانی کرده و مقادیر مورد نیاز جهت فعال سازی کتابخانه چابک را وارد نمایید. در این متد بجای پارامتر‌های `YOUR_APP_ID`, `YOUR_API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را که در بخش تنظیمات پنل است، وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](https://doc.chabokpush.com/ios/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
+
 همانند کد زیر، متد `registerApplication` را در کلاس `AppDelegate` و در متد `didFinishLaunchingWithOptions` فراخوانی کنید :
 
 ```objectivec
 //Objective-C:
   
 [_manager registerApplication:@"APP_ID"
-                           apiKey:@"API_KEY"
+                           apiKey:@"API_KEY(SDK_KEY)"
                          userName:@"SDK_USERNAME"
                          password:@"SDK_PASSWORD"];
 ```
 ```swift
 //Swift:
 
-manager?.registerApplication("APP_ID", apiKey: "API_KEY", userName: "SDK_USERNAME", password: "SDK_PASSWORD")
+manager?.registerApplication("APP_ID", apiKey: "API_KEY(SDK_KEY)", userName: "SDK_USERNAME", password: "SDK_PASSWORD")
 ```
 
 جهت دسترسی به `delegate‌های` چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید :
@@ -110,7 +112,7 @@ manager?.registerApplication("APP_ID", apiKey: "API_KEY", userName: "SDK_USERNAM
 
 manager?.addDelegate(self)
 ```
-چابک برای فهمیدن نحوه باز شدن برنامه نیاز به قطعه کد زیر دارد:
+چابک برای فهمیدن نحوه باز شدن برنامه نیاز به قطعه کد زیر دارد، بنابراین فراخوانی این کد **ضروری** می‌باشد:
 ```objectivec
 //Objective-C:
 //Check app was launch by clicking on Notification.
@@ -217,6 +219,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 ### متد حذف کاربر
 
 برای حذف دستگاه کاربر از سرور چابک می‌توانید از متدهای زیر استفاده کنید:
+
 ```objectivec
 //Objective-C:
 [PushClientManager unRegisterUser];
@@ -253,4 +256,3 @@ func pushClientManagerDidRegisterUser(_ registration: Bool) {
 func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 }
 ```
-

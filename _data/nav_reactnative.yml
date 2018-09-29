@@ -8,6 +8,8 @@
       title: پیش‌نیازها
     - id: installation
       title: نصب چابک
+    - id: push-notification
+      title: تنظیم پوش‌نوتیفیکیشن
     - id: setup
       title: راه‌اندازی چابک
     - id: chabok-messaging
@@ -16,5 +18,7 @@
       title: اعتبارسنجی شناسه کاربری
     - id: events
       title: مدیریت رویدادها
+    - id: event-tracking
+      title: رصد رویدادها
     - id: features
       title: امکانات‌ دیگر چابک
