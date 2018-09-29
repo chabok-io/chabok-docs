@@ -74,11 +74,7 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 
 #### ۶- نسخه غیر صحیح **buildTools** و **play services**
 
-نسخه buildTools و play services شما باید به درستی انتخاب شود. برای انتخاب صحیح [مطابق این جدول](https://doc.chabokpush.com/android/gradle-setup.html#%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87) عمل کنید. در غیر این صورت با خطای زیر مواجه خواهید شد.
-
-```bash
-AdpPushClient not initialized yet, please first call AdpPushClient.get with parameters
-```
+نسخه buildTools و play services شما باید به درستی انتخاب شود. برای انتخاب صحیح [مطابق این جدول](https://doc.chabokpush.com/android/gradle-setup.html#%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87) عمل کنید. 
 
 #### ۷- باز نبودن اپلیکیشن
 
