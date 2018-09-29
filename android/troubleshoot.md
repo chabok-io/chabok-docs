@@ -38,7 +38,7 @@ prev: features.html
 
 #### ۳- عدم ورود صحیح اطلاعات حساب (خطای internal server error)
 
-در صورت دریافت خطای فوق در **logcat** یا **xcode log** از وارد کردن اطلاعات حساب (`appId`, `APIKey`, `username`, `password`) خود اطمینان یابید.
+در صورت دریافت خطای فوق در **logcat** از وارد کردن اطلاعات حساب (`appId`, `APIKey`, `username`, `password`) خود اطمینان یابید.
 
 #### حالت Terminated اپلیکیشن
 
@@ -72,9 +72,9 @@ prev: features.html
 AdpPushClient not initialized yet, please first call AdpPushClient.get with parameters
 ```
 
-#### ۶- نسخه غیر صحیح **buildTool** و **play service**
+#### ۶- نسخه غیر صحیح **buildTools** و **play services**
 
-نسخه buildTool و play service شما باید به درستی انتخاب شود. برای انتخاب صحیح [مطابق این جدول](https://doc.chabokpush.com/android/gradle-setup.html#%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87) عمل کنید.
+نسخه buildTools و play services شما باید به درستی انتخاب شود. برای انتخاب صحیح [مطابق این جدول](https://doc.chabokpush.com/android/gradle-setup.html#%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87) عمل کنید. در غیر این صورت با خطای زیر مواجه خواهید شد.
 
 ```bash
 AdpPushClient not initialized yet, please first call AdpPushClient.get with parameters
@@ -82,7 +82,7 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 
 #### ۷- باز نبودن اپلیکیشن
 
-در پنل حساب کاربری خود در بخش پیام‌ها، **دایره زرد رنگ** به معنی **در صف بود پیام** شما می‌باشد و زمانی که کاربر به چابک متصل شود (اپ را باز کند) پیام را دریافت می‌کند. در بخش نوتیفیکیشن در صورت ارسال موفق پوش نوتیفیکیشن به سرور هر پلتفرم تیک سبز رنگ به همراه لوگو پلتفرم به معنی ارسال موفق پیام به سرور پلتفرم برای ارسال پوش‌نوتیفیکیشن است. همچنین در صورت مشاهد خطای **GONE** یا **device unregistered** به این معنی است که کاربر اپلیکیشن شما را حذف کرده است. در صورت مشاهده خطای **deviceTokenNotForTopic** به این معنی است که اطلاعات پلتفرم آی‌او‌اس که در پنل ما قرار داده‌اید با اپلیکیشنی روی دستگاه خودت نصب کرده‌اید همخوانی ندارد.
+در پنل حساب کاربری خود در بخش پیام‌ها، **دایره زرد رنگ** به معنی **در صف بود پیام** شما می‌باشد و زمانی که کاربر به چابک متصل شود (اپ را باز کند) پیام را دریافت می‌کند. در بخش نوتیفیکیشن در صورت ارسال موفق پوش نوتیفیکیشن به سرور هر پلتفرم تیک سبز رنگ به همراه لوگو پلتفرم به معنی ارسال موفق پیام به سرور پلتفرم برای ارسال پوش‌نوتیفیکیشن است. همچنین در صورت مشاهد خطای **device unregistered** به این معنی است که کاربر اپلیکیشن شما را حذف کرده است. این نمادها را می‌توانید به صورت کامل در [مستندات پنل بخش پیام‌ها](https://doc.chabokpush.com/panel/inbox.html#نمادهای-وضعیت-پیام) مشاهده کنید.
 
 
 <Br>
