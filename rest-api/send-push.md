@@ -9,7 +9,7 @@ prev: guide.html
 
 ### ارسال پوش از طریق کانال‌های چابک 
 
-در این متد (**toUsers**) می‌توانیم برای یک **کاربر بخصوص** یا **همه کاربران یک کانال** پیامی را از طریق API ارسال کنیم. (پیام خصوصی و عمومی)
+در این متد (**toUsers**) می‌توانیم برای یک **یک یا چند کاربر بخصوص** یا **همه کاربران یک کانال** پیامی را از طریق API ارسال کنیم. (پیام خصوصی و عمومی)
 
 #### ساختار درخواست
 
@@ -142,6 +142,41 @@ curl -X POST \
 
 
 > `نکته :` در پارامترهای اعلان، پارامتر `options` یا همان رفتار اکشن (فقط در آی‌او‌اس) می‌توانید عدد ۱ برای اکشن [Authentication Required (اکشن در صورت قفل نبودن دستگاه اجرا می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired?language=objc)،‌ ۲ برای اکشن [Destructive (اکشن تسک مخرب انجام می‌دهد)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive?language=objc)، ۴ برای اکشن [Foreground (اکشن موجب باز شدن اپ در فورگراند می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground?language=objc) و جمع این اعداد را برای ترکیب آن‌ها با هم قرار دهید.
+
+
+> `نکته :` برای ارسال به چند کاربر با متد `toUsers`، باید به ازای هر کاربر payload مورد نظر را ایجاد نموده و یک آرایه از payloadهای ایجاد شده را ارسال نمایید. به نمونه زیر توجه فرمایید:
+
+```bash
+[
+  {
+    "user": "USER_1",
+    "content": "sample",
+    "channel": "default",
+    "notification": {
+      "title": "from chabok",
+      "body": "Salam 😀"
+  },
+  {
+    "user": "USER_2",
+    "content": "sample",
+    "channel": "default",
+    "notification": {
+      "title": "from chabok",
+      "body": "Salam 😀"
+    }
+  }
+  },
+  {
+    "user": "USER_2",
+    "content": "sample",
+    "channel": "default",
+    "notification": {
+      "title": "from chabok",
+      "body": "Salam 😀"
+    }
+  }
+]
+```
 
 #### پاسخ
 پاسخ درخواست‌های ارسال پیام به صورت تعداد دستگاه‌هایی که پیام به آن‌ها ارسال می‌شود، می باشد.
