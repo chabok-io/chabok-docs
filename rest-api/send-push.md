@@ -144,35 +144,51 @@ curl -X POST \
 > `نکته :` در پارامترهای اعلان، پارامتر `options` یا همان رفتار اکشن (فقط در آی‌او‌اس) می‌توانید عدد ۱ برای اکشن [Authentication Required (اکشن در صورت قفل نبودن دستگاه اجرا می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired?language=objc)،‌ ۲ برای اکشن [Destructive (اکشن تسک مخرب انجام می‌دهد)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive?language=objc)، ۴ برای اکشن [Foreground (اکشن موجب باز شدن اپ در فورگراند می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground?language=objc) و جمع این اعداد را برای ترکیب آن‌ها با هم قرار دهید.
 
 
-> `نکته :` برای ارسال به چند کاربر با متد `toUsers`، باید به ازای هر کاربر payload مورد نظر را ایجاد نموده و یک آرایه از payloadهای ایجاد شده را ارسال نمایید. به نمونه زیر توجه فرمایید:
+> `نکته :` برای ارسال پیام به چند کاربر با متد `toUsers` می‌توانید از دو روش استفاده کنید. روش اول قرار دادن آرایه‌ای از شناسه‌های کاربری در فیلد `users` (نه user) و روش دوم ایجاد کردن payloadهای مورد نظر به ازای هر کاربر و ارسال همه آن‌ها می‌باشد. به نمونه زیر توجه فرمایید:
+
+نمونه روش اول:
+
+```bash
+{
+  "users": ["USER_1", "USER_2", "USER_3", "USER_4"],
+  "content": "سفارش شما با موفقیت ثبت شد",
+  "channel": "default",
+  "notification": {
+   "title": "چابک",
+   "body": "سفارش ثبت شد"
+  }
+}
+```
+
+نمونه روش دوم:
 
 ```bash
 [
   {
     "user": "USER_1",
-    "content": "sample",
+    "content": "سفارش شما با موفقیت ثبت شد",
     "channel": "default",
     "notification": {
-      "title": "from chabok",
-      "body": "Salam 😀"
-  },
-  {
-    "user": "USER_2",
-    "content": "sample",
-    "channel": "default",
-    "notification": {
-      "title": "from chabok",
-      "body": "Salam 😀"
+      "title": "چابک",
+      "body": "سفارش ثبت شد"
     }
-  }
   },
   {
     "user": "USER_2",
-    "content": "sample",
+    "content": "سفارش شما با موفقیت ثبت شد",
     "channel": "default",
     "notification": {
-      "title": "from chabok",
-      "body": "Salam 😀"
+      "title": "چابک",
+      "body": "سفارش ثبت شد"
+    }
+  },
+  {
+    "user": "USER_2",
+    "content": "سفارش شما با موفقیت ثبت شد",
+    "channel": "default",
+    "notification": {
+      "title": "چابک",
+      "body": "سفارش ثبت شد"
     }
   }
 ]
