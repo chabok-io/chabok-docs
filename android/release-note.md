@@ -6,14 +6,12 @@ permalink: android/release-note.html
 next: introducing.html
 ---
 
-##  نسخه ۲.۱۳.۲ - ۱۳۹۷/۰۷/۰۹
+##  نسخه ۲.۱۳.۲ - ۱۳۹۷/۰۷/۰۸
 
 ### تغییرات
 
 - افزودن متدهای `gpsVersionFound` و `gpsVersionRequired` برای دریافت **نسخه Play Services** کاربر
-
-- حل مشکل نمایش خطاهای ‍‍‍‍`play services not found`
-
+- حل مشکل نمایش خطای ‍‍‍‍`play services not found`
 - حذف به کار بردن **bindService**
 
 ##  نسخه ۲.۱۳.۱ - ۱۳۹۷/۰۶/۱۴
