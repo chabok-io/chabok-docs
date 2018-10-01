@@ -50,7 +50,7 @@ next: settings.html
 ۱۰- **عدم همخوانی تنظیمات پوش‌نوتفیکیشن APN با تنظیمات اپلیکیشن**. (**DeviceTokenNotForTopic** برای آی‌اواس و **SENDER_ID_MISMATCH** 
  برای اندروید)
 
-۱۱- **GONE** به معنی حذف اپلیکیشن توسط کاربر
+۱۱- **GONE** و **Device_Unregisterd** به معنی حذف اپلیکیشن توسط کاربر
 
 ۱۲- ‌‌‌‌‌‌‌**BadDeviceToken** به معنی استفاده از Simulator آی‌اواس
 
