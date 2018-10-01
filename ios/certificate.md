@@ -48,7 +48,7 @@ permalink: ios/certificate.html
 
 <Br>
 
-![عکس مربوطه](http://uupload.ir/files/q4vh_certificatel.png)
+![عکس مربوطه](http://uupload.ir/files/ae8b_certificateq.png)
 
 <Br>
 
@@ -156,4 +156,4 @@ openssl pkcs12 -nocerts -out pushKey.pem -in Certificates.p12 -nodes
 
 فایل `pushCert.pem` را در قسمت گواهی و فایل `pushKey.pem` را در قسمت کلید اضافه کنید.
 
-![پنل چابک](http://uupload.ir/files/x29c_certificate5.png)
+![پنل چابک](http://uupload.ir/files/l94t_certificateh.png)
