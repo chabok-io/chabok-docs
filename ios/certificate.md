@@ -48,7 +48,7 @@ permalink: ios/certificate.html
 
 <Br>
 
-![عکس مربوطه](http://uupload.ir/files/d8ar_certificate4.png)
+![عکس مربوطه](http://uupload.ir/files/q4vh_certificatel.png)
 
 <Br>
 
