@@ -171,7 +171,7 @@ curl -X POST \
     "notification": {
       "title": "چابک",
       "body": "سفارش ثبت شد"
-   }
+    }
   },
   {
     "user": "USER_2",
