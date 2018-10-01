@@ -8,9 +8,9 @@ next: events.html
 ---
 
 ### رویداد کلیک بر روی اعلان (آی‌اواس ۱۰ به بالا)
-برای مدیریت کلیک بر روی اعلان پیام‌های چابک متد `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:` را فراخوانی نمایید. به نمونه زیر دقت کنید:
+برای مدیریت کلیک بر روی اعلان پیام‌های چابک متد `:userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` را فراخوانی نمایید. به نمونه زیر دقت کنید:
 
-```objective-c
+```objectivec
 //Objective-C
 
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
