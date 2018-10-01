@@ -19,7 +19,7 @@ permalink: ios/certificate.html
 
 در ابتدا صفحه APNs Auth Key را در Developer Center خود باز کنید و با کلیک روی + یک APNs Auth Key  جدید بسازید.
 
-درصفحه بعد گزینه `Apple Push Notification Authentication Key (Sandbox & Production)` را انتخاب نمایید و در پایین صفحه continue را بزنید.
+درصفحه بعد گزینه `(Apple Push Notification Authentication Key (Sandbox & Production` را انتخاب نمایید و در پایین صفحه continue را بزنید.
 
 <Br>
 
@@ -48,7 +48,7 @@ permalink: ios/certificate.html
 
 <Br>
 
-![عکس مربوطه](http://uupload.ir/files/wd45_certificate3.png)
+![عکس مربوطه](http://uupload.ir/files/d8ar_certificate4.png)
 
 <Br>
 
@@ -156,4 +156,4 @@ openssl pkcs12 -nocerts -out pushKey.pem -in Certificates.p12 -nodes
 
 فایل `pushCert.pem` را در قسمت گواهی و فایل `pushKey.pem` را در قسمت کلید اضافه کنید.
 
-![پنل چابک](http://uupload.ir/files/hs4n_18-chabok-panel-apns-setting.png)
+![پنل چابک](http://uupload.ir/files/x29c_certificate5.png)
