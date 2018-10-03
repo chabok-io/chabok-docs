@@ -13,8 +13,7 @@ next: event-handling.html
 برای این منظور لازم است یک شیء از نوع `NotificationHandler` نمونه سازی کنید، مانند قطعه کد زیر:
 
 ```java                
-NotificationHandler myHandler = new NotificationHandler() {
-
+NotificationHandler notifHandler = new NotificationHandler() {
     @Override
     public Class getActivityClass(ChabokNotification chabokNotification) {
     // return preferred activity class to be opened on this message's notification
@@ -29,8 +28,7 @@ NotificationHandler myHandler = new NotificationHandler() {
     }
 };
 
-chabok.addNotificationHandler(myHandler);
-
+chabok.addNotificationHandler(notifHandler);
 ```               
 
 در متد `buildNotification` با پارامترهای ورودی متد یعنی `ChabokNotification` و `NotificationCompat.Builder` می‌توانید اعلان دریافتی را به دلخواه تغییر داده و درباره نمایش آن تصمیم بگیرید. در صورتی که مقدار بازگشتی از این متد `true` باشد، کتابخانه با توجه به تنظیمات مربوطه اعلان را نمایش می‌دهد ولی اگر مقدار بازگشتی `false` باشد بدین معنی است که شما خود نمایش را به عهده می‌گیرید.
