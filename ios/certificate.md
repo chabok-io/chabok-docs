@@ -131,7 +131,7 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 
 ۲- برنامه  Keychain Access را روی Mac خود باز کنید. به قسمت login بروید و براساس دسته بندی Certificates محتوایش را فیلتر کنید. در اینجا گزینه ای به نام Apple Development iOS Push Services می بینید که با یک کلید خصوصی جفت شده است.
 
-![عکس مربوطه](https://github.com/chabokpush/chabok-assets/blob/master/chabok-docs/ios/certificates.png)
+![عکس مربوطه](https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/ios/certificates.png)
 
 ۳- روی این سرتیفیکیت پوش نوتیفیکشن جدیدتان کلیک راست کنید و  گزینه ی Export "Apple Development iOS Push Services را انتخاب کنید، در صفحه باز شده **File Format** را **cer** انتخاب کرده و فایل حاصل را با نام `Certificates.cer` در جایی که در دسترس تان باشد ذخیره کنید.
 
