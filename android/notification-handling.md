@@ -51,7 +51,7 @@ notificationManager.notify(0, builder.build());
 ```
 
 ### دریافت data نوتیفیکیشن
-با استفاده از قطعه کد زیر در متد `buildNotification` که در بخش [تنظیم نمایش اعلان](notification-handling.html#تنظیم-نمایش-و-کلیک-روی-اعلان) به آن اشاره شده است، می‌توانید به `data` نوتیفیکیشن دسترسی داشته باشید :
+با استفاده از قطعه کد زیر در متد `buildNotification` که در بخش [تنظیم نمایش اعلان](notification-handling.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%D9%88-%DA%A9%D9%84%DB%8C%DA%A9-%D8%B1%D9%88%DB%8C-%D8%A7%D8%B9%D9%84%D8%A7%D9%86) به آن اشاره شده است، می‌توانید به `data` نوتیفیکیشن دسترسی داشته باشید :
 ```java
 if (chabokNotification.getExtras() != null) {
     Bundle payload = chabokNotification.getExtras();
