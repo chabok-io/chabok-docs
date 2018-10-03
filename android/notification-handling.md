@@ -7,7 +7,7 @@ prev: verification.html
 next: event-handling.html
 ---
 
-### تنظیم نمایش اعلان
+### تنظیم نمایش و کلیک اعلان
 
 کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی اعلان (`نوتیفیکیشن`) نمایش می‌دهد. درصورت تمایل به تنظیم نمایش اعلان‌ها، کد مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
 برای این منظور لازم است یک شیء از نوع `NotificationHandler` نمونه سازی کنید، مانند قطعه کد زیر:
@@ -47,4 +47,14 @@ if (chabokNotification.getExtras() != null) {
     //Chabok message data
     JSONObject data = payload.getData();
 }
+```
+
+###  نمایش متن بلند در اعلان
+چابک به صورت پیش‌فرض متن پیام و پوش‌نوتیفیکیشن را به صورت`expand` یا `bigText` نمایش نمی‌دهد. برای نمایش متن پیام و پوش‌نوتیفیکیشن با استفاده از متد `buildNotification` اقدام به نمایش نوتیفیکیشن شخصی‌سازی شده خود کنید (دقت کنید که در متد فوق در صورت نمایش اعلان شخصی‌سازی شده، باید `return false` برگردانید) و از قطعه کد زیر در متد فوق استفاده کنید :
+
+```java
+NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+
+builder.setStyle(new NotificationCompat.BigTextStyle().bigText(notif.getText()));
+notificationManager.notify(0, builder.build());
 ```
