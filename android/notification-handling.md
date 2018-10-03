@@ -42,10 +42,9 @@ if (chabokNotification.getExtras() != null) {
     Bundle payload = chabokNotification.getExtras();
     //FCM message data
     Object data = payload.get("data");
-
 } else if (chabokNotification.getMessage() != null) {
     PushMessage payload = chabokNotification.getMessage();
-    //Chabok message data is here
+    //Chabok message data
     JSONObject data = payload.getData();
 }
 ```
