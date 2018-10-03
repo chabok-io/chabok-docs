@@ -19,7 +19,11 @@ client.addListener(this);
 
 ```java
 public void onEvent(PushMessage message) {
-    Log.d(TAG, "Got push message " + message);
+    Log.d(TAG, "GOT MESSAGE " + message);
+    JSONObject data = message.getData();
+    if (data != null){
+        Log.d(TAG, "The message data is : " + data);
+    }
 }
 ```
 
