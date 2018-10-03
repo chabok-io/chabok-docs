@@ -1,3 +1,4 @@
+
 ---
 id: notification-handling
 title: مدیریت اعلان‌ها
@@ -34,3 +35,18 @@ chabok.addNotificationHandler(myHandler);
 ```               
 
 در متد `buildNotification` با پارامترهای ورودی متد یعنی `ChabokNotification` و `NotificationCompat.Builder` می‌توانید اعلان دریافتی را به دلخواه تغییر داده و درباره نمایش آن تصمیم بگیرید. در صورتی که مقدار بازگشتی از این متد `true` باشد، کتابخانه با توجه به تنظیمات مربوطه اعلان را نمایش می‌دهد ولی اگر مقدار بازگشتی `false` باشد بدین معنی است که شما خود نمایش را به عهده می‌گیرید.
+
+### دریافت data نوتیفیکیشن
+با استفاده از قطعه کد زیر در متد `buildNotification` که در بخش [تنظیم نمایش اعلان](notification-handling.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%D8%A7%D8%B9%D9%84%D8%A7%D9%86) به آن اشاره شده است، می‌توانید به `data` نوتیفیکیشن دسترسی داشته باشید :
+```java
+if (chabokNotification.getExtras() != null) {
+    Bundle payload = chabokNotification.getExtras();
+    //FCM message data
+    Object data = payload.get("data");
+
+} else if (chabokNotification.getMessage() != null) {
+    PushMessage payload = chabokNotification.getMessage();
+    //Chabok message data is here
+    JSONObject data = payload.getData();
+}
+```
