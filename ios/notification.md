@@ -19,6 +19,14 @@ next: events.html
     //Get notification payload.
     NSDictionary *payload = response.notification.request.content.userInfo;
     
+    //Get message data
+    NSDictionary *messageData;
+    if ([payload valueForKey:@"message"]) {
+        messageData = [[payload valueForKey:@"message"] valueForKey:@"data"];
+    } else {
+        messageData = [payload valueForKey:@"data"];
+    }
+    
     completionHandler();
 }
 ```
@@ -33,6 +41,16 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 	let actionId = response.actionIdentifier
 	//Get notification payload.
 	let payload = response.notification.request.content.userInfo
+	
+	//Get message data
+	var messageData:NSDictionary
+	if payload["message"] is NSDictionary {
+		//In chabok message user tapped on notification
+		messageData = (payload["message"] as! NSDictionary).value(forKey: "data") as! NSDictionary
+	} else {
+		//In APNS user tapped on notification
+		messageData = payload["data"] as! NSDictionary
+	}
         
 	completionHandler()
 }
