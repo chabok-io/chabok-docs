@@ -133,9 +133,9 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 
 ![عکس مربوطه](http://uupload.ir/files/kl3t_14-keychain2.png)
 
-۳- روی این سرتیفیکیت پوش نوتیفیکشن جدیدتان کلیک راست کنید و  گزینه ی Export "Apple Development iOS Push Services را انتخاب کنید، در صفحه باز شده File Format را cer انتخاب کرده و فایل حاصل را با نام Certificates.cer در جایی که در دسترس تان باشد ذخیره کنید.
+۳- روی این سرتیفیکیت پوش نوتیفیکشن جدیدتان کلیک راست کنید و  گزینه ی Export "Apple Development iOS Push Services را انتخاب کنید، در صفحه باز شده **File Format** را **cer** انتخاب کرده و فایل حاصل را با نام `Certificates.cer` در جایی که در دسترس تان باشد ذخیره کنید.
 
-۴- روی این سرتیفیکیت پوش نوتیفیکشن جدیدتان کلیک راست کنید و  گزینه ی Export "Apple Development iOS Push Services را انتخاب کنید،‌ در صفحه باز شده File Format را p12 انتخاب کرده و  فایل حاصل را با نام Certificates.p12 در جایی که در دسترس تان باشد ذخیره کنید.
+۴- روی این سرتیفیکیت پوش نوتیفیکشن جدیدتان کلیک راست کنید و  گزینه ی Export "Apple Development iOS Push Services را انتخاب کنید،‌ در صفحه باز شده **File Format** را **p12** انتخاب کرده و  فایل حاصل را با نام `Certificates.p12` در جایی که در دسترس تان باشد ذخیره کنید.
 
 برای اکسپورت کردن می توانید پسورد هم وارد کنید اما در اینصورت لازم است که همراه با ارسال فایل سرتیفیکیت به چابک، پسورد آن را هم ارسال کنید.
 
