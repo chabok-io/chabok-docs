@@ -131,9 +131,11 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 
 ۲- برنامه  Keychain Access را روی Mac خود باز کنید. به قسمت login بروید و براساس دسته بندی Certificates محتوایش را فیلتر کنید. در اینجا گزینه ای به نام Apple Development iOS Push Services می بینید که با یک کلید خصوصی جفت شده است.
 
-![عکس مربوطه](http://uupload.ir/files/kl3t_14-keychain2.png)
+![عکس مربوطه](https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/ios/certificates.png)
 
-۳- روی این سرتیفیکیت پوش نوتیفیکشن جدیدتان کلیک راست کنید و  گزینه ی Export "Apple Development iOS Push Services را انتخاب کنید و فایل حاصل را با نام apns-dev-cert.p12 در جایی که در دسترس تان باشد ذخیره کنید.
+۳- روی این سرتیفیکیت پوش نوتیفیکشن جدیدتان کلیک راست کنید و  گزینه ی Export "Apple Development iOS Push Services را انتخاب کنید، در صفحه باز شده **File Format** را **cer** انتخاب کرده و فایل حاصل را با نام `Certificates.cer` در جایی که در دسترس تان باشد ذخیره کنید.
+
+۴- روی این سرتیفیکیت پوش نوتیفیکشن جدیدتان کلیک راست کنید و  گزینه ی Export "Apple Development iOS Push Services را انتخاب کنید،‌ در صفحه باز شده **File Format** را **p12** انتخاب کرده و  فایل حاصل را با نام `Certificates.p12` در جایی که در دسترس تان باشد ذخیره کنید.
 
 برای اکسپورت کردن می توانید پسورد هم وارد کنید اما در اینصورت لازم است که همراه با ارسال فایل سرتیفیکیت به چابک، پسورد آن را هم ارسال کنید.
 
