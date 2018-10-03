@@ -41,10 +41,11 @@ chabok.addNotificationHandler(myHandler);
 ```java
 NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
 
+String notifText = chabokNotification.getText();
+builder.setStyle(new NotificationCompat.BigTextStyle().bigText(notifText));
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
     builder.setPriority(Notification.PRIORITY_MAX);
 }
-builder.setStyle(new NotificationCompat.BigTextStyle().bigText(notif.getText()));
 
 notificationManager.notify(0, builder.build());
 ```
