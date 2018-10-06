@@ -26,7 +26,7 @@ next: gradle-setup.html
 
 کلیدهای Legacy server key و Sender ID را به ترتیب در فیلدهای مربوطه در بخش تنظیمات پیشرفته حساب خود در پنل چابک وارد نمایید
 
-![عکس مربوطه](http://uupload.ir/files/b6mg_screen_shot_2017-12-30_at_11.58.08_am.png)
+![عکس مربوطه](https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/android/gcm.png)
 
 
 مقدار Sender ID علاوه بر این قسمت به عنوان یکی از پارامترهای مقداردهی اولیه چابک نیز مورد استفاده قرار خواهد گرفت.
