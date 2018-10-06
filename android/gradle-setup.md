@@ -3,9 +3,11 @@ id: gradle-setup
 title: نصب چابک
 layout: android
 permalink: android/gradle-setup.html
-prev: firebasehtml
+prev: firebase.html
 next: application-class.html
 ---
+
+پیش‌فرض این صفحه این است که شما تمامی مراحل [پیش‌نیازها](https://doc.chabokpush.com/android/required.html) را طی کردید.
 
 ### افزودن کتابخانه
 
