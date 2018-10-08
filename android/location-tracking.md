@@ -3,9 +3,10 @@ id: location-tracking
 title: مکان‌یابی
 layout: android
 permalink: android/location-tracking.html
-prev: location-config.html
-next: features.html
+prev: behavior-tracking.html
+next: verification.html
 ---
+
 چابک کنترل و تعامل با API‌ های مربوط به GPS و سرویس‌دهنده‌های دیگر را مدیریت می نماید.
 
 قابلیت مکان‌یابی در اندروید با استفاده از API های Google Play services بهبود یافته است. امکاناتی مانند دریافت آخرین موقعیت مکانی کاربر، دریافت متناوب موقعیت مکانی، قابلیت تعریف محدوده جغرافیایی و ... از جمله امکانات ارايه شده درآن هستند.
@@ -14,14 +15,109 @@ next: features.html
 بعنوان مثال شما برای دریافت یک موقعیت مکانی در شروع برنامه لازم نیست با API های اندروید درگیر شده و حالات مختلف را کنترل نمایید، بلکه کافیست با استفاده از متد `enableLocationOnLaunch` و پیاده سازی Listener ‌مربوطه، به سادگی نیاز خود را برطرف سازید.
 همچنین برای استفاده از قابلیت Tracking درطول زمان و جابجایی معین، کافی‌ست متد `startTrackingMe` را با پارامترهای مربوط فراخوانی کنید و پس از آن در دوره زمانی تعیین شده و میزان جابجایی که در پارامترها مشخص نموده اید موقعیت مکانی را دریافت خواهید کرد و پس از طی این زمان نیز سرویس مکان‌یابی بصورت خودکار متوقف خواهد شد.
 
-در ادامه این مستند به معرفی امکانات مکان‌یابی چابک خواهیم پرداخت.
+## تعریف مجوزهای دسترسی به مکان
+برای استفاده از امکانات مکان‌یابی چابک لازم است دو مجوز `ACCESS_FINE_LOCATION` و `ACCESS_COARSE_LOCATION`  را در فایل `AndroidManifest.xml` قرار دهید:
 
+```markup
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.adpdigital.push.demo" >
+    
+    ...
+    
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    
+    <application ... >
+        
+    </application>
+    
+</manifest>
+```
+
+در ادامه این مستند به معرفی امکانات مکان‌یابی چابک خواهیم پرداخت:
+
+### دریافت موقعیت مکانی در حالت kill
+برای دریافت گزارش موقعیت مکانی درحالت `kill` لازم است یک `IntentService`  تعریف نمایید تا بتوانید از سرویس مکان‌یابی استفاده کنید.
+سپس با استفاده از متد `addCallbackIntent` بایستی Intent فراخوانی سرویس خود را به شیء `LocationManager‌` معرفی کنید، مانند نمونه زیر:
+‍
+```java
+Intent intent = new Intent(getContext(), LocationHostService.class);
+locationManager.addCallbackIntent(intent);
+```
+پس از این کار، Intent موردنظر توسط چابک ذخیره و مورد استفاده قرار خواهد گرفت، مگر اینکه با استفاده از متد `removeCallbackIntent` آن را غیرفعال نمایید.
+این `IntentService` در هر به‌روزرسانی موقعیت مکانی فراخوانی خواهد شد.
+موقعیت مکانی با کلید `LocationManager.LOCATION_KEY` از Intent قابل دریافت است، در متد `onHandleIntent` مانند نمونه زیر می‌توانید اطلاعات موقعیت مکانی به‌روزشده را استخراج نمایید:
+```java
+public class LocationHostService extends IntentService {
+
+    private static final String TAG = "LocationHostService";
+
+    public LocationHostService() {super("LocationHostService");}
+    /**
+     * Creates an IntentService.  Invoked by your subclass's constructor.
+     *
+     * @param name Used to name the worker thread, important only for debugging.
+     */
+    public LocationHostService(String name) {
+        super(name);
+    }
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onHandleIntent(Intent intent) {
+
+        Bundle extras = intent.getExtras();
+
+        if(extras != null) {
+            Location location = extras.getParcelable(LocationManager.LOCATION_KEY);
+            if(location != null) {
+                // use location here
+            }
+        }
+    }
+
+}
+```
+ کلاس سرویس تعریف شده را به فایل `AndroidManifest.xml` نیز اضافه نمایید،:
+
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.adpdigital.push.demo" >
+    
+    <application
+        android:name=".app.DemoApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light">
+        
+        ...
+        
+        <service android:name=".service.LocationHostService" >
+        </service>
+    </application>
+
+</manifest>
+```
+
+برای غیرفعال کردن دریافت موقعیت مکانی در سرویس خود متد `removeCallbackIntent` را فراخوانی کنید:
+
+```java
+locationManager.removeCallbackIntent();
+
+```
 
 ### استفاده از شیء LocationManager
 برای استفاده از قابلیت مکان‌یابی چابک لازم است از شیء `LocationManager` استفاده نمایید. برای مقداردهی اولیه متد `init` را با context موردنظر فراخوانی نمایید، به شکل زیر:
 
 ```java
-LocationManager locationManger = LocationManager.init(getApplicationContext());
+LocationManager locationManager = LocationManager.init(getApplicationContext());
 ```
 
 همه متدهای موردنیاز برای مکان‌یابی در این شیء قرار دارد.
@@ -49,8 +145,8 @@ public void startLocationUpdates(LocationParams params)
 @Override
 public void onStop() {
     super.onStop();
-    if (locationManger != null) {
-        locationManger.stop();
+    if (locationManager != null) {
+        locationManager.stop();
     }
     ...
 }
@@ -159,14 +255,14 @@ public void removeListener()
 public class GeoFragment extends Fragment 
     implements OnLocationUpdateListener {
     
-    private LocationManager locationManger;
+    private LocationManager locationManager;
     
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_geo, container, false);
         
-        locationManger = LocationManager.init(getContext());
-        locationManger.addListener(this);
+        locationManager = LocationManager.init(getContext());
+        locationManager.addListener(this);
         
         return view;
     }
@@ -228,7 +324,7 @@ public class GeoFragment extends Fragment
 ‍
 ```java
 Intent intent = new Intent(getContext(), LocationHostService.class);
-locationManger.addCallbackIntent(intent);
+locationManager.addCallbackIntent(intent);
 ```
 پس از اجرای کد فوق می‌توانید گزارش به‌روزرسانی موقعیت مکانی را در سرویس خود (LocationHostService) دریافت نمایید.  برای جزيیات بیشتر درمورد دریافت موقعیت مکانی در حالت‌های مختلف، به بخش [تنظیمات مکان‌یابی](location-config.html) مراجعه کنید.
 
