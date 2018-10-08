@@ -2,7 +2,7 @@
 id: push_notification
 title: پوش‌نوتیفیکیشن
 layout: android
-permalink: android/push_notification.html
+permalink: android/push-notification.html
 prev: chabok-messaging.html
 next: notification-handling.html
 ---
