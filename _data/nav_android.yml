@@ -1,35 +1,29 @@
 - title: نصب و راه ‌اندازی
   items:
-    - id: release-note
-      title: لیست تغییرات کتابخانه
-    - id: introducing
-      title: معرفی چابک
     - id: required
       title: پیش‌نیازها
-    - id: firebase
-      title: ایجاد کلیدهای گوگل
-    - id: gradle-setup
-      title: نصب چابک
-    - id: application-class
-      title:  راه‌اندازی چابک
-    - id: rich_notification
-      title: نوتیفیکیشن چندرسانه‌ای
+    - id: sdk-setup
+      title: راه‌اندازی
     - id: chabok-messaging
       title: پیام چابک
-    - id: verification
-      title: اعتبارسنجی شناسه کاربری
+    - id: push-notification	
+      title: پوش‌نوتیفیکیشن
     - id: notification-handling
       title: مدیریت اعلان‌ها
+    - id: user-management
+      title: ‌گروه‌بندی کاربران
     - id: event-handling
       title: ‌مدیریت رویدادها
-    - id: event-tracking
-      title: ‌رصد رویدادها
-    - id: location-config
-      title: ‌تنظیمات مکان‌یابی
+    - id: behavior-tracking
+      title: ‌رصد رفتار
     - id: location-tracking
       title: ‌مکان‌یابی
+    - id: verification
+      title: اعتبارسنجی شناسه کاربری
     - id: features
       title: امکانات‌ دیگر چابک
     - id: troubleshoot
       title: عیب‌ یابی
+    - id: release-note
+      title: لیست تغییرات کتابخانه
 
