@@ -4,7 +4,7 @@ title: مدیریت اعلان‌ها
 layout: android
 permalink: android/notification-handling.html
 prev: push-notification.html
-next: user-management.html.html
+next: user-management.html
 ---
 
 ### تنظیم نمایش و کلیک روی اعلان
