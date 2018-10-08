@@ -1,14 +1,16 @@
 ---
-id: rich_notification
-title: نوتیفیکیشن چندرسانه‌ای
+id: push_notification
+title: پوش‌نوتیفیکیشن
 layout: android
-permalink: android/rich_notification.html
-prev: application-class.html
-next: chabok-messaging.html
+permalink: android/push_notification.html
+prev: chabok-messaging.html
+next: notification-handling.html
 ---
 
-### مراحل راه‌اندازی نوتیفیکیشن چندرسانه‌ای
-1) ابتدا در فایل `AndroidManifest.xml` اکشن‌های خود را برای `‌BroadcastReceiver` تعیین کنید تا بتوانید برای هر اکشن عملیات مناسب را اعمال کنید :
+### مراحل راه‌اندازی پوش نوتیفیکیشن چندرسانه‌ای
+
+1) ابتدا در فایل `AndroidManifest.xml` اکشن‌های خود را برای `‌BroadcastReceiver` تعیین کنید تا بتوانید برای هر اکشن عملیات مناسب را اعمال کنید:
+
 
 ```markup
 <receiver android:name="NOTIFICATION_RECEIVER_CLASS">  
@@ -20,7 +22,7 @@ next: chabok-messaging.html
 </receiver>
 ```
 
-2) کلاس جدید از نوع `BroadcastReceiver` ایجاد کنید تا بتوانید کلیک بر روی هر اکشن را پیاده‌سازی کنید :
+2) کلاس جدید از نوع `BroadcastReceiver` ایجاد کنید تا بتوانید کلیک بر روی هر اکشن را پیاده‌سازی کنید:
 
 ```java
 import android.content.Intent;  
@@ -43,7 +45,9 @@ public class NOTIFICATION_RECEIVER_CLASS extends BroadcastReceiver {
 ```
 
 #### نمونه کد نوتیفیکیشن چندرسانه‌ای
-قطعه کد زیر را در فایل `AndroidManifest.xml` قرار دهید  :
+
+قطعه کد زیر را در فایل `AndroidManifest.xml` قرار دهید:
+
 ```markup
 <receiver android:name=".NotificationReceiver">  
 	<intent-filter> 
@@ -52,7 +56,7 @@ public class NOTIFICATION_RECEIVER_CLASS extends BroadcastReceiver {
 	</intent-filter>
 </receiver>
 ```
-سپس کلاس جدید با نام `NotificationReceiver` از نوع `BroadcastReceiver` ایجاد کنید تا کد مربوط به دو اکشن بالا را با یک `Toast` به نمایش بگذارید :
+سپس کلاس جدید با نام `NotificationReceiver` از نوع `BroadcastReceiver` ایجاد کنید تا کد مربوط به دو اکشن بالا را با یک `Toast` به نمایش بگذارید:
  
 ```java
 import android.widget.Toast;  
