@@ -4,7 +4,7 @@ title: گروه‌بندی کاربران
 layout: android
 permalink: android/user-management.html
 prev: notification-handling.html
-next: events.html
+next: events-handling.html
 ---
  
 به طور کلی  کاربران شما با ۳ روش متناسب با نیازهای مختلف گرو‌بندی می شوند:
