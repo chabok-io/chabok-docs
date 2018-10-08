@@ -1,14 +1,5 @@
 ---
-id: application-class
-title: راه‌اندازی چابک
-layout: android
-permalink: android/application-class.html
-prev: gradle-setup.html
-next: rich_notification.html
----
-
----
-id: gradle-setup
+id: sdk-setup
 title: راه‌اندازی SDK
 layout: android
 permalink: android/sdk-setup.html
