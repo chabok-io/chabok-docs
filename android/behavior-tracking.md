@@ -1,8 +1,8 @@
 ---
 id: event-tracking
-title: رصد رویدادها (Event Tracking)
+title: رصد رفتار 
 layout: android
-permalink: android/event-tracking.html
+permalink: android/behavior-tracking.html
 prev: event-handling.html
 next: location-config.html
 ---
