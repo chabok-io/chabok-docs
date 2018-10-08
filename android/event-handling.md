@@ -3,8 +3,8 @@ id: event-handling
 title: مدیریت رویدادها
 layout: android
 permalink: android/event-handling.html
-prev: notification-handling.html
-next: event-tracking.html
+prev: user-management.html
+next: behavior-tracking.html
 ---
 
 ### انتشار رویداد با داده‌های دلخواه
