@@ -20,7 +20,7 @@ next: installation.html
 
 ###  تنظیمات
 
-ابتدا مطمئن شوید که `MobileCoreServices.framework`، `SystemConfiguration.framework` و `CoreData` را از Linked Frameworks and Libraries وارد کرده اید.
+ابتدا مطمئن شوید که `MobileCoreServices.framework`، `SystemConfiguration.framework` و `CoreData` را از Linked Frameworks and Libraries وارد کرده‌اید.
 
 لطفا `Push Notifications` را در `Setting > Capabilities` فعال کنید .
 
