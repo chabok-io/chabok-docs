@@ -4,6 +4,7 @@ title: عیب یابی اندروید
 layout: android
 permalink: android/troubleshoot.html
 prev: features.html
+next: release-note.html
 ---
 
 در این صفحه به عیب‌یابی مشکلات متداول توسعه‌دهندگان در پیاده‌سازی چابک و ارائه راه‌‌حل‌های مربوط به آن می‌پردازیم.
