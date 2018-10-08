@@ -3,8 +3,8 @@ id: chabok-messaging
 title: پیام چابک
 layout: android
 permalink: android/chabok-messaging.html
-prev: rich_notification.html
-next: verification.html
+prev: sdk_setup.html
+next: push-notification.html
 ---
 
 ### دریافت پیام چابک
