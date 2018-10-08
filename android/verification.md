@@ -3,8 +3,8 @@ id: verification
 title: اعتبارسنجی شناسه کاربری
 layout: android
 permalink: android/verification.html
-prev: chabok-messaging.html
-next: notification-handling.html
+prev: behavior-tracking.html
+next: features.html
 ---
 
 ### اعتبارسنجی
