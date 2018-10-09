@@ -73,7 +73,7 @@ message.notification["sound"] = "SOUND" //Optional
 message.notification["title"] = "TITLE" //Optional
 message.notification["subtitle"] = "SUBTITLE" //Optional
 
-PushClientManager.defaultManager.publish(message)
+PushClientManager.default().publish(message)
 ```
 
 در صورت خطا در publish پیام delegate method زیر فراخوانی خواهد شد:
