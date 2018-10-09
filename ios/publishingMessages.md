@@ -10,8 +10,8 @@ next: validation.html
 ### ارسال پیام
 
 ارسال پیام در چابک دارای دو حالت زیر می‌باشد:
-- به یک کانال خصوصی برای یک کاربر خاص
-- به یک کانال عمومی
+- به یک کانال **خصوصی** برای یک کاربر خاص
+- **به یک کانال **عمومی
 
 با استفاده از متد `publish` می‌توانید به یک کانال خاص (خصوصی/عمومی) پیام ارسال کنید.
 ```objectivec
@@ -284,7 +284,6 @@ func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage?) {
 
     print("\n\n Got message delivery \(messageId ?? ""), delivered to \(deliveredToUser ?? "") at \(deliverdAt)")
 }
-
 ```
 
 ### ارسال وضعیت پیام‌های دریافتی
@@ -298,12 +297,10 @@ func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage?) {
 
 [self.manager markAsRead:@"MESSAGE_ID"];
 [self.manager messageDismissed:@"MESSAGE_ID"];
-
 ```
 ```swift
 //Swift:
 
 PushClientManager.default().mark(asRead: @"MESSAGE_ID")
 PushClientManager.default().messageDismissed(@"MESSAGE_ID")
-
 ```
