@@ -4,7 +4,7 @@ title: راه‌اندازی چابک
 layout: ios
 permalink: ios/setup.html
 prev: installation.html
-next: rich_notification.html
+next: publishingMessages.html
 ---
 
 
