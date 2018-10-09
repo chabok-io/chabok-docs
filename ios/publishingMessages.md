@@ -138,7 +138,7 @@ func pushClientManagerDidSubscribed(_ channel: String!) {
 //Objective-C:
 
 -(void) pushClientManagerDidFailInSubscribe:(NSError *)error{
-    NSLog(@"Error subscribe to channel %@",error);
+    NSLog(@"Error subscribing on channel %@",error);
 }
 ```
 
@@ -146,7 +146,7 @@ func pushClientManagerDidSubscribed(_ channel: String!) {
 //Swift:
 
 func pushClientManagerDidFail(inSubscribe error: Error!) {
-	print("Error subscribe to channel \(error)")
+	print("Error subscribing on channel \(error)")
 }
 ```
 ### لغو عضویت از کانال (Unsubscribe)
@@ -170,7 +170,7 @@ PushClientManager.default().unsubscribe("private/league") // private (personal) 
 //Objective-C:
 
 -(void) pushClientManagerDidUnsubscribed:(NSString *)channel{
-    NSLog(@"Unsubscribed on '%@' channel",channel);
+    NSLog(@"Unsubscribed from '%@' channel",channel);
 }
 ```
 
@@ -178,7 +178,7 @@ PushClientManager.default().unsubscribe("private/league") // private (personal) 
 //Swift:
 
 func pushClientManagerDidUnsubscribed(_ channel: String!) {
-	print("Unsubscribed on '\(channel)' channel")
+	print("Unsubscribed from '\(channel)' channel")
 }
 ```
 در صورت رخ دادن خطا به هنگام لغو عضویت از یک کانال با استفاده از delegate method زیر می‌توانید از خطا رخ داده شده با خبر شوید:
@@ -187,7 +187,7 @@ func pushClientManagerDidUnsubscribed(_ channel: String!) {
 //Objective-C:
 
 -(void) pushClientManagerDidFailInUnsubscribe:(NSError *)error{
-    NSLog(@"Error in unsubscribe to channel %@",error);
+    NSLog(@"Error in unsubscribe from channel %@",error);
 }
 ```
 
@@ -195,7 +195,7 @@ func pushClientManagerDidUnsubscribed(_ channel: String!) {
 //Swift:
 
 func pushClientManagerDidFail(inUnsubscribe error: Error!) {
-	print("Error in unsubscribe to channel \(error)")
+	print("Error in unsubscribe from channel \(error)")
 }
 ```
 
