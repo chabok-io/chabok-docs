@@ -17,15 +17,15 @@ next: validation.html
 ```objectivec
 //Objective-C:
 
-[self.manager publish:@"USER_ID"
-                    toChannel:@"CHANNEL_NAME"
-                     withText:@"Hello World!"];
+[PushClientManager.defaultManager publish:@"USER_ID"
+                    		toChannel:@"CHANNEL_NAME"
+                    		 withText:@"Hello World!"];
 ```
 
 ```swift
 //Swift:
 
-manager?.publish("USER_ID", toChannel: "CHANNEL_NAME", withText: "Hello World!")
+PushClientManager.default().publish("USER_ID", toChannel: "CHANNEL_NAME", withText: "Hello World!")
 ```
 > `نکته`: برای ارسال پیام به صورت عمومی بر روی یک کانال بجای عبارت `USER_ID` کاراکتر `*` را وارد نمایید و سپس نام کانال خصوصی خود را وارد کنید.
 
@@ -155,15 +155,15 @@ func pushClientManagerDidFail(inSubscribe error: Error!) {
 ```objectivec
 //Objective-C:
 
-[self.manager unsubscribe:@"alert"]; // public channel
-[self.manager unsubscribe:@"private/league"]; // private (personal) channel
+[PushClientManager.defaultManager unsubscribe:@"alert"]; // public channel
+[PushClientManager.defaultManager unsubscribe:@"private/league"]; // private (personal) channel
 ```
 
 ```swift
 //Swift:
 
-manager.unsubscribe("alert") // public channel
-manager.unsubscribe("private/league") // private (personal) channel
+PushClientManager.default().unsubscribe("alert") // public channel
+PushClientManager.default().unsubscribe("private/league") // private (personal) channel
 ```
 در صورت موفق بودن عمل لغو عضویت از یک کانال، delegate method زیر فراخوانی خواهد شد:
 ```objectivec
@@ -247,12 +247,12 @@ func pushClientManagerDidReceivedMessage(_ message: PushClientMessage?) {
 ```objectivec
 //Objetive-C: 
 
-self.manager.deliveryChannelEnabeled = YES; 
+PushClientManager.defaultManager.deliveryChannelEnabeled = YES; 
 ```
 ```swift
 //Swift: 
 
-manager.deliveryChannelEnabeled = true 
+PushClientManager.default().deliveryChannelEnabeled = true 
 ```
 
 #### دریافت گزارش تحویل پیام‌‌های ارسالی
@@ -295,8 +295,8 @@ func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage?) {
 ```objectivec
 //Objective-C:
 
-[self.manager markAsRead:@"MESSAGE_ID"];
-[self.manager messageDismissed:@"MESSAGE_ID"];
+[PushClientManager.defaultManager markAsRead:@"MESSAGE_ID"];
+[PushClientManager.defaultManager messageDismissed:@"MESSAGE_ID"];
 ```
 ```swift
 //Swift:
