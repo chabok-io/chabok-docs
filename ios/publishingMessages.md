@@ -63,7 +63,7 @@ let toChannel = "CHANNEL" //Required
 let messageBody = "MESSAGE_BODY" //Required
 let customData = ["KEY": "VALUE"] //Optional
 
-let message = PushClientMessage()(message: messageBody,
+let message = PushClientMessage(message: messageBody,
                                  withData: customData,
                                  toUserId: toUserId,
                                   channel: toChannel)
