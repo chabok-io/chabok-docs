@@ -32,7 +32,7 @@ manager?.publish("USER_ID", toChannel: "CHANNEL_NAME", withText: "Hello World!")
 روی اتصال موجود چابک می‌توانید تعداد زیادی پیام سمت سرور بفرستید، در واقع برای هر درخواست یک اتصال جدید ساخته نمی‌شود. تحویل اطلاعات را در سمت سرور، حتی در شرایطی که کاربر اینترنت ضعیف و یا قطع شده‌ای دارد، تضمین می‌کند. به این ترتیب که کلاینت چابک با استفاده از منطق سعی مجدد خود می‌تواند پیام‌ شما را حتی در شرایط بحرانی یک و فقط یک بار بفرستد.
 
 
-برای ارسال پیام با جزئیات بیشتر می‌توانید از signature دیگر متد publish استفاده کنید، همانند نمونه کد زیر:
+برای ارسال پیام با جزئیات بیشتر می‌توانید از signature دیگر متد `publish` استفاده کنید، همانند نمونه کد زیر:
 
 ```objectivec
 //Objective-C:
@@ -76,7 +76,7 @@ message.notification["subtitle"] = "SUBTITLE" //Optional
 PushClientManager.default().publish(message)
 ```
 
-در صورت خطا در publish پیام delegate method زیر فراخوانی خواهد شد:
+در صورت  رخ دادن خطا به هنگام publish پیام delegate method زیر فراخوانی خواهد شد:
 
 ```objectivec
 //Objective-C:
