@@ -19,7 +19,7 @@ next: validation.html
 
 [self.manager publish:@"USER_ID"
                     toChannel:@"CHANNEL_NAME"
-                     withText:@"`Hello World!`"];
+                     withText:@"Hello World!"];
 ```
 
 ```swift
@@ -40,7 +40,7 @@ manager?.publish("USER_ID", toChannel: "CHANNEL_NAME", withText: "Hello World!")
 NSString *toUserId = @"USER_ID"; //Required. For public channel set * (wildcard)
 NSString *toChannel = @"CHANNEL"; //Required
 NSString *messageBody = @"MESSAGE_BODY"; //Required
-NSDictionary *customData = @{@"DATA_KEY":@"DATA_VALUE"}; //Optional
+NSDictionary *customData = @{@"KEY":@"VALUE"}; //Optional
 
 PushClientMessage *message = [[PushClientMessage new] initWithMessage:messageBody
                                                              withData:customData
@@ -61,7 +61,7 @@ PushClientMessage *message = [[PushClientMessage new] initWithMessage:messageBod
 let toUserId = "USER_ID" //Required. For public channel set * (wildcard)
 let toChannel = "CHANNEL" //Required
 let messageBody = "MESSAGE_BODY" //Required
-let customData = ["DATA_KEY": "DATA_VALUE"] //Optional
+let customData = ["KEY": "VALUE"] //Optional
 
 let message = PushClientMessage()(message: messageBody,
                                  withData: customData,
