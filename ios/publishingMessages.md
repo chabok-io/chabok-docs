@@ -247,7 +247,7 @@ func pushClientManagerDidReceivedMessage(_ message: PushClientMessage?) {
 ```objectivec
 //Objetive-C: 
 
-[self.manager.deliveryChannelEnabeled = YES]; 
+self.manager.deliveryChannelEnabeled = YES; 
 ```
 ```swift
 //Swift: 
