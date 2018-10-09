@@ -240,7 +240,7 @@ func pushClientManagerDidReceivedMessage(_ message: PushClientMessage?) {
 }
 ```
 
-### گزارش تحویل (Delivery)
+### گزارش تحویل پیام (Delivery)
 
 برای فعال کردن دریافت گزارش تحویل یک پیام منتشر شده، باید تحویل را قبل از با استفاده از مقدار دهی به property `deliveryChannelEnabeled` فعالسازی فعال کنید: 
 
