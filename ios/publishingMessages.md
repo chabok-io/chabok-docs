@@ -90,7 +90,7 @@ PushClientManager.default().publish(message)
 //Swift:
 
 func pushClientManagerDidFail(inPublish error: Error!) {
-	print("Error in publishing message %@",error)
+	print("Error in publishing message \(error)")
 }
 ```
 
@@ -129,7 +129,7 @@ manager.subscribe("private/league") // private (personal) channel
 //Swift:
 
 func pushClientManagerDidSubscribed(_ channel: String!) {
-	print("Subscribed on '%@' channel",channel)
+	print("Subscribed on '\(channel)' channel")
 }
 ```
  همچنین در صورت رخ دادن خطا به هنگام عضویت روی یک کانال، با استفاده از delegate method زیر می‌توانید از خطای رخ داده شده با خبر شوید:
@@ -146,7 +146,7 @@ func pushClientManagerDidSubscribed(_ channel: String!) {
 //Swift:
 
 func pushClientManagerDidFail(inSubscribe error: Error!) {
-	print("Error subscribe to channel %@",error)
+	print("Error subscribe to channel \(error)")
 }
 ```
 ### لغو عضویت از کانال (Unsubscribe)
@@ -178,7 +178,7 @@ PushClientManager.default().unsubscribe("private/league") // private (personal) 
 //Swift:
 
 func pushClientManagerDidUnsubscribed(_ channel: String!) {
-	print("Unsubscribed on '%@' channel",channel)
+	print("Unsubscribed on '\(channel)' channel")
 }
 ```
 در صورت رخ دادن خطا به هنگام لغو عضویت از یک کانال با استفاده از delegate method زیر می‌توانید از خطا رخ داده شده با خبر شوید:
@@ -195,7 +195,7 @@ func pushClientManagerDidUnsubscribed(_ channel: String!) {
 //Swift:
 
 func pushClientManagerDidFail(inUnsubscribe error: Error!) {
-	print("Error in unsubscribe to channel %@",error)
+	print("Error in unsubscribe to channel \(error)")
 }
 ```
 
