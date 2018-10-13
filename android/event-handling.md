@@ -7,9 +7,11 @@ prev: user-management.html
 next: behavior-tracking.html
 ---
 
+
+
 ### انتشار رویداد با داده‌های دلخواه
 
-با متدهای زیر می توانید رویداد های داخل برنامه را منتشر کنید:
+با متدهای زیر می‌توانید رویدادهای داخل برنامه را منتشر کنید:
 
 
 ```java
@@ -17,12 +19,11 @@ public void publishEvent(final String event, final JSONObject data)
 public void publishEvent(final String event, final JSONObject data, final boolean live)
 public void publishEvent(final String event, final JSONObject data,
 final boolean live, final boolean stateful)
-
 ```
 
->`نکته` : پارامتر ورودی live به این معناست که کاربرانی که به چابک متصل هستند این رویداد را دریافت خواهند نمود.
+>`نکته` : پارامتر ورودی `live` به این معناست که کاربرانی که به چابک متصل هستند این رویداد را دریافت خواهند نمود.
 
-می توانید با استفاده از متدهای فوق یک رویداد بانام `event` که یک رشته متنی می باشد را با داده ای از نوع `JSONObject` منتشر کنید، مانند نمونه زیر:
+می توانید با استفاده از متدهای فوق یک رویداد با نام `event` که یک رشته متنی می باشد را با داده‌ای از نوع `JSONObject` منتشر کنید، مانند نمونه زیر:
 
 ```java
 try {
@@ -38,10 +39,10 @@ try {
 }
 ```
 به کمک نمونه کد فوق با دریافت هر گزارش مکان می‌توانید موقعیت مکانی کاربر را ارسال نمایید.
-در نمونه فوق رویدادی بنام geo با داده‌هایی که در شیٔ data‌ بصورت یک JSONObject‌ قرار می‌گیرد، منتشر می‌شود.
+در نمونه فوق رویدادی بنام `geo` با داده‌هایی که در شیٔ `data‌` بصورت یک `JSONObject‌` قرار می‌گیرد، منتشر می‌شود.
 
 ### دریافت رویداد
-برای دریافت رویداد لازم است کلاس مورد نظر برای دریافت را بعنوان `Listener`‌ رویداد تعیین نمایید و با استفاده از متد subscribeEvent روی رویداد موردنظر subscribe کنید، به قطعه کد زیر توجه نمایید :
+برای دریافت رویداد لازم است کلاس مورد نظر برای دریافت را بعنوان `Listener`‌ رویداد تعیین نمایید و با استفاده از متد `subscribeEvent` روی رویداد موردنظر `subscribe` کنید، به قطعه کد زیر توجه نمایید:
 
 ```java
 AdpPushClient.get().addListener(MyActivity.this);
@@ -58,26 +59,24 @@ chabok.subscribeEvent(EVENT_NAME, new Callback() {
 
     }
 });
-
 ```
 
-متد subscribeEvent با امضاهای زیر موجود است که بر اساس نیاز خود می‌توانید آن‌ها را فراخوانی نمایید:
+متد `subscribeEvent` با امضاهای زیر موجود است که بر اساس نیاز خود می‌توانید آن‌ها را فراخوانی نمایید:
 
 ```java
 public void subscribeEvent(String eventName, final Callback clbk)
 public void subscribeEvent(String eventName, boolean live, final Callback clbk)
 public void subscribeEvent(String eventName, String installationId, final Callback clbk)
 public void subscribeEvent(final String eventName, final String installationId, final boolean live, final Callback clbk)
-
 ```
 > `نکته :` پارامتر ورودی `live` به این معناست که کاربرانی که به چابک
-> `متصل` هستند این رویداد را دریافت خواهند نمود، مقدار
-> `installiationId`  نیز برابر `شناسه منحصر به فرد دستگاه کاربر` می‌باشد و
+> متصل هستند این رویداد را دریافت خواهند نمود، مقدار
+> `installiationId`  نیز برابر شناسه منحصر به فرد دستگاه کاربر می‌باشد و
 > از طریق متد  `getInstallationId` به دست می‌آید.
 
-در صورت استفاده از امضاهای حاوی installiationId تمامی رویدادهای مربوط به نام وارد شده به عنوان eventName که توسط آن دستگاه منتشر می‌شود را دریافت خواهید نمود.
+در صورت استفاده از امضاهای حاوی `installiationId` تمامی رویدادهای مربوط به نام وارد شده به عنوان `eventName` که توسط آن دستگاه منتشر می‌شود را دریافت خواهید نمود.
 
-پس از ثبت‌نام برای دریافت رویداد،‌با استفاده از متد `onEvent` ‌می‌توانید رویداد مورد نظر را دریافت کنید:
+پس از ثبت‌نام برای دریافت رویداد،‌ با استفاده از متد `onEvent` ‌می‌توانید رویداد مورد نظر را دریافت کنید:
 
 ```java
 public void onEvent(final EventMessage message) {
@@ -100,8 +99,6 @@ public void onEvent(final EventMessage message) {
 
 
 ```java
-
 public void unsubscribeEvent(String eventName, final Callback clbk)
 public void unsubscribeEvent(final String eventName, final String installationId, final Callback clbk)
-
 ```
