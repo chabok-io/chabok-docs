@@ -1,5 +1,5 @@
 ---
-id: push_notification
+id: push-notification
 title: پوش‌نوتیفیکیشن
 layout: android
 permalink: android/push-notification.html
