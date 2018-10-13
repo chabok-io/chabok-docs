@@ -1,5 +1,5 @@
 ---
-id: event-tracking
+id: behavior-tracking
 title: رصد رفتار 
 layout: android
 permalink: android/behavior-tracking.html
