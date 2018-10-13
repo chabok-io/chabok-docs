@@ -8,16 +8,14 @@
       title: پیام چابک
     - id: push-notification	
       title: پوش‌نوتیفیکیشن
-    - id: notification-handling
-      title: مدیریت اعلان‌ها
     - id: user-management
       title: ‌گروه‌بندی کاربران
-    - id: event-handling
-      title: ‌مدیریت رویدادها
     - id: behavior-tracking
-      title: ‌رصد رفتار
+      title: رصد رفتار کاربران
     - id: location-tracking
       title: ‌مکان‌یابی
+    - id: event-handling
+      title: ‌مدیریت رویدادها
     - id: verification
       title: اعتبارسنجی شناسه کاربری
     - id: features
