@@ -42,8 +42,10 @@ buildscript {
 dependencies {
     compile 'me.leolin:ShortcutBadger:1.1.22@aar'
     compile 'com.adpdigital.push:chabok-lib:VERSION'
+    compile 'com.google.android.gms:play-services-gcm:10.2.6' 
 }
 ```
+> `نکته`: برای استفاده از سرویس GCM گوگل لازم است خط آخر بالا نیز در بخش `dependencies`  اضافه شود.
 
 > `نکته:` دقت داشته باشید که همیشه از جدیدترین نسخه **ShortcutBadger** استفاده کنید. برای اطلاع از آخرین نسخه می‌توانید به [این لینک](https://github.com/leolin310148/ShortcutBadger) مراجعه نمایید. همچنین با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](https://doc.chabokpush.com/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید. 
 
@@ -98,15 +100,6 @@ dependencies {
 
 > `نکته :` به علت محدودیت‌‌های اندروید ۸ به بالا دقت کنید حتما مطابق جدول زیر تنظیمات نسخه‌ها را بدرستی انجام دهید.  در صورت رعایت نکردن نسخه‌های ذکر شده در جدول زیر هنگامی که اپلیکیشن **kill** شده باشد به هنگام دریافت نوتیفیکیشن با خطا مواجه خواهد شد.
 
-> `نکته`: برای استفاده از سرویس GCM گوگل لازم است خط زیر نیز در بخش
-> `dependencies`  اضافه شود:
-
-```javascript
-dependencies {
-    compile "com.google.android.gms:play-services-gcm:10.2.6" 
-}
-```
-
 #### نصب کتابخانه با قابلیت مکان‌یابی چابک
 
 درصورتی که در برنامه خود نیاز به استفاده از موقعیت مکانی کاربر دارید، لازم است در ابتدا کتابخانه `chabok-lib` را **حذف** و کتابخانه `chabok-lib-geo` را **جایگزین کنید**. 
@@ -114,11 +107,14 @@ dependencies {
  
  ```javascript
 dependencies {
+   compile 'me.leolin:ShortcutBadger:1.1.22@aar'
    compile 'com.google.android.gms:play-services-location:10.2.6'
    compile 'com.adpdigital.push:chabok-lib-geo:VERSION'
-   compile 'me.leolin:ShortcutBadger:1.1.22@aar'
+   compile 'com.google.android.gms:play-services-gcm:10.2.6'
 }  
 ```
+> `نکته`: برای استفاده از سرویس GCM گوگل لازم است خط آخر بالا نیز در بخش `dependencies`  اضافه شود.
+
 ### ۲- تغییرات لازم در فایل Manifest
 
 کدهای زیر را به فایل `AndroidManifest.xml` پروژه اضافه کنید:
@@ -156,7 +152,7 @@ dependencies {
 
 ### ۳- افزودن کلاس  `GcmReceiver`
 
-گیرنده `GcmReceiver` را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
+برای دریافت پوش باید `GcmReceiver` را در کلاس `Application` به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
 ```markup
 <receiver
