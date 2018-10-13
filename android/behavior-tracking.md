@@ -3,8 +3,8 @@ id: behavior-tracking
 title: رصد رفتار 
 layout: android
 permalink: android/behavior-tracking.html
-prev: event-handling.html
-next: location-config.html
+prev: user-management.html
+next: location-tracking.html
 ---
 
 شما می‌توانید برای **درک الگوی استفاده از اپلیکیشنتان** و شناخت کاربرانتان، **رفتار آن‌ها را به طور لحظه‌ای رصد کنید** و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را **دسته‌بندی کنید** و **پیام بفرستید**.
