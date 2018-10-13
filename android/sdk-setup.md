@@ -49,7 +49,7 @@ dependencies {
 
 > `نکته:` توجه داشته باشید که برای `VERSION` آخرین نسخه کتابخانه را از [این صفحه](https://doc.chabokpush.com/android/release-note.html) مشاهده کنید و سپس آن را وارد نمایید. 
 
-### مدل نسخه‌گذاری در چابک (Semantic Versioning)
+##### مدل نسخه‌گذاری در چابک (Semantic Versioning)
 
 چابک از مدل نسخه‌گذاری `MAJOR`.`MINOR`.`PATCH` استفاده می‌کند. همه تغییرات نسخه‌ها بلافاصله پس از انتشارشان به صورت موردی در صفحه **لیست  تغییرات** برای اطلاع شما اضافه می‌شوند. برای همین توصیه می‌کنیم [این صفحه](https://doc.chabokpush.com/android/release-note.html) را حتما مطالعه نمایید. این موارد برای هر نسخه در دو بخش [**ارتقا**](https://doc.chabokpush.com/android/release-note.html#%D8%A7%D8%B1%D8%AA%D9%82%D8%A7) و [**تغییرات**](https://doc.chabokpush.com/android/release-note.html#%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1%D8%A7%D8%AA) برای شما نمایش داده شده‌ است.
 
