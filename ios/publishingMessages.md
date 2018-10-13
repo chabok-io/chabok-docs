@@ -14,7 +14,6 @@ next: rich_notification.html
 ارسال پیام چابک به دو طریق زیر امکان‌پذیر است:
 
 - به یک کانال **خصوصی** برای یک **کاربر خاص**
-
 - به یک کانال **عمومی**
 
 با استفاده از متد `publish` می‌توانید به یک کانال خاص (خصوصی/عمومی) پیام ارسال کنید.
@@ -104,7 +103,6 @@ func pushClientManagerDidFail(inPublish error: Error!) {
 کانال‌ها در چابک به دو دسته خصوصی و عمومی تقسیم می‌شوند. قالب کانال بصورت زیر می‌باشد:
 
 - خصوصی : private/channel
-
 - عمومی : channel یا public/channel
 
 برای عضویت روی یک کانال می‌توانید از متد `subscribe` استفاده کنید که در زیر به آن اشاره شده است:
@@ -263,7 +261,7 @@ PushClientManager.default().deliveryChannelEnabeled = true
 
 #### دریافت گزارش تحویل پیام‌‌های ارسالی
 
-برای دریافت گزارش تحویل پیام‌های ارسالی، رویداد `pushClientManagerDidReceivedDelivery` فراخوانی خواهد شد:
+پس از آن برای دریافت گزارش تحویل پیام‌های ارسالی، رویداد `pushClientManagerDidReceivedDelivery` فراخوانی خواهد شد:
 
 ```objectivec
 //Objective-C:
