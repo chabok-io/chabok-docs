@@ -126,7 +126,6 @@ dependencies {
 دربخش مجوز‌ها موارد زیر را اضافه کرده و نام کلاس `Application` خود را نیز بجای `YOUR_APPLICATION_CLASS_NAME` وارد کنید. عبارت `YOUR_APPLICATION_PACKAGE_ID` را با نام پکیج برنامه خود جایگزین کنید.
 
 ```markup
-
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="YOUR_APPLICATION_PACKAGE_ID">
@@ -147,7 +146,6 @@ dependencies {
 ...
 
     </application>
-
 ```
 
 در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارائه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.
@@ -161,7 +159,6 @@ dependencies {
 گیرنده `GcmReceiver` را به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
 ```markup
-
 <receiver
     android:name="com.google.android.gms.gcm.GcmReceiver"
     android:enabled="true"
@@ -173,7 +170,6 @@ dependencies {
             <category android:name="YOUR_APPLICATION_PACKAGE_ID" />
         </intent-filter>
 </receiver>
-
 ```
 
 ### ۴- مقداردهی اولیه و شروع (Initialize)
@@ -181,7 +177,6 @@ dependencies {
 برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس `AdpPushClient` بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست. برای این منظور در متد `onCreate` کلاس `Application` کدهای زیر را اضافه کنید.
 
 ```java
-
 private AdpPushClient chabok = AdpPushClient.init(
     getApplicationContext(),
     YOUR_MAIN_ACTIVITY_CLASS.class,
@@ -190,7 +185,6 @@ private AdpPushClient chabok = AdpPushClient.init(
     "SDK_USERNAME",
     "SDK_PASSWORD"
 ); 
-
 ```
 
 #### پارامترها
@@ -203,7 +197,6 @@ private AdpPushClient chabok = AdpPushClient.init(
 > `نکته`:  توجه داشته باشید متد `AdpPushClient.init` تحت هر شرایط **حتما** باید در کلاس `Application` و در متد `onCreate` فراخوانی شود. متد فوق برای مقداردهی پارامتر‌های ضروری چابک می‌باشد و در صورت عدم فراخوانی آن در حالت **Kill** بودن اپلیکیشن با خطا مواجه خواهید شد.
 
 ```java
-
 public class YourAppClass extends Application {
 
 private AdpPushClient chabok = null;
@@ -241,7 +234,6 @@ private AdpPushClient chabok = null;
         super.onTerminate();
     }
 }
-
 ```
 
 ### توضیح متدها
@@ -339,13 +331,11 @@ chabok.unregister();
 در متد `onTerminate` کلاس اپلیکیشن (یا اگر بجای کلاس اپلیکیشن از یک اکتیویتی برای مدیریت کلاینت استفاده می کنید در متد `onDestroy`) که در واقع آخرین فراخوانی در چرخه حیات این کلاس است، متد `dismiss` از کلاینت چابک را فراخوانی نمایید تا منابع در اختیار آزاد شوند. واضح است بعد از فراخوانی این متد دیگر نمی توان از نمونه جاری کلاینت استفاده کرد و باید دوباره نمونه‌سازی کنید.
 
 ```java
-
 @Override
 public void onTerminate() {
     chabok.dismiss();
     super.onTerminate();
 }
-
 ```
 
 >`نکته:`  تمامی مراحلی که در این راهنما بیان شده، در یک پروژه [starter](https://github.com/chabokpush/chabok-starter-android) پیاده‌سازی شده است.
