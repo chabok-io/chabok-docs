@@ -7,111 +7,9 @@ prev: sdk-setup.html
 next: push-notification.html
 ---
 
-چابک برای **ارسال پیام** هنگامی که کاربر به سرور چابک متصل است (باز بودن اپلیکیشن) **از سرویس آنی خود** (پیام چابک) استفاده می‌کند و در صورت عدم اتصال به چابک (بسته بودن اپلیکیشن) اقدام به **ارسال پوش‌نوتیفیکیشن** می‌کند تا کاربر را از داشتن پیام چابک مطلع سازد. این روند به صورت **خودکار** در چابک انجام می‌شود، همچنین چابک به صورت خودکار مدیریت اتصال را انجام می‌دهد و در شبکه‌هایی با سرعت بسیار پایین پیام شما را به دست کاربرانتان می‌رساند. به طور کلی پیام‌ چابک از طریق [کانال‌ها]() ارسال می‌شود، بنابراین شرط دریافت پیام چابک از سوی کاربران عضویت در کانال می‌باشد.
+چابک برای **ارسال پیام** هنگامی که کاربر به سرور چابک متصل است (باز بودن اپلیکیشن) **از سرویس آنی خود** (پیام چابک) استفاده می‌کند و در صورت عدم اتصال به چابک (بسته بودن اپلیکیشن) اقدام به **ارسال پوش‌نوتیفیکیشن** می‌کند تا کاربر را از داشتن پیام چابک مطلع سازد. ارسال پیام چابک از طریق کانال انجام می‌شود. بنابراین برای دریافت پیام، باید در ابتدا [کاربر را در کانال عضو نمایید](). پس از آن هم می‌توانید با متد `publish` و `addListener` پیام‌هایتان را [ارسال]() و [دریافت]() کنید. علاوه بر آن می‌توانید [گزارش تحویل پیام‌هایتان]() را با [وضعیتشان]() دریافت کنید.
 
-
-### ارسال پیام
-
-متد `Publish` برای ارسال پیام از سمت کلاینت به سرور‌های چابک استفاده می‌شود. شما از این مکانیزم علاوه بر پیام‌های شخصی می‌توانید برای ارسال اطلاعات و داده‌های کاربر به سمت سرور خود (به جای ارسال با درخواست‌های کلاسیک HTTP) استفاده کنید.
-
-> `نکته:` مزایای این روش در مقایسه با درخواست‌های کلاسیک HTTP این است که روی اتصال موجود چابک می‌توانید تعداد زیادی رویداد سمت سرور بفرستید، در واقع برای هر درخواست یک اتصال جدید ساخته نمی‌شود.
-این امر تحویل اطلاعات را در سمت سرور، حتی در شرایطی که کاربر اینترنت ضعیف و یا قطع شده‌ای دارد، تضمین می‌کند. به این ترتیب که کلاینت چابک با استفاده از منطق سعی مجدد خود می‌تواند پیام‌ شما را حتی در شرایط بحرانی یک و فقط یک بار بفرستد. بنابراین مصرف باتری بهینه‌تر خواهد بود.
-
-این متد با **سه امضای متفاوت** وجود دارد که در ادامه به توضیح آن‌ها می‌پردازیم:
-
-
-- امضای اول که یک شیء پیام چابک و یک کال‌بک می‌گیرد و پیام دریافتی را منتشر می‌کند. نمونه کد انتشار پیام با این امضاء به صورت زیر می‌باشد:
-
-> `نکته:` اگر بخواهید پیام چابک دارای مقدار دیتا باشد باید حتما از این
-> امضا استفاده کرده و دیتای خود را به شکل `json` برای  پیام چابک تنظیم کنید.
-
-```java
-PushMessage myPushMessage = new PushMessage();
-myPushMessage.setBody("YOUR_MESSAGE_TEXT");
-
-JSONObject jsonObject = new JSONObject();
-jsonObject.put("KEY", "VALUE");
-myPushMessage.setData(jsonObject);
-
-myPushMessage.setChannel(CHANNEL_NAME);
-myPushMessage.setId(UUID.randomUUID().toString());
-myPushMessage.setUseAsAlert(true);
-myPushMessage.setAlertText("ALERT_TEXT");
-myPushMessage.setUser(TO_USER_ID);
-
-
-chabok.publish(myPushMessage, new Callback() {
-    @Override
-    public void onSuccess(Object o) {
-        //Add some codes to show publish was successfully done
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        //Add some codes for showing an error happened
-    }
-
-});
-```
-
-> `نکته:` مقدار `پیش‌فرض` برای نام `کانال` برابر `default` و مقدار
-> `پیش‌فرض` برای `user` مقدار `*` می‌باشد. بنابراین با تنظیم و یا عدم
-> تنظیم این مقادیر، چهار حالت مختلف برای ارسال پیام پیش می‌آید.
-
-> `نکته:` نام کانال و شناسه کاربر در این متد باید فاقد کاراکتر / باشد.
-
-- امضای دوم برای انتشار پیام روی کانال عمومی  کاربرد دارد که نام کانال، متن پیام و کال‌بک می‌گیرد و یک پبام چابک با مقادیر داده شده ایجاد کرده و آن را روی کانال دریافتی منتشر می‌کند.
-
-```java
-chabok.publish(CHANNEL_NAME, TEXT, new Callback() {
-    @Override
-    public void onSuccess(Object o) {
-        //Add some codes to show publish was successfully done
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        //Add some codes for showing an error happened
-    }
-});
-```
-
-
-- امضای آخر برای ارسال پیام به شخص روی کانال کاربرد دارد که شناسه کاربر، نام کانال، متن پیام و کال‌بک می‌گیرد و  یک پبام چابک با مقادیر داده شده ایجاد کرده و آن را روی کانال مورد نظر منتشر می‌کند.
-
-```java
-chabok.publish(USER, CHANNEL_NAME, TEXT, new Callback() {
-    @Override
-    public void onSuccess(Object o) {
-        //Add some codes to show publish was successfully done
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        //Add some codes for showing an error happened
-    }
-});
-```
-
-### دریافت پیام چابک
-
-با فراخوانی متد `addListener` و پیاده‌سازی متد `onEvent` در کلاس مورد نظر خود (در زیر به آن اشاره شده است) پیام چابک را دریافت کنید. متد `addListener` را در هر کلاسی می‌توانید اضافه کنید.
-
-```java
-client.addListener(this);
-```
-
- پس از آن با پیاده‌سازی متد زیر می‌توانید پیام‌ها را دریافت نمایید.
-
-```java
-public void onEvent(PushMessage message) {
-    Log.d(TAG, "GOT MESSAGE " + message);
-    JSONObject data = message.getData();
-    if (data != null){
-        Log.d(TAG, "The message data is : " + data);
-    }
-}
-```
+<Br>
 
 ### کانال
 
@@ -171,6 +69,111 @@ chabok.unsubscribe(CHANNEL_NAME, new Callback() {
     }
 });
 ```
+
+### ارسال پیام
+
+متد `Publish` برای ارسال پیام از سمت کلاینت به سرور‌های چابک استفاده می‌شود. شما از این مکانیزم علاوه بر پیام‌های شخصی می‌توانید برای ارسال اطلاعات و داده‌های کاربر به سمت سرور خود (به جای ارسال با درخواست‌های کلاسیک HTTP) استفاده کنید.
+
+> `نکته:` مزایای این روش در مقایسه با درخواست‌های کلاسیک HTTP این است که روی اتصال موجود چابک می‌توانید تعداد زیادی رویداد سمت سرور بفرستید، در واقع برای هر درخواست یک اتصال جدید ساخته نمی‌شود.
+این امر تحویل اطلاعات را در سمت سرور، حتی در شرایطی که کاربر اینترنت ضعیف و یا قطع شده‌ای دارد، تضمین می‌کند. به این ترتیب که کلاینت چابک با استفاده از منطق سعی مجدد خود می‌تواند پیام‌ شما را حتی در شرایط بحرانی یک و فقط یک بار بفرستد. بنابراین مصرف باتری بهینه‌تر خواهد بود.
+
+این متد با **سه امضای متفاوت** وجود دارد که در ادامه به توضیح آن‌ها می‌پردازیم:
+
+
+- امضای اول که یک شیء پیام چابک و یک کال‌بک می‌گیرد و پیام دریافتی را منتشر می‌کند. نمونه کد انتشار پیام با این امضاء به صورت زیر می‌باشد:
+
+> `نکته:` اگر بخواهید پیام چابک دارای مقدار دیتا باشد باید حتما از این
+> امضا استفاده کرده و دیتای خود را به شکل `json` برای  پیام چابک تنظیم کنید.
+
+```java
+PushMessage myPushMessage = new PushMessage();
+myPushMessage.setBody("YOUR_MESSAGE_TEXT");
+
+JSONObject jsonObject = new JSONObject();
+jsonObject.put("KEY", "VALUE");
+myPushMessage.setData(jsonObject);
+
+myPushMessage.setChannel(CHANNEL_NAME);
+myPushMessage.setId(UUID.randomUUID().toString());
+myPushMessage.setUseAsAlert(true);
+myPushMessage.setAlertText("ALERT_TEXT");
+myPushMessage.setUser(TO_USER_ID);
+
+
+chabok.publish(myPushMessage, new Callback() {
+    @Override
+    public void onSuccess(Object o) {
+        //Add some codes to show publish was successfully done
+    }
+
+    @Override
+    public void onFailure(Throwable throwable) {
+        //Add some codes for showing an error happened
+    }
+
+});
+```
+
+> `نکته:` مقدار پیش‌فرض برای نام کانال برابر `default` و مقدار
+> پیش‌فرض برای `user` مقدار `*` می‌باشد. بنابراین با تنظیم و یا عدم
+> تنظیم این مقادیر، چهار حالت مختلف برای ارسال پیام پیش می‌آید.
+
+> `نکته:` نام کانال و شناسه کاربر در این متد باید فاقد کاراکتر / باشد.
+
+- امضای دوم برای انتشار پیام روی کانال عمومی  کاربرد دارد که نام کانال، متن پیام و کال‌بک می‌گیرد و یک پبام چابک با مقادیر داده شده ایجاد کرده و آن را روی کانال دریافتی منتشر می‌کند.
+
+```java
+chabok.publish(CHANNEL_NAME, TEXT, new Callback() {
+    @Override
+    public void onSuccess(Object o) {
+        //Add some codes to show publish was successfully done
+    }
+
+    @Override
+    public void onFailure(Throwable throwable) {
+        //Add some codes for showing an error happened
+    }
+});
+```
+
+
+- امضای آخر برای ارسال پیام به شخص روی کانال کاربرد دارد که شناسه کاربر، نام کانال، متن پیام و کال‌بک می‌گیرد و  یک پبام چابک با مقادیر داده شده ایجاد کرده و آن را روی کانال مورد نظر منتشر می‌کند.
+
+```java
+chabok.publish(USER, CHANNEL_NAME, TEXT, new Callback() {
+    @Override
+    public void onSuccess(Object o) {
+        //Add some codes to show publish was successfully done
+    }
+
+    @Override
+    public void onFailure(Throwable throwable) {
+        //Add some codes for showing an error happened
+    }
+});
+```
+
+### دریافت پیام چابک
+
+با فراخوانی متد `addListener` و پیاده‌سازی متد `onEvent` در کلاس مورد نظر خود (در زیر به آن اشاره شده است) پیام چابک را دریافت کنید. متد `addListener` را در هر کلاسی می‌توانید اضافه کنید.
+
+```java
+client.addListener(this);
+```
+
+ پس از آن با پیاده‌سازی متد زیر می‌توانید پیام‌ها را دریافت نمایید.
+
+```java
+public void onEvent(PushMessage message) {
+    Log.d(TAG, "GOT MESSAGE " + message);
+    JSONObject data = message.getData();
+    if (data != null){
+        Log.d(TAG, "The message data is : " + data);
+    }
+}
+```
+
+
 
 ### دریافت گزارش تحویل پیام‌ (Delivery)
 
