@@ -122,6 +122,7 @@ dependencies {
 
 > `نکته:` در مدل `Patch` شما می‌توانید از کاراکتر + (Wildcard) استفاده کنید و به آسانی از تغییرات آن بهره‌مند شوید.
 
+<Br>
 
 ### ۲- تغییرات لازم در فایل Manifest
 
@@ -157,6 +158,7 @@ dependencies {
 
 > `نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](https://doc.chabokpush.com/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید. 
 
+<Br>
 
 ### ۳- افزودن کلاس  `GcmReceiver`
 
@@ -175,6 +177,7 @@ dependencies {
         </intent-filter>
 </receiver>
 ```
+<Br>
 
 ### ۴- مقداردهی اولیه و شروع (Initialize)
 
@@ -190,6 +193,7 @@ private AdpPushClient chabok = AdpPushClient.init(
     "SDK_PASSWORD"
 ); 
 ```
+<Br>
 
 #### پارامترها
 
