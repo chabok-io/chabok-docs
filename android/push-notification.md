@@ -7,9 +7,11 @@ prev: chabok-messaging.html
 next: user-management.html
 ---
 
-یکی دیگر از راه‌های پیام‌رسانی که چابک در اختیار شما می‌گذارد ارسال پوش‌نوتیفیکیشن است. دقت داشته باشد که دستگاه‌هایی که Play Services گوگل را ندارند یا فقط نسخه خیلی قدیمی آن را پشتیبانی می‌کنند، از این پوش‌ها دریافت نخواهند کرد. در آن حالت شما می‌توانید از [پیام چابک]() در صفحه قبلی استفاده کنید.
+یکی دیگر از راه‌های پیام‌رسانی که چابک در اختیار شما می‌گذارد ارسال پوش‌نوتیفیکیشن است. دقت داشته باشد که دستگاه‌هایی که Play Services گوگل را ندارند یا فقط نسخه خیلی قدیمی آن را پشتیبانی می‌کنند، این پوش‌ها را دریافت نخواهند کرد. در آن حالت شما می‌توانید از [پیام چابک]() در صفحه قبل استفاده کنید. اما در صورت پشتیبانی، باید ابتدا در فایل `Manifest` خود[پوش چند رسانه‌ای را تنظیم کنید](). سپس در صورت نیاز [نمایش و کلیک اعلان را مدیریت کنید](). علاوه بر آن شما می‌توانید [متن بلند اعلان خود را به طور کامل نشان دهید]() و [دیتای اعلان خود را هم دریافت کنید]().
 
-### راه‌اندازی پوش نوتیفیکیشن چندرسانه‌ای (Rich Push Notification)
+<Br>
+
+### تنظیم پوش نوتیفیکیشن چندرسانه‌ای (Rich Push Notification)
 
 ۱- ابتدا در فایل `AndroidManifest.xml` اکشن‌های خود را برای `‌BroadcastReceiver` تعیین کنید تا بتوانید برای هر اکشن عملیات مناسب را اعمال کنید:
 
@@ -116,20 +118,6 @@ chabok.addNotificationHandler(notifHandler);
 
 - در متد `buildNotification` با پارامترهای ورودی متد یعنی `ChabokNotification` و `NotificationCompat.Builder` می‌توانید اعلان دریافتی را **به دلخواه تغییر داده** و **درباره نمایش آن تصمیم بگیرید**. در صورتی که مقدار بازگشتی از این متد `true` باشد، کتابخانه با توجه به تنظیمات مربوطه اعلان را نمایش می‌دهد ولی اگر مقدار بازگشتی `false` باشد بدین معنی است که شما خود نمایش را به عهده می‌گیرید.
 
-### دریافت دیتای نوتیفیکیشن
-با استفاده از قطعه کد زیر در متد `buildNotification` که در بخش [تنظیم نمایش اعلان](notification-handling.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%D9%88-%DA%A9%D9%84%DB%8C%DA%A9-%D8%B1%D9%88%DB%8C-%D8%A7%D8%B9%D9%84%D8%A7%D9%86) به آن اشاره شده است، می‌توانید به `data` نوتیفیکیشن دسترسی داشته باشید :
-```java
-if (chabokNotification.getExtras() != null) {
-    Bundle payload = chabokNotification.getExtras();
-    //FCM message data
-    Object data = payload.get("data");
-} else if (chabokNotification.getMessage() != null) {
-    PushMessage payload = chabokNotification.getMessage();
-    //Chabok message data
-    JSONObject data = payload.getData();
-}
-```
-
 ###  نمایش کامل متن بلند در اعلان
 چابک به صورت پیش‌فرض متن پیام و پوش‌نوتیفیکیشن را به صورت `bigText` نمایش **نمی‌دهد**. در این حالت می‌توانید برای نمایش متن پیام و پوش‌نوتیفیکیشن با استفاده از متد `buildNotification` اقدام به نمایش اعلان شخصی‌سازی شده خود کنید و از قطعه کد زیر در متد فوق استفاده کنید (دقت کنید که در متد فوق در صورت نمایش اعلان شخصی‌سازی شده، باید `return false` برگردانید):
 
@@ -144,3 +132,19 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
 
 notificationManager.notify(0, builder.build());
 ```
+<Br>
+
+### دریافت دیتای نوتیفیکیشن
+با استفاده از قطعه کد زیر در متد `buildNotification` که در بخش [تنظیم نمایش اعلان](notification-handling.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%D9%88-%DA%A9%D9%84%DB%8C%DA%A9-%D8%B1%D9%88%DB%8C-%D8%A7%D8%B9%D9%84%D8%A7%D9%86) به آن اشاره شده است، می‌توانید به `data` نوتیفیکیشن دسترسی داشته باشید :
+```java
+if (chabokNotification.getExtras() != null) {
+    Bundle payload = chabokNotification.getExtras();
+    //FCM message data
+    Object data = payload.get("data");
+} else if (chabokNotification.getMessage() != null) {
+    PushMessage payload = chabokNotification.getMessage();
+    //Chabok message data
+    JSONObject data = payload.getData();
+}
+```
+
