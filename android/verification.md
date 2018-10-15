@@ -57,3 +57,4 @@ chabok.verifyUserCode(USER_ID, CODE, new Callback() {
 ```
 
 > `نکته`: مقدار `USER_ID` دقیقا باید همان مقداری باشد که در مرحله قبل برای درخواست کد استفاده شده است.
+
