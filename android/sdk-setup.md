@@ -124,26 +124,24 @@ dependencies {
 برای دریافت پوش باید `GcmReceiver` را در کلاس `Application` به فایل `AndroidManifest.xml` تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
 ```markup
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="YOUR_APPLICATION_PACKAGE_ID">
-
-    <application
-        android:name=".YOUR_APPLICATION_CLASS_NAME"
-        android:allowBackup="true">
-
-<receiver
-    android:name="com.google.android.gms.gcm.GcmReceiver"
-    android:enabled="true"
-    android:exported="true"
-    android:permission="com.google.android.c2dm.permission.SEND">
+<application
+    android:name=".YOUR_APPLICATION_CLASS_NAME"
+    ... >
+	
+	...
+    <receiver
+        android:name="com.google.android.gms.gcm.GcmReceiver"
+        android:enabled="true"
+        android:exported="true"
+        android:permission="com.google.android.c2dm.permission.SEND">
         <intent-filter>
             <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
             <category android:name="YOUR_APPLICATION_PACKAGE_ID" />
         </intent-filter>
-</receiver>
-    </application>
+    </receiver>
+	
+</application>
 ```
 
 در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارائه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.
