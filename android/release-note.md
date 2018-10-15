@@ -107,11 +107,6 @@ next: introducing.html
 
 ## نسخه ۲.۱۰.۰ - ۱۳۹۶/۱۰/۱۸
 
-### ارتقا
-
-* مقدار پیش‌فرض برای حالت `devMode` وجود نداشت که برابر `true` در نظر گرفته شد.
-* به جای متد `reRegister` از متد `register` استفاده شود.
-
 ### تغییرات
 
 * حذف متد `reRegister`.
@@ -120,15 +115,32 @@ next: introducing.html
 * افزودن متد `hasProtectedAppSupport`. با استفاده از این متد می‌توان بررسی نمود آیا گوشی استفاده شده برنامه را در لیست  protectedApp قرار می‌دهد یا خیر.
 * افزودن متد `showProtectedAppSettings` برای نمایش پیغام مربوط به برنامه‌های محافظت شده
 
+### ارتقا
 
-## نسخه ۲.۹.۱ - ۱۳۹۷/۰۹/۲۸
+* مقدار پیش‌فرض برای حالت `devMode` وجود نداشت که برابر `true` در نظر گرفته شد.
+* به جای متد `reRegister` از متد `register` استفاده شود.
+
+
+## نسخه ۲.۹.۱ - ۱۳۹۶/۰۹/۲۸
 
 
 ### تغییرات
 
 * افزودن متد `addCallbackIntent` برای دسترسی به موقعیت مکانی در حالت `kill` و `background`
 
-## نسخه ۲.۹.۰ - ۱۳۹۷/۰۹/۲۲
+## نسخه ۲.۹.۰ - ۱۳۹۶/۰۹/۲۲
+
+### تغییرات
+
+
+* در پیام چابک مقدار پیش‌فرض برای نام کانال برابر default و مقدار پیش‌فرض برای user مقدار * می‌باشد.
+* افرودن یک امضای جدید برای متد publish به صورت زیر:
+
+```java
+public void publish(final String user, final String channel, final String text, final com.adpdigital.push.Callback clbk)
+```
+
+* افزودن متد `unsubscribeEvent`
 
 ### ارتقا
 
@@ -149,15 +161,4 @@ public void publish(String channel, String text, JSONObject data, Callback clbk)
 public void publishEvent(final String event, final JSONObject data, final boolean live)
 ```
 
-### تغییرات
-
-
-* در پیام چابک مقدار پیش‌فرض برای نام کانال برابر default و مقدار پیش‌فرض برای user مقدار * می‌باشد.
-* افرودن یک امضای جدید برای متد publish به صورت زیر:
-
-```java
-public void publish(final String user, final String channel, final String text, final com.adpdigital.push.Callback clbk)
-```
-
-* افزودن متد `unsubscribeEvent`
 
