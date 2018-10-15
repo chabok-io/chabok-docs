@@ -319,3 +319,4 @@ public void onTerminate() {
 ```
 
 >`نکته:`  تمامی مراحلی که در این راهنما بیان شده، در یک پروژه [starter](https://github.com/chabokpush/chabok-starter-android) پیاده‌سازی شده است.
+
