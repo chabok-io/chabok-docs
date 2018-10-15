@@ -147,4 +147,3 @@ if (chabokNotification.getExtras() != null) {
     JSONObject data = payload.getData();
 }
 ```
-
