@@ -69,6 +69,7 @@ chabok.unsubscribe(CHANNEL_NAME, new Callback() {
     }
 });
 ```
+<Br>
 
 ### ارسال پیام
 
@@ -153,6 +154,8 @@ chabok.publish(USER, CHANNEL_NAME, TEXT, new Callback() {
 });
 ```
 
+<Br>
+
 ### دریافت پیام چابک
 
 با فراخوانی متد `addListener` و پیاده‌سازی متد `onEvent` در کلاس مورد نظر خود (در زیر به آن اشاره شده است) پیام چابک را دریافت کنید. متد `addListener` را در هر کلاسی می‌توانید اضافه کنید.
@@ -173,7 +176,7 @@ public void onEvent(PushMessage message) {
 }
 ```
 
-
+<Br>
 
 ### دریافت گزارش تحویل پیام‌ (Delivery)
 
@@ -193,6 +196,8 @@ public void onEvent(DeliveryMessage message) {
 
 }
 ```
+
+<Br>
 
 ### ارسال وضعیت پیام‌های دریافتی
 
