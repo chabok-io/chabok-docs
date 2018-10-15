@@ -7,16 +7,14 @@ prev: required.html
 next: chabok-messaging.html
 ---
 
-پس از طی کردن مراحل صفحه [پیش‌نیازها](https://doc.chabokpush.com/android/required.html)، **راه‌اندازی SDK چابک** را شروع خواهیم کرد. در ابتدا اقدام به [نصب کتابخانه چابک](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B1--%D9%86%D8%B5%D8%A8-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87) کنید و سپس برای فعالسازی پوش‌نوتیفیکیشن چابک بخش‌های [تغییرات فایل `Manifest`]() و [افزودن `GcmReceiver`]() را مطالعه کرده و همانند مستندات بیان شده پیش بروید و در آخر، شروع به [مقداردهی و راه‌اندازی]() کتابخانه چابک در اپلیکیشنتان نمایید.
+پس از طی کردن مراحل صفحه [پیش‌نیازها](https://doc.chabokpush.com/android/required.html)، **راه‌اندازی SDK چابک** را شروع خواهیم کرد. در ابتدا اقدام به [نصب کتابخانه چابک](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B1--%D9%86%D8%B5%D8%A8-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87) کنید و سپس برای فعالسازی پوش‌نوتیفیکیشن چابک بخش‌ [افزودن `GcmReceiver` به فایل `Manifest`]() را مطالعه کرده و همانند مستندات بیان شده پیش بروید و در آخر، شروع به [مقداردهی و راه‌اندازی]() کتابخانه چابک در اپلیکیشنتان نمایید.
 برای انجام موفق این کار باید تمام مراحل زیر را به ترتیب انجام دهید:
 
 [ ۱- نصب کتابخانه](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B1--%D9%86%D8%B5%D8%A8-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87)
 
-[۲- تغییرات فایل `Manifest`]()
+[۲- افزودن `GcmReceiver` به فایل `Manifest`]()
 
-[۳- افزودن `GcmReceiver`]()
-
-[۴- مقداردهی و شروع]()
+[۳- مقداردهی و شروع]()
 
 <Br>
 
@@ -121,47 +119,19 @@ dependencies {
 
 <Br>
 
-### ۲- تغییرات لازم در فایل Manifest
+### ۲- افزودن کلاس  `GcmReceiver` به فایل `Manifest`
 
-کدهای زیر را به فایل `AndroidManifest.xml` پروژه اضافه کنید:
-
-دربخش مجوز‌ها موارد زیر را اضافه کرده و نام کلاس `Application` خود را نیز بجای `YOUR_APPLICATION_CLASS_NAME` وارد کنید. عبارت `YOUR_APPLICATION_PACKAGE_ID` را با نام پکیج برنامه خود جایگزین کنید.
+برای دریافت پوش باید `GcmReceiver` را در کلاس `Application` به فایل `AndroidManifest.xml` تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
 ```markup
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="YOUR_APPLICATION_PACKAGE_ID">
 
-    <permission
-        android:name="YOUR_APPLICATION_PACKAGE_ID.permission.C2D_MESSAGE"
-        android:protectionLevel="signature"/>
-
-    <uses-permission android:name="YOUR_APPLICATION_PACKAGE_ID.permission.C2D_MESSAGE" />
-
     <application
         android:name=".YOUR_APPLICATION_CLASS_NAME"
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:allowBackup="true">
 
-...
-
-    </application>
-```
-
-در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارائه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.
-
-
-> `نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](https://doc.chabokpush.com/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید. 
-
-<Br>
-
-### ۳- افزودن کلاس  `GcmReceiver`
-
-برای دریافت پوش باید `GcmReceiver` را در کلاس `Application` به ترتیب زیر تعریف کنید تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
-
-```markup
 <receiver
     android:name="com.google.android.gms.gcm.GcmReceiver"
     android:enabled="true"
@@ -173,10 +143,17 @@ dependencies {
             <category android:name="YOUR_APPLICATION_PACKAGE_ID" />
         </intent-filter>
 </receiver>
+    </application>
 ```
+
+در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارائه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.
+
+
+> `نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](https://doc.chabokpush.com/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید. 
+
 <Br>
 
-### ۴- مقداردهی اولیه و شروع (Initialize)
+### ۳- مقداردهی اولیه و شروع (Initialize)
 
 برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس `AdpPushClient` بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست. برای این منظور در متد `onCreate` کلاس `Application` کدهای زیر را اضافه کنید.
 
