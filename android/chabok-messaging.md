@@ -186,14 +186,11 @@ public void onEvent(PushMessage message) {
 > `نکته` :  برای دریافت رویداد لازم است کلاس مورد نظر برای دریافت را بعنوان `Listener‌` رویداد تعیین نمایید.
 
 ```java
-    chabok.enableDeliveryTopic();
-    chabok.addListener(this);
-
+chabok.enableDeliveryTopic();
+chabok.addListener(this);
 
 public void onEvent(DeliveryMessage message) {
-
     // write your code here
-
 }
 ```
 
