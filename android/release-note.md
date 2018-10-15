@@ -3,7 +3,7 @@ id: release-note
 title: لیست تغییرات کتابخانه
 layout: android
 permalink: android/release-note.html
-next: introducing.html
+prev: troubleshoot.html
 ---
 
 ##  نسخه ۲.۱۳.۲ - ۱۳۹۷/۰۷/۰۸

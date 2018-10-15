@@ -3,99 +3,18 @@ id: features
 title: امکانات‌ چابک 
 layout: android
 permalink: android/features.html
-prev: location-tracking.html
+prev: verification.html
 next: troubleshoot.html
 ---
 
+چابک امکانات کاربردی دیگر را برای آسان‌تر کردن کار شما ارائه می‌دهد. یکی از این امکانات، [قابلیت کنترل و مدیریت Badge اپلیکیشنتان است](). 
+علاوه بر آن شما هر زمانی که مایل بودید می‌توانید [وضعیت برنامه (باز یا بسته بودن)]() و یا [وضعیت اتصال کلاینت به سرورهای چابک]() را بررسی کنید.
 
-### مدیریت تگ ها
-یکی از مهمترین ابزارهای دسته‌بندی کاربران، استفاده از `Tag` می باشد. به عنوان مثال می‌توانید کاربران خود را بر اساس جنسیت دسته‌بندی کرده و بر اساس جنسیت آنها پیام خاصی را ارسال کنید و یا به کاربرانی که از پرداخت درون برنامه‌ای شما استفاده می‌کنند یک `Tag` با عنوان Premium_User اختصاص دهید.
-
-#### افزودن تگ
-با استفاده از متد زیر، شما می‌توانید به کاربر یک `Tag` اختصاص دهید :
-
-```java
-public void addTag(String tagName, Callback callback)
-```
-پارامتر اول نام تگ موردنظر و پارامتر دوم یک Callback برای بررسی نتیجه این عمل می‌باشد. برای مثال به قطعه کد زیر توجه کنید:
-
-```java
-chabok.addTag("Premium_User", new Callback() {
-            @Override
-            public void onSuccess(Object value) {
-                Log.d(TAG, "addTag onSuccess: called");
-            }
-
-            @Override
-            public void onError(Throwable t) {
-                Log.d(TAG, "addTag onError: called, message: " + t.getMessage());
-            }
-        });
-```
-
-کدفوق تگی بنام Premium_User را به کاربر فعلی اضافه می‌کند.
-اگر عملیات افزودن تگ با موفقیت انجام شود، می‌توانید از طریق پنل چابک، تگ اضافه شده به کاربر را در بخش مشترکین همانند تصویر زیر مشاهده کنید :
-
-![مشترک چابک](http://uupload.ir/files/urem__1x-android_device.png)
-
-همچنین با توجه به پشتیبانی این متد از آرایه‌ای از تگ‌ها می‌توانید مانند زیر چند تگ را یکجا به کاربر اضافه کنید:
-
-```java
-String[] tagsName = {"Premium_User", "MALE", "Teenage"};
-client.addTag(tagsName, new Callback() {
-	@Override
-	public void onSuccess(Object value) {
-		Log.d(TAG, "add array of tags onSuccess: called");
-	}
-
-	@Override
-	public void onFailure(Throwable t) {
-		Log.d(TAG, "add array of tags onError: called, message: " + t.getMessage());
-	}
-});
-```
-
-#### حذف تگ
-با استفاده از متد زیر، می‌توانید یک `Tag` خاص از کاربر را حذف کنید :
-
-```java
-chabok.removeTag("Premium_User", new Callback() {
-            @Override
-            public void onSuccess(Object value) {
-                Log.d(TAG, "removeTag onSuccess: called");
-            }
-
-            @Override
-            public void onError(Throwable t) {
-                Log.d(TAG, "removeTag onError: called, message: " + t.getMessage());
-            }
-        });
-```
-کدفوق تگی بنام Premium_User را از کاربر حذف می کند.
-
-همچنین با توجه به پشتیبانی این متد از آرایه‌ای از تگ‌ها می‌توانید مانند زیر چند تگ را یکجا از کاربر حذف کنید:
-
-```java
-String[] tagsName = {"Premium_User", "MALE", "Teenage"};
-client.removeTag(tagsName, new Callback() {
-	@Override
-	public void onSuccess(Object value) {
-		Log.d(TAG, "remove array of tags onSuccess: called");
-	}
-
-	@Override
-	public void onFailure(Throwable t) {
-		Log.d(TAG, "remove array of tags onError: called, message: " + t.getMessage());
-	}
-});
-```
-
->‌ `نکته:` برای حذف همه تگ‌های یک کاربر می‌توانید در متد بالا جای نام تگ‌ها را خالی بگذارید.
-
+<Br>
 
 ###  مدیریت نشان‌ها (Badge)
 
-اگر می‌خواهید شماره badge برنامه خود را بازنشانی کنید، با روش زیر می‌توانید: 
+اگر می‌خواهید شماره **badge** برنامه خود را بازنشانی کنید، با روش زیر می‌توانید: 
 
 
 ```java
@@ -104,7 +23,7 @@ chabok.resetBadge();
 
 #### برداشتن مجوز‌های غیر ضروری برای نمایش نشان (Badge) روی آیکون
 
-با توجه به حجم زیاد این مجوزها امکان دارد کاربر حس منفی پیدا کند برای همین می‌توانید از دستور‌های زیر هر کدام آن‌ها را با اختیار خود بردارید.
+با توجه به حجم زیاد این مجوزها امکان دارد کاربر حس منفی پیدا کند، برای همین می‌توانید با استفاده از دستور‌های زیر هر کدام آن‌ها را با اختیار خود بردارید.
 
 ```markup
 <uses-permission android:name="com.sec.android.provider.badge.permission.READ" tools:node="remove" />
@@ -139,6 +58,7 @@ xmlns:tools="http://schemas.android.com/tools"
           ...
 </manifest>
 ```
+<Br>
 
 ### دریافت وضعیت برنامه
 
@@ -157,6 +77,7 @@ if(chabok.isForeground()) {
 // Do something on application foreground
 }
 ```                
+<Br>
 
 ### وضعیت اتصال با سرور
 
@@ -187,7 +108,7 @@ if (status != null) {
 ```
 
 > نکته: اگر می‌خواهید تغییرات وضعیت اتصال به سرور چابک را در سمت لایه UI
-> نشان دهید، چون ممکن است قبل از اینکه کلاس شما به عنوان listener معرفی
+> نشان دهید، چون ممکن است قبل از اینکه کلاس شما به عنوان `listener` معرفی
 > شود، ایونت تغییر وضعیت اتصال به شما برسد و شما آن را از دست بدهید،
 > بهتر است برای اولین بار وضعیت اتصال را با استفاده از متد `getStatus`
 > از چابک دریافت نمایید.
@@ -205,8 +126,6 @@ chabok.getStatus(new Callback<ConnectionStatus>() {
         Log.i(TAG, "errrror ");
     }
 });
-
-
 ```
 
 
