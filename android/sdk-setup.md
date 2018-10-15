@@ -161,7 +161,7 @@ dependencies {
 > `نکته`: ترکیب `APP_ID/SENDER_ID` به عنوان `YOUR_APP_ID/SENDER_ID` مورد استفاده قرار می‌گیرد. که در اینجا `SENDER_ID` همان شناسه گوگل برای دریافت پوش‌نوتیفیکیشن می‌باشد که در پنل قرار داده‌اید و `APP_ID` 
 
 
-> `نکته`:  توجه داشته باشید متد `AdpPushClient.init` تحت هر شرایط **حتما** باید در کلاس `Application` و در متد `onCreate()` فراخوانی شود. متد فوق برای مقداردهی پارامتر‌های ضروری چابک می‌باشد و در صورت عدم فراخوانی آن در حالت **Kill** بودن اپلیکیشن با خطا مواجه خواهید شد.
+> `نکته`:  توجه داشته باشید متد `AdpPushClient.init()` تحت هر شرایط **حتما** باید در کلاس `Application` و در متد `onCreate()` فراخوانی شود. متد فوق برای مقداردهی پارامتر‌های ضروری چابک می‌باشد و در صورت عدم فراخوانی آن در حالت **Kill** بودن اپلیکیشن با خطا مواجه خواهید شد.
 
 <Br>
 
@@ -179,8 +179,8 @@ public class YourAppClass extends Application {
                 YOUR_ACTIVITY.class,
                 "YOUR_APP_ID/SENDER_ID",
                 "YOUR_API_KEY",
-                "YOUR_USERNAME",
-                "YOUR_PASSWORD"
+                "SDK_USERNAME",
+                "SDK_PASSWORD"
         );
 
         //true connects to Sandbox environment
