@@ -121,7 +121,7 @@ dependencies {
 
 ### ۲- افزودن کلاس  `GcmReceiver` به فایل `Manifest`
 
-برای دریافت پوش باید `GcmReceiver` را در کلاس `Application` به فایل `AndroidManifest.xml` تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
+برای دریافت پوش‌نوتیفیکیشن باید `GcmReceiver` را در کلاس `Application` به فایل `AndroidManifest.xml` تا بتوانید نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
 ```markup
 <application
