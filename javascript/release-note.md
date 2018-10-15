@@ -6,6 +6,11 @@ permalink: javascript/release-note.html
 next: introducing.html
 ---
 
+## نسخه ۱.۰.۲ - ۱۳۹۷/۰۷/۲۳
+### تغییرات 
+* افزودن متد‌ `getTags` 
+* افزودن قابلیت `groupId` برای گروه‌بندی اعلان‌ها
+
 ## نسخه ۱.۰.۱ - ۱۳۹۷/۰۶/۱۳
 ### تغییرات 
 * افزودن متد‌های `setUserInfo` و `getUserInfo`  
