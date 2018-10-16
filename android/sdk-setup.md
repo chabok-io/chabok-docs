@@ -165,7 +165,7 @@ public class YourAppClass extends Application {
         super.onCreate();
 
         //AdpPushClient.init() should always be called in onCreate of Application class
-	//These four keys (YOUR_APP_ID/SENDER_ID, YOUR_API_KEY, SDK_USERNAME, SDK_PASSWORD) are different for each environment (Sandbox or Production).
+    //These four keys (YOUR_APP_ID/SENDER_ID, YOUR_API_KEY, SDK_USERNAME, SDK_PASSWORD) are different for each environment.
         AdpPushClient.init(
                 getApplicationContext(),
                 YOUR_ACTIVITY.class,
