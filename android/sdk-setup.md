@@ -202,7 +202,7 @@ public class YourAppClass extends Application {
 مقدار `true` به محیط تستی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
 
 ```java
-AdpPushClient.get().setDevelopment("DEV_MODE");
+AdpPushClient.get().setDevelopment(DEV_MODE);
 ```
 
 در متد `onTerminate` کلاس `Application` که در واقع آخرین فراخوانی در چرخه حیات این کلاس است، متد `dismiss` از کلاینت چابک را فراخوانی نمایید تا منابع در اختیار آزاد شوند. واضح است بعد از فراخوانی این متد دیگر نمی‌توان از نمونه جاری کلاینت استفاده کرد و باید دوباره نمونه‌سازی کنید.
