@@ -1,6 +1,6 @@
 ---
 id: event-handling
-title: مدیریت رویدادها
+title: رویدادهای آنی
 layout: android
 permalink: android/event-handling.html
 prev: user-management.html
@@ -11,7 +11,7 @@ next: behavior-tracking.html
 
 <Br>
 
-### انتشار رویداد با داده‌های دلخواه
+### انتشار رویداد
 
 با متدهای زیر می‌توانید رویدادهای داخل برنامه را منتشر کنید:
 
@@ -104,3 +104,10 @@ public void onEvent(final EventMessage message) {
 public void unsubscribeEvent(String eventName, final Callback clbk)
 public void unsubscribeEvent(final String eventName, final String installationId, final Callback clbk)
 ```
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+### مفهوم رویداد‌
+
+رفتار کاربران را رویداد‌هایی تعیین می‌کنند که آن‌ها در اپلیکیشنتان رقم می‌زنند. این رویداد‌ها می‌توانند هر تعامل و اتفاقی که در اپ شما رخ می‌دهد، باشند. به عنوان مثال **کلیک روی لینک**، **لایک کردن**، **کامنت نوشتن**، **اضافه کردن محصولی به سبد خرید**، **انجام خرید** و ... همگی به عنوان رویداد‌ حساب می‌شوند. در اینجا شما می‌توانید با توجه به نیازتان این رویداد‌ها را برای رصد تعریف کنید (**custom events**).

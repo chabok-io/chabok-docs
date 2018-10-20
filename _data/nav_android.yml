@@ -11,15 +11,15 @@
     - id: user-management
       title: ‌گروه‌بندی کاربران
     - id: behavior-tracking
-      title: رصد رفتار کاربران
+      title: رصد رفتار درون‌برنامه‌ای
     - id: location-tracking
-      title: ‌مکان‌یابی
+      title: ‌خدمات مکانی
     - id: event-handling
-      title: ‌مدیریت رویدادها
+      title: ‌رویداد‌های آنی
     - id: verification
       title: اعتبارسنجی شناسه کاربری
     - id: features
-      title: امکانات‌ دیگر چابک
+      title: امکانات‌ دیگر 
     - id: troubleshoot
       title: عیب‌ یابی
     - id: release-note
