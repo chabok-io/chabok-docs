@@ -13,21 +13,25 @@ next: push-notification.html
 
 ### دریافت پیام چابک
 
+
 با فراخوانی متد `addListener` و پیاده‌سازی متد `onEvent` در کلاس مورد نظر خود (در زیر به آن اشاره شده است) پیام چابک را دریافت کنید. متد `addListener` را در هر کلاسی می‌توانید اضافه کنید.
 
 ```java
-client.addListener(this);
+AdpPushClient.get().addListener(this);
 ```
 
  پس از آن با پیاده‌سازی متد زیر می‌توانید پیام‌ها را دریافت نمایید.
 
 ```java
 public void onEvent(PushMessage message) {
-    Log.d(TAG, "GOT MESSAGE " + message);
+    String channel = message.getChannel();
+    String senderId = message.getSenderId();
     JSONObject data = message.getData();
-    if (data != null){
-        Log.d(TAG, "The message data is : " + data);
-    }
+
+    String body = message.getBody();
+    String title = message.getAlertTitle();
+
+    Log.d(TAG, "Got chabok message " + message);
 }
 ```
 
@@ -114,17 +118,25 @@ AdpPushClient.get().publish(message, new Callback() {
 
 #### دریافت گزارش تحویل پیام‌‌ (Delivery)
 
-با استفاده از متد `enableDeliveryTopic`، دریافت رویداد تایید تحویل پیام‌های ارسالی را فعال نمایید. سپس با پیاده‌سازی متد `onEvent` می‌توانید از تحویل پیام خود مطلع شوید.
-
-
-> `نکته` :  برای دریافت رویداد لازم است کلاس مورد نظر برای دریافت را بعنوان `Listener‌` رویداد تعیین نمایید.
+با استفاده از متد `onEvent(DeliveryMessage)` می‌توانید، گزارش تایید تحویل برای پیام‌های ارسال را دریافت کنید. برای فعال‌سازی آن باید یک بار متد `enableDeliveryTopic` را فراخوانی کنید تا گزارش‌ پیام‌های ارسالی به شما داده شود. سپس با پیاده‌سازی متد `onEvent(DeliveryMessage)` می‌توانید از تحویل پیام‌های ارسالی مطلع شوید.
 
 ```java
-chabok.enableDeliveryTopic();
-chabok.addListener(this);
+AdpPushClient.get().enableDeliveryTopic();
 
-public void onEvent(DeliveryMessage message) {
-    // write your code here
+```
+با استفاده از متد `addListener` کلاسی را که متد `onEvent(DeliveryMessage)` را در آن پیاده‌سازی کرده‌اید را باید به چابک معرفی کنید، همانند قطعه کد زیر.
+
+```java
+AdpPushClient.get().addListener(this);
+
+public void onEvent(DeliveryMessage delivery) {
+    String messageId = delivery.getDeliveredMessageId();
+    Date deliveredAt = new Date(delivery.getDeliveredAt());
+    String deliveredToUser = delivery.getDeliveredUserId();
+
+    Log.d(TAG, "Got message delivery " + messageId +
+               " delivered to " + deliveredToUser +
+               " at " + deliveredAt);
 }
 ```
 
