@@ -1,6 +1,6 @@
 ---
 id: location-tracking
-title: مکان‌یابی
+title: خدمات مکانی
 layout: android
 permalink: android/location-tracking.html
 prev: behavior-tracking.html
