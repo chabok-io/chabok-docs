@@ -7,71 +7,53 @@ prev: sdk-setup.html
 next: push-notification.html
 ---
 
-چابک برای **ارسال پیام** هنگامی که کاربر به سرور چابک متصل است (باز بودن اپلیکیشن) **از سرویس آنی خود** (پیام چابک) استفاده می‌کند و در صورت عدم اتصال به چابک (بسته بودن اپلیکیشن) اقدام به **ارسال پوش‌نوتیفیکیشن** می‌کند تا کاربر را از داشتن پیام چابک مطلع سازد. ارسال پیام چابک از طریق کانال انجام می‌شود. بنابراین برای دریافت پیام، باید در ابتدا [کاربر را در کانال عضو نمایید](https://doc.chabokpush.com/android/chabok-messaging.html#عضویت-روی-کانال-subscribe). پس از آن هم می‌توانید با متد `publish` و `addListener` پیام‌هایتان را [ارسال](https://doc.chabokpush.com/android/chabok-messaging.html#ارسال-پیام) و [دریافت](https://doc.chabokpush.com/android/chabok-messaging.html#دریافت-پیام-چابک) نمایید. علاوه بر آن می‌توانید از [تحویل پیام‌هایتان](https://doc.chabokpush.com/android/chabok-messaging.html#دریافت-گزارش-تحویل-پیام-delivery) و [وضعیتشان](https://doc.chabokpush.com/android/chabok-messaging.html#ارسال-وضعیت-پیامهای-دریافتی) آگاه شوید.
+چابک برای **ارسال پیام** هنگامی که کاربر به سرور چابک متصل است (باز بودن اپلیکیشن) **از سرویس آنی خود** (پیام چابک) استفاده می‌کند و در صورت عدم اتصال به چابک (بسته بودن اپلیکیشن) اقدام به **ارسال پوش‌نوتیفیکیشن** می‌کند تا کاربر را از داشتن پیام چابک مطلع سازد. پیام‌های چابک از طریق [کانال‌ها](https://doc.chabokpush.com/android/chabok-messaging.html#کانال) ارسال می‌شوند. بنابراین برای دریافت پیام، باید ابتدا کاربر را در کانال [عضو نمایید](https://doc.chabokpush.com/android/chabok-messaging.html#عضویت-روی-کانال-subscribe). در این قسمت شما می‌توانید پیام [دریافت](https://doc.chabokpush.com/android/chabok-messaging.html#دریافت-پیام-چابک) کنید و برای آن [وضعیت (status) ارسال کنید](https://doc.chabokpush.com/android/chabok-messaging.html#ارسال-وضعیت-پیامهای-دریافتی). همچنین می‌توانید پیام [ارسال](https://doc.chabokpush.com/android/chabok-messaging.html#ارسال-پیام) کنید و از [تحویل](https://doc.chabokpush.com/android/chabok-messaging.html#دریافت-گزارش-تحویل-پیام-delivery) آن‌ها مطلع شوید. 
 
 <Br>
 
-### کانال
+### دریافت پیام چابک
 
-همانطور که گفته شد پیام‌رسانی بین سرور چابک و کلاینت‌ها روی **کانال‌** انجام می شود. شما با کانال می‌توانید موضوع پیام یا محتوای خود را جداسازی کنید. عضویت یک کاربر روی یک کانال برای دریافت پیام‌های ارسالی روی آن کانال `subscribe` نامیده می‌شود و لغو آن `unsubscribe` نامیده می‌شود. چابک به طور پیش‌فرض هر کاربر را روی یک کانال شخصی (براساس شناسه کاربر) ثبت نام می‌کند.
-
-> `نکته:` نام کانال به صورت پیش‌فرض به عنوان کانال عمومی در نظر گرفته می‌شود و اگر شما می‌خواهید کاربر را روی کانال شخصی ثبت‌نام کنید کافی است قبل از نام کانال عبارت `/private` را اضافه نمایید.
-
-#### عضویت روی کانال (subscribe)
-
-با دو امضای متفاوت وجود دارد:
-
-- امضای اول که نام کانال و یک کال‌بک می‌گیرد و روی کانال دریافتی عضویت کاربر را ثبت می‌کند.
+با فراخوانی متد `addListener` و پیاده‌سازی متد `onEvent` در کلاس مورد نظر خود (در زیر به آن اشاره شده است) پیام چابک را دریافت کنید. متد `addListener` را در هر کلاسی می‌توانید اضافه کنید.
 
 ```java
-chabok.subscribe(CHANNEL_NAME, new Callback() {
-    @Override
-    public void onSuccess(Object o) {
-        //Add some codes for find out subscribe was successfully done
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        //Add some codes for showing an error happened
-    }
-});
+client.addListener(this);
 ```
-- امضای دوم علاوه بر موارد قبلی یک پارامتر بولین نیز دریافت می‌کند، این پارامتر به این معناست که آیا کاربر فقط در حالتی که به چابک متصل است پیام‌های این کانال را دریافت کند و یا خیر .
+
+ پس از آن با پیاده‌سازی متد زیر می‌توانید پیام‌ها را دریافت نمایید.
 
 ```java
-chabok.subscribe(CHANNEL_NAME, true, new Callback() {
-    @Override
-    public void onSuccess(Object o) {
-        //Add some codes for find out subscribe was successfully done
+public void onEvent(PushMessage message) {
+    Log.d(TAG, "GOT MESSAGE " + message);
+    JSONObject data = message.getData();
+    if (data != null){
+        Log.d(TAG, "The message data is : " + data);
     }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        //Add some codes for showing an error happened
-    }
-});
+}
 ```
 
-#### لغو عضویت از کانال (unsubscribe)
-
-نام کانال و یک کال‌بک می‌گیرد و عضویت کاربر را روی کانال دریافتی لغو می‌کند.
-
-```java
-chabok.unsubscribe(CHANNEL_NAME, new Callback() {
-    @Override
-    public void onSuccess(Object o) {
-        //Add some codes for find out unsubscribe was successfully done
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        //Add some codes for showing an error happened
-    }
-});
-```
 <Br>
 
-### ارسال پیام
+#### ارسال وضعیت پیام‌های دریافتی
+
+شما می‌توانید عکس‌العمل کاربر به یک پیام چابک را (خوانده شدن، نادیده گرفته شدن، ...) با استفاده از کلاینت چابک مشخص کنید. 
+متد `markAsRead` برای ارسال رویداد خوانده شدن پیام توسط کاربر به سرور می تواند مورد استفاده قرار بگیرد. 
+متد `dismiss` نیز می‌تواند برای هر عملی که معنی باز نکردن یا نادیده گرفته شدن پیام را داشته باشد بکار رود. به دو طریق می‌توان این متدها را فراخوانی نمود:
+
+۱- اگر شی پیام چابک در دسترس است به صورت مستقیم متد را فراخوانی کنید:
+
+```java  
+pushMessage.markAsRead();
+pushMessage.dismiss();
+```               
+
+۲- اگر فقط شناسه پیام چابک در دسترس است می‌توانید نسخه استاتیک متد‌ها را فراخوانی کنید:
+
+```java  
+PushMessage.markAsRead("PUSH_MESSAGE_ID");
+PushMessage.messageDismissed("PUSH_MESSAGE_ID");
+```               
+
+### ارسال پیام چابک
 
 متد `Publish` برای ارسال پیام از سمت کلاینت به سرور‌های چابک استفاده می‌شود. شما از این مکانیزم علاوه بر پیام‌های شخصی می‌توانید برای ارسال اطلاعات و داده‌های کاربر به سمت سرور خود (به جای ارسال با درخواست‌های کلاسیک HTTP) استفاده کنید.
 
@@ -156,29 +138,8 @@ chabok.publish(USER, CHANNEL_NAME, TEXT, new Callback() {
 
 <Br>
 
-### دریافت پیام چابک
 
-با فراخوانی متد `addListener` و پیاده‌سازی متد `onEvent` در کلاس مورد نظر خود (در زیر به آن اشاره شده است) پیام چابک را دریافت کنید. متد `addListener` را در هر کلاسی می‌توانید اضافه کنید.
-
-```java
-client.addListener(this);
-```
-
- پس از آن با پیاده‌سازی متد زیر می‌توانید پیام‌ها را دریافت نمایید.
-
-```java
-public void onEvent(PushMessage message) {
-    Log.d(TAG, "GOT MESSAGE " + message);
-    JSONObject data = message.getData();
-    if (data != null){
-        Log.d(TAG, "The message data is : " + data);
-    }
-}
-```
-
-<Br>
-
-### دریافت گزارش تحویل پیام‌ (Delivery)
+#### دریافت گزارش تحویل پیام‌‌ (Delivery)
 
 با استفاده از متد `enableDeliveryTopic`، دریافت رویداد تایید تحویل پیام‌های ارسالی را فعال نمایید. سپس با پیاده‌سازی متد `onEvent` می‌توانید از تحویل پیام خود مطلع شوید.
 
@@ -196,22 +157,62 @@ public void onEvent(DeliveryMessage message) {
 
 <Br>
 
-### ارسال وضعیت پیام‌های دریافتی
 
-شما می‌توانید عکس‌العمل کاربر به یک پیام چابک را (خوانده شدن، نادیده گرفته شدن، ...) با استفاده از کلاینت چابک مشخص کنید. 
-متد `markAsRead` برای ارسال رویداد خوانده شدن پیام توسط کاربر به سرور می تواند مورد استفاده قرار بگیرد. 
-متد `dismiss` نیز می‌تواند برای هر عملی که معنی باز نکردن یا نادیده گرفته شدن پیام را داشته باشد بکار رود. به دو طریق می‌توان این متدها را فراخوانی نمود:
+### کانال
 
-۱- اگر شی پیام چابک در دسترس است به صورت مستقیم متد را فراخوانی کنید:
+همانطور که گفته شد پیام‌رسانی بین سرور چابک و کلاینت‌ها روی **کانال‌** انجام می شود. شما با کانال می‌توانید موضوع پیام یا محتوای خود را جداسازی کنید. عضویت یک کاربر روی یک کانال برای دریافت پیام‌های ارسالی روی آن کانال `subscribe` نامیده می‌شود و لغو آن `unsubscribe` نامیده می‌شود. چابک به طور پیش‌فرض هر کاربر را روی یک کانال شخصی (براساس شناسه کاربر) ثبت نام می‌کند.
 
-```java  
-pushMessage.markAsRead();
-pushMessage.dismiss();
-```               
+> `نکته:` نام کانال به صورت پیش‌فرض به عنوان کانال عمومی در نظر گرفته می‌شود و اگر شما می‌خواهید کاربر را روی کانال شخصی ثبت‌نام کنید کافی است قبل از نام کانال عبارت `/private` را اضافه نمایید.
 
-۲- اگر فقط شناسه پیام چابک در دسترس است می‌توانید نسخه استاتیک متد‌ها را فراخوانی کنید:
+#### عضویت روی کانال (subscribe)
 
-```java  
-PushMessage.markAsRead("PUSH_MESSAGE_ID");
-PushMessage.messageDismissed("PUSH_MESSAGE_ID");
-```               
+با دو امضای متفاوت وجود دارد:
+
+- امضای اول که نام کانال و یک کال‌بک می‌گیرد و روی کانال دریافتی عضویت کاربر را ثبت می‌کند.
+
+```java
+chabok.subscribe(CHANNEL_NAME, new Callback() {
+    @Override
+    public void onSuccess(Object o) {
+        //Add some codes for find out subscribe was successfully done
+    }
+
+    @Override
+    public void onFailure(Throwable throwable) {
+        //Add some codes for showing an error happened
+    }
+});
+```
+- امضای دوم علاوه بر موارد قبلی یک پارامتر بولین نیز دریافت می‌کند، این پارامتر به این معناست که آیا کاربر فقط در حالتی که به چابک متصل است پیام‌های این کانال را دریافت کند و یا خیر .
+
+```java
+chabok.subscribe(CHANNEL_NAME, true, new Callback() {
+    @Override
+    public void onSuccess(Object o) {
+        //Add some codes for find out subscribe was successfully done
+    }
+
+    @Override
+    public void onFailure(Throwable throwable) {
+        //Add some codes for showing an error happened
+    }
+});
+```
+
+#### لغو عضویت از کانال (unsubscribe)
+
+نام کانال و یک کال‌بک می‌گیرد و عضویت کاربر را روی کانال دریافتی لغو می‌کند.
+
+```java
+chabok.unsubscribe(CHANNEL_NAME, new Callback() {
+    @Override
+    public void onSuccess(Object o) {
+        //Add some codes for find out unsubscribe was successfully done
+    }
+
+    @Override
+    public void onFailure(Throwable throwable) {
+        //Add some codes for showing an error happened
+    }
+});
+```
