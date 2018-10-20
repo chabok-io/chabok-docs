@@ -1,6 +1,6 @@
 ---
 id: features
-title: امکانات‌ چابک 
+title: امکانات‌ دیگر
 layout: android
 permalink: android/features.html
 prev: verification.html
