@@ -7,14 +7,14 @@ prev: required.html
 next: chabok-messaging.html
 ---
 
-پس از طی کردن مراحل صفحه [پیش‌نیازها](https://doc.chabokpush.com/android/required.html)، **راه‌اندازی SDK چابک** را شروع خواهیم کرد. در ابتدا اقدام به [نصب کتابخانه چابک](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B1--%D9%86%D8%B5%D8%A8-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87) کنید و سپس برای فعالسازی پوش‌نوتیفیکیشن چابک بخش‌ [افزودن `GcmReceiver` به فایل `Manifest`]() را مطالعه کرده و همانند مستندات بیان شده پیش بروید و در آخر، شروع به [مقداردهی و راه‌اندازی]() کتابخانه چابک در اپلیکیشنتان نمایید.
+پس از طی کردن مراحل صفحه [پیش‌نیازها](https://doc.chabokpush.com/android/required.html)، **راه‌اندازی SDK چابک** را شروع خواهیم کرد. در ابتدا اقدام به [نصب کتابخانه چابک](https://doc.chabokpush.com/android/sdk-setup.html#۱--نصب-کتابخانه) کنید و سپس برای فعالسازی پوش‌نوتیفیکیشن چابک بخش‌ [افزودن `GcmReceiver` به فایل `Manifest`](https://doc.chabokpush.com/android/sdk-setup.html#۲--افزودن-کلاس--gcmreceiver-به-فایل-manifest) را مطالعه کرده و همانند مستندات بیان شده پیش بروید و در آخر، شروع به [مقداردهی و راه‌اندازی](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B3--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-%D9%88-%D8%B4%D8%B1%D9%88%D8%B9-initialize) کتابخانه چابک در اپلیکیشنتان نمایید.
 برای انجام موفق این کار باید تمام مراحل زیر را به ترتیب انجام دهید:
 
 [ ۱- نصب کتابخانه](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B1--%D9%86%D8%B5%D8%A8-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87)
 
-[۲- افزودن `GcmReceiver` به فایل `Manifest`]()
+[۲- افزودن `GcmReceiver` به فایل `Manifest`](https://doc.chabokpush.com/android/sdk-setup.html#۲--افزودن-کلاس--gcmreceiver-به-فایل-manifest)
 
-[۳- مقداردهی و شروع]()
+[۳- مقداردهی و شروع](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B3--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-%D9%88-%D8%B4%D8%B1%D9%88%D8%B9-initialize)
 
 <Br>
 
@@ -29,7 +29,7 @@ buildscript {
   }
 }  
 ```
-در این قسمت شما باید *کتابخانه استاندارد* **یا** *کتابخانه با قابلیت مکان‌یابی* را نصب نمایید. برای استفاده از **سرویس پیام‌رسانی** و **قابلیت‌های آنی چابک** می‌توانید از [کتابخانه استاندارد]() بهره ببرید. اما در صورتی که می‌خواهید این‌ها را همراه با قابلیت مکان‌یابی داشته باشید باید از [کتابخانه با قابلیت مکان‌یابی]() استفاده کنید. دقت کنید که هر دو کتابخانه **همزمان نمی‌توانند کار کنند** و شما باید فقط از یکی از آن‌ها متناسب با نیاز خود استفاده کنید.
+در این قسمت شما باید *کتابخانه استاندارد* **یا** *کتابخانه با قابلیت مکان‌یابی* را نصب نمایید. برای استفاده از **سرویس پیام‌رسانی** و **قابلیت‌های آنی چابک** می‌توانید از [کتابخانه استاندارد](https://doc.chabokpush.com/android/sdk-setup.html#نصب-کتابخانه-استاندارد-چابک) بهره ببرید. اما در صورتی که می‌خواهید این‌ها را همراه با قابلیت مکان‌یابی داشته باشید باید از [کتابخانه با قابلیت مکان‌یابی](https://doc.chabokpush.com/android/sdk-setup.html#نصب-کتابخانه-با-قابلیت-مکانیابی-چابک) استفاده کنید. دقت کنید که هر دو کتابخانه **همزمان نمی‌توانند کار کنند** و شما باید فقط از یکی از آن‌ها متناسب با نیاز خود استفاده کنید.
 
 #### نصب کتابخانه استاندارد چابک
 
@@ -189,7 +189,7 @@ public class YourAppClass extends Application {
 }
 ```
 
-در این متد به جای پارامتر‌های `YOUR_APP_ID/SENDER_ID`, `YOUR_API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
+در این متد به جای پارامتر‌های `YOUR_APP_ID/SENDER_ID`, `YOUR_API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](https://doc.chabokpush.com/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
 
 مقدار `YOUR_MAIN_ACTIVITY_CLASS` را نام کلاس `Activity`ای قرار دهید که چابک به طور پیش‌فرض پس از کلیک شدن روی اعلان، `Activity `تعیین شده را باز کند. (برای شخصی‌سازی اعلان‌ها این بخش را مشاهده کنید.)
 
@@ -259,7 +259,7 @@ chabok.register("USER_ID", new String[]{"CHANNEL_NAME1", "CHANNEL_NAME2", ...});
 > چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.
 
 اگر عملیات ثبت‌نام به درستی انجام شده باشد، پس از فراخوانی متد `register`،
-اطلاعات کاربر در **پنل**  چابک مربوط به [حساب](http://chabokpush.com)
+اطلاعات کاربر در **پنل**  چابک مربوط به [حساب](https://sandbox.push.adpdigital.com/front/users/subscribers/list)
  برنامه، در قسمت **مشترکین**، قابل مشاهده خواهد بود و شما می‌توانید از پنل برای کاربر **پیام** ارسال کنید.
 
 ##### تایید ثبت کاربر
@@ -268,7 +268,7 @@ chabok.register("USER_ID", new String[]{"CHANNEL_NAME1", "CHANNEL_NAME2", ...});
 ```java
 AdpPushClient.get().isRegistered();
 ```
-با رویداد `AppState` می‌توانید در [این بخش]() جزئیات بیشتری از کاربرتان را مشاهده کنید.
+با رویداد `AppState` می‌توانید در [این بخش](https://doc.chabokpush.com/android/features.html#دریافت-وضعیت-برنامه) جزئیات بیشتری از کاربرتان را مشاهده کنید.
 ```java
 public void onEvent(AppState state) {
     if (state == AppState.REGISTERED) {
