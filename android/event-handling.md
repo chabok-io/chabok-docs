@@ -7,7 +7,7 @@ prev: user-management.html
 next: behavior-tracking.html
 ---
 
-با چابک شما علاوه بر پیام می‌توانید [رویدادهای دلخواه خود را منتشر کنید](). سپس می‌توانید با `subscribeEvent` روی یک رویداد، [هر بار وقوع آن را دریافت کنید](). در صورتی هم که دیگر نمی‌خواستید آن رویداد را دریافت کنید [می‌توانید با `unsubscribeEvent` آن را لغو کنید]().
+با چابک شما علاوه بر پیام می‌توانید [رویدادهای دلخواه خود را منتشر کنید](https://doc.chabokpush.com/android/event-handling.html#انتشار-رویداد-با-دادههای-دلخواه). سپس می‌توانید با `subscribeEvent` روی یک رویداد، [هر بار وقوع آن را دریافت کنید](https://doc.chabokpush.com/android/event-handling.html#دریافت-رویداد). در صورتی هم که دیگر نمی‌خواستید آن رویداد را دریافت کنید [می‌توانید با `unsubscribeEvent` آن را لغو کنید](https://doc.chabokpush.com/android/event-handling.html#غیرفعال-کردن-دریافت-رویداد).
 
 <Br>
 
