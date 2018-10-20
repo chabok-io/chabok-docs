@@ -8,9 +8,10 @@ next: chabok-messaging.html
 ---
 
 پس از طی کردن مراحل صفحه [پیش‌نیازها](https://doc.chabokpush.com/android/required.html)، **راه‌اندازی SDK چابک** را شروع خواهیم کرد. در ابتدا اقدام به [نصب کتابخانه چابک](https://doc.chabokpush.com/android/sdk-setup.html#۱--نصب-کتابخانه) کنید و سپس برای فعالسازی پوش‌نوتیفیکیشن چابک بخش‌ [افزودن `GcmReceiver` به فایل `Manifest`](https://doc.chabokpush.com/android/sdk-setup.html#۲--افزودن-کلاس--gcmreceiver-به-فایل-manifest) را مطالعه کرده و همانند مستندات بیان شده پیش بروید و در آخر، شروع به [مقداردهی و راه‌اندازی](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B3--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-%D9%88-%D8%B4%D8%B1%D9%88%D8%B9-initialize) کتابخانه چابک در اپلیکیشنتان نمایید.
+
 برای انجام موفق این کار باید تمام مراحل زیر را به ترتیب انجام دهید:
 
-[ ۱- نصب کتابخانه](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B1--%D9%86%D8%B5%D8%A8-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87)
+[ ۱- نصب کتابخانه](sdk-setup.html#۱--نصب-کتابخانه)
 
 [۲- افزودن `GcmReceiver` به فایل `Manifest`](https://doc.chabokpush.com/android/sdk-setup.html#۲--افزودن-کلاس--gcmreceiver-به-فایل-manifest)
 
@@ -165,6 +166,7 @@ public class YourAppClass extends Application {
         super.onCreate();
 
         //AdpPushClient.init() should always be called in onCreate of Application class
+    //These four keys (YOUR_APP_ID/SENDER_ID, YOUR_API_KEY, SDK_USERNAME, SDK_PASSWORD) are different for each environment.
         AdpPushClient.init(
                 getApplicationContext(),
                 YOUR_ACTIVITY.class,
@@ -193,7 +195,7 @@ public class YourAppClass extends Application {
 
 مقدار `YOUR_MAIN_ACTIVITY_CLASS` را نام کلاس `Activity`ای قرار دهید که چابک به طور پیش‌فرض پس از کلیک شدن روی اعلان، `Activity `تعیین شده را باز کند. (برای شخصی‌سازی اعلان‌ها این بخش را مشاهده کنید.)
 
-> `نکته`: ترکیب `APP_ID/SENDER_ID` به عنوان `YOUR_APP_ID/SENDER_ID` مورد استفاده قرار می‌گیرد. که در اینجا `SENDER_ID` همان شناسه گوگل برای دریافت پوش‌نوتیفیکیشن می‌باشد که در پنل قرار داده‌اید و `APP_ID` 
+> `نکته`: مقدار `SENDER_ID` در پارامتر `YOUR_APP_ID/SENDER_ID` همان **شناسه گوگل** برای *دریافت پوش‌نوتیفیکیشن* می‌باشد که در پنل در بخش [تنظیمات پلتفرم اندروید](https://dev.doc.chabokpush.com/panel/settings.html#%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85%D9%87%D8%A7) قرار داده‌اید و `YOUR_APP_ID` همان `APP_ID‌`ای که در پنل در بخش [دسترسی و توکن‌ها](https://dev.doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) قرار داده شده است، می‌باشد.
 
 > `نکته`:  توجه داشته باشید متد `AdpPushClient.init` تحت هر شرایط **حتما** باید در کلاس `Application` و در متد `onCreate` فراخوانی شود. متد فوق برای مقداردهی پارامتر‌های ضروری چابک می‌باشد و در صورت عدم فراخوانی آن در حالت **Kill** بودن اپلیکیشن با خطا مواجه خواهید شد.
 
@@ -201,17 +203,16 @@ public class YourAppClass extends Application {
 مقدار `true` به محیط تستی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
 
 ```java
-AdpPushClient.get().setDevelopment("DEV_MODE");
+AdpPushClient.get().setDevelopment(DEV_MODE);
 ```
+
+> `نکته`: برای *درخواست* حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](/panel/settings.html#%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA-%D8%AD%D8%B3%D8%A7%D8%A8-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C) شوید و درخواست خود را ثبت نمایید تا پس از تایید و ساخت حساب عملیاتی شما، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد. 
 
 در متد `onTerminate` کلاس `Application` که در واقع آخرین فراخوانی در چرخه حیات این کلاس است، متد `dismiss` از کلاینت چابک را فراخوانی نمایید تا منابع در اختیار آزاد شوند. واضح است بعد از فراخوانی این متد دیگر نمی‌توان از نمونه جاری کلاینت استفاده کرد و باید دوباره نمونه‌سازی کنید.
 
 ```java
 AdpPushClient.get().dismiss();
 ```
-
-> `نکته`: برای تغییر به محیط عملیاتی، وارد [**پنل بخش تنظیمات**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA-%D8%AD%D8%B3%D8%A7%D8%A8-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C) شوید و درخواست خود را ثبت نمایید تا پس از تایید، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد. 
-
 
 #### ثبت کاربر (Register)
 

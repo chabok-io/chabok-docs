@@ -3,7 +3,7 @@ id: validation
 title: اعتبارسنجی شناسه کاربری
 layout: ios
 permalink: ios/validation.html
-prev: publishingMessages.html
+prev: rich_notification.html
 next: notification.html
 ---
 ### اعتبارسنجی
