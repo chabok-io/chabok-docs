@@ -1,6 +1,6 @@
 ---
 id: event-handling
-title: مدیریت رویدادها
+title: رویدادهای آنی
 layout: android
 permalink: android/event-handling.html
 prev: user-management.html
