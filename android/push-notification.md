@@ -154,13 +154,14 @@ public class NotificationReceiver extends BroadcastReceiver {
     }
 }
 ```
-با اجرای دستور زیر در Terminal یک نوتیفیکیشن چندرسانه‌ای ارسال می‌کند. دقت کنید در دستور زیر مقدار `ACCESS_TOKEN` حساب کاربری خود قرار دهید و مقدار `USER_ID` را شناسه‌ کاربری که می‌خواهید پیام به او تحویل داده شود وارد کنید.
+با اجرای دستور زیر در Terminal یک نوتیفیکیشن چندرسانه‌ای ارسال می‌کند. دقت کنید در دستور زیر مقدار `<ACCESS_TOKEN>` حساب کاربری خود قرار دهید و مقدار `USER_ID` را شناسه‌ کاربری که می‌خواهید پیام به او تحویل داده شود وارد کنید.
 
 
 ```bash
-curl -X POST "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=ACCESS_TOKEN" \ 
--H "accept: application/json" \ 
--H "Content-Type: application/json" \ 
+curl -X POST \
+"https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
 -d "{ \"user\": \"USER_ID\", \"content\": \"😍💯 جمعه سیاه 😍💯\", \"notification\": { \"title\": \"😍💯 جمعه سیاه 😍💯\", \"body\": \"در جمعه سیاه می‌توانید با خرید از فروشگاه‌چابک، همزمان با تمام دنیا در این کمپین بزرگ شرکت کنید و با تخفیف های باور نکردنی همراه باشید.\", \"actions\": [ { \"id\": \"special_offers_action\", \"title\": \"پیشنهادهای ویژه\", \"options\": 5 }, { \"id\": \"favorite_product_action\", \"title\": \"کالاهای مورد علاقه من\", \"options\": 5 } ], \"mediaType\": \"png\", \"mediaUrl\": \"https://raw.githubusercontent.com/chabokpush/chabok-assets/master/samples/notification/blackfriday.png\", \"mutableContent\": true, \"category\": \"__BLACK_FRIDAY__\" }}"
 ```
 
