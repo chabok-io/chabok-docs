@@ -39,22 +39,6 @@ chabok.addNotificationHandler(notifHandler);
 
 - در متد `buildNotification` با پارامترهای ورودی متد یعنی `ChabokNotification` و `NotificationCompat.Builder` می‌توانید اعلان دریافتی را **به دلخواه تغییر داده** و **درباره نمایش آن تصمیم بگیرید**. در صورتی که مقدار بازگشتی از این متد `true` باشد، کتابخانه با توجه به تنظیمات مربوطه اعلان را نمایش می‌دهد ولی اگر مقدار بازگشتی `false` باشد بدین معنی است که شما خود نمایش را به عهده می‌گیرید.
 
-###  نمایش کامل متن بلند در اعلان
-چابک به صورت پیش‌فرض متن پیام و پوش‌نوتیفیکیشن را به صورت `bigText` نمایش **نمی‌دهد**. در این حالت می‌توانید برای نمایش متن پیام و پوش‌نوتیفیکیشن با استفاده از متد `buildNotification` اقدام به نمایش اعلان شخصی‌سازی شده خود کنید و از قطعه کد زیر در متد فوق استفاده کنید (دقت کنید که در متد فوق در صورت نمایش اعلان شخصی‌سازی شده، باید `return false` برگردانید):
-
-```java
-NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-
-String notifText = chabokNotification.getText();
-builder.setStyle(new NotificationCompat.BigTextStyle().bigText(notifText));
-if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-    builder.setPriority(Notification.PRIORITY_MAX);
-}
-
-notificationManager.notify(0, builder.build());
-```
-<Br>
-
 ### دریافت دیتای اعلان
 
 با استفاده از قطعه کد زیر در متد `buildNotification` که در بخش [تنظیم نمایش اعلان](https://doc.chabokpush.com/android/push-notification.html#تنظیم-نمایش-و-کلیک-روی-اعلان) به آن اشاره شده است، می‌توانید به `data` نوتیفیکیشن دسترسی داشته باشید :
@@ -68,6 +52,22 @@ if (chabokNotification.getExtras() != null) {
     //Chabok message data
     JSONObject data = payload.getData();
 }
+```
+<Br>
+
+###  نمایش کامل متن بلند در اعلان
+چابک به صورت پیش‌فرض متن پیام و پوش‌نوتیفیکیشن را به صورت `bigText` نمایش **نمی‌دهد**. در این حالت می‌توانید برای نمایش متن پیام و پوش‌نوتیفیکیشن با استفاده از متد `buildNotification` اقدام به نمایش اعلان شخصی‌سازی شده خود کنید و از قطعه کد زیر در متد فوق استفاده کنید (دقت کنید که در متد فوق در صورت نمایش اعلان شخصی‌سازی شده، باید `return false` برگردانید):
+
+```java
+NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+
+String notifText = chabokNotification.getText();
+builder.setStyle(new NotificationCompat.BigTextStyle().bigText(notifText));
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+    builder.setPriority(Notification.PRIORITY_MAX);
+}
+
+notificationManager.notify(0, builder.build());
 ```
 <Br>
 
@@ -147,5 +147,5 @@ public class NotificationReceiver extends BroadcastReceiver {
 }
 ```
 
-![نوتیفیکیشن چندرسانه‌ای](http://uupload.ir/files/z8bi_rich_notification_screenshot-android-small.png)
+![نوتیفیکیشن چندرسانه‌ای](https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/android/rich-notification-android.png)
 
