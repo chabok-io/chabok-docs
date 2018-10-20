@@ -147,5 +147,6 @@ public class NotificationReceiver extends BroadcastReceiver {
 }
 ```
 
-![نوتیفیکیشن چندرسانه‌ای](https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/android/rich-notification-android.png)
+
+<img src="https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/android/rich-notification-android.png" alt="Its You" height="388px" width="193px">
 
