@@ -266,7 +266,7 @@ chabok.register("USER_ID", new String[]{"CHANNEL_NAME1", "CHANNEL_NAME2", ...});
 اطلاعات کاربر در **پنل**  چابک مربوط به [حساب](https://sandbox.push.adpdigital.com/front/users/subscribers/list)
  برنامه، در قسمت **مشترکین**، قابل مشاهده خواهد بود و شما می‌توانید از پنل برای کاربر **پیام** ارسال کنید.
 
-##### تایید ثبت کاربر
+##### دریافت وضعیت ثبت کاربر
 برای اطمینان از ثبت شدن کاربر در چابک، می‌توانید از متد `isRegistered` یا رویداد `AppState` استفاده کنید. 
 
 ```java
