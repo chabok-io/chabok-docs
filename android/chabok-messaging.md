@@ -53,88 +53,56 @@ PushMessage.markAsRead("PUSH_MESSAGE_ID");
 PushMessage.messageDismissed("PUSH_MESSAGE_ID");
 ```               
 
-### ارسال پیام چابک
+### ارسال پیام
 
-متد `publish` برای ارسال پیام از سمت کلاینت به سرور‌های چابک استفاده می‌شود. شما از این مکانیزم علاوه بر پیام‌های شخصی می‌توانید برای ارسال اطلاعات و داده‌های کاربر به سمت سرور خود (به جای ارسال با درخواست‌های کلاسیک HTTP) استفاده کنید.
-
+متد `Publish` برای ارسال پیام از سمت کلاینت به سرور‌های چابک استفاده می‌شود. شما از این مکانیزم علاوه بر پیام‌های شخصی می‌توانید برای ارسال اطلاعات و داده‌های کاربر به سمت سرور خود (به جای ارسال با درخواست‌های کلاسیک HTTP) استفاده کنید.
 > `نکته:` مزایای این روش در مقایسه با درخواست‌های کلاسیک HTTP این است که روی اتصال موجود چابک می‌توانید تعداد زیادی رویداد سمت سرور بفرستید، در واقع برای هر درخواست یک اتصال جدید ساخته نمی‌شود.
 این امر تحویل اطلاعات را در سمت سرور، حتی در شرایطی که کاربر اینترنت ضعیف و یا قطع شده‌ای دارد، تضمین می‌کند. به این ترتیب که کلاینت چابک با استفاده از منطق سعی مجدد خود می‌تواند پیام‌ شما را حتی در شرایط بحرانی یک و فقط یک بار بفرستد. بنابراین مصرف باتری بهینه‌تر خواهد بود.
 
 این متد با **سه امضای متفاوت** وجود دارد که در ادامه به توضیح آن‌ها می‌پردازیم:
 
+- امضای اول برای ارسال یک پیام ساده روی کانال **عمومی** استفاده می‌شود.
 
-- امضای اول که یک شیء پیام چابک و یک کال‌بک می‌گیرد و پیام دریافتی را منتشر می‌کند. نمونه کد انتشار پیام با این امضاء به صورت زیر می‌باشد:
+```java
+AdpPushClient.get().publish("PUBLIC_CHANNEL", "MESSAGE_BODY", new Callback() {...});
+```
+> `نکته:` نام کانال و شناسه کاربر در متد `publish` باید فاقد کاراکتر `/` باشد.
 
+- امضای دوم برای ارسال یک پیام ساده به کاربر روی کانال **خصوصی* آن، استفاده می‌شود.
+
+```java
+AdpPushClient.get().publish("USER_ID", "PRIVATE_CHANNEL", "MESSAGE_BODY", new Callback() {...});
+```
+> `نکته:` مقدار پیش‌فرض برای نام کانال **خصوصی** برابر `default` می‌باشد.
+
+-  امضای سوم برای ارسال یک پیام پیشرفته با جزئیات بیشتر استفاده می‌شود که نمونه کد آن در زیر آمده است:
+
+```java
+PushMessage message = new PushMessage();
+message.setUser("USER_ID"); //Required. For public channel set * (wildcard)
+message.setChannel("CHANNEL"); //Required. Chabok by default subscribed user on default channel
+message.setBody("MESSAGE_BODY"); //Required
+JSONObject customData = new JSONObject();
+customData.put("KEY", "VALUE");
+message.setData(customData);//Optional
+message.setSound("SOUND"); //Optional
+message.setAlertTitle("TITLE"); //Optional
+AdpPushClient.get().publish(message, new Callback() {
+    @Override
+    public void onSuccess(Object o) {
+        Log.d(TAG, "onSuccess: Successfully published the message");
+    }
+    @Override
+    public void onFailure(Throwable throwable) {
+        Log.d(TAG, "onSuccess: An error happen " + throwable.getMessage());
+    }
+});
+```
+
+> `نکته`: برای ارسال پیام در یک کانال **عمومی** به جای عبارت `USER_ID` باید کاراکتر `*` را وارد نمایید. همچنین برای ارسال پیام در یک کانال‌ **خصوصی** باید `USER_ID` کاربر را وارد کنید. توجه داشته باشید که کاربر هنگامی پیام شما را دریافت خواهد کرد که بر روی کانال تعیین شده، عضویت داشته باشد.
 > `نکته:` اگر بخواهید پیام چابک دارای مقدار دیتا باشد باید حتما از این
 > امضا استفاده کرده و دیتای خود را به شکل `json` برای  پیام چابک تنظیم کنید.
 
-```java
-PushMessage myPushMessage = new PushMessage();
-myPushMessage.setBody("YOUR_MESSAGE_TEXT");
-
-JSONObject jsonObject = new JSONObject();
-jsonObject.put("KEY", "VALUE");
-myPushMessage.setData(jsonObject);
-
-myPushMessage.setChannel(CHANNEL_NAME);
-myPushMessage.setId(UUID.randomUUID().toString());
-myPushMessage.setUseAsAlert(true);
-myPushMessage.setAlertText("ALERT_TEXT");
-myPushMessage.setUser(TO_USER_ID);
-
-
-chabok.publish(myPushMessage, new Callback() {
-    @Override
-    public void onSuccess(Object o) {
-        //Add some codes to show publish was successfully done
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        //Add some codes for showing an error happened
-    }
-
-});
-```
-
-> `نکته:` مقدار پیش‌فرض برای نام کانال برابر `default` و مقدار
-> پیش‌فرض برای `user` مقدار `*` می‌باشد. بنابراین با تنظیم و یا عدم
-> تنظیم این مقادیر، چهار حالت مختلف برای ارسال پیام پیش می‌آید.
-
-> `نکته:` نام کانال و شناسه کاربر در این متد باید فاقد کاراکتر / باشد.
-
-- امضای دوم برای انتشار پیام روی کانال عمومی  کاربرد دارد که نام کانال، متن پیام و کال‌بک می‌گیرد و یک پبام چابک با مقادیر داده شده ایجاد کرده و آن را روی کانال دریافتی منتشر می‌کند.
-
-```java
-chabok.publish(CHANNEL_NAME, TEXT, new Callback() {
-    @Override
-    public void onSuccess(Object o) {
-        //Add some codes to show publish was successfully done
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        //Add some codes for showing an error happened
-    }
-});
-```
-
-
-- امضای آخر برای ارسال پیام به شخص روی کانال کاربرد دارد که شناسه کاربر، نام کانال، متن پیام و کال‌بک می‌گیرد و  یک پبام چابک با مقادیر داده شده ایجاد کرده و آن را روی کانال مورد نظر منتشر می‌کند.
-
-```java
-chabok.publish(USER, CHANNEL_NAME, TEXT, new Callback() {
-    @Override
-    public void onSuccess(Object o) {
-        //Add some codes to show publish was successfully done
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        //Add some codes for showing an error happened
-    }
-});
-```
 
 <Br>
 
@@ -168,53 +136,35 @@ public void onEvent(DeliveryMessage message) {
 
 #### عضویت روی کانال (subscribe)
 
-با دو امضای متفاوت وجود دارد:
+برای عضویت روی یک کانال می‌توانید از متد `subscribe` استفاده کنید که در زیر به دو امضای این متد اشاره شده است:
 
-- امضای اول که نام کانال و یک کال‌بک می‌گیرد و روی کانال دریافتی عضویت کاربر را ثبت می‌کند.
+- امضای اول کاربر را روی یک کانال عضو می‌کند:
 
 ```java
-chabok.subscribe(CHANNEL_NAME, new Callback() {
-    @Override
-    public void onSuccess(Object o) {
-        //Add some codes for find out subscribe was successfully done
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        //Add some codes for showing an error happened
-    }
-});
+//Subscribe on public alert channel.
+AdpPushClient.get().subscribe("alert", new Callback() {...});
+//Subscribe on private league channel.
+AdpPushClient.get().subscribe("private/league", new Callback() {...});
 ```
-- امضای دوم علاوه بر موارد قبلی یک پارامتر بولین نیز دریافت می‌کند، این پارامتر به این معناست که آیا کاربر فقط در حالتی که به چابک متصل است پیام‌های این کانال را دریافت کند و یا خیر .
+
+- امضای دوم علاوه بر نام کانال، یک پارامتر دیگر با عنوان `live` که از نوع `boolean` است، نیز دریافت می‌کند. در صورت قرار دادن مقدار `true` در پارامتر `live` به این معنی است که کاربر فقط در حالتی که به چابک **متصل** است پیام‌های این کانال را دریافت کند.
 
 ```java
-chabok.subscribe(CHANNEL_NAME, true, new Callback() {
-    @Override
-    public void onSuccess(Object o) {
-        //Add some codes for find out subscribe was successfully done
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        //Add some codes for showing an error happened
-    }
-});
+//Subscribe on public alert channel.
+AdpPushClient.get().subscribe("alert", true, new Callback() {...});
+//Subscribe on private league channel.
+AdpPushClient.get().subscribe("private/league", true, new Callback() {...});
 ```
 
 #### لغو عضویت از کانال (unsubscribe)
 
-نام کانال و یک کال‌بک می‌گیرد و عضویت کاربر را روی کانال دریافتی لغو می‌کند.
+برای لغو عضویت از یک کانال می‌توانید از متد `unsubscribe` استفاده کنید که در زیر به آن اشاره شده است:
 
 ```java
-chabok.unsubscribe(CHANNEL_NAME, new Callback() {
-    @Override
-    public void onSuccess(Object o) {
-        //Add some codes for find out unsubscribe was successfully done
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        //Add some codes for showing an error happened
-    }
-});
+//Unsubscribe to alert channel.
+AdpPushClient.get().unsubscribe("alert", new Callback() {...});
+    
+//Unsubscribe to private league channel.
+AdpPushClient.get().unsubscribe("private/league", new Callback() {...});
 ```
+<Br>
