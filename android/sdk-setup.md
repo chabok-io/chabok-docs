@@ -7,7 +7,7 @@ prev: required.html
 next: chabok-messaging.html
 ---
 
-پس از طی کردن مراحل صفحه [پیش‌نیازها](https://doc.chabokpush.com/android/required.html)، **راه‌اندازی SDK چابک** را شروع خواهیم کرد. در ابتدا اقدام به [نصب کتابخانه چابک](https://doc.chabokpush.com/android/sdk-setup.html#۱--نصب-کتابخانه) کنید و سپس برای فعالسازی پوش‌نوتیفیکیشن چابک بخش‌ [افزودن `GcmReceiver` به فایل `Manifest`](https://doc.chabokpush.com/android/sdk-setup.html#۲--افزودن-کلاس--gcmreceiver-به-فایل-manifest) را مطالعه کرده و همانند مستندات بیان شده پیش بروید و در آخر، شروع به [مقداردهی و راه‌اندازی](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B3--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-%D9%88-%D8%B4%D8%B1%D9%88%D8%B9-initialize) کتابخانه چابک در اپلیکیشنتان نمایید.
+پس از طی کردن مراحل صفحه [پیش‌نیازها](https://doc.chabokpush.com/android/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا باید [کتابخانه چابک](https://doc.chabokpush.com/android/sdk-setup.html#۱--نصب-کتابخانه) را نصب کنید و سپس برای فعالسازی پوش‌نوتیفیکیشن چابک بخش‌ [افزودن `GcmReceiver` به فایل `Manifest`](https://doc.chabokpush.com/android/sdk-setup.html#۲--افزودن-کلاس--gcmreceiver-به-فایل-manifest) را مطالعه کرده و همانند مستندات بیان شده پیش بروید. در انتها، [مقداردهی و راه‌اندازی](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B3--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-%D9%88-%D8%B4%D8%B1%D9%88%D8%B9-initialize) کتابخانه چابک را در اپلیکیشنتان انجام نمایید.
 
 برای انجام موفق این کار باید تمام مراحل زیر را به ترتیب انجام دهید:
 
@@ -15,7 +15,10 @@ next: chabok-messaging.html
 
 [۲- افزودن `GcmReceiver` به فایل `Manifest`](https://doc.chabokpush.com/android/sdk-setup.html#۲--افزودن-کلاس--gcmreceiver-به-فایل-manifest)
 
-[۳- مقداردهی و شروع](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B3--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-%D9%88-%D8%B4%D8%B1%D9%88%D8%B9-initialize)
+[۳- مقداردهی اولیه](https://doc.chabokpush.com/android/sdk-setup.html#%DB%B3--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-%D9%88-%D8%B4%D8%B1%D9%88%D8%B9-initialize)
+
+[ ۴- ثبت کاربر](۴#https://doc.chabokpush.com/android/sdk-setup.html#ثبت-کاربر-register)
+
 
 <Br>
 
@@ -152,7 +155,7 @@ dependencies {
 
 <Br>
 
-### ۳- مقداردهی اولیه و شروع (Initialize)
+### ۳- مقداردهی اولیه (Initialize)
 
 چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد تا بتواند توسط متد `Register` به سرور خود متصل شود و توکن‌های پوش‌نوتیفیکیشن را به سرور خود ارسال کند. متد `init` چابک باید در کلاس `Application` در متد `onCreate` تحت هر شرایطی فراخوانی شود.
 
@@ -199,8 +202,8 @@ public class YourAppClass extends Application {
 
 > `نکته`:  توجه داشته باشید متد `AdpPushClient.init` تحت هر شرایط **حتما** باید در کلاس `Application` و در متد `onCreate` فراخوانی شود. متد فوق برای مقداردهی پارامتر‌های ضروری چابک می‌باشد و در صورت عدم فراخوانی آن در حالت **Kill** بودن اپلیکیشن با خطا مواجه خواهید شد.
 
-متد `setDevelopment` تعیین می‌کند که اپلیکیشنتان به محیط [تستی (Sandbox)](https://sandbox.push.adpdigital.com)  یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
-مقدار `true` به محیط تستی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
+متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com)  یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
+مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
 
 ```java
 AdpPushClient.get().setDevelopment(DEV_MODE);
@@ -214,7 +217,7 @@ AdpPushClient.get().setDevelopment(DEV_MODE);
 AdpPushClient.get().dismiss();
 ```
 
-#### ثبت کاربر (Register)
+### ۴- ثبت کاربر (Register)
 
 چابک هر کاربر را با یک **شناسه منحصر به فرد** (`UserId`) ثبت می‌کند. هر شناسه می‌تواند برای دستگاه‌های متعددی به کار برده شود. شناسه کاربر می‌تواند *هر فیلد با ارزش و معنا‌دار* برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. **شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی یک **کد UUID** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود. متد `register` عمل **اتصال** به سرور چابک را انجام می‌دهد، بنابراین باید فقط یک بار در طول اجرا اپلیکیشن فراخوانی شود. 
 این متد با دو امضای متفاوت وجود دارد:
@@ -225,7 +228,7 @@ AdpPushClient.get().dismiss();
 AdpPushClient.get().register("USER_ID");
 ```
 
-به عنوان مثال اگر اپلیکیشنتان دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از *احراز هویت کاربر* فراخوانی کنید و همچنین، این متد را پس از هر بار اجرای (در کلاس `Application` متد `onCreate`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
+به عنوان مثال اگر اپلیکیشن شما دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از *احراز هویت کاربر* فراخوانی کنید و همچنین، این متد را پس از هر بار اجرای (در کلاس `Application` متد `onCreate`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
 
 ```java
 @Override
@@ -263,7 +266,7 @@ chabok.register("USER_ID", new String[]{"CHANNEL_NAME1", "CHANNEL_NAME2", ...});
 اطلاعات کاربر در **پنل**  چابک مربوط به [حساب](https://sandbox.push.adpdigital.com/front/users/subscribers/list)
  برنامه، در قسمت **مشترکین**، قابل مشاهده خواهد بود و شما می‌توانید از پنل برای کاربر **پیام** ارسال کنید.
 
-##### تایید ثبت کاربر
+##### دریافت وضعیت ثبت کاربر
 برای اطمینان از ثبت شدن کاربر در چابک، می‌توانید از متد `isRegistered` یا رویداد `AppState` استفاده کنید. 
 
 ```java
