@@ -20,7 +20,7 @@ next: user-management.html
 NotificationHandler notificationHandler = new NotificationHandler() {
     @Override
     public Class getActivityClass(ChabokNotification chabokNotification) {
-        // return preferred activity class to be opened on this message's notification
+        //return preferred activity class to be opened on this message's notification
         return MY_MAIN_ACTIVITY_CLASS.class;
     }
 
@@ -28,13 +28,14 @@ NotificationHandler notificationHandler = new NotificationHandler() {
     public boolean buildNotification(ChabokNotification chabokNotification,
                                          NotificationCompat.Builder builder) {
         // use builder to customize the notification object
-        // return false to prevent this notification to be shown to the user, otherwise true
+	
+        // return false to prevent this notification to be shown to the user
+	// otherwise true
         return true;
     }
 };
 
 AdpPushClient.get().addNotificationHandler(notificationHandler);
-
 ```               
 - شما می‌توانید از کلاس `getActivityClass` برای تعیین صفحه مقصد روی کلیک استفاده کنید.
 
@@ -104,9 +105,9 @@ public class NOTIFICATION_RECEIVER_CLASS extends BroadcastReceiver {
         String action = intent.getAction();  
 	
         if ("YOUR_ACTION_01".equals(action)) {  
-            //Action 01 was clicked by user ...............  
+            //Action 01 was clicked by user ...  
         } else if ("YOUR_ACTION_02".equals(action)) {  
-            //Action 02 was clicked by user ...............
+            //Action 02 was clicked by user ...
         }  
     }  
 }
@@ -142,10 +143,10 @@ public class NotificationReceiver extends BroadcastReceiver {
         String action = intent.getAction();
 
         if ("special_offers_action".equals(action)) {
-            Toast.makeText(context, "Special offers action was clicked by user .......",
+            Toast.makeText(context, "Special offers action was clicked by user ...",
                     Toast.LENGTH_SHORT).show();
         } else if ("favorite_product_action".equals(action)) {
-            Toast.makeText(context, "Favorite product action was clicked .....",
+            Toast.makeText(context, "Favorite product action was clicked ...",
                     Toast.LENGTH_SHORT).show();
         }
 
