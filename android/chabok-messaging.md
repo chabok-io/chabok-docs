@@ -52,12 +52,12 @@ pushMessage.dismiss();
 PushMessage.markAsRead("PUSH_MESSAGE_ID");
 PushMessage.messageDismissed("PUSH_MESSAGE_ID");
 ```               
+<Br>
 
 ### ارسال پیام
 
 متد `Publish` برای ارسال پیام از سمت کلاینت به سرور‌های چابک استفاده می‌شود. شما از این مکانیزم علاوه بر پیام‌های شخصی می‌توانید برای ارسال اطلاعات و داده‌های کاربر به سمت سرور خود (به جای ارسال با درخواست‌های کلاسیک HTTP) استفاده کنید.
-> `نکته:` مزایای این روش در مقایسه با درخواست‌های کلاسیک HTTP این است که روی اتصال موجود چابک می‌توانید تعداد زیادی رویداد سمت سرور بفرستید، در واقع برای هر درخواست یک اتصال جدید ساخته نمی‌شود.
-این امر تحویل اطلاعات را در سمت سرور، حتی در شرایطی که کاربر اینترنت ضعیف و یا قطع شده‌ای دارد، تضمین می‌کند. به این ترتیب که کلاینت چابک با استفاده از منطق سعی مجدد خود می‌تواند پیام‌ شما را حتی در شرایط بحرانی یک و فقط یک بار بفرستد. بنابراین مصرف باتری بهینه‌تر خواهد بود.
+
 
 این متد با **سه امضای متفاوت** وجود دارد که در ادامه به توضیح آن‌ها می‌پردازیم:
 
@@ -68,7 +68,7 @@ AdpPushClient.get().publish("PUBLIC_CHANNEL", "MESSAGE_BODY", new Callback() {..
 ```
 > `نکته:` نام کانال و شناسه کاربر در متد `publish` باید فاقد کاراکتر `/` باشد.
 
-- امضای دوم برای ارسال یک پیام ساده به کاربر روی کانال **خصوصی* آن، استفاده می‌شود.
+- امضای دوم برای ارسال یک پیام ساده به کاربر روی کانال **خصوصی** آن، استفاده می‌شود.
 
 ```java
 AdpPushClient.get().publish("USER_ID", "PRIVATE_CHANNEL", "MESSAGE_BODY", new Callback() {...});
@@ -79,14 +79,18 @@ AdpPushClient.get().publish("USER_ID", "PRIVATE_CHANNEL", "MESSAGE_BODY", new Ca
 
 ```java
 PushMessage message = new PushMessage();
+
 message.setUser("USER_ID"); //Required. For public channel set * (wildcard)
 message.setChannel("CHANNEL"); //Required. Chabok by default subscribed user on default channel
 message.setBody("MESSAGE_BODY"); //Required
+
 JSONObject customData = new JSONObject();
 customData.put("KEY", "VALUE");
 message.setData(customData);//Optional
+
 message.setSound("SOUND"); //Optional
 message.setAlertTitle("TITLE"); //Optional
+
 AdpPushClient.get().publish(message, new Callback() {
     @Override
     public void onSuccess(Object o) {
@@ -100,6 +104,7 @@ AdpPushClient.get().publish(message, new Callback() {
 ```
 
 > `نکته`: برای ارسال پیام در یک کانال **عمومی** به جای عبارت `USER_ID` باید کاراکتر `*` را وارد نمایید. همچنین برای ارسال پیام در یک کانال‌ **خصوصی** باید `USER_ID` کاربر را وارد کنید. توجه داشته باشید که کاربر هنگامی پیام شما را دریافت خواهد کرد که بر روی کانال تعیین شده، عضویت داشته باشد.
+
 > `نکته:` اگر بخواهید پیام چابک دارای مقدار دیتا باشد باید حتما از این
 > امضا استفاده کرده و دیتای خود را به شکل `json` برای  پیام چابک تنظیم کنید.
 
@@ -143,6 +148,7 @@ public void onEvent(DeliveryMessage message) {
 ```java
 //Subscribe on public alert channel.
 AdpPushClient.get().subscribe("alert", new Callback() {...});
+
 //Subscribe on private league channel.
 AdpPushClient.get().subscribe("private/league", new Callback() {...});
 ```
@@ -152,6 +158,7 @@ AdpPushClient.get().subscribe("private/league", new Callback() {...});
 ```java
 //Subscribe on public alert channel.
 AdpPushClient.get().subscribe("alert", true, new Callback() {...});
+
 //Subscribe on private league channel.
 AdpPushClient.get().subscribe("private/league", true, new Callback() {...});
 ```
@@ -167,4 +174,3 @@ AdpPushClient.get().unsubscribe("alert", new Callback() {...});
 //Unsubscribe to private league channel.
 AdpPushClient.get().unsubscribe("private/league", new Callback() {...});
 ```
-<Br>
