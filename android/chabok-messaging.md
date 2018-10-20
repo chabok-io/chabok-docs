@@ -122,7 +122,6 @@ AdpPushClient.get().publish(message, new Callback() {
 
 ```java
 AdpPushClient.get().enableDeliveryTopic();
-
 ```
 با استفاده از متد `addListener` کلاسی را که متد `onEvent` را در آن پیاده‌سازی کرده‌اید را به چابک معرفی می‌کنید.
 
