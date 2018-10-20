@@ -122,7 +122,6 @@ AdpPushClient.get().publish(message, new Callback() {
 
 ```java
 AdpPushClient.get().enableDeliveryTopic();
-
 ```
 با استفاده از متد `addListener` کلاسی را که متد `onEvent(DeliveryMessage)` را در آن پیاده‌سازی کرده‌اید را باید به چابک معرفی کنید، همانند قطعه کد زیر.
 
