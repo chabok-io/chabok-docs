@@ -7,12 +7,11 @@ prev: chabok-messaging.html
 next: user-management.html
 ---
 
-یکی دیگر از راه‌های پیام‌رسانی چابک، ارسال **پوش‌نوتیفیکیشن** است. توجه داشته باشید، دستگاه‌هایی که **Play Services گوگل** را ندارند یا فقط نسخه قدیمی آن را پشتیبانی می‌کنند، قادر به دریافت پوش‌نوتیفیکیشن نمی‌باشند. در این حالت چابک اتصال خود را با آنان حفظ می‌کند تا در حالت **kill** بودن اپلیکیشن هم [پیام چابک](https://doc.chabokpush.com/android/chabok-messaging.html) را به صورت اعلان دریافت کنند. در صورت پشتیبانی از Play Services گوگل هم شما می‌توانید پوش‌نوتیفیکیشن‌های خود را تنظیم کنید. به این ترتیب که می‌توانید [نمایش و کلیک اعلان را مدیریت کنید](https://doc.chabokpush.com/android/push-notification.html#تنظیم-نمایش-و-کلیک-روی-اعلان)، [متن بلند اعلان خود را به طور کامل نشان دهید](https://doc.chabokpush.com/android/push-notification.html#نمایش-کامل-متن-بلند-در-اعلان)، [دیتای اعلان خود را دریافت کنید](https://doc.chabokpush.com/android/push-notification.html#دریافت-دیتای-اعلان) و [پوش‌نوتیفیکیشن چند رسانه‌ای پشتیبانی نمایید](https://doc.chabokpush.com/android/push-notification.html#تنظیم-پوشنوتیفیکیشن-چندرسانهای-rich-push-notification).
+چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. توجه داشته باشید، دستگاه‌هایی که **Play Services گوگل** را ندارند قادر به دریافت پوش‌نوتیفیکیشن نمی‌باشند. در این حالت چابک به طور پیش‌فرض اتصال خود را با کلاینت حفظ می‌کند تا در حالت **بسته** (kill) بودن اپلیکیشن هم [پیام چابک](https://doc.chabokpush.com/android/chabok-messaging.html) را به صورت اعلان دریافت کنند. شما می‌توانید این پوش‌نوتیفیکیشن‌ها را [شخصی‌سازی](https://doc.chabokpush.com/android/push-notification.html#تنظیم-نمایش-و-کلیک-روی-اعلان) کنید و درباره چگونگی نمایش آن تصمیم بگیرید. همنیطور با [تنظیم پوش‌نوتیفیشکیشن چند رسانه‌ای](https://doc.chabokpush.com/android/push-notification.html#تنظیم-پوشنوتیفیکیشن-چندرسانهای-rich-push-notification) می‌توانید به آن‌ها اکشن دهید. 
 
 <Br>
 
-
-### تنظیم نمایش و کلیک روی اعلان
+### شخصی‌سازی نمایش و کلیک روی اعلان
 
 کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی، اعلان (نوتیفیکیشن) نمایش می‌دهد. درصورت تمایل به تنظیم نمایش اعلان‌ها، کد مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
 برای این منظور لازم است یک شیء از نوع `NotificationHandler` نمونه‌سازی کنید، مانند قطعه کد زیر:
@@ -39,7 +38,7 @@ chabok.addNotificationHandler(notifHandler);
 
 - در متد `buildNotification` با پارامترهای ورودی متد یعنی `ChabokNotification` و `NotificationCompat.Builder` می‌توانید اعلان دریافتی را **به دلخواه تغییر داده** و **درباره نمایش آن تصمیم بگیرید**. در صورتی که مقدار بازگشتی از این متد `true` باشد، کتابخانه با توجه به تنظیمات مربوطه اعلان را نمایش می‌دهد ولی اگر مقدار بازگشتی `false` باشد بدین معنی است که شما خود نمایش را به عهده می‌گیرید.
 
-### دریافت دیتای اعلان
+#### دریافت دیتای اعلان
 
 با استفاده از قطعه کد زیر در متد `buildNotification` که در بخش [تنظیم نمایش اعلان](https://doc.chabokpush.com/android/push-notification.html#تنظیم-نمایش-و-کلیک-روی-اعلان) به آن اشاره شده است، می‌توانید به `data` نوتیفیکیشن دسترسی داشته باشید :
 ```java
@@ -55,7 +54,8 @@ if (chabokNotification.getExtras() != null) {
 ```
 <Br>
 
-###  نمایش کامل متن بلند در اعلان
+####  نمایش کامل متن بلند در اعلان
+
 چابک به صورت پیش‌فرض متن پیام و پوش‌نوتیفیکیشن را به صورت `bigText` نمایش **نمی‌دهد**. در این حالت می‌توانید برای نمایش متن پیام و پوش‌نوتیفیکیشن با استفاده از متد `buildNotification` اقدام به نمایش اعلان شخصی‌سازی شده خود کنید و از قطعه کد زیر در متد فوق استفاده کنید (دقت کنید که در متد فوق در صورت نمایش اعلان شخصی‌سازی شده، باید `return false` برگردانید):
 
 ```java
@@ -147,5 +147,5 @@ public class NotificationReceiver extends BroadcastReceiver {
 }
 ```
 
-![نوتیفیکیشن چندرسانه‌ای](https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/android/rich-notification-android.png)
+<img src="https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/android/rich-notification-android.png" alt="Its You" height="583px" width="289.5px">
 
