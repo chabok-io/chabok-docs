@@ -32,29 +32,29 @@ next: behavior-tracking.html
 
 #### افزودن تگ
 
-با استفاده از متد زیر، شما می‌توانید به کاربر یک `Tag` اختصاص دهید:
+با استفاده از متد `addTag`، شما می‌توانید به کاربر یک یا مجموعه‌ای از `Tag`ها اختصاص دهید:
 
 ```java
-public void addTag(String tagName, Callback callback)
+//Add a tag to current user.
+AdpPushClient.get().addTag("TAG_NAME", new Callback() {...});
+
+//Add array of tags to current user.
+AdpPushClient.get().addTag(new String[]{"TAG_NAME_1", "TAG_NAME_2"}, new Callback() {...});
 ```
-
-پارامتر اول نام تگ موردنظر و پارامتر دوم یک `Callback` برای بررسی نتیجه این عمل می‌باشد. برای مثال به قطعه کد زیر توجه کنید:
-
+در مثال زیر به کاربر جاری تگ `Premium_User` اختصاص داده شده است
 ```java
-chabok.addTag("Premium_User", new Callback() {
-            @Override
-            public void onSuccess(Object value) {
-                Log.d(TAG, "addTag onSuccess: called");
-            }
-
-            @Override
-            public void onError(Throwable t) {
-                Log.d(TAG, "addTag onError: called, message: " + t.getMessage());
-            }
-        });
+AdpPushClient.get().addTag("Premium_User", new Callback() {  
+	@Override  
+	public void onSuccess(Object value) {  
+		Log.d(TAG, "Successfully added tag to current user devices");  
+	}  
+  
+	@Override  
+	public void onFailure(Throwable value) {  
+		Log.d(TAG, "Couldn't add tag to current user devices");  
+	}  
+});
 ```
-
-کد فوق تگی به نام `Premium_User` را به کاربر فعلی اضافه می‌کند.
 اگر عملیات افزودن تگ با موفقیت انجام شود، می‌توانید از طریق پنل چابک، تگ اضافه شده به کاربر را در بخش مشترکین همانند تصویر زیر مشاهده کنید:
 
 ![مشترک چابک](http://uupload.ir/files/jse9_addtag.png)
@@ -62,56 +62,59 @@ chabok.addTag("Premium_User", new Callback() {
 همچنین با توجه به پشتیبانی این متد از آرایه‌ای از تگ‌ها می‌توانید مانند زیر چند تگ را **یکجا** به کاربر اضافه کنید:
 
 ```java
-String[] tagsName = {"Premium_User", "Male", "Teenage"};
-client.addTag(tagsName, new Callback() {
-	@Override
-	public void onSuccess(Object value) {
-		Log.d(TAG, "add array of tags onSuccess: called");
-	}
-
-	@Override
-	public void onFailure(Throwable t) {
-		Log.d(TAG, "add array of tags onError: called, message: " + t.getMessage());
-	}
+String[] tagsName = new String[]{"GUEST","MALE"};  
+  
+AdpPushClient.get().addTag(tagsName, new Callback() {  
+	@Override  
+	public void onSuccess(Object value) {  
+		Log.d(TAG, "Successfully added tags to current user devices");  
+	}  
+	@Override  
+	public void onFailure(Throwable value) {  
+		Log.d(TAG, "Couldn't add tags to current user devices");  
+	}  
 });
 ```
+> `نکته` : شما می‌توانید کاربران مهمان اپلیکیشنتان را با گذاشتن تگ **GUEST** گروه‌بندی کنید.
 
 #### حذف تگ
-
-با استفاده از متد زیر، می‌توانید یک `Tag` خاص از کاربر را حذف کنید:
+با استفاده از متد `removeTag`، می‌توانید یک `Tag` خاص از کاربر جاری را حذف کنید:
 
 ```java
-chabok.removeTag("Premium_User", new Callback() {
-            @Override
-            public void onSuccess(Object value) {
-                Log.d(TAG, "removeTag onSuccess: called");
-            }
-
-            @Override
-            public void onError(Throwable t) {
-                Log.d(TAG, "removeTag onError: called, message: " + t.getMessage());
-            }
-        });
+AdpPushClient.get().removeTag("TAG_NAME", new Callback() {...});
 ```
+برای نمونه کد زیر تگ `Premium_User` را از کاربر جاری حذف می‌کند.
 
-کدفوق تگی بنام `Premium_User` را از کاربر حذف می کند.
+```java
+AdpPushClient.get().removeTag("Premium_User", new Callback() {  
+	@Override  
+	public void onSuccess(Object value) {  
+		Log.d(TAG, "Successfully removed tag to current user devices");  
+	}  
+  
+	@Override  
+	public void onFailure(Throwable value) {  
+		Log.d(TAG, "Couldn't remove tag to current user devices");  
+	}  
+});
+```
 
 همچنین با توجه به پشتیبانی این متد از آرایه‌ای از تگ‌ها می‌توانید مانند زیر چند تگ را **یکجا** از کاربر حذف کنید:
 
 ```java
-String[] tagsName = {"Premium_User", "Male", "Teenage"};
-client.removeTag(tagsName, new Callback() {
+String[] tagsName = new String[]{"GUEST", "MALE"};
+
+AdpPushClient.get().removeTag(tagsName, new Callback() {
 	@Override
 	public void onSuccess(Object value) {
-		Log.d(TAG, "remove array of tags onSuccess: called");
+		Log.d(TAG, "Remove array of tags onSuccess: called");
 	}
 
 	@Override
 	public void onFailure(Throwable t) {
-		Log.d(TAG, "remove array of tags onError: called, message: " + t.getMessage());
+		Log.d(TAG, "Remove array of tags onError: called, message: " + t.getMessage());
 	}
 });
 ```
 
 > ‌ `نکته:` برای حذف همه تگ‌های یک کاربر می‌توانید در متد بالا جای نام تگ‌ها را خالی بگذارید.
-
