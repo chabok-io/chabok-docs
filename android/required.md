@@ -57,5 +57,3 @@ next: firebase.html
 
 
 
-
-
