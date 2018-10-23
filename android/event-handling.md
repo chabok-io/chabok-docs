@@ -74,11 +74,14 @@ AdpPushClient.get().subscribeEvent("EVENT_NAME", "INSTALLATION_ID", new Callback
 برای مثال، در زیر عضویت روی رویداد `shareTrip` یک دستگاه آورده شده است.
 
 ```java
-//Get a device unique id.
-String installationId = AdpPushClient.get().getInstallationId();
+//Get a device unique id with calling AdpPushClient.get().getInstallationId();
+//Should get user installationId with publish method or your rest api.
+String installationId = "USER_INSTALLATION_ID";
 
 AdpPushClient.get().subscribeEvent("shareTrip", installationId, new Callback() {...});
 ```
+
+> `نکته`: برای عضویت روی رویداد یک دستگاه خاص باید شناسه دستگاه (`installationId`) را از کاربر دریافت کنید. به این صورت که کاربر در صورت رعایت مسائل امنیتی `installationId` خود را برای کاربری که می‌خواد رویدادهای او را دریافت کند از طریق متد `publishEvent` ارسال می‌کند.
 
 ### لغو عضویت از رویداد
 
