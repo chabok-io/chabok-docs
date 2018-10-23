@@ -7,13 +7,33 @@ prev: user-management.html
 next: behavior-tracking.html
 ---
 
-با چابک شما علاوه بر پیام می‌توانید [رویدادهای دلخواه خود را منتشر کنید](https://doc.chabokpush.com/android/event-handling.html#انتشار-رویداد-با-دادههای-دلخواه). سپس می‌توانید با `subscribeEvent` روی یک رویداد، [هر بار وقوع آن را دریافت کنید](https://doc.chabokpush.com/android/event-handling.html#دریافت-رویداد). در صورتی هم که دیگر نمی‌خواستید آن رویداد را دریافت کنید [می‌توانید با `unsubscribeEvent` آن را لغو کنید](https://doc.chabokpush.com/android/event-handling.html#غیرفعال-کردن-دریافت-رویداد).
+با چابک شما علاوه بر پیام می‌توانید [رویدادهای دلخواه خود را منتشر کنید](https://doc.chabokpush.com/android/event-handling.html#انتشار-رویداد-با-دادههای-دلخواه). سپس می‌توانید با متد `subscribeEvent` روی یک رویداد [عضو شده](https://doc.chabokpush.com/android/event-handling.html#دریافت-رویداد) و رویدادهای ارسالی روی آن را [دریافت کنید.](/android/event-handling.html#دریافت-رویداد) در صورتی هم که دیگر نمی‌خواستید آن رویداد را دریافت کنید [می‌توانید با `unsubscribeEvent` آن را لغو کنید](https://doc.chabokpush.com/android/event-handling.html#غیرفعال-کردن-دریافت-رویداد).
 
 <Br>
 
 ### رویداد (Event)
 
 رفتار کاربران را رویداد‌هایی تعیین می‌کنند که آن‌ها در اپلیکیشنتان رقم می‌زنند. این رویداد‌ها می‌توانند هر تعامل و اتفاقی که در اپ شما رخ می‌دهد، باشند. برای مثال فرض کنید شما در اپلیکیشن درخواست تاکسی می‌خواهید سفر خود را برای دوستانتان به اشتراک بگذارید، برای این منظور می‌توانید موقعیت مکانی و وضعیت سفر خود را برای کسانی که رو آن رویداد عضویت دارند ارسال کنید تا به صورت آنی‌ (Real-Time) از وضعیت سفر شما باخبر شوند و یا شما می‌توانید درخواست‌های درون برنامه‌ای اپلیکیشنتان را با استفاده از **رویداد** بین Back-End و چند دستگاه منتشر کنید و به صورت لحظه‌ای رویدادها را دریافت کنید.
+
+#### دریافت رویداد
+
+با پیاده‌سازی متد `onEvent` و معرفی کلاسی آن به متد `addListener` قادر به دریافت رویدادها خواهید بود. 
+
+```java
+AdpPushClient.get().addListener(this);
+
+public void onEvent(final EventMessage message) {
+    JSONObject data = message.getData();
+    String eventName = message.getName();
+    String installationId = message.getInstallationId();
+
+    Log.d(TAG, "Got event " + eventName + 
+                " from device " + installationId +
+                " with data " + data);
+}
+```
+
+> نکته: توجه داشته باشید زمانی متد `onEvent` صدا زده خواهد شد که کاربر روی نام رویدادهای منتشر شده در صورت نیاز عضویت داشته باشد. برای این منظور بخش [عضویت روی رویداد](/android/event-handling.html#عضویت-روی-رویداد) را مطالعه کنید.
 
 #### انتشار رویداد
 
@@ -34,26 +54,6 @@ data.put("tripId", 12345678);
 
 AdpPushClient.get().publishEvent("shareTrip", data);
 ```
-
-#### دریافت رویداد
-
-با پیاده‌سازی متد `onEvent` و معرفی کلاسی آن به متد `addListener` قادر به دریافت رویدادها خواهید بود. 
-
-```java
-AdpPushClient.get().addListener(this);
-
-public void onEvent(final EventMessage message) {
-    JSONObject data = message.getData();
-    String eventName = message.getName();
-    String installationId = message.getInstallationId();
-
-    Log.d(TAG, "Got event " + eventName + 
-                " from device " + installationId +
-                " with data " + data);
-}
-```
-
-> نکته: توجه داشته باشید زمانی متد `onEvent` صدا زده خواهد شد که کاربر روی نام رویدادهای منتشر شده در صورت نیاز عضویت داشته باشد. برای این منظور بخش عضویت روی رویداد را مطالعه کنید.
 
 #### عضویت روی رویداد
 
@@ -85,7 +85,7 @@ AdpPushClient.get().subscribeEvent("shareTrip", installationId, new Callback() {
 
 ### لغو عضویت از رویداد
 
-برای لغو عضویت از یک رویداد کافی است متد `unsubscribeEvent`  را که با دو امضای مختلف وجود دارد،  برا اساس نیاز خود فراخوانی نمایید.
+برای لغو عضویت از یک رویداد کافی است متد `unsubscribeEvent`  را که با دو امضای مختلف وجود دارد، متناسب با نیاز خود فراخوانی نمایید.
 
 ```java
 //Unsubscribe on an event name to get all data published on it.  
