@@ -56,6 +56,27 @@ AdpPushClient.get().getStatus(new Callback<ConnectionStatus>() {
 
 > `نکته:` اگر می‌خواهید تغییرات وضعیت اتصال به سرور چابک را در سمت لایه UI نشان دهید، چون ممکن است قبل از اینکه کلاس شما به عنوان `listener` معرفی شود، ایونت تغییر وضعیت اتصال به شما برسد و شما آن را از دست بدهید، بهتر است برای اولین بار وضعیت اتصال را با استفاده از متد `getStatus` از چابک دریافت نمایید.
 
+### رویداد وضعیت اپلیکیشن
+
+با پیاده‌سازی متد `onEvent` و معرفی کلاس آن به متد `addListener` قادر به دریافت وضعیت اپلیکیشنتان (**ثبت کاربر**، **نصب**، **باز شدن اپلیکیشن** و **برنامه‌های حفاظت شده**) خواهید بود.
+ 
+```java
+AdpPushClient.get().addListener(this);
+
+public void onEvent(AppState state) {
+    if (state == AppState.REGISTERED) {
+        Log.d(TAG, "User successfully registered...");
+    } else if (state == AppState.INSTALL) {
+        //This state will call one time.
+        Log.d(TAG, "The application installed");
+    } else if (state == AppState.LAUNCH) {
+        Log.d(TAG, "The application launched");
+    } else if (state == AppState.PROTECTED_GRANT_NEEDED) {
+        Log.d(TAG, "Protected grant needed");
+    }
+}
+```
+
 ### دریافت شناسه دستگاه
 
 چابک هر دستگاه کاربر را بصورت خودکار پس از ثبت آن با یک شناسه منحصر به فرد در سرور خود ذخیره می‌کند. با فراخوانی متد `getInstallationId` می‌توانید شناسه دستگاه کاربر را دریافت کنید:
