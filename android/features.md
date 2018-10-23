@@ -6,24 +6,83 @@ permalink: android/features.html
 prev: verification.html
 next: troubleshoot.html
 ---
-
-چابک امکانات کاربردی دیگر را برای آسان‌تر کردن کار شما ارائه می‌دهد. یکی از این امکانات، [قابلیت کنترل و مدیریت Badge اپلیکیشنتان است](https://doc.chabokpush.com/android/features.html#مدیریت-نشانها-badge). 
-علاوه بر آن شما هر زمانی که مایل بودید می‌توانید [وضعیت برنامه (باز یا بسته بودن)](https://doc.chabokpush.com/android/features.html#دریافت-وضعیت-برنامه) و یا [وضعیت اتصال کلاینت به سرورهای چابک](https://doc.chabokpush.com/android/features.html#وضعیت-اتصال-با-سرور) را بررسی کنید.
+چابک تعدادی امکانات جزئی اما مهم دیگری را برای آسانی کار شما ارائه می‌دهد. در این صفحه می‌توانید از [وضعیت اتصال سرور و کلاینت](android/features.html#وضعیت-اتصال-به-چابک) مطلع شوید. همچنین [نشان‌هایی (Badge)](android/features.html#مدیریت-نشانها-badge) که روی آیکون اپ شما در دستگاه کاربر نمایش داده می‌شود می‌توانید کنترل کنید. در آخر می‌توانید از [وضعیت اپ خود](android/features.html#دریافت-وضعیت-اپلیکیشن) (فورگراند و بک‌گراند بودن آن) آگاه شوید.
 
 <Br>
+
+### وضعیت اتصال به چابک
+
+برای دریافت وضعیت اتصال به چابک، می‌توانید از دو روش رویداد `onEvent` و متد `getStatus` استفاده کنید.
+
+#### رویداد وضعیت اتصال
+
+با استفاده از متد `onEvent`، همانند قطعه کد زیر پیاده‌سازی قادر به دریافت وضعیت اتصال به چابک خواهید بود و با فراخوانی متد `addListener`، کلاسی را که متد `onEvent` در آن پیاده‌سازی شده است را به چابک معرفی کنید.
+
+```java
+AdpPushClient.get().addListener(this);
+public void onEvent(final ConnectionStatus status) {
+    switch (status) {
+        case CONNECTED:
+            Log.d(TAG, "Connected to the chabok");
+            break;
+        case CONNECTING:
+            Log.d(TAG, "Connecting to the chabok");
+            break;
+        case DISCONNECTED:
+            Log.d(TAG, "Disconnected");
+            break;
+        default:
+            Log.d(TAG, "Disconnected");
+    }
+}
+```
+
+#### متد وضعیت اتصال
+
+با فراخوانی متد `getStatus` می‌توانید از وضعیت آخر اتصال به چابک مطلع شوید.
+
+```java
+AdpPushClient.get().getStatus(new Callback<ConnectionStatus>() {
+    @Override
+    public void onSuccess(ConnectionStatus connectionStatus) {
+        Log.d(TAG, "Connection status is " + connectionStatus.name());
+    }
+    @Override
+    public void onFailure(Throwable throwable) {
+        Log.d(TAG, "Error happend " + throwable.getMessage());
+    }
+});
+```
+
+> `نکته:` اگر می‌خواهید تغییرات وضعیت اتصال به سرور چابک را در سمت لایه UI نشان دهید، چون ممکن است قبل از اینکه کلاس شما به عنوان `listener` معرفی شود، ایونت تغییر وضعیت اتصال به شما برسد و شما آن را از دست بدهید، بهتر است برای اولین بار وضعیت اتصال را با استفاده از متد `getStatus` از چابک دریافت نمایید.
+
+### دریافت شناسه دستگاه
+
+چابک هر دستگاه کاربر را بصورت خودکار پس از ثبت آن با یک شناسه منحصر به فرد در سرور خود ذخیره می‌کند. با فراخوانی متد `getInstallationId` می‌توانید شناسه دستگاه کاربر را دریافت کنید:
+
+```java
+AdpPushClient.get().getInstallationId();
+``` 
+
+### دریافت شناسه کاربر
+
+چابک شناسه کاربر را پس از ثبت آن به صورت رمزنگاری شده در حافظه دستگاه ذخیره می‌کند. پیشنهاد می‌شود از ذخیره‌سازی این شناسه خودداری کنید و با استفاده از متد `getUserId` شناسه کاربر را دریافت کنید:
+
+```java
+AdpPushClient.get().getUserId();
+```
 
 ###  مدیریت نشان‌ها (Badge)
 
 اگر می‌خواهید شماره **badge** برنامه خود را بازنشانی کنید، با روش زیر می‌توانید: 
 
-
 ```java
-chabok.resetBadge();
-```
+AdpPushClient.get().resetBadge();
 
+```
 #### برداشتن مجوز‌های غیر ضروری برای نمایش نشان (Badge) روی آیکون
 
-با توجه به حجم زیاد این مجوزها امکان دارد کاربر حس منفی پیدا کند، برای همین می‌توانید با استفاده از دستور‌های زیر هر کدام آن‌ها را با اختیار خود بردارید.
+با توجه به حجم زیاد این مجوزها امکان دارد کاربر نسبت به این دسترسی‌های غیر ضروری حس منفی پیدا کند، برای همین می‌توانید با استفاده از دستور‌های زیر هر کدام آن‌ها را با اختیار خود بردارید: 
 
 ```markup
 <uses-permission android:name="com.sec.android.provider.badge.permission.READ" tools:node="remove" />
@@ -44,13 +103,14 @@ chabok.resetBadge();
 <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" tools:node="remove"/> 
 ```
 
-همچنین باید کد زیر را به تگ manifest در بالای فایل اضافه کنید.
+همچنین باید کد زیر را به تگ `manifest` در بالای فایل اضافه کنید.
 
 ``` markup
 xmlns:tools="http://schemas.android.com/tools"
 ```
- 
-نمونه اضافه کد به فایل manifest: 
+
+نمونه اضافه کد به فایل `manifest`: 
+
 ```markup
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
@@ -59,80 +119,14 @@ xmlns:tools="http://schemas.android.com/tools"
 </manifest>
 ```
 <Br>
+### دریافت وضعیت اپلیکیشن
 
-### دریافت وضعیت برنامه
-
-جهت بررسی وضعیت برنامه در حال اجرا می‌توانید از این امکان استفاده کنید.
-متدهای قابل استفاده:
-```java
-
-chabok.isBackground()
-chabok.isForeground()
-```
-
-نمونه:
-
-```java             
-if(chabok.isForeground()) {
-// Do something on application foreground
-}
-```                
-<Br>
-
-### وضعیت اتصال با سرور
-
-
- برای این منظور ابتدا کلاس مورد نظر برای دریافت رویداد را بعنوان Listener‌ آن تعیین نموده سپس با استفاده از متد زیر رویدادهای داخلی چارچوب چابک را دریافت نمایید:
+جهت بررسی وضعیت اپلیکیشن خود در حال اجرا (**Background** یا **Foreground**) می‌توانید متد‌های زیر را فراخوانی کنید:
 
 ```java
+//App is in background.
+AdpPushClient.get().isBackground();
 
-
-public void onEvent(final ConnectionStatus status) {
-if (status != null) {
-    switch (status) {
-        case CONNECTED:
-        // your logic
-        break;
-
-    case CONNECTING:
-        // your logic
-        break;
-
-    case DISCONNECTED:
-        // your logic
-        break;
-        }
-    }
-}
-
+//App is in foreground.
+AdpPushClient.get().isForeground();
 ```
-
-> `نکته:` اگر می‌خواهید تغییرات وضعیت اتصال به سرور چابک را در سمت لایه UI نشان دهید، چون ممکن است قبل از اینکه کلاس شما به عنوان `listener` معرفی شود، ایونت تغییر وضعیت اتصال به شما برسد و شما آن را از دست بدهید، بهتر است برای اولین بار وضعیت اتصال را با استفاده از متد `getStatus` از چابک دریافت نمایید.
-
-```java
-
-chabok.getStatus(new Callback<ConnectionStatus>() {
-    @Override
-    public void onSuccess(ConnectionStatus connectionStatus) {
-        Log.i(TAG + "_fetch", connectionStatus.name());
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        Log.i(TAG, "errrror ");
-    }
-});
-```
-
-
-
-
-
-
-
-
-
-
-
-
-

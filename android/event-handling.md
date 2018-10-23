@@ -11,103 +11,76 @@ next: behavior-tracking.html
 
 <Br>
 
-### انتشار رویداد
+### رویداد (Event)
+رفتار کاربران را رویداد‌هایی تعیین می‌کنند که آن‌ها در اپلیکیشنتان رقم می‌زنند. این رویداد‌ها می‌توانند هر تعامل و اتفاقی که در اپ شما رخ می‌دهد، باشند. برای مثال فرض کنید شما در اپلیکیشن درخواست تاکسی می‌خواهید سفر خود را برای دوستانتان به اشتراک بگذارید، برای این منظور می‌توانید موقعیت مکانی و وضعیت سفر خود را برای کسانی که رو آن رویداد عضویت دارند ارسال کنید تا به صورت آنی‌ (Real-Time) از وضعیت سفر شما باخبر شوند و یا شما می‌توانید درخواست‌های درون برنامه‌ای اپلیکیشنتان را با استفاده از **رویداد** بین Back-End و چند دستگاه منتشر کنید و به صورت لحظه‌ای رویدادها را دریافت کنید.
 
-با متدهای زیر می‌توانید رویدادهای داخل برنامه را منتشر کنید:
+#### انتشار رویداد
 
+با استفاده از متد `publishEvent` قادر خواهید بود رویدادهای دلخواه خود را با یک نام و یک داده (Data) منتشر کنید، متد فوق به صورت خودکار در صورت قطعی ارتباط اقدام به ارسال مجدد می‌کند و به صورت آنی داده‌های شما را منتشر خواهد کرد. 
 
 ```java
-public void publishEvent(final String event, final JSONObject data)
-public void publishEvent(final String event, final JSONObject data, final boolean live)
-public void publishEvent(final String event, final JSONObject data,
-final boolean live, final boolean stateful)
+AdpPushClient.get().publishEvent("EVENT_NAME",JSONObject data)
+```
+برای نمونه، کد انتشار موقعیت مکانی در اشتراک سفر کاربر قرار داده شده است که پس از دریافت موقعیت مکانی کاربر آن را با رویدادی تحت عنوان `shareTrip` منتشر می‌کند.
+
+```java
+JSONObject data = new JSONObject();
+
+data.put("lat", 35.7583719);
+data.put("lng", 51.4082228);
+data.put("tripId", 12345678);
+
+AdpPushClient.get().publishEvent("shareTrip", data);
 ```
 
->`نکته` : پارامتر ورودی `live` به این معناست که کاربرانی که به چابک متصل هستند این رویداد را دریافت خواهند نمود.
+#### دریافت رویداد
 
-می توانید با استفاده از متدهای فوق یک رویداد با نام `event` که یک رشته متنی می باشد را با داده‌ای از نوع `JSONObject` منتشر کنید، مانند نمونه زیر:
-
+با پیاده‌سازی متد `onEvent` و معرفی کلاسی آن به متد `addListener` قادر به دریافت رویدادها خواهید بود. 
 ```java
-try {
+AdpPushClient.get().addListener(this);
 
-    JSONObject data = new JSONObject();
-    data.put("lat", location.getLatitude());
-    data.put("lng", location.getLongitude());
-    data.put("ts", location.getTime());
-    AdpPushClient.get().publishEvent("geo", data, false, true);
+public void onEvent(final EventMessage message) {
+JSONObject data = message.getData();
+String eventName = message.getName();
+String installationId = message.getInstallationId();
 
-    } catch (JSONException e) {
-    Logger.e(TAG, "Cant publish geo location event ", e);
+Log.d(TAG, "Got event " + eventName + 
+" from device " + installationId +
+" with data " + data);
 }
 ```
-به کمک نمونه کد فوق با دریافت هر گزارش مکان می‌توانید موقعیت مکانی کاربر را ارسال نمایید.
-در نمونه فوق رویدادی بنام `geo` با داده‌هایی که در شیٔ `data‌` بصورت یک `JSONObject‌` قرار می‌گیرد، منتشر می‌شود.
 
-### دریافت رویداد
-برای دریافت رویداد لازم است کلاس مورد نظر برای دریافت را بعنوان `Listener`‌ رویداد تعیین نمایید و با استفاده از متد `subscribeEvent` روی رویداد موردنظر `subscribe` کنید، به قطعه کد زیر توجه نمایید:
+> نکته: توجه داشته باشید زمانی متد `onEvent` صدا زده خواهد شد که کاربر روی نام رویدادهای منتشر شده در صورت نیاز عضویت داشته باشد. برای این منظور بخش عضویت روی رویداد را مطالعه کنید.
 
+#### عضویت روی رویداد
+
+برای دریافت رویدادها باید کاربر روی رویداد مورد نظر توسط متد `subscribeEvent` عضویت داشته باشد.
 ```java
-AdpPushClient.get().addListener(MyActivity.this);
+//Subscribe on an event name to get all data published on it.  
+AdpPushClient.get().subscribeEvent("EVENT_NAME", new Callback() {...});  
 
-
-chabok.subscribeEvent(EVENT_NAME, new Callback() {
-    @Override
-    public void onSuccess(Object value) {
-
-    }
-
-    @Override
-    public void onFailure(Throwable value) {
-
-    }
-});
+//Subscribe on an user event name to get special device event.  
+AdpPushClient.get().subscribeEvent("EVENT_NAME", "INSTALLATION_ID", new Callback() {...});
 ```
 
-متد `subscribeEvent` با امضاهای زیر موجود است که بر اساس نیاز خود می‌توانید آن‌ها را فراخوانی نمایید:
+> نکته: `INSTALLATION_ID` شناسه منحصر به فرد دستگاه کاربر می‌باشد و از طریق متد `getInstallationId` به دست می‌آید. 
+
+در صورت استفاده از امضاهای حاوی `INSTALLATION_ID` تمامی رویدادهای مربوط به نام وارد شده به عنوان `EVENT_NAME` که توسط آن دستگاه منتشر می‌شود را دریافت خواهید نمود.
+
+برای مثال، در زیر عضویت روی رویداد `shareTrip` یک دستگاه آورده شده است.
 
 ```java
-public void subscribeEvent(String eventName, final Callback clbk)
-public void subscribeEvent(String eventName, boolean live, final Callback clbk)
-public void subscribeEvent(String eventName, String installationId, final Callback clbk)
-public void subscribeEvent(final String eventName, final String installationId, final boolean live, final Callback clbk)
+//Get a device unique id.
+String installationId = AdpPushClient.get().getInstallationId();
+
+AdpPushClient.get().subscribeEvent("shareTrip", installationId, new Callback() {...});
 ```
-> `نکته :` پارامتر ورودی `live` به این معناست که کاربرانی که به چابک
-> متصل هستند این رویداد را دریافت خواهند نمود، مقدار
-> `installiationId`  نیز برابر شناسه منحصر به فرد دستگاه کاربر می‌باشد و
-> از طریق متد  `getInstallationId` به دست می‌آید.
 
-در صورت استفاده از امضاهای حاوی `installiationId` تمامی رویدادهای مربوط به نام وارد شده به عنوان `eventName` که توسط آن دستگاه منتشر می‌شود را دریافت خواهید نمود.
+### لغو عضویت از رویداد
 
-پس از ثبت‌نام برای دریافت رویداد،‌ با استفاده از متد `onEvent` ‌می‌توانید رویداد مورد نظر را دریافت کنید:
+برای لغو عضویت از یک رویداد کافی است متد `unsubscribeEvent`  را که با دو امضای مختلف وجود دارد،  برا اساس نیاز خود فراخوانی نمایید.
 
 ```java
-public void onEvent(final EventMessage message) {
-        if (message != null ) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Log.d(TAG, "run: onEvent" + message.getName());
-                    
-                    JSONObject data = message.getData();
-                }
-            });
-        }
-    }
+public void unsubscribeEvent("EVENT_NAME", new Callback() {...})
+public void unsubscribeEvent("EVENT_NAME", "INSTALLATION_ID", new Callback() {...})
 ```
-داده ارسال شده توسط فرستنده بصورت یک `JSONObject` از متد `getData` قابل بازیابی است.
-
-### غیرفعال کردن دریافت رویداد
- برای غیرفعال کردن دریافت رویداد کافی است متد `unsubscribeEvent`  را که با دو امضای مختلف وجود دارد،  برا اساس نیاز خود فراخوانی نمایید.
-
-
-```java
-public void unsubscribeEvent(String eventName, final Callback clbk)
-public void unsubscribeEvent(final String eventName, final String installationId, final Callback clbk)
-```
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-### مفهوم رویداد‌
-
-رفتار کاربران را رویداد‌هایی تعیین می‌کنند که آن‌ها در اپلیکیشنتان رقم می‌زنند. این رویداد‌ها می‌توانند هر تعامل و اتفاقی که در اپ شما رخ می‌دهد، باشند. به عنوان مثال **کلیک روی لینک**، **لایک کردن**، **کامنت نوشتن**، **اضافه کردن محصولی به سبد خرید**، **انجام خرید** و ... همگی به عنوان رویداد‌ حساب می‌شوند. در اینجا شما می‌توانید با توجه به نیازتان این رویداد‌ها را برای رصد تعریف کنید (**custom events**).
