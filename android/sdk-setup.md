@@ -129,7 +129,7 @@ dependencies {
 
 ```markup
 <application
-    android:name=".YOUR_APPLICATION_CLASS_NAME"
+    android:name=".MY_APPLICATION_CLASS_NAME"
     ... >
 	
 	...
@@ -141,7 +141,7 @@ dependencies {
         <intent-filter>
             <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-            <category android:name="YOUR_APPLICATION_PACKAGE_ID" />
+            <category android:name="MY_APPLICATION_PACKAGE_ID" />
         </intent-filter>
     </receiver>
 	
@@ -161,19 +161,19 @@ dependencies {
 <Br>
 
 ```java
-public class YourAppClass extends Application {
+public class MyAppClass extends Application {
 
     @Override
     public void onCreate() {
         super.onCreate();
 
         //AdpPushClient.init() should always be called in onCreate of Application class
-    //These four keys (YOUR_APP_ID/SENDER_ID, YOUR_API_KEY, SDK_USERNAME, SDK_PASSWORD) are different for each environment.
+    //These four keys (APP_ID/SENDER_ID, API_KEY, SDK_USERNAME, SDK_PASSWORD) are different for each environment.
         AdpPushClient.init(
                 getApplicationContext(),
-                YOUR_ACTIVITY.class,
-                "YOUR_APP_ID/SENDER_ID",
-                "YOUR_API_KEY",
+                MY_ACTIVITY.class,
+                "APP_ID/SENDER_ID",
+                "API_KEY",
                 "SDK_USERNAME",
                 "SDK_PASSWORD"
         );
@@ -185,19 +185,20 @@ public class YourAppClass extends Application {
     
     @Override
     public void onTerminate() {
-        if (AdpPushClient.get() != null)
+        if (AdpPushClient.get() != null) {
             AdpPushClient.get().dismiss();
+        }
 
         super.onTerminate();
     }
 }
 ```
 
-در این متد به جای پارامتر‌های `YOUR_APP_ID/SENDER_ID`, `YOUR_API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](https://doc.chabokpush.com/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
+در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](https://doc.chabokpush.com/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
 
-مقدار `YOUR_MAIN_ACTIVITY_CLASS` را نام کلاس `Activity`ای قرار دهید که چابک به طور پیش‌فرض پس از کلیک شدن روی اعلان، `Activity `تعیین شده را باز کند. (برای شخصی‌سازی اعلان‌ها این بخش را مشاهده کنید.)
+مقدار `MY_ACTIVITY` را نام کلاس `Activity`ای قرار دهید که چابک به طور پیش‌فرض پس از کلیک شدن روی اعلان، `Activity `تعیین شده را باز کند. (برای شخصی‌سازی اعلان‌ها این بخش را مشاهده کنید.)
 
-> `نکته`: مقدار `SENDER_ID` در پارامتر `YOUR_APP_ID/SENDER_ID` همان **شناسه گوگل** برای *دریافت پوش‌نوتیفیکیشن* می‌باشد که در پنل در بخش [تنظیمات پلتفرم اندروید](https://dev.doc.chabokpush.com/panel/settings.html#%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85%D9%87%D8%A7) قرار داده‌اید و `YOUR_APP_ID` همان `APP_ID‌`ای که در پنل در بخش [دسترسی و توکن‌ها](https://dev.doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) قرار داده شده است، می‌باشد.
+> `نکته`: مقدار `SENDER_ID` در پارامتر `APP_ID/SENDER_ID` همان **شناسه گوگل** برای *دریافت پوش‌نوتیفیکیشن* می‌باشد که در پنل در بخش [تنظیمات پلتفرم اندروید](https://dev.doc.chabokpush.com/panel/settings.html#%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85%D9%87%D8%A7) قرار داده‌اید و `APP_ID` همان `APP_ID‌`ای که در پنل در بخش [دسترسی و توکن‌ها](https://dev.doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) قرار داده شده است، می‌باشد.
 
 > `نکته`:  توجه داشته باشید متد `AdpPushClient.init` تحت هر شرایط **حتما** باید در کلاس `Application` و در متد `onCreate` فراخوانی شود. متد فوق برای مقداردهی پارامتر‌های ضروری چابک می‌باشد و در صورت عدم فراخوانی آن در حالت **Kill** بودن اپلیکیشن با خطا مواجه خواهید شد.
 
@@ -252,7 +253,7 @@ public void onCreate() {
 - امضای دوم علاوه بر شناسه کاربر، لیستی از نام‌ [کانال‌هایی](android/chabok-messaging.html#کانال) که کاربر باید روی آن‌ها عضو شود را نیز دریافت می کند. با عضویت روی کانال‌های داده شده، کاربر قادر به دریافت پیام‌های ارسالی روی آن‌ کانال‌ها خواهد بود.
 
 ```java
-chabok.register("USER_ID", new String[]{"CHANNEL_NAME1", "CHANNEL_NAME2", ...});
+AdpPushClient.get().register("USER_ID", new String[]{"CHANNEL_NAME1", "CHANNEL_NAME2", ...});
 ```
 
 > `نکته`: کاراکترهای ‍`#,+,*,\,/` و فاصله در `USER_ID` مجاز نیستند، همچنین طول این رشته نباید کمتر از ۳ و بیشتر از ۳۲ کاراکتر باشد.
