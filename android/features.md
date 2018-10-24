@@ -100,7 +100,6 @@ AdpPushClient.get().getUserId();
 
 ```java
 AdpPushClient.get().resetBadge();
-
 ```
 #### برداشتن مجوز‌های غیر ضروری برای نمایش نشان (Badge) روی آیکون
 
