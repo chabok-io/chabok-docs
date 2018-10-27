@@ -3,8 +3,8 @@ id: event-handling
 title: رویدادهای آنی
 layout: android
 permalink: android/event-handling.html
-prev: user-management.html
-next: behavior-tracking.html
+prev: location-tracking.html
+next: verification.html
 ---
 
 چابک علاوه بر پیام‌رسانی به شما این امکان را می‌دهد که بتوانید [رویدادهای](/android/event-handling.html#رویداد-event) اپلیکیشن خود را مدیریت کنید. از این طریق  شما با [عضویت روی یک رویداد](/android/event-handling.html#عضویت-روی-رویداد)، آن را پس از هر بار رخ دادن [دریافت می‌نمایید](/android/event-handling.html#دریافت-رویداد). علاوه بر آن شما می‌توانید یک رویدادی را با داده دلخواه خود [ارسال کنید](/android/event-handling.html#انتشار-رویداد).
