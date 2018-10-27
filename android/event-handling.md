@@ -74,8 +74,8 @@ AdpPushClient.get().subscribeEvent("EVENT_NAME", "INSTALLATION_ID", new Callback
 برای مثال، در زیر عضویت روی رویداد `shareTrip` یک دستگاه آورده شده است:
 
 ```java
-//Get a device unique id with calling AdpPushClient.get().getInstallationId();
-//Should get user installationId with publish method or your rest api.
+//Get a unique device id by calling AdpPushClient.get().getInstallationId();
+//get user installationId with publish method or your rest api.
 String installationId = "USER_INSTALLATION_ID";
 
 AdpPushClient.get().subscribeEvent("shareTrip", installationId, new Callback() {...});
