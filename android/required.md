@@ -4,8 +4,7 @@ title: پیش‌نیازها
 layout: android
 permalink: android/required.html
 prev: introducing.html
-next: firebase.html
-
+next: sdk-setup.html
 ---
 
 در ابتدا اطمینان یابید که صفحه [معرفی](/android/introducing.html) را برای آشنایی کامل با امکانات چابک با دقت مطالعه کرده باشید. برای بکارگیری چابک، شما نیاز به [ایجاد حساب کاربری](/android/required.html#ایجاد-حساب-چابک) و [ دریافت کلیدهای گوگل](/android/required.html#دریافت-کلیدهای-گوگل) دارید.
