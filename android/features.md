@@ -1,110 +1,109 @@
 ---
 id: features
-title: امکانات‌ چابک 
+title: امکانات‌ دیگر
 layout: android
 permalink: android/features.html
-prev: location-tracking.html
+prev: verification.html
 next: troubleshoot.html
 ---
 
+چابک متناسب با نیاز شما امکانات دیگری را هم در اختیار شما می گذارد. در این صفحه می‌توانید از [وضعیت اتصال سرور و کلاینت](/android/features.html#وضعیت-اتصال-به-چابک) مطلع شوید. شناسه‌های [دستگاه](/android/features.html#دریافت-شناسه-دستگاه) و [کاربر](/android/features.html#دریافت-شناسه-کاربر) خود را از چابک دریافت نمایید. همچنین [نشان‌هایی (Badge)](/android/features.html#مدیریت-نشانها-badge) که روی آیکون اپ شما در دستگاه کاربر نمایش داده می‌شود را می‌توانید کنترل کنید. در آخر می‌توانید از [وضعیت اپ خود](/android/features.html#دریافت-وضعیت-اپلیکیشن) (فورگراند و بک‌گراند بودن آن) آگاه شوید.
 
-### مدیریت تگ ها
-یکی از مهمترین ابزارهای دسته‌بندی کاربران، استفاده از `Tag` می باشد. به عنوان مثال می‌توانید کاربران خود را بر اساس جنسیت دسته‌بندی کرده و بر اساس جنسیت آنها پیام خاصی را ارسال کنید و یا به کاربرانی که از پرداخت درون برنامه‌ای شما استفاده می‌کنند یک `Tag` با عنوان Premium_User اختصاص دهید.
+<Br>
 
-#### افزودن تگ
-با استفاده از متد زیر، شما می‌توانید به کاربر یک `Tag` اختصاص دهید :
+### وضعیت اتصال به چابک
+
+برای دریافت وضعیت اتصال به چابک، می‌توانید از دو روش رویداد `onEvent` و متد `getStatus` استفاده کنید.
+
+#### رویداد وضعیت اتصال
+
+با استفاده از متد `onEvent`، همانند قطعه کد زیر پیاده‌سازی قادر به دریافت وضعیت اتصال به چابک خواهید بود و با فراخوانی متد `addListener`، کلاسی را که متد `onEvent` در آن پیاده‌سازی شده است را به چابک معرفی کنید.
 
 ```java
-public void addTag(String tagName, Callback callback)
+AdpPushClient.get().addListener(this);
+public void onEvent(final ConnectionStatus status) {
+    switch (status) {
+        case CONNECTED:
+            Log.d(TAG, "Connected to the chabok");
+            break;
+        case CONNECTING:
+            Log.d(TAG, "Connecting to the chabok");
+            break;
+        case DISCONNECTED:
+            Log.d(TAG, "Disconnected");
+            break;
+        default:
+            Log.d(TAG, "Disconnected");
+    }
+}
 ```
-پارامتر اول نام تگ موردنظر و پارامتر دوم یک Callback برای بررسی نتیجه این عمل می‌باشد. برای مثال به قطعه کد زیر توجه کنید:
+
+#### متد وضعیت اتصال
+
+با فراخوانی متد `getStatus` می‌توانید از وضعیت آخر اتصال به چابک مطلع شوید.
 
 ```java
-chabok.addTag("Premium_User", new Callback() {
-            @Override
-            public void onSuccess(Object value) {
-                Log.d(TAG, "addTag onSuccess: called");
-            }
-
-            @Override
-            public void onError(Throwable t) {
-                Log.d(TAG, "addTag onError: called, message: " + t.getMessage());
-            }
-        });
-```
-
-کدفوق تگی بنام Premium_User را به کاربر فعلی اضافه می‌کند.
-اگر عملیات افزودن تگ با موفقیت انجام شود، می‌توانید از طریق پنل چابک، تگ اضافه شده به کاربر را در بخش مشترکین همانند تصویر زیر مشاهده کنید :
-
-![مشترک چابک](http://uupload.ir/files/urem__1x-android_device.png)
-
-همچنین با توجه به پشتیبانی این متد از آرایه‌ای از تگ‌ها می‌توانید مانند زیر چند تگ را یکجا به کاربر اضافه کنید:
-
-```java
-String[] tagsName = {"Premium_User", "MALE", "Teenage"};
-client.addTag(tagsName, new Callback() {
-	@Override
-	public void onSuccess(Object value) {
-		Log.d(TAG, "add array of tags onSuccess: called");
-	}
-
-	@Override
-	public void onFailure(Throwable t) {
-		Log.d(TAG, "add array of tags onError: called, message: " + t.getMessage());
-	}
+AdpPushClient.get().getStatus(new Callback<ConnectionStatus>() {
+    @Override
+    public void onSuccess(ConnectionStatus connectionStatus) {
+        Log.d(TAG, "Connection status is " + connectionStatus.name());
+    }
+    @Override
+    public void onFailure(Throwable throwable) {
+        Log.d(TAG, "Error happend " + throwable.getMessage());
+    }
 });
 ```
 
-#### حذف تگ
-با استفاده از متد زیر، می‌توانید یک `Tag` خاص از کاربر را حذف کنید :
+> `نکته:` اگر می‌خواهید تغییرات وضعیت اتصال به سرور چابک را در سمت لایه UI نشان دهید، چون ممکن است قبل از اینکه کلاس شما به عنوان `listener` معرفی شود، ایونت تغییر وضعیت اتصال به شما برسد و شما آن را از دست بدهید، بهتر است برای اولین بار وضعیت اتصال را با استفاده از متد `getStatus` از چابک دریافت نمایید.
 
+### رویداد وضعیت اپلیکیشن
+
+با پیاده‌سازی متد `onEvent` و معرفی کلاس آن به متد `addListener` قادر به دریافت وضعیت اپلیکیشنتان (**ثبت کاربر**، **نصب**، **باز شدن اپلیکیشن** و **برنامه‌های حفاظت شده**) خواهید بود.
+ 
 ```java
-chabok.removeTag("Premium_User", new Callback() {
-            @Override
-            public void onSuccess(Object value) {
-                Log.d(TAG, "removeTag onSuccess: called");
-            }
+AdpPushClient.get().addListener(this);
 
-            @Override
-            public void onError(Throwable t) {
-                Log.d(TAG, "removeTag onError: called, message: " + t.getMessage());
-            }
-        });
-```
-کدفوق تگی بنام Premium_User را از کاربر حذف می کند.
-
-همچنین با توجه به پشتیبانی این متد از آرایه‌ای از تگ‌ها می‌توانید مانند زیر چند تگ را یکجا از کاربر حذف کنید:
-
-```java
-String[] tagsName = {"Premium_User", "MALE", "Teenage"};
-client.removeTag(tagsName, new Callback() {
-	@Override
-	public void onSuccess(Object value) {
-		Log.d(TAG, "remove array of tags onSuccess: called");
-	}
-
-	@Override
-	public void onFailure(Throwable t) {
-		Log.d(TAG, "remove array of tags onError: called, message: " + t.getMessage());
-	}
-});
+public void onEvent(AppState state) {
+    if (state == AppState.REGISTERED) {
+        Log.d(TAG, "User successfully registered...");
+    } else if (state == AppState.INSTALL) {
+        //This state will call one time.
+        Log.d(TAG, "The application installed");
+    } else if (state == AppState.LAUNCH) {
+        Log.d(TAG, "The application launched");
+    } else if (state == AppState.PROTECTED_GRANT_NEEDED) {
+        Log.d(TAG, "Protected grant needed");
+    }
+}
 ```
 
->‌ `نکته:` برای حذف همه تگ‌های یک کاربر می‌توانید در متد بالا جای نام تگ‌ها را خالی بگذارید.
+### دریافت شناسه دستگاه
 
+چابک هر **دستگاه** کاربر را به صورت خودکار پس از ثبت با یک شناسه منحصر به فرد در سرور خود ذخیره می‌کند. با فراخوانی متد `getInstallationId` می‌توانید شناسه دستگاه کاربر را دریافت کنید:
+
+```java
+AdpPushClient.get().getInstallationId();
+``` 
+
+### دریافت شناسه کاربر
+
+چابک شناسه کاربر را پس از ثبت به صورت **رمزنگاری** شده در حافظه دستگاه ذخیره می‌کند. توصیه می‌شود از ذخیره‌سازی این شناسه **خودداری کنید** و با استفاده از متد `getUserId` شناسه کاربر را دریافت کنید:
+
+```java
+AdpPushClient.get().getUserId();
+```
 
 ###  مدیریت نشان‌ها (Badge)
 
-اگر می‌خواهید شماره badge برنامه خود را بازنشانی کنید، با روش زیر می‌توانید: 
-
+اگر می‌خواهید شماره **badge** برنامه خود را بازنشانی کنید، با روش زیر می‌توانید: 
 
 ```java
-chabok.resetBadge();
+AdpPushClient.get().resetBadge();
 ```
-
 #### برداشتن مجوز‌های غیر ضروری برای نمایش نشان (Badge) روی آیکون
 
-با توجه به حجم زیاد این مجوزها امکان دارد کاربر حس منفی پیدا کند برای همین می‌توانید از دستور‌های زیر هر کدام آن‌ها را با اختیار خود بردارید.
+با توجه به حجم زیاد این مجوزها امکان دارد کاربر نسبت به این دسترسی‌های غیر ضروری حس منفی پیدا کند، برای همین می‌توانید با استفاده از دستور‌های زیر هر کدام آن‌ها را با اختیار خود بردارید: 
 
 ```markup
 <uses-permission android:name="com.sec.android.provider.badge.permission.READ" tools:node="remove" />
@@ -125,13 +124,14 @@ chabok.resetBadge();
 <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" tools:node="remove"/> 
 ```
 
-همچنین باید کد زیر را به تگ manifest در بالای فایل اضافه کنید.
+همچنین باید کد زیر را به تگ `manifest` در بالای فایل اضافه کنید.
 
 ``` markup
 xmlns:tools="http://schemas.android.com/tools"
 ```
- 
-نمونه اضافه کد به فایل manifest: 
+
+نمونه اضافه کد به فایل `manifest`: 
+
 ```markup
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
@@ -139,85 +139,15 @@ xmlns:tools="http://schemas.android.com/tools"
           ...
 </manifest>
 ```
+<Br>
+### دریافت وضعیت اپلیکیشن
 
-### دریافت وضعیت برنامه
-
-جهت بررسی وضعیت برنامه در حال اجرا می‌توانید از این امکان استفاده کنید.
-متدهای قابل استفاده:
-```java
-
-chabok.isBackground()
-chabok.isForeground()
-```
-
-نمونه:
-
-```java             
-if(chabok.isForeground()) {
-// Do something on application foreground
-}
-```                
-
-### وضعیت اتصال با سرور
-
-
- برای این منظور ابتدا کلاس مورد نظر برای دریافت رویداد را بعنوان Listener‌ آن تعیین نموده سپس با استفاده از متد زیر رویدادهای داخلی چارچوب چابک را دریافت نمایید:
+جهت بررسی وضعیت اپلیکیشن خود در حال اجرا (**Background** یا **Foreground**) می‌توانید متد‌های زیر را فراخوانی کنید:
 
 ```java
+//App is in background.
+AdpPushClient.get().isBackground();
 
-
-public void onEvent(final ConnectionStatus status) {
-if (status != null) {
-    switch (status) {
-        case CONNECTED:
-        // your logic
-        break;
-
-    case CONNECTING:
-        // your logic
-        break;
-
-    case DISCONNECTED:
-        // your logic
-        break;
-        }
-    }
-}
-
+//App is in foreground.
+AdpPushClient.get().isForeground();
 ```
-
-> نکته: اگر می‌خواهید تغییرات وضعیت اتصال به سرور چابک را در سمت لایه UI
-> نشان دهید، چون ممکن است قبل از اینکه کلاس شما به عنوان listener معرفی
-> شود، ایونت تغییر وضعیت اتصال به شما برسد و شما آن را از دست بدهید،
-> بهتر است برای اولین بار وضعیت اتصال را با استفاده از متد `getStatus`
-> از چابک دریافت نمایید.
-
-```java
-
-chabok.getStatus(new Callback<ConnectionStatus>() {
-    @Override
-    public void onSuccess(ConnectionStatus connectionStatus) {
-        Log.i(TAG + "_fetch", connectionStatus.name());
-    }
-
-    @Override
-    public void onFailure(Throwable throwable) {
-        Log.i(TAG, "errrror ");
-    }
-});
-
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
