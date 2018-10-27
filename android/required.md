@@ -38,7 +38,7 @@ next: sdk-setup.html
 
 ![عکس مربوطه](https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/android/gcm.png)
 
-> `نکته`: مقدار **Sender ID** علاوه بر این قسمت، به عنوان یکی از پارامترهای مقداردهی اولیه در راه‌اندازی چابک نیز مورد استفاده قرار خواهد گرفت.
+> `نکته`: مقدار **Sender ID** علاوه بر این قسمت، به عنوان یکی از پارامترهای مقداردهی اولیه در [راه‌اندازی](/android/sdk-setup.html) چابک نیز مورد استفاده قرار خواهد گرفت.
 
 #### انتقال پروژه به Android Studio 
 
