@@ -1,13 +1,13 @@
 ---
 id: behavior-tracking
-title: رصد رفتار درون برنامه‌ای
+title: رصد رفتار درون‌برنامه‌ای
 layout: android
 permalink: android/behavior-tracking.html
 prev: user-management.html
 next: location-tracking.html
 ---
 
-شما می‌توانید رفتارهای کاربر را در اپلیکیشن خود به طور لحظه‌ای [رصد کنید](/android/behavior-tracking.html#متد-رصد) و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را [دسته‌بندی کنید](/panel/dashboard.html#سگمنت) و برایشان [پیام بفرستید](/android/behavior-tracking.html#ارسال-پیام-براساس-رفتار). همچنین [تاریخچه رفتار کاربران](/android/behavior-tracking.html#مشاهده-رفتار-از-تاریخچه-رویدادهای-پنل) را به صورت لیستی از رویدادها می‌توانید بررسی کنید.
+شما می‌توانید رفتارهای کاربر را در اپلیکیشن خود به طور لحظه‌ای [رصد کنید](/android/behavior-tracking.html#متد-رصد) و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را [دسته‌بندی کنید](/panel/dashboard.html#سگمنت) و برایشان [پیام بفرستید](/android/behavior-tracking.html#ارسال-پیام-براساس-رفتار). همچنین [آمار رفتار کاربران](/android/behavior-tracking.html#مشاهده-آمار-رفتار) را می‌توانید بررسی کنید.
 
 <Br>
 
@@ -29,11 +29,12 @@ public void track(final String trackName, JSONObject data)
 
 ```java
 JSONObject data = new JSONObject();
-data.put("clothes_id",35147652);
+data.put("clothes_id", 35147652);
 
 AdpPushClient.get().track("purchase-clothing", data);
 ```
 
+<Br>
 
 ### ارسال پیام براساس رفتار
 
@@ -43,7 +44,21 @@ AdpPushClient.get().track("purchase-clothing", data);
 
 ![عکس مربوطه](http://uupload.ir/files/2oig_track.png)
 
-### مشاهده رفتار از تاریخچه رویداد‌ها در پنل
+<Br>
+
+### مشاهده آمار رفتار 
+
+پس از اولین رخ دادن رفتاری که شما تعیین کردید رصد شود، آمار آن در دو جای پنل قابل مشاهده می‌باشد:
+
+- از تب رفتارها در داشبورد:
+
+آمار رفتارهای کاربر هم به صورت **نگاه کلی** (quick stats) و هم به صورت **نمودار** (رخدادها) در ماه جاری قابل بررسی می‌باشد.
+
+![عکس مربوطه](http://uupload.ir/files/9d6k_behaviors2.png)
+
+![عکس مربوطه](http://uupload.ir/files/q4pk_behaviors.png)
+
+- از تاریخچه رویداد‌ها در جزئیات دستگاه:
 
 شما می‌توانید رفتارهای هر کاربر را به صورت لیستی از رویدادها به ترتیب و با جزئیات زمان رخ دادن آن‌ها در بخش مشترکین پنل در قسمت **جزئیات دستگاه** مشاهده کنید.
 
