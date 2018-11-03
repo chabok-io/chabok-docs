@@ -1,6 +1,6 @@
 ---
 id: behavior-tracking
-title: رصد رفتار (Behavior Tracking)
+title: رصد رفتار درون‌برنامه‌ای
 layout: ios
 permalink: ios/behavior-tracking.html
 prev: user-management.html
