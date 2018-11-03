@@ -1,8 +1,8 @@
 ---
-id: certificate
-title: ایجاد گواهی اپل
+id: pem-certificate
+title: PEM روش 
 layout: ios
-permalink: ios/certificate.html
+permalink: ios/pem-certificate.html
 ---
 
 ### روش PEM
