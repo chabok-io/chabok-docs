@@ -6,6 +6,14 @@ permalink: react-native-bridge/release-note.html
 next: introducing.html
 ---
 
+## نسخه ۱.۰.۱ - ۱۳۹۷/۰۸/۱۲
+
+### تغییرات
+- افزودن متد `publishEvent`
+- افزودن شنونده `onEvent` برای دریافت `eventMessage`
+- افزودن متدهای `subscribeEvent` و `unSubscribeEvent`
+- افزودن کلید `channel` برای پیام به object
+
 ## نسخه ۱.۰.۰ - ۱۳۹۷/۰۶/۲۶
 
 ### تغییرات
