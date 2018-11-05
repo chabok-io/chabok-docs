@@ -7,7 +7,7 @@ prev: introducing.html
 next: sdk-setup.html
 ---
 
-در ابتدا اطمینان یابید که صفحه [معرفی](/ios/introducing.html) را برای آشنایی کامل با امکانات چابک با دقت مطالعه کرده باشید. برای بکارگیری چابک، شما نیاز به [ایجاد حساب کاربری](/ios/required.html#ایجاد-حساب-چابک) و [دریافت گواهی اپل](/ios/required.html#ایجاد-گواهی-اپل) دارید.
+در ابتدا اطمینان یابید که صفحه [معرفی](/ios/introducing.html) را برای آشنایی کامل با امکانات چابک با دقت مطالعه کرده باشید. برای بکارگیری چابک، شما نیاز به [ایجاد حساب کاربری](/ios/required.html#ایجاد-حساب-چابک)، [انجام تنظیمات پوش‌نوتیفیکیشن دستگاه](/ios/required.html#تنظیمات-اولیه-پوش‌نوتیفیکیشن) و [دریافت گواهی اپل](/ios/required.html#ایجاد-گواهی-اپل) دارید.
 
 <Br>
 
@@ -20,15 +20,18 @@ next: sdk-setup.html
 
 <Br>
 
-### ایجاد گواهی اپل
+### تنظیمات اولیه پوش‌نوتیفیکیشن
 
 ابتدا مطمئن شوید که `MobileCoreServices.framework`، `SystemConfiguration.framework` و `CoreData` را از **Linked Frameworks and Libraries** وارد کرده‌اید.
 
-لطفا `Push Notifications` را در `Setting > Capabilities` فعال کنید،
+گزینه `Push Notifications` را در `Setting > Capabilities` فعال کنید،
 
-و علامت `Remote Notifications` ها را در `Setting > Capabilities > Background Modes` چک کنید.
+و علامت `Remote Notifications`ها را در `Setting > Capabilities > Background Modes` چک کنید.
 
-برای ارسال پوش‌نوتیفیکیشن به اپلیکیشن‌های iOS به **ایجاد گواهی (certificate)** آن نیاز دارید. برای این کار شما می‌توانید **یکی از دو روش [p8](/ios/required.html#روش-p8) و [PEM](/ios/pem-certificate.html)** را استفاده کنید. با توجه به این که **p8** روش جدیدتر اپل برای ایجاد این گواهی می‌باشد و به مراتب کوتاه‌تر و ساده‌تر است و همینطور برخی مشکلات روش **PEM** مانند **تطابق کلید ایجاد شده با provisioning profile** و **منقضی شدن کلیدها** برطرف شده است، توصیه می‌کنیم از همین روش استفاده نمایید.
+
+### ایجاد گواهی اپل
+
+برای ارسال پوش‌نوتیفیکیشن به اپلیکیشن‌های iOS شما نیاز به **ایجاد گواهی (certificate)** برای آن دارید. این گواهی را شما می‌توانید از **یکی از دو روش [p8](/ios/required.html#روش-p8) و [PEM](/ios/pem-certificate.html)** ایجاد کنید. با توجه به این که **p8** روش جدیدتری است به مراتب کوتاه‌تر و ساده‌تر می‌باشد و همینطور برخی مشکلات روش **PEM** مانند **تطابق کلید ایجاد شده با provisioning profile** و **منقضی شدن کلیدها** را ندارد. برای همین توصیه می‌کنیم از همین روش استفاده نمایید.
 
 >`نکته` : توجه داشته باشید هنگامی که **گواهی sandbox اپل** را در پنل تستی قرار می‌دهید، فقط امکان دریافت `Cloud Messaging` در حالت `debug` وجود خواهد داشت. اما اگر **گواهی production اپل** را در محیط عملیاتی قرار دهید، زمانی `Cloud Messaging` را دریافت خواهید کرد که اقدام به ساخت **ipa** از پروژه خود کرده و از طریق **TestFlight** یا **Enterprise** اپلیکیشن خود را نصب کنید.
 
@@ -74,5 +77,6 @@ next: sdk-setup.html
 
 ![عکس مربوطه](http://uupload.ir/files/ae8b_certificateq.png)
 
+#### روش PEM
 
 برای استفاده از روش PEM می‌توانید [این قسمت](/ios/pem-certificate.html) را مطالعه نمایید.
