@@ -1,6 +1,6 @@
 ---
 id: features
-title: امکانات‌ چابک 
+title: امکانات‌ دیگر 
 layout: ios
 permalink: ios/features.html
 prev: verification.html
