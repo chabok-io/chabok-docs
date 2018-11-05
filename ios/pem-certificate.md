@@ -1,11 +1,9 @@
 ---
 id: pem-certificate
-title: PEM روش 
+title: روش PEM  
 layout: ios
 permalink: ios/pem-certificate.html
 ---
-
-### روش PEM
 
 برای ایجاد گواهی ارسال نوتیفیکیشن سرور اپل از روش PEM مراحل زیر را طی نمایید:
 
