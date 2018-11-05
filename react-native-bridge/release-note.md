@@ -12,7 +12,7 @@ next: introducing.html
 - افزودن متد `publishEvent`
 - افزودن شنونده `onEvent` برای دریافت `eventMessage`
 - افزودن متدهای `subscribeEvent` و `unSubscribeEvent`
-- افزودن کلید `channel` برای پیام به object
+- افزودن کلید `channel` به شئ پیام (message object)
 
 ## نسخه ۱.۰.۰ - ۱۳۹۷/۰۶/۲۶
 
