@@ -7,15 +7,16 @@ prev: verification.html
 next: troubleshoot.html
 ---
 
-چابک متناسب با نیاز شما امکانات دیگری را هم در اختیارتان می گذارد. در این صفحه می‌توانید از [وضعیت اتصال سرور و کلاینت](/ios/features.html#وضعیت-اتصال-به-چابک) مطلع شوید. شناسه‌های [دستگاه](/ios/features.html#دریافت-شناسه-دستگاه) و [کاربر](/ios/features.html#دریافت-شناسه-کاربر) خود را از چابک دریافت نمایید. همچنین [نشان‌هایی (Badge)](/ios/features.html#مدیریت-نشانها-badge) که روی آیکون اپ شما در دستگاه کاربر نمایش داده می‌شود را می‌توانید کنترل کنید. در آخر می‌توانید از [وضعیت اپ خود](/ios/features.html#دریافت-وضعیت-اپلیکیشن) (فورگراند و بک‌گراند بودن آن) آگاه شوید.
+چابک متناسب با نیاز شما امکانات دیگری را هم در اختیارتان می گذارد. در این صفحه می‌توانید از [وضعیت اتصال سرور و کلاینت](/ios/features.html#وضعیت-اتصال-به-چابک) مطلع شوید. [رویدادهای اپلیکیشن (ثبت کاربر، نصب و بازدید)](/ios/features.html#رویداد-وضعیت-اپلیکیشن) را دریافت کنید. شناسه‌های [دستگاه](/ios/features.html#دریافت-شناسه-دستگاه) و [کاربر](/ios/features.html#دریافت-شناسه-کاربر) خود را از چابک دریافت نمایید. همچنین [نشان‌هایی (Badge)](/ios/features.html#مدیریت-نشانها-badge) که روی آیکون اپ شما در دستگاه کاربر نمایش داده می‌شود را می‌توانید مدیریت کنید. [ارسال موقعیت مکانی در هنگام باز شدن اپلیکیشن](/ios/features.html#ارسال-موقعیت-مکانی-در-هنگام-باز-شدن-اپلیکیشن) و [مشاهده گزارش‌های چابک](/ios/features.html#فعالسازی-گزارشهای-چابک) را هم می‌توانید پیاده‌سازی کنید. در آخر می‌توانید از [وضعیت اپ خود](/ios/features.html#دریافت-وضعیت-اپلیکیشن) (فورگراند و بک‌گراند بودن آن) آگاه شوید.
 
 <Br>
+
 
 ### وضعیت اتصال به چابک
 
 پس از فراخوانی `manager.addDelegate`، می‌توانید از متد زیر برای دریافت رویدادهای داخلی چارچوب چابک استفاده کنید.
 
-برای اطلاع از وضعیت آنلاین یا آفلاین بودن،می‌توانید از متد زیر استفاده کنید:
+برای اطلاع از وضعیت آنلاین یا آفلاین بودن، می‌توانید از متد زیر استفاده کنید:
 
 ```objectivec
 //Objetive-C: 
@@ -25,7 +26,7 @@ next: troubleshoot.html
 }
 
 - (void)pushClientManagerDidChangeServerReachiability:(BOOL)reachable networkType:(PushClientServerReachabilityNetworkType)networkType{
-	// Called When PushClientManager Server Reachiability has been Changed
+	// Called When PushClientManager Server Reachability has been Changed
 }
 ```
 ```swift
@@ -36,10 +37,10 @@ func pushClientManagerDidChangedServerConnectionState() {
 }
 
 func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkType: PushClientServerReachabilityNetworkType) {
-	// Called When PushClientManager Server Reachiability has been Changed
+	// Called When PushClientManager Server Reachability has been Changed
 }
 ```
-برای مثال میتوانید به نمونه کد زیر توجه کنید:
+برای مثال می‌توانید به نمونه کد زیر توجه کنید:
 
 ```objectivec
 //Objective-C:
@@ -92,9 +93,134 @@ func pushClientManagerDidChangedServerConnectionState (){
 
 <Br>
 
+### رویداد وضعیت اپلیکیشن
+
+با پیاده‌سازی متدهای زیر قادر به دریافت وضعیت اپلیکیشنتان (**ثبت کاربر**، **نصب** و **باز شدن اپلیکیشن** ) خواهید بود.
+
+- ثبت کاربر: 
+
+```objectivec
+//Objective-C
+- (void)pushClientManagerDidRegisterUser:(BOOL)registration{
+    NSLog(@"User sucessfully registered.");
+}
+- (void) pushClientManagerDidFailRegisterUser:(NSError *)error {
+    NSLog(@"User not registered because of '%@' error", error);
+}
+```
+```swift
+//Swift
+func pushClientManagerDidRegisterUser(_ registration: Bool) {
+    print("User sucessfully registered.")
+}
+    
+func pushClientManagerDidFailRegisterUser(_ error: Error!) {
+    print("User not registered because of '\(String(describing: error))' error")
+}
+```
+
+- نصب:
+
+```objective-c
+//Objective-C
+- (BOOL) application:(UIApplication *) application
+                didFinishLaunchingWithOptions:(NSDictionary *) launchOptions{
+    ...
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(detectAppNewInstalled:)
+                                                 name:kPushClientDetectAppNewInstall
+                                               object:nil];
+    ...
+    
+    return YES;
+}
+- (void) detectAppNewInstalled:(NSNotification *) notification{
+    NSLog(@"New Install :  ----------------- %@ ---------------",notification.userInfo);
+}
+```
+```swift
+//Swift
+func application(_ application: UIApplication,
+                didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+    ...
+            
+    NotificationCenter.default.addObserver(self,
+                                       selector: #selector(self.detectAppNewInstalled(_:)),
+                                       name: kPushClientDetectAppNewInstall,
+                                       object: nil)
+    ...
+    return true
+}
+    
+@objc func detectAppNewInstalled(_ notification: Notification?) {
+    if (notification?.userInfo) != nil {
+        print("App installed")
+    }
+}
+```
+
+- بازدید:
+
+```objectivec
+//Objective-C
+- (BOOL) application:(UIApplication *) application
+                didFinishLaunchingWithOptions:(NSDictionary *) launchOptions{
+    ....
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(detectLaunched:)
+                                                 name:kPushClientDetectAppWasLaunched
+                                               object:nil];
+    ...
+    
+    return YES;
+}
+-(void) detectLaunched:(NSNotification *) notification{
+    NSLog(@"App launched",notification.userInfo);
+}
+```
+```swift
+//Swift
+func application(_ application: UIApplication,
+                didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+    ...
+            
+    NotificationCenter.default.addObserver(self,
+                                       selector: #selector(self.detectLaunched(_:)),
+                                       name: kPushClientDetectAppWasLaunched,
+                                       object: nil)
+    ...
+    return true
+}
+    
+@objc func detectLaunched(_ notification: Notification?) {
+    if (notification?.userInfo) != nil {
+        print("App launched")
+    }
+}
+```
+
+<Br>
+
+### دریافت شناسه کاربر
+
+هر **کاربر** در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
+
+```objectivec
+//Objective-C
+[PushClientManager defaultManager].userId;
+```
+```swift
+//Swift
+PushClientManager.default().userId
+```
+
 ### دریافت شناسه دستگاه 
 
-هر دستگاه در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
+هر **دستگاه** در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
 
 ```objectivec
 //Objective-C:
@@ -136,7 +262,7 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 ``` 
 <Br>
 
-### ارسال موقعیت مکانی در هنگام باز شدن برنامه
+### ارسال موقعیت مکانی در هنگام باز شدن اپلیکیشن
 
 با فعال کردن قابلیت `enableLocationOnLaunch`، کتابخانه چابک به هنگام باز شدن برنامه و در صورت پیدا کردن موقعیت مکانی کاربر،‌ موقعیت آن را توسط [انتشار رویداد](/ios/events.html) به سرور ارسال می کند.
 
@@ -159,7 +285,8 @@ self.manager?.enableLocationOnLaunch = true
 
 ### فعال‌سازی گزارش‌های چابک
 
-با استفاده از `property`، `enableLog`  می‌توانید گزارش‌های چابک را در بخش `Debugger Output` مشاهده کنید
+با استفاده از `property`، `enableLog`  می‌توانید گزارش‌های چابک را در بخش `Debugger Output` مشاهده کنید:
+
 ```objectivec
 //Objective-C
 PushClientManager.defaultManager.enableLog = YES;
@@ -167,4 +294,38 @@ PushClientManager.defaultManager.enableLog = YES;
 ```swift
 //Swift
 PushClientManager.default().enableLog = true
+```
+### دریافت وضعیت اپلیکیشن
+
+جهت بررسی وضعیت اپلیکیشن خود در حال اجرا (**Background** یا **Foreground**) می‌توانید متد‌های زیر را فراخوانی کنید:
+
+```objectivec
+//Objective-C
+
+switch (UIApplication.sharedApplication.applicationState) {
+	case UIApplicationStateActive:
+		NSLog(@"App is active in foreground");
+		break;
+   
+	case UIApplicationStateInactive:
+		NSLog(@"App is inactive in foreground");
+		break;
+
+	case UIApplicationStateBackground:
+		NSLog(@"App is in background");
+		break;
+    }
+```
+
+```swift
+//Swift
+
+switch UIApplication.shared.applicationState {
+	case .active:
+		print("App is active in foreground")
+	case .inactive:
+		print("App is inactive in foreground")
+	case .background:
+		print("App is in background")
+}
 ```
