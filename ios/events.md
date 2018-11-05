@@ -1,52 +1,26 @@
 ---
-id: events
-title: مدیریت رویدادها
+id: event-handling
+title: رویدادهای آنی
 layout: ios
-permalink: ios/events.html
-prev: notification.html
-next: event-tracking.html
+permalink: ios/event-handling.html
+prev: location-tracking.html
+next: verification.html
 ---
 
-### انتشار رویداد به همراه داده
-با متدهای زیر می توانید رویداد های داخل برنامه را منتشر کنید:
-```objectivec
-//Objective-C:
+چابک علاوه بر پیام‌رسانی متنی به شما این امکان را می‌دهد که بتوانید [رویدادهای](/ios/event-handling.html#رویداد-event) اپلیکیشن خود را مدیریت کنید. مدیریت رویداد برخلاف رصد که فقط رویدادی را پس از رخ دادن ارسال می‌کند، به شما امکان می‌دهد تا به صورت **لحظه‌ای ارسال و دریافت داده** داشته باشید. از این طریق شما با [عضویت روی یک رویداد](/ios/event-handling.html#عضویت-روی-رویداد)، آن را پس از هر بار رخ دادن [دریافت می‌نمایید](/ios/event-handling.html#دریافت-رویداد). علاوه بر آن شما می‌توانید یک رویدادی را با داده دلخواه خود [ارسال کنید](/android/event-handling.html#انتشار-رویداد).
 
-- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data;
-- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data live:(BOOL)live;
-- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data stateful:(BOOL)stateful;
-- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data live:(BOOL)live stateful:(BOOL)stateful;
-```
-```swift
-//Swift:
+زیرساخت چابک از مدل رویدادگرا Pub/Sub استفاده می‌کند. مزیت این مدل علاوه بر آنی بودن این است که ارسال کننده نیازی به این که بداند چه کسانی دریافت می‌کنند، ندارد. برای درک بهتر آن توصیه می‌کنیم [این لینک](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) را مطالعه نمایید.
 
-manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!)
-manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!, live: Bool)
-manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!, stateful: Bool)
-manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!, live: Bool, stateful: Bool)
-```
-> `نکته` : پارامتر ورودی live به این معناست که کاربرانی که به چابک متصل هستند این رویداد را دریافت خواهند نمود.
+<Br>
 
-جهت انتشار یک رویداد می‌توانید از نمونه کد زیر پیروی کنید :
+### رویداد (Event)
 
-```objectivec
-//Objective-C:
+رویدادها می‌توانند هر گونه **انتقال داده بین سرور و کلاینت** باشند. برای مثال، فرض کنید شما در اپلیکیشن درخواست تاکسی می‌خواهید سفر خود را با دوستانتان به اشتراک بگذارید. برای این منظور می‌توانید **موقعیت مکانی** و **وضعیت سفر** خود را برای کسانی که روی آن رویداد عضویت دارند، ارسال کنید تا به صورت **آنی‌** (Real-Time) از وضعیت سفر شما مطلع شوند. یا همچنین می‌توانید به جای درخواست‌های HTTP با استفاده از زیرساخت دو طرفه و آنی چابک رویدادهای درون‌برنامه‌ای بین بکند (Back-end) و چند دستگاه منتشر کنید.  
 
-NSDictionary *geoData = @{@"lat":@35.7590822,
-                           @"lng":@51.4006114};
-[self.manager publishEvent:@"geo" data:geoData];
-```
-```swift
-//Swift:
+###  عضویت روی رویداد
 
-let geoData:[AnyHashable : Any] = ["lat":35.7590822,
-                                 "lng":51.4006114];
-manager?.publishEvent("geo", data: geoData)
-```
+برای دریافت رویدادها باید کاربر روی رویداد مورد نظر توسط متد `subscribeEvent` عضو شده باشد.
 
-###  عضویت بر روی یک رویداد
-
-متد subscribeEvent با امضاهای زیر موجود است که بر اساس نیاز خود می‌توانید آن‌ها را فراخوانی نمایید:
 ```objectivec 
 //Objective-C :
 
@@ -63,10 +37,10 @@ manager?.subscribeEvent(eventName: String!, live: Bool)
 manager?.subscribeEvent(eventName: String!, installationId: String!)
 manager?.subscribeEvent(eventName: String!, installationId: String!, live: Bool)
 ```
-> `نکته :` پارامتر ورودی `live` به این معناست که کاربرانی که به چابک `متصل` هستند این رویداد را دریافت خواهند نمود، مقدار `installiationId`  نیز برابر `شناسه منحصر به فرد دستگاه کاربر` می‌باشد و از طریق متد  `getInstallationId` به دست می‌آید.
+> `نکته :` پارامتر ورودی `live` به این معناست که کاربرانی که به چابک متصل هستند این رویداد را دریافت خواهند نمود، مقدار `installiationId`  نیز برابر شناسه منحصر به فرد دستگاه کاربر می‌باشد و از طریق متد  `getInstallationId` به دست می‌آید.
 
-در صورت استفاده از امضاهای حاوی installiationId تمامی رویدادهای مربوط به نام وارد شده به عنوان eventName که توسط آن دستگاه منتشر می‌شود را دریافت خواهید نمود.
-> `نکته` : installationId در بخش [امکانات‌ چابک](/ios/features.html) توضیح داده شده است.
+در صورت استفاده از امضاهای حاوی `installiationId` تمامی رویدادهای مربوط به نام وارد شده به عنوان `eventName` که توسط آن دستگاه منتشر می‌شود را دریافت خواهید نمود.
+> `نکته` : `installationId` در بخش [امکانات‌ چابک](/ios/features.html) توضیح داده شده است.
 جهت عضویت روی یک رویداد، می‌توانید از نمونه کد زیر پیروی کنید :
 
 ```objectivec 
@@ -84,7 +58,7 @@ manager?.subscribeEvent("talk",
              installationId: "INSTALLATION_ID") //private event
 ```
 
-### لغو عضویت برروی یک رویداد
+### لغو عضویت از رویداد
 
 با استفاده از متد زیر می‌توانید اقدام به لغو عضویت بر روی یک رویداد کنید :
 
@@ -104,7 +78,9 @@ manager?.unsubscribeEvent("talk",
                installationId: "INSTALLATION_ID") //private event
 ```
 
-برای دریافت رویداد باید delegate method زیر را پیاده سازی کنید، تا بتوانید رویداد هایی که توسط متد `subscribeEvent` بر روی یک رویداد خاص `subscribe` کرده اید دریافت کنید :
+### دریافت رویداد
+
+برای دریافت رویداد باید delegate method زیر را پیاده سازی کنید، تا بتوانید رویدادهایی که توسط متد `subscribeEvent` بر روی یک رویداد خاص `subscribe` کرده‌اید دریافت کنید:
 
 ```objectivec
 //Objective-C :
@@ -121,3 +97,46 @@ func pushClientManagerDidReceivedEventMessage(_ eventMessage: EventMessage!) {
         print("Event message \(eventMessage.data) was received .....")
 }
 ```
+
+<Br>
+
+### انتشار رویداد
+
+با استفاده از متد `publishEvent` می‌توانید رویدادهای دلخواه خود را با یک **نام** و یک **داده** (Data) منتشر کنید. متد زیر به صورت خودکار در صورت قطعی ارتباط اقدام به ارسال مجدد می‌کند و به صورت آنی داده‌های شما را منتشر خواهد کرد. 
+
+```objectivec
+//Objective-C:
+
+- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data;
+- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data live:(BOOL)live;
+- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data stateful:(BOOL)stateful;
+- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data live:(BOOL)live stateful:(BOOL)stateful;
+```
+```swift
+//Swift:
+
+manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!)
+manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!, live: Bool)
+manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!, stateful: Bool)
+manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!, live: Bool, stateful: Bool)
+```
+> `نکته` : پارامتر ورودی `live` به این معناست که کاربرانی که به چابک متصل هستند این رویداد را دریافت خواهند نمود.
+
+جهت انتشار یک رویداد می‌توانید از نمونه کد زیر پیروی کنید:
+
+```objectivec
+//Objective-C:
+
+NSDictionary *geoData = @{@"lat":@35.7590822,
+                           @"lng":@51.4006114};
+[self.manager publishEvent:@"geo" data:geoData];
+```
+```swift
+//Swift:
+
+let geoData:[AnyHashable : Any] = ["lat":35.7590822,
+                                 "lng":51.4006114];
+manager?.publishEvent("geo", data: geoData)
+```
+
+
