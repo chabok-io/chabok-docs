@@ -2,7 +2,7 @@
 id: push-notification
 title: پوش‌نوتیفیکیشن
 layout: ios
-permalink: ios/push_notification.html
+permalink: ios/push-notification.html
 prev: chabok-messaging.html
 next: user-management.html
 ---
