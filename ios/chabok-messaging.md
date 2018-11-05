@@ -3,7 +3,7 @@ id: chabok-messaging
 title: پیام چابک
 layout: ios
 permalink: ios/chabok-messaging.html
-prev: setup.html
+prev: sdk-setup.html
 next: push_notification.html
 ---
 
