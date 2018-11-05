@@ -28,6 +28,7 @@ next: sdk-setup.html
 
 و علامت `Remote Notifications`ها را در `Setting > Capabilities > Background Modes` چک کنید.
 
+<Br>
 
 ### ایجاد گواهی اپل
 
