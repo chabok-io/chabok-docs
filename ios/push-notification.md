@@ -7,15 +7,13 @@ prev: chabok-messaging.html
 next: user-management.html
 ---
 
-چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. شما می‌توانید نمایش این پوش‌نوتیفیکیشن‌ها را [شخصی‌سازی کنید](/ios/push-notification.html#شخصیسازی-نمایش-و-کلیک-روی-اعلان) و برای آن‌ها کلیک تعیین کنید. همینطور با [تنظیم پوش‌نوتیفیشکیشن چند رسانه‌ای](/ios/push-notification.html#تنظیم-پوشنوتیفیکیشن-چندرسانهای-rich-push-notification) می‌توانید برای هرکدام اکشن تعیین نمایید. 
+چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. شما می‌توانید نمایش این پوش‌نوتیفیکیشن‌ها را [شخصی‌سازی کنید](/ios/push-notification.html#شخصیسازی-نمایش-اعلان) و برای آن‌ها کلیک [تعیین کنید](/ios/push-notification.html#کلیک-بر-روی-اعلان-آیاواس-۱۰-به-بالا). همینطور با [تنظیم پوش‌نوتیفیشکیشن چند رسانه‌ای](/ios/push-notification.html#تنظیم-نوتیفیکیشن-چندرسانهای-rich-push-notification) می‌توانید برای هرکدام اکشن تعیین نمایید. 
 
 <Br>
 
 ### شخصی‌سازی نمایش اعلان
 
-کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی (پیام چابک و پوش‌نوتیفیکیشن)، اعلان (**نوتیفیکیشن**) نمایش می‌دهد. درصورت تمایل به تنظیم نمایش اعلان‌ها، کد مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
-
- درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` استفاده کنید، به قطعه کد زیر دقت فرمایید. در صورت استفاده از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` کتابخانه چابک دیگر اقدام به نمایش `LocalNotification` نمی‌کند.
+کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی (پیام چابک و پوش‌نوتیفیکیشن)، اعلان (**نوتیفیکیشن**) نمایش می‌دهد.  درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` استفاده کنید، به قطعه کد زیر دقت فرمایید. (در صورت استفاده از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` کتابخانه چابک دیگر اقدام به نمایش `LocalNotification` نمی‌کند.)
 
 ```objectivec
 //Objective-C:
@@ -132,14 +130,11 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 ### کلیک بر روی اعلان (آی‌اواس ۹ به پایین)
 
-سرویس چابک دارای `Messageing` و `Push Notification`  می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل باشد با کلیک بر روی اعلان، delegate متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ باشد، از delegate متد `didReceiveLocalNotification` استفاده کنید.
+سرویس چابک دارای پوش‌نوتیفیکیشن و پیام چابک می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل (پوش‌نوتیفیکیشن) باشد با کلیک بر روی اعلان، delegate متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ (پیام چابک) باشد، از delegate متد `didReceiveLocalNotification` استفاده کنید.
 
 #### ۱. LocalNotification
 
-> `نکته` : در iOS های ۱۰ به پایین امکان نمایش LocalNotification در حالت
-> Foreground وجود ندارد، اگر شما یک LocalNotification در حالت `Foreground`
-> در یکی از این نسخه های iOS استفاده کنید، به این معنی است که بر روی آن
-> کلیک شده و delegate متد `didReceiveLocalNotification` فراخوانی خواهد شد.
+> `نکته` : در iOS های ۱۰ به پایین امکان نمایش LocalNotification در حالت Foreground وجود ندارد، اگر شما یک LocalNotification در حالت Foreground در یکی از این نسخه های iOS استفاده کنید، به این معنی است که بر روی آن کلیک شده و ‍‍‍‍‍`delegate` متد `didReceiveLocalNotification` فراخوانی خواهد شد.
 
 > `نکته` : اگر از LocalNotification در حالت `Background` استفاده شود، زمانی
 > متد `didReceiveLocalNotification` فرخوانی خواهد شد که بر روی
@@ -169,13 +164,7 @@ self.manager.application(application, didReceive: notification)
 
 delegate متد `didReceiveRemoteNotification` توسط سیستم عامل به هنگام کلیک بر روی اعلان فرخوانی می شود. 
 
-> `نکته` : اگر برنامه شما `Terminate` شده باشد، با کلیک بر روی
-> Notification برنامه شما با کلید
-> `UIApplicationLaunchOptionsRemoteNotificationKey` در delegate متد
-> `didFinishLaunchingWithOptions` اجرا خواهد شد و پس از آن متد
-> `didReceiveRemoteNotification` فرخوانی خواهد شد. پس پیشنهاد می کنیم،
-> کد مربوط به `Navigate` به یک صفحه خاص را در متد
-> `didReceiveRemoteNotification` استفاده کنید.
+> `نکته` : اگر برنامه شما `Terminate` شده باشد، با کلیک بر روی Notification برنامه شما با کلید `UIApplicationLaunchOptionsRemoteNotificationKey` در `delegate` متد `didFinishLaunchingWithOptions` اجرا خواهد شد و پس از آن متد `didReceiveRemoteNotification` فرخوانی خواهد شد. پس پیشنهاد می کنیم، کد مربوط به `Navigate` به یک صفحه خاص را در متد `didReceiveRemoteNotification` استفاده کنید.
 
 ```objectivec
 //Objective-C:
