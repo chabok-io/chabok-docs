@@ -130,7 +130,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 ### کلیک بر روی اعلان (آی‌اواس ۹ به پایین)
 
-سرویس چابک دارای پوش‌نوتیفیکیشن و پیام چابک می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل (پوش‌نوتیفیکیشن) باشد با کلیک بر روی اعلان، delegate متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ (پیام چابک) باشد، از delegate متد `didReceiveLocalNotification` استفاده کنید.
+سرویس چابک دارای پوش‌نوتیفیکیشن و پیام چابک می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل (پوش‌نوتیفیکیشن) باشد با کلیک بر روی اعلان، `delegate` متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ (پیام چابک) باشد، از `delegate` متد `didReceiveLocalNotification` استفاده کنید.
 
 #### ۱. LocalNotification
 
