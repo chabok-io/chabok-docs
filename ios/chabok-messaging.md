@@ -7,13 +7,13 @@ prev: sdk-setup.html
 next: push_notification.html
 ---
 
-چابک برای **ارسال پیام** هنگامی که کاربر به سرور چابک متصل است (باز بودن اپلیکیشن) **از سرویس آنی خود** استفاده می‌کند (پیام چابک) و در صورت عدم اتصال به چابک (بسته بودن اپلیکیشن) اقدام به **ارسال پوش‌نوتیفیکیشن** می‌کند تا کاربر را از داشتن پیام چابک مطلع سازد. برای همین از این پس منظور از واژه **پیام**، همان **پیام چابک** است و منظور از **پوش** یا **نوتیفیکیشن**، **پوش‌نوتیفیکیشن** می‌باشد. 
+چابک برای **ارسال پیام** هنگامی که کاربر به سرور چابک متصل است (باز بودن اپلیکیشن) **از سرویس آنی خود** استفاده می‌کند (پیام چابک) و در صورت عدم اتصال به چابک (بسته بودن اپلیکیشن) اقدام به **ارسال پوش‌نوتیفیکیشن** می‌کند تا کاربر را از داشتن پیام چابک مطلع سازد. از این پس منظور از واژه **پیام**، همان **پیام چابک** است و منظور از **پوش** یا **نوتیفیکیشن**، **پوش‌نوتیفیکیشن** می‌باشد. 
 
 پیام‌های چابک از طریق [کانال‌](/ios/chabok-messaging.html#کانال) ارسال می‌شوند. بنابراین برای دریافت پیام، باید ابتدا کاربر را در کانال [عضو نمایید](/ios/chabok-messaging.html#عضویت-روی-کانال-subscribe). در این قسمت شما می‌توانید پیام [دریافت کنید](/ios/chabok-messaging.html#دریافت-پیام-چابک) و برای آن [وضعیت (status) ارسال کنید](/ios/chabok-messaging.html#ارسال-وضعیت-برای-پیامهای-دریافتی). همچنین می‌توانید پیام [ارسال کنید](/ios/chabok-messaging.html#ارسال-پیام) و از وضعیت تحویل آن‌ [مطلع شوید](/ios/chabok-messaging.html#دریافت-گزارش-تحویل-پیام-delivery). 
 
 <Br>
 
-### دریافت پیام چابک
+### دریافت پیام 
 
 برای دریافت پیام چابک می‌توانید از رویداد `pushClientManagerDidReceivedMessage` استفاده کنید. در زیر نمونه کدی جهت دریافت اطلاعات از پیام چابک آمده است:
 
@@ -54,7 +54,7 @@ func pushClientManagerDidReceivedMessage(_ message: PushClientMessage?) {
 }
 ```
 
-### ارسال وضعیت پیام‌های دریافتی
+#### ارسال وضعیت برای پیام‌های دریافتی
 
 شما می‌توانید عکس‌العمل کاربر به یک پیام چابک (خوانده شدن، نادیده گرفته شدن، ...) را با استفاده از کلاینت چابک مشخص کنید. 
 متد `markAsRead` برای ارسال رویداد خوانده شدن پیام توسط کاربر به سرور می تواند مورد استفاده قرار بگیرد. 
@@ -166,7 +166,7 @@ func pushClientManagerDidFail(inPublish error: Error!) {
 }
 ```
 
-### گزارش تحویل پیام (Delivery)
+#### گزارش تحویل پیام (Delivery)
 
 برای فعال کردن دریافت گزارش تحویل یک پیام منتشر شده، باید ابتدا `deliveryChannelEnabeled` را مقداردهی کنید: 
 
@@ -180,8 +180,6 @@ PushClientManager.defaultManager.deliveryChannelEnabeled = YES;
 
 PushClientManager.default().deliveryChannelEnabeled = true 
 ```
-
-#### دریافت گزارش تحویل پیام‌‌های ارسالی
 
 پس از آن برای دریافت گزارش تحویل پیام‌های ارسالی، رویداد `pushClientManagerDidReceivedDelivery` فراخوانی خواهد شد:
 
@@ -240,7 +238,7 @@ func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage?) {
 manager.subscribe("alert") // public channel
 manager.subscribe("private/league") // private (personal) channel
 ```
-در صورت موفق بودن عمل عضویت روی یک کانال، `delegate method` زیر فراخوانی خواهد شد:
+در صورت موفق بودن عمل عضویت روی یک کانال، متد `delegate` زیر فراخوانی خواهد شد:
 
 ```objectivec
 //Objective-C:
@@ -257,7 +255,7 @@ func pushClientManagerDidSubscribed(_ channel: String!) {
 	print("Subscribed on '\(channel)' channel")
 }
 ```
- همچنین در صورت رخ دادن خطا به هنگام عضویت روی یک کانال، با استفاده از `delegate method` زیر می‌توانید از خطای رخ داده شده با خبر شوید:
+ همچنین در صورت رخ دادن خطا به هنگام عضویت روی یک کانال، با استفاده از متد `delegate` زیر می‌توانید از خطای رخ داده شده با خبر شوید:
 
 ```objectivec
 //Objective-C:
@@ -291,7 +289,7 @@ func pushClientManagerDidFail(inSubscribe error: Error!) {
 PushClientManager.default().unsubscribe("alert") // public channel
 PushClientManager.default().unsubscribe("private/league") // private (personal) channel
 ```
-در صورت موفق بودن عمل لغو عضویت از یک کانال، `delegate method` زیر فراخوانی خواهد شد:
+در صورت موفق بودن عمل لغو عضویت از یک کانال، متد `delegate` زیر فراخوانی خواهد شد:
 
 ```objectivec
 //Objective-C:
@@ -308,7 +306,7 @@ func pushClientManagerDidUnsubscribed(_ channel: String!) {
 	print("Unsubscribed from '\(channel)' channel")
 }
 ```
-در صورت رخ دادن خطا به هنگام لغو عضویت از یک کانال با استفاده از `delegate method` زیر می‌توانید از خطا رخ داده شده با خبر شوید:
+در صورت رخ دادن خطا به هنگام لغو عضویت از یک کانال با استفاده از متد `delegate` زیر می‌توانید از خطا رخ داده شده با خبر شوید:
 
 ```objectivec
 //Objective-C:
