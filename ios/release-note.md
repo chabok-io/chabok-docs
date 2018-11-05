@@ -3,9 +3,13 @@ id: release-note
 title: لیست تغییرات کتابخانه
 layout: ios
 permalink: ios/release-note.html
-next: introducing.html
+prev: troubleshoot.html
 ---
-## نسخه ۱.۱۷.۱ - ۱۳۹۷/۰۶/۱۸ 
+
+شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](/ios/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
+
+
+## [نسخه ۱.۱۷.۱ - ۱۳۹۷/۰۶/۱۸](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.17.1) 
 
 ### تغییرات
 
@@ -13,7 +17,7 @@ next: introducing.html
 - بهبود Register مجدد کاربر با قابلیت تغییر `userId` از متد `register`
 - حل مشکل `LaunchCount` و `LaunchTime` برای زمانی که اپ از طریق ‌Location  در Background باز می‌شود
  
-## نسخه ۱.۱۷.۰ - ۱۳۹۷/۰۵/۱۷ 
+## [نسخه ۱.۱۷.۰ - ۱۳۹۷/۰۵/۱۷](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.17.0)  
 
 ### تغییرات
 
@@ -29,7 +33,7 @@ next: introducing.html
 
 >`نکته :` کسانی که در نسخه‌های پایین‌تر از پیش‌فرض **default** متد `publishEvent` استفاده می‌کردند برای حفظ تنظیمات قبلی‌شان بهتر است اکنون از پیش‌فرض `publishEvent:data:live`  با  مقدار `NO` برای `live` استفاده کنند.
 
-## نسخه ۱.۱۶.۲ - ۱۳۹۷/۰۴/۲۶ 
+## [نسخه ۱.۱۶.۲ - ۱۳۹۷/۰۴/۲۶](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.16.2)  
 
 ### تغییرات
 
@@ -38,14 +42,14 @@ next: introducing.html
 - حل مشکل قطع شدن اتصال در حالت باز شدن اپلیکیشن توسط موقعیت مکانی
 - حل مشکل تشخیص باز شدن برنامه به هنگام باز شدن اپلیکیشن توسط موقعیت مکانی
 
-## نسخه ۱.۱۶.۱ - ۱۳۹۷/۰۳/۲۹
+## [نسخه ۱.۱۶.۱ - ۱۳۹۷/۰۳/۲۹](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.16.1) 
 
 
 ### تغییرات
 
 - حل مشکل عدم ارسال پوش نوتیفیکیشن برای کاربرانی که دسترسی `DENIED` داده‌اند.
 
-## نسخه ۱.۱۶.۰ - ۱۳۹۷/۰۳/۲۱
+## [نسخه ۱.۱۶.۰ - ۱۳۹۷/۰۳/۲۱](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.16.0) 
 
 ### تغییرات
 
@@ -55,7 +59,7 @@ next: introducing.html
 - تشخیص زمان نصب اپلیکیشن
 - تشخیص شناسه اپلیکیشن `bundleIdentifier` 
 
-## نسخه ۱.۱۵.۱ - ۱۳۹۶/۱۱/۰۳
+## [نسخه ۱.۱۵.۱ - ۱۳۹۶/۱۱/۰۳](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.15.1) 
 
 ### تغییرات
 
@@ -64,7 +68,7 @@ next: introducing.html
  - حل مشکل متد `deviceSubscriptions` به هنگام فراخوانی قبل از متد `registerUser:` 
  - اعلان خطا به هنگام فراخوانی متد `updateNotificationSettings:sound:alert:` قبل از رجیستر شدن کاربر
 
-## نسخه ۱.۱۵.۰ - ۱۳۹۶/۱۰/۱۸
+## [نسخه ۱.۱۵.۰ - ۱۳۹۶/۱۰/۱۸](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.15.0) 
 
 ### ارتقا
 
