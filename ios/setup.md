@@ -222,11 +222,13 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 ```objectivec
 //Objective-C:
-[PushClientManager unRegisterUser];
+
+[PushClientManager.defaultManager unregisterUser];
 ```
 ```swift
 //Swift:
-PushClientManager.unRegisterUser()
+
+PushClientManager.default().unregisterUser()
 ```
 
 ### رویداد ها:
