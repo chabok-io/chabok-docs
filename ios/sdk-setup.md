@@ -268,11 +268,13 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 ```objectivec
 //Objective-C:
-[PushClientManager unRegisterUser];
+
+[PushClientManager.defaultManager unRegisterUser];
 ```
 ```swift
 //Swift:
-PushClientManager.unRegisterUser()
+
+PushClientManager.default().unRegisterUser()
 ```
 
 > `نکته:` پروژه [Starter](https://github.com/chabokpush/chabok-starter-ios)، به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرا آن، از سرویس چابک استفاده کنید. همچنین به کمک پروژه فوق با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.
