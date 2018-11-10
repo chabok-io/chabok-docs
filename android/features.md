@@ -139,7 +139,15 @@ xmlns:tools="http://schemas.android.com/tools"
           ...
 </manifest>
 ```
+#### غیرفعالسازی نمایش نشان (Badge) روی آیکون
+
+برای غیرفعالسازی نمایش Badge برای اعلان‌ها روی آیکون اپلیکیشنتان، کد زیر را به فایل `AndroidManifest.xml` خود اضافه کنید:
+
+```markup
+<meta-data android:name="com.adpdigital.push.client.BadgeCount" android:value="DISABLE" />
+```
 <Br>
+
 ### دریافت وضعیت اپلیکیشن
 
 جهت بررسی وضعیت اپلیکیشن خود در حال اجرا (**Background** یا **Foreground**) می‌توانید متد‌های زیر را فراخوانی کنید:
