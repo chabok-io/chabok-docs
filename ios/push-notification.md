@@ -7,13 +7,13 @@ prev: chabok-messaging.html
 next: user-management.html
 ---
 
-چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. شما می‌توانید نمایش این پوش‌نوتیفیکیشن‌ها را [شخصی‌سازی کنید](/ios/push-notification.html#شخصیسازی-نمایش-اعلان) و برای آن‌ها کلیک [تعیین کنید](/ios/push-notification.html#کلیک-بر-روی-اعلان-آیاواس-۱۰-به-بالا). همینطور با [تنظیم پوش‌نوتیفیشکیشن چند رسانه‌ای](/ios/push-notification.html#تنظیم-نوتیفیکیشن-چندرسانهای-rich-push-notification) می‌توانید برای هرکدام اکشن تعیین نمایید. 
+چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. شما می‌توانید نمایش این پوش‌نوتیفیکیشن‌ها را [شخصی‌سازی کنید.](/ios/push-notification.html#شخصیسازی-نمایش-اعلان) برای اعلان کلیک [تعیین کنید و دیتای آن را دریافت کنید ](/ios/push-notification.html#کلیک-و-دریافت-دیتای-اعلان-آیاواس-۱۰-به-بالا). همینطور با [تنظیم پوش‌نوتیفیشکیشن چند رسانه‌ای](/ios/push-notification.html#تنظیم-نوتیفیکیشن-چندرسانهای-rich-push-notification) می‌توانید برای هرکدام اکشن تعیین نمایید. 
 
 <Br>
 
 ### شخصی‌سازی نمایش اعلان
 
-کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی (پیام چابک و پوش‌نوتیفیکیشن)، اعلان (**نوتیفیکیشن**) نمایش می‌دهد.  درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` استفاده کنید، به قطعه کد زیر دقت فرمایید. (در صورت استفاده از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` کتابخانه چابک دیگر اقدام به نمایش `LocalNotification` نمی‌کند.)
+کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی (پیام چابک و پوش‌نوتیفیکیشن)، اعلان (**نوتیفیکیشن**) نمایش می‌دهد. درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` استفاده کنید. به قطعه کد زیر دقت فرمایید: (در صورت استفاده از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` کتابخانه چابک دیگر اقدام به نمایش `LocalNotification` نمی‌کند.)
 
 ```objectivec
 //Objective-C:
@@ -78,7 +78,7 @@ UIApplication.shared.cancelAllLocalNotifications()
 
 <Br>
 
-### کلیک بر روی اعلان (آی‌اواس ۱۰ به بالا)
+### کلیک و دریافت دیتای اعلان (آی‌اواس ۱۰ به بالا)
 
 برای مدیریت کلیک بر روی اعلان پیام‌های چابک متد `:userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` را فراخوانی نمایید. به نمونه زیر دقت کنید:
 
@@ -128,7 +128,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 }
 ```
 
-### کلیک بر روی اعلان (آی‌اواس ۹ به پایین)
+### کلیک و دریافت دیتای اعلان (آی‌اواس ۹ به پایین)
 
 سرویس چابک دارای پوش‌نوتیفیکیشن و پیام چابک می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل (پوش‌نوتیفیکیشن) باشد با کلیک بر روی اعلان، `delegate` متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ (پیام چابک) باشد، از `delegate` متد `didReceiveLocalNotification` استفاده کنید.
 
@@ -158,7 +158,7 @@ self.manager.application(application, didReceive: notification)
 }
 ```
 
-همچنین  delegate متد `didReceiveLocalNotification` به شما کمک می کند که بعد از کلیک بر روی اعلان به چه صفحه‌ای هدایت شود.
+همچنین  delegate متد `didReceiveLocalNotification` به شما کمک می کند که بعد از کلیک، کاربر بر روی اعلان به چه صفحه‌ای هدایت شود.
 
 #### ۲. ‌APNs Notification
 
