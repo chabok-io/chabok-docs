@@ -6,12 +6,22 @@ permalink: javascript/release-note.html
 next: introducing.html
 ---
 
+## نسخه ۱.۰.۳ - ۱۳۹۷/۰۷/۲۸
+### تغییرات 
+* ثبت **service worker** چابک فقط در روت پروژه به جای ثبت به صورت نسبی
+
+
+## نسخه ۱.۰.۲ - ۱۳۹۷/۰۷/۲۳
+### تغییرات 
+* افزودن متد‌ `getTags` 
+* افزودن قابلیت گروه‌بندی نوتیفیکشن‌ها با استفاده از کلید `groupId`
+
 ## نسخه ۱.۰.۱ - ۱۳۹۷/۰۶/۱۳
 ### تغییرات 
 * افزودن متد‌های `setUserInfo` و `getUserInfo`  
 * افزودن متدهای `addTag ` و `addTags `
 * افزودن متدهای `removeTag` و `removeTags`
-* حل مشکل حذف کاربر با `Unregister `
+* حل مشکل حذف کاربر با متد `unregister`
 
 ### ارتقا
 * قابلیت **register مجدد کاربر** با متد `register` 

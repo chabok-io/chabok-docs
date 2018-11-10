@@ -14,7 +14,8 @@ prev: installation.html
 > و Windows Universal 10 در دسترس می باشد
 
 
-متد `Init`  برای مقدار دهی پارامتر های ضروری استفاده می شود. متد فوق را در کلاس `App.xaml.cs` و در رویداد `OnLaunched`  فراخوانی کنید همانند کد زیر :
+متد `Init`  برای مقدار دهی پارامتر های ضروری استفاده می شود. در صورت داشتن حساب چابک می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
+ متد فوق را در کلاس `App.xaml.cs` و در رویداد `OnLaunched`  فراخوانی کنید همانند کد زیر :
 
 ``` csharp
 private AdpPushClient _chabokPush;
@@ -22,7 +23,7 @@ protected override async void OnLaunched(LaunchActivatedEventArgs e)
 {
     ...
     _chabokPush = ADPPushSDK.AdpPushClient.Instance;
-	await _chabokPush.Init("APP_ID", "API_KEY", "USERNAME", "PASSWORD");
+	await _chabokPush.Init("APP_ID", "API_KEY(SDK_KEY)", "USERNAME", "PASSWORD");
 	...
 }
 ```
@@ -37,7 +38,8 @@ protected override async void OnLaunched(LaunchActivatedEventArgs e)
 _chabokPush.SetDevelopment(true);
 ```
 
-> `نکته ` : به طور کلی چابک شامل ۲ محیط تستی (سندباکس) و عملیاتی می‌باشد. حساب‌های رایگان چابک (تا ۳۰ هزار کاربر) بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. مقدار `true` برای ‌`devMode` باعث اتصال به محیط سندباکس و مقدار `false` باعث اتصال به محیط عملیاتی ما می‌شود.
+> `نکته ` : به طور کلی چابک شامل ۲ محیط تستی (سندباکس) و عملیاتی می‌باشد. حساب‌های رایگان چابک (تا ۳۰ هزار کاربر) بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. مقدار `true` برای ‌`devMode` باعث اتصال به محیط سندباکس و مقدار `false` باعث اتصال به محیط عملیاتی ما می‌شود. برای تغییر به محیط عملیاتی باید از [**پنل بخش تنظیمات**](https://doc.chabokpush.com/panel/settings.html#%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA-%D8%AD%D8%B3%D8%A7%D8%A8-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C) درخواست خود را ثبت نمایید تا پس از تایید، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد. 
+
 
 ### ثبت کاربر
 

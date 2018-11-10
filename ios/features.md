@@ -4,6 +4,7 @@ title: امکانات‌ چابک
 layout: ios
 permalink: ios/features.html
 prev: location-tracking.html
+next: troubleshoot.html
 ---
 ### مدیریت تگ‌ها
 یکی از مهمترین ابزارهای دسته‌بندی کاربران، استفاده از `Tag` می باشد. به عنوان مثال می‌توانید کاربران خود را بر اساس جنسیت دسته‌بندی کرده و بر اساس جنسیت آنها پیام خاصی را ارسال کنید و یا کاربرانی که از پرداخت درون برنامه‌ای شما استفاده می‌کنند، یک `Tag` با عنوان `Premium_User` به آنها اختصاص دهید.
@@ -21,6 +22,27 @@ prev: location-tracking.html
 
 self.manager?.addTag("Premium_User")
 ```
+برای اختصاص چند تگ به طور یکجا به کاربر از متد زیر استفاده کنید:
+
+```objectivec
+//Objective-C
+[self.manager addTags:@[@"Premium_User",@"MALE",@"Teenage"] success:^(NSInteger count) {
+            NSLog(@"Add tags to %zd devices", count);
+        } failure:^(NSError *error) {
+            NSLog(@"Error to adding tags %@",error);
+        }];
+```
+```swift
+//Swift
+manager.addTags(["Premium_User", "MALE", "Teenage"], success: { count in
+    print("Add tags to \(count) devices")
+}, failure: { error in
+    if let anError = error {
+        print("Error to adding tags \(anError)")
+    }
+})
+```
+
 همچنین می‌توانید با استفاده از overload دیگر این متد، از افزودن و یا خطا در عملیات با خبر شوید :
 ```objectivec
 //Objective-C:
@@ -58,6 +80,30 @@ self.manager?.addTag("Premium_User",
 
 self.manager?.removeTag("Premium_User")
 ```
+برای حذف چند تگ به طور یکجا از کاربر از متد زیر استفاده کنید:
+
+```objectivec
+//Objective-C
+[self.manager removeTags:@[@"Premium_User",@"MALE",@"Teenage"] success:^(NSInteger count) {
+            NSLog(@"Remove tags to %zd devices", count);
+        } failure:^(NSError *error) {
+            NSLog(@"Error to removing tags %@",error);
+        }];
+```
+```swift
+//Swift
+manager.removeTags("Premium_User", "MALE", "Teenage"], success: { count in
+    print("Remove tags to \(count) devices")
+}, failure: { error in
+    if let anError = error {
+        print("Error to removing tags \(anError)")
+    }
+})
+```
+
+> `نکته` : در متد `removeTags` می‌توانید با خالی گذاشتن نام تگ‌ها، همه تگ‌های یک کاربر را حذف نمایید.
+
+
 ### شناسه دستگاه در چابک
 هر دستگاه در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید :
 ```objectivec
@@ -72,7 +118,7 @@ let installationId:NSString = manager?.getInstallationId() as! NSString
 
 ```
 
-###  مدیریت نشان‌ها
+###  مدیریت نشان‌ها (Badge)
 
 اگر می خواهید شماره badge برنامه خود را بازنشانی کنید،با روش زیر می توانید: 
 

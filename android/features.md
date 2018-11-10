@@ -146,7 +146,6 @@ xmlns:tools="http://schemas.android.com/tools"
 ```markup
 <meta-data android:name="com.adpdigital.push.client.BadgeCount" android:value="DISABLE" />
 ```
-
 <Br>
 
 ### دریافت وضعیت اپلیکیشن

@@ -7,10 +7,9 @@ prev: guide.html
 ---
  در این صفحه راهنمای استفاده صحیح و آسان برای ارسال پوش از طریق API را با هم بررسی خواهیم کرد. برای این کار دو متد post (پست) **toUsers** و **byQuery** وجود دارد که در ادامه به هر دوی آن‌ها خواهیم پرداخت.
 
-
 ### ارسال پوش از طریق کانال‌های چابک 
 
-در این متد (**toUsers**) می‌توانیم برای یک **کاربر بخصوص** یا **همه کاربران یک کانال** پیامی را از طریق API ارسال کنیم. (پیام خصوصی و عمومی)
+در این متد (**toUsers**) می‌توانیم برای یک **یک یا چند کاربر بخصوص** یا **همه کاربران یک کانال** پیامی را از طریق API ارسال کنیم. (پیام خصوصی و عمومی)
 
 #### ساختار درخواست
 
@@ -129,16 +128,71 @@ curl -X POST \
 |icon| تصویر اعلان      |  string | نام تصویر|
 | sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | نام صدا   |
 |clickUrl| لینک هنگام کلیک|string|لینک
+|ledColor|تنظیم رنگ led (فقط اندروید)|string|کد رنگ HEX
+|smallIcon| آیکون کوچک اعلان (فقط اندروید)|string|نام آیکون
 |(id (action| شناسه اکشن | string| check
 |(title (action| عنوان اکشن|string| status
-|(options (action| رفتار اکشن (فقط برای آی‌او‌اس) |number| 1
-|(icon (action| نام آیکون در فولدر drawable  (فقط در اندروید)| string| نام آیکون
+|(options (action| رفتار اکشن (فقط آی‌او‌اس) |number| 1
+|(icon (action| نام آیکون در فولدر drawable  (فقط اندروید)| string| نام آیکون
 |mediaType|  نوع رسانه| string| jpeg
 |mediaUrl| لینک رسانه|string| لینک
 |contentAvailable|  برای انجام یک آپدیت بی‌صدا در بک‌گراند یا فورگراند مقدار 1 را بگذارید | boolean|  1 
 |mutableContent| برای پشتیبانی از اعلان چندرسانه‌ای مقدار 1 را حتما قرار دهید| boolean| 1
 |category| شناسه اعلان برای ذخیره آن|string| delivery
 
+
+> `نکته :` در پارامترهای اعلان، پارامتر `options` یا همان رفتار اکشن (فقط در آی‌او‌اس) می‌توانید عدد ۱ برای اکشن [Authentication Required (اکشن در صورت قفل نبودن دستگاه اجرا می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired?language=objc)،‌ ۲ برای اکشن [Destructive (اکشن تسک مخرب انجام می‌دهد)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive?language=objc)، ۴ برای اکشن [Foreground (اکشن موجب باز شدن اپ در فورگراند می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground?language=objc) و جمع این اعداد را برای ترکیب آن‌ها با هم قرار دهید.
+
+
+> `نکته :` برای ارسال پیام به چند کاربر با متد `toUsers` می‌توانید از دو روش استفاده کنید. روش اول قرار دادن آرایه‌ای از شناسه‌های کاربری در فیلد `users` (نه user) و روش دوم ایجاد کردن payloadهای مورد نظر به ازای هر کاربر و ارسال همه آن‌ها می‌باشد. به نمونه زیر توجه فرمایید:
+
+نمونه روش اول:
+
+```bash
+{
+  "users": ["USER_1", "USER_2", "USER_3", "USER_4"],
+  "content": "سفارش شما با موفقیت ثبت شد",
+  "channel": "default",
+  "notification": {
+   "title": "چابک",
+   "body": "سفارش ثبت شد"
+  }
+}
+```
+
+نمونه روش دوم:
+
+```bash
+[
+  {
+    "user": "USER_1",
+    "content": "سفارش شما با موفقیت ثبت شد",
+    "channel": "default",
+    "notification": {
+      "title": "چابک",
+      "body": "سفارش ثبت شد"
+    }
+  },
+  {
+    "user": "USER_2",
+    "content": "سفارش شما با موفقیت ثبت شد",
+    "channel": "default",
+    "notification": {
+      "title": "چابک",
+      "body": "سفارش ثبت شد"
+    }
+  },
+  {
+    "user": "USER_2",
+    "content": "سفارش شما با موفقیت ثبت شد",
+    "channel": "default",
+    "notification": {
+      "title": "چابک",
+      "body": "سفارش ثبت شد"
+    }
+  }
+]
+```
 
 #### پاسخ
 پاسخ درخواست‌های ارسال پیام به صورت تعداد دستگاه‌هایی که پیام به آن‌ها ارسال می‌شود، می باشد.
@@ -187,7 +241,7 @@ curl -X POST \
 
 ### ارسال پوش از طریق گروه‌بندی کاربران (Segmented Push)
 
-در این متد (**byQuery**) به جای ارسال پیام به صورت خصوصی یا عمومی می‌خواهیم به **گروهی از کاربران** ارسال کنیم.
+در این متد (**byQuery**) به جای ارسال پیام به صورت خصوصی یا عمومی می‌خواهیم به **گروهی از کاربران** ارسال کنیم. برای آشنایی با **نحوه استفاده از سگمنت در API** لطفا [راهنمای آن را مطالعه نمایید](https://doc.chabokpush.com/rest-api/send-push.html#%D9%86%D8%AD%D9%88%D9%87-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-%D8%B3%DA%AF%D9%85%D9%86%D8%AA%D9%87%D8%A7-%D8%AF%D8%B1-api).
 
 #### ساختار درخواست
 
@@ -277,16 +331,6 @@ curl -X POST \
 <td align="right">40</td>
 </tr>
 <tr>
-<td align="center">fallback</td>
-<td align="right">پیامک جایگزین</td>
-<td align="center">JSON</td>
-<td align="left" dir="ltr">{
-                           &quot;content&quot;: &quot;سلام&quot;,
-                           &quot;delay&quot;: 5,
-                           &quot;media&quot;: &quot;sms&quot;
-                           }</td>
-</tr>
-<tr>
 <td align="center">notification</td>
 <td align="right">تنظیمات اعلان</td>
 <td align="center">payload</td>
@@ -310,16 +354,20 @@ curl -X POST \
 |icon| تصویر اعلان      |  string | نام تصویر|
 | sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | نام صدا   |
 |clickUrl| لینک هنگام کلیک|string|لینک
+|ledColor|تنظیم رنگ led (فقط اندروید)|string|کد رنگ HEX
+|smallIcon| آیکون کوچک اعلان (فقط اندروید)|string|نام آیکون
 |(id (action| شناسه اکشن | string| check
 |(title (action| عنوان اکشن|string| status
-|(options (action| رفتار اکشن (فقط برای آی‌او‌اس) |number| 1
-|(icon (action| نام آیکون در فولدر drawable  (فقط در اندروید)| string| نام آیکون
+|(options (action| رفتار اکشن (فقط آی‌او‌اس) |number| 1
+|(icon (action| نام آیکون در فولدر drawable  (فقط اندروید)| string| نام آیکون
 |mediaType|  نوع رسانه| string| jpeg
 |mediaUrl| لینک رسانه|string| لینک
 |contentAvailable|  برای انجام یک آپدیت بی‌صدا در بک‌گراند یا فورگراند مقدار 1 را بگذارید | boolean|  1 
 |mutableContent| برای پشتیبانی از اعلان چندرسانه‌ای مقدار 1 را حتما قرار دهید| boolean| 1
 |category| شناسه اعلان برای ذخیره آن|string| delivery
 
+
+> `نکته :` در پارامترهای اعلان، پارامتر `options` یا همان رفتار اکشن (فقط در آی‌او‌اس) می‌توانید عدد ۱ برای اکشن [Authentication Required (اکشن در صورت قفل نبودن دستگاه اجرا می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired?language=objc)،‌ ۲ برای اکشن [Destructive (اکشن تسک مخرب انجام می‌دهد)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive?language=objc)، ۴ برای اکشن [Foreground (اکشن موجب باز شدن اپ در فورگراند می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground?language=objc) و جمع این اعداد را برای ترکیب آن‌ها با هم قرار دهید.
 
 #### پاسخ
 پاسخ درخواست‌های ارسال پیام به صورت تعداد دستگاه‌هایی که پیام به آن‌ها ارسال می‌شود، می باشد.
@@ -368,4 +416,76 @@ curl -X POST \
 > `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/push/push_byQuery) مراجعه فرمایید.
 
 
+### نحوه استفاده از سگمنت‌ها در API
 
+هر سگمنت می‌تواند شامل یک یا چند شرط (**rule**) باشد.
+
+#### شرط‌ها
+
+هر شرط شامل ۳ قسمت اصلی می‌باشد:
+
+- `name` نام فیلد
+
+- `operator` نوع عملوند (مانند بزرگتر، مساوی‌ با و غیره)
+
+- `value` مقداری که سنجش می‌شود
+
+#### عملوند‌های مجاز (operators)
+
+- `equal_to`
+
+- `not_equal`
+
+- `lesser_than`
+
+- `lesser_equals`
+
+- `greater_than`
+
+- `greater_equals`
+
+- `include`
+
+- `not_include`
+
+- `before`
+
+- `after`
+
+> `نکته:` عملوند‌های `before` و `after` مخصوص فیلد‌هایی از جنس زمان هستند، و مقداری که در قسمت `value` این نوع شرط‌ها قرار میگیرد به صورت `xh` می‌باشد. نمونه: `'value: '6h`.
+
+#### nameهای مجاز
+
+- `installDate` زمان اولین بازدید
+
+- `launchTime` زمان آخرین بازدید
+
+- `launchCount` تعداد بازدید
+
+- `tags` تگ‌های کاربر
+
+- `deviceType` نوع دستگاه
+
+- `clientVersion` نسخه برنامه
+
+- `osVersion` نسخه سیستم‌عامل
+
+#### نمونه
+
+```bash
+"segment": {
+  "all": [
+    {
+       "name": "installDate",
+       "operator": "after",
+       "value": "6h"
+    },
+    {
+       "name": "launchCount",
+       "operator": "greater_than",
+       "value": 2
+    }
+  ]
+}
+```
+مثال بالا کاربرانی را هدف قرار می‌دهد که بعد از ۶ ساعت پیش، برنامه‌ را نصب کرده‌اند و بیش از ۲ بار هم آن را باز نموده‌اند.

@@ -12,10 +12,10 @@
       title: نصب چابک
     - id: setup
       title: راه‌اندازی چابک
-    - id: rich_notification
-      title: نوتیفیکیشن چندرسانه‌ای
     - id: publishingMessages
       title: پیام چابک
+    - id: rich_notification
+      title: نوتیفیکیشن چندرسانه‌ای
     - id: validation
       title: اعتبارسنجی شناسه کاربری
     - id: notification
@@ -30,5 +30,8 @@
       title: مکان‌یابی
     - id: features
       title: امکانات‌ دیگر چابک
+    - id: troubleshoot
+      title: عیب یابی
+
 
 

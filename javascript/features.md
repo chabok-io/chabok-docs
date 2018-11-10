@@ -4,6 +4,7 @@ title: امکانات‌ چابک
 layout: javascript
 permalink: javascript/features.html
 prev: event-tracking.html
+next: troubleshoot.html
 ---
 ### مدیریت تگ ها
 یکی از مهمترین ابزارهای دسته‌بندی کاربران، استفاده از `Tag` می باشد. به عنوان مثال می‌توانید کاربران خود را بر اساس جنسیت دسته‌بندی کرده و بر اساس جنسیت آنها پیام خاصی را ارسال کنید و یا کاربرانی که از پرداخت درون برنامه‌ای شما استفاده می‌کنند، یک `Tag` با عنوان `Premium_User` به آنها اختصاص دهید.
@@ -14,6 +15,12 @@ prev: event-tracking.html
 ```javascript
 chabok.addTag("Premium_User")
 ```
+همچنین برای اضافه چند تگ به طور یکجا می‌توانید از متد زیر استفاده کنید:
+
+```javascript
+chabok.addTags('Premium_User', 'Male', 'Teenage')
+```
+
 همچنین می‌توانید با استفاده از overload دیگر این متد، از افزودن و یا خطا در عملیات با خبر شوید :
 ```javascript
 
@@ -32,6 +39,15 @@ chabok.addTag("Premium_User")
 ```javascript
 chabok.removeTag("Premium_User")
 ```
+
+همچنین برای حذف چند تگ به طور یکجا می‌توانید از متد زیر استفاده کنید:
+
+```javascript
+chabok.removeTags('Premium_User', 'Male', 'Teenage')
+```
+
+> `نکته:` برای حذف همه تگ‌های یک کاربر می‌توانید در متد بالا جای نام تگ (پرانتز) را خالی بگذارید.
+
 ### شناسه دستگاه در چابک
 هر دستگاه در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید :
 ```javascript

@@ -1,12 +1,11 @@
 ---
 id: event-tracking
 title: رصد رویدادها (Event Tracking)
-layout: javascript
-permalink: javascript/event-tracking.html
-prev: events.html
+layout: react-native-bridge
+permalink: react-native-bridge/event-tracking.html
+prev: verification.html
 next: features.html
 ---
-
 
 شما می‌توانید برای **درک الگوی استفاده از اپلیکیشنتان** و شناخت کاربرانتان، **رفتار آن‌ها را به طور لحظه‌ای رصد کنید** و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را **دسته‌بندی کنید** و **پیام بفرستید**.
 
@@ -20,7 +19,7 @@ next: features.html
 
 
 ```javascript
-chabok.track('YOUR_TRACK_NAME', {"KEY":"VALUE"})
+this.chabok.track('YOUR_TRACK_NAME', {"KEY":"VALUE"})
 ```
 
 > نکته : مقدار `data` در متد `track` یک داده مربوط به رویداد‌ می‌تواند باشد. شما این مقدار را می‌توانید به عنوان `Object` همراه رویداد‌ در نظر بگیرید.
@@ -36,10 +35,8 @@ const data = {
   "clothes_id": 35147652
 }
 
-chabok.track('purchase-clothing', data)
+this.chabok.track('purchase-clothing', data)
 ```
-
-
 
 ### ارسال پیام براساس رویداد
 

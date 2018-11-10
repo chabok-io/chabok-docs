@@ -7,7 +7,58 @@ prev: validation.html
 next: events.html
 ---
 
-### رویداد کلیک بر روی اعلان
+### رویداد کلیک بر روی اعلان (آی‌اواس ۱۰ به بالا)
+برای مدیریت کلیک بر روی اعلان پیام‌های چابک متد `:userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` را فراخوانی نمایید. به نمونه زیر دقت کنید:
+
+```objectivec
+//Objective-C
+
+-(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
+    //Get actionIdentifier.
+    NSString *actionId = response.actionIdentifier;
+    //Get notification payload.
+    NSDictionary *payload = response.notification.request.content.userInfo;
+    
+    //Get message data
+    NSDictionary *messageData;
+    if ([payload valueForKey:@"message"]) {
+    	//In chabok message user tapped on notification
+        messageData = [[payload valueForKey:@"message"] valueForKey:@"data"];
+    } else {
+    	//In APNS user tapped on notification
+        messageData = [payload valueForKey:@"data"];
+    }
+    
+    completionHandler();
+}
+```
+
+```swift
+//Swift
+
+func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+	//Get actionIdentifier.
+	let actionId = response.actionIdentifier
+	//Get notification payload.
+	let payload = response.notification.request.content.userInfo
+	
+	//Get message data
+	var messageData:NSDictionary
+	if payload["message"] is NSDictionary {
+		//In chabok message user tapped on notification
+		messageData = (payload["message"] as! NSDictionary).value(forKey: "data") as! NSDictionary
+	} else {
+		//In APNS user tapped on notification
+		messageData = payload["data"] as! NSDictionary
+	}
+        
+	completionHandler()
+}
+```
+
+### رویداد کلیک بر روی اعلان (آی‌اواس ۹ به پایین)
 سرویس چابک دارای `Messageing` و `Push Notification`  می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل باشد با کلیک بر روی اعلان، delegate متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ باشد، از delegate متد `didReceiveLocalNotification` استفاده کنید.
 
 #### ۱. LocalNotification

@@ -3,8 +3,8 @@ id: rich_notification
 title: نوتیفیکیشن چندرسانه‌ای
 layout: ios
 permalink: ios/rich_notification.html
-prev: setup.html
-next: publishingMessages.html
+prev: publishingMessages.html
+next: validation.html
 ---
 ### مراحل راه‌اندازی نوتیفیکیشن چندرسانه‌ای
 
