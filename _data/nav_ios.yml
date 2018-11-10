@@ -1,37 +1,26 @@
 - title: شروع سریع ios
   items:
-    - id: release-note
-      title: لیست تغییرات کتابخانه
-    - id: introducing
-      title: معرفی چابک
     - id: required
       title: پیش‌نیازها
-    - id: certificate
-      title: ایجاد گواهی اپل
-    - id: installation
-      title: نصب چابک
-    - id: setup
-      title: راه‌اندازی چابک
-    - id: publishingMessages
+    - id: sdk-setup
+      title: راه‌اندازی
+    - id: chabok-messaging
       title: پیام چابک
-    - id: rich_notification
-      title: نوتیفیکیشن چندرسانه‌ای
-    - id: validation
-      title: اعتبارسنجی شناسه کاربری
-    - id: notification
-      title: مدیریت اعلان‌ها
-    - id: events
-      title: مدیریت رویدادها
-    - id: event-tracking
-      title: ‌رصد رویدادها
-    - id: location-config
-      title: تنظیمات مکان‌یابی
+    - id: push-notification
+      title: پوش‌نوتیفیکیشن
+    - id: user-management
+      title: گروه‌بندی کاربران
+    - id: behavior-tracking
+      title: رصد رفتار درون‌برنامه‌ای
     - id: location-tracking
-      title: مکان‌یابی
+      title: خدمات مکانی
+    - id: event-handling
+      title: رویدادهای آنی
+    - id: verification
+      title: اعتبارسنجی شناسه کاربری
     - id: features
-      title: امکانات‌ دیگر چابک
+      title: امکانات دیگر
     - id: troubleshoot
       title: عیب یابی
-
-
-
+    - id: release-note
+      title: ‌لیست تغییرات

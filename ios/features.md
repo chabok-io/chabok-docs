@@ -1,154 +1,22 @@
 ---
 id: features
-title: امکانات‌ چابک 
+title: امکانات‌ دیگر 
 layout: ios
 permalink: ios/features.html
-prev: location-tracking.html
+prev: verification.html
 next: troubleshoot.html
 ---
-### مدیریت تگ‌ها
-یکی از مهمترین ابزارهای دسته‌بندی کاربران، استفاده از `Tag` می باشد. به عنوان مثال می‌توانید کاربران خود را بر اساس جنسیت دسته‌بندی کرده و بر اساس جنسیت آنها پیام خاصی را ارسال کنید و یا کاربرانی که از پرداخت درون برنامه‌ای شما استفاده می‌کنند، یک `Tag` با عنوان `Premium_User` به آنها اختصاص دهید.
 
-#### افزودن تگ
-با استفاده از متد زیر، شما می‌توانید به کاربر فعلی یک `Tag` اختصاص دهید :
+چابک متناسب با نیاز شما امکانات دیگری را هم در اختیارتان می‌گذارد. در این صفحه می‌توانید از [وضعیت اتصال سرور و کلاینت](/ios/features.html#وضعیت-اتصال-به-چابک) مطلع شوید. [رویدادهای اپلیکیشن (ثبت کاربر، نصب و بازدید)](/ios/features.html#رویداد-وضعیت-اپلیکیشن) و شناسه‌های [دستگاه](/ios/features.html#دریافت-شناسه-دستگاه) و [کاربر](/ios/features.html#دریافت-شناسه-کاربر) را دریافت نمایید. [نشان‌هایی (Badge)](/ios/features.html#مدیریت-نشانها-badge) که روی آیکون اپ شما در دستگاه کاربر نمایش داده می‌شود را می‌توانید مدیریت کنید. همچنین [ارسال موقعیت مکانی در هنگام باز شدن اپلیکیشن](/ios/features.html#ارسال-موقعیت-مکانی-در-هنگام-باز-شدن-اپلیکیشن) و [مشاهده گزارش‌های چابک](/ios/features.html#فعالسازی-گزارشهای-چابک) را هم می‌توانید پیاده‌سازی کنید. در آخر می‌توانید از [وضعیت اپ خود](/ios/features.html#دریافت-وضعیت-اپلیکیشن) (فورگراند و بک‌گراند بودن آن) آگاه شوید.
 
-```objectivec
-//Objective-C:
-
-[self.manager addTag:@"Premium_User"];
-```
-```swift
-//Swift:
-
-self.manager?.addTag("Premium_User")
-```
-برای اختصاص چند تگ به طور یکجا به کاربر از متد زیر استفاده کنید:
-
-```objectivec
-//Objective-C
-[self.manager addTags:@[@"Premium_User",@"MALE",@"Teenage"] success:^(NSInteger count) {
-            NSLog(@"Add tags to %zd devices", count);
-        } failure:^(NSError *error) {
-            NSLog(@"Error to adding tags %@",error);
-        }];
-```
-```swift
-//Swift
-manager.addTags(["Premium_User", "MALE", "Teenage"], success: { count in
-    print("Add tags to \(count) devices")
-}, failure: { error in
-    if let anError = error {
-        print("Error to adding tags \(anError)")
-    }
-})
-```
-
-همچنین می‌توانید با استفاده از overload دیگر این متد، از افزودن و یا خطا در عملیات با خبر شوید :
-```objectivec
-//Objective-C:
-
-[self.manager addTag:@"Premium_User" success:^(NSInteger count) {
-        NSLog(@"%@ tag was assign to '%@' user with [%zd] devices",@"Premium_User",self.manager.userId,count);
-    } failure:^(NSError *error) {
-        NSLog(@"An error happend adding tag ...");
-    }];
-```
-```swift
-//Swift:
-
-self.manager?.addTag("Premium_User",
-        success: {(_ count: Int) -> Void in
-	                 print("\("Premium_User") tag was assign to '\(self.manager?.userId)' user with [\(count)] devices")
-},
-        failure: {(_ error: Error?) -> Void in
-	                 print("An error happend adding tag ...")
-})
-```
-اگر عملیات افزودن تگ با موفقیت انجام شود، می‌توانید از طریق پنل چابک، تگ اضافه شده به کاربر را در بخش مشترکین همانند تصویر زیر مشاهده کنید :
-
-![مشترک چابک](http://uupload.ir/files/ujp8__1x-ios_device.png)
-#### حذف تگ
-با استفاده از متد زیر، می‌توانید یک `Tag` خاص از کاربر فعلی را حذف کنید :
-
-```objectivec
-//Objective-C:
-
-[self.manager removeTag:@"Premium_User"];
-```
-```swift
-//Swift:
-
-self.manager?.removeTag("Premium_User")
-```
-برای حذف چند تگ به طور یکجا از کاربر از متد زیر استفاده کنید:
-
-```objectivec
-//Objective-C
-[self.manager removeTags:@[@"Premium_User",@"MALE",@"Teenage"] success:^(NSInteger count) {
-            NSLog(@"Remove tags to %zd devices", count);
-        } failure:^(NSError *error) {
-            NSLog(@"Error to removing tags %@",error);
-        }];
-```
-```swift
-//Swift
-manager.removeTags("Premium_User", "MALE", "Teenage"], success: { count in
-    print("Remove tags to \(count) devices")
-}, failure: { error in
-    if let anError = error {
-        print("Error to removing tags \(anError)")
-    }
-})
-```
-
-> `نکته` : در متد `removeTags` می‌توانید با خالی گذاشتن نام تگ‌ها، همه تگ‌های یک کاربر را حذف نمایید.
+<Br>
 
 
-### شناسه دستگاه در چابک
-هر دستگاه در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید :
-```objectivec
-//Objective-C:
+### وضعیت اتصال به چابک
 
-NSString *installationId = [self.manager getInstallationId];
-```
-``` swift
-//Swift:
+پس از فراخوانی `manager.addDelegate`، می‌توانید از متد زیر برای دریافت رویدادهای داخلی چارچوب چابک استفاده کنید.
 
-let installationId:NSString = manager?.getInstallationId() as! NSString
-
-```
-
-###  مدیریت نشان‌ها (Badge)
-
-اگر می خواهید شماره badge برنامه خود را بازنشانی کنید،با روش زیر می توانید: 
-
-```objectivec
-//Objetive-C: 
-
-- (void)applicationDidEnterBackground:(UIApplication *)application { 
-	[PushClientManager resetBadge]; 
-} 
-- (void)applicationWillEnterForeground:(UIApplication *)application { 
-	[PushClientManager resetBadge]; 
-}
-```
-```swift
-//Swift: 
-
-func applicationDidEnterBackground(_ application: UIApplication) { 
-	PushClientManager.resetBadge() 
-} 
-
-func applicationWillEnterForeground(_ application: UIApplication) { 
-	PushClientManager.resetBadge() 
-} 
-``` 
-### اتصال با سرور
-
-
-پس از فراخوانی `manager.addDelegate`، می توانید از متد زیر برای دریافت رویدادهای داخلی چارچوب چابک استفاده کنید.
-
-برای اطلاع از وضعیت آنلاین یا آفلاین بودن،میتوانید از متد زیر استفاده کنید:
+برای اطلاع از وضعیت آنلاین یا آفلاین بودن، می‌توانید از متد زیر استفاده کنید:
 
 ```objectivec
 //Objetive-C: 
@@ -158,7 +26,7 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 }
 
 - (void)pushClientManagerDidChangeServerReachiability:(BOOL)reachable networkType:(PushClientServerReachabilityNetworkType)networkType{
-	// Called When PushClientManager Server Reachiability has been Changed
+	// Called When PushClientManager Server Reachability has been Changed
 }
 ```
 ```swift
@@ -169,10 +37,11 @@ func pushClientManagerDidChangedServerConnectionState() {
 }
 
 func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkType: PushClientServerReachabilityNetworkType) {
-	// Called When PushClientManager Server Reachiability has been Changed
+	// Called When PushClientManager Server Reachability has been Changed
 }
 ```
-برای مثال میتوانید به نمونه کد زیر توجه کنید:
+برای مثال می‌توانید به نمونه کد زیر توجه کنید:
+
 ```objectivec
 //Objective-C:
 
@@ -222,7 +91,178 @@ func pushClientManagerDidChangedServerConnectionState (){
 }
 ```
 
-### ارسال موقعیت مکانی در هنگام باز شدن برنامه
+<Br>
+
+### رویداد وضعیت اپلیکیشن
+
+با پیاده‌سازی متدهای زیر قادر به دریافت وضعیت اپلیکیشنتان (**ثبت کاربر**، **نصب** و **باز شدن اپلیکیشن**) خواهید بود.
+
+- ثبت کاربر: 
+
+```objectivec
+//Objective-C
+- (void)pushClientManagerDidRegisterUser:(BOOL)registration{
+    NSLog(@"User sucessfully registered.");
+}
+- (void) pushClientManagerDidFailRegisterUser:(NSError *)error {
+    NSLog(@"User not registered because of '%@' error", error);
+}
+```
+```swift
+//Swift
+func pushClientManagerDidRegisterUser(_ registration: Bool) {
+    print("User sucessfully registered.")
+}
+    
+func pushClientManagerDidFailRegisterUser(_ error: Error!) {
+    print("User not registered because of '\(String(describing: error))' error")
+}
+```
+
+- نصب:
+
+```objectivec
+//Objective-C
+- (BOOL) application:(UIApplication *) application
+                didFinishLaunchingWithOptions:(NSDictionary *) launchOptions{
+    ...
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(detectAppNewInstalled:)
+                                                 name:kPushClientDetectAppNewInstall
+                                               object:nil];
+    ...
+    
+    return YES;
+}
+- (void) detectAppNewInstalled:(NSNotification *) notification{
+    NSLog(@"New Install :  ----------------- %@ ---------------",notification.userInfo);
+}
+```
+```swift
+//Swift
+func application(_ application: UIApplication,
+                didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+    ...
+            
+    NotificationCenter.default.addObserver(self,
+                                       selector: #selector(self.detectAppNewInstalled(_:)),
+                                       name: kPushClientDetectAppNewInstall,
+                                       object: nil)
+    ...
+    return true
+}
+    
+@objc func detectAppNewInstalled(_ notification: Notification?) {
+    if (notification?.userInfo) != nil {
+        print("App installed")
+    }
+}
+```
+
+- بازدید:
+
+```objectivec
+//Objective-C
+- (BOOL) application:(UIApplication *) application
+                didFinishLaunchingWithOptions:(NSDictionary *) launchOptions{
+    ....
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(detectLaunched:)
+                                                 name:kPushClientDetectAppWasLaunched
+                                               object:nil];
+    ...
+    
+    return YES;
+}
+-(void) detectLaunched:(NSNotification *) notification{
+    NSLog(@"App launched",notification.userInfo);
+}
+```
+```swift
+//Swift
+func application(_ application: UIApplication,
+                didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+    ...
+            
+    NotificationCenter.default.addObserver(self,
+                                       selector: #selector(self.detectLaunched(_:)),
+                                       name: kPushClientDetectAppWasLaunched,
+                                       object: nil)
+    ...
+    return true
+}
+    
+@objc func detectLaunched(_ notification: Notification?) {
+    if (notification?.userInfo) != nil {
+        print("App launched")
+    }
+}
+```
+
+<Br>
+
+### دریافت شناسه کاربر
+
+هر **کاربر** در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
+
+```objectivec
+//Objective-C
+[PushClientManager defaultManager].userId;
+```
+```swift
+//Swift
+PushClientManager.default().userId
+```
+
+### دریافت شناسه دستگاه 
+
+هر **دستگاه** در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
+
+```objectivec
+//Objective-C:
+
+NSString *installationId = [self.manager getInstallationId];
+```
+``` swift
+//Swift:
+
+let installationId:NSString = manager?.getInstallationId() as! NSString
+```
+
+<Br>
+
+### مدیریت نشان‌ها (Badge)
+
+در صورت تمایل می‌توانید شماره badge اپلیکیشنتان را با متد زیر بازنشانی کنید:
+
+```objectivec
+//Objetive-C: 
+
+- (void)applicationDidEnterBackground:(UIApplication *)application { 
+	[PushClientManager resetBadge]; 
+} 
+- (void)applicationWillEnterForeground:(UIApplication *)application { 
+	[PushClientManager resetBadge]; 
+}
+```
+```swift
+//Swift: 
+
+func applicationDidEnterBackground(_ application: UIApplication) { 
+	PushClientManager.resetBadge() 
+} 
+
+func applicationWillEnterForeground(_ application: UIApplication) { 
+	PushClientManager.resetBadge() 
+} 
+``` 
+<Br>
+
+### ارسال موقعیت مکانی در هنگام باز شدن اپلیکیشن
 
 با فعال کردن قابلیت `enableLocationOnLaunch`، کتابخانه چابک به هنگام باز شدن برنامه و در صورت پیدا کردن موقعیت مکانی کاربر،‌ موقعیت آن را توسط [انتشار رویداد](/ios/events.html) به سرور ارسال می کند.
 
@@ -241,9 +281,12 @@ func pushClientManagerDidChangedServerConnectionState (){
 self.manager?.enableLocationOnLaunch = true
 ```
 
+<Br>
+
 ### فعال‌سازی گزارش‌های چابک
 
-با استفاده از `property`، `enableLog`  می‌توانید گزارش‌های چابک را در بخش `Debugger Output` مشاهده کنید
+با استفاده از `property`، `enableLog`  می‌توانید گزارش‌های چابک را در بخش `Debugger Output` مشاهده کنید:
+
 ```objectivec
 //Objective-C
 PushClientManager.defaultManager.enableLog = YES;
@@ -251,4 +294,38 @@ PushClientManager.defaultManager.enableLog = YES;
 ```swift
 //Swift
 PushClientManager.default().enableLog = true
+```
+### دریافت وضعیت اپلیکیشن
+
+جهت بررسی وضعیت اپلیکیشن خود در حال اجرا (**Background** یا **Foreground**) می‌توانید متد‌های زیر را فراخوانی کنید:
+
+```objectivec
+//Objective-C
+
+switch (UIApplication.sharedApplication.applicationState) {
+	case UIApplicationStateActive:
+		NSLog(@"App is active in foreground");
+		break;
+   
+	case UIApplicationStateInactive:
+		NSLog(@"App is inactive in foreground");
+		break;
+
+	case UIApplicationStateBackground:
+		NSLog(@"App is in background");
+		break;
+    }
+```
+
+```swift
+//Swift
+
+switch UIApplication.shared.applicationState {
+	case .active:
+		print("App is active in foreground")
+	case .inactive:
+		print("App is inactive in foreground")
+	case .background:
+		print("App is in background")
+}
 ```
