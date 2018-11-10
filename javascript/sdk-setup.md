@@ -1,18 +1,59 @@
 ---
-id: setup
-title: راه‌اندازی چابک
+id: sdk-setup
+title: راه‌اندازی
 layout: javascript
-permalink: javascript/setup.html
-prev: installation.html
-next: publishingMessages.html
+permalink: javascript/sdk-setup.html
+prev: required.html
+next: chabok-messaging.html
 ---
-## مراحل راه‌اندازی چابک
-برای راه‌اندازی چابک باید دو مرحله زیر را به ترتیب انجام دهید تا بتوانید دستگاه خود را در پنل چابک مشاهده کنید :
 
-1. مقدار‌‌‌‌‌دهی اولیه
-2. ثبت کاربر
+پس از طی کردن مراحل صفحه [پیش‌نیازها](/javascript/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/android/sdk-setup.html#۱--نصب-کتابخانه)، مقداردهی و راه‌اندازی کتابخانه چابک را در اپلیکیشنتان [انجام دهید](/javascript/sdk-setup.html#۳--مقداردهی-اولیه-initialize) و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/javascript/sdk-setup.html#۴--ثبت-کاربر-register) را حتما پشت سر بگذارید.
+
+برای انجام موفق این کار باید تمام مراحل زیر را به ترتیب انجام دهید:
+
+[ ۱- نصب کتابخانه](/javascript/sdk-setup.html#۱--نصب-کتابخانه)
+
+[۳- مقداردهی اولیه (Initialize)](/javascript/sdk-setup.html#۳--مقداردهی-اولیه-initialize)
+
+[ ۴- ثبت کاربر (Register)](/javascript/sdk-setup.html#۴--ثبت-کاربر-register)
+
+<Br>
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود.  
+
+## نصب کتابخانه
+
+برای نصب از طریق `npm`:
+
+```bash
+npm install chabokpush --save
+```
+```bash
+yarn add chabokpush
+```
+و یا با استفاده از [CDN](https://unpkg.com/chabokpush/dist/chabokpush.min.js) ، چابک را به پروژه ی خود اضافه کنید.
+
+```bash
+<script src="https://unpkg.com/chabokpush/dist/chabokpush.min.js"></script>
+```
+
+###  افزودن Service Worker
+ برای ارسال پوش نوتیفیکشن در پس‌زمینه باید فایل `ChabokSDKWorker.js` را از این [لینک](https://raw.githubusercontent.com/chabokpush/chabok-client-js/master/dist/ChabokSDKWorker.js) دریافت نموده و در root پروژه قرار دهید.
+ 
+ اگر از **Github Desktop** استفاده می کنید برای دریافت از این [لینک](x-github-client://openRepo/https://github.com/chabokpush/chabok-client-js?branch=master&filepath=dist%2FChabokSDKWorker.js) استفاده کنید.
+
+اگر از **Webpack** استفاده می‌کنید می توانید از پلاگین [CopyWebpackPlugin](https://github.com/webpack-contrib/copy-webpack-plugin)‍ برای انتقال service worker به پوشه dist استفاده کنید.
+
+```javascript
+ new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '/node_modules/chabokpush/dist/ChabokSDKWorker.js'),
+        to: path.resolve(__dirname, '/dist'),
+        ignore: ['.*']
+      }
+    ])
+```
+
 
 
 ### ۱- مقدار‌دهی اولیه
