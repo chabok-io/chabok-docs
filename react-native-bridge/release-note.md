@@ -6,6 +6,11 @@ permalink: react-native-bridge/release-note.html
 next: introducing.html
 ---
 
+## نسخه ۱.۰.۲ - ۱۳۹۷/۰۸/۱۵
+
+### تغییرات
+- به روز رسانی `compileSdkVersion` بریج اندروید به نسخه ۲۶
+
 ## نسخه ۱.۰.۱ - ۱۳۹۷/۰۸/۱۲
 
 ### تغییرات
