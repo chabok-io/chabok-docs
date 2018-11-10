@@ -3,10 +3,22 @@ id: release-note
 title: لیست تغییرات کتابخانه
 layout: android
 permalink: android/release-note.html
-next: introducing.html
+prev: troubleshoot.html
 ---
 
-##  نسخه ۲.۱۳.۲ - ۱۳۹۷/۰۷/۰۸
+شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](/android/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
+
+<Br>
+
+##  [نسخه ۲.۱۳.۳ - ۱۳۹۷/۰۷/۱۹](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.3)
+
+### تغییرات
+
+- پشتیبانی از غیرفعالسازی نمایش **badge** برای اعلان ([مشاهده نحوه استفاده](/android/features.html#غیرفعالسازی-نمایش-نشان-badge-روی-آیکون) )
+- تغییر رفتار در اعمال **badge** روی آیکون لانچر
+- حل مشکل جابه‌جایی مقدار `id` با `id` چابک در دیتای متد `publishEvent`
+
+##  [نسخه ۲.۱۳.۲ - ۱۳۹۷/۰۷/۰۸](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.2)
 
 ### تغییرات
 
@@ -14,21 +26,21 @@ next: introducing.html
 - حل مشکل نمایش خطای ‍‍‍‍`play services not found`
 - حذف به کار بردن **bindService**
 
-##  نسخه ۲.۱۳.۱ - ۱۳۹۷/۰۶/۱۴
+##  [نسخه ۲.۱۳.۱ - ۱۳۹۷/۰۶/۱۴](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.1)
 
 ### تغییرات
 
 - افزودن متد `setAutoResetBadge` برای پاک کردن خودکار **Badge** و نوتیفیکیشن‌ها
 
-> ` نکته:` مقدار پیش‌فرض این متد `true` است، بنابراین اگر مقدار `false` را قرار دهید برای پاک کردن دستی **Badge** و نوتیفیکیشن باید متد `resetBadge` را فراخوانی کنید.
+> ` نکته:` مقدار پیش‌فرض این متد `true` است، بنابراین اگر مقدار `false` را قرار دهید برای پاک کردن دستی **Badge** و نوتیفیکیشن [باید متد `resetBadge` را فراخوانی کنید.](https://doc.chabokpush.com/android/features.html#%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%86%D8%B4%D8%A7%D9%86%D9%87%D8%A7)
 
-##  نسخه ۲.۱۳.۰ - ۱۳۹۷/۰۶/۱۳
+##  [نسخه ۲.۱۳.۰ - ۱۳۹۷/۰۶/۱۳](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.0)
 
 ### تغییرات
 
 - افزودن متد `track` برای رصد تعامل کاربر
 - پشتیبانی از **ledColor** و **smallIcon** در نوتیفیکیشن
-- پشتیبانی پارامتر **sound**  در `payload` نوتیفیکیشن از پسوند فایل( نام فایل **sound** را می‌توانید در هر دو حالت با پسوند و بدون پسوند وارد کنید)
+- پشتیبانی پارامتر **sound**  در `payload` نوتیفیکیشن از پسوند فایل (نام فایل **sound** را می‌توانید در هر دو حالت با پسوند و بدون پسوند وارد کنید)
 - پشتیبانی آرایه‌ای از تگ‌ها برای متد‌های `addTag` و `removeTag‍` در overload جدید
 - بهبود **register مجدد کاربر** با تغییر `userId`  از متد `register`
 
@@ -36,13 +48,13 @@ next: introducing.html
 - تغییر پیش‌فرض متد `publishEvent` به `live`
 
 
-##  نسخه ۲.۱۲.۱ - ۱۳۹۷/۰۵/۳۰
+##  [نسخه ۲.۱۲.۱ - ۱۳۹۷/۰۵/۳۰](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.12.1)
 
 ### تغییرات
 
 - حل مشکل نمایش نوتیفیکیشن در اندروید 8.1 برای `buildToolsVersion>=26`
 
-##  نسخه ۲.۱۲.۰ - ۱۳۹۷/۰۵/۲۹
+##  [نسخه ۲.۱۲.۰ - ۱۳۹۷/۰۵/۲۹](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.12.0)
 
 ### تغییرات
 
@@ -53,7 +65,7 @@ next: introducing.html
 - چابک پوش‌نوتفیکیشن دریافتی از **FCM/GCM** را در حالت `foreground` نمایش می‌دهد.
 
 
-##  نسخه ۲.۱۱.۳ - ۱۳۹۷/۰۵/۱۶
+##  [نسخه ۲.۱۱.۳ - ۱۳۹۷/۰۵/۱۶](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.11.3)
 
 ### تغییرات
 
@@ -107,11 +119,6 @@ next: introducing.html
 
 ## نسخه ۲.۱۰.۰ - ۱۳۹۶/۱۰/۱۸
 
-### ارتقا
-
-* مقدار پیش‌فرض برای حالت `devMode` وجود نداشت که برابر `true` در نظر گرفته شد.
-* به جای متد `reRegister` از متد `register` استفاده شود.
-
 ### تغییرات
 
 * حذف متد `reRegister`.
@@ -120,15 +127,32 @@ next: introducing.html
 * افزودن متد `hasProtectedAppSupport`. با استفاده از این متد می‌توان بررسی نمود آیا گوشی استفاده شده برنامه را در لیست  protectedApp قرار می‌دهد یا خیر.
 * افزودن متد `showProtectedAppSettings` برای نمایش پیغام مربوط به برنامه‌های محافظت شده
 
+### ارتقا
 
-## نسخه ۲.۹.۱ - ۱۳۹۷/۰۹/۲۸
+* مقدار پیش‌فرض برای حالت `devMode` وجود نداشت که برابر `true` در نظر گرفته شد.
+* به جای متد `reRegister` از متد `register` استفاده شود.
+
+
+## نسخه ۲.۹.۱ - ۱۳۹۶/۰۹/۲۸
 
 
 ### تغییرات
 
 * افزودن متد `addCallbackIntent` برای دسترسی به موقعیت مکانی در حالت `kill` و `background`
 
-## نسخه ۲.۹.۰ - ۱۳۹۷/۰۹/۲۲
+## نسخه ۲.۹.۰ - ۱۳۹۶/۰۹/۲۲
+
+### تغییرات
+
+
+* در پیام چابک مقدار پیش‌فرض برای نام کانال برابر default و مقدار پیش‌فرض برای user مقدار * می‌باشد.
+* افرودن یک امضای جدید برای متد publish به صورت زیر:
+
+```java
+public void publish(final String user, final String channel, final String text, final com.adpdigital.push.Callback clbk)
+```
+
+* افزودن متد `unsubscribeEvent`
 
 ### ارتقا
 
@@ -149,15 +173,4 @@ public void publish(String channel, String text, JSONObject data, Callback clbk)
 public void publishEvent(final String event, final JSONObject data, final boolean live)
 ```
 
-### تغییرات
-
-
-* در پیام چابک مقدار پیش‌فرض برای نام کانال برابر default و مقدار پیش‌فرض برای user مقدار * می‌باشد.
-* افرودن یک امضای جدید برای متد publish به صورت زیر:
-
-```java
-public void publish(final String user, final String channel, final String text, final com.adpdigital.push.Callback clbk)
-```
-
-* افزودن متد `unsubscribeEvent`
 
