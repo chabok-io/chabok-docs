@@ -6,6 +6,12 @@ permalink: react-native-bridge/release-note.html
 next: introducing.html
 ---
 
+## نسخه ۱.۰.۳ - ۱۳۹۷/۰۸/۱۹
+
+### تغییرات
+- به روز رسانی کتابخانه اندروید به نسخه [۲.۱۳.۳](https://doc.chabokpush.com/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B3%DB%B3---%DB%B1%DB%B3%DB%B9%DB%B7%DB%B0%DB%B8%DB%B1%DB%B9)
+
+
 ## نسخه ۱.۰.۲ - ۱۳۹۷/۰۸/۱۵
 
 ### تغییرات
