@@ -8,6 +8,29 @@ prev: troubleshoot.html
 
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](/android/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 
+<Br>
+
+##  [نسخه ۲.۱۴.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.0)
+
+### ارتقا
+
+- انتقال داده‌های کاستوم به کلید `data` در متدهای `publishEvent` و `track`
+
+##  [نسخه ۲.۱۳.۴ - ۱۳۹۷/۰۸/۲۰](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.4)
+
+### تغییرات
+
+- حل مشکل پارس کردن `id` در متد `EventMessage`
+- برگرداندن پورت محیط آزمایشی (Sandbox) به نسخه قدیمی آن
+
+##  [نسخه ۲.۱۳.۳ - ۱۳۹۷/۰۸/۱۹](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.3)
+
+### تغییرات
+
+- پشتیبانی از غیرفعالسازی نمایش **badge** برای اعلان ([مشاهده نحوه استفاده](/android/features.html#غیرفعالسازی-نمایش-نشان-badge-روی-آیکون) )
+- تغییر رفتار در اعمال **badge** روی آیکون لانچر
+- حل مشکل جابه‌جایی مقدار `id` با `id` چابک در دیتای متد `publishEvent`
+
 ##  [نسخه ۲.۱۳.۲ - ۱۳۹۷/۰۷/۰۸](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.2)
 
 ### تغییرات

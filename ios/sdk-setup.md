@@ -143,7 +143,7 @@ manager?.registerApplication("APP_ID", apiKey: "API_KEY(SDK_KEY)", userName: "SD
 
 > `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید تا پس از تایید و ساخت حساب عملیاتی شما، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد. 
 
-جهت دسترسی به `delegate‌های` چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید:
+جهت دسترسی به `delegate‌`های چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید:
 
 ```objectivec
 //Objective-C:
@@ -171,6 +171,49 @@ if ([_manager application:application didFinishLaunchingWithOptions:launchOption
 let launchByNotification = (manager?.application(application, didFinishLaunchingWithOptions: launchOptions))!
 if launchByNotification{
     print("Application was launch by clicking on Notification...")
+}
+```
+#### متدهای ضروری
+
+در مرحله آخر شما باید قطعه کد زیر را در کلاس `AppDelegate` قرار دهید تا کتابخانه چابک بتواند راه‌اندازی شود:
+
+```objectivec
+//Objective-C:
+
+#pragma mark - Notification AppDelegation
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    // Hook and handle failure of get Device token from Apple APNS Server
+    [self.manager application:application
+                  didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    // Manager hook and handle receive Device Token From APNS Server
+    [self.manager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    // Manager hook and Handle iOS 8 remote Notificaiton Settings
+    [self.manager application:application didRegisterUserNotificationSettings:notificationSettings];
+}
+```
+```swift
+//Swift :
+
+//MARK : Notification AppDelegation
+    
+func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+	self.manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+}
+    
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+	self.manager?.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)        
+}
+    
+@available(iOS 8.0, *)
+func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+	self.manager?.application(application, didRegister: notificationSettings)
 }
 ```
 
@@ -219,49 +262,7 @@ self.manager?.registerUser("USER_ID")
 self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
 ```
 
-در مرحله آخر شما باید قطعه کد زیر را در کلاس `AppDelegate` قرار دهید تا کتابخانه چابک بتواند راه‌اندازی شود، سه متد فوق برای دریافت توکن از سرویس `APNs` اپل می‌باشد که چابک برای ارسال پوش نوتیفیکشن به آن نیاز دارد.
-
->`نکته`:پس از قرار دادن کدهای زیر در `AppDelegate`، اطلاعات کاربر در پنل چابک مربوط به [حساب](http://chabokpush.com) برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر پیام چابک و پوش‌نوتیفیکیشن بفرستید.
-
-```objectivec
-//Objective-C:
-
-#pragma mark - Notification AppDelegation
-
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-    // Hook and handle failure of get Device token from Apple APNS Server
-    [self.manager application:application
-                  didFailToRegisterForRemoteNotificationsWithError:error];
-}
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-    // Manager hook and handle receive Device Token From APNS Server
-    [self.manager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
-}
-
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
-    // Manager hook and Handle iOS 8 remote Notificaiton Settings
-    [self.manager application:application didRegisterUserNotificationSettings:notificationSettings];
-}
-```
-```swift
-//Swift :
-
-//MARK : Notification AppDelegation
-    
-func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-	self.manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
-}
-    
-func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-	self.manager?.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)        
-}
-    
-@available(iOS 8.0, *)
-func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
-	self.manager?.application(application, didRegister: notificationSettings)
-}
-```
+>`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب](http://chabokpush.com) برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر پیام چابک و پوش‌نوتیفیکیشن بفرستید.
 
 #### حذف کاربر (Unregister)
 
