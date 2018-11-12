@@ -8,6 +8,13 @@ prev: troubleshoot.html
 
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](/ios/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 
+<Br>
+
+## [نسخه ۱.۱۸.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.18.0) 
+
+### تغییرات
+
+- انتقال داده‌های کاستوم به کلید `data` در متدهای `publishEvent` و `track`
 
 ## [نسخه ۱.۱۷.۱ - ۱۳۹۷/۰۶/۱۸](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.17.1) 
 
