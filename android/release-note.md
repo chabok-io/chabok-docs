@@ -10,6 +10,19 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۲.۱۴.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.0)
+
+### ارتقا
+
+- انتقال داده‌های کاستوم به کلید `data` در متدهای `publishEvent` و `track`
+
+##  [نسخه ۲.۱۳.۴ - ۱۳۹۷/۰۸/۲۰](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.4)
+
+### تغییرات
+
+- حل مشکل پارس کردن `id` در متد `EventMessage`
+- برگرداندن پورت محیط آزمایشی (Sandbox) به نسخه قدیمی آن
+
 ##  [نسخه ۲.۱۳.۳ - ۱۳۹۷/۰۸/۱۹](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.3)
 
 ### تغییرات

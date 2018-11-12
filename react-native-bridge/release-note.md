@@ -6,6 +6,14 @@ permalink: react-native-bridge/release-note.html
 next: introducing.html
 ---
 
+## نسخه ۱.۱.۰ - ۱۳۹۷/۰۸/۲۱
+
+### تغییرات
+- به روز رسانی کتابخانه اندروید به نسخه [۲.۱۴.۰](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.0)
+-  به روز رسانی کتابخانه آی‌او‌اس به نسخه [۱.۱۸.۰](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.18.0)
+- حل مشکل رد کردن پرامیس در فراخوانی متدهای `getUserId` و `getInstallationId`
+
+
 ## نسخه ۱.۰.۳ - ۱۳۹۷/۰۸/۱۹
 
 ### تغییرات
