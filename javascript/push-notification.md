@@ -8,6 +8,8 @@ next: user-management.html
 ---
 
 چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. توجه داشته باشید که از این پس منظور از واژه **اعلان** همان **نوتیفیکیشن** (Notification) است.
+
+<Br>
  
 > ‍‍‍‍‍‍‍‍`نکته:`  برای دریافت پوش‌نوتیفیکیشن در پس‌زمینه (Background) می‌بایست بخش [راه‌اندازی](/javascript/sdk-setup.html#افزودن-service-worker) را مطالعه نمایید.
 
@@ -16,6 +18,8 @@ next: user-management.html
 #### ۱- Local Notification
 
 اگر مقدار ‍`silent` را در تنظیمات اولیه `False‍` قرار دهید، در صورتی که اتصال کاربر با چابک **برقرار باشد** پیام‌های چابک در قالب LocalNotification به کاربر نمایش داده می‌شود.
+
+<Br>
 
 #### ۲- Background Notification
 
