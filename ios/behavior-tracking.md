@@ -7,8 +7,9 @@ prev: user-management.html
 next: location-tracking.html
 ---
 
-شما می‌توانید رفتارهای کاربر را در اپلیکیشن خود به طور لحظه‌ای [رصد کنید](/ios/behavior-tracking.html#متد-رصد) و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را [دسته‌بندی کنید](/panel/dashboard.html#سگمنت) و برایشان [پیام بفرستید](/ios/behavior-tracking.html#ارسال-پیام-براساس-رفتار). همچنین [آمار رفتار کاربران](/ios/behavior-tracking.html#مشاهده-آمار-رفتار) را می‌توانید بررسی کنید.
+شما می‌توانید رفتارهای کاربر را در اپلیکیشن خود به طور لحظه‌ای [رصد کنید](/ios/behavior-tracking.html#متد-رصد) و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را [دسته‌بندی کنید](/panel/dashboard.html#سگمنت) و برایشان [پیام بفرستید](/ios/behavior-tracking.html#ارسال-پیام-براساس-رفتار). همچنین [آمار رفتار کاربران](/ios/behavior-tracking.html#تحلیل-رفتار) را می‌توانید تحلیل کنید.
 
+<Br>
 
 ### متد رصد 
 
@@ -40,6 +41,7 @@ self.manager.track("YOUR_TRACK_NAME", data: ["KEY":"VALUE"])
 //Swift
 self.manager.track("purchase-clothing", data: ["clothes_id":35147652])
 ```
+<Br>
 
 ### ارسال پیام براساس رفتار
 
@@ -48,6 +50,8 @@ self.manager.track("purchase-clothing", data: ["clothes_id":35147652])
 در ادامه مثال بالا، اکنون می‌خواهید برای کسانی که پوشاک خریداری کرده‌اند پیامی بفرستید که آن‌ها را از رسیدن کالکشن‌های جدید فصل خبردار کنید.
 
 ![عکس مربوطه](http://uupload.ir/files/2oig_track.png)
+
+<Br>
 
 ### تحلیل رفتار 
 
