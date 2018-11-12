@@ -14,6 +14,10 @@ prev: troubleshoot.html
 
 ### تغییرات
 
+- تعریف دستگاه‌های جدید اپل در چابک
+
+### ارتقا
+
 - انتقال داده‌های کاستوم به کلید `data` در متدهای `publishEvent` و `track`
 
 ## [نسخه ۱.۱۷.۱ - ۱۳۹۷/۰۶/۱۸](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.17.1) 
