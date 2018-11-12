@@ -22,8 +22,10 @@ next: events.html
     //Get message data
     NSDictionary *messageData;
     if ([payload valueForKey:@"message"]) {
+    	//In chabok message user tapped on notification
         messageData = [[payload valueForKey:@"message"] valueForKey:@"data"];
     } else {
+    	//In APNS user tapped on notification
         messageData = [payload valueForKey:@"data"];
     }
     
