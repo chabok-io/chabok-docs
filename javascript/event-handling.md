@@ -44,18 +44,11 @@ chabok.unSubscribeEvent(eventName, installationId) // private event
 
 با پیاده‌سازی متد `onEvent` و معرفی کلاس آن به متد `addListener` قادر به دریافت رویدادها خواهید بود. 
 
-```java
-AdpPushClient.get().addListener(this);
-
-public void onEvent(final EventMessage message) {
-    JSONObject data = message.getData();
-    String eventName = message.getName();
-    String installationId = message.getInstallationId();
-
-    Log.d(TAG, "Got event " + eventName + 
-                " from device " + installationId +
-                " with data " + data);
+```javascript
+function onEvent(message) {
+  console.log(message)
 }
+chabok.on('EVENT_NAME',  onEvent)
 ```
 
 > نکته: توجه داشته باشید زمانی متد `onEvent` فراخوانی خواهد شد که کاربر روی نام رویدادهای منتشر شده، عضویت داشته باشد. برای این منظور بخش [عضویت روی رویداد](/javascript/event-handling.html#عضویت-روی-رویداد) را مطالعه کنید.
@@ -66,18 +59,17 @@ public void onEvent(final EventMessage message) {
 
 با استفاده از متد `publishEvent` می‌توانید رویدادهای دلخواه خود را با یک **نام** و یک **داده** (Data) منتشر کنید، متد زیر به صورت خودکار در صورت قطعی ارتباط اقدام به ارسال مجدد می‌کند و به صورت آنی داده‌های شما را منتشر خواهد کرد. 
 
-```java
+```javascript
 chabok.publishEvent('EVENT_NAME', {data: 'JSONObject'})
 ```
 
 برای نمونه در زیر کد انتشار موقعیت مکانی در اشتراک سفر کاربر قرار داده شده است که پس از دریافت موقعیت مکانی کاربر، آن را با رویدادی تحت عنوان `shareTrip` منتشر می‌کند.
 
-```java
-JSONObject data = new JSONObject();
-
-data.put("lat", 35.7583719);
-data.put("lng", 51.4082228);
-data.put("tripId", 12345678);
-
-AdpPushClient.get().publishEvent("shareTrip", data);
+```javascript
+const data = {
+  lat: 35.7583719,
+  lng: 51.4082228,
+  tripId: 12345678
+}
+chabok.publishEvent('shareTrip', data)
 ```
