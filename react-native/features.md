@@ -3,7 +3,8 @@ id: features
 title: امکانات‌ چابک 
 layout: react-native
 permalink: react-native/features.html
-prev: event-tracking.html
+prev: verification.html
+next: release-note.html
 ---
 
 چابک متناسب با نیاز شما امکانات دیگری را هم در اختیار شما می گذارد. در این صفحه می‌توانید از [وضعیت اتصال سرور و کلاینت](/react-native/features.html#وضعیت-اتصال-به-چابک) مطلع شوید. شناسه‌های [دستگاه](/react-native/features.html#دریافت-شناسه-دستگاه) و [کاربر](/react-native/features.html#دریافت-شناسه-کاربر) خود را از چابک دریافت نمایید. در آخر می‌توانید از [اطلاعات کاربران](/react-native/features.html#مدیریت-اطلاعات-کاربر) خود را مدیریت کنید.
