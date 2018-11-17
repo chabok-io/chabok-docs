@@ -13,9 +13,9 @@ next: chabok-messaging.html
 
 [۱- نصب کتابخانه](/javascript/sdk-setup.html#۱--نصب-کتابخانه)
 
-[۲- مقداردهی اولیه (Initialize)](/javascript/sdk-setup.html#۳--مقداردهی-اولیه-initialize)
+[۲- مقداردهی اولیه](/javascript/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
 
-[۳- ثبت کاربر (Register)](/javascript/sdk-setup.html#۴--ثبت-کاربر-register)
+[۳- ثبت کاربر](/javascript/sdk-setup.html#۳--ثبت-کاربر-register)
 
 <Br>
 
