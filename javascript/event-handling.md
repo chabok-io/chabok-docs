@@ -48,7 +48,7 @@ chabok.unSubscribeEvent(eventName, installationId) // private event
 function onEvent(message) {
   console.log(message)
 }
-chabok.on('EVENT_NAME',  onEvent)
+chabok.on('eventName',  onEvent)
 ```
 
 > نکته: توجه داشته باشید زمانی متد `onEvent` فراخوانی خواهد شد که کاربر روی نام رویدادهای منتشر شده، عضویت داشته باشد. برای این منظور بخش [عضویت روی رویداد](/javascript/event-handling.html#عضویت-روی-رویداد) را مطالعه کنید.
@@ -60,7 +60,7 @@ chabok.on('EVENT_NAME',  onEvent)
 با استفاده از متد `publishEvent` می‌توانید رویدادهای دلخواه خود را با یک **نام** و یک **داده** (Data) منتشر کنید، متد زیر به صورت خودکار در صورت قطعی ارتباط اقدام به ارسال مجدد می‌کند و به صورت آنی داده‌های شما را منتشر خواهد کرد. 
 
 ```javascript
-chabok.publishEvent('EVENT_NAME', {data: 'JSONObject'})
+chabok.publishEvent('eventName', {data: 'JSONObject'})
 ```
 
 برای نمونه در زیر کد انتشار موقعیت مکانی در اشتراک سفر کاربر قرار داده شده است که پس از دریافت موقعیت مکانی کاربر، آن را با رویدادی تحت عنوان `shareTrip` منتشر می‌کند.
