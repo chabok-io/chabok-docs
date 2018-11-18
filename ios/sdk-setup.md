@@ -283,17 +283,17 @@ if _manager?.application(application, didFinishLaunchingWithOptions: launchOptio
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
     // Hook and handle failure of get Device token from Apple APNS Server
-    [self.manager application:application didFailToRegisterForRemoteNotificationsWithError:error];
+    [_manager application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     // Manager hook and handle receive Device Token From APNS Server
-    [self.manager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+    [_manager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
     // Manager hook and Handle iOS 8 remote Notificaiton Settings
-    [self.manager application:application didRegisterUserNotificationSettings:notificationSettings];
+    [_manager application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 ```
 ```swift
@@ -303,18 +303,18 @@ if _manager?.application(application, didFinishLaunchingWithOptions: launchOptio
     
 func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
 	// Hook and handle failure of get Device token from Apple APNS Server
-	self.manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+	_manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
 }
     
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
 	// Manager hook and handle receive Device Token From APNS Server
-	self.manager?.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)        
+	_manager?.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)        
 }
     
 @available(iOS 8.0, *)
 func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
 	// Manager hook and Handle iOS 8 remote Notificaiton Settings
-	self.manager?.application(application, didRegister: notificationSettings)
+	_manager?.application(application, didRegister: notificationSettings)
 }
 ```
 
@@ -332,12 +332,12 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 ```objectivec
 //Objective-C:
 
-[self.manager registerUser:@"USER_ID"];
+[_manager registerUser:@"USER_ID"];
 ```
 ```swift
 //Swift:
 
-self.manager?.registerUser("USER_ID")
+_manager?.registerUser("USER_ID")
 ```
 
 به عنوان مثال اگر اپلیکیشن شما دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `registerUser` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای (در کلاس `AppDelegate` متد `didFinishLaunchingWithOptions`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
@@ -382,7 +382,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 > `نکته`: کاراکترهای ‍`#,+,*,\,/` و فاصله در `USER_ID` مجاز نیستند، همچنین طول این رشته نباید کمتر از ۳ و بیشتر از ۳۲ کاراکتر باشد.
 
->   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `NSUserDefaults` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن  کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `self.manager.userId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد. همینطور می‌توانید قبل از عملیات ثبت با استفاده از شماره گوشی از معتبر بودن کاربر (verfication) [اطمینان یابید](/ios/verification.html)،  سپس شناسه او را ثبت نمایید.
+>   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `NSUserDefaults` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن  کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `_manager.userId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد. همینطور می‌توانید قبل از عملیات ثبت با استفاده از شماره گوشی از معتبر بودن کاربر (verfication) [اطمینان یابید](/ios/verification.html)،  سپس شناسه او را ثبت نمایید.
 
 
 - امضای دوم علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی (برای آشنایی با مفهوم کانال و کاربرد آن [این قسمت](/ios/chabok-messaging.html#کانال) را مطالعه نمایید) که کاربر باید روی آن‌ها عضو شود را نیز دریافت می‌کند. با عضویت روی کانال‌های داده شده، کاربر قادر به دریافت پیام‌های ارسالی روی آن‌ کانال‌ها خواهد بود.
@@ -390,12 +390,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```objectivec
 //Objective-C:
 
-[self.manager registerUser:@"USER_ID" channels:@[@"CHANNEL_NAME1", @"CHANNEL_NAME2"]];
+[_manager registerUser:@"USER_ID" channels:@[@"CHANNEL_NAME1", @"CHANNEL_NAME2"]];
 ```
 ```swift
 //Swift:
 
-self.manager.registerUser("USER_ID", channels: ["CHANNEL_NAME1", CHANNEL_NAME2])
+_manager.registerUser("USER_ID", channels: ["CHANNEL_NAME1", CHANNEL_NAME2])
 ```
 
 >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب](http://chabokpush.com) برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر پیام چابک و پوش‌نوتیفیکیشن بفرستید.
@@ -458,12 +458,12 @@ func pushClientManagerDidFailRegisterUser() throws {
 ```objectivec
 //Objective-C:
 
-[PushClientManager.defaultManager unregisterUser];
+[_manager unregisterUser];
 ```
 ```swift
 //Swift:
 
-PushClientManager.default().unregisterUser()
+_manager?.unregisterUser()
 ```
 
 > `نکته:` پروژه [Starter](https://github.com/chabokpush/chabok-starter-ios)، به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرا آن، از سرویس چابک استفاده کنید. همچنین به کمک پروژه فوق با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.
