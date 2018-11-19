@@ -441,7 +441,7 @@ _manager.isRegistered
 //Swift
 
 func pushClientManagerDidRegisterUser(_ registration: Bool) {
-    print("Successfully registered")
+	print("Successfully registered")
 }
 ```
 
@@ -457,10 +457,8 @@ func pushClientManagerDidRegisterUser(_ registration: Bool) {
 ```swift
 //Swift
 
-func pushClientManagerDidFailRegisterUser() throws {
-    if let anError = error {
-        print("Fail to register user \n ~~ error: \(anError)")
-    }
+func pushClientManagerDidFailRegisterUser(_ error: Error!) {
+	print("Fail to register user \n ~~ error: \(error)")
 }
 ```
 #### حذف کاربر (Unregister)
