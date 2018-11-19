@@ -7,7 +7,7 @@ prev: chabok-messaging.html
 next: user-management.html
 ---
 
-چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات زیر برای [اندروید](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-اندروید) و [آی‌اواس](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-آیاواس) انجام دهید. همچنین می‌توانید از نمایش اعلان به صورت **local** [استفاده کنید](/react-native/push-notification.html#نمایش-local-notifications).
+چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات زیر برای [اندروید](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-اندروید) و [آی‌اواس](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-آیاواس) انجام دهید، سپس توکن‌ها را به چابک [اضافه نمایید](). همچنین می‌توانید از نمایش اعلان به صورت **local** [استفاده کنید](/react-native/push-notification.html#نمایش-local-notifications).
 
 <Br>
 
@@ -34,7 +34,6 @@ ext {
 
 
 ۲- در فایل `AndroidManifest.xml` کد زیر اضافه کنید:
-
 
 ```java
 .....
@@ -146,7 +145,13 @@ node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcod
 ```bash
 Link Binary With Libraries: libRCTPushNotification.a
 ```
-۲- در آخر هم  برای پشتیبانی از نوتیفیکیشن و ثبت رویدادها باید به  کلاس **AppDelegate** خود دو قطعه کد زیر را اضافه کنید:
+۲- پس از آن دسترسی‌های پوش‌نوتیفیکیشن برای آی‌او‌اس را ایجاد نمایید:
+
+لطفا `Push Notifications` را در `Setting > Capabilities` فعال کنید .
+
+و علامت `Remote Notifications` ها را در `Setting > Capabilities > Background Modes` چک کنید.
+
+۳- در آخر هم  برای پشتیبانی از نوتیفیکیشن و ثبت رویدادها باید به  کلاس **AppDelegate** خود دو قطعه کد زیر را اضافه کنید:
 - در بالای `AppDelegate.m` :
 
 ```objectivec
@@ -184,6 +189,44 @@ Link Binary With Libraries: libRCTPushNotification.a
  }
 ```
 > `نکته:` برای اطلاعات بیشتر می‌توانید [لینک مرجع](https://facebook.github.io/react-native/docs/pushnotificationios.html#content) را مطالعه نمایید.
+
+<Br>
+
+### متد افزودن توکن برای ارسال پوش‌نوتیفیکیشن
+
+برای ارسال پوش‌نوتیفیکشن باید متد زیر را برای اضافه نمودن توکن‌ها به چابک فراخوانی کنید:
+
+```javascript
+this.chabok.setPushNotificationToken("TOKEN")
+```
+
+برای **نمایش اعلان** باید دسترسی‌های زیر را برای دستگاهتان در **اندروید** و **آی‌اواس** ایجاد کنید:
+
+```javascript
+var PushNotification = require('react-native-push-notification');
+
+PushNotification.configure({
+            onRegister:  ({token}) => {
+                if(token){
+                    this.chabok.setPushNotificationToken(token)
+                }
+            },
+            // (required) Called when a remote or local notification is opened or received
+            onNotification: function(notification) {
+                console.warn( 'NOTIFICATION:', notification );
+                // required on iOS only (see fetchCompletionHandler docs: https://facebook.github.io/react-native/docs/pushnotificationios.html)
+                notification.finish(PushNotificationIOS.FetchResult.NoData);
+            },
+            senderID: "GCM_SenderID", // ANDROID ONLY: (optional) GCM Sender ID.
+            permissions: {
+                alert: true,
+                badge: true,
+                sound: true
+            },
+            popInitialNotification: true,
+            requestPermissions: true,
+        });
+```
 
 <Br>
 
@@ -233,4 +276,3 @@ PushNotification.localNotification({
     actions: '["Yes", "No"]',  // (Android only) See the doc for notification actions to know more
 });
 ```
-
