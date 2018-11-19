@@ -66,6 +66,8 @@ $ pod update
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
+کد زیر **تمام متدهایی** که در مقداردهی باید فراخوانی شوند را در بر دارد:
+
 ```objectivec
 //Objective-C
 
@@ -83,7 +85,7 @@ $ pod update
     
     //YES connects to Sandbox environment
     //NO connects to Production environment
-    [PushClientManager setDevelopment:DEV_MODE];
+    [PushClientManager setDevelopment:YES];
     //Reset badge and clear notification when app launched.
     [PushClientManager  resetBadge];
 
@@ -106,15 +108,7 @@ $ pod update
     if ([_manager application:application didFinishLaunchingWithOptions:launchOptions]) {
         NSLog(@"Launched by tapping on notification");
     }
-    
-    if (_manager.userId) {
-        [_manager registerUser:_manager.userId];
-    } else {
-        //If user is not registered verify the user and
-        //call [_manager registerUser:@"USER_ID"]; method at login page
-        [_manager registerUser:@"USER_ID"];
-    }
-    
+ 
     return YES;
 }
 
@@ -174,15 +168,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
         if _manager?.application(application, didFinishLaunchingWithOptions: launchOptions) == true {
             print("Launched by tapping on notification")
         }
-        
-        if let userId = _manager?.userId {
-            _manager?.registerUser(userId)
-        } else {
-            //If user is not registered verify the user and
-            //call _manager?.registerUser("USER_ID") method at login page
-            _manager?.registerUser("USER_ID")
-        }
-        
+      
         return true
     }
     
@@ -205,6 +191,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
     }
 }
 ```
+#### نکات ضروری متدهای مقداردهی
+
+- متد `setDevelopment`:
+
 متد `setDevelopment` مشخص می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (production)](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد. مقدار `true` یا `YES` به محیط آزمایشی و مقدار`false` یا `NO` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (`appId`, `apiKey`, `username` و `password`) خودش در متد `registerApplication` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
 
 ```objectivec
@@ -217,6 +207,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
 PushClientManager.setDevelopment(true)
 ```
+
+- متد `registerApplication`:
+
 به منظور استفاده از سرویس چابک، ابتدا باید متد `registerApplication` را فراخوانی کرده و مقادیر مورد نیاز جهت فعالسازی کتابخانه چابک را وارد نمایید. 
 
 همانند کد زیر، متد `registerApplication` را در کلاس `AppDelegate` و در متد `didFinishLaunchingWithOptions` فراخوانی کنید:
@@ -232,7 +225,7 @@ PushClientManager.setDevelopment(true)
 ```swift
 //Swift:
 
-_manager?.registerApplication("APP_ID", 		 //based on your environment
+_manager?.registerApplication("APP_ID", 	 //based on your environment
 					apiKey: "API_KEY",		 //based on your environment
 					userName: "SDK_USERNAME",//based on your environment
 					password: "SDK_PASSWORD")//based on your environment
@@ -243,6 +236,8 @@ _manager?.registerApplication("APP_ID", 		 //based on your environment
 >`نکته` : توجه داشته باشید هنگامی که **گواهی sandbox اپل** را در پنل تستی قرار می‌دهید، فقط امکان دریافت `Cloud Messaging` در حالت `debug` وجود خواهد داشت. اما اگر **گواهی production اپل** را در محیط عملیاتی قرار دهید، زمانی `Cloud Messaging` را دریافت خواهید کرد که اقدام به ساخت **ipa** از پروژه خود کرده و از طریق TestFlight یا Enterprise اپلیکیشن خود را نصب کنید.
 
 > `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید تا پس از تایید و ساخت حساب عملیاتی شما، اطلاعات جدید حسابتان (`appId`, `apiKey`, `username` و `password`) تعیین گردد. 
+
+- متد `addDelegate`:
 
 جهت دسترسی به `delegate‌`های چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید:
 
@@ -467,3 +462,7 @@ _manager?.unregisterUser()
 ```
 
 > `نکته:` پروژه [Starter](https://github.com/chabokpush/chabok-starter-ios)، به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرا آن، از سرویس چابک استفاده کنید. همچنین به کمک پروژه فوق با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.
+
+
+
+
