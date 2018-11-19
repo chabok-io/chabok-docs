@@ -3,7 +3,7 @@ id: release-note
 title: لیست تغییرات 
 layout: react-native
 permalink: react-native/release-note.html
-prev: features.html
+prev: troubleshoot.html
 ---
 
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](/react-native/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
