@@ -144,9 +144,8 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 //Objective-C:
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-
 // Handle receive iOS (4.0 and later) local notification
-[self.manager application:application didReceiveLocalNotification:notification];
+ [self.manager application:application didReceiveLocalNotification:notification];
 }
 ```
 
@@ -158,11 +157,11 @@ self.manager.application(application, didReceive: notification)
 }
 ```
 
-همچنین  delegate متد `didReceiveLocalNotification` به شما کمک می‌کند که بعد از کلیک، کاربر بر روی اعلان به چه صفحه‌ای هدایت شود.
+همچنین  `delegate` متد `didReceiveLocalNotification` به شما کمک می‌کند که بعد از کلیک، کاربر بر روی اعلان به چه صفحه‌ای هدایت شود.
 
 #### ۲. ‌APNs Notification
 
-delegate متد `didReceiveRemoteNotification` توسط سیستم عامل به هنگام کلیک بر روی اعلان فرخوانی می‌شود. 
+`delegate` متد `didReceiveRemoteNotification` توسط سیستم عامل به هنگام کلیک بر روی اعلان فرخوانی می‌شود. 
 
 > `نکته` : اگر برنامه شما `Terminate` شده باشد، با کلیک بر روی Notification برنامه شما با کلید `UIApplicationLaunchOptionsRemoteNotificationKey` در `delegate` متد `didFinishLaunchingWithOptions` اجرا خواهد شد و پس از آن متد `didReceiveRemoteNotification` فرخوانی خواهد شد. پس پیشنهاد می‌کنیم، کد مربوط به `Navigate` به یک صفحه خاص را در متد `didReceiveRemoteNotification` استفاده کنید.
 
@@ -170,9 +169,8 @@ delegate متد `didReceiveRemoteNotification` توسط سیستم عامل به
 //Objective-C:
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-
 // Handle New Remote Notification, must be use for remote payloads
-[self.manager application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+ [self.manager application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 
 }
 ```
@@ -180,9 +178,8 @@ delegate متد `didReceiveRemoteNotification` توسط سیستم عامل به
 //Swift:
 
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-
 // Handle New Remote Notification, must be use for remote payloads
-manager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+ manager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
 
 }
 ```
