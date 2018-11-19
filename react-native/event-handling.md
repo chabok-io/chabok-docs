@@ -22,20 +22,37 @@ next: verification.html
 به منظور دریافت رویدادها شما ابتدا باید با استفاده از متد `subscribeEvent` بر روی رویداد عضو شوید:
 
 ```javascript
+//Subscribe on a global event from any device. 
+this.chabok.subscribeEvent('EVENT_NAME')
 
-chabok.subscribeEvent(EVENT_NAME) // public event
-chabok.subscribeEvent(EVENT_NAME, installationId) // private event
-chabok.subscribeEvent(EVENT_NAME, installationId, live)
+//Subscribe on a global event from a specific device.
+this.chabok.subscribeEvent('EVENT_NAME', 'INSTALLATION_ID')
 ```
+
+در صورت استفاده از امضاهای حاوی `INSTALLATION_ID` تمامی رویدادهای مربوط به نام وارد شده به عنوان `EVENT_NAME` که توسط آن دستگاه منتشر می‌شود را دریافت خواهید نمود.
+
+برای مثال، در زیر عضویت روی رویداد `shareTrip` یک دستگاه آورده شده است:
+
+```javascript
+//Get a unique device id by calling this.chabok.getInstallationId();
+//get user installationId with publish method or your rest api.
+String installationId = "USER_INSTALLATION_ID";
+
+this.chabok.subscribeEvent('EVENT_NAME', 'INSTALLATION_ID')
+```
+
+> `نکته`: برای دریافت رویدادهای یک دستگاه خاص باید شناسه آن دستگاه (`installationId`) را به جایی که باید دریافت کند، ارسال نمایید.
 
 #### لغو عضویت از رویداد
 
 برای غیرفعال کردن یک رویداد کافی است متد `unSubscribeEvent` را که با دو امضای مختلف وجود دارد، بر اساس نیاز خود فراخوانی نمایید:
 
 ```javascript
+//Unsubscribe on an event name to get all data published on it.
+this.chabok.unSubscribeEvent('EVENT_NAME')
 
-chabok.unSubscribeEvent(EVENT_NAME) // public event
-chabok.unSubscribeEvent(EVENT_NAME, installationId) // private event
+//Unsubscribe on an user event name to get special device event. 
+this.chabok.unSubscribeEvent('EVENT_NAME', 'INSTALLATION_ID')
 ```
 
 
@@ -48,7 +65,7 @@ chabok.unSubscribeEvent(EVENT_NAME, installationId) // private event
 
 ```javascript
 
-chabok.on('EVENT_NAME', event => {
+this.chabok.on('EVENT_NAME', event => {
   // Called When PushClientManager has been received new event from server
   console.log(`${event.content} - ${event.createdAt}`)
 })
@@ -56,12 +73,20 @@ chabok.on('EVENT_NAME', event => {
 
 ### انتشار رویداد 
 
+با استفاده از متد `publishEvent` می‌توانید رویدادهای دلخواه خود را با یک **نام** و یک **داده** (Data) منتشر کنید، متد زیر به صورت خودکار در صورت قطعی ارتباط اقدام به ارسال مجدد می‌کند و به صورت آنی داده‌های شما را منتشر خواهد کرد. 
+
 با متد زیر می‌توانید رویدادهای داخل برنامه را با نام و داده دلخواه منتشر کنید:
 
 ```javascript
-chabok.publishEvent(EVENT_NAME, {
-live: false
-}
+this.chabok.publishEvent('EVENT_NAME',[Object])
 ```
 
+برای نمونه در زیر کد انتشار موقعیت مکانی در اشتراک سفر کاربر قرار داده شده است که پس از دریافت موقعیت مکانی کاربر، آن را با رویدادی تحت عنوان `shareTrip` منتشر می‌کند.
 
+```javascript
+let data = {'lat': 35.7583719,  
+			'lng': 51.4082228,  
+			'tripId': 12345678}  
+  
+this.chabok.publishEvent('shareTrip', data)
+```
