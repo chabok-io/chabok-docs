@@ -13,9 +13,9 @@ next: chabok-messaging.html
 
 [ ۱- نصب کتابخانه](/react-native/sdk-setup.html#۱--نصب-کتابخانه)
 
-[۲- مقداردهی اولیه (Initialize)](/react-native/sdk-setup.html#۲--مقداردهی-اولیه)
+[۲- مقداردهی اولیه (Initialize)](/react-native/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
 
-[۳- ثبت کاربر (Register)](/react-native/sdk-setup.html#۳--ثبت-کاربر)
+[۳- ثبت کاربر (Register)](/react-native/sdk-setup.html#۳--ثبت-کاربر-register)
 
 <Br>
 
@@ -96,7 +96,7 @@ react-native link react-native-push-notification
 
 <Br>
 
-### ۲- مقدار‌دهی اولیه
+### ۲- مقدار‌دهی اولیه (Initialize)
 
 برای ارتباط با سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقدار‌دهی کنید.
 برای مقدار‌دهی اولیه می‌بایست از طریق متد `chabok` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. 
