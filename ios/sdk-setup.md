@@ -66,7 +66,7 @@ $ pod update
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
-کد زیر **تمام متدهایی** که در مقداردهی باید فراخوانی شوند را در بر دارد:
+کد زیر **تمام متدهایی** که باید مقداردهی شوند را در بر دارد:
 
 ```objectivec
 //Objective-C
@@ -191,7 +191,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
     }
 }
 ```
-#### نکات ضروری متدهای مقداردهی
+#### نکات ضروری مقداردهی متدها
 
 - متد `setDevelopment`:
 
@@ -478,7 +478,3 @@ _manager?.unregisterUser()
 ```
 
 > `نکته:` پروژه [Starter](https://github.com/chabokpush/chabok-starter-ios)، به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرا آن، از سرویس چابک استفاده کنید. همچنین به کمک پروژه فوق با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.
-
-
-
-
