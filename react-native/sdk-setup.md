@@ -11,7 +11,7 @@ next: chabok-messaging.html
 
 برای انجام موفق این کارها باید تمام مراحل زیر را به ترتیب انجام دهید:
 
-[ ۱- نصب کتابخانه](/android/sdk-setup.html#۱--نصب-کتابخانه)
+[ ۱- نصب کتابخانه](/react-native/sdk-setup.html#۱--نصب-کتابخانه)
 
 [۲- دریافت پوش‌نوتیفیکشن](/react-native/sdk-setup.html#۲--دریافت-پوشنوتیفیکیشن) 
 
