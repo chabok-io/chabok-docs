@@ -317,7 +317,48 @@ class NotificationService: UNNotificationServiceExtension {
 	}
 }
 ```
+برای دریافت رویداد کلیک روی هر اکشن، لطفا بخش [مدیریت کلیک بر روی هر اکشن](https://dev.doc.chabokpush.com/ios/push-notification.html#%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%DA%A9%D9%84%DB%8C%DA%A9-%D8%A8%D8%B1-%D8%B1%D9%88%DB%8C-%D9%87%D8%B1-%D8%A7%DA%A9%D8%B4%D9%86) را مطالعه کنید.
 
+#### نمونه کد پوش‌نوتیفیکیشن چندرسانه‌ای
+بخش [تنظیم نوتیفیکیشن چندرسانه‌ای (Rich Push Notification)](https://dev.doc.chabokpush.com/ios/push-notification.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%86%D9%88%D8%AA%DB%8C%D9%81%DB%8C%DA%A9%DB%8C%D8%B4%D9%86-%DA%86%D9%86%D8%AF%D8%B1%D8%B3%D8%A7%D9%86%D9%87%D8%A7%DB%8C-rich-push-notification) را با دقت مطالعه کرده و سپس قطعه کد زیر را در کلاس `AppDelegate`  پیاده‌سازی کنید تا رویداد کلیک روی هر اکشن را دریافت کنید.
+```objectivec
+//Objective-C
+
+-(void) userNotificationCenter:(UNUserNotificationCenter *)center
+                didReceiveNotificationResponse:(UNNotificationResponse *)response
+                withCompletionHandler:(void (^)(void))completionHandler{
+    
+    //actionIdentifier is your key when you define in Chabokpush payload for each action
+    NSString *actionId = response.actionIdentifier;
+    
+    if ([actionId isEqualToString:@"special_offers_action"]) {
+        NSLog(@"Special offers action clicked by user ...");
+    } else if ([actionId isEqualToString:@"favorite_product_action"]) {
+        NSLog(@"Favorite product action clicked by user ...");
+    }
+    
+    completionHandler();
+}
+```
+```swift
+//Swift
+
+func userNotificationCenter(_ center: UNUserNotificationCenter,
+                didReceive response: UNNotificationResponse,
+                withCompletionHandler completionHandler: @escaping () -> Void) {
+
+    //actionIdentifier is your key when you define in Chabokpush payload for each action
+    let actionId = response.actionIdentifier
+
+    if (actionId == "special_offers_action") {
+        print("Special offers action clicked by user ...")
+    } else if (actionId == "favorite_product_action") {
+        print("Favorite product action clicked by user ...")
+    }
+
+    completionHandler()
+}
+```
 ##### نمونه Curl
 
 با اجرای دستور زیر در Terminal می‌توانید یک نوتیفیکیشن چندرسانه‌ای ارسال کنید. دقت کنید که در دستور زیر مقدار `<ACCESS_TOKEN>` حساب کاربری خود و مقدار `USER_ID` را شناسه‌ کاربری که می‌خواهید پیام به او تحویل داده شود، وارد نمایید.
