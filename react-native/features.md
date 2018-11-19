@@ -1,17 +1,17 @@
 ---
 id: features
-title: امکانات‌ چابک 
+title: امکانات‌ دیگر
 layout: react-native
 permalink: react-native/features.html
 prev: verification.html
 next: release-note.html
 ---
 
-چابک متناسب با نیاز شما امکانات دیگری را هم در اختیار شما می گذارد. در این صفحه می‌توانید از [وضعیت اتصال سرور و کلاینت](/react-native/features.html#وضعیت-اتصال-به-چابک) مطلع شوید. شناسه‌های [دستگاه](/react-native/features.html#دریافت-شناسه-دستگاه) و [کاربر](/react-native/features.html#دریافت-شناسه-کاربر) خود را از چابک دریافت نمایید. در آخر می‌توانید از [اطلاعات کاربران](/react-native/features.html#مدیریت-اطلاعات-کاربر) خود را مدیریت کنید.
+چابک متناسب با نیاز شما امکانات دیگری را هم در اختیار شما می گذارد. در این صفحه می‌توانید از [وضعیت اتصال سرور و کلاینت](/react-native/features.html#اتصال-به-سرور) مطلع شوید. شناسه‌های [دستگاه](/react-native/features.html#دریافت-شناسه-دستگاه) و [کاربر](/react-native/features.html#دریافت-شناسه-کاربر) خود را از چابک دریافت نمایید. در آخر می‌توانید از [اطلاعات کاربران](/react-native/features.html#مدیریت-اطلاعات-کاربر) خود را مدیریت کنید.
 
 <Br>
 
-### اتصال با سرور
+### اتصال به سرور
 
 برای اطلاع از وضعیت آنلاین یا آفلاین بودن،میتوانید از متد زیر استفاده کنید:
 
@@ -43,6 +43,7 @@ chabok.on('closed', _ => {status = 'closed ...'});
 ```javascript
 chabok.on('error', _ => {status = 'error ...'}); 
 ```
+<Br>
 
 ### دریافت شناسه دستگاه
 
@@ -58,6 +59,7 @@ chabok.getInstallationId()
 ```javascript
 chabok.getuserId()
 ```
+<Br>
 
 ### مدیریت اطلاعات کاربر
 
