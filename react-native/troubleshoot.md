@@ -40,7 +40,7 @@ next: release-note.html
 )
 
 ##### ۳- اطلاعات حساب خود را با دقت وارد کنید (خطای internal server error)
-<span style="background-color: #a4c639; height: 25px; color: #fff; display: inline-block; padding: 8px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span><span style="background-color: #d3d3d3; height: 25px; color: #fff; display: inline-block; padding: 8px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
+<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span><span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
 
 در صورت دریافت خطای فوق در **xcode log** و **logcat** از وارد کردن اطلاعات حساب (`appId`, `APIKey`, `username`, `password`) خود اطمینان یابید.
 
@@ -53,13 +53,13 @@ next: release-note.html
 در ابتدا از ثبت موفق کاربر و مشاهده دستگاه در بخش مشترکین و عضویت آن در کانال ارسالی پیام مطمئن شوید.
 
 ##### ۲- تنظیمات APN (پوش‌نوتیفیکیشن) خود را چک کنید
-<span style="background-color: #d3d3d3; height: 25px; color: #fff; display: inline-block; padding: 8px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
+<span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
 
 از وارد کردن صحیح اطلاعات دسترسی پوش‌نوتیفیکیشن در هر پلتفرم از [بخش تنظیمات پنل قسمت پلتفرم‌ها](https://doc.chabokpush.com/panel/settings.html#%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85%D9%87%D8%A7) اطمینان یابید.
 در صورت مشاهده متن **غیرفعال** در کارت تنظیمات هر پلتفرم، دستگاه به بخش مشترکین اضافه نشده است. برای مثال اگر تنظیمات پوش‌نوتیفیکیشن آی‌اواس را به درستی انجام داده باشید ولی دستگاه آی‌اواس به بخش مشترکین اضافه نشده باشد بر روی کارت تنظیمات پوش‌نوتیفیکیشن آی‌اواس متن غیرفعال را مشاهده خواهید کرد.
 
 ##### ۳- پوش‌ روی Simulator آی‌او‌اس دریافت نمی‌شود
-<span style="background-color: #d3d3d3; height: 25px; color: #fff; display: inline-block; padding: 8px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
+<span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
  
 امکان دریافت پوش‌نویفیکیشن بر روی Simulator آی‌او‌اس وجود ندارد.
 
