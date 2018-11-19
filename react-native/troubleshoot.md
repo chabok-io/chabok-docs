@@ -52,14 +52,14 @@ next: release-note.html
 در ابتدا از ثبت موفق کاربر و مشاهده دستگاه در بخش مشترکین و عضویت آن در کانال ارسالی پیام مطمئن شوید.
 
 ##### ۲- تنظیمات APN (پوش‌نوتیفیشکن) خود را چک کنید
-<span style="background-color: #2b2301; color: #fff; display: inline-block; padding: 1px 10px; font-weight: bold; border-radius: 5px;">IOS</span>
+<span style="background-color: #d3d3d3; color: #fff; display: inline-block; padding: 1px 10px; font-weight: bold; border-radius: 5px;">IOS</span>
 
 
 از وارد کردن صحیح اطلاعات دسترسی پوش‌نوتیفیکیشن در هر پلتفرم از [بخش تنظیمات پنل قسمت پلتفرم‌ها](https://doc.chabokpush.com/panel/settings.html#%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85%D9%87%D8%A7) اطمینان یابید.
 در صورت مشاهده متن **غیرفعال** در کارت تنظیمات هر پلتفرم، دستگاه به بخش مشترکین اضافه نشده است. برای مثال اگر تنظیمات پوش‌نوتیفیکیشن آی‌اواس را به درستی انجام داده باشید ولی دستگاه آی‌اواس به بخش مشترکین اضافه نشده باشد بر روی کارت تنظیمات پوش‌نوتیفیکیشن آی‌اواس متن غیرفعال را مشاهده خواهید کرد.
 
 ##### ۳- پوش‌ روی Simulator آی‌او‌اس دریافت نمی‌شود
-<span style="background-color: #2b2301; color: #fff; display: inline-block; padding: 1px 10px; font-weight: bold; border-radius: 5px;">IOS</span>
+<span style="background-color: #d3d3d3; color: #fff; display: inline-block; padding: 1px 10px; font-weight: bold; border-radius: 5px;">IOS</span>
  
 
 امکان دریافت پوش‌نویفیکیشن بر روی Simulator آی‌او‌اس وجود ندارد.
