@@ -172,18 +172,29 @@ PushNotification.configure({
 برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقداردهی نمایید. فراخوانی این متد فقط یکبار کافی است. به قطعه کد زیر دقت کنید:
 
 ```javascript
-const auth = {
-  appId: 'APP_ID',
-  apiKey: 'API_KEY',
-  username: 'USERNAME',
-  password: 'PASSWORD',
-  devMode:true
+import React from 'react';
+import chabokpush from 'chabokpush-rn';
+
+export default class App extends React.Component {
+
+    componentDidMount() {
+        const authConfig = {
+            //true connects to Sandbox environment
+            //false connects to Production environment
+            devMode: true,
+            appId: 'APP_ID',            //based on your environment
+            apiKey: 'API_KEY',          //based on your environment
+            username: 'SDK_USERNAME',   //based on your environment
+            password: 'SDK_PASSWORD'    //based on your environment
+        };
+        const options = {
+            silent: false,
+            realtime: true, //Enable ChabokPush realtime
+        };
+        this.chabok = new chabokpush(authConfig, options);
+    }
+
 }
-const options = {
-      silent: false,
-      realtime: true
-    };
-this.chabok = new chabokpush(auth, options);
 ```
 
 > `نکته ` : به طور کلی چابک شامل ۲ محیط سندباکس و عملیاتی می‌باشد. حساب‌های رایگان چابک (تا ۳۰ هزار کاربر) بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. مقدار `true` برای ‌`devMode` باعث اتصال به محیط سندباکس و مقدار `false` باعث اتصال به محیط عملیاتی ما می‌شود.
@@ -201,29 +212,63 @@ this.chabok = new chabokpush(auth, options);
 
 <Br>
 
-### ۴- ثبت کاربر
+### ۴- ثبت کاربر (Register)
+
+یکی از مزیت‌های چابک نسبت به درگاه‌های ارسال پوش‌نوتیفیکیشن، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید. این شناسه می‌تواند برای **دستگاه‌های متعدد یک کاربر** استفاده شود. شناسه کاربر می‌تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. **شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی **شناسه دیتابیس‌تان** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود.
 
 با استفاده از متد `register` می‌توانید یک نام کاربری به هر کاربر اختصاص دهید. این متد شناسه کاربر را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت‌نام می‌کند.
 
 > `نکته` : متد `register` باید فقط **یک بار** در طول اجرا اپلیکیشن فراخوانی شود.
 
-
 ```javascript
-chabok.register('USER_ID')
+this.chabok.register('USER_ID').then(({deviceId}) => {
+	console.log('Regsitered ', deviceId)
+}).catch(error => {
+	console.log('Fail to register user ', error)
+})
 ```
+
 > `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `LocalStorage` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد زیر استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد:
 
 
 ```javascript
-chabok.getUserId()
+this.chabok.getUserId().then(userId => {
+	console.log('userId: ', userId)
+}).catch(error => {
+	console.log('Fail to getUserId', error)
+})
 ```
 
-> `نکته` : متغیر `USER_ID` شناسه کاربر برای ثبت نام در چابک می‌باشد و ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود شناسه کاربری می تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. `شماره موبایل، کدملی، شماره حساب و یا ایمیل` مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند.
->
+به عنوان مثال اگر اپلیکیشن شما دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای (در فایل `App` متد `componentDidMount`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
+
+```javascript
+componentDidMount(){
+    ...
+    
+    this.chabok.getUserId().then(userId => {
+        if (userId) {
+            this.chabok.register(userId)
+        } else {
+        
+            //If user is not registered verify the user and
+            //call this.chabok.register('USER_ID') method at login page
+            this.chabok.register('USER_ID').then(({deviceId}) => {
+				console.log('Regsitered ', deviceId)
+			}).catch(error => {
+				console.log('Fail to register user ', error)
+			})
+        }
+    }).catch(error => {
+        console.log('Fail to getUserId ', error)
+    })
+}
+```
 
 > `نکته`: کاراکترهای ‍`#,+,*,\,/` و فاصله در `USER_ID` مجاز نیستند، همچنین طول این رشته نباید کمتر از ۳ و بیشتر از ۳۲ کاراکتر باشد.
 
 > `نکته ` : در صورتی که مقداردهی اولیه و ثبت کاربر به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
+
+پس از اتمام این مراحل شما می‌توانید با فراخوانی [این رویدادها](https://doc.chabokpush.com/react-native/features.html#اتصال-با-سرور) از اتصال دستگاه به چابک اطمینان یابید.
 
 ### متد تایید ثبت کاربر
 
@@ -233,13 +278,12 @@ chabok.getUserId()
 chabok.isRegistered()
 ```
 
-### متد حذف کاربر
+### حذف کاربر (Unregister)
 
-برای حذف دستگاه کاربر از سرور چابک می‌توانید از متد زیر استفاده کنید:
+برای حذف دستگاه کاربر از سرور چابک می‌توانید از متد `unregister` استفاده کنید. پس از حذف کاربر، چابک دیگر به دستگاه‌های آن `userId` پوش ارسال نخواهد کرد. توصیه می‌شود این متد را زمانی که کاربر در اپلیکیشنتان از حساب خود خارج می‌شود (**Logout**) فراخوانی کنید. این امر باعث می‌شود تا کاربر از حفظ شدن حریم شخصی خود پس از خروج از حساب کاربری اطمینان یابد. پس از آن هم کاربر را به عنوان یک کاربر مهمان `register` کنید تا همچنان با او تعامل داشته باشید.
+
 ```javascript
 chabok.unregister()
 ```
-
-پس از اتمام این مراحل شما می‌توانید با فراخوانی [این رویدادها](https://doc.chabokpush.com/react-native/features.html#اتصال-با-سرور) از اتصال دستگاه به چابک اطمینان یابید.
 
 > نحوه صحیح پیاده سازی متد و رویدادها در قالب پروژه [دمو](https://github.com/chabokpush/chabok-rn-chat) پیاده سازی شده است.
