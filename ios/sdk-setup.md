@@ -251,6 +251,8 @@ _manager?.registerApplication("APP_ID", 	 //based on your environment
 
 manager?.addDelegate(self)
 ```
+- متد `didFinishLaunchingWithOptions`:
+
 چابک برای فهمیدن نحوه باز شدن اپلیکیشن نیاز به قطعه کد زیر دارد، بنابراین فراخوانی این کد **ضروری** می‌باشد:
 
 ```objectivec
@@ -267,6 +269,22 @@ if _manager?.application(application, didFinishLaunchingWithOptions: launchOptio
 	print("Launched by tapping on notification")
 }
 ```
+- متد `resetBadge`:
+
+چابک به طور **پیش‌فرض** برای هر پیام در اپلیکیشنتان نشان (**Badge**) اعمال می‌کند. متد `resetBadge` برای خالی کردن و ریست Badge به کار می‌رود. شما با توجه به نیاز خود می‌توانید این متد را در جای خاصی از اپلیکیشنتان (مانند صندوق پیام‌ها) یا در حین باز شدن (launch) اپ خود فراخوانی کنید.
+
+```objectivec
+//Objective-C:
+
+[PushClientManager  resetBadge];
+```
+```swift
+//Swift:
+
+PushClientManager.resetBadge()
+```
+
+
 #### متدهای ضروری
 
 در مرحله آخر شما باید قطعه کد زیر را در کلاس `AppDelegate` قرار دهید تا کتابخانه چابک بتواند راه‌اندازی شود:
