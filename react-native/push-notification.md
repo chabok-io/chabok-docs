@@ -7,15 +7,15 @@ prev: chabok-messaging.html
 next: user-management.html
 ---
 
-چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات [اندروید]() و [آی‌اواس]() آن را انجام دهید. همچنین می‌توانید از نمایش اعلان به صورت local [استفاده کنید]().
+چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات زیر برای [اندروید]() و [آی‌اواس]() انجام دهید. همچنین می‌توانید از نمایش اعلان به صورت **local** [استفاده کنید](/react-native/push-notification.html#نمایش-local-notifications).
 
 <Br>
 
-### اندروید
+### تنظیم پوش‌نوتیفیکیشن اندروید
 
 برای استفاده از سرویس پوش‌نوتیفیکیشن در اندروید (GCM یا Firebase) مراحل زیر را باید طی کنید:
 
-در کلاس `android/build.gradle` کد زیر اضافه کنید:
+۱- در کلاس `android/build.gradle` کد زیر اضافه کنید:
 
 ```java
 ext {
@@ -33,7 +33,7 @@ ext {
 > `نکته:` `localNotification()` بدون انجام تغییرات در اپلیکیشن کار می‌کند اما برای کار کردن `localNotificationSchedule()` نیاز به تغییرات زیر دارید.
 
 
-در فایل `AndroidManifest.xml` کد زیر اضافه کنید:
+۲- در فایل `AndroidManifest.xml` کد زیر اضافه کنید:
 
 
 ```java
@@ -100,7 +100,7 @@ ext {
      .....
 ```
 
-اگر از `react-native link` استفاده نکردید، پکیج را دستی در `MainApplication.java` ثبت کنید:
+۳- اگر از `react-native link` استفاده نکردید، پکیج را دستی در `MainApplication.java` ثبت کنید:
 
 ```java
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;  // <--- Import Package
@@ -130,14 +130,15 @@ public class MainApplication extends Application implements ReactApplication {
 
 > `نکته:` برای اطلاعات بیشتر می‌توانید [لینک مرجع](https://github.com/zo0r/react-native-push-notification#android-manual-installation) را مطالعه نمایید.
 
+<Br>
 
-### آی‌او‌اس
+### تنظیم پوش‌نوتیفیکیشن آی‌او‌اس
 
 این قسمت مخصوص پروژه‌هایی است که با `react-native init` یا **Create React Native App** ساخته شده‌اند. 
 برای شروع ابتدا گواهی‌ها و دسترسی‌های اپل را همانطور که در [صفحه پیش‌نیاز](https://doc.chabokpush.com/react-native/required.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%BE%D9%88%D8%B4%D9%86%D9%88%D8%AA%DB%8C%D9%81%DB%8C%DA%A9%DB%8C%D8%B4%D9%86-%D8%A2%DB%8C%D8%A7%D9%88%D8%A7%D8%B3) توضیح دادیم، تنظیم نمایید.
 
 
-سپس دستورهای زیر را برای افزودن کتابخانه به پروژه خود اضافه کنید: ([برای افزودن دستی کتابخانه کلیک کنید](https://facebook.github.io/react-native/docs/linking-libraries-ios#manual-linking))
+۱- دستورهای زیر را برای افزودن کتابخانه به پروژه خود اضافه کنید: ([برای افزودن دستی کتابخانه کلیک کنید](https://facebook.github.io/react-native/docs/linking-libraries-ios#manual-linking))
 
 ```bash
 node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj
@@ -145,14 +146,14 @@ node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcod
 ```bash
 Link Binary With Libraries: libRCTPushNotification.a
 ```
-در آخر هم  برای پشتیبانی از نوتیفیکیشن و ثبت رویدادها باید به  کلاس **AppDelegate** خود دو قطعه کد زیر را اضافه کنید:
+۲- در آخر هم  برای پشتیبانی از نوتیفیکیشن و ثبت رویدادها باید به  کلاس **AppDelegate** خود دو قطعه کد زیر را اضافه کنید:
 - در بالای `AppDelegate.m` :
 
 ```objectivec
 #import <React/RCTPushNotificationManager.h>
 ```
 
-- در پیاده‌سازی کلاس **AppDelegate**:
+- در پیاده‌سازی کلاس `AppDelegate`:
 
 ```objectivec
 // Required to register for notifications
@@ -184,8 +185,11 @@ Link Binary With Libraries: libRCTPushNotification.a
 ```
 > `نکته:` برای اطلاعات بیشتر می‌توانید [لینک مرجع](https://facebook.github.io/react-native/docs/pushnotificationios.html#content) را مطالعه نمایید.
 
+<Br>
+
 ### نمایش Local Notifications
-برای نمایش اعلان (notification) به صورت Local روی پیام‌های بالا ([دقت داشته باشید که dependency آن را اعمال کرده‌باشید](https://doc.chabokpush.com/react-native/setup.html#%D9%85%D8%AA%D8%AF-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D8%AA%D9%88%DA%A9%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D9%BE%D9%88%D8%B4)) باید دستور زیر را اجرا کنید.
+
+برای نمایش اعلان (notification) به صورت Local روی پیام‌هایتان ([دقت داشته باشید که dependency آن را اعمال کرده‌باشید](https://doc.chabokpush.com/react-native/setup.html#%D9%85%D8%AA%D8%AF-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D8%AA%D9%88%DA%A9%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D9%BE%D9%88%D8%B4)) باید دستور زیر را اجرا کنید.
 
 
 ```bash
