@@ -115,17 +115,17 @@ $ pod update
 #pragma mark - Notification AppDelegation
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-    // Hook and handle failure of get Device token from Apple APNS Server
+    // Handle failure of get Device token from Apple APNS Server
     [_manager application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-    // Manager hook and handle receive Device Token From APNS Server
+    // Handle receive Device Token From APNS Server
     [_manager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
-    // Manager hook and Handle iOS 8 remote Notificaiton Settings
+    // Handle iOS 8 remote Notificaiton Settings
     [_manager application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 @end
@@ -175,18 +175,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
     //MARK : Notification AppDelegation
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        // Hook and handle failure of get Device token from Apple APNS Server
+        // Handle failure of get Device token from Apple APNS Server
         _manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        // Manager hook and handle receive Device Token From APNS Server
+        // Handle receive Device Token From APNS Server
         _manager?.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
     }
     
     @available(iOS 8.0, *)
     func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
-        // Manager hook and Handle iOS 8 remote Notificaiton Settings
+        // Handle iOS 8 remote Notificaiton Settings
         _manager?.application(application, didRegister: notificationSettings)
     }
 }
@@ -295,17 +295,17 @@ PushClientManager.resetBadge()
 #pragma mark - Notification AppDelegation
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-    // Hook and handle failure of get Device token from Apple APNS Server
+    // Handle failure of get Device token from Apple APNS Server
     [_manager application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-    // Manager hook and handle receive Device Token From APNS Server
+    // Handle receive Device Token From APNS Server
     [_manager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
-    // Manager hook and Handle iOS 8 remote Notificaiton Settings
+    // Handle iOS 8 remote Notificaiton Settings
     [_manager application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 ```
@@ -315,18 +315,18 @@ PushClientManager.resetBadge()
 //MARK : Notification AppDelegation
     
 func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-	// Hook and handle failure of get Device token from Apple APNS Server
+	// Handle failure of get Device token from Apple APNS Server
 	_manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
 }
     
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-	// Manager hook and handle receive Device Token From APNS Server
+	// Handle receive Device Token From APNS Server
 	_manager?.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)        
 }
     
 @available(iOS 8.0, *)
 func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
-	// Manager hook and Handle iOS 8 remote Notificaiton Settings
+	// Handle iOS 8 remote Notificaiton Settings
 	_manager?.application(application, didRegister: notificationSettings)
 }
 ```
