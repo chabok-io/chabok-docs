@@ -50,14 +50,22 @@ chabok.on('error', _ => {status = 'error ...'});
 هر دستگاه در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
 
 ```javascript
-chabok.getInstallationId()
+chabok.getInstallationId().then( installationId => {
+	console.log('InstallationId: ', installationId)
+}).catch(error => {
+	console.log('Fail to getInstallationId', error)
+})
 ```
 ### دریافت شناسه کاربر
 
 هر کاربر در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
 
 ```javascript
-chabok.getuserId()
+chabok.getUserId().then(userId => {
+	console.log('userId: ', userId)
+}).catch(error => {
+	console.log('Fail to getUserId', error)
+})
 ```
 <Br>
 
@@ -69,10 +77,10 @@ chabok.getuserId()
 
 ```javascript
 chabok.setUserInfo({
- firstname: 'ahmad',
- lastname: 'mirzaee',
- email: 'ahmad.m@gmail.com',
- age: 17
+ firstname: 'FIRST_NAME',
+ lastname: 'LAST_NAME',
+ email: 'EMAIL',
+ age: 20
 })
 ```
 - متد `getUserInfo` برای دریافت اطلاعات کاربر:
@@ -80,4 +88,3 @@ chabok.setUserInfo({
 ```javascript
 chabok.getUserInfo()
 ```
-
