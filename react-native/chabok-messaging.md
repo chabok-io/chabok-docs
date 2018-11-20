@@ -30,11 +30,17 @@ chabok.on('message', msg => {
 
 ```javascript
 chabok.publish({
-    content: "Hello World!",
-    channel: "CHANNEL_NAME",
-    user: "USER_ID"
+    user: "USER_ID", 		//Required. For public channel set * (wildcard)
+	channel: "CHANNEL_NAME",//Required. Chabok by default subscribed user on default channel
+    content: "Hello World!",//Required.
+    
+    sound: "SOUND", 		//Optional
+    data: { 				//Optional
+	    key: "VALUE",
+    },
 })
 ```
+> `نکته:`  مقدار پیش‌فرض برای نام کانال  **خصوصی**  برابر  `default`  می‌باشد.
 
 روی اتصال موجود چابک می‌توانید تعداد زیادی رویداد سمت سرور بفرستید. در واقع برای هر درخواست یک اتصال جدید ساخته نمی‌شود. این کار، تحویل اطلاعات را در سمت سرور حتی در شرایطی که کاربر اینترنت ضعیف و یا قطع شده‌ای دارد، تضمین می‌کند. به این ترتیب که کلاینت چابک با استفاده از منطق سعی مجدد خود می‌تواند پیام‌ شما را حتی در شرایط بحرانی یک و فقط یک بار بفرستد.
 
@@ -59,7 +65,6 @@ chabok.publish({
 
 ```javascript
 chabok.subscribe("alert") // public channel
-chabok.subscribe("public/sport") // public channel
 chabok.subscribe("private/league") // private (personal) channel
 ```
 
@@ -69,6 +74,5 @@ chabok.subscribe("private/league") // private (personal) channel
 
 ```javascript
 chabok.unSubscribe("alert") // public channel
-chabok.unSubscribe("public/sport") // public channel
 chabok.unSubscribe("private/league") // private (personal) channel
 ```
