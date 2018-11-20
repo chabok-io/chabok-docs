@@ -18,8 +18,7 @@ next: user-management.html
 ```objectivec
 //Objective-C:
 
--(void)pushClientManagerUILocalNotificationDidReceivedMessage:(PushClientMessage *)message
-{
+-(void)pushClientManagerUILocalNotificationDidReceivedMessage:(PushClientMessage *)message {
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     
     localNotification.timeZone = [NSTimeZone localTimeZone];
@@ -144,8 +143,8 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 //Objective-C:
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-// Handle receive iOS (4.0 and later) local notification
- [self.manager application:application didReceiveLocalNotification:notification];
+	// Handle receive iOS (4.0 and later) local notification
+	[self.manager application:application didReceiveLocalNotification:notification];
 }
 ```
 
@@ -153,7 +152,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 //Swift:
 
 func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-self.manager.application(application, didReceive: notification)
+	self.manager.application(application, didReceive: notification)
 }
 ```
 
@@ -169,18 +168,16 @@ self.manager.application(application, didReceive: notification)
 //Objective-C:
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-// Handle New Remote Notification, must be use for remote payloads
- [self.manager application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
-
+	// Handle New Remote Notification, must be use for remote payloads
+	[self.manager application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 ```
 ```swift
 //Swift:
 
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-// Handle New Remote Notification, must be use for remote payloads
- manager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
-
+	// Handle New Remote Notification, must be use for remote payloads
+	manager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
 }
 ```
 
