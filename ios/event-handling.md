@@ -24,77 +24,171 @@ next: verification.html
 ```objectivec 
 //Objective-C :
 
-- (void)subscribeEvent:(NSString*)eventName;
-- (void)subscribeEvent:(NSString*)eventName live:(BOOL)live;
-- (void)subscribeEvent:(NSString*)eventName installationId:(NSString *)installationId;
-- (void)subscribeEvent:(NSString*)eventName installationId:(NSString *)installationId live:(BOOL)live;
+//Subscribe on a global event from any device.  
+[PushClientManager.defaultManager subscribeEvent:@"EVENT_NAME"];
+//Subscribe on a global event from a specific device.  
+[PushClientManager.defaultManager subscribeEvent:@"EVENT_NAME"
+                                  installationId:@"INSTALLATION_ID"];
 ```
 ``` swift
 //Swift :
 
-manager?.subscribeEvent(eventName: String!)
-manager?.subscribeEvent(eventName: String!, live: Bool)
-manager?.subscribeEvent(eventName: String!, installationId: String!)
-manager?.subscribeEvent(eventName: String!, installationId: String!, live: Bool)
+//Subscribe on a global event from any device.  
+PushClientManager.default().subscribeEvent("EVENT_NAME")
+//Subscribe on a global event from a specific device.  
+PushClientManager.default().subscribeEvent("EVENT_NAME",
+                            installationId: "INSTALLATION_ID")
 ```
 > `نکته :` پارامتر ورودی `live` به این معناست که کاربرانی که به چابک متصل هستند این رویداد را دریافت خواهند نمود، مقدار `installiationId`  نیز برابر شناسه منحصر به فرد دستگاه کاربر می‌باشد و از طریق متد  `getInstallationId` به دست می‌آید.
 
-در صورت استفاده از امضاهای حاوی `installiationId` تمامی رویدادهای مربوط به نام وارد شده به عنوان `eventName` که توسط آن دستگاه منتشر می‌شود را دریافت خواهید نمود.
-> `نکته` : `installationId` در بخش [امکانات‌ چابک](/ios/features.html) توضیح داده شده است.
-جهت عضویت روی یک رویداد، می‌توانید از نمونه کد زیر پیروی کنید :
+در صورت استفاده از امضاهای حاوی `installiationId` تمامی رویدادهای مربوط به نام وارد شده به عنوان `EVENT_NAME` که توسط آن دستگاه منتشر می‌شود را دریافت خواهید نمود.
+> `نکته` : `installationId` در بخش [امکانات‌ چابک](/ios/features.html#دریافت-شناسه-دستگاه) توضیح داده شده است.
+جهت عضویت روی یک رویداد، می‌توانید از نمونه کد زیر پیروی کنید:
+
+برای مثال، در زیر عضویت روی رویداد `shareTrip` یک دستگاه آورده شده است:
 
 ```objectivec 
 //Objective-C :
 
-[self.manager subscribeEvent:@"geo"]; //Public event    
-[self.manager subscribeEvent:@"talk"
-                  installationId:@"INSTALLATION_ID"]; //Private event
+//Get a unique device id by calling [PushClientManager.defaultManager getInstallationId];
+//get user installationId with publish method or your rest api.
+NSString *installationId = @"USER_INSTALLATION_ID";
+    
+[PushClientManager.defaultManager subscribeEvent:@"shareTrip"
+                                  installationId:installationId];
 ```
 ``` swift
 //Swift :
 
-manager?.subscribeEvent("geo") //public event
-manager?.subscribeEvent("talk",
-             installationId: "INSTALLATION_ID") //private event
+//Get a unique device id by calling PushClientManager.default().getInstallationId();
+//get user installationId with publish method or your rest api.
+var installationId = "USER_INSTALLATION_ID"
+
+PushClientManager.default().subscribeEvent("shareTrip",
+                                installationId: installationId)
+```
+> `نکته`: برای دریافت رویدادهای یک دستگاه خاص باید شناسه آن دستگاه (`installationId`) را به جایی که باید دریافت کند، ارسال نمایید.
+
+#### تایید عضویت
+
+برای دریافت وضعیت تایید عضویت روی یک رویداد متد زیر را پیاده‌سازی کنید:
+
+```objectivec
+//Objective-C
+
+-(void) pushClientManagerDidSubscribed:(NSString *)name {
+    NSLog(@"Subscribe on %@", name);
+}
+```
+```swift
+//Swift
+
+func pushClientManagerDidSubscribed(_ name: String?) {
+    print("Subscribe on \(name)")
+}
 ```
 
+#### خطای عضویت
+
+برای دریافت وضعیت خطای عضویت روی یک رویداد متد زیر را پیاده‌سازی کنید:
+
+```objectivec
+//Objective-C
+
+-(void) pushClientManagerDidFailInSubscribe:(NSError *)error {
+    NSLog(@"Fail to subscribe. \n ~~ Error: %@", error);
+}
+```
+```swift
+//Swift
+
+func pushClientManagerDidFail(inSubscribe error: Error!) {
+    print("Fail to subscribe. \n ~~ Error: \(error)")
+}
+```
 ### لغو عضویت از رویداد
 
-با استفاده از متد زیر می‌توانید اقدام به لغو عضویت بر روی یک رویداد کنید :
+با استفاده از متد زیر می‌توانید اقدام به لغو عضویت بر روی یک رویداد کنید:
 
 ```objectivec 
 //Objective-C :
 
-[self.manager unsubscribeEvent:@"geo"]; //Public event
-[self.manager unsubscribeEvent:@"geo"
-                  installationId:@"INSTALLATION_ID"]; //Private event
+[self.manager unsubscribeEvent:@"EVENT_NAME"];
+[self.manager unsubscribeEvent:@"EVENT_NAME"
+                  installationId:@"INSTALLATION_ID"];
 ```
 
 ```swift
 //Swift :
 
-manager?.unsubscribeEvent("geo") //public event
-manager?.unsubscribeEvent("talk",
-               installationId: "INSTALLATION_ID") //private event
+manager?.unsubscribeEvent("EVENT_NAME")
+manager?.unsubscribeEvent("EVENT_NAME",
+               installationId: "INSTALLATION_ID") 
+```
+
+#### تایید  لغو عضویت
+
+برای دریافت وضعیت تایید لغو عضویت روی یک رویداد متد زیر را پیاده‌سازی کنید:
+
+```objectivec
+//Objective-C
+
+-(void) pushClientManagerDidUnsubscribed:(NSString *)name {
+    NSLog(@"Unsubscribe in %@", name);
+}
+```
+```swift
+//Swift
+
+func pushClientManagerDidUnsubscribed(_ name: String?) {
+    print("Unsubscribe in \(name)")
+}
+```
+
+#### خطای لغو عضویت
+
+برای دریافت وضعیت خطای لغو عضویت روی یک رویداد متد زیر را پیاده‌سازی کنید:
+
+```objectivec
+//Objective-C
+
+-(void) pushClientManagerDidFailInUnsubscribe:(NSError *)error {
+    NSLog(@"Fail to unsubscribe. \n ~~ Error: %@", error);
+}
+```
+```swift
+//Swift
+
+func pushClientManagerDidFail(inUnsubscribe error: Error!) {
+    print("Fail to unsubscribe. \n ~~ Error: \(error)")
+}
 ```
 
 ### دریافت رویداد
 
-برای دریافت رویداد باید delegate method زیر را پیاده سازی کنید، تا بتوانید رویدادهایی که توسط متد `subscribeEvent` بر روی یک رویداد خاص `subscribe` کرده‌اید دریافت کنید:
+با پیاده‌سازی متد `pushClientManagerDidReceivedEventMessage` قادر به دریافت رویدادها خواهید بود. 
 
 ```objectivec
 //Objective-C :
 
-- (void) pushClientManagerDidReceivedEventMessage:(EventMessage *)eventMessage{
-    NSLog(@"Event message (%@) was received .....",
-          eventMessage.data);
+-(void) pushClientManagerDidReceivedEventMessage:(EventMessage *)eventMessage{
+    NSDictionary *data = eventMessage.data;
+    NSString *eventName = eventMessage.eventName;
+    NSString *installationId = eventMessage.deviceId;
+    
+    NSLog(@"Got event %@ from device %@ with data %@", eventName,
+            installationId, data);
 }
 ```
 ``` swift
 //Swift :
 
 func pushClientManagerDidReceivedEventMessage(_ eventMessage: EventMessage!) {
-        print("Event message \(eventMessage.data) was received .....")
+    let data = eventMessage?.data
+    let eventName = eventMessage?.eventName
+    let installationId = eventMessage?.deviceId
+
+    print("Got event \(eventName) from device \(installationId) with data \(data)")
 }
 ```
 
@@ -107,36 +201,34 @@ func pushClientManagerDidReceivedEventMessage(_ eventMessage: EventMessage!) {
 ```objectivec
 //Objective-C:
 
-- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data;
-- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data live:(BOOL)live;
-- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data stateful:(BOOL)stateful;
-- (BOOL)publishEvent:(NSString*)eventName data:(NSDictionary*)data live:(BOOL)live stateful:(BOOL)stateful;
+[PushClientManager.defaultManager publishEvent:@"EVENT_NAME"
+                                  data:@{@"KEY":@"VALUE"}];
 ```
 ```swift
 //Swift:
 
-manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!)
-manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!, live: Bool)
-manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!, stateful: Bool)
-manager?.publishEvent(eventName: String!, data: [AnyHashable : Any]!, live: Bool, stateful: Bool)
+PushClientManager.default().publishEvent("EVENT_NAME", 
+                                data: ["KEY": "VALUE"])
 ```
-> `نکته` : پارامتر ورودی `live` به این معناست که کاربرانی که به چابک متصل هستند این رویداد را دریافت خواهند نمود.
 
-جهت انتشار یک رویداد می‌توانید از نمونه کد زیر پیروی کنید:
+برای نمونه در زیر کد انتشار موقعیت مکانی در اشتراک سفر کاربر قرار داده شده است که پس از دریافت موقعیت مکانی کاربر، آن را با رویدادی تحت عنوان `shareTrip` منتشر می‌کند.
 
 ```objectivec
 //Objective-C:
 
-NSDictionary *geoData = @{@"lat":@35.7590822,
-                           @"lng":@51.4006114};
-[self.manager publishEvent:@"geo" data:geoData];
+NSDictionary *data = @{@"lat": @35.7583719,
+                       @"lng": @51.4082228,
+                       @"tripId": @(12345678)
+                      };
+[PushClientManager.defaultManager publishEvent:@"shareTrip"
+                                          data:data];
 ```
 ```swift
 //Swift:
 
-let geoData:[AnyHashable : Any] = ["lat":35.7590822,
-                                 "lng":51.4006114];
-manager?.publishEvent("geo", data: geoData)
+var data = ["lat": 35.7583719,
+            "lng": 51.4082228,
+            "tripId": 12345678]
+PushClientManager.default().publishEvent("shareTrip",
+                                        data: data)
 ```
-
-

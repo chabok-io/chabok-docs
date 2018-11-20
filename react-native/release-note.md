@@ -1,12 +1,17 @@
 ---
 id: release-note
-title: لیست تغییرات کتابخانه
+title: لیست تغییرات 
 layout: react-native
 permalink: react-native/release-note.html
-next: introducing.html
+prev: troubleshoot.html
 ---
 
-## نسخه ۱.۳.۰ - ۱۳۹۷/۰۶/۱۷
+شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](/react-native/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
+
+<Br>
+
+## [نسخه ۱.۳.۰ - ۱۳۹۷/۰۶/۱۷](https://github.com/chabokpush/chabok-client-rn-js/releases/tag/1.3.0)
+
 ### تغییرات
 - به روز رسانی به نسخه ۱.۰.۱ SDK جاوا‌ اسکریپت چابک
 - افزودن متدهای `setUserInfo` و `getUserInfo` 
@@ -20,6 +25,7 @@ next: introducing.html
 - افزودن `appBundleId` به اطلاعات هر کاربر
 
 ### ارتقا
+
 - تغییر مقدار پیش‌فرض `live` برای متد `publishEvent` به `true`.
 
 > `نکته: ` اگر در نسخه‌های پایین‌تر از پیش‌فرض `default` متد `publishEvent` استفاده می‌کردید برای حفظ تنظیمات قبلی‌، بهتر است اکنون از پیش‌فرض با مقدار `false` برای `live` استفاده کنید.

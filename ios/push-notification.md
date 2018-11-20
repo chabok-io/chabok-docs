@@ -18,8 +18,7 @@ next: user-management.html
 ```objectivec
 //Objective-C:
 
--(void)pushClientManagerUILocalNotificationDidReceivedMessage:(PushClientMessage *)message
-{
+-(void)pushClientManagerUILocalNotificationDidReceivedMessage:(PushClientMessage *)message {
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     
     localNotification.timeZone = [NSTimeZone localTimeZone];
@@ -144,9 +143,8 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 //Objective-C:
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-
-// Manager Hook and handle receive iOS (4.0 and later) local notification
-[self.manager application:application didReceiveLocalNotification:notification];
+	// Handle receive iOS (4.0 and later) local notification
+	[self.manager application:application didReceiveLocalNotification:notification];
 }
 ```
 
@@ -154,36 +152,32 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 //Swift:
 
 func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-self.manager.application(application, didReceive: notification)
+	self.manager.application(application, didReceive: notification)
 }
 ```
 
-همچنین  delegate متد `didReceiveLocalNotification` به شما کمک می کند که بعد از کلیک، کاربر بر روی اعلان به چه صفحه‌ای هدایت شود.
+همچنین  `delegate` متد `didReceiveLocalNotification` به شما کمک می‌کند که بعد از کلیک، کاربر بر روی اعلان به چه صفحه‌ای هدایت شود.
 
 #### ۲. ‌APNs Notification
 
-delegate متد `didReceiveRemoteNotification` توسط سیستم عامل به هنگام کلیک بر روی اعلان فرخوانی می شود. 
+`delegate` متد `didReceiveRemoteNotification` توسط سیستم عامل به هنگام کلیک بر روی اعلان فرخوانی می‌شود. 
 
-> `نکته` : اگر برنامه شما `Terminate` شده باشد، با کلیک بر روی Notification برنامه شما با کلید `UIApplicationLaunchOptionsRemoteNotificationKey` در `delegate` متد `didFinishLaunchingWithOptions` اجرا خواهد شد و پس از آن متد `didReceiveRemoteNotification` فرخوانی خواهد شد. پس پیشنهاد می کنیم، کد مربوط به `Navigate` به یک صفحه خاص را در متد `didReceiveRemoteNotification` استفاده کنید.
+> `نکته` : اگر برنامه شما `Terminate` شده باشد، با کلیک بر روی Notification برنامه شما با کلید `UIApplicationLaunchOptionsRemoteNotificationKey` در `delegate` متد `didFinishLaunchingWithOptions` اجرا خواهد شد و پس از آن متد `didReceiveRemoteNotification` فرخوانی خواهد شد. پس پیشنهاد می‌کنیم، کد مربوط به `Navigate` به یک صفحه خاص را در متد `didReceiveRemoteNotification` استفاده کنید.
 
 ```objectivec
 //Objective-C:
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-
-// Hook and Handle New Remote Notification, must be use for remote payloads
-[self.manager application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
-
+	// Handle New Remote Notification, must be use for remote payloads
+	[self.manager application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 ```
 ```swift
 //Swift:
 
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-
-// Hook and Handle New Remote Notification, must be use for remote payloads
-manager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
-
+	// Handle New Remote Notification, must be use for remote payloads
+	manager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
 }
 ```
 
@@ -317,7 +311,49 @@ class NotificationService: UNNotificationServiceExtension {
 	}
 }
 ```
+برای دریافت رویداد کلیک روی هر اکشن، لطفا بخش [مدیریت کلیک بر روی هر اکشن](https://dev.doc.chabokpush.com/ios/push-notification.html#%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%DA%A9%D9%84%DB%8C%DA%A9-%D8%A8%D8%B1-%D8%B1%D9%88%DB%8C-%D9%87%D8%B1-%D8%A7%DA%A9%D8%B4%D9%86) را مطالعه کنید.
 
+#### نمونه کد پوش‌نوتیفیکیشن چندرسانه‌ای
+
+بخش [تنظیم نوتیفیکیشن چندرسانه‌ای (Rich Push Notification)](https://dev.doc.chabokpush.com/ios/push-notification.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%86%D9%88%D8%AA%DB%8C%D9%81%DB%8C%DA%A9%DB%8C%D8%B4%D9%86-%DA%86%D9%86%D8%AF%D8%B1%D8%B3%D8%A7%D9%86%D9%87%D8%A7%DB%8C-rich-push-notification) را با دقت مطالعه کرده و سپس قطعه کد زیر را در کلاس `AppDelegate`  پیاده‌سازی کنید تا رویداد کلیک روی هر اکشن را دریافت کنید.
+```objectivec
+//Objective-C
+
+-(void) userNotificationCenter:(UNUserNotificationCenter *)center
+                didReceiveNotificationResponse:(UNNotificationResponse *)response
+                withCompletionHandler:(void (^)(void))completionHandler{
+    
+    //actionIdentifier is your key when you define in Chabokpush payload for each action
+    NSString *actionId = response.actionIdentifier;
+    
+    if ([actionId isEqualToString:@"special_offers_action"]) {
+        NSLog(@"Special offers action clicked by user ...");
+    } else if ([actionId isEqualToString:@"favorite_product_action"]) {
+        NSLog(@"Favorite product action clicked by user ...");
+    }
+    
+    completionHandler();
+}
+```
+```swift
+//Swift
+
+func userNotificationCenter(_ center: UNUserNotificationCenter,
+                didReceive response: UNNotificationResponse,
+                withCompletionHandler completionHandler: @escaping () -> Void) {
+
+    //actionIdentifier is your key when you define in Chabokpush payload for each action
+    let actionId = response.actionIdentifier
+
+    if (actionId == "special_offers_action") {
+        print("Special offers action clicked by user ...")
+    } else if (actionId == "favorite_product_action") {
+        print("Favorite product action clicked by user ...")
+    }
+
+    completionHandler()
+}
+```
 ##### نمونه Curl
 
 با اجرای دستور زیر در Terminal می‌توانید یک نوتیفیکیشن چندرسانه‌ای ارسال کنید. دقت کنید که در دستور زیر مقدار `<ACCESS_TOKEN>` حساب کاربری خود و مقدار `USER_ID` را شناسه‌ کاربری که می‌خواهید پیام به او تحویل داده شود، وارد نمایید.

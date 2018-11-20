@@ -1,17 +1,21 @@
 ---
 id: push-notification
-title: تنظیم پوش‌نوتیفیکیشن 
+title: پوش‌نوتیفیکیشن 
 layout: react-native
 permalink: react-native/push-notification.html
-prev: installation.html
-next: setup.html
+prev: chabok-messaging.html
+next: user-management.html
 ---
 
-### اندروید
+چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات زیر برای [اندروید](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-اندروید) و [آی‌اواس](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-آیاواس) انجام دهید، سپس توکن‌ها را به چابک [اضافه نمایید](/react-native/push-notification.html#متد-افزودن-توکن-برای-ارسال-پوشنوتیفیکیشن). همچنین می‌توانید از نمایش اعلان به صورت **local** [استفاده کنید](/react-native/push-notification.html#نمایش-local-notifications).
 
-برای استفاده از سرویس پوش‌نوتیفیکیشن در اندروید (GCM یا Firebase) مراحل زیر را باید طی کنید.
+<Br>
 
-در کلاس `android/build.gradle` کد زیر اضافه کنید:
+### تنظیم پوش‌نوتیفیکیشن اندروید
+
+برای استفاده از سرویس پوش‌نوتیفیکیشن در اندروید (GCM یا Firebase) مراحل زیر را باید طی کنید:
+
+۱- در کلاس `android/build.gradle` کد زیر اضافه کنید:
 
 ```java
 ext {
@@ -29,8 +33,7 @@ ext {
 > `نکته:` `localNotification()` بدون انجام تغییرات در اپلیکیشن کار می‌کند اما برای کار کردن `localNotificationSchedule()` نیاز به تغییرات زیر دارید.
 
 
-در فایل `AndroidManifest.xml`کد زیر اضافه کنید:
-
+۲- در فایل `AndroidManifest.xml` کد زیر اضافه کنید:
 
 ```java
 .....
@@ -96,7 +99,7 @@ ext {
      .....
 ```
 
-اگر از `react-native link` استفاده نکردید، پکیج را دستی در `MainApplication.java` ثبت کنید:
+۳- اگر از `react-native link` استفاده نکردید، پکیج را دستی در `MainApplication.java` ثبت کنید:
 
 ```java
 import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;  // <--- Import Package
@@ -126,14 +129,15 @@ public class MainApplication extends Application implements ReactApplication {
 
 > `نکته:` برای اطلاعات بیشتر می‌توانید [لینک مرجع](https://github.com/zo0r/react-native-push-notification#android-manual-installation) را مطالعه نمایید.
 
+<Br>
 
-### آی‌او‌اس
+### تنظیم پوش‌نوتیفیکیشن آی‌او‌اس
 
-این قسمت مخصوص پروژه‌هایی است که با `react-native init` یا **Create React Native App** ساخته شده‌اند. 
+این قسمت مخصوص پروژه‌هایی است که با `react-native init` یا `Create React Native App` ساخته شده‌اند. 
 برای شروع ابتدا گواهی‌ها و دسترسی‌های اپل را همانطور که در [صفحه پیش‌نیاز](https://doc.chabokpush.com/react-native/required.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%BE%D9%88%D8%B4%D9%86%D9%88%D8%AA%DB%8C%D9%81%DB%8C%DA%A9%DB%8C%D8%B4%D9%86-%D8%A2%DB%8C%D8%A7%D9%88%D8%A7%D8%B3) توضیح دادیم، تنظیم نمایید.
 
 
-سپس دستورهای زیر را برای افزودن کتابخانه به پروژه خود اضافه کنید: ([برای افزودن دستی کتابخانه کلیک کنید](https://facebook.github.io/react-native/docs/linking-libraries-ios#manual-linking))
+۱- دستورهای زیر را برای افزودن کتابخانه به پروژه خود اضافه کنید: ([برای افزودن دستی کتابخانه کلیک کنید](https://facebook.github.io/react-native/docs/linking-libraries-ios#manual-linking))
 
 ```bash
 node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj
@@ -141,14 +145,20 @@ node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcod
 ```bash
 Link Binary With Libraries: libRCTPushNotification.a
 ```
-در آخر هم  برای پشتیبانی از نوتیفیکیشن و ثبت رویدادها باید به  کلاس **AppDelegate** خود دو قطعه کد زیر را اضافه کنید:
+۲- پس از آن دسترسی‌های پوش‌نوتیفیکیشن برای آی‌او‌اس را ایجاد نمایید:
+
+لطفا `Push Notifications` را در `Setting > Capabilities` فعال کنید .
+
+و علامت `Remote Notifications` ها را در `Setting > Capabilities > Background Modes` چک کنید.
+
+۳- در آخر هم  برای پشتیبانی از نوتیفیکیشن و ثبت رویدادها باید به  کلاس **AppDelegate** خود دو قطعه کد زیر را اضافه کنید:
 - در بالای `AppDelegate.m` :
 
 ```objectivec
 #import <React/RCTPushNotificationManager.h>
 ```
 
-- در پیاده‌سازی کلاس **AppDelegate**:
+- در پیاده‌سازی کلاس `AppDelegate`:
 
 ```objectivec
 // Required to register for notifications
@@ -179,3 +189,92 @@ Link Binary With Libraries: libRCTPushNotification.a
  }
 ```
 > `نکته:` برای اطلاعات بیشتر می‌توانید [لینک مرجع](https://facebook.github.io/react-native/docs/pushnotificationios.html#content) را مطالعه نمایید.
+
+<Br>
+
+### متد افزودن توکن برای ارسال پوش‌نوتیفیکیشن
+
+برای ارسال پوش‌نوتیفیکشن باید متد زیر را برای اضافه نمودن توکن‌ها به چابک فراخوانی کنید:
+
+```javascript
+this.chabok.setPushNotificationToken("TOKEN")
+```
+
+برای **نمایش اعلان** باید دسترسی‌های زیر را برای دستگاهتان در **اندروید** و **آی‌اواس** ایجاد کنید:
+
+```javascript
+var PushNotification = require('react-native-push-notification');
+
+PushNotification.configure({
+            onRegister:  ({token}) => {
+                if(token){
+                    this.chabok.setPushNotificationToken(token)
+                }
+            },
+            // (required) Called when a remote or local notification is opened or received
+            onNotification: function(notification) {
+                console.warn( 'NOTIFICATION:', notification );
+                // required on iOS only (see fetchCompletionHandler docs: https://facebook.github.io/react-native/docs/pushnotificationios.html)
+                notification.finish(PushNotificationIOS.FetchResult.NoData);
+            },
+            senderID: "GCM_SenderID", // ANDROID ONLY: (optional) GCM Sender ID.
+            permissions: {
+                alert: true,
+                badge: true,
+                sound: true
+            },
+            popInitialNotification: true,
+            requestPermissions: true,
+        });
+```
+
+<Br>
+
+### نمایش Local Notifications
+
+برای نمایش اعلان (notification) به صورت Local روی پیام‌هایتان ([دقت داشته باشید که dependency آن را اعمال کرده‌باشید](https://doc.chabokpush.com/react-native/setup.html#%D9%85%D8%AA%D8%AF-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D8%AA%D9%88%DA%A9%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D9%BE%D9%88%D8%B4)) ، باید دستور زیر را اجرا کنید.
+
+
+```bash
+PushNotification.localNotification(details: Object)
+```
+
+مثال:
+
+```javascript
+PushNotification.localNotification({
+    /* Android Only Properties */
+    id: '0', // (optional) Valid unique 32 bit integer specified as string. default: Autogenerated Unique ID
+    ticker: "My Notification Ticker", // (optional)
+    autoCancel: true, // (optional) default: true
+    largeIcon: "ic_launcher", // (optional) default: "ic_launcher"
+    smallIcon: "ic_notification", // (optional) default: "ic_notification" with fallback for "ic_launcher"
+    bigText: "My big text that will be shown when notification is expanded", // (optional) default: "message" prop
+    subText: "This is a subText", // (optional) default: none
+    color: "red", // (optional) default: system default
+    vibrate: true, // (optional) default: true
+    vibration: 300, // vibration length in milliseconds, ignored if vibrate=false, default: 1000
+    tag: 'some_tag', // (optional) add tag to message
+    group: "group", // (optional) add group to message
+    ongoing: false, // (optional) set whether this is an "ongoing" notification
+    priority: "high", // (optional) set notification priority, default: high
+    visibility: "private", // (optional) set notification visibility, default: private
+    importance: "high", // (optional) set notification importance, default: high
+
+    /* iOS only properties */
+    alertAction: // (optional) default: view
+    category: // (optional) default: null
+    userInfo: // (optional) default: null (object containing additional notification data)
+
+    /* iOS and Android properties */
+    title: "My Notification Title", // (optional)
+    message: "My Notification Message", // (required)
+    playSound: false, // (optional) default: true
+    soundName: 'default', // (optional) Sound to play when the notification is shown. Value of 'default' plays the default sound. It can be set to a custom sound such as 'android.resource://com.xyz/raw/my_sound'. It will look for the 'my_sound' audio file in 'res/raw' directory and play it. default: 'default' (default sound is played)
+    number: '10', // (optional) Valid 32 bit integer specified as string. default: none (Cannot be zero)
+    repeatType: 'day', // (optional) Repeating interval. Check 'Repeating Notifications' section for more info.
+    actions: '["Yes", "No"]',  // (Android only) See the doc for notification actions to know more
+});
+```
+
+
