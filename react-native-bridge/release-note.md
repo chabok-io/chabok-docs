@@ -6,6 +6,11 @@ permalink: react-native-bridge/release-note.html
 next: introducing.html
 ---
 
+## نسخه ۱.۱.۱ - ۱۳۹۷/۰۸/۲۳
+
+### تغییرات
+- افزودن شنونده `onSubscribe` و `onUnsubscribe` برای دریافت وضعیت عضویت 
+
 ## نسخه ۱.۱.۰ - ۱۳۹۷/۰۸/۲۱
 
 ### تغییرات
