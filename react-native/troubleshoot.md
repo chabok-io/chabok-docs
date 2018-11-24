@@ -40,7 +40,7 @@ next: release-note.html
 )
 
 ##### ۳- اطلاعات حساب خود را با دقت وارد کنید (خطای internal server error)
-<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span><span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
+<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span><span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
 
 در صورت دریافت خطای فوق در **xcode log** و **logcat** از وارد کردن اطلاعات حساب (`appId`, `APIKey`, `username`, `password`) خود اطمینان یابید.
 
@@ -53,32 +53,32 @@ next: release-note.html
 در ابتدا از ثبت موفق کاربر و مشاهده دستگاه در بخش مشترکین و عضویت آن در کانال ارسالی پیام مطمئن شوید.
 
 ##### ۲- تنظیمات APN (پوش‌نوتیفیکیشن) خود را چک کنید
-<span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
+<span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
 
 از وارد کردن صحیح اطلاعات دسترسی پوش‌نوتیفیکیشن در هر پلتفرم از [بخش تنظیمات پنل قسمت پلتفرم‌ها](https://doc.chabokpush.com/panel/settings.html#%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85%D9%87%D8%A7) اطمینان یابید.
 در صورت مشاهده متن **غیرفعال** در کارت تنظیمات هر پلتفرم، دستگاه به بخش مشترکین اضافه نشده است. برای مثال اگر تنظیمات پوش‌نوتیفیکیشن آی‌اواس را به درستی انجام داده باشید ولی دستگاه آی‌اواس به بخش مشترکین اضافه نشده باشد بر روی کارت تنظیمات پوش‌نوتیفیکیشن آی‌اواس متن غیرفعال را مشاهده خواهید کرد.
 
 ##### ۳- پوش‌ روی Simulator آی‌او‌اس دریافت نمی‌شود
-<span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
+<span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
  
 امکان دریافت پوش‌نویفیکیشن بر روی Simulator آی‌او‌اس وجود ندارد.
 
 > `نکته:‍` توجه داشته باشید هنگامی که گواهی **sandbox اپل** را در پنل تستی قرار می‌دهید، فقط امکان دریافت Cloud Messaging در **حالت debug** وجود خواهد داشت. اما اگر گواهی **production اپل** را در محیط عملیاتی قرار دهید، زمانی Cloud Messaging را دریافت خواهید کرد که اقدام به ساخت **ipa** از پروژه خود کرده و از طریق TestFlight یا Enterprise اپلیکیشن خود را نصب کنید.
 
 ##### ۴- تنظیمات GCM (پوش‌نوتیفیشکن) خود را چک کنید
-<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
+<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
 از وارد کردن صحیح اطلاعات دسترسی پوش‌نوتیفیکیشن در هر پلتفرم از [بخش تنظیمات پنل قسمت پلتفرم‌ها](https://doc.chabokpush.com/panel/settings.html#%D9%BE%D9%84%D8%AA%D9%81%D8%B1%D9%85%D9%87%D8%A7) اطمینان یابید.
 در صورت مشاهده متن **غیرفعال** در کارت تنظیمات هر پلتفرم، دستگاه به بخش مشترکین اضافه نشده است. برای مثال اگر تنظیمات پوش‌نوتیفیکیشن اندروید را به درستی انجام داده باشید ولی دستگاه اندروید‌ به بخش مشترکین اضافه نشده باشد بر روی کارت تنظیمات پوش‌نوتیفیکیشن اندروید متن غیرفعال را مشاهده خواهید کرد.
 
 ##### ۵- از تعریف GCMReceiver برای دریافت پوش اطمینان یابید
-<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
+<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
  اطمینان یابید که [کد GcmReceiver در فایل AndroidManifes.xml قرار داده شده باشد.](https://doc.chabokpush.com/android/application-class.html#%DB%B3-%D8%AA%D8%B9%D8%B1%DB%8C%D9%81-%D8%B1%D8%B3%DB%8C%D9%88%D8%B1-gcmreceiver)
 همچنین برای `YOUR_APPLICATION_PACKAGE_ID` حتما باید `bundleId` اپلیکیشن خود را قرار دهید.
 
 ##### ۶- در حالت بسته بودن اپ، پیام چابک دریافت نمی‌شود (فقط نوتیفیکیشن دریافت خواهد شد)
-<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span><span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
+<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span><span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
 
 
 در پنل حساب کاربری خود در بخش پیام‌ها، **دایره زرد رنگ** به معنی **در صف بود پیام** شما می‌باشد و زمانی که کاربر به چابک متصل شود (اپ را باز کند) پیام را دریافت می‌کند. در بخش نوتیفیکیشن در صورت ارسال موفق به سرور هر پلتفرم، تیک سبز رنگ به همراه لوگوی پلتفرم نشان داده می‌شود. همچنین خطاهای **GONE** به معنی حذف اپلیکیشن شما توسط کاربر و **DeviceTokenNotForTopic** به معنی این است که اطلاعات پلتفرم آی‌او‌اس که در پنل ما قرار داده‌اید با اپلیکیشنی که روی دستگاه نصب کرده‌اید همخوانی ندارد. این نمادها را می‌توانید به صورت کامل در [مستندات پنل بخش پیام‌ها](https://doc.chabokpush.com/panel/inbox.html#نمادهای-وضعیت-پیام) مشاهده کنید.
@@ -95,13 +95,13 @@ next: release-note.html
 اعلان‌ها در زمانی که اپلیکیشن روی دستگاه شما **باز** و **نمایان** است، نشان داده نمی‌شوند.
 
 ##### ۲- تنظیمات اکشن کلیک و محتوا در اعلان به درستی قرار داده‌ شود
-<span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
+<span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
 
 
 زمانی که این آپشن‌ها گذاشته می‌شوند باید تنظیمات اپ به‌ درستی ذخیره شده باشد.
 
 ##### ۳- دقت کنید که اپلیکیشن در حالت Force Stop نباشد
-<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 1px 10px 1px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
+<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
 در حالتی که اپلیکیشن شما در حالت **Force Stop** از سوی کاربر گذاشته شده باشد، اکثر رویداد‌ها از جمله دریافت پیام‌های GCM/FCM رخ نخواهد داد. به طور کلی یک اپلیکیشن در حالت‌های زیر می‌تواند **Force Stop** شود: 
 
