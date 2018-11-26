@@ -66,42 +66,10 @@ dependencies {
 آخرین نسخه فایل کتابخانه چابک از  [اینجا](https://bintray.com/bintray/jcenter?filterByPkgName=com.adpdigital.push) قابل دسترس می‌باشد.
 در انتها گزینه سینک را بزنید.
 
-پس از آن، فایل `AndroidManifest.xml` را برای ایجاد رسیور دریافت پوش‌نوتیفیکیشن مانند نمونه زیر ویرایش کنید:
-
-```markup
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="YOUR_APPLICATION_PACKAGE_ID">
-
-    <permission
-        android:name="YOUR_APPLICATION_PACKAGE_ID.permission.C2D_MESSAGE"
-        android:protectionLevel="signature"/>
-
-    <uses-permission android:name="YOUR_APPLICATION_PACKAGE_ID.permission.C2D_MESSAGE" />
-
-    <application>
-        
-        <receiver
-                android:name="com.google.android.gms.gcm.GcmReceiver"
-                android:enabled="true"
-                android:exported="true"
-                android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
-                <category android:name="YOUR_APPLICATION_PACKAGE_ID"/>
-            </intent-filter>
-        </receiver>
-
-...
-
-    </application>
-```
 
 #### نصب کتابخانه آی‌اواس
 
 چابک از طریق CocoaPods در دسترس است. بنابراین برای نصب، در فایل `ios` پروژه خود یک `Podfile` اضافه کنید:
-
 
 ```bash
 $ cd ios
@@ -166,12 +134,6 @@ didFailToRegisterForRemoteNotificationsWithError:error];
   [PushClientManager.defaultManager application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 ```
-
-پس از آن برای دریافت پوش در آی‌او‌اس دو مرحله زیر را انجام دهید:
-
-لطفا `Push Notifications` را در `Setting > Capabilities` فعال کنید.
-
-و علامت `Remote Notifications` ها را در `Setting > Capabilities > Background Modes` چک کنید.
 
 #### مدل نسخه‌گذاری در چابک (Semantic Versioning)
 
@@ -288,5 +250,3 @@ this.chabok.unregister()
 ```
 
 پس از اتمام این مراحل شما می‌توانید با فراخوانی [این رویدادها](https://doc.chabokpush.com/react-native-bridge/features.html#اتصال-با-سرور) از اتصال دستگاه به چابک اطمینان یابید.
-
-
