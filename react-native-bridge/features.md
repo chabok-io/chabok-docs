@@ -58,7 +58,7 @@ this.chabok.getInstallationId()
 هر کاربر در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
 
 ```javascript
-this.chabok.getuserId()
+this.chabok.getUserId()
 ```
 
 <Br>
