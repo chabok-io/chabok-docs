@@ -11,7 +11,7 @@ permalink: android/feature-introduction.html
 
 <Br>
 
-### صندوق پیام چابک (Chabok Channel Messaging)
+### صندوق پیام چابک (Chabok Inbox)
 ---
 <span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
