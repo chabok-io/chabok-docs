@@ -7,7 +7,7 @@ prev: behavior-tracking.html
 next: features.html
 ---
 
-> `نکته`: به زودی **ReactNative Bridge SDK** این امکان را به طور کامل پیاده‌سازی می‌کند.
+> `نکته`: به زودی کتابخانه **ReactNative Bridge** این امکان را به طور کامل پیاده‌سازی می‌کند.
 
 ### اعتبارسنجی
 
