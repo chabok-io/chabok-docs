@@ -3,7 +3,7 @@ id: verification
 title: اعتبارسنجی شناسه کاربری
 layout: react-native-bridge
 permalink: react-native-bridge/verification.html
-prev: behavior-tracking.html
+prev: event-handling.html
 next: features.html
 ---
 
