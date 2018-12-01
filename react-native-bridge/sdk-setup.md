@@ -31,10 +31,7 @@ npm install react-native-chabok --save
 ```bash
 yarn add react-native-chabok
 ```
-
-#### لینک کردن کتابخانه
-
-بعد از اتمام نصب، دستور زیر را اجرا کنید تا ماژول به پروژه شما لینک شود:
+بعد از اتمام نصب، دستور زیر را اجرا کنید تا ماژول به پروژه شما **لینک** شود:
 
 ```bash
 react-native link react-native-chabok
@@ -99,7 +96,7 @@ $ pod install
 ```bash
 $ pod update
 ```
-حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کردید، افزودن و نصب کتابخانه موفقیت آمیز بوده است.
+حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کردید، نصب کتابخانه آی‌او‌اس موفقیت آمیز بوده است.
 
 
 پس از آن پروژه آی‌اواس خود را در `xcworkspace.` با `xcode` و همینطور `node_modules/react-native-chabok/` را باز کنید. فایل‌های `ios/AdpPushClient.h` و `ios/AdpPushClient.m` را به پروژه خود اضافه کنید.
@@ -134,6 +131,8 @@ didFailToRegisterForRemoteNotificationsWithError:error];
   [PushClientManager.defaultManager application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 ```
+
+<Br>
 
 #### مدل نسخه‌گذاری در چابک (Semantic Versioning)
 
@@ -237,7 +236,7 @@ this.chabok.register('USER_ID');
 
 > `نکته`: کاراکترهای ‍`#,+,*,\,/` و فاصله در `USER_ID` مجاز نیستند، همچنین طول این رشته نباید کمتر از ۳ و بیشتر از ۳۲ کاراکتر باشد.
 
-> `نکته ` : در صورتی که مقداردهی اولیه و ثبت کاربر به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
+در صورتی که مقداردهی اولیه و ثبت کاربر به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
 
 ### حذف کاربر
 
