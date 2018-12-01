@@ -3,7 +3,7 @@ id: user-management
 title: گروه‌بندی کاربران
 layout: react-native-bridge
 permalink: react-native-bridge/user-management.html
-prev: chabok-messaging.html
+prev: push-notification.html
 next: behavior-tracking.html
 ---
 
