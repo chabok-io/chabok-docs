@@ -4,7 +4,7 @@ title: رصد رفتار درون‌برنامه‌ای
 layout: react-native-bridge
 permalink: react-native-bridge/behavior-tracking.html
 prev: user-management.html
-next: verification.html
+next: event-handling.html
 ---
 
 شما می‌توانید رفتارهای کاربر را در اپلیکیشن خود به طور لحظه‌ای [رصد کنید](/react-native-bridge/behavior-tracking.html#متد-رصد) و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را [دسته‌بندی کنید](/panel/dashboard.html#سگمنت) و برایشان [پیام بفرستید](/react-native-bridge/behavior-tracking.html#ارسال-پیام-براساس-رفتار). همچنین [آمار رفتار کاربران](/react-native-bridge/behavior-tracking.html#تحلیل-رفتار) را می‌توانید تحلیل کنید.
