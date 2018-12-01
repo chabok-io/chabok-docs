@@ -7,7 +7,7 @@ prev: verification.html
 next: troubleshoot.html
 ---
 
-چابک متناسب با نیاز شما امکانات دیگری را هم در اختیار شما می گذارد. در این صفحه می‌توانید از [وضعیت اتصال سرور و کلاینت](/react-native-bridge/features.html#وضعیت-اتصال-به-سرور) مطلع شوید. نشان‌های (Badge) اپ خود را [کنترل کنید](/react-native-bridge/features.html#مدیریت-نشانها-badge). شناسه‌های [دستگاه](/react-native-bridge/features.html#دریافت-شناسه-دستگاه) و [کاربر](/react-native-bridge/features.html#دریافت-شناسه-کاربر) خود را از چابک دریافت نمایید. همچنین می‌توانید از [اطلاعات کاربران](/react-native-bridge/features.html#مدیریت-اطلاعات-کاربر) خود را مدیریت کنید.
+چابک متناسب با نیاز شما امکانات دیگری را هم در اختیار شما می گذارد. در این صفحه می‌توانید از [وضعیت اتصال سرور و کلاینت](/react-native-bridge/features.html#وضعیت-اتصال-به-سرور) مطلع شوید. نشان‌های (Badge) اپ خود را [کنترل کنید](/react-native-bridge/features.html#مدیریت-نشانها-badge). شناسه‌های [دستگاه](/react-native-bridge/features.html#دریافت-شناسه-دستگاه) و [کاربر](/react-native-bridge/features.html#دریافت-شناسه-کاربر) خود را از چابک دریافت نمایید. همچنین می‌توانید [اطلاعات کاربران](/react-native-bridge/features.html#مدیریت-اطلاعات-کاربر) خود را مدیریت کنید.
 
 <Br>
 
@@ -37,7 +37,6 @@ chabokEmitter.addListener(
 ###  مدیریت نشان‌ها (Badge)
 
 اگر می‌خواهید شماره badge برنامه خود را بازنشانی کنید، با روش زیر می‌توانید: 
-
 
 ```java
 this.chabok.resetBadge()
