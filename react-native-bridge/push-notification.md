@@ -13,7 +13,7 @@ next: user-management.html
 
 ### تنظیم پوش‌نوتیفیکیشن اندروید
 
-برای دریافت پوش‌نوتیفیکیشن باید `GcmReceiver` را در کلاس `Application` به فایل `AndroidManifest.xml` اضافه نمایید تا بتوانید پوش‌نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
+برای دریافت پوش‌نوتیفیکیشن باید `GcmReceiver` را در بخش `Application` به فایل `AndroidManifest.xml` اضافه نمایید تا بتوانید پوش‌نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
 ```markup
 <application
@@ -49,4 +49,3 @@ next: user-management.html
 و علامت `Remote Notifications`ها را در `Setting > Capabilities > Background Modes` بررسی کنید.
 
 - در ادامه برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی اعلان و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به [این صفحه](/ios/push-notification.html) مراجعه نمایید.
-
