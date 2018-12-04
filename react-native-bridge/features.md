@@ -32,16 +32,6 @@ chabokEmitter.addListener(
             }
     });
 ```
-<Br>
-
-###  مدیریت نشان‌ها (Badge)
-
-اگر می‌خواهید شماره badge برنامه خود را بازنشانی کنید، با روش زیر می‌توانید: 
-
-```java
-this.chabok.resetBadge()
-``` 
-> `نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ در اندروید،‌ می‌توانید از [این قسمت](https://doc.chabokpush.com/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید. 
 
 <Br>
 
@@ -62,23 +52,11 @@ this.chabok.getUserId()
 
 <Br>
 
-### مدیریت اطلاعات کاربر
+###  مدیریت نشان‌ها (Badge)
 
-شما با دو متد زیر می‌توانید اطلاعات کاربر را تنظیم و دریافت کنید. 
+اگر می‌خواهید شماره badge برنامه خود را بازنشانی کنید، با روش زیر می‌توانید: 
 
-- متد `setUserInfo` برای تنظیم اطلاعات کاربر:
-
-```javascript
-this.chabok.setUserInfo({
- firstname: 'ahmad',
- lastname: 'mirzaee',
- email: 'ahmad.m@gmail.com',
- age: 17
-})
-```
-- متد `getUserInfo` برای دریافت اطلاعات کاربر:
-
-```javascript
-this.chabok.getUserInfo()
-```
-
+```java
+this.chabok.resetBadge()
+``` 
+> `نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ در اندروید،‌ می‌توانید از [این قسمت](https://doc.chabokpush.com/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید. 
