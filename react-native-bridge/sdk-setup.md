@@ -265,7 +265,7 @@ componentDidMount(){
 
 #### رویداد تایید ثبت کاربر
 
-رویداد `onRegister` به شما این امکان را می‌دهد که بررسی کنید آیا عملیات ثبت‌نام انجام شده است یا خیر.
+رویداد `onRegister` به شما این امکان را می‌دهد که بررسی کنید آیا عملیات ثبت‌ کاربر انجام شده است یا خیر.
 
 ```javascript
 const chabokEmitter = new NativeEventEmitter(NativeModules.AdpPushClient);
