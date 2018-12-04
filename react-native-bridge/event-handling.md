@@ -43,6 +43,22 @@ this.chabok.subscribeEvent('EVENT_NAME', 'INSTALLATION_ID')
 
 > `نکته`: برای دریافت رویدادهای یک دستگاه خاص باید شناسه آن دستگاه (`installationId`) را به جایی که باید دریافت کند، ارسال نمایید.
 
+##### وضعیت عضویت  
+
+برای دریافت وضعیت عضویت روی یک رویداد کد زیر را پیاده‌سازی کنید:
+
+```javascript
+const chabokEmitter = new NativeEventEmitter(NativeModules.AdpPushClient);  
+  
+chabokEmitter.addListener('onSubscribe', (sub) => {  
+    if (sub.name) {
+        console.log('Subscribe on : ', sub.name);
+    } else {
+        console.log('Fail subscribe on event with error:', sub.error);
+    }
+});
+```
+
 #### لغو عضویت از رویداد
 
 برای غیرفعال کردن یک رویداد کافی است متد `unSubscribeEvent` را که با دو امضای مختلف وجود دارد، بر اساس نیاز خود فراخوانی نمایید:
@@ -59,15 +75,37 @@ this.chabok.unSubscribeEvent('EVENT_NAME', 'INSTALLATION_ID')
 > `نکته` : با فراهم آوردن مقدار `installationId` شما تنها رویدادهایی که از آن دستگاه ارسال می‌شود را دریافت خواهید کرد. توجه داشته باشید که این مقدار را می‌توانید [با استفاده از متد `getInstallationId`](/react-native/features.html#دریافت-شناسه-دستگاه
 ) دریافت نمایید.
 
+##### وضعیت لغو عضویت  
+
+برای دریافت وضعیت لغو عضویت روی یک رویداد کد زیر را پیاده‌سازی کنید:
+
+```javascript
+const chabokEmitter = new NativeEventEmitter(NativeModules.AdpPushClient);  
+  
+chabokEmitter.addListener('onUnsubscribe', (unsub) => {  
+    if (unsub.name) {
+        console.log('Unsubscribe on : ', unsub.name);
+    } else {
+        console.log('Fail unsubscribe on event with error:', unsub.error);
+    }
+});
+```
+
 ### دریافت رویداد
 
 شما می‌توانید با دادن نام رویداد از متد زیر برای دریافت آن استفاده نمایید:
 
 ```javascript
+const chabokEmitter = new NativeEventEmitter(NativeModules.AdpPushClient); 
 
-this.chabok.on('EVENT_NAME', event => {
-  // Called When PushClientManager has been received new event from server
-  console.log(`${event.content} - ${event.createdAt}`)
+chabokEmitter.addListener('onEvent', (eventMsg) => {
+    let data = eventMessage.data;
+    let eventName = eventMessage.eventName;
+    let installationId = eventMessage.deviceId;
+    
+    console.log('Got event ' , eventName, 
+			    ' from device ', installationId, 
+			    ' with data ',data);
 })
 ```
 
@@ -84,9 +122,11 @@ this.chabok.publishEvent('EVENT_NAME',[Object])
 برای نمونه در زیر کد انتشار موقعیت مکانی در اشتراک سفر کاربر قرار داده شده است که پس از دریافت موقعیت مکانی کاربر، آن را با رویدادی تحت عنوان `shareTrip` منتشر می‌کند.
 
 ```javascript
-let data = {'lat': 35.7583719,  
-			'lng': 51.4082228,  
-			'tripId': 12345678}  
+let data = {
+    'lat': 35.7583719,  
+    'lng': 51.4082228,  
+    'tripId': 12345678
+    }  
   
 this.chabok.publishEvent('shareTrip', data)
 ```
