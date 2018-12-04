@@ -84,5 +84,5 @@ chabok.subscribe("private/league")
 chabok.unSubscribe("alert")
 
 //Unsubscribe to private league channel.
-chabok.unSubscribe("private/league") // private (personal) channel
+chabok.unSubscribe("private/league")
 ```
