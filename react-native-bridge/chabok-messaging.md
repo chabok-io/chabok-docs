@@ -83,5 +83,5 @@ this.chabok.subscribe("private/league") // private (personal) channel
 this.chabok.unSubscribe("alert");
 
 //Unsubscribe to private league channel.
-chabok.unSubscribe("private/league");
+this.chabok.unSubscribe("private/league");
 ```
