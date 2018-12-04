@@ -10,10 +10,33 @@ next: introducing.html
 
 <Br>
 
+## [نسخه ۱.۲.۰ - ۱۳۹۷/۰۹/۱۳](https://github.com/chabokpush/chabok-client-rn/releases/tag/v1.2.0)
+
+### تغییرات
+- حل مشکل اتصال به محیط عملیاتی  
+
+### ارتقا
+- متد `setDevelopment` از دسترس خارج شده است و برای تغییر محیط عملیاتی، پارامتر `devMode` به متد `init` اضافه شده است.
+```javascript
+init(
+	APP_ID/SENDER_ID,
+	API_KEY,
+	SDK_USERNAME,
+	SDK_PASSWORD,
+	DEV_MODE
+)
+```
+- افزودن پارامتر `devMode` به متد `init` جهت تغییر محیط آزمایشی یا عملیاتی چابک
+- حذف پارامتر `appName` از متد `initializeApp`
+```javascript
+initializeApp(options)
+```
+
 ## [نسخه ۱.۱.۱ - ۱۳۹۷/۰۸/۲۳](https://github.com/chabokpush/chabok-client-rn/releases/tag/v1.1.1)
 
 ### تغییرات
-- افزودن شنونده `onSubscribe` و `onUnsubscribe` برای دریافت وضعیت عضویت روی کانال یا رویداد
+- افزودن رویداد `onSubscribe` و `onUnsubscribe` برای دریافت وضعیت **عضویت**  و **لغو عضویت** روی کانال یا رویداد
+- افرودن رویداد `onRegister` به منظور دریافت وضعیت ثبت‌کاربر
 
 ## [نسخه ۱.۱.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabokpush/chabok-client-rn/releases/tag/v1.1.0)
 
