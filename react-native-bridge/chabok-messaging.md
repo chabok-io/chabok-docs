@@ -71,7 +71,7 @@ this.chabok.publish(msg);
 this.chabok.subscribe("alert");
 
 //Subscribe on private league channel.
-this.chabok.subscribe("private/league") // private (personal) channel
+this.chabok.subscribe("private/league");
 ```
 
 #### لغو عضویت از کانال (Unsubscribe)
