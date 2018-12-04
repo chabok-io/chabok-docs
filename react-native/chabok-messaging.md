@@ -24,6 +24,8 @@ chabok.on('message', msg => {
 })
 ```
 
+<Br>
+
 ### ارسال پیام
 
 برای ارسال پیام از کلاینت به سرور چابک، از متد زیر استفاده کنید:
@@ -46,6 +48,8 @@ chabok.publish({
 
 > `نکته`: برای ارسال پیام به صورت عمومی بر روی یک کانال بجای عبارت `USER_ID` کاراکتر `*` را وارد نمایید و سپس نام کانال خصوصی خود را وارد کنید.
 
+<Br>
+	
 ### کانال
 
 پیام‌رسانی بین سرور و کلاینت‌ چابک از طریق **کانال‌** انجام می‌شود. کانال یک مفهوم انتزاعی است و نقش یک مجرا را برای ارسال و دریافت پیام ایفا می‌کند. شما با کانال می‌توانید انتشار محتوا با موضوعات مختلف را **جداسازی** کنید. دقت داشته باشید که از [کانال‌ها](react-native/chabok-messaging.html#کانال) برای گروه‌بندی کاربران **استفاده نکنید** زیرا این دو مکانیزم با هم متفاوت هستند. به عنوان مثال از کانال برای **جداسازی موضوعات محتوا**، **قابلیت چت**، **کامنت** و ... استفاده می‌شود. اما از گروه‌بندی کاربران برای ارسال کمپین یا پیام به گروهی از کاربران که به عنوان مثال در **محدوده مکانی خاص** قرار دارند یا ترکیب آن با ویژگی‌های دیگر مانند کاربرانی که **گوشی‌های اندروید** دارند به کار برده می‌شود.
@@ -64,8 +68,11 @@ chabok.publish({
 برای عضویت در یک کانال می‌توانید از موارد زیر استفاده کنید:
 
 ```javascript
-chabok.subscribe("alert") // public channel
-chabok.subscribe("private/league") // private (personal) channel
+//Subscribe on public alert channel.
+chabok.subscribe("alert")
+
+//Subscribe on private league channel.
+chabok.subscribe("private/league")
 ```
 
 #### لغو عضویت از کانال (Unsubscribe)
@@ -73,6 +80,9 @@ chabok.subscribe("private/league") // private (personal) channel
 همچنین برای لغو عضویت در یک کانال می‌توانید از موارد زیر استفاده کنید:
 
 ```javascript
-chabok.unSubscribe("alert") // public channel
+//Unsubscribe to alert channel.
+chabok.unSubscribe("alert")
+
+//Unsubscribe to private league channel.
 chabok.unSubscribe("private/league") // private (personal) channel
 ```
