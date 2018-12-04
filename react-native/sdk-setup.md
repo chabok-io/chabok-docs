@@ -21,59 +21,41 @@ next: chabok-messaging.html
 
 > `نکته `: دقت داشته باشید که در ریکت، چابک به طور پیش‌فرض **توکن پوش** نمی‌گیرد، بنابراین برای استفاده از **پوش‌نوتیفیکیشن** باید تنظیمات آن را در صفحه پوش‌نوتیفیکیشن برای [اندروید](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-اندروید) و [آی‌اواس](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-آیاواس) مطالعه نمایید و روی پروژه خود پیاده‌سازی کنید.
 
-
 ### ۱- نصب کتابخانه
+
+در این مرحله شما باید دو پکیج `chabokpush` و ‍‍‍‍‍‍‍‍‍‍‍`react-native-device-info`(دریافت اطلاعات دستگاه) را نصب نمایید. همینطور با توجه به این که چابک به طور پیش‌فرض پوش‌نوتیفیکیشن نمایش نمی‌دهد، برای همین در صورتی که می‌خواهید از این امکان استفاده کنید **باید حتما** پکیج `react-native-push-notification` را هم نصب کنید.
 
 برای **نصب** از طریق `npm`:
 
 ```bash
+# install chabok library
 npm install chabokpush-rn --save
-```
- یا `yarn`:
+react-native link chabokpush-rn 
 
-```bash
-yarn add chabokpush-rn
-```
-
-بعد از نصب دستور زیر را اجرا کنید:
-
-```bash
-react-native link chabokpush-rn
-```
-
-برای **دریافت اطلاعات دستگاه** از طریق `npm`: 
-
-```bash
+# receive user device info
 npm install react-native-device-info --save
-```
- یا `yarn`:
-
-```bash
-yarn add react-native-device-info
-```
-
-بعد از نصب دستور زیر را اجرا کنید:
-
-```bash
 react-native link react-native-device-info
-```
 
-برای **تنظیم پوش‌نوتیفیکیشن** از طریق `npm` (اختیاری): 
-
-```bash
+# configure push notification
 npm install react-native-push-notification --save
-```
-یا `yarn`:
-
-```bash
-yarn add react-native-push-notification
-```
-
-بعد از نصب دستور زیر را اجرا کنید:
-
-```bash
 react-native link react-native-push-notification
 ```
+ یا `yarn`:
+
+```bash
+# install chabok library
+yarn add chabokpush-rn
+react-native link chabokpush-rn
+
+# receive user device info
+yarn add react-native-device-info
+react-native link react-native-device-info
+
+# configure push notification
+yarn add react-native-push-notification
+react-native link react-native-push-notification
+```
+
 
 #### مدل نسخه‌گذاری در چابک (Semantic Versioning)
 

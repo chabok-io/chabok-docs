@@ -19,7 +19,7 @@ next: push-notification.html
 
 ```javascript
 chabok.on('message', msg => {
-  // Called When new message has been received
+  // Called When you receive a new message from server
   console.log("${msg.content} - ${msg.createdAt}")
 })
 ```

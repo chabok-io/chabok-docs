@@ -1,20 +1,25 @@
+
 - title: شروع سریع react native
   items:
-    - id: release-note
-      title: لیست تغییرات کتابخانه
-    - id : introducing
-      title: معرفی چابک
     - id: required
       title: پیش‌نیازها
-    - id: installation
-      title: نصب چابک
-    - id: setup
-      title: راه‌اندازی چابک
+    - id: sdk-setup
+      title: راه‌اندازی 
     - id: chabok-messaging
       title: پیام چابک
+    - id: push-notification
+      title: پوش‌نوتیفیکیشن
+    - id: user-management
+      title: گروه‌بندی کاربران
+    - id: behavior-tracking
+      title: رصد رفتار درون‌برنامه‌ای
+    - id: event-handling
+      title: رویدادهای آنی
     - id: verification
       title: اعتبارسنجی شناسه کاربری
-    - id: event-tracking
-      title: رصد رویدادها
     - id: features
-      title: امکانات‌ دیگر چابک
+      title: امکانات‌ دیگر
+    - id: troubleshoot
+      title: عیب یابی
+    - id: release-note
+      title: لیست تغییرات
