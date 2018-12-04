@@ -107,18 +107,11 @@ $ pod update
 ```objectivec
 #import <AdpPushClient/AdpPushClient.h>
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    if ([PushClientManager.defaultManager application:application didFinishLaunchingWithOptions:launchOptions]) {
-        NSLog(@"Application was launch by clicking on Notification...");
-    }
-    
-    ...
-   }
+....
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
   // Hook and handle failure of get Device token from Apple APNS Server
-  [PushClientManager.defaultManager application:application
-didFailToRegisterForRemoteNotificationsWithError:error];
+  [PushClientManager.defaultManager application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
@@ -150,30 +143,27 @@ didFailToRegisterForRemoteNotificationsWithError:error];
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود.  
 
-```javascript
-public class YourAppClass extends Application {
-
-private AdpPushClient chabok = null;
+```java
+public class MyAppClass extends Application {
 
     @Override
     public void onCreate() {
         super.onCreate();
-        if (chabok == null) {
-                   chabok = AdpPushClient.init(
-                       getApplicationContext(),
-                       MainActivity.class,
-                       "YOUR_APP_ID/SENDER_ID",
-                       "YOUR_API_KEY",
-                       "SDK_USERNAME",
-                       "SDK_PASSWORD"
-                       );
-               }
-    }
 
+        //AdpPushClient.init() should always be called in onCreate of Application class
+        AdpPushClient.init(
+                getApplicationContext(),
+                MY_ACTIVITY.class,
+                "APP_ID/SENDER_ID", //based on your environment
+                "API_KEY",          //based on your environment
+                "SDK_USERNAME",     //based on your environment
+                "SDK_PASSWORD"      //based on your environment
+        );
+    }
+    
     @Override
     public void onTerminate() {
-        if (chabok != null)
-            chabok.dismiss();
+        AdpPushClient.get().dismiss();
 
         super.onTerminate();
     }
@@ -192,30 +182,34 @@ import { NativeEventEmitter, NativeModules } from 'react-native';
 import chabok from 'react-native-chabok';
 
 const options = {
-  "appId": "APP_ID/GOOGLE_SENDER_ID",
-  "apiKey": "API_KEY",
-  "username": "USERNAME",
-  "password": "PASSWORD"
+	appId: "APP_ID/GOOGLE_SENDER_ID", //based on your environment
+	apiKey: "API_KEY",				  //based on your environment
+	username: "SDK_USERNAME",		  //based on your environment
+	password: "SDK_PASSWORD", 		  //based on your environment
+	
+	//true connects to Sandbox environment
+	//false connects to Production environment
+	devMode: true
 };
 
 this.chabok = new chabok.AdpPushClient();
-this.chabok.init(options.appId, options.apiKey, options.username, options.password)
-    .then((state) => {
-        console.log(state);
-        })
-    .catch((error) => {
-        console.log(error);
-        });
+
+this.chabok.init(
+            options.appId,
+            options.apiKey,
+            options.username,
+            options.password,
+            options.devMode
+).then((state) => {
+            console.log("Initialize SDK ", state);
+}).catch((error) => {
+            console.error("Not Initialize error: ", error);
+});
 ```
 
-#### متد `setDevelopment`
+در  `options`  به جای پارامتر‌های  `APP_ID`,  `API_KEY(SDK_KEY)`,  `SDK_USERNAME`,  `SDK_PASSWORD`مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش  [پیش‌نیازها](/react-native-bridge/required.html)  توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از  [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7)  بردارید.
 
-متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
-مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (`appId`, `apiKey`, `username` و `password`) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `devMode` کلید‌های دسترسی آن هم باید تغییر داده شود.
-
-```javascript
-this.chabok.setDevelopment(true);
-```
+مقدار  `devMode`  تعیین می‌کند که اپلیکیشن شما به محیط  [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com/)  و یا  [عملیاتی (Production)](https://panel.push.adpdigital.com/) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد. مقدار  `true`  به محیط آزمایشی و مقدار`false`  به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (`appId`,  `apiKey`,  `username`  و  `password`) خودش در متد  `init`  نیاز دارد. بنابراین در صورت تغییر مقدار  `devMode`  کلید‌های دسترسی آن هم باید تغییر داده شود.
 
 > `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید تا پس از تایید و ساخت حساب عملیاتی شما، اطلاعات جدید حسابتان (`appId`, `apiKey`, `username` و `password`) تعیین گردد. 
 
@@ -228,15 +222,62 @@ this.chabok.setDevelopment(true);
 
 > `نکته` : متد `register` باید فقط **یک بار** در طول اجرا اپلیکیشن فراخوانی شود.
 
-
 ```javascript
 this.chabok.register('USER_ID');
 ```
+
 >   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `LocalStorage` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از [دریافت شناسه کاربر](/react-native-bridge/features.html#دریافت-شناسه-کاربر) در صفحه امکانات دیگر استفاده نمایید.
+
+```javascript
+this.chabok.getUserId().then(userId => {
+	console.log('userId: ', userId)
+}).catch(error => {
+	console.log('Fail to getUserId', error)
+})
+```
+
+به عنوان مثال اگر اپلیکیشن شما دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `register` را در صفحه **ورود** یا **ثبت‌نام**پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای (در فایل `App` متد `componentDidMount`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
+
+```javascript
+componentDidMount(){
+    ...
+    
+    this.chabok.getUserId().then(userId => {
+        if (userId) {
+            this.chabok.register(userId)
+        } else {
+        
+            //If user is not registered verify the user and
+            //call this.chabok.register('USER_ID') method at login page
+            this.chabok.register('USER_ID');
+        }
+    }).catch(error => {
+        console.log('Fail to getUserId ', error)
+    })
+}
+```
 
 > `نکته`: کاراکترهای ‍`#,+,*,\,/` و فاصله در `USER_ID` مجاز نیستند، همچنین طول این رشته نباید کمتر از ۳ و بیشتر از ۳۲ کاراکتر باشد.
 
+> `نکته` : در صورتی که مقداردهی اولیه و ثبت کاربر به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید.
+
 در صورتی که مقداردهی اولیه و ثبت کاربر به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
+
+### رویداد تایید ثبت کاربر
+
+رویداد `onRegister` به شما این امکان را می‌دهد که بررسی کنید آیا عملیات ثبت‌نام انجام شده است یا خیر.
+
+```javascript
+const chabokEmitter = new NativeEventEmitter(NativeModules.AdpPushClient);
+
+chabokEmitter.addListener('onRegister', (status)=>{  
+    if (status.isRegister) {  
+        console.log('User registered ', status);  
+	} else {  
+        console.log('Not registered error:', error);  
+	}  
+})
+```
 
 ### حذف کاربر
 
@@ -248,4 +289,4 @@ this.chabok.register('USER_ID');
 this.chabok.unregister()
 ```
 
-پس از اتمام این مراحل شما می‌توانید با فراخوانی [این رویدادها](https://doc.chabokpush.com/react-native-bridge/features.html#اتصال-با-سرور) از اتصال دستگاه به چابک اطمینان یابید.
+پس از اتمام این مراحل شما می‌توانید با فراخوانی [این رویدادها](/react-native-bridge/features.html#اتصال-با-سرور) از اتصال دستگاه به چابک اطمینان یابید.
