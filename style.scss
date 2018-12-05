@@ -689,6 +689,17 @@ footer {
   position: absolute;
 }
 
+.toolbar-copy-button {
+  width: 22px;
+  height: 22px;
+  padding: 3px 3px 3px 3px;
+  display: inline-block;
+}
+
+.toolbar-button {
+  background-color: #999999;
+}
+
 .toc-list {
 
   & > li {
