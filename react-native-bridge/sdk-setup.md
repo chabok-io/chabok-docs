@@ -181,30 +181,34 @@ public class MyAppClass extends Application {
 import { NativeEventEmitter, NativeModules } from 'react-native';
 import chabok from 'react-native-chabok';
 
-const options = {
-	appId: "APP_ID/GOOGLE_SENDER_ID", //based on your environment
-	apiKey: "API_KEY",				  //based on your environment
-	username: "SDK_USERNAME",		  //based on your environment
-	password: "SDK_PASSWORD", 		  //based on your environment
+componentDidMount(){
+	const options = {
+		appId: "APP_ID/GOOGLE_SENDER_ID", //based on your environment
+		apiKey: "API_KEY",				  //based on your environment
+		username: "SDK_USERNAME",		  //based on your environment
+		password: "SDK_PASSWORD", 		  //based on your environment
+
+		//true connects to Sandbox environment
+		//false connects to Production environment
+		devMode: true
+	};
+
+	this.chabok = new chabok.AdpPushClient();
+
+	this.chabok.init(
+		    options.appId,
+		    options.apiKey,
+		    options.username,
+		    options.password,
+		    options.devMode
+	).then((state) => {
+		    console.log("Initialize SDK ", state);
+	}).catch((error) => {
+		    console.error("Not Initialize error: ", error);
+	});
 	
-	//true connects to Sandbox environment
-	//false connects to Production environment
-	devMode: true
-};
-
-this.chabok = new chabok.AdpPushClient();
-
-this.chabok.init(
-            options.appId,
-            options.apiKey,
-            options.username,
-            options.password,
-            options.devMode
-).then((state) => {
-            console.log("Initialize SDK ", state);
-}).catch((error) => {
-            console.error("Not Initialize error: ", error);
-});
+	...
+}
 ```
 
 در  `options`  به جای پارامتر‌های  `APP_ID`,  `API_KEY(SDK_KEY)`,  `SDK_USERNAME`,  `SDK_PASSWORD`مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش  [پیش‌نیازها](/react-native-bridge/required.html)  توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از  [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7)  بردارید.
