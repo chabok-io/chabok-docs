@@ -7,6 +7,11 @@ prev: send.html
 next: inbox.html
 ---
 
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E0FFFF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن استارتاپی</span>
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
+<a>
+
 در این قسمت شما می‌توانید تمام دستگاه‌هایی که تا به حال اپلیکیشن‌تان را **نصب** کرده‌اند همراه با جزئیات مشاهده نمایید. نکته قابل توجه در اینجا این است که چون هر کاربر می‌تواند با **بیش از یک دستگاه** از اپ شما استفاده کند و فعال باشد برای همین چابک در اینجا به شما اجازه می‌دهد تا برای تعامل با کاربرتان از دستگاه دلخواهتان استفاده کنید. 
 
 ![عکس مربوطه](http://uupload.ir/files/sjfa_subs1.png)
@@ -36,6 +41,10 @@ next: inbox.html
 
 
 #### اطلاعات مکانی
+
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
+<a>
 
 در این قسمت موقعیت‌های ثبت شده دستگاه را در نقشه و با جزئیات بیشتر در لیست موقعیت‌ها می‌توانید مشاهده کنید.
 
