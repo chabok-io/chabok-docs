@@ -7,6 +7,10 @@ prev: behavior-tracking.html
 next: event-handling.html
 ---
 
+<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
+<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
+<a>
+
 چابک کنترل و تعامل با API‌ های مربوط به GPS و سرویس‌دهنده‌های دیگر را مدیریت می نماید.
 
 قابلیت مکان‌یابی در اندروید با استفاده از API های Google Play services بهبود یافته است. امکاناتی مانند دریافت آخرین موقعیت مکانی کاربر، دریافت متناوب موقعیت مکانی، قابلیت تعریف محدوده جغرافیایی و ... از جمله امکانات ارايه شده درآن هستند.
@@ -16,6 +20,7 @@ next: event-handling.html
 همچنین برای استفاده از قابلیت Tracking درطول زمان و جابجایی معین، کافیست متد `startTrackingMe` را با پارامترهای مربوط فراخوانی کنید و پس از آن در دوره زمانی تعیین شده و میزان جابجایی که در پارامترها مشخص نموده‌اید موقعیت مکانی را دریافت خواهید کرد و پس از طی این زمان نیز سرویس مکان‌یابی بصورت خودکار متوقف خواهد شد.
 
 ## تعریف مجوزهای دسترسی به مکان
+
 برای استفاده از امکانات مکان‌یابی چابک لازم است دو مجوز `ACCESS_FINE_LOCATION` و `ACCESS_COARSE_LOCATION`  را در فایل `AndroidManifest.xml` قرار دهید:
 
 ```markup
@@ -38,6 +43,7 @@ next: event-handling.html
 در ادامه این مستند به معرفی امکانات مکان‌یابی چابک خواهیم پرداخت:
 
 ### دریافت موقعیت مکانی در حالت kill
+
 برای دریافت گزارش موقعیت مکانی درحالت `kill` لازم است یک `IntentService`  تعریف نمایید تا بتوانید از سرویس مکان‌یابی استفاده کنید.
 سپس با استفاده از متد `addCallbackIntent` بایستی Intent فراخوانی سرویس خود را به شیء `LocationManager‌` معرفی کنید، مانند نمونه زیر:
 ‍
@@ -151,7 +157,6 @@ public void onStop() {
 }
 ```
 
-
 >`نکته:`
 >درصورتی که حالت background غیرفعال باشد، با فراخوانی متد `stop` سرویس متوقف خواهدشد، این حالت بصورت پیش‌فرض  غیرفعال می باشد. 
 > توضیحات مربوط به فعال‌سازی و غیرفعال‌سازی حالت ‌background در ادامه همین صفحه آمده است.
@@ -171,6 +176,7 @@ LocationParams params = new Builder().setAccuracy(LocationAccuracy.HIGH).setDist
 در ادامه توضیحات هریک از متدهای شیء `LocationParams` را مشاهده می‌کنید.
 
 ##### دقت مکان‌یابی
+
 متد `setAccuracy`
 
 برای تعیین دقت مکان‌یابی از این متد استفاده کنید.
@@ -204,6 +210,7 @@ enum LocationAccuracy {
 با این تنظیم، برنامه شما هیچ به‌روزرسانی موقعیت مکانی را درخواست نخواهد کرد،‌ولی درخواست به‌روزرسانی توسط برنامه‌های دیگر را دریافت خواهد نمود.
 
 ##### حداقل فاصله
+
 متد `setDistance`
 
 با استفاده از این متد حداقل فاصله برای مکان‌یابی براساس متر می‌تواند تنظیم شود.
@@ -213,6 +220,7 @@ setDistance(float distance)
 ```
 
 ##### دوره تناوب دریافت موقعیت مکانی
+
 متد `setInterval`
 
  می توانید فاصله زمانی بین دریافت هر به‌روزرسانی موقعیت مکانی را براساس میلی‌ثانیه با این متد تنظیم نمایید.
@@ -223,6 +231,7 @@ setInterval(long interval)
 
 
 #### متد addListener
+
 برای دریافت گزارش به‌روزرسانی موقعیت مکانی لازم است توسط متد `addListener` کلاس مورد نظر برای دریافت به‌روزرسانی مکان را معرفی نمایید.
 
 ```java
@@ -307,11 +316,11 @@ public class GeoFragment extends Fragment
 
 - متد `onSuspended`
 
-وقتی کلاینت مکان‌یابی بصورت موقت در وضعیت عدم اتصال قرار بگیرد، فراخوانی می شود.
+وقتی کلاینت مکان‌یابی بصورت موقت در وضعیت عدم اتصال قرار بگیرد، فراخوانی می‌شود.
 
 - متد `onConnectionFailed`
 
-وقتی کلاینت مکان‌یابی در عملیات اتصال ناموفق بود، فراخوانی می شود.
+وقتی کلاینت مکان‌یابی در عملیات اتصال ناموفق بود، فراخوانی می‌شود.
 
 - متد `onGeofencesRegisteredSuccessful`
 
@@ -340,6 +349,7 @@ public void enableLocationOnLaunch()
 ```
 
 ### دریافت یک موقعیت مکانی
+
  با هربار فراخوانی متد `requestSingleLocation` می‌توانید موقعیت مکانی به‌روزشده را در کلاس listener خود دریافت نمایید.
 
 ```java
@@ -372,6 +382,10 @@ public void startTrackingMe(long duration, long interval, float distance)
 >توجه داشته باشید که در حالت Tracking متد `requestSingleLocation` عمل نخواهدکرد.
 
 ### تعیین محدوده جغرافیایی
+
+<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
+<a>
+
 قابلیت تعیین محدوده جغرافیایی یا `Geofence`‌ برای تعریف یک محدوده مشخص برای تشخیص ورود و خروج کاربر استفاده می‌شود.
 
 با استفاده از متد `setUpGeofence` می‌توانید پارامترهای مورد نیاز Geofence‌ را تعریف و فعال نمایید، پس از تعریف این محدوده، می‌توان ورود و خروج کاربر به/از محدوده مورد نظر را تشخیص داد.
@@ -406,14 +420,14 @@ GeofenceParams geofenceParams = new GeofenceParams.Builder()
 شعاع محدوده تعیین شده را با این متد تنظیم نمایید.
 
 
-### حذف یک Geofence
+#### حذف یک Geofence
 به کمک متد `removeGeofenceById` و با شناسه یکتای Geofence که در زمان ایجاد آن تعیین نمودید می‌توانید Geofence موردنظر را حذف نمایید.
 
 ```java
 public void removeGeofenceById(String geofenceId)
 ```
 
-### حذف گروهی Geofence ها
+#### حذف گروهی Geofence ها
 با استفاده از متد `removeGeofencesByIds` و لیستی از شناسه‌های Geofence ها می‌توانید همه آنها را یکجا حذف کنید.
 
 ```java
@@ -473,5 +487,3 @@ public void disableBackgroundMode()
 ```java
 public boolean isBackgoundModeEnabled()
 ```
-
-
