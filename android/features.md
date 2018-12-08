@@ -18,10 +18,6 @@ next: troubleshoot.html
 
 ### وضعیت اتصال به چابک
 
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
-
 برای دریافت وضعیت اتصال به چابک، می‌توانید از دو روش رویداد `onEvent` و متد `getStatus` استفاده کنید.
 
 #### رویداد وضعیت اتصال
@@ -67,10 +63,6 @@ AdpPushClient.get().getStatus(new Callback<ConnectionStatus>() {
 > `نکته:` اگر می‌خواهید تغییرات وضعیت اتصال به سرور چابک را در سمت لایه UI نشان دهید، چون ممکن است قبل از اینکه کلاس شما به عنوان `listener` معرفی شود، ایونت تغییر وضعیت اتصال به شما برسد و شما آن را از دست بدهید، بهتر است برای اولین بار وضعیت اتصال را با استفاده از متد `getStatus` از چابک دریافت نمایید.
 
 ### رویداد وضعیت اپلیکیشن
-
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
 
 با پیاده‌سازی متد `onEvent` و معرفی کلاس آن به متد `addListener` قادر به دریافت وضعیت اپلیکیشنتان (**ثبت کاربر**، **نصب**، **باز شدن اپلیکیشن** و **برنامه‌های حفاظت شده**) خواهید بود.
  
