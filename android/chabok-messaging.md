@@ -7,6 +7,7 @@ prev: sdk-setup.html
 next: push-notification.html
 ---
 
+<a href="/introducing.html"> <span style="background-color: #E0FFFF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">استارتاپی</span>
 <a href="/introducing.html"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">شرکتی</span>
 <a href="/introducing.html"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">سازمانی</span>
 <a>
