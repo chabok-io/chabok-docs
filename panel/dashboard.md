@@ -4,8 +4,12 @@ title: داشبورد
 layout: panel
 permalink: panel/dashboard.html
 next: send.html
-
 ---
+
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E0FFFF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن استارتاپی</span>
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
+<a>
 
 چابک با طراحی یک پنل **زنده** به شما امکان می‌دهد تا هر‌گونه تعاملی که بین کاربر و اپ رخ می‌دهد را در لحظه زیر نظر داشته باشید و با توجه به آن استراتژی‌های خود را وفق دهید. 
 
@@ -62,6 +66,10 @@ next: send.html
 
 ##### کانال
 
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
+<a>
+
 پیام رسانی بین سرور چابک و کلاینت‌ها روی **کانال‌** انجام می شود. بنابراین برای دریافت پیام، کلاینت باید در کانال مربوط به آن عضو (**subscribe**) شود. چابک به طور پیش‌فرض کلاینت را عضو یک کانال خصوصی به ازای شناسه کاربر می‌کند. کانال‌ها به منظور گروه‌بندی کاربران برنامه شما استفاده می‌شوند و می‌توانید با استفاده از آن به سادگی پیامی را به صورت جمعی برای کاربران خود ارسال کنید. مثلا در یک اپلیکیشن اطلاع‌رسانی یا خبری، هر یک از کاربران در زمینه‌های مختلفی همچون اخبار سیاسی، ورزشی یا اجتماعی علاقه‌مندی خود را در برنامه ثبت می‌کنند و انتظار دارند پس از انتشار اخبار در زمینه موردنظر، بلافاصله از انتشار خبر جدید مطلع شوند. با استفاده از قابلیت ارسال پیام روی کانال‌ها می‌توانید با انتشار یک پیام، همه کاربرانی که در آن کانال عضو هستند را مطلع کنید.
 
 
@@ -72,6 +80,10 @@ next: send.html
 ![عکس مربوطه](http://uupload.ir/files/v288_groups.png)
 
 ### رفتار
+
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
+<a>
 
 در این تب رفتارهای کاربر شما از طریق **رصد** تمام رخدادها و رویدادهایی که در اپ شما اتفاق می‌افتد، قابل مشاهده است.
 
