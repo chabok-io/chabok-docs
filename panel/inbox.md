@@ -7,6 +7,11 @@ prev: subscribers.html
 next: settings.html
 ---
 
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E0FFFF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن استارتاپی</span>
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
+<a>
+
 پس از ارسال پیام‌ها به کاربران مورد نظر، می‌توانید با توجه به ذخیره شدن همه آن‌ها در پنل چابک، از جزئیات کامل آن برای بررسی استفاده کنید. در صندوق پیام تفکیکی بین **کمپین‌ها** و **پیام‌ها** صورت گرفته است. به این ترتیب که پیام‌هایی که شما در تب ارسال برای کاربرانتان ارسال می‌کنید همگی در کمپین‌ها ذخیره می‌شود و آن‌هایی که شما جداگانه به صورت فردی از تب مشترکین ارسال می‌ کنید در پیام‌ها ذخیره می‌گردد.
 
 ![عکس مربوطه](http://uupload.ir/files/d85q_inbox.png)
