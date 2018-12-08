@@ -1,13 +1,13 @@
 ---
-id: send-push
-title: ارسال‌ پوش
+id: send-chabok-message
+title: ارسال‌ پیام چابک
 layout: rest-api
-permalink: rest-api/send-push.html
+permalink: rest-api/send-chabok-message.html
 prev: guide.html
 ---
- در این صفحه راهنمای استفاده صحیح و آسان برای ارسال پوش از طریق API را با هم بررسی خواهیم کرد. برای این کار دو متد post (پست) **toUsers** و **byQuery** وجود دارد که در ادامه به هر دوی آن‌ها خواهیم پرداخت.
+ در این صفحه راهنمای استفاده صحیح و آسان برای ارسال پیام چابک از طریق API را با هم بررسی خواهیم کرد. برای این کار دو متد post (پست) **toUsers** و **byQuery** وجود دارد که در ادامه به هر دوی آن‌ها خواهیم پرداخت.
 
-### ارسال پوش از طریق کانال‌های چابک 
+### ارسال پیام از طریق کانال‌های چابک 
 
 در این متد (**toUsers**) می‌توانیم برای یک **یک یا چند کاربر بخصوص** یا **همه کاربران یک کانال** پیامی را از طریق API ارسال کنیم. (پیام خصوصی و عمومی)
 
@@ -43,7 +43,7 @@ curl -X POST \
 </tr>
 <tr>
 <td align="center">channel</td>
-<td align="right">کانال ارسال پوش</td>
+<td align="right">کانال ارسال پیام</td>
 <td align="center">string</td>
 <td align="right">default</td>
 </tr>
@@ -239,7 +239,7 @@ curl -X POST \
 
 <br><br>
 
-### ارسال پوش از طریق گروه‌بندی کاربران (Segmented Push)
+### ارسال پیام چابک از طریق گروه‌بندی کاربران (Segmented Push)
 
 در این متد (**byQuery**) به جای ارسال پیام به صورت خصوصی یا عمومی می‌خواهیم به **گروهی از کاربران** ارسال کنیم. برای آشنایی با **نحوه استفاده از سگمنت در API** لطفا [راهنمای آن را مطالعه نمایید](https://doc.chabokpush.com/rest-api/send-push.html#%D9%86%D8%AD%D9%88%D9%87-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-%D8%B3%DA%AF%D9%85%D9%86%D8%AA%D9%87%D8%A7-%D8%AF%D8%B1-api).
 
@@ -278,7 +278,7 @@ curl -X POST \
 </tr>
 <tr>
 <td align="center">channel</td>
-<td align="right">کانال ارسال پوش</td>
+<td align="right">کانال ارسال پیام</td>
 <td align="center">string</td>
 <td align="right">default</td>
 </tr>
