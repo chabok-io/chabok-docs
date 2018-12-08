@@ -7,6 +7,11 @@ prev: event_handling.html
 next: features.html
 ---
 
+<a href="/ios/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E0FFFF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن استارتاپی</span>
+<a href="/ios/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
+<a href="/ios/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
+<a>
+
 در بعضی از برنامه‌ها بر اساس منطق برنامه گاهی نیاز است که هویت کاربر تایید شود، در این صورت می‌توان برای او یک **کد فعال‌سازی پیامک و یا ایمیل نمود** و با استفاده از آن **هویت وی را تایید کرد**. چابک این امکان را به شما می‌دهد، درصورتیکه از شرکت [آتیه‌داده‌پرداز](http://www.adpdigital.com) سرشماره پیامک خریداری کرده باشید، این شماره برای حساب شما فعال خواهد بود و می‌توانید از سرویس درخواست ارسال پیامک استفاده نمایید. توجه داشته باشید نیازی نیست که کاربر شما در چابک ثبت‌نام (register) شده باشد، بلکه بهتر است قبل از ثبت‌نام عملیات اعتبارسنجی انجام شود و در صورت معتبر بودن کاربر، شناسه او برای ثبت‌نام مورد استفاده قرار گیرد.
 
 <Br>
