@@ -19,6 +19,11 @@ next: inbox.html
 در تب مشترکین پایین هر باکس از کاربرانتان ۵ گزینه برای کلیک وجود دارد که به توضیح هر یک از آن‌ها می‌پردازیم:
 
 ### ارسال پیام
+
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
+<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
+<a>
+
 پیام خود را به **هر کدام از دستگاه‌های کاربرتان** که می‌خواهید ارسال کنید. ![عکس مربوطه](http://uupload.ir/files/y8o6_2018-08-06_11-23-25.png)
 
 
@@ -30,6 +35,7 @@ next: inbox.html
 
 
 ### جزئیات دستگاه
+
 علاوه بر مشاهده جزئیات هر کاربر شما می‌توانید جزئیات **هر دستگاه** را هم بررسی کنید و از **فعالیت‌ها**، **اطلاعات مکانی** و همینطور **تاریخچه‌ی رویداد‌‌‌‌های** آن‌ها آگاه شوید. ![عکس مربوطه](http://uupload.ir/files/bupx_2018-08-06_11-38-43.png)
 
 
