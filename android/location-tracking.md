@@ -7,9 +7,7 @@ prev: behavior-tracking.html
 next: event-handling.html
 ---
 
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
+> i این قابلیت فقط برای تعرفه‌های **رشد** و **اختصاصی** است. در صورت استفاده از آن‌ در حساب‌های عملیاتی، تعرفه شما به این تعرفه‌ها ارتقا می‌یابد. برای اطلاعات بیشتر در مورد این تعرفه‌ها، به صفحه [قیمت‌‌گذاری](https://chabokpush.com/pricing.html) مراجعه کنید.
 
 چابک کنترل و تعامل با API‌ های مربوط به GPS و سرویس‌دهنده‌های دیگر را مدیریت می نماید.
 
