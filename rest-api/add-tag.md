@@ -3,7 +3,7 @@ id: add-tag
 title: افزودن تگ
 layout: rest-api
 permalink: rest-api/add-tag.html
-prev: send-push.html
+prev: send-push-notification.html
 ---
 
 
