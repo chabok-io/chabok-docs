@@ -10,7 +10,7 @@ prev: send-chabok-message.html
 
 ### ارسال پوش‌نوتیفیکیشن به گروهی از کاربران
 
-در این متد (**notifyUsers**) می‌توانید برای **گروهی از کاربران (سگمنت)** یا **همه کاربران** پوش‌نوتیفیکیشنی را از طریق API ارسال کنیم. 
+در این متد (**notifyUsers**) می‌توانید برای **گروهی از کاربران (سگمنت)** یا **همه کاربران** پوش‌نوتیفیکیشنی را از طریق API ارسال کنید. 
 
 #### ساختار درخواست
 
@@ -122,10 +122,9 @@ curl -X POST \
 
 > `نکته :` در پارامترهای اعلان، پارامتر `options` یا همان رفتار اکشن (فقط در آی‌او‌اس) می‌توانید عدد ۱ برای اکشن [Authentication Required (اکشن در صورت قفل نبودن دستگاه اجرا می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired?language=objc)،‌ ۲ برای اکشن [Destructive (اکشن تسک مخرب انجام می‌دهد)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive?language=objc)، ۴ برای اکشن [Foreground (اکشن موجب باز شدن اپ در فورگراند می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground?language=objc) و جمع این اعداد را برای ترکیب آن‌ها با هم قرار دهید.
 
-
 #### پاسخ
 
-پاسخ درخواست‌های ارسال پیام به صورت تعداد دستگاه‌هایی که پیام به آن‌ها ارسال می‌شود، می باشد.
+پاسخ درخواست‌های ارسال پیام به صورت تعداد دستگاه‌هایی که پیام به آن‌ها ارسال می‌شود، می‌باشد.
 
 ```javascript
 {
@@ -140,21 +139,21 @@ curl -X POST \
 
 > `نکته :` از پارامتر‌هایی که در این عمل استفاده می‌شوند، `target` و `content` (سگمنت کاربران و محتوای پیام) **الزامی** هستند و بدون آن‌ها درخواست شما صورت نمی‌گیرد. (برای پوش‌نوتیفیکیشن عمومی در قسمت `target` به جای سگمنت، پرانتز را خالی بگذارید.)
 
-بسته به نوع نوتیفیکیشنی که می‌خواهید ارسال کنید می‌توانید از **انواع پارامترها** استفاده کنید. به عنوان مثال می‌خواهیم یک نوتیفیکیشنی برای اعلام انتشار نسخه جدید اپلیکیشن خود را به همه کاربران، ارسال کنیم. 
+بسته به نوع نوتیفیکیشنی که می‌خواهید ارسال کنید می‌توانید از **انواع پارامترها** استفاده کنید. به عنوان مثال می‌خواهید یک نوتیفیکیشنی را برای اعلام انتشار نسخه جدید اپلیکیشن خود به همه کاربران، ارسال کنید. 
 
 ```bash
 curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
--d "{ \"target\": \"()\", \"content\": \"نسخه جدید را نصب کنید.\"}"
+-d "{ \"target\": \"()\", \"content\": \"نسخه جدید اپلیکیشن رسید!\"}"
 ```
 
 > `نکته :` در قسمت سگمنت، فیلترهای پیش‌فرض چابک ‍‍‍‍‍‍‍‍‍‍‍‍‍`installDate` (اولین بازدید یا نصب) ، `launchTime` (آخرین بازدید) ،‌ `launchCount` (تعداد بازدید) ، `clientVersion` (نسخه برنامه) ،‌ `osVersion` (نسخه سیستم‌عامل) ، `deviceType` (نوع دستگاه) ، `tags` (تگ‌ها) ، `nearBy` (موقعیت مکانی) می‌باشند. درصورت اضافه کردن سگمنت از سوی خودتان هم فقط کافی‌‌ست نام آن را وارد نمایید.
 
 #### پاسخ
 
-همانطور که می‌بینید درخواست شما با موفقیت انجام شد و پیام هشدار به ۶۴۰ (count: 640) دستگاه ارسال شد.
+همانطور که می‌بینید درخواست شما با موفقیت انجام شد و نوتیفیکیشن شما به ۶۴۰ (count: 640) دستگاه ارسال شد.
 
 ```javascript
 {
@@ -165,7 +164,7 @@ curl -X POST \
 حالا می‌توانید در **پنل بخش پیام‌ها قسمت پیام‌ها** جزئیات ارسال و تحویل پیام خود را مشاهده کنید.
 
 
-![عکس مربوطه](http://uupload.ir/files/gxlv_byuser.png)
+![عکس مربوطه](http://uupload.ir/files/2g53_apipush1.png)
 
 > `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/push/push_notifyUsers) مراجعه کنید.
 
@@ -304,17 +303,18 @@ curl -X POST \
 
 #### درخواست
 
-اکنون می‌خواهیم کمپینی را بسازیم و گروهی از کاربران را براساس ویژگی‌های مورد نظر‌ (**سگمنت**) مخاطب قرار دهیم. به عنوان مثال این کمپین به مناسبت راه‌افتادن اپلیکیشن موبایل در **آی‌ا‌و‌اس** می‌خواهد کد تخفیفی را مخصوص کسانی که اپلیکیشن شما را در موبایل خود دارند، ارسال کند. متن پیام هم می‌خواهیم به عنوان متن اعلان به کار برده شود.
 
 > `نکته :` از پارامتر‌هایی که در این عمل استفاده می‌شوند، `userId` و `payload` (شناسه کاربر و پی‌لود نوتیفیکیشن) **الزامی** هستند و بدون آن‌ها درخواست شما صورت نمی‌گیرد.
+
+به عنوان مثال می‌خواهید یک پوش‌نوتیفیکیشن برای اعلام ثبت موفق سفارش به یک کاربر ارسال کنید.
 
 
 ```bash
 curl -X POST \
-"https://sandbox.push.adpdigital.com/api/push/byQuery?access_token=<ACCESS_TOKEN>" \
--H "accept: application/json" \
--H "Content-Type: application/json" \
--d "{\t\"target\": {\t\t\"deviceType\": \"ios\"\t},\t\"content\": \"سفارش شما با موفقیت ثبت شد\",\t\"useAsAlert\": true}"
+ "https://sandbox.push.adpdigital.com/api/push/notifyUser/989335010082" \
+ -H "accept: application/json" \
+ -H "Content-Type: application/json" \
+ -d "{ \"title\": \"ثبت موفق\", \"body\": \"سفارش شما با موفقیت ثبت شد.\"}"
 ```
 
 
@@ -329,11 +329,12 @@ curl -X POST \
 ```
 پس از ارسال موفقیت آمیز می‌توانید در **پنل بخش پیام‌ها** آمار ارسال و تحویلتان را مشاهده کنید.
 
-![عکس مربوطه](http://uupload.ir/files/5dy_byquery.png)
+![عکس مربوطه](http://uupload.ir/files/fk2s_apipush2.png)
 
 
-> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/push/notifyUser) مراجعه فرمایید.
+> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/push/push_notifyUser) مراجعه کنید.
 
+<Br>
 
 ### نحوه استفاده از سگمنت‌ها در API
 
