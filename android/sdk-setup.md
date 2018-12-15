@@ -260,10 +260,7 @@ public void onCreate() {
 > `نکته امنیتی`: مقدار `USER_ID` را هرگز به صورت خام در `SharedPreferences` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `getUserId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد. همینطور می‌توانید قبل از عملیات ثبت با استفاده از شماره گوشی از معتبر بودن کاربر (verfication) [اطمینان یابید](/android/verification.html)،  سپس شناسه او را ثبت نمایید.
 
 - امضای دوم:
-
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
+> i این قابلیت در حساب عملیاتی برای تعرفه‌های **رشد** و **اختصاصی** است. در صورت استفاده از آن‌، شما به این تعرفه‌ها انتقال داده می‌شوید. برای اطلاعات بیشتر در مورد تعرفه‌ها، لطفا به صفحه [قیمت‌ها](https://chabokpush.com/pricing.html) مراجعه فرمایید.
 
  علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی (برای آشنایی با مفهوم کانال و کاربرد آن [این قسمت](/android/chabok-messaging.html#کانال) را مطالعه نمایید) که کاربر باید روی آن‌ها عضو شود را نیز دریافت می‌کند. با عضویت روی کانال‌های داده شده، کاربر قادر به دریافت پیام‌های ارسالی روی آن‌ کانال‌ها خواهد بود. 
 
@@ -303,4 +300,3 @@ AdpPushClient.get().unregister();
 ```
 
 > `نکته:`  تمامی مراحلی که در این راهنما بیان شده، در یک پروژه [starter](https://github.com/chabokpush/chabok-starter-android) پیاده‌سازی شده است.
-
