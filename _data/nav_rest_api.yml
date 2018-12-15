@@ -6,5 +6,7 @@
       title: راهنمای استفاده
     - id: send-chabok-message
       title: ارسال پیام چابک
+    - id: send-push-notification
+      title: ارسال پوش‌نوتیفیکیشن
     - id: add-tag
       title: افزودن تگ
