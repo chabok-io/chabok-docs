@@ -7,11 +7,6 @@ prev: push-notification.html
 next: behavior-tracking.html
 ---
 
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E0FFFF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن استارتاپی</span>
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
-
 گروه‌بندی کاربران در چابک از طریق موتور پیشرفته **سگمنت** انجام می‌شود. با این ابزار شما می‌توانید کاربرانتان را با قوانین گوناگون به گروه‌های بسیار ریز و دقیقی تقسیم کنید. این قوانین یا فیلترها تنوع گسترده‌ای را در اختیار شما می‌گذارند تا همواره دست بازتری برای ارتباط هدفمند با کاربرانتان داشته باشید. برخی فیلترها در چابک مانند **زمان نصب**، **بازدید**، [**تگ**](/android/user-management.html#تگها)،‌ **نوع دستگاه**، [**موقعیت مکانی**](/android/location-tracking.html)، **نسخه سیستم‌عامل** و ... از پیش تعریف شده‌اند و نیاز به پیاده‌سازی ندارند. علاوه بر آن شما می‌توانید **فیلترهای جدیدی** را بر مبنای رفتار کاربر از [طریق رصد آن‌ها](/android/user-management.html#افزودن-فیلتر-برمبنای-رفتار) اضافه کنید.
 
 دقت داشته باشید که از [کانال‌ها](/android/chabok-messaging.html#کانال) برای گروه‌بندی کاربران **استفاده نکنید** زیرا این دو مکانیزم با هم متفاوت هستند. به عنوان مثال از کانال برای **جداسازی موضوعات محتوا**، **قابلیت چت**، **کامنت** و ... استفاده می‌شود. اما از گروه‌بندی کاربران برای ارسال کمپین یا پیام به گروهی از کاربران که به عنوان مثال یک **تگ خاص** دارند یا ترکیب آن با ویژگی‌های دیگر مانند کاربرانی که **گوشی‌های اندروید** دارند به کار برده می‌شود.
@@ -26,9 +21,7 @@ next: behavior-tracking.html
 
 #### افزودن فیلتر برمبنای رفتار
 
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
+> i این قابلیت فقط برای تعرفه‌های **رشد** و **اختصاصی** است. در صورت استفاده از آن‌ در حساب‌های عملیاتی، تعرفه شما به این تعرفه‌ها ارتقا می‌یابد. برای اطلاعات بیشتر در مورد این تعرفه‌ها، به صفحه [قیمت‌‌گذاری](https://chabokpush.com/pricing.html) مراجعه کنید.
 
 شما می‌توانید علاوه بر فیلترهای پیش‌فرض چابک، فیلترهای جدیدی را بر مبنای **رفتار کاربران** به بخش سگمنت پنل اضافه کنید. این رفتارها می‌توانند **افزودن به سبد خرید**، **کامنت**، **لایک**، **پرداخت** و ... باشند. هر کدام از این فیلترها با سه گزینه اولین بار، آخرین بار و تعداد رخ دادن به منوی سگمنت اضافه خواهند شد. برای پیاده‌سازی این کار باید صفحه [رصد رفتار درون‌برنامه‌ای](android/behavior-tracking.html) را با دقت مطالعه نمایید.
 
