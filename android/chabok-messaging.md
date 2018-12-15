@@ -7,9 +7,7 @@ prev: sdk-setup.html
 next: push-notification.html
 ---
 
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
+> i این قابلیت فقط برای تعرفه‌های **رشد** و **اختصاصی** است. در صورت استفاده از آن‌ در حساب‌های عملیاتی، تعرفه شما به این تعرفه‌ها ارتقا می‌یابد. برای اطلاعات بیشتر در مورد این تعرفه‌ها، به صفحه [قیمت‌‌گذاری](https://chabokpush.com/pricing.html) مراجعه کنید.
 
 چابک برای **ارسال پیام** هنگامی که کاربر به سرور چابک متصل است (باز بودن اپلیکیشن) **از سرویس آنی خود** استفاده می‌کند (پیام چابک) و در صورت عدم اتصال به چابک (بسته بودن اپلیکیشن) اقدام به **ارسال پوش‌نوتیفیکیشن** می‌کند تا کاربر را از داشتن پیام چابک مطلع سازد. برای همین از این پس منظور از واژه **پیام**، همان **پیام چابک** است و منظور از **پوش** یا **نوتیفیکیشن**، **پوش‌نوتیفیکیشن** می‌باشد.
 
