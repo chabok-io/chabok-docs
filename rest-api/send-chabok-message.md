@@ -4,6 +4,7 @@ title: ارسال‌ پیام چابک
 layout: rest-api
 permalink: rest-api/send-chabok-message.html
 prev: guide.html
+next: send-push-notification
 ---
  در این صفحه راهنمای استفاده صحیح و آسان برای ارسال پیام چابک از طریق API را با هم بررسی خواهیم کرد. برای این کار دو متد post (پست) **toUsers** و **byQuery** وجود دارد که در ادامه به هر دوی آن‌ها خواهیم پرداخت.
 
