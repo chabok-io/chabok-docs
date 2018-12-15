@@ -1,6 +1,6 @@
 ---
 id: send-push-notification
-title: ارسال پوش‌نوتیفیکیشن
+title: ارسال‌ پوش‌نوتیفیکیشن
 layout: rest-api
 permalink: rest-api/send-push-notification.html
 prev: send-chabok-message.html
@@ -138,25 +138,27 @@ curl -X POST \
 
 #### درخواست
 
-> `نکته :` از پارامتر‌هایی که در این عمل استفاده می‌شوند، `user` و `content` (شناسه کاربر و محتوای پیام) **الزامی** هستند و بدون آن‌ها درخواست شما صورت نمی‌گیرد. (برای پیام عمومی در قسمت `user` به جای شناسه کاربر، استریسک(*) را وارد نمایید.)
+> `نکته :` از پارامتر‌هایی که در این عمل استفاده می‌شوند، `target` و `content` (سگمنت کاربران و محتوای پیام) **الزامی** هستند و بدون آن‌ها درخواست شما صورت نمی‌گیرد. (برای پوش‌نوتیفیکیشن عمومی در قسمت `target` به جای سگمنت، پرانتز را خالی بگذارید.)
 
-بسته به نوع پیامی که می‌خواهید ارسال کنید می‌توانید از **انواع پارامترها** استفاده کنید. به عنوان مثال می‌خواهیم یک پیامی برای هشدار یک کاربر با `userId` (شناسه کاربری) **Test** از تاخیر پرواز هواپیمای خود ارسال کنیم. متن پیام هم می‌خواهیم به عنوان متن اعلان به کار برده شود.
+بسته به نوع نوتیفیکیشنی که می‌خواهید ارسال کنید می‌توانید از **انواع پارامترها** استفاده کنید. به عنوان مثال می‌خواهیم یک نوتیفیکیشنی برای اعلام انتشار نسخه جدید اپلیکیشن خود را به همه کاربران، ارسال کنیم. 
 
 ```bash
 curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
--d "{ \"user\": \"Test\", \"content\": \"پرواز شما دچار نیم ساعت تاخیر شده است.\", \"useAsAlert\": true}"
+-d "{ \"target\": \"()\", \"content\": \"نسخه جدید را نصب کنید.\"}"
 ```
+
+> `نکته :` در قسمت سگمنت، فیلترهای پیش‌فرض چابک ‍‍‍‍‍‍‍‍‍‍‍‍‍`installDate` (اولین بازدید یا نصب) ، `launchTime` (آخرین بازدید) ،‌ `launchCount` (تعداد بازدید) ، `clientVersion` (نسخه برنامه) ،‌ `osVersion` (نسخه سیستم‌عامل) ، `deviceType` (نوع دستگاه) ، `tags` (تگ‌ها) ، `nearBy` (موقعیت مکانی) می‌باشند. درصورت اضافه کردن سگمنت از سوی خودتان هم فقط کافی‌‌ست نام آن را وارد نمایید.
 
 #### پاسخ
 
-همانطور که می‌بینید درخواست شما با موفقیت انجام شد و پیام هشدار به یک (count: 1) دستگاه کاربر **Test** ارسال شد.
+همانطور که می‌بینید درخواست شما با موفقیت انجام شد و پیام هشدار به ۶۴۰ (count: 640) دستگاه ارسال شد.
 
 ```javascript
 {
-  "count": 1
+  "count": 640
 }
 ```
 
@@ -165,23 +167,23 @@ curl -X POST \
 
 ![عکس مربوطه](http://uupload.ir/files/gxlv_byuser.png)
 
-> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/push/push_toUsers) مراجعه فرمایید.
+> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/push/push_notifyUsers) مراجعه کنید.
 
 <br><br>
 
-### ارسال پیام چابک از طریق گروه‌بندی کاربران (Segmented Push)
+### ارسال پوش‌نوتیفیکیشن به یک کاربر
 
-در این متد (**byQuery**) به جای ارسال پیام به صورت خصوصی یا عمومی می‌خواهیم به **گروهی از کاربران** ارسال کنیم. برای آشنایی با **نحوه استفاده از سگمنت در API** لطفا [راهنمای آن را مطالعه نمایید](https://doc.chabokpush.com/rest-api/send-push.html#%D9%86%D8%AD%D9%88%D9%87-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-%D8%B3%DA%AF%D9%85%D9%86%D8%AA%D9%87%D8%A7-%D8%AF%D8%B1-api).
+در این متد (**notifyUser**) شما می‌توانید پوش‌نوتیفیکیشنی را به **یک کاربر** (userId) ارسال کنید.
 
 #### ساختار درخواست
 
-لینک پایه: `https://sandbox.push.adpdigital.com/api/push/byquery`
+لینک پایه: `https://sandbox.push.adpdigital.com/api/push/notifyUser`
 
 نمونه cURL:
 
 ```bash
 curl -X POST \
-"https://sandbox.push.adpdigital.com/api/push/byQuery?access_token=<ACCESS_TOKEN>" \
+"https://sandbox.push.adpdigital.com/api/push/notifyUser?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
 -d "@payload.json"
@@ -260,18 +262,6 @@ curl -X POST \
 <td align="center">number</td>
 <td align="right">40</td>
 </tr>
-<tr>
-<td align="center">notification</td>
-<td align="right">تنظیمات اعلان</td>
-<td align="center">payload</td>
-<td align="right">مثال در جدول زیر</td>
-</tr>
-<tr>
-<td align="center">silent</td>
-<td align="right">پیام بدون اعلان ارسال شود</td>
-<td align="center">boolean</td>
-<td align="right">false</td>
-</tr>
 </tbody></table>
 
 
@@ -300,7 +290,8 @@ curl -X POST \
 > `نکته :` در پارامترهای اعلان، پارامتر `options` یا همان رفتار اکشن (فقط در آی‌او‌اس) می‌توانید عدد ۱ برای اکشن [Authentication Required (اکشن در صورت قفل نبودن دستگاه اجرا می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired?language=objc)،‌ ۲ برای اکشن [Destructive (اکشن تسک مخرب انجام می‌دهد)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive?language=objc)، ۴ برای اکشن [Foreground (اکشن موجب باز شدن اپ در فورگراند می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground?language=objc) و جمع این اعداد را برای ترکیب آن‌ها با هم قرار دهید.
 
 #### پاسخ
-پاسخ درخواست‌های ارسال پیام به صورت تعداد دستگاه‌هایی که پیام به آن‌ها ارسال می‌شود، می باشد.
+
+پاسخ درخواست‌های ارسال پیام به صورت تعداد دستگاه‌هایی که پیام به آن‌ها ارسال می‌شود، می‌باشد.
 
 ```javascript
 {
@@ -309,15 +300,13 @@ curl -X POST \
 ```
 <br><br>
 
-### مثال از متد byQuery
+### مثال از متد notifyUser
 
 #### درخواست
 
 اکنون می‌خواهیم کمپینی را بسازیم و گروهی از کاربران را براساس ویژگی‌های مورد نظر‌ (**سگمنت**) مخاطب قرار دهیم. به عنوان مثال این کمپین به مناسبت راه‌افتادن اپلیکیشن موبایل در **آی‌ا‌و‌اس** می‌خواهد کد تخفیفی را مخصوص کسانی که اپلیکیشن شما را در موبایل خود دارند، ارسال کند. متن پیام هم می‌خواهیم به عنوان متن اعلان به کار برده شود.
 
-> `نکته :` از پارامتر‌هایی که در این عمل استفاده می‌شوند، `target` و `content` (ویژگی‌های گروه و محتوای پیام) **الزامی** هستند و بدون آن‌ها درخواست شما صورت نمی‌گیرد.
-
-> `نکته :` در قسمت سگمنت، فیلترهای پیش‌فرض چابک ‍‍‍‍‍‍‍‍‍‍‍‍‍`installDate` (اولین بازدید یا نصب) ، `launchTime` (آخرین بازدید) ،‌ `launchCount` (تعداد بازدید) ، `clientVersion` (نسخه برنامه) ،‌ `osVersion` (نسخه سیستم‌عامل) ، `deviceType` (نوع دستگاه) ، `tags` (تگ‌ها) ، `nearBy` (موقعیت مکانی) می‌باشند. درصورت اضافه کردن سگمنت از سوی خودتان هم فقط کافی‌‌ست نام آن را وارد نمایید.
+> `نکته :` از پارامتر‌هایی که در این عمل استفاده می‌شوند، `userId` و `payload` (شناسه کاربر و پی‌لود نوتیفیکیشن) **الزامی** هستند و بدون آن‌ها درخواست شما صورت نمی‌گیرد.
 
 
 ```bash
@@ -325,25 +314,25 @@ curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/byQuery?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
--d "{\t\"target\": {\t\t\"deviceType\": \"ios\"\t},\t\"content\": \"سلام به اپلیکیشن ما خوش‌آمدید. برای خرید اولتان از اپلیکیشن می‌توانید از کد تخفیف 10٪ استفاده کنید. کد تخفیف: NewApp10\",\t\"useAsAlert\": true}"
+-d "{\t\"target\": {\t\t\"deviceType\": \"ios\"\t},\t\"content\": \"سفارش شما با موفقیت ثبت شد\",\t\"useAsAlert\": true}"
 ```
 
 
 #### پاسخ
 
-درخواست شما با موفقیت انجام شد و کمپین شما به ۴۴ دستگاه  (count : 44) ارسال شد.
+درخواست شما با موفقیت انجام شد و کمپین شما به ۱ دستگاه  (count : 1) ارسال شد.
 
 ```javascript
 {
-  "count": 44
+  "count": 1
 }
 ```
-پس از ارسال موفقیت آمیز می‌توانید در **پنل بخش کمپین‌ها** آمار ارسال و تحویلتان را مشاهده کنید.
+پس از ارسال موفقیت آمیز می‌توانید در **پنل بخش پیام‌ها** آمار ارسال و تحویلتان را مشاهده کنید.
 
 ![عکس مربوطه](http://uupload.ir/files/5dy_byquery.png)
 
 
-> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/push/push_byQuery) مراجعه فرمایید.
+> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabokpush.com/#/push/notifyUser) مراجعه فرمایید.
 
 
 ### نحوه استفاده از سگمنت‌ها در API
@@ -419,4 +408,3 @@ curl -X POST \
 }
 ```
 مثال بالا کاربرانی را هدف قرار می‌دهد که بعد از ۶ ساعت پیش، برنامه‌ را نصب کرده‌اند و بیش از ۲ بار هم آن را باز نموده‌اند.
-
