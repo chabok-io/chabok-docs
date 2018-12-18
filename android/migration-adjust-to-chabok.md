@@ -8,7 +8,7 @@ permalink: android/migration-adjust-to-chabok.html
 <Br>
 <Br>
 
-<div> 
+<div align="center"> 
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="675px" height="92px" viewBox="0 0 675 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
