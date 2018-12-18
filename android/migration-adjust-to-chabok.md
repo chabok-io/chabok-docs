@@ -1,4 +1,9 @@
-# مهاجرت از Adjust به چابک
+---
+id: migration-adjust-to-chabok
+title: مهاجرت از Adjust به چابک
+layout: android
+permalink: android/migration-adjust-to-chabok.html
+---
 
 <p align="center"> 
 	<img align="middle" src="https://user-images.githubusercontent.com/27139702/50142854-584e1780-02c0-11e9-88d6-b62bc8d654d3.png"/>
