@@ -62,13 +62,13 @@ permalink: android/migration-adjust-to-chabok.html
 
 #### ۱.نصب کتابخانه 
 
-کد کتابخانه Adjust را از بخش dependencies حذف کنید :
+کد کتابخانه Adjust را از بخش `dependencies` حذف کنید :
 
 ```javascript 
 implementation 'com.adjust.sdk:adjust-android:4.17.0'
 ```
 
-سپس کتابخانه چابک را به بخش dependencies اضافه کنید:
+سپس کتابخانه چابک را به بخش `dependencies` اضافه کنید:
 
 ```javascript
 implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
