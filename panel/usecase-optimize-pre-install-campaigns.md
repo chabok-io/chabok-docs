@@ -52,8 +52,8 @@ permalink: panel/usecase-optimize-pre-install-campaigns.html
 
  ![عکس مربوطه](http://uupload.ir/files/tnhg_trackcs.png)
 
+<Br>
+
 برای شروع بهینه‌سازی کمپین‌های نصب بر روی دکمه زیر کلیک کنید:
 
-<a href="https://sandbox.push.adpdigital.com/front/setting/tracker"><span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">تعریف شمارنده جدید</span>
 
-<li class="nav-item"><a class="register-btn" href="https://sandbox.push.adpdigital.com/front/setting/tracker">تعریف شمارنده جدید</a></li>
