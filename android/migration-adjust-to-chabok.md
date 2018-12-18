@@ -90,7 +90,7 @@ implementation 'com.adpdigital.push:chabok-lib:2.14.0'
 implementation 'com.google.android.gms:play-services-gcm:10.2.6'  
 ```  
  
- <Br>  
+<Br>  
   
 #### ۲. توکن پوش‌نوتیفیکیشن
 
@@ -124,10 +124,13 @@ public class GlobalApplication extends Application {
 		  
 		String appToken = "XXXXXXXXXXXX";    
 		String environment = AdjustConfig.ENVIRONMENT_SANDBOX;    
-		AdjustConfig config = new AdjustConfig(this, appToken, environment);  
+		AdjustConfig config = new AdjustConfig(this, appToken, environment);
+
 		config.setLogLevel(LogLevel.VERBOSE);  
 
-		Adjust.onCreate(config); }}  
+		Adjust.onCreate(config); 
+	}
+}  
 ```  
 سپس کدهای مربوط به مقدار دهی اولیه چابک را به کلاس `Application` متد `onCreate` اضافه کنید.  
   
@@ -160,7 +163,7 @@ public class GlobalApplication extends Application {
 }  
 ```  
    
- <Br>  
+<Br>  
  
 #### ۴. ثبت کاربر  
 
