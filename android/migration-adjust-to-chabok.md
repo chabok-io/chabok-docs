@@ -1,4 +1,3 @@
-
 ---  
 id: migration-adjust-to-chabok  
 title: مهاجرت از Adjust به چابک  
@@ -99,17 +98,17 @@ implementation 'com.google.android.gms:play-services-gcm:10.2.6'
 کد زیر را به فایل `AndroidManifest.xml` بخش `application` اضافه کنید:  
   
 ```xml  
-<receiver  
-	android:name="com.google.android.gms.gcm.GcmReceiver"  
-	android:enabled="true"  
-	android:exported="true"  
-	android:permission="com.google.android.c2dm.permission.SEND">  
-	<intent-filter>
-		<action android:name="com.google.android.c2dm.intent.RECEIVE" />  
-		<action android:name="com.google.android.c2dm.intent.REGISTRATION" />  
-		<category android:name="MY_APPLICATION_PACKAGE_ID" />  
-	</intent-filter>
-</receiver>  
+<receiver
+    android:name="com.google.android.gms.gcm.GcmReceiver"
+    android:enabled="true"
+    android:exported="true"
+    android:permission="com.google.android.c2dm.permission.SEND">
+    <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+        <category android:name="MY_APPLICATION_PACKAGE_ID" />
+    </intent-filter>
+</receiver>
 ```  
   <Br>  
   
@@ -117,50 +116,53 @@ implementation 'com.google.android.gms:play-services-gcm:10.2.6'
 
  کد مربوط به راه‌اندازی کتابخانه ادجاست را از کلاس `Application` و از متد `onCreate` پروژه خود حذف کنید:  
 ```java  
-public class GlobalApplication extends Application {    
-	@Override    
-	public void onCreate() {    
-		super.onCreate();
-		  
-		String appToken = "XXXXXXXXXXXX";    
-		String environment = AdjustConfig.ENVIRONMENT_SANDBOX;    
-		AdjustConfig config = new AdjustConfig(this, appToken, environment);
+public class GlobalApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
 
-		config.setLogLevel(LogLevel.VERBOSE);  
-
-		Adjust.onCreate(config); 
-	}
-}  
+        // Configure adjust SDK.
+        String appToken = "XXXXXXXXXXXX";
+        String environment = AdjustConfig.ENVIRONMENT_SANDBOX;
+        AdjustConfig config = new AdjustConfig(this, appToken, environment);
+        config.setLogLevel(LogLevel.VERBOSE);
+        Adjust.setPushToken("token");
+        
+        Adjust.onCreate(config);
+        
+    }
+}
 ```  
 سپس کدهای مربوط به مقدار دهی اولیه چابک را به کلاس `Application` متد `onCreate` اضافه کنید.  
   
 ```java  
 public class GlobalApplication extends Application {    
-	@Override    
-	public void onCreate() {
-		super.onCreate();  
-		
-		AdpPushClient.init(
-				getApplicationContext(),
-				MY_ACTIVITY.class,
-				"APP_ID/SENDER_ID", //based on your environment 
-				"API_KEY",          //based on your environment 
-				"SDK_USERNAME",     //based on your environment 
-				"SDK_PASSWORD"      //based on your environment 
-				); 
-				
-		AdpPushClient.get().setDevelopment(true);   
-		  
-		...  
-	}
 
-	@Override  
-	public void onTerminate() {
-		AdpPushClient.get().dismiss();  
-		
-		super.onTerminate(); 
-	}
-}  
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        AdpPushClient.init(
+                getApplicationContext(),
+                MY_ACTIVITY.class,
+                "APP_ID/SENDER_ID", //based on your environment
+                "API_KEY",          //based on your environment
+                "SDK_USERNAME",     //based on your environment
+                "SDK_PASSWORD"      //based on your environment
+        );
+
+        AdpPushClient.get().setDevelopment(true);
+
+		...
+    }
+    
+    @Override
+    public void onTerminate() {
+        AdpPushClient.get().dismiss();
+
+        super.onTerminate();
+    }
+}
 ```  
    
 <Br>  
