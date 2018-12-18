@@ -137,7 +137,6 @@ public class GlobalApplication extends Application {
   
 ```java  
 public class GlobalApplication extends Application {    
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -150,7 +149,6 @@ public class GlobalApplication extends Application {
                 "SDK_USERNAME",     //based on your environment
                 "SDK_PASSWORD"      //based on your environment
         );
-
         AdpPushClient.get().setDevelopment(true);
 
 		...
