@@ -50,6 +50,10 @@ permalink: panel/usecase-optimize-pre-install-campaigns.html
 
 بعد از این که شما شمارنده برای کمیپن نصب خود ایجاد کردید، می‌توانید نمود آن را در جاهای مختلف پنل با داده‌های جمع‌آوری شده مشاهده کنید. به جز صفحه شمارنده نصب در تنظیمات، کمپین‌های نصب با تمام داده‌های آن، در داشبورد پنل همراه با نمودارهای مربوط قابل مشاهده است. همچنین در جزئیات دستگاه هر کاربر، **نام** کمپین نصب هم اضافه شده است.
 
- ![عکس مربوطه](http://uupload.ir/files/o6q_trackcs.png)
+ ![عکس مربوطه](http://uupload.ir/files/tnhg_trackcs.png)
 
-> ‍`نکته:` برای شروع بهینه‌سازی کمپین‌های نصب خود به [پنل](https://sandbox.push.adpdigital.com/front/setting/tracker) مراجعه کنید و شمارنده خود را تعریف کنید.
+برای شروع بهینه‌سازی کمپین‌های نصب بر روی دکمه زیر کلیک کنید:
+
+<a href="https://sandbox.push.adpdigital.com/front/setting/tracker"><span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">تعریف شمارنده جدید</span>
+
+<li class="nav-item"><a class="register-btn" href="https://sandbox.push.adpdigital.com/front/setting/tracker">تعریف شمارنده جدید</a></li>
