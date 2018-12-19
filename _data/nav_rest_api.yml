@@ -4,7 +4,9 @@
       title: معرفی چابک
     - id: guide
       title: راهنمای استفاده
-    - id: send-push
-      title: ارسال پوش
+    - id: send-chabok-message
+      title: ارسال پیام چابک
+    - id: send-push-notification
+      title: ارسال پوش‌نوتیفیکیشن
     - id: add-tag
       title: افزودن تگ

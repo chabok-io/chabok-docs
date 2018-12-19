@@ -43,7 +43,7 @@ buildscript {
 ```javascript
 dependencies {
     compile 'me.leolin:ShortcutBadger:1.1.22@aar'
-    compile 'com.adpdigital.push:chabok-lib:VERSION'
+    compile 'com.adpdigital.push:chabok-lib:2.14.0'
 
     //If you want to get the push notification, add to dependencies
     compile 'com.google.android.gms:play-services-gcm:10.2.6' 
@@ -58,7 +58,7 @@ dependencies {
 ```javascript
 dependencies {
    compile 'me.leolin:ShortcutBadger:1.1.22@aar'
-   compile 'com.adpdigital.push:chabok-lib-geo:VERSION'
+   compile 'com.adpdigital.push:chabok-lib-geo:2.14.0'
    compile 'com.google.android.gms:play-services-location:10.2.6'
 
   //If you want to get the push notification, add to dependencies
@@ -155,6 +155,14 @@ dependencies {
 در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارائه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.
 
 > `نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید. 
+
+<blockquote markdown="1">
+ `نکته:` در صورت مقداردهی `targetSdkVersion` در فایل `build.gradle` به مقدار `28`،  کد زیر را به فایل `AndroidManifest.xml` در تگ `application` اضافه کنید:
+
+```xml 
+<uses-library android:name="org.apache.http.legacy" android:required="false" /> 
+```
+</blockquote>
 
 <Br>
 
@@ -259,7 +267,9 @@ public void onCreate() {
 
 > `نکته امنیتی`: مقدار `USER_ID` را هرگز به صورت خام در `SharedPreferences` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `getUserId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد. همینطور می‌توانید قبل از عملیات ثبت با استفاده از شماره گوشی از معتبر بودن کاربر (verfication) [اطمینان یابید](/android/verification.html)،  سپس شناسه او را ثبت نمایید.
 
-- امضای دوم علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی (برای آشنایی با مفهوم کانال و کاربرد آن [این قسمت](/android/chabok-messaging.html#کانال) را مطالعه نمایید) که کاربر باید روی آن‌ها عضو شود را نیز دریافت می‌کند. با عضویت روی کانال‌های داده شده، کاربر قادر به دریافت پیام‌های ارسالی روی آن‌ کانال‌ها خواهد بود.
+- امضای دوم:
+
+ علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی (برای آشنایی با مفهوم کانال و کاربرد آن [این قسمت](/android/chabok-messaging.html#کانال) را مطالعه نمایید) که کاربر باید روی آن‌ها عضو شود را نیز دریافت می‌کند. با عضویت روی کانال‌های داده شده، کاربر قادر به دریافت پیام‌های ارسالی روی آن‌ کانال‌ها خواهد بود. 
 
 ```java
 AdpPushClient.get().register("USER_ID", new String[]{"CHANNEL_NAME1", "CHANNEL_NAME2", ...});
@@ -297,4 +307,3 @@ AdpPushClient.get().unregister();
 ```
 
 > `نکته:`  تمامی مراحلی که در این راهنما بیان شده، در یک پروژه [starter](https://github.com/chabokpush/chabok-starter-android) پیاده‌سازی شده است.
-

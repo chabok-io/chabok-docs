@@ -622,7 +622,7 @@ footer {
     padding-right: 15px;
     p {
       direction: rtl;
-      text-align: right;
+      text-align: justify;
     }
     h1, h2, h3, h4, h5, h6 {
       direction: rtl;
@@ -652,7 +652,8 @@ footer {
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "svg-icons";
-@import "highlights";
+//@import "highlights";
+@import "prism";
 
 .overlayModal {
   z-index: 1039;
@@ -686,6 +687,17 @@ footer {
 
 .affix-bottom {
   position: absolute;
+}
+
+.toolbar-copy-button {
+  width: 22px;
+  height: 22px;
+  padding: 3px 3px 3px 3px;
+  display: inline-block;
+}
+
+.toolbar-button {
+  background-color: #999999;
 }
 
 .toc-list {
