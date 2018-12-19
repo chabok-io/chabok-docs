@@ -40,7 +40,7 @@ permalink: panel/usecase-optimize-pre-install-campaigns.html
 
 برای رصد کمپین‌ها، باید در ابتدا با **پر کردن فرم شمارنده‌ی جدید**، آن را برای چابک تعریف کنید. این فرم در تنظیمات پنل> بخش **شمارش نصب** قرار دارد. به عنوان مثال می‌خواهید شمارنده‌ی کمپینی را به مناسبت **یک جشنواره** برای نصب اپلیکیشنتان از طریق **کافه بازار** تعریف کنید:
 
- ![عکس مربوطه](http://uupload.ir/files/0vnk_v5newtracker.png)
+ ![عکس مربوطه](https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/panel/Create-tracker.png)
 
 <Br>
 
