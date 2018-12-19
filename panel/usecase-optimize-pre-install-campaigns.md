@@ -54,7 +54,7 @@ permalink: panel/usecase-optimize-pre-install-campaigns.html
 
 بعد از این که شما شمارنده برای کمیپن نصب خود ایجاد کردید، می‌توانید نمود آن را در جاهای مختلف پنل با داده‌های جمع‌آوری شده مشاهده کنید. به جز صفحه شمارنده نصب در تنظیمات، کمپین‌های نصب با تمام داده‌های آن، در داشبورد پنل همراه با نمودارهای مربوط قابل مشاهده است. همچنین در جزئیات دستگاه هر کاربر، **نام** کمپین نصب هم اضافه شده است.
 
- ![عکس مربوطه](http://uupload.ir/files/tnhg_trackcs.png)
+![عکس مربوطه](https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/panel/Tracker-detail.png)
 
 <Br>
 
