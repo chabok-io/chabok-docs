@@ -13,8 +13,8 @@
     <meta name="description" content="{{ page.content| strip_html }}" />
     <meta property="og:description" content="{{ page.content| strip_html }}" />
     {% else %}
-    <meta name="description" content="{{ page.content }}"/>
-    <meta property="og:description" content="{{ page.content }}" />
+    <meta name="description" content="{{ page.content| strip_html }}"/>
+    <meta property="og:description" content="{{ page.content| strip_html }}" />
     {% endif %}
     <meta name="author" content="Chabok Real-time Solutions" />
 
