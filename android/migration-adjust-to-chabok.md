@@ -1,6 +1,6 @@
 ---  
 id: migration-adjust-to-chabok  
-title: مهاجرت از Adjust به چابک  
+title: مهاجرت از ادجاست به چابک  
 layout: android  
 permalink: android/migration-adjust-to-chabok.html  
 ---  
