@@ -9,7 +9,7 @@ name: مستندات سرویس چابک پوش
 description: سرویس چابک امکان ارسال پوش و پیام‌ درون‌برنامه‌ای را به اپ موبایل و وب شما اضافه می‌کند. شما می‌توانید از ارسال پوش نوتیفیکیشن مطمئن و با تاخیر پایین روی پلت فرم‌های اندروید، iOS، ویندوز، دسکتاپ و وب پوش بهر‌منده شوید.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://doc.chabokpush.com/images/chabok.png
+avatar: https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chaboklogoblue.png
 
 timezone: 'Asia/Tehran'
 
