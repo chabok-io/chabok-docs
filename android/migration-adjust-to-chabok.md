@@ -197,7 +197,7 @@ if (userId != null && !userId.isEmpty()) {
   
 برای رصد کمپین‌ها، باید در ابتدا با **پر کردن فرم شمارنده‌ی جدید**، آن را برای چابک تعریف کنید. این فرم در تنظیمات پنل> بخش **شمارش نصب** قرار دارد. به عنوان مثال می‌خواهید شمارنده‌ی کمپینی را به مناسبت **یک جشنواره** برای نصب اپلیکیشنتان از طریق **کافه بازار** تعریف کنید:
 
- ![عکس مربوطه](http://uupload.ir/files/0vnk_v5newtracker.png)
+ ![عکس مربوطه](https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/panel/Create-tracker.png)
 
 <Br>
 
@@ -232,9 +232,9 @@ data.put("orderId", "{OrderId}");
 AdpPushClient.get().track("abc123", data);  
 ```
 
-برای اطلاعات بیشتر، بخش [بهینه‌سازی کمپین‌های نصب](/panel/usecase-optimize-pre-install-campaigns.html) را مطالعه کنید و اگر سوالی داشتید با ما [تماس](https://chabokpush.com/contact.html) بگیرید.
-
 <BR>
+
+برای اطلاعات بیشتر، بخش [بهینه‌سازی کمپین‌های نصب](/panel/usecase-optimize-pre-install-campaigns.html) را مطالعه کنید و اگر سوالی داشتید با ما [تماس](https://chabokpush.com/contact.html) بگیرید.
 
 <div align="center">   
     <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="https://chabokpush.com/register.html">ایجاد حساب رایگان و مهاجرت از ادجاست</a>
