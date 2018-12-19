@@ -10,11 +10,11 @@
     <meta property="og:locale" content="fa_IR"/>
 
     {% if page.excerpt %}
-    <meta name="description" content="{{ page.content| strip_html | strip_newlines | truncate: 300 | remove: '*' | replace: '  ', '' }}" />
-    <meta property="og:description" content="{{ page.content| strip_html | strip_newlines | truncate: 300 | remove: '*' | replace: '  ', '' }}" />
+    <meta name="description" content="{{ page.content| strip_html | strip_newlines | truncate: 300 | remove: '*' | replace: '  ', '' | markdownify }}" />
+    <meta property="og:description" content="{{ page.content| strip_html | strip_newlines | truncate: 300 | remove: '*' | replace: '  ', '' | markdownify }}" />
     {% else %}
-    <meta name="description" content="{{ page.content| strip_html | strip_newlines | truncate: 300 | remove: '*' | replace: '  ', '' }}"/>
-    <meta property="og:description" content="{{ page.content| strip_html | strip_newlines | truncate: 300 | remove: '*' | replace: '  ', '' }}" />
+    <meta name="description" content="{{ page.content| strip_html | strip_newlines | truncate: 300 | remove: '*' | replace: '  ', '' | markdownify }}"/>
+    <meta property="og:description" content="{{ page.content| strip_html | strip_newlines | truncate: 300 | remove: '*' | replace: '  ', '' | markdownify }}" />
     {% endif %}
     <meta name="author" content="Chabok Real-time Solutions" />
 
