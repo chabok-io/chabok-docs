@@ -10,11 +10,11 @@
     <meta property="og:locale" content="fa_IR"/>
 
     {% if page.excerpt %}
-    <meta name="description" content="{{ page.excerpt| strip_html }}" />
-    <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
+    <meta name="description" content="{{ page.content| strip_html }}" />
+    <meta property="og:description" content="{{ page.content| strip_html }}" />
     {% else %}
-    <meta name="description" content="{{ site.description }}"/>
-    <meta property="og:description" content="{{ site.description }}" />
+    <meta name="description" content="{{ page.content }}"/>
+    <meta property="og:description" content="{{ page.content }}" />
     {% endif %}
     <meta name="author" content="Chabok Real-time Solutions" />
 
@@ -22,7 +22,7 @@
     <meta property="og:title" content="{{ page.title }}" />
     <meta property="twitter:title" content="{{ page.title }}" />
     {% endif %}
-    
+
     <!-- OG -->
     <meta property="og:site_name" content="چابک‌پوش"/>
     <meta property="og:type" content="product"/>
