@@ -229,4 +229,6 @@ data.put("orderId", "{OrderId}");
 AdpPushClient.get().track("abc123", data);  
 ```
 
+<Br>  
+
 برای شروع مهاجرت از ادجاست و ایجاد حساب رایگان در چابک، دکمه زیر را کلیک کنید:
