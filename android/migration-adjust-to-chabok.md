@@ -10,7 +10,7 @@ permalink: android/migration-adjust-to-chabok.html
   
 <div align="center">   
 <?xml version="1.0" encoding="UTF-8"?>  
-<svg width="675px" height="92px" viewBox="0 0 675 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">  
+<svg width="100%" height="92px" viewBox="0 0 675 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">  
     <defs>  
         <linearGradient x1="-21.4688263%" y1="50%" x2="119.195607%" y2="50%" id="linearGradient-1">  
             <stop stop-color="#00BED7" offset="0%"></stop>  
@@ -63,7 +63,7 @@ permalink: android/migration-adjust-to-chabok.html
 
 بر خلاف ادجاست، شما بدون ورود و خروج اطلاعات، روی یک پلتفرم می‌توانید با کاربران از هر کانالی **ارتباط** بگیرید و یا میزان حذف‌ اپلیکیشن را به نسبت کمپین‌های نصب مختلف تحلیل کنید.
 
- فقط کافی‌ است کتابخانه چابک را به سادگی طبق مراحل زیر به اپلیکیشن خود اضافه کنید و به صورت **آزمایشی** و **رایگان** از خدمات آن استفاده کنید.  
+ فقط کافی‌ است کتابخانه چابک را به سادگی طبق مراحل زیر به اپلیکیشن خود اضافه کنید و به صورت **آزمایشی** و **رایگان** از خدمات آن استفاده کنید. (برای پیاده‌سازی کتابخانه چابک در اندروید، بخش [راه‌اندازی](/android/sdk-setup.html) را مطالعه کنید.) 
   
 <Br>  
   
@@ -132,6 +132,7 @@ public class GlobalApplication extends Application {
         
         Adjust.onCreate(config);
         
+        ...
     }
 }
 ```  
@@ -164,6 +165,8 @@ public class GlobalApplication extends Application {
     }
 }
 ```  
+در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
+  
    
 <Br>  
  
@@ -229,6 +232,10 @@ data.put("orderId", "{OrderId}");
 AdpPushClient.get().track("abc123", data);  
 ```
 
-<Br>  
+برای درک بیشتر، بخش [موارد استفاده - بهینه‌سازی کمپین‌های نصب](/panel/usecase-optimize-pre-install-campaigns.html) را مطالعه کنید و یا با ما [تماس](https://chabokpush.com/contact.html) بگیرید.
 
-برای شروع مهاجرت از ادجاست و ایجاد حساب رایگان در چابک، دکمه زیر را کلیک کنید:
+<BR>
+
+<div align="center">   
+    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="https://chabokpush.com/register.html">ایجاد حساب رایگان و مهاجرت از ادجاست</a>
+</div>
