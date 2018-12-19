@@ -400,10 +400,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 - امضای دوم
 
-<a href="/ios/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/ios/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
-
  علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی (برای آشنایی با مفهوم کانال و کاربرد آن [این قسمت](/ios/chabok-messaging.html#کانال) را مطالعه نمایید) که کاربر باید روی آن‌ها عضو شود را نیز دریافت می‌کند. با عضویت روی کانال‌های داده شده، کاربر قادر به دریافت پیام‌های ارسالی روی آن‌ کانال‌ها خواهد بود.
 
 ```objectivec

@@ -7,11 +7,6 @@ prev: chabok-messaging.html
 next: user-management.html
 ---
 
-<a href="/ios/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E0FFFF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن استارتاپی</span>
-<a href="/ios/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/ios/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
-
 چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. شما می‌توانید نمایش این پوش‌نوتیفیکیشن‌ها را [شخصی‌سازی کنید.](/ios/push-notification.html#شخصیسازی-نمایش-اعلان) برای اعلان کلیک [تعیین کنید و دیتای آن را دریافت کنید ](/ios/push-notification.html#کلیک-و-دریافت-دیتای-اعلان-آیاواس-۱۰-به-بالا). همینطور با [تنظیم پوش‌نوتیفیشکیشن چند رسانه‌ای](/ios/push-notification.html#تنظیم-نوتیفیکیشن-چندرسانهای-rich-push-notification) می‌توانید برای هرکدام اکشن تعیین نمایید. 
 
 <Br>

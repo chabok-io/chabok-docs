@@ -6,10 +6,6 @@ permalink: react-native/event-handling.html
 prev: behavior-tracking.html
 next: verification.html
 ---
-
-<a href="/react-native/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/react-native/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
 	
 چابک علاوه بر پیام‌رسانی متنی به شما این امکان را می‌دهد که بتوانید [رویدادهای](/react-native/event-handling.html#رویداد-event) اپلیکیشن خود را مدیریت کنید. مدیریت رویداد برخلاف رصد که فقط رویدادی را پس از رخ دادن ارسال می‌کند، به شما امکان می‌دهد تا به صورت **لحظه‌ای ارسال و دریافت داده** داشته باشید. از این طریق شما با [عضویت روی یک رویداد](/react-native/event-handling.html#عضویت-روی-رویداد)، آن را پس از هر بار رخ دادن [دریافت می‌نمایید](/react-native/event-handling.html#دریافت-رویداد). علاوه بر آن شما می‌توانید یک رویدادی را با داده دلخواه خود [ارسال کنید](/react-native/event-handling.html#انتشار-رویداد).
 

@@ -7,11 +7,6 @@ prev: dashboard.html
 next: subscribers.html
 ---
 
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E0FFFF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن استارتاپی</span>
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
-
 این تب به شما امکان می‌دهد با کاربرانتان ارتباط برقرار کنید. در اینجا ۳ روش برای ارتباط با کاربر وجود دارد. ارسال پیام متنی، ارسال رویداد و ارسال پوش‌ خودکار مکانی که در ادامه به هر یک پرداخته می‌شود. با این ۳ روش می‌توانید **کمپین‌های** بی‌شماری را برای مخاطبانتان با دسته‌بندی پیشرفته ارسال کنید. 
 
 ### ارسال پیام متنی
@@ -20,9 +15,7 @@ next: subscribers.html
 
 #### سیاست ارسال
 
-در این قسمت دو گزینه وجود دارد،‌ گزینه اول **صندوق پیام چابک** است که با آن می‌توانید کمپین خود را از دو طریق، **کانال چابک** (<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>)
-<a> و یا **پوش‌نوتیفیکیشن** ارسال کنید. گزینه دوم هم **متن اعلان با متن پیام یکی باشد** است که در صورت اعلان‌دار بودن پیامتان، متن آن به عنوان متن اعلان استفاده خواهد شد و در صورت خاموش بودن این گزینه و اعلان‌دار بودن پیام، متنی که در پیش‌فرض اعلان در **بخش تنظیمات** قرار دادید استفاده خواهد شد. 
+در این قسمت دو گزینه وجود دارد،‌ گزینه اول **صندوق پیام چابک** است که با آن می‌توانید کمپین خود را از دو طریق، **کانال چابک** و یا **پوش‌نوتیفیکیشن** ارسال کنید. گزینه دوم هم **متن اعلان با متن پیام یکی باشد** است که در صورت اعلان‌دار بودن پیامتان، متن آن به عنوان متن اعلان استفاده خواهد شد و در صورت خاموش بودن این گزینه و اعلان‌دار بودن پیام، متنی که در پیش‌فرض اعلان در **بخش تنظیمات** قرار دادید استفاده خواهد شد.
 
 #### مخاطبان پیام
 
@@ -39,9 +32,6 @@ next: subscribers.html
 ![عکس مربوطه](http://uupload.ir/files/fksb_filter.png)
 
 - **کانال**: اگر می‌خواهید یک **پیام عمومی** را برای تمام اعضای یک کانال ارسال کنید، در این قسمت کانال مورد نظرتون را انتخاب کنید و پیامتان را منتشر کنید.
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
 
 - **خصوصی**: در این قسمت می‌توانید پیام شخصی‌سازی شده برای **یک کاربر** به خصوص بفرستید؛ فقط کافیه پس از انتخاب کانال ارسالی، شناسه آن کاربر را وارد نمایید.
 
@@ -71,19 +61,12 @@ next: subscribers.html
 
 ### ارسال رویداد
 
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
-
 در این قسمت شما می‌توانید از بکند انواع داده را به عنوان یک **رویداد** به اپ کاربر ارسال کنید.
 
 ![عکس مربوطه](http://uupload.ir/files/c1ka_event.png)
 
 
 ### پوش خودکار مکانی 
-
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
 
 یکی دیگر از قابلیت‌های جالب توجه چابک، **پوش خودکار مکانی** است که به شما این امکان را می‌دهد تا پوشی با تعیین یک **محدوده مکانی** کار بگذارید تا به صورت خودکار با وارد و خارج شدن کاربر به آن محدوده  پوش فرستاده شود. شما می‌توانید پس از پر کردن جزئیات پیام و تعیین محدوده هر کدام از پوش‌هایتان را ذخیره کنید و وضعیت آن‌ها را مشاهده نمایید.
 

@@ -6,11 +6,6 @@ permalink: panel/settings.html
 prev: inbox.html
 ---
 
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E0FFFF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن استارتاپی</span>
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
-
 صفحه تنظیمات پنل برای مدیریت و ذخیره اطلاعات مربوط به حساب شما طراحی شده است. تمام اطلاعات حساب و دسترسی‌های شما مانند شناسه اپ، کلید SDK،  توکن دسترسی، شناسه‌های مخصوص پوش نوتیفیکیشن برای هر پلتفرم (GCM،APN،WNS و Web) و غیره در این صفحه قرار دارد.
 
 #### پلتفرم‌ها
@@ -33,9 +28,6 @@ prev: inbox.html
 
 #### پیام خوش آمدید
 
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
-
 شما می‌توانید برای هر کاربر جدیدی که اپ شما را نصب کرده است یک **پیام خوش‌آمد کار بگذارید** تا به صورت **خودکار** پس از نصب برای همه ارسال شود.
 
 #### اعلان‌ها
@@ -44,9 +36,7 @@ prev: inbox.html
 
 #### وب هوک
 
-وب هوک در واقع یک کال‌بک HTTP است که وقتی رویداد از پیش تعیین شده رخ می‌دهد شما را از آن مطلع می‌سازد. چابک با این قابلیت به شما امکان می‌دهد که از برخی **ایونت‌ها** (**تحویل پیام**(<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/panel/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>)، **نصب جدید**، **کاربر جدید** و **باز شدن برنامه**) در لحظه خبردار شوید.
+وب هوک در واقع یک کال‌بک HTTP است که وقتی رویداد از پیش تعیین شده رخ می‌دهد شما را از آن مطلع می‌سازد. چابک با این قابلیت به شما امکان می‌دهد که از برخی **ایونت‌ها** (**تحویل پیام**، **نصب جدید**، **کاربر جدید** و **باز شدن برنامه**) در لحظه خبردار شوید.
 
 ![عکس مربوطه](http://uupload.ir/files/qlko_webhook.png)
 

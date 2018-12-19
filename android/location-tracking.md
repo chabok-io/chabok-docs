@@ -7,8 +7,6 @@ prev: behavior-tracking.html
 next: event-handling.html
 ---
 
-> i این قابلیت فقط برای تعرفه‌های **رشد** و **اختصاصی** است. در صورت استفاده از آن‌ در حساب‌های عملیاتی، تعرفه شما به این تعرفه‌ها ارتقا می‌یابد. برای اطلاعات بیشتر در مورد این تعرفه‌ها، به صفحه [قیمت‌‌گذاری](https://chabokpush.com/pricing.html) مراجعه کنید.
-
 چابک کنترل و تعامل با API‌ های مربوط به GPS و سرویس‌دهنده‌های دیگر را مدیریت می نماید.
 
 قابلیت مکان‌یابی در اندروید با استفاده از API های Google Play services بهبود یافته است. امکاناتی مانند دریافت آخرین موقعیت مکانی کاربر، دریافت متناوب موقعیت مکانی، قابلیت تعریف محدوده جغرافیایی و ... از جمله امکانات ارايه شده درآن هستند.
@@ -380,9 +378,6 @@ public void startTrackingMe(long duration, long interval, float distance)
 >توجه داشته باشید که در حالت Tracking متد `requestSingleLocation` عمل نخواهدکرد.
 
 ### تعیین محدوده جغرافیایی
-
-<a href="/android/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
 
 قابلیت تعیین محدوده جغرافیایی یا `Geofence`‌ برای تعریف یک محدوده مشخص برای تشخیص ورود و خروج کاربر استفاده می‌شود.
 

@@ -7,10 +7,6 @@ prev: sdk-setup.html
 next: push-notification.html
 ---
 
-<a href="/ios/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #E5F0FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن شرکتی</span>
-<a href="/ios/introducing.html#پلنهای-قیمت-گذاری-چابک"> <span style="background-color: #D6E8FF; height: 30px; color: #000000; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">پلن سازمانی</span>
-<a>
-
 چابک برای **ارسال پیام** هنگامی که کاربر به سرور چابک متصل است (باز بودن اپلیکیشن) **از سرویس آنی خود** استفاده می‌کند (پیام چابک) و در صورت عدم اتصال (بسته بودن اپلیکیشن) اقدام به **ارسال پوش‌نوتیفیکیشن** می‌کند تا کاربر را از داشتن پیام چابک مطلع سازد. از این پس منظور از واژه **پیام**، همان **پیام چابک** است و منظور از **پوش** یا **نوتیفیکیشن**، همان **پوش‌نوتیفیکیشن** می‌باشد. 
 
 پیام‌های چابک از طریق [کانال‌](/ios/chabok-messaging.html#کانال) ارسال می‌شوند. بنابراین برای دریافت پیام، باید ابتدا کاربر را در کانال [عضو نمایید](/ios/chabok-messaging.html#عضویت-روی-کانال-subscribe). در این قسمت شما می‌توانید پیام [دریافت کنید](/ios/chabok-messaging.html#دریافت-پیام) و برای آن [وضعیت (status) ارسال کنید](/ios/chabok-messaging.html#ارسال-وضعیت-برای-پیامهای-دریافتی). همچنین می‌توانید پیام [ارسال کنید](/ios/chabok-messaging.html#ارسال-پیام) و از وضعیت تحویل آن‌ [مطلع شوید](/ios/chabok-messaging.html#دریافت-گزارش-تحویل-پیام-delivery). 
