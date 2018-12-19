@@ -16,7 +16,7 @@ permalink: android/migration-adjust-to-chabok.html
   
 <Br/>  
   
-<div align="center"> <font size="5"> جایگزین مطمئن و سریع برای کاربران ایرانی <strong>ادجاست</strong>
+<div align="center"> <font size="5"> جایگزین مطمئن و سریع برای کاربران ایرانی <strong> ادجاست</strong>
  </font> </div>  
    
 <Br>  
