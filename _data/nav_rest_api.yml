@@ -1,7 +1,5 @@
 - title: شروع سریع REST API
   items:
-    - id : introducing
-      title: معرفی چابک
     - id: guide
       title: راهنمای استفاده
     - id: send-chabok-message
