@@ -33,7 +33,7 @@ const auth = {
 ```javascript
 const auth = {
   appId: 'APP_ID',
-  webToken: 'WEB_KEY',
+  webKey: 'WEB_KEY',
   devMode: true
 }
 ```
