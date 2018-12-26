@@ -37,6 +37,8 @@ yarn add chabokpush
 <script src="https://unpkg.com/chabokpush@1.0.3/dist/chabokpush.min.js"></script>
 ```
 
+> `نکته`: دقت داشته باشید که **به هیچ عنوان** برای دریافت کتابخانه چابک از لینک بالا **بدون مشخص کردن نسخه** استفاده **نکنید** زیرا آن لینک به طور خودکار آخرین نسخه کتابخانه را در اختیارتان می‌گذارد که در صورت نخواندن تغییرات لیست کتابخانه و هماهنگ شدن با آن، با مشکل مواجه خواهید شد.
+
 #### افزودن Service Worker
 
  برای **ارسال پوش‌نوتیفیکشن در پس‌زمینه (‌Background)** باید فایل `ChabokSDKWorker.js` را از [این لینک](https://raw.githubusercontent.com/chabokpush/chabok-client-js/master/dist/ChabokSDKWorker.js) دریافت نموده و در روت پروژه قرار دهید.
