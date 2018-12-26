@@ -10,6 +10,37 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۱.۱.۰ - ۱۳۹۷/۱۰/۰۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.1.0)
+
+### تغییرات 
+
+* استفاده از شناسه `webKey` به جای  شناسه‌های `apiKey`, `username`, `password` در **احراز هویت** (authentication)
+
+روش **قدیم** احراز هویت: 
+
+```javascript
+const auth = {
+  appId: 'APP_ID',
+  apiKey: 'API_KEY',
+  username: 'USERNAME',
+  password: 'PASSWORD',
+  devMode: true
+}
+```
+
+روش **جدید** احراز هویت:
+
+```javascript
+const auth = {
+  appId: 'APP_ID',
+  webKey: 'WEB_KEY',
+  devMode: true
+}
+```
+
+
+> ‍‍‍‍‍`نکته:` برای استفاده از شناسه `webKey` باید در تنظیمات پنل > [بخش دسترسی‌ها و توکن‌ها](https://sandbox.push.adpdigital.com/front/setting/access)، دامنه مورد تایید خود را ثبت کنید و سپس در همان صفحه شناسه `webKey` را کپی کنید.
+
 ## [نسخه ۱.۰.۳ - ۱۳۹۷/۰۷/۲۸](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.0.3)
 
 ### تغییرات 
