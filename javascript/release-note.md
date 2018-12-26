@@ -10,15 +10,15 @@ prev: troubleshoot.html
 
 <Br>
 
-## [نسخه ۱.۱.۰ - ۱۳۹۷/۰۷/۲۸](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.1.0)
+## [نسخه ۱.۱.۰ - ۱۳۹۷/۱۰/۰۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.1.0)
 
 ### تغییرات 
 
-* استفاده از شناسه `webToken` به جای  کلید‌ ای‌پی‌آی (`password`,`username`,`apiKey`) در **احراز هویت** (authentication)
+* استفاده از شناسه `webToken` به جای  کلید‌ ای‌پی‌آی (`apiKey`, `username`, `password`) در **احراز هویت** (authentication)
 
 متد **قدیم** احراز هویت: 
 
-```
+```javascript
 const auth = {
   appId: 'APP_ID',
   apiKey: 'API_KEY',
@@ -30,7 +30,7 @@ const auth = {
 
 متد **جدید** احراز هویت:
 
-```
+```javascript
 const auth = {
   appId: 'APP_ID',
   webToken: 'WEB_TOKEN',
