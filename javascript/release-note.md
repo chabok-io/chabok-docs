@@ -39,7 +39,7 @@ const auth = {
 ```
 
 
-> ‍‍‍‍‍`نکته:` برای استفاده از شناسه `webKey` باید در تنظیمات پنل > [بخش دسترسی‌ها و توکن‌ها](https://sandbox.push.adpdigital.com/front/setting/access)، دامنه مورد تایید خود را ثبت کنید و سپس در همان صفحه شناسه `webKey` را کپی کنید.
+> ‍‍‍‍‍`نکته:` برای استفاده از شناسه `webKey` باید در تنظیمات پنل > [بخش دسترسی‌ها و توکن‌ها](https://sandbox.push.adpdigital.com/front/setting/access)، **دامنه** وبسایت خود را ثبت کنید و سپس در همان صفحه شناسه `webKey` را کپی کنید.
 
 ## [نسخه ۱.۰.۳ - ۱۳۹۷/۰۷/۲۸](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.0.3)
 
