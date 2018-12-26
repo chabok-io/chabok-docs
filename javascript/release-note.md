@@ -14,7 +14,7 @@ prev: troubleshoot.html
 
 ### تغییرات 
 
-* استفاده از شناسه `webToken` به جای  شناسه‌های `apiKey`, `username`, `password` در **احراز هویت** (authentication)
+* استفاده از شناسه `webKey` به جای  شناسه‌های `apiKey`, `username`, `password` در **احراز هویت** (authentication)
 
 روش **قدیم** احراز هویت: 
 
@@ -33,13 +33,13 @@ const auth = {
 ```javascript
 const auth = {
   appId: 'APP_ID',
-  webToken: 'WEB_TOKEN',
+  webToken: 'WEB_KEY',
   devMode: true
 }
 ```
 
 
-> ‍‍‍‍‍`نکته:` برای استفاده از شناسه `webToken` باید در تنظیمات پنل > [بخش دسترسی‌ها و توکن‌ها](https://sandbox.push.adpdigital.com/front/setting/access)، دامنه مورد تایید خود را ثبت کنید و سپس در همان صفحه شناسه `webToken` را کپی کنید.
+> ‍‍‍‍‍`نکته:` برای استفاده از شناسه `webKey` باید در تنظیمات پنل > [بخش دسترسی‌ها و توکن‌ها](https://sandbox.push.adpdigital.com/front/setting/access)، دامنه مورد تایید خود را ثبت کنید و سپس در همان صفحه شناسه `webKey` را کپی کنید.
 
 ## [نسخه ۱.۰.۳ - ۱۳۹۷/۰۷/۲۸](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.0.3)
 
