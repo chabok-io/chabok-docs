@@ -37,10 +37,10 @@ curl -X POST \
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">User</td>
-<td align="right">شناسه کاربر ثبت شده یا * برای کانال عمومی</td>
+<td align="center">target \*</td>
+<td align="right">سگمنت مورد نظر یا \* برای کانال عمومی</td>
 <td align="center">string</td>
-<td align="right">userTest</td>
+<td align="right">یک سگمنت-id موجود یا فیلترهای سگمنت جدید</td>
 </tr>
 <tr>
 <td align="center">channel</td>
@@ -49,7 +49,7 @@ curl -X POST \
 <td align="right">default</td>
 </tr>
 <tr>
-<td align="center">content</td>
+<td align="center">content \*</td>
 <td align="right">متن پیام</td>
 <td align="center">string</td>
 <td align="right">سلام</td>
@@ -102,7 +102,7 @@ curl -X POST \
 
 | پارامترها | توضیح| نوع مقدار|مثال  |          
 | :-----------------: |-------------:| :-----:|  ---------:|
-|   title      | عنوان اعلان | string|  ثبت درخواست |
+|     title \*     | عنوان اعلان | string|  ثبت درخواست |
 |body| متن اعلان|string| سفارش شما ثبت شد
 |icon| تصویر اعلان      |  string | نام تصویر|
 | sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | نام صدا   |
@@ -137,7 +137,7 @@ curl -X POST \
 
 #### درخواست
 
-> `نکته :` از پارامتر‌هایی که در این عمل استفاده می‌شوند، `target` و `content` (سگمنت کاربران و محتوای پیام) **الزامی** هستند و بدون آن‌ها درخواست شما صورت نمی‌گیرد. (برای پوش‌نوتیفیکیشن عمومی در قسمت `target` به جای سگمنت، پرانتز را خالی بگذارید.)
+> `نکته :` از پارامتر‌هایی که در این عمل استفاده می‌شوند، `target` و `content` (سگمنت کاربران و محتوای پیام) **الزامی** هستند و بدون آن‌ها درخواست شما صورت نمی‌گیرد. (برای پوش‌نوتیفیکیشن عمومی در قسمت `target` به جای سگمنت، {} را خالی بگذارید.)
 
 بسته به نوع نوتیفیکیشنی که می‌خواهید ارسال کنید می‌توانید از **انواع پارامترها** استفاده کنید. به عنوان مثال می‌خواهید یک نوتیفیکیشنی را برای اعلام انتشار نسخه جدید اپلیکیشن خود به همه کاربران، ارسال کنید. 
 
@@ -146,7 +146,7 @@ curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
--d "{ \"target\": \"()\", \"content\": \"نسخه جدید اپلیکیشن رسید!\"}"
+-d "{ \"target\": \"{}\", \"content\": \"نسخه جدید اپلیکیشن رسید!\"}"
 ```
 
 > `نکته :` در قسمت سگمنت، فیلترهای پیش‌فرض چابک ‍‍‍‍‍‍‍‍‍‍‍‍‍`installDate` (اولین بازدید یا نصب) ، `launchTime` (آخرین بازدید) ،‌ `launchCount` (تعداد بازدید) ، `clientVersion` (نسخه برنامه) ،‌ `osVersion` (نسخه سیستم‌عامل) ، `deviceType` (نوع دستگاه) ، `tags` (تگ‌ها) ، `nearBy` (موقعیت مکانی) می‌باشند. درصورت اضافه کردن سگمنت از سوی خودتان هم فقط کافی‌‌ست نام آن را وارد نمایید.
@@ -200,12 +200,10 @@ curl -X POST \
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">target</td>
-<td align="right">ویژگی‌های گروه‌بندی</td>
-<td align="center">object</td>
-<td align="left" dir="ltr">{&quot;target&quot;:{
-  &quot;deviceType&quot;: &quot;ios&quot;
-}}</td>
+<td align="center">userId \*</td>
+<td align="right">شناسه کاربری</td>
+<td align="center">string</td>
+<td>userTest</td>
 </tr>
 <tr>
 <td align="center">channel</td>
@@ -214,7 +212,7 @@ curl -X POST \
 <td align="right">default</td>
 </tr>
 <tr>
-<td align="center">content</td>
+<td align="center">content \*</td>
 <td align="right">متن پیام</td>
 <td align="center">string</td>
 <td align="right">سلام</td>
@@ -268,7 +266,7 @@ curl -X POST \
 
 | پارامترها | توضیح| نوع مقدار|مثال  |          
 | :-----------------: |-------------:| :-----:|  ---------:|
-|   title      | عنوان اعلان | string|  ثبت درخواست |
+|    title \*     | عنوان اعلان | string|  ثبت درخواست |
 |body| متن اعلان|string| سفارش شما ثبت شد
 |icon| تصویر اعلان      |  string | نام تصویر|
 | sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | نام صدا   |
@@ -311,7 +309,7 @@ curl -X POST \
 
 ```bash
 curl -X POST \
- "https://sandbox.push.adpdigital.com/api/push/notifyUser/989335010082" \
+ "https://sandbox.push.adpdigital.com/api/push/notifyUser/989335******" \
  -H "accept: application/json" \
  -H "Content-Type: application/json" \
  -d "{ \"title\": \"ثبت موفق\", \"body\": \"سفارش شما با موفقیت ثبت شد.\"}"
@@ -320,11 +318,11 @@ curl -X POST \
 
 #### پاسخ
 
-درخواست شما با موفقیت انجام شد و کمپین شما به ۱ دستگاه  (count : 1) ارسال شد.
+درخواست شما با موفقیت انجام شد و کمپین شما به ۲ دستگاه  (count : 2) ارسال شد.
 
 ```javascript
 {
-  "count": 1
+  "count": 2
 }
 ```
 پس از ارسال موفقیت آمیز می‌توانید در **پنل بخش پیام‌ها** آمار ارسال و تحویلتان را مشاهده کنید.
