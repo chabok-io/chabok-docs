@@ -203,7 +203,7 @@ curl -X POST \
 <td align="center">userId * </td>
 <td align="right">شناسه کاربری</td>
 <td align="center">string</td>
-<td>userTest</td>
+<td align="right">userTest</td>
 </tr>
 <tr>
 <td align="center">channel</td>
