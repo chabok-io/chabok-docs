@@ -63,6 +63,13 @@ dependencies {
 آخرین نسخه فایل کتابخانه چابک از  [اینجا](https://bintray.com/bintray/jcenter?filterByPkgName=com.adpdigital.push) قابل دسترس می‌باشد.
 در انتها گزینه سینک را بزنید.
 
+<blockquote markdown="1">
+ `نکته:` در اندروید ۹ به بالا در صورت مقداردهی `targetSdkVersion` در فایل `build.gradle` به مقدار `28`،  کد زیر را به فایل `AndroidManifest.xml` در تگ `application` اضافه کنید:
+
+```xml 
+<uses-library android:name="org.apache.http.legacy" android:required="false" /> 
+```
+</blockquote>
 
 #### نصب کتابخانه آی‌اواس
 
