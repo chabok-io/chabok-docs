@@ -37,8 +37,8 @@ curl -X POST \
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">target \*</td>
-<td align="right">سگمنت مورد نظر یا \* برای کانال عمومی</td>
+<td align="center"> target * </td>
+<td align="right">سگمنت مورد نظر یا * برای کانال عمومی</td>
 <td align="center">string</td>
 <td align="right">یک سگمنت-id موجود یا فیلترهای سگمنت جدید</td>
 </tr>
@@ -49,7 +49,7 @@ curl -X POST \
 <td align="right">default</td>
 </tr>
 <tr>
-<td align="center">content \*</td>
+<td align="center">content * </td>
 <td align="right">متن پیام</td>
 <td align="center">string</td>
 <td align="right">سلام</td>
@@ -200,7 +200,7 @@ curl -X POST \
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">userId \*</td>
+<td align="center">userId * </td>
 <td align="right">شناسه کاربری</td>
 <td align="center">string</td>
 <td>userTest</td>
@@ -212,7 +212,7 @@ curl -X POST \
 <td align="right">default</td>
 </tr>
 <tr>
-<td align="center">content \*</td>
+<td align="center">content * </td>
 <td align="right">متن پیام</td>
 <td align="center">string</td>
 <td align="right">سلام</td>
