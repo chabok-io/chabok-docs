@@ -157,7 +157,7 @@ dependencies {
 > `نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید. 
 
 <blockquote markdown="1">
- `نکته:` در صورت مقداردهی `targetSdkVersion` در فایل `build.gradle` به مقدار `28`،  کد زیر را به فایل `AndroidManifest.xml` در تگ `application` اضافه کنید:
+ `نکته:` در اندروید ۹ به بالا در صورت مقداردهی `targetSdkVersion` در فایل `build.gradle` به مقدار `28`،  کد زیر را به فایل `AndroidManifest.xml` در تگ `application` اضافه کنید:
 
 ```xml 
 <uses-library android:name="org.apache.http.legacy" android:required="false" /> 
