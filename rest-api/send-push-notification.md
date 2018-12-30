@@ -37,7 +37,8 @@ curl -X POST \
 </tr>
 </thead>
 <tbody><tr>
-<td align="center"> target * </td>
+<td align="center"> target <font color="red">*</font>
+ </td>
 <td align="right">سگمنت مورد نظر یا * برای کانال عمومی</td>
 <td align="center">string</td>
 <td align="right">یک سگمنت-id موجود یا فیلترهای سگمنت جدید</td>
@@ -49,7 +50,8 @@ curl -X POST \
 <td align="right">default</td>
 </tr>
 <tr>
-<td align="center">content * </td>
+<td align="center">content <font color="red">*</font>
+ </td>
 <td align="right">متن پیام</td>
 <td align="center">string</td>
 <td align="right">سلام</td>
@@ -102,7 +104,7 @@ curl -X POST \
 
 | پارامترها | توضیح| نوع مقدار|مثال  |          
 | :-----------------: |-------------:| :-----:|  ---------:|
-|     title \*     | عنوان اعلان | string|  ثبت درخواست |
+|     title <font color="red">*</font>     | عنوان اعلان | string|  ثبت درخواست |
 |body| متن اعلان|string| سفارش شما ثبت شد
 |icon| تصویر اعلان      |  string | نام تصویر|
 | sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | نام صدا   |
@@ -118,6 +120,9 @@ curl -X POST \
 |contentAvailable|  برای انجام یک آپدیت بی‌صدا در بک‌گراند یا فورگراند مقدار 1 را بگذارید | boolean|  1 
 |mutableContent| برای پشتیبانی از اعلان چندرسانه‌ای مقدار 1 را حتما قرار دهید| boolean| 1
 |category| شناسه اعلان برای ذخیره آن|string| delivery
+
+
+> `نکته :` نماد <font color="red">\*</font> در جدول پارامترها به معنی **الزامی** بودن پارامتر است و بدون آن‌ درخواست شما صورت نمی‌گیرد. (برای پوش‌نوتیفیکیشن عمومی در قسمت `target` به جای سگمنت، {} را خالی بگذارید.)
 
 
 > `نکته :` در پارامترهای اعلان، پارامتر `options` یا همان رفتار اکشن (فقط در آی‌او‌اس) می‌توانید عدد ۱ برای اکشن [Authentication Required (اکشن در صورت قفل نبودن دستگاه اجرا می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired?language=objc)،‌ ۲ برای اکشن [Destructive (اکشن تسک مخرب انجام می‌دهد)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive?language=objc)، ۴ برای اکشن [Foreground (اکشن موجب باز شدن اپ در فورگراند می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground?language=objc) و جمع این اعداد را برای ترکیب آن‌ها با هم قرار دهید.
@@ -136,8 +141,6 @@ curl -X POST \
 ### مثال از متد notifyUsers
 
 #### درخواست
-
-> `نکته :` از پارامتر‌هایی که در این عمل استفاده می‌شوند، `target` و `content` (سگمنت کاربران و محتوای پیام) **الزامی** هستند و بدون آن‌ها درخواست شما صورت نمی‌گیرد. (برای پوش‌نوتیفیکیشن عمومی در قسمت `target` به جای سگمنت، {} را خالی بگذارید.)
 
 بسته به نوع نوتیفیکیشنی که می‌خواهید ارسال کنید می‌توانید از **انواع پارامترها** استفاده کنید. به عنوان مثال می‌خواهید یک نوتیفیکیشنی را برای اعلام انتشار نسخه جدید اپلیکیشن خود به همه کاربران، ارسال کنید. 
 
@@ -200,7 +203,8 @@ curl -X POST \
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">userId * </td>
+<td align="center">userId <font color="red">*</font>
+ </td>
 <td align="right">شناسه کاربری</td>
 <td align="center">string</td>
 <td align="right">userTest</td>
@@ -266,7 +270,7 @@ curl -X POST \
 
 | پارامترها | توضیح| نوع مقدار|مثال  |          
 | :-----------------: |-------------:| :-----:|  ---------:|
-|    title \*     | عنوان اعلان | string|  ثبت درخواست |
+|    title <font color="red">*</font>     | عنوان اعلان | string|  ثبت درخواست |
 |body| متن اعلان|string| سفارش شما ثبت شد
 |icon| تصویر اعلان      |  string | نام تصویر|
 | sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | نام صدا   |
@@ -283,6 +287,7 @@ curl -X POST \
 |mutableContent| برای پشتیبانی از اعلان چندرسانه‌ای مقدار 1 را حتما قرار دهید| boolean| 1
 |category| شناسه اعلان برای ذخیره آن|string| delivery
 
+> `نکته :` نماد <font color="red">\*</font> در جدول پارامترها به معنی **الزامی** بودن پارامتر است و بدون آن‌ درخواست شما صورت نمی‌گیرد. 
 
 > `نکته :` در پارامترهای اعلان، پارامتر `options` یا همان رفتار اکشن (فقط در آی‌او‌اس) می‌توانید عدد ۱ برای اکشن [Authentication Required (اکشن در صورت قفل نبودن دستگاه اجرا می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired?language=objc)،‌ ۲ برای اکشن [Destructive (اکشن تسک مخرب انجام می‌دهد)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive?language=objc)، ۴ برای اکشن [Foreground (اکشن موجب باز شدن اپ در فورگراند می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground?language=objc) و جمع این اعداد را برای ترکیب آن‌ها با هم قرار دهید.
 
@@ -300,9 +305,6 @@ curl -X POST \
 ### مثال از متد notifyUser
 
 #### درخواست
-
-
-> `نکته :` از پارامتر‌هایی که در این عمل استفاده می‌شوند، `userId` و `payload` (شناسه کاربر و پی‌لود نوتیفیکیشن) **الزامی** هستند و بدون آن‌ها درخواست شما صورت نمی‌گیرد.
 
 به عنوان مثال می‌خواهید یک پوش‌نوتیفیکیشن برای اعلام ثبت موفق سفارش به یک کاربر ارسال کنید.
 
