@@ -12,7 +12,7 @@ prev: troubleshoot.html
 
 ## [نسخه ۱.۱.۰ - ۱۳۹۷/۱۰/۰۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.1.0)
 
-### تغییرات 
+### ارتقا 
 
 * استفاده از شناسه `webKey` به جای  شناسه‌های `apiKey`, `username`, `password` در **احراز هویت** (authentication)
 
