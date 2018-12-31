@@ -64,9 +64,135 @@ prev: inbox.html
 
 ![عکس مربوطه](http://uupload.ir/files/atk_installation-tracker.png)
 
-همینطور می‌توانید به شمارنده خود تعدادی **پارامتر** و لینک **کال‌بک** در صورت تمایل اضافه نمایید. در اختصاص لینک خود برای کال‌بک، شما ‌می‌توانید یک سری پارامتر هم در کال‌بک درخواست دهید. این پارامتر‌ها برای کال‌بک **کلیک** عبارتند از: `eventType`, `id`, `name`, `ip`, `osName` ,`osVersion`, `deviceManufacturer`, `deviceModel`, `clickAt`.
+همینطور می‌توانید به شمارنده خود تعدادی **پارامتر** و لینک **کال‌بک** در صورت تمایل اضافه نمایید. در اختصاص لینک خود برای کال‌بک، شما ‌می‌توانید یک سری پارامتر هم در کال‌بک درخواست دهید.
 
- همینطور این پارامترها برای کال‌بک **نصب** عبارتند از: `eventType`, `id`, `name`, `ip`, `osName` ,`osVersion`, `appId`, `installationId`, `deviceModel`, `appVersion`, `connection`, `installSource`, `installAt`, `clickAt`.
+<details><summary>جدول پارامترهای کال‌بک کلیک</summary>
+<p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">پارامترها</th>
+<th style="text-align: right">توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">id</td>
+<td align="right">(شناسه شمارنده (ترکر</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="right">(نام شمارنده (ترکر</td>
+</tr>
+<tr>
+<td align="center">eventType</td>
+<td align="right">(...نوع رویداد (کلیک، نصب و</td>
+</tr>
+<tr>
+<td align="center">osName </td>
+<td align="right">سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">osVersion</td>
+<td align="right">نسخه سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">deviceModel</td>
+<td align="right">مدل دستگاه</td>
+</tr>
+<tr>
+<td align="center">deviceManufacturer</td>
+<td align="right">برند دستگاه</td>
+</tr>
+<tr>
+<td align="center">ip</td>
+<td align="right">آی‌پی مقصد</td>
+</tr>
+<tr>
+<td align="center">clickAt</td>
+<td align="right">زمان کلیک</td>
+</tr>
+</tbody></table>
+</p>
+</details>
+
+<Br>
+
+<details><summary>جدول  پارامترهای کال‌بک نصب</summary>
+<p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">پارامترها</th>
+<th style="text-align: right">توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">id</td>
+<td align="right">(شناسه شمارنده (ترکر</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="right">(نام شمارنده (ترکر</td>
+</tr>
+<tr>
+<td align="center">eventType</td>
+<td align="right">(...نوع رویداد (کلیک، نصب و</td>
+</tr>
+<tr>
+<td align="center">osName </td>
+<td align="right">سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">osVersion</td>
+<td align="right">نسخه سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">deviceModel</td>
+<td align="right">مدل دستگاه</td>
+</tr>
+<tr>
+<td align="center">deviceManufacturer</td>
+<td align="right">برند دستگاه</td>
+</tr>
+<tr>
+<td align="center">ip</td>
+<td align="right">آی‌پی مقصد</td>
+</tr>
+<tr>
+<td align="center">clickAt</td>
+<td align="right">زمان کلیک</td>
+  </tr>
+<tr>
+<td align="center">appId</td>
+<td align="right">شناسه اپ</td>
+</tr>
+  </tr>
+<tr>
+<td align="center">appVersion</td>
+<td align="right">نسخه اپ</td>
+</tr>
+</tr>
+<tr>
+<td align="center">installationId</td>
+<td align="right">شناسه نصب یا دستگاه</td>
+</tr>
+</tr>
+<tr>
+<td align="center">installSource</td>
+<td align="right">منبع نصب</td>
+</tr>
+</tr>
+<tr>
+<td align="center">installAt</td>
+<td align="right">زمان نصب</td>
+</tr>
+</tr>
+<tr>
+<td align="center">connection</td>
+<td align="right">نوع اتصال</td>
+</tr>
+</tbody></table></p>
+</details>
 
 برای مثال به کال‌بک زیر توجه کنید:
 
