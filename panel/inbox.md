@@ -97,7 +97,11 @@ next: settings.html
 
 ![عکس مربوطه](http://uupload.ir/files/e8z3_devicenotfound.png)
 
+<Br>
+
 این خطاها برای نوتیفیکیشن در **جزئیات** هر پیام قابل مشاهده است.
+
+<Br>
 
 ![عکس مربوطه](http://uupload.ir/files/in0d_mismatchsenderid.png)
 
