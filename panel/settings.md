@@ -77,15 +77,15 @@ prev: inbox.html
 </thead>
 <tbody><tr>
 <td align="center">id</td>
-<td align="right">(شناسه شمارنده (ترکر</td>
+<td align="right">شناسه شمارنده (ترکر)</td>
 </tr>
 <tr>
 <td align="center">name</td>
-<td align="right">(نام شمارنده (ترکر</td>
+<td align="right">نام شمارنده (ترکر)</td>
 </tr>
 <tr>
 <td align="center">eventType</td>
-<td align="right">(...نوع رویداد (کلیک، نصب و</td>
+<td align="right">نوع رویداد (کلیک، نصب و...)</td>
 </tr>
 <tr>
 <td align="center">osName </td>
@@ -128,15 +128,15 @@ prev: inbox.html
 </thead>
 <tbody><tr>
 <td align="center">id</td>
-<td align="right">(شناسه شمارنده (ترکر</td>
+<td align="right">شناسه شمارنده (ترکر)</td>
 </tr>
 <tr>
 <td align="center">name</td>
-<td align="right">(نام شمارنده (ترکر</td>
+<td align="right">نام شمارنده (ترکر)</td>
 </tr>
 <tr>
 <td align="center">eventType</td>
-<td align="right">(...نوع رویداد (کلیک، نصب و</td>
+<td align="right">نوع رویداد (کلیک، نصب و ...)</td>
 </tr>
 <tr>
 <td align="center">osName </td>
@@ -186,9 +186,11 @@ prev: inbox.html
 <td align="center">connection</td>
 <td align="right">نوع اتصال</td>
 </tr>
-</tbody></table><p>
+</tbody></table>
+</p>
 </details>
 
+<Br>
 
 برای مثال به کال‌بک زیر توجه کنید:
 
