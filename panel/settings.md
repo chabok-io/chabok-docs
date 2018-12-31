@@ -66,7 +66,7 @@ prev: inbox.html
 
 همینطور می‌توانید به شمارنده خود تعدادی **پارامتر** و لینک **کال‌بک** در صورت تمایل اضافه نمایید. در اختصاص لینک خود برای کال‌بک، شما ‌می‌توانید یک سری پارامتر هم در کال‌بک درخواست دهید.
 
-<details><summary>جدول پارامترهای کال‌بک کلیک</summary>
+<details style="text-align: right"><summary>جدول پارامترهای کال‌بک کلیک</summary>
 <p>
 <table>
 <thead>
@@ -117,7 +117,7 @@ prev: inbox.html
 
 <Br>
 
-<details><summary>جدول  پارامترهای کال‌بک نصب</summary>
+<details style="text-align: right"><summary>جدول  پارامترهای کال‌بک نصب</summary>
 <p>
 <table>
 <thead>
@@ -161,37 +161,32 @@ prev: inbox.html
 <tr>
 <td align="center">clickAt</td>
 <td align="right">زمان کلیک</td>
-  </tr>
+</tr>
 <tr>
 <td align="center">appId</td>
 <td align="right">شناسه اپ</td>
 </tr>
-  </tr>
 <tr>
 <td align="center">appVersion</td>
 <td align="right">نسخه اپ</td>
-</tr>
 </tr>
 <tr>
 <td align="center">installationId</td>
 <td align="right">شناسه نصب یا دستگاه</td>
 </tr>
-</tr>
 <tr>
 <td align="center">installSource</td>
 <td align="right">منبع نصب</td>
-</tr>
 </tr>
 <tr>
 <td align="center">installAt</td>
 <td align="right">زمان نصب</td>
 </tr>
-</tr>
 <tr>
 <td align="center">connection</td>
 <td align="right">نوع اتصال</td>
 </tr>
-</tbody></table></p>
+</tbody></table><p>
 </details>
 
 برای مثال به کال‌بک زیر توجه کنید:
