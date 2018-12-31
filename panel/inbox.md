@@ -97,6 +97,8 @@ next: settings.html
 
 ![عکس مربوطه](http://uupload.ir/files/e8z3_devicenotfound.png)
 
+<Br>
+
 ![عکس مربوطه](http://uupload.ir/files/in0d_mismatchsenderid.png)
 
 <Br>
@@ -105,7 +107,7 @@ next: settings.html
 
 - `Subscription not found`: **عدم عضویت کاربر در کانال** (از عضو بودن مخاطب پیام در کانال ارسالی اطمینان یابید.)
 
-- `INVALID`: **عدم همخوانی تنظیمات پوش‌نوتفیکیشن APN یا GCM/FCM با تنظیمات اپلیکیشن**. (`DeviceTokenNotForTopic` برای آی‌اواس و `	MismatchSenderId` برای اندروید. از صحت کلیدهایی که در پیش‌نیازها از گوگل و اپل دریافت کردید اطمینان یابید.)
+- `INVALID`: **عدم همخوانی تنظیمات پوش‌نوتفیکیشن APN یا GCM/FCM با تنظیمات اپلیکیشن**. (`DeviceTokenNotForTopic` برای آی‌اواس و `MismatchSenderId` برای اندروید. از صحت کلیدهایی که در پیش‌نیازها از گوگل و اپل دریافت کردید اطمینان یابید.)
 
 - `GONE` و `Device_Unregistered`: **حذف اپلیکیشن توسط کاربر**
 
