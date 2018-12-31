@@ -62,15 +62,149 @@ prev: inbox.html
 
 در این قسمت شما می‌توانید برای کمپین‌های نصب خود، **شمارنده (ترکر)** تعریف کنید. برای این کار باید **نام** و **لینک مقصدی** که در کمپینتان قرار دادید را در اینجا ثبت کنید. 
 
-![عکس مربوطه](http://uupload.ir/files/atk_installation-tracker.png)
+![عکس مربوطه](http://uupload.ir/files/5u6s_newtracker.png)
 
-همینطور می‌توانید به شمارنده خود تعدادی **پارامتر** و لینک **کال‌بک** در صورت تمایل اضافه نمایید. در اختصاص لینک خود برای کال‌بک، شما ‌می‌توانید یک سری پارامتر هم در کال‌بک درخواست دهید. این پارامتر‌ها برای کال‌بک **کلیک** عبارتند از: `eventType`, `id`, `name`, `ip`, `osName` ,`osVersion`, `deviceManufacturer`, `deviceModel`, `clickAt`.
+<Br>
 
- همینطور این پارامترها برای کال‌بک **نصب** عبارتند از: `eventType`, `id`, `name`, `ip`, `osName` ,`osVersion`, `appId`, `installationId`, `deviceModel`, `appVersion`, `connection`, `installSource`, `installAt`, `clickAt`.
+همینطور می‌توانید به شمارنده خود تعدادی **پارامتر** و لینک **کال‌بک** در صورت تمایل اضافه نمایید. در اختصاص لینک خود برای کال‌بک، شما ‌می‌توانید یک سری پارامتر هم در کال‌بک درخواست دهید.
+
+<details style="text-align: right"><summary>جدول پارامترهای کال‌بک کلیک</summary>
+<p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">پارامترها</th>
+<th style="text-align: right">توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">id</td>
+<td align="right">شناسه شمارنده (ترکر)</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="right">نام شمارنده (ترکر)</td>
+</tr>
+<tr>
+<td align="center">eventType</td>
+<td align="right">نوع رویداد (کلیک، نصب و...)</td>
+</tr>
+<tr>
+<td align="center">osName </td>
+<td align="right">سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">osVersion</td>
+<td align="right">نسخه سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">deviceModel</td>
+<td align="right">مدل دستگاه</td>
+</tr>
+<tr>
+<td align="center">deviceManufacturer</td>
+<td align="right">برند دستگاه</td>
+</tr>
+<tr>
+<td align="center">ip</td>
+<td align="right">آی‌پی کاربر</td>
+</tr>
+<tr>
+<td align="center">clickAt</td>
+<td align="right">زمان کلیک</td>
+</tr>
+</tbody></table>
+</p>
+</details>
+
+<Br>
+
+<details style="text-align: right"><summary>جدول  پارامترهای کال‌بک نصب</summary>
+<p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">پارامترها</th>
+<th style="text-align: right">توضیح</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">id</td>
+<td align="right">شناسه شمارنده (ترکر)</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="right">نام شمارنده (ترکر)</td>
+</tr>
+<tr>
+<td align="center">eventType</td>
+<td align="right">نوع رویداد (کلیک، نصب و ...)</td>
+</tr>
+<tr>
+<td align="center">osName </td>
+<td align="right">سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">osVersion</td>
+<td align="right">نسخه سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">deviceModel</td>
+<td align="right">مدل دستگاه</td>
+</tr>
+<tr>
+<td align="center">deviceManufacturer</td>
+<td align="right">برند دستگاه</td>
+</tr>
+<tr>
+<td align="center">ip</td>
+<td align="right">آی‌پی کاربر</td>
+</tr>
+<tr>
+<td align="center">clickAt</td>
+<td align="right">زمان کلیک</td>
+</tr>
+<tr>
+<td align="center">appId</td>
+<td align="right">شناسه اپ</td>
+</tr>
+<tr>
+<td align="center">appVersion</td>
+<td align="right">نسخه اپ</td>
+</tr>
+<tr>
+<td align="center">installationId</td>
+<td align="right">شناسه نصب یا دستگاه</td>
+</tr>
+<tr>
+<td align="center">installSource</td>
+<td align="right">منبع نصب</td>
+</tr>
+<tr>
+<td align="center">installAt</td>
+<td align="right">زمان نصب</td>
+</tr>
+<tr>
+<td align="center">connection</td>
+<td align="right">نوع اتصال</td>
+</tr>
+</tbody></table>
+</p>
+</details>
+
+<Br>
 
 برای مثال به کال‌بک زیر توجه کنید:
 
 ![عکس مربوطه](http://uupload.ir/files/guk_callback.png)
+
+<Br>
+
+##### آمار شمارنده نصب
+
+با کلیک روی هر شمارنده می‌توانید جزئیات آن را به صورت لحظه‌ای مشاهده کنید.
+
+![عکس مربوطه](http://uupload.ir/files/3lq8_trackerperformance.png)
 
 <Br>
 
