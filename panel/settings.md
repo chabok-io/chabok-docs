@@ -62,7 +62,9 @@ prev: inbox.html
 
 در این قسمت شما می‌توانید برای کمپین‌های نصب خود، **شمارنده (ترکر)** تعریف کنید. برای این کار باید **نام** و **لینک مقصدی** که در کمپینتان قرار دادید را در اینجا ثبت کنید. 
 
-![عکس مربوطه](http://uupload.ir/files/atk_installation-tracker.png)
+![عکس مربوطه](http://uupload.ir/files/5u6s_newtracker.png)
+
+<Br>
 
 همینطور می‌توانید به شمارنده خود تعدادی **پارامتر** و لینک **کال‌بک** در صورت تمایل اضافه نمایید. در اختصاص لینک خود برای کال‌بک، شما ‌می‌توانید یک سری پارامتر هم در کال‌بک درخواست دهید.
 
@@ -105,7 +107,7 @@ prev: inbox.html
 </tr>
 <tr>
 <td align="center">ip</td>
-<td align="right">آی‌پی مقصد</td>
+<td align="right">آی‌پی کاربر</td>
 </tr>
 <tr>
 <td align="center">clickAt</td>
@@ -156,7 +158,7 @@ prev: inbox.html
 </tr>
 <tr>
 <td align="center">ip</td>
-<td align="right">آی‌پی مقصد</td>
+<td align="right">آی‌پی کاربر</td>
 </tr>
 <tr>
 <td align="center">clickAt</td>
@@ -195,6 +197,14 @@ prev: inbox.html
 برای مثال به کال‌بک زیر توجه کنید:
 
 ![عکس مربوطه](http://uupload.ir/files/guk_callback.png)
+
+<Br>
+
+##### آمار شمارنده نصب
+
+با کلیک روی هر شمارنده می‌توانید جزئیات آن را به صورت لحظه‌ای مشاهده کنید.
+
+![عکس مربوطه](http://uupload.ir/files/3lq8_trackerperformance.png)
 
 <Br>
 
