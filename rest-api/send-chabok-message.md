@@ -75,6 +75,12 @@ curl -X POST \
 <td align="right">true</td>
 </tr>
 <tr>
+<td align="center">autoNotify</td>
+<td align="right">نمایش پیام توسط گوگل صورت می‌گیرد</td>
+<td align="center">boolean</td>
+<td align="right">false</td>
+</tr>
+<tr>
 <td align="center">live</td>
 <td align="right">فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده)</td>
 <td align="center">boolean</td>
@@ -107,6 +113,12 @@ curl -X POST \
                            &quot;delay&quot;: 5,
                            &quot;media&quot;: &quot;sms&quot;
                            }</td>
+</tr>
+<tr>
+<td align="center">clientId</td>
+<td align="right">شناسه‌ای که کلاینت برای رصد پیام تعیین می‌کند</td>
+<td align="center">string</td>
+<td align="right">gybpq0458</td>
 </tr>
 <tr>
 <td align="center">notification</td>
@@ -146,7 +158,6 @@ curl -X POST \
 > `نکته :` نماد <font color="red">*</font> در جدول پارامترها به معنی **الزامی** بودن پارامتر است و بدون آن‌ درخواست شما صورت نمی‌گیرد. (برای پیام عمومی در قسمت `user` استریسک (*\) بگذارید.)
 
 > `نکته :` در پارامترهای اعلان، پارامتر `options` یا همان رفتار اکشن (فقط در آی‌او‌اس) می‌توانید عدد ۱ برای اکشن [Authentication Required (اکشن در صورت قفل نبودن دستگاه اجرا می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionauthenticationrequired?language=objc)،‌ ۲ برای اکشن [Destructive (اکشن تسک مخرب انجام می‌دهد)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptiondestructive?language=objc)، ۴ برای اکشن [Foreground (اکشن موجب باز شدن اپ در فورگراند می‌شود)](https://developer.apple.com/documentation/usernotifications/unnotificationactionoptions/unnotificationactionoptionforeground?language=objc) و جمع این اعداد را برای ترکیب آن‌ها با هم قرار دهید.
-
 
 > `نکته :` برای ارسال پیام به چند کاربر با متد `toUsers` می‌توانید از دو روش استفاده کنید. روش اول قرار دادن آرایه‌ای از شناسه‌های کاربری در فیلد `users` (نه user) و روش دوم ایجاد کردن payloadهای مورد نظر به ازای هر کاربر و ارسال همه آن‌ها می‌باشد. به نمونه زیر توجه فرمایید:
 
@@ -313,6 +324,12 @@ curl -X POST \
 <tr>
 <td align="center">live</td>
 <td align="right">فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده)</td>
+<td align="center">boolean</td>
+<td align="right">false</td>
+</tr>
+<tr>
+<td align="center">autoNotify</td>
+<td align="right">نمایش پیام توسط گوگل صورت می‌گیرد</td>
 <td align="center">boolean</td>
 <td align="right">false</td>
 </tr>
