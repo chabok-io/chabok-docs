@@ -39,7 +39,7 @@ permalink: panel/chabok-downgrade-plan-to-starter-guide.html
 
 #### پیام‌رسانی
 
-تمامی متدهایی که به **صندوق پیام چابک** و **کانال** مربوط است مانند `publish`، `PushMessage`، `subscribe` و ... در تعرفه شروع قرار ندارند.
+تمامی متدهایی که به **صندوق پیام چابک** و **کانال** مربوط است مانند `publish` ،`PushMessage` ،`subscribe` و ... در تعرفه شروع قرار ندارند.
 
 #### رصد رفتار
 
@@ -51,4 +51,4 @@ permalink: panel/chabok-downgrade-plan-to-starter-guide.html
 
 #### رویدادهای آنی
 
-تمامی متدهایی که به **رویدادها** مربوط است مانند `publishEvent`، `subscribeEvent` و ... در تعرفه شروع قرار ندارند.
+تمامی متدهایی که به **رویدادها** مربوط است مانند `publishEvent` ،`subscribeEvent` و ... در تعرفه شروع قرار ندارند.
