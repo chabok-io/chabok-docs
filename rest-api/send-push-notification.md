@@ -44,23 +44,11 @@ curl -X POST \
 <td align="right">یک سگمنت-id موجود یا فیلترهای سگمنت جدید</td>
 </tr>
 <tr>
-<td align="center">channel</td>
-<td align="right">کانال ارسال پیام</td>
-<td align="center">string</td>
-<td align="right">default</td>
-</tr>
-<tr>
 <td align="center">content <font color="red">*</font>
  </td>
 <td align="right">متن پیام</td>
 <td align="center">string</td>
 <td align="right">سلام</td>
-</tr>
-<tr>
-<td align="center">data</td>
-<td align="right">دیتای پیام به صورت json</td>
-<td align="center">JSON</td>
-<td align="left" dir="ltr">{&quot;offer&quot;: &quot;10&quot;, &quot;discountCode&quot;: &quot;Newapp10&quot;}</td>
 </tr>
 <tr>
 <td align="center">trackId</td>
@@ -69,14 +57,14 @@ curl -X POST \
 <td align="right">adp-1397-6-11</td>
 </tr>
 <tr>
-<td align="center">inApp</td>
-<td align="right">کاربران در زمان باز بودن برنامه پیام را دریافت می‌کنند (درون‌برنامه‌ای)</td>
-<td align="center">boolean</td>
-<td align="right">true</td>
-</tr>
-<tr>
 <td align="center">live</td>
 <td align="right">فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده)</td>
+<td align="center">boolean</td>
+<td align="right">false</td>
+</tr>
+<tr>
+<td align="center">autoNotify</td>
+<td align="right">نمایش پیام توسط گوگل صورت می‌گیرد</td>
 <td align="center">boolean</td>
 <td align="right">false</td>
 </tr>
@@ -86,18 +74,6 @@ curl -X POST \
 <td align="center">boolean</td>
 <td align="right">true</td>
 </tr>
-<tr>
-<td align="center">alertText</td>
-<td align="right">استفاده از متن جداگانه برای اعلان</td>
-<td align="center">string</td>
-<td align="right">سلام خوبی</td>
-</tr>
-<tr>
-<td align="center">ttl</td>
-<td align="right">زمان انقضای پیام پس از درخواست (ثانیه)</td>
-<td align="center">number</td>
-<td align="right">40</td>
-</tr>
 </tbody></table>
 
 #### پارامترهای اعلان (Notification)
@@ -106,6 +82,7 @@ curl -X POST \
 | :-----------------: |-------------:| :-----:|  ---------:|
 |     title <font color="red">*</font>     | عنوان اعلان | string|  ثبت درخواست |
 |body| متن اعلان|string| سفارش شما ثبت شد
+|groupId| برای گروه‌بندی شخصی اعلان‌ها   |  string | news|
 |icon| تصویر اعلان      |  string | نام تصویر|
 | sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | نام صدا   |
 |clickUrl| لینک هنگام کلیک|string|لینک
@@ -209,61 +186,6 @@ curl -X POST \
 <td align="center">string</td>
 <td align="right">userTest</td>
 </tr>
-<tr>
-<td align="center">channel</td>
-<td align="right">کانال ارسال پیام</td>
-<td align="center">string</td>
-<td align="right">default</td>
-</tr>
-<tr>
-<td align="center">payload <font color="red">*</font>
- </td>
-<td align="right">متن پیام</td>
-<td align="center">string</td>
-<td align="right">سلام</td>
-</tr>
-<tr>
-<td align="center">data</td>
-<td align="right">دیتای پیام به صورت json</td>
-<td align="center">JSON</td>
-<td align="left" dir="ltr">{&quot;offer&quot;: &quot;10&quot;, &quot;discountCode&quot;: &quot;Newapp10&quot;}</td>
-</tr>
-<tr>
-<td align="center">trackId</td>
-<td align="right">تعیین شناسه ردگیری جداگانه برای رصد پیام</td>
-<td align="center">string</td>
-<td align="right">adp-1397-6-11</td>
-</tr>
-<tr>
-<td align="center">inApp</td>
-<td align="right">کاربران در زمان باز بودن برنامه پیام را دریافت می‌کنند (درون‌برنامه‌ای)</td>
-<td align="center">boolean</td>
-<td align="right">true</td>
-</tr>
-<tr>
-<td align="center">live</td>
-<td align="right">فقط کاربرانی که در لحظه ارسال، برنامه را باز دارند دریافت می‌کنند (زنده)</td>
-<td align="center">boolean</td>
-<td align="right">false</td>
-</tr>
-<tr>
-<td align="center">useAsAlert</td>
-<td align="right">استفاده متن پیام به عنوان متن اعلان</td>
-<td align="center">boolean</td>
-<td align="right">true</td>
-</tr>
-<tr>
-<td align="center">alertText</td>
-<td align="right">استفاده از متن جداگانه برای اعلان</td>
-<td align="center">string</td>
-<td align="right">سلام خوبی</td>
-</tr>
-<tr>
-<td align="center">ttl</td>
-<td align="right">زمان انقضای پیام پس از درخواست (ثانیه)</td>
-<td align="center">number</td>
-<td align="right">40</td>
-</tr>
 </tbody></table>
 
 
@@ -273,6 +195,7 @@ curl -X POST \
 | :-----------------: |-------------:| :-----:|  ---------:|
 |    title <font color="red">*</font>     | عنوان اعلان | string|  ثبت درخواست |
 |body| متن اعلان|string| سفارش شما ثبت شد
+|groupId| برای گروه‌بندی شخصی اعلان‌ها   |  string | news|
 |icon| تصویر اعلان      |  string | نام تصویر|
 | sound|صدای اعلان (به فرمت صدا دقت داشته باشید) |   string | نام صدا   |
 |clickUrl| لینک هنگام کلیک|string|لینک
