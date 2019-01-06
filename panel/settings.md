@@ -173,6 +173,10 @@ prev: inbox.html
 <td align="right">نسخه اپ</td>
 </tr>
 <tr>
+<td align="center">uniqueId</td>
+<td align="right">شناسه یکتای دستگاه</td>
+</tr>
+<tr>
 <td align="center">installationId</td>
 <td align="right">شناسه نصب یا دستگاه</td>
 </tr>
