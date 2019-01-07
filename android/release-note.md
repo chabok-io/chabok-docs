@@ -10,6 +10,14 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۲.۱۴.۱ - ۱۳۹۷/۱۰/۱۷](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.1)
+
+### تغییرات
+
+- بهبود تایید نصب
+- حل مشکل `Apache HTTP legacy` برای **API level 28** (**اندروید ۹**)
+- افزودن قابلیت تشخیص **Build** اپلیکیشن (`Debug` یا `Release`)
+
 ##  [نسخه ۲.۱۴.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.0)
 
 ### ارتقا
