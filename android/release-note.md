@@ -16,7 +16,7 @@ prev: troubleshoot.html
 
 - بهبود تایید نصب
 - حل مشکل Apache HTTP legacy برای API level 28 (اندروید ۹)
-- تشخیص نوع Build اپلیکیشن (Debug یا Release)
+- افزودن قابلیت تشخیص Build اپلیکیشن (Debug یا Release)
 
 ##  [نسخه ۲.۱۴.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.0)
 
