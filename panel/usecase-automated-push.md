@@ -11,9 +11,6 @@ permalink: panel/usecase-automated-push.html
 
 <Br>
 
- ![عکس مربوطه](http://uupload.ir/files/uy0r_autopush-example.jpg)
-
-
 ### کارهایی که با پوش خودکار می‌توانید انجام دهید
 
 با قابلیت پوش‌ خودکار کارهای بسیار گسترده‌ای می‌توانید انجام دهید، مانند:
