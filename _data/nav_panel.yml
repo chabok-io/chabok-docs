@@ -2,10 +2,12 @@
   items:
     - id: dashboard
       title: داشبورد
+    - id: tracker
+      title: ترکر
+    - id: users
+      title: کاربران
     - id: send
       title: ارسال
-    - id: subscribers
-      title: مشترکین
     - id: inbox
       title: پیام‌ها
     - id: settings
