@@ -3,7 +3,7 @@ id: dashboard
 title: داشبورد
 layout: panel
 permalink: panel/dashboard.html
-next: send.html
+next: tracker.html
 ---
 
 پنل **زنده** چابک با داشتن یک رابط کاربری ساده و **هوشمند** به همه اعضای تیم شما امکان می‌دهد تا به راحتی از امکانات پلتفرم چابک برای **ارتقای تعامل با کاربرانتان** بهره ببرید.
