@@ -3,7 +3,7 @@ id: inbox
 title: پیام‌ها
 layout: panel
 permalink: panel/inbox.html
-prev: subscribers.html
+prev: send.html
 next: settings.html
 ---
 
