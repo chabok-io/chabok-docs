@@ -80,7 +80,7 @@ next: tracker.html
 
 با چابک شما می‌توانید کاربرانتان را در گروه‌ها و دسته‌های مختلفی قرار دهید. این دسته‌بندی‌ها **سگمنت**، **کانال** و **تگ** هستند. 
 
-![عکس مربوطه](http://uupload.ir/files/azx0_group.png)
+![عکس مربوطه](http://uupload.ir/files/d3p_azx0_group.png)
 <Br>
 
 ##### سگمنت
@@ -131,4 +131,4 @@ next: tracker.html
 
 در صورتی که شما از **خدمات مکانی** چابک استفاده کنید، در این تب می‌توانید **موقعیت کاربران** خود را در نقشه مشاهده کنید. با این قابلیت شما از پراکندگی کاربران خود را در مناطق مختلف شهری آگاه می‌شوید.
 
-![عکس مربوطه](http://uupload.ir/files/h9ov_location-distribution.png)
+![عکس مربوطه](http://uupload.ir/files/k12r_h9ov_location-distribution.png)
