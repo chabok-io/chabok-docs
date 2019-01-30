@@ -4,6 +4,7 @@ title: تنظیمات
 layout: panel
 permalink: panel/settings.html
 prev: inbox.html
+next: account-management.html
 ---
 
 در صفحه تنظیمات شما می‌توانید **راه‌اندازی پوش‌نوتیفیکیشن** را انجام دهید و همینطور از امکانات دیگری استفاده کنید.
