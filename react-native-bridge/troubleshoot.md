@@ -7,7 +7,7 @@ prev: features.html
 next: release-note.html
 ---
 
-در این صفحه به عیب‌یابی مشکلات متداول توسعه‌دهندگان در پیاده‌سازی چابک و ارائه راه‌‌حل‌های مربوط به آن می‌پردازیم. برخی از این مشکلات عبارتند از عدم [دریافت پوش‌نوتیفیکیشن](/react-native-bridge/troubleshoot.html#۱--پوش-نمیگیرم) و [نمایش اعلان](/react-native-bridge/troubleshoot.html#۲--اعلانها-نمایش-داده-نمیشوند).
+در این صفحه به عیب‌یابی مشکلات متداول توسعه‌دهندگان در پیاده‌سازی چابک و ارائه راه‌‌حل‌های مربوط به آن می‌پردازیم. برخی از این مشکلات عبارتند از عدم [دریافت پوش‌نوتیفیکیشن](/react-native-bridge/troubleshoot.html#پوش-نمیگیرم) و [نمایش اعلان](/react-native-bridge/troubleshoot.html#اعلانها-نمایش-داده-نمیشوند).
 
 <Br>
 
@@ -36,8 +36,7 @@ next: release-note.html
 در صورت مشاهده دستگاه کاربر در **بخش مشترکین پنل**، از عضویت کاربر در کانالی که با آن پیام خود را ارسال می‌کنید، اطمینان یابید. برای اینکه کانال‌هایی که کاربرتان در آن‌ها عضو هستند را مشاهده می‌کنید، می‌توانید روی آیکون ![کانال‌ها](http://uupload.ir/files/24jn_channels.png) در کارت هر دستگاه در بخش مشترکین پنل کلیک کنید. علاوه بر آن شما می‌توانید از اتصال یا عدم اتصال دستگاه از مشاهده **نوار سبز رنگ** در بالای کارت مطلع شوید.
 
 
-![کانال‌ها](http://uupload.ir/files/avly_test.png
-)
+![کانال‌ها](http://uupload.ir/files/avly_test.png)
 
 ##### ۳- اطلاعات حساب خود را با دقت وارد کنید (خطای internal server error)
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span><span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
@@ -109,11 +108,11 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span><span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
 
 
-در پنل حساب کاربری خود در بخش پیام‌ها، **دایره زرد رنگ** به معنی **در صف بود پیام** شما می‌باشد و زمانی که کاربر به چابک متصل شود (اپ را باز کند) پیام را دریافت می‌کند. در بخش نوتیفیکیشن در صورت ارسال موفق به سرور هر پلتفرم، تیک سبز رنگ به همراه لوگوی پلتفرم نشان داده می‌شود. همچنین خطاهای **GONE** به معنی حذف اپلیکیشن شما توسط کاربر و **DeviceTokenNotForTopic** به معنی این است که اطلاعات پلتفرم آی‌او‌اس که در پنل ما قرار داده‌اید با اپلیکیشنی که روی دستگاه نصب کرده‌اید همخوانی ندارد. این نمادها را می‌توانید به صورت کامل در [مستندات پنل بخش پیام‌ها](https://doc.chabokpush.com/panel/inbox.html#نمادهای-وضعیت-پیام) مشاهده کنید.
+در پنل حساب کاربری خود در بخش پیام‌ها، **دایره زرد رنگ** به معنی **در صف بود پیام** شما می‌باشد و زمانی که کاربر به چابک متصل شود (اپ را باز کند) پیام را دریافت می‌کند. در بخش نوتیفیکیشن در صورت ارسال موفق به سرور هر پلتفرم، تیک سبز رنگ به همراه لوگوی پلتفرم نشان داده می‌شود. همچنین خطاهای **GONE** به معنی حذف اپلیکیشن شما توسط کاربر، **DeviceTokenNotForTopic** در آی‌اواس و **SENDER_ID_MISMATCH** در اندروید  به معنی این است که اطلاعات پلتفرم که در پنل ما قرار داده‌اید با اپلیکیشنی که روی دستگاه نصب کرده‌اید تطابق ندارد. نمادها و خطاها را می‌توانید به صورت کامل در مستندات پنل [صفحه پیام‌ها](https://doc.chabokpush.com/panel/inbox.html#نمادها) مشاهده کنید.
 
 <Br>
 
-### اعلان‌ها نمایش داده نمی‌شوند
+## اعلان‌ها نمایش داده نمی‌شوند
 ---
 
 یکی دیگر از مشکلات متداول عدم نمایش اعلان (نوتیفیکیشن) در دستگاه مخاطب است. در این قسمت به دلایل احتمالی این مشکل اشاره‌ خواهیم کرد.
@@ -183,6 +182,6 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 <Br>
 
 ## موارد بالا را بررسی کردم اما همچنان مشکلم برطرف نشده
+---
 
 در صورتی هم که موارد این صفحه را بررسی کردید و همچنان مشکلتان **برطرف نشده بود**، می‌توانید از **پشتیبانی چابک** در [گیت‌هاب](https://github.com/chabokpush/chabok-client-rn/issues) استفاده کنید. در آن جا `issue`های قبلی را مطالعه کنید و اگر مشکل شما بین آن‌ها نبود، می‌توانید یک `issue` جدید برای بررسی تیم فنی چابک باز نمایید.
-
