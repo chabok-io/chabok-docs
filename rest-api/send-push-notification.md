@@ -12,6 +12,8 @@ prev: send-chabok-message.html
 
 در این متد (**notifyUsers**) می‌توانید برای **گروهی از کاربران (سگمنت)** یا **همه کاربران** پوش‌نوتیفیکیشنی را از طریق API ارسال کنید. 
 
+> `نکته:` توجه داشته باشید که در متد `notifyUsers` می‌توانید از payload متدهای `toUsers` و `byQuery` هم استفاده کنید.
+
 #### ساختار درخواست
 
 لینک پایه: `https://sandbox.push.adpdigital.com/api/push/notifyUsers`
@@ -113,6 +115,7 @@ curl -X POST \
   "count": number
 }
 ```
+
 <br><br>
 
 ### مثال از متد notifyUsers
@@ -123,7 +126,7 @@ curl -X POST \
 
 ```bash
 curl -X POST \
-"https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
+"https://sandbox.push.adpdigital.com/api/push/notifyUsers?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
 -d "{ \"target\": \"{}\", \"content\": \"نسخه جدید اپلیکیشن رسید!\"}"
