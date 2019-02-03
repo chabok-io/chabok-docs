@@ -6,7 +6,10 @@ permalink: panel/account-management.html
 prev: settings.html
 ---
 
+
 در بخش مدیریت حساب می‌توانید **نوع کاربر، حساب و تعرفه** خودتان را مشاهده کنید. علاوه بر آن می‌توانید اعضای تیم خود را [مدیریت کنید](/panel/account-management.html#مدیریت-تیم)، اطلاعات حسابتان را [ببینید](/panel/account-management.html#اطلاعات-حساب) و پسورد آن را [تغییر دهید](/panel/account-management.html#تغییر-پسورد).
+
+<Br>
 
 ![عکس مربوطه](http://uupload.ir/files/4cju_account-management.png)
 
@@ -82,4 +85,6 @@ prev: settings.html
 
 ### تغییر پسورد
 
-در این قسمت می‌توانید **پسورد حساب پنل** خود را تغییر دهید. 
+در این قسمت می‌توانید **پسورد حساب پنل** خود را تغییر دهید. چابک توصیه می‌کند در صورت تغییری در تیم خود برای حفظ امنیت این کار را حتما انجام دهید.
+
+![عکس مربوطه](http://uupload.ir/files/oorl_new-password.png)
