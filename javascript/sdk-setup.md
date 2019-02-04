@@ -69,17 +69,17 @@ yarn add chabokpush
 <thead>
 <tr>
 <th style="text-align: center;">مرورگر</th>
-<th style="text-align: center;">وب‌پوش</th>
+<th style="text-align: center;">وب&zwnj;پوش</th>
 <th style="text-align: center;">پیام چابک</th>
 <th style="text-align: center;">توضیحات</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">**Chrome**</td>
+<td align="center"><strong>Chrome</strong></td>
 <td align="center">✓ v42 +</td>
 <td align="center">✓</td>
-<td align="right">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
+<td align="right">در نسخه&zwnj;های 51 به پایین <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px; width: fit-content;">gcm_sender_id</span>را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
 </tr>
 <tr>
 <td align="center">**Edge**</td>
@@ -95,9 +95,9 @@ yarn add chabokpush
 </tr>
 <tr>
 <td align="center">**Opera**</td>
-<td align="center">✓ v39+  *</td>
+<td align="center">✓ v39+ *</td>
 <td align="center">✓</td>
-<td align="right">*وب‌پوش را فقط روی اندروید پشتیبانی می‌کند و در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
+<td align="right">*وب&zwnj;پوش را فقط روی اندروید پشتیبانی می&zwnj;کند و در نسخه&zwnj;های 51 به پایین `gcm_sender_id` را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
 </tr>
 <tr>
 <td align="center">**Safari**</td>
@@ -109,7 +109,7 @@ yarn add chabokpush
 <td align="center">**Samsung Internet Browser**</td>
 <td align="center">✓ v4.0.10-53+</td>
 <td align="center">✓</td>
-<td align="right">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
+<td align="right">در نسخه&zwnj;های 51 به پایین `gcm_sender_id` را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
 </tr>
 </tbody>
 </table>
