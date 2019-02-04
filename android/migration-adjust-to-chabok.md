@@ -163,13 +163,14 @@ if (userId != null && !userId.isEmpty()) {
   
 برای رصد کمپین‌ها، باید در ابتدا با **پر کردن فرم شمارنده‌ی جدید**، آن را برای چابک تعریف کنید. این فرم در تنظیمات پنل> بخش **شمارنده‌ی نصب** قرار دارد. به عنوان مثال می‌خواهید شمارنده‌ی کمپینی را به مناسبت **یک جشنواره** برای نصب اپلیکیشنتان از طریق **کافه بازار** تعریف کنید:
 
- ![عکس مربوطه](https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/panel/Create-tracker.png)
+![عکس مربوطه](http://uupload.ir/files/3lxm_newtracker1.png)
+![عکس مربوطه](http://uupload.ir/files/zav3_newtracker2.png)
 
 <Br>
 
 شما در انتهای همین صفحه می‌توانید **تعداد کلیک، نصب و نرخ تبدیل** هر شمارنده را مشاهده کنید.
 
- ![عکس مربوطه](http://uupload.ir/files/p51o_trackerlist.png)
+ ![عکس مربوطه](http://uupload.ir/files/m2p_tracker-list.png)
 
 <Br>
   
