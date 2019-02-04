@@ -61,6 +61,78 @@ yarn add chabokpush
 
 > `نکته`: اگر اپلیکیشن شما PWA بوده و در دستگاه add to homescreen شده باشد، در اندروید پوش دریافت می‌کنید اما در آی‌اواس نه.
 
+#### پشتیبانی وب‌پوش روی مرورگرها
+
+جدول زیر پشتیبانی **وب‌پوش** و پیام چابک را روی نسخه‌های مختلف مرورگرهای مختلف نشان می‌دهد:
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">مرورگر</th>
+<th style="text-align: center;">وب‌پوش</th>
+<th style="text-align: center;">پیام چابک</th>
+<th style="text-align: center;">توضیحات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">**Chrome**</td>
+<td align="center">✓ v42 +</td>
+<td align="center">✓</td>
+<td align="right">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
+</tr>
+<tr>
+<td align="center">**Edge**</td>
+<td align="center">✓ v17+</td>
+<td align="center">✓</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">**Firefox**</td>
+<td align="center">✓ v44+</td>
+<td align="center">✓</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">**Opera**</td>
+<td align="center">✓ v39+  *</td>
+<td align="center">✓</td>
+<td align="right">*وب‌پوش را فقط روی اندروید پشتیبانی می‌کند و در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
+</tr>
+<tr>
+<td align="center">**Safari**</td>
+<td align="center">✗</td>
+<td align="center">✓</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">**Samsung Internet Browser**</td>
+<td align="center">✓ v4.0.10-53+</td>
+<td align="center">✓</td>
+<td align="right">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
+</tr>
+</tbody>
+</table>
+
+برای پشتیبانی وب‌پوش روی مرورگرهای کروم، اپرا و سامسونگ باید `gcm_sender_id` را به فایل `Manifest.js` اضافه کنید. در صورت داشتن `gcm_sender_id` از قبل (استفاده از پوش اندروید) می‌توانید آن را از بخش تنظیمات پنل از کارت اندروید کپی کنید. در غیر این صورت می‌توانید با مطالعه صفحه [پیش‌نیازهای اندروید](https://doc.chabokpush.com/android/required.html#دریافت-کلیدهای-گوگل) آن را ایجاد کنید.
+
+```javascript
+{
+  .....
+    "gcm_sender_id": "GCM_SENDER_ID",
+  .....
+}
+```
+سپس فایل `Manifest.js` را به `index.html` اصلی پروژه خود مانند زیر اضافه کنید:
+
+```html
+<head>
+ ...
+  <link rel="manifest" href="manifest.json">
+...
+</head>
+```
+
 #### مدل نسخه‌گذاری در چابک (Semantic Versioning)
 
 چابک از مدل نسخه‌گذاری `MAJOR`.`MINOR`.`PATCH` استفاده می‌کند. همه تغییرات نسخه‌ها بلافاصله پس از انتشارشان به صورت موردی در صفحه **لیست  تغییرات** برای اطلاع شما اضافه می‌شوند. برای همین توصیه می‌کنیم [این صفحه](/javascript/release-note.html) را حتما مطالعه نمایید. این موارد برای هر نسخه در دو بخش [**ارتقا** (در صورت وجود ارتقا)](/javascript/release-note.html#ارتقا) و [**تغییرات**](/javascript/release-note.html#تغییرات) برای شما نمایش داده شده‌ است.
