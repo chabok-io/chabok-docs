@@ -10,6 +10,19 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۱.۲.۰ - ۱۳۹۷/۱۱/۱۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.2.0)
+
+### ارتقا
+
+* هدایت کلیک نوتیفیکیشن به `/` به عنوان مقصد پیش‌فرض
+
+*  بهبود مدیریت ثبت توکن
+
+* افزودن متد `tokenStatus`
+
+* حل مشکل متدهای `subscribe`، `unsubscribe` و `publish` زمانی کاربر ثبت نشده بود 
+
+
 ## [نسخه ۱.۱.۰ - ۱۳۹۷/۱۰/۰۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.1.0)
 
 ### ارتقا 
