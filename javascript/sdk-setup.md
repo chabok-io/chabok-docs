@@ -61,6 +61,78 @@ yarn add chabokpush
 
 > `نکته`: اگر اپلیکیشن شما PWA بوده و در دستگاه add to homescreen شده باشد، در اندروید پوش دریافت می‌کنید اما در آی‌اواس نه.
 
+#### پشتیبانی وب‌پوش روی مرورگرها
+
+جدول زیر پشتیبانی **وب‌پوش** و پیام چابک را روی نسخه‌های مختلف مرورگرها نشان می‌دهد:
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">مرورگر</th>
+<th style="text-align: center;">وب&zwnj;پوش</th>
+<th style="text-align: center;">پیام چابک</th>
+<th style="text-align: center;">توضیحات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Chrome</strong></td>
+<td align="center">✓ v42 +</td>
+<td align="center">✓</td>
+<td align="right">در نسخه&zwnj;های 51 به پایین <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">gcm_sender_id</span> را باید حتما به فایل <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">Manifest.js</span> اضافه کنید.</td>
+</tr>
+<tr>
+  <td align="center"><strong>Edge</strong></td>
+<td align="center">✓ v17+</td>
+<td align="center">✓</td>
+<td align="center">-</td>
+</tr>
+<tr>
+  <td align="center"><strong>Firefox</strong></td>
+<td align="center">✓ v44+</td>
+<td align="center">✓</td>
+<td align="center">-</td>
+</tr>
+<tr>
+  <td align="center"><strong>Opera</strong></td>
+<td align="center">✓ v39+ *</td>
+<td align="center">✓</td>
+<td align="right">*وب&zwnj;پوش را فقط روی اندروید پشتیبانی می&zwnj;کند و در نسخه&zwnj;های 51 به پایین <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">gcm_sender_id</span> را باید حتما به فایل <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">Manifest.js</span> اضافه کنید.</td>
+</tr>
+<tr>
+  <td align="center"><strong>Safari</strong></td>
+<td align="center">✗</td>
+<td align="center">✓</td>
+<td align="center">-</td>
+</tr>
+<tr>
+  <td align="center"><strong>Samsung Internet Browser</strong></td>
+<td align="center">✓ v4.0.10-53+</td>
+<td align="center">✓</td>
+<td align="right"><span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">gcm_sender_id</span> را باید حتما به فایل <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">Manifest.js</span> اضافه کنید.</td>
+</tr>
+</tbody>
+</table>
+
+برای پشتیبانی وب‌پوش روی مرورگرهای کروم، اپرا و سامسونگ باید `gcm_sender_id` را به فایل `Manifest.js` اضافه کنید. در صورت داشتن `gcm_sender_id` از قبل (استفاده از پوش اندروید) می‌توانید آن را از بخش تنظیمات پنل از کارت اندروید کپی کنید. در غیر این صورت می‌توانید با مطالعه صفحه [پیش‌نیازهای اندروید](https://doc.chabokpush.com/android/required.html#دریافت-کلیدهای-گوگل) آن را ایجاد کنید.
+
+```javascript
+{
+  .....
+    "gcm_sender_id": "GCM_SENDER_ID",
+  .....
+}
+```
+سپس فایل `Manifest.js` را به `index.html` اصلی پروژه خود مانند زیر اضافه کنید:
+
+```html
+<head>
+ ...
+  <link rel="manifest" href="manifest.json">
+...
+</head>
+```
+
 #### مدل نسخه‌گذاری در چابک (Semantic Versioning)
 
 چابک از مدل نسخه‌گذاری `MAJOR`.`MINOR`.`PATCH` استفاده می‌کند. همه تغییرات نسخه‌ها بلافاصله پس از انتشارشان به صورت موردی در صفحه **لیست  تغییرات** برای اطلاع شما اضافه می‌شوند. برای همین توصیه می‌کنیم [این صفحه](/javascript/release-note.html) را حتما مطالعه نمایید. این موارد برای هر نسخه در دو بخش [**ارتقا** (در صورت وجود ارتقا)](/javascript/release-note.html#ارتقا) و [**تغییرات**](/javascript/release-note.html#تغییرات) برای شما نمایش داده شده‌ است.
