@@ -63,18 +63,58 @@ yarn add chabokpush
 
 #### پشتیبانی وب‌پوش روی مرورگرها
 
-جدول زیر پشتیبانی **وب‌پوش** و پیام چابک را روی مرورگرهای مختلف نشان می‌دهد:
+جدول زیر پشتیبانی **وب‌پوش** و پیام چابک را روی نسخه‌های مختلف مرورگرهای مختلف نشان می‌دهد:
 
-| توضیحات | پیام چابک | وب‌پوش | مرورگر |
-| --- | --- | --- | --- |
-| در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل `Manifest.js` اضافه کنید.  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✓ | ✓ v42 + | **Chrome** |
-|  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✓ | ✓ v17+ (April 2018) | **Edge** |
-|  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✓ | ✓ v44+ | **Firefox** |
-| *وب‌پوش را فقط روی اندروید پشتیبانی می‌کند و در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل `Manifest.js` اضافه کنید. | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✓ | ✓ v39+  * | **Opera** |
-|  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✓ | ✗ | **Safari** |
-| در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل `Manifest.js` اضافه کنید.  |  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✓ | ✓ v4.0.10-53+ | **Samsung Internet Browser** |
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">مرورگر</th>
+<th style="text-align: center;">وب‌پوش</th>
+<th style="text-align: center;">پیام چابک</th>
+<th style="text-align: center;">توضیحات</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">**Chrome**</td>
+<td align="center">✓ v42 +</td>
+<td align="center">✓</td>
+<td align="right">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
+</tr>
+<tr>
+<td align="center">**Edge**</td>
+<td align="center">✓ v17+</td>
+<td align="center">✓</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">**Firefox**</td>
+<td align="center">✓ v44+</td>
+<td align="center">✓</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">**Opera**</td>
+<td align="center">✓ v39+  *</td>
+<td align="center">✓</td>
+<td align="right">*وب‌پوش را فقط روی اندروید پشتیبانی می‌کند و در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
+</tr>
+<tr>
+<td align="center">**Safari**</td>
+<td align="center">✗</td>
+<td align="center">✓</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">**Samsung Internet Browser**</td>
+<td align="center">✓ v4.0.10-53+</td>
+<td align="center">✓</td>
+<td align="right">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
+</tr>
+</tbody>
+</table>
 
-برای پشتیبانی وب‌پوش روی مرورگرهای کروم، اپرا و سامسونگ باید `gcm_sender_id` را به فایل `Manifest.js` اضافه کنید. در صورت داشتن `gcm_sender_id` (استفاده از پوش اندروید) از قبل می‌توانید آن را از بخش تنظیمات پنل کپی کنید. در صورتی هم که آن را نداشتید می‌توانید با مطالعه صفحه [پیش‌نیازهای اندروید](https://doc.chabokpush.com/android/required.html#دریافت-کلیدهای-گوگل) ایجاد کنید.
+برای پشتیبانی وب‌پوش روی مرورگرهای کروم، اپرا و سامسونگ باید `gcm_sender_id` را به فایل `Manifest.js` اضافه کنید. در صورت داشتن `gcm_sender_id` از قبل (استفاده از پوش اندروید) می‌توانید آن را از بخش تنظیمات پنل از کارت اندروید کپی کنید. در غیر این صورت می‌توانید با مطالعه صفحه [پیش‌نیازهای اندروید](https://doc.chabokpush.com/android/required.html#دریافت-کلیدهای-گوگل) آن را ایجاد کنید.
 
 ```javascript
 {
