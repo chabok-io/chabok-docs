@@ -79,37 +79,37 @@ yarn add chabokpush
 <td align="center"><strong>Chrome</strong></td>
 <td align="center">✓ v42 +</td>
 <td align="center">✓</td>
-<td align="right">در نسخه&zwnj;های 51 به پایین <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px; width: fit-content;">gcm_sender_id</span>را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
+<td align="right">در نسخه&zwnj;های 51 به پایین <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">gcm_sender_id</span>را باید حتما به فایل <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">Manifest.js</span> اضافه کنید.</td>
 </tr>
 <tr>
-<td align="center">**Edge**</td>
+  <td align="center"><strong>Edge</strong></td>
 <td align="center">✓ v17+</td>
 <td align="center">✓</td>
 <td align="center">-</td>
 </tr>
 <tr>
-<td align="center">**Firefox**</td>
+  <td align="center"><strong>Firefox</strong></td>
 <td align="center">✓ v44+</td>
 <td align="center">✓</td>
 <td align="center">-</td>
 </tr>
 <tr>
-<td align="center">**Opera**</td>
+  <td align="center"><strong>Opera</strong></td>
 <td align="center">✓ v39+ *</td>
 <td align="center">✓</td>
-<td align="right">*وب&zwnj;پوش را فقط روی اندروید پشتیبانی می&zwnj;کند و در نسخه&zwnj;های 51 به پایین `gcm_sender_id` را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
+<td align="right">*وب&zwnj;پوش را فقط روی اندروید پشتیبانی می&zwnj;کند و در نسخه&zwnj;های 51 به پایین <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">gcm_sender_id</span> را باید حتما به فایل <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">Manifest.js</span> اضافه کنید.</td>
 </tr>
 <tr>
-<td align="center">**Safari**</td>
+  <td align="center"><strong>Safari</strong></td>
 <td align="center">✗</td>
 <td align="center">✓</td>
 <td align="center">-</td>
 </tr>
 <tr>
-<td align="center">**Samsung Internet Browser**</td>
+  <td align="center"><strong>Samsung Internet Browser</strong></td>
 <td align="center">✓ v4.0.10-53+</td>
 <td align="center">✓</td>
-<td align="right">در نسخه&zwnj;های 51 به پایین `gcm_sender_id` را باید حتما به فایل `Manifest.js` اضافه کنید.</td>
+<td align="right"><span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">gcm_sender_id</span> را باید حتما به فایل <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">Manifest.js</span> اضافه کنید.</td>
 </tr>
 </tbody>
 </table>
