@@ -71,7 +71,7 @@ yarn add chabokpush
 
 #### پشتیبانی وب‌پوش روی مرورگرها
 
-جدول زیر پشتیبانی **وب‌پوش** و پیام چابک را روی نسخه‌های مختلف مرورگرها نشان می‌دهد:
+جدول زیر پشتیبانی **وب‌پوش** و پیام چابک را روی مرورگرهای مختلف نشان می‌دهد:
 
 <table>
 <thead>
@@ -106,7 +106,7 @@ yarn add chabokpush
   <td align="center"><strong>Opera</strong></td>
 <td align="center">✓ v39+ *</td>
 <td align="center">✓</td>
-<td align="right"><span markdown="1">* وب‌پوش را فقط روی اندروید پشتیبانی می‌کند (و نه روی دسکتاپ) <br>  `gcm_sender_id`  را باید حتما به فایل  `manifest.json`  اضافه کنید.</br></span></td>
+<td align="right"><span markdown="1">* وب‌پوش را فقط روی اندروید پشتیبانی می‌کند (و نه روی دسکتاپ) <br>  `gcm_sender_id`  را باید حتما به فایل  `manifest.json`  اضافه کنید.</span></td>
 </tr>
 <tr>
   <td align="center"><strong>Safari</strong></td>
