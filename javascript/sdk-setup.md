@@ -87,8 +87,7 @@ yarn add chabokpush
 <td align="center"><strong>Chrome</strong></td>
 <td align="center">✓ v42 +</td>
 <td align="center">✓</td>
-<td align="right">
-<div markdown="1">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</div>
+<td align="right"><span markdown="1">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</span>
 </td>
 </tr>
 <tr>
