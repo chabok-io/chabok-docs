@@ -79,7 +79,10 @@ yarn add chabokpush
 <td align="center"><strong>Chrome</strong></td>
 <td align="center">✓ v42 +</td>
 <td align="center">✓</td>
-<td align="right">در نسخه&zwnj;های 51 به پایین <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">gcm_sender_id</span> را باید حتما به فایل <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">Manifest.js</span> اضافه کنید.</td>
+<td align="right">
+ <div markdown="1">جدول زیر پشتیبانی **وب‌پوش** و پیام چابک را روی نسخه‌های مختلف مرورگرها نشان می‌دهد:
+</div>
+ </td>
 </tr>
 <tr>
   <td align="center"><strong>Edge</strong></td>
