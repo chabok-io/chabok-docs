@@ -39,6 +39,14 @@ yarn add chabokpush
 
 > `نکته`: دقت داشته باشید که **به هیچ عنوان** برای دریافت کتابخانه چابک از لینک بالا **بدون مشخص کردن نسخه آن** استفاده **نکنید** زیرا آن لینک به طور خودکار آخرین نسخه کتابخانه را در اختیارتان می‌گذارد که در صورت نخواندن تغییرات لیست کتابخانه و هماهنگ شدن با آن، **با مشکل مواجه خواهید شد**.
 
+#### مدل نسخه‌گذاری در چابک (Semantic Versioning)
+
+چابک از مدل نسخه‌گذاری `MAJOR`.`MINOR`.`PATCH` استفاده می‌کند. همه تغییرات نسخه‌ها بلافاصله پس از انتشارشان به صورت موردی در صفحه **لیست  تغییرات** برای اطلاع شما اضافه می‌شوند. برای همین توصیه می‌کنیم [این صفحه](/javascript/release-note.html) را حتما مطالعه نمایید. این موارد برای هر نسخه در دو بخش [**ارتقا** (در صورت وجود ارتقا)](/javascript/release-note.html#ارتقا) و [**تغییرات**](/javascript/release-note.html#تغییرات) برای شما نمایش داده شده‌ است.
+
+- `Patch:` تغییرات در این سطح شامل **Bug Fix** و **قابلیت‌های بسیار کوچک** می‌باشد. به روز رسانی به این نسخه‌ها نیاز به تغییری در کد ندارد. برای آگاهی از آن‌ها، باید بخش [**تغییرات**](/javascript/release-note.html#تغییرات) را مطالعه کنید. به عنوان مثال به‌ روز رسانی کتابخانه چابک از نسخه `2.13.0` به نسخه `2.13.2` مربوط به این سطح می‌شود.
+- `Minor:` تغییرات در این سطح شامل **قابلیت‌های بزرگتر** و **تغییر در کارکرد (Functionality) کتابخانه** می‌شود. در به روز رسانی به این نسخه‌ها حتما باید بخش [**ارتقا**](/javascript/release-note.html#ارتقا) و [تغییرات](/javascript/release-note.html#تغییرات) صفحه لیست تغییرات را با دقت مطالعه کنید. در صورت بروز هر گونه مشکل در نتیجه رعایت نکردن نکات بخش **ارتقا** و **تغییرات** در به روز رسانی به نسخه‌های **Minor**، تیم چابک مسئولیتی را نمی‌پذیرد. توصیه می‌کنیم که هر سه تا شش ماه اقدام به بررسی نسخه‌های **Minor** نمایید. به عنوان مثال به‌ روز رسانی کتابخانه چابک از نسخه `2.12.1` به نسخه `2.13.2` مربوط به این سطح می‌شود.
+- `Major:` این سطح از تغییرات مخصوص **بازنویسی** و یا **تغییرات اساسی** در کتابخانه چابک است. در به روز رسانی به این نسخه‌ها حتما باید بخش [**ارتقا**](/javascript/release-note.html#ارتقا) و [**تغییرات**](/javascript/release-note.html#تغییرات) تغییرات صفحه لیست تغییرات را با دقت مطالعه کنید. در صورت بروز هر گونه مشکل در نتیجه رعایت نکردن نکات بخش **ارتقا** و **تغییرات** در به روز رسانی به نسخه‌های **Major**، تیم چابک مسئولیتی را نمی‌پذیرد. بنابراین توصیه می‌کنیم که هر یک سال اقدام به بررسی نسخه‌های **Major** نمایید. به عنوان مثال به‌روزرسانی کتابخانه چابک از نسخه `1.0.1` به نسخه `2.13.2` مربوط به این سطح می‌شود.
+
 #### افزودن Service Worker
 
  برای **ارسال پوش‌نوتیفیکشن در پس‌زمینه (‌Background)** باید فایل `ChabokSDKWorker.js` را از [این لینک](https://raw.githubusercontent.com/chabokpush/chabok-client-js/master/dist/ChabokSDKWorker.js) دریافت نموده و در روت پروژه قرار دهید.
@@ -57,13 +65,13 @@ yarn add chabokpush
     ])
 ```
 
-> `نکته` :‌ توجه داشته باشید که service worker فقط روی دامنه‌های **https** کار می‌کند.
+> `نکته` :‌ توجه داشته باشید که **service worker** فقط روی دامنه‌های **https** کار می‌کند.
 
-> `نکته`: اگر اپلیکیشن شما PWA بوده و در دستگاه add to homescreen شده باشد، در اندروید پوش دریافت می‌کنید اما در آی‌اواس نه.
+> `نکته`: اگر اپلیکیشن شما **PWA** بوده و در دستگاه **add to homescreen** شده باشد، روی اندروید پوش دریافت می‌کنید اما آی‌اواس این قابلیت را ندارد.
 
 #### پشتیبانی وب‌پوش روی مرورگرها
 
-جدول زیر پشتیبانی **وب‌پوش** و پیام چابک را روی نسخه‌های مختلف مرورگرها نشان می‌دهد:
+جدول زیر پشتیبانی **وب‌پوش** و پیام چابک را روی مرورگرهای مختلف نشان می‌دهد:
 
 <table>
 <thead>
@@ -79,7 +87,8 @@ yarn add chabokpush
 <td align="center"><strong>Chrome</strong></td>
 <td align="center">✓ v42 +</td>
 <td align="center">✓</td>
-<td align="right">در نسخه&zwnj;های 51 به پایین <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">gcm_sender_id</span> را باید حتما به فایل <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">Manifest.js</span> اضافه کنید.</td>
+<td markdown="1" align="right"><span markdown="1">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</span>
+</td>
 </tr>
 <tr>
   <td align="center"><strong>Edge</strong></td>
@@ -97,7 +106,7 @@ yarn add chabokpush
   <td align="center"><strong>Opera</strong></td>
 <td align="center">✓ v39+ *</td>
 <td align="center">✓</td>
-<td align="right">*وب&zwnj;پوش را فقط روی اندروید پشتیبانی می&zwnj;کند و در نسخه&zwnj;های 51 به پایین <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">gcm_sender_id</span> را باید حتما به فایل <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">Manifest.js</span> اضافه کنید.</td>
+<td align="right"><span markdown="1">* وب‌پوش را فقط روی اندروید پشتیبانی می‌کند (و نه روی دسکتاپ) <br>  `gcm_sender_id`  را باید حتما به فایل  `manifest.json`  اضافه کنید.</span></td>
 </tr>
 <tr>
   <td align="center"><strong>Safari</strong></td>
@@ -109,12 +118,15 @@ yarn add chabokpush
   <td align="center"><strong>Samsung Internet Browser</strong></td>
 <td align="center">✓ v4.0.10-53+</td>
 <td align="center">✓</td>
-<td align="right"><span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">gcm_sender_id</span> را باید حتما به فایل <span style="font-size: 87.5%; color: #e83e8c; word-break: break-word; background: #f0f0f0; padding: 3px 10px; border: 1px solid #dddddd; border-radius: 5px; margin-right: 1px; margin-left: 1px;">Manifest.js</span> اضافه کنید.</td>
+<td align="right"><span markdown="1"> `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</span>
+</td>
 </tr>
 </tbody>
 </table>
 
-برای پشتیبانی وب‌پوش روی مرورگرهای کروم، اپرا و سامسونگ باید `gcm_sender_id` را به فایل `Manifest.js` اضافه کنید. در صورت داشتن `gcm_sender_id` از قبل (استفاده از پوش اندروید) می‌توانید آن را از بخش تنظیمات پنل از کارت اندروید کپی کنید. در غیر این صورت می‌توانید با مطالعه صفحه [پیش‌نیازهای اندروید](https://doc.chabokpush.com/android/required.html#دریافت-کلیدهای-گوگل) آن را ایجاد کنید.
+برای پشتیبانی وب‌پوش روی مرورگرهای **کروم**، **اپرا** و **سامسونگ** باید `gcm_sender_id` را به فایل `manifest.json` اضافه کنید: 
+
+> `نکته`: در صورتی که از کلاینت اندروید استفاده می‌کردید، می‌توانید `gcm_sender_id` را از بخش تنظیمات پنل، **کارت اندروید** کپی کنید. در غیر این صورت می‌توانید با مطالعه صفحه [پیش‌نیازهای اندروید](https://doc.chabokpush.com/android/required.html#دریافت-کلیدهای-گوگل) آن را ایجاد کنید.
 
 ```javascript
 {
@@ -123,7 +135,7 @@ yarn add chabokpush
   .....
 }
 ```
-سپس فایل `Manifest.js` را به `index.html` اصلی پروژه خود مانند زیر اضافه کنید:
+سپس فایل `manifest.json` را به `index.html` اصلی پروژه خود مانند زیر اضافه کنید:
 
 ```html
 <head>
@@ -132,14 +144,6 @@ yarn add chabokpush
 ...
 </head>
 ```
-
-#### مدل نسخه‌گذاری در چابک (Semantic Versioning)
-
-چابک از مدل نسخه‌گذاری `MAJOR`.`MINOR`.`PATCH` استفاده می‌کند. همه تغییرات نسخه‌ها بلافاصله پس از انتشارشان به صورت موردی در صفحه **لیست  تغییرات** برای اطلاع شما اضافه می‌شوند. برای همین توصیه می‌کنیم [این صفحه](/javascript/release-note.html) را حتما مطالعه نمایید. این موارد برای هر نسخه در دو بخش [**ارتقا** (در صورت وجود ارتقا)](/javascript/release-note.html#ارتقا) و [**تغییرات**](/javascript/release-note.html#تغییرات) برای شما نمایش داده شده‌ است.
-
-- `Patch:` تغییرات در این سطح شامل **Bug Fix** و **قابلیت‌های بسیار کوچک** می‌باشد. به روز رسانی به این نسخه‌ها نیاز به تغییری در کد ندارد. برای آگاهی از آن‌ها، باید بخش [**تغییرات**](/javascript/release-note.html#تغییرات) را مطالعه کنید. به عنوان مثال به‌ روز رسانی کتابخانه چابک از نسخه `2.13.0` به نسخه `2.13.2` مربوط به این سطح می‌شود.
-- `Minor:` تغییرات در این سطح شامل **قابلیت‌های بزرگتر** و **تغییر در کارکرد (Functionality) کتابخانه** می‌شود. در به روز رسانی به این نسخه‌ها حتما باید بخش [**ارتقا**](/javascript/release-note.html#ارتقا) و [تغییرات](/javascript/release-note.html#تغییرات) صفحه لیست تغییرات را با دقت مطالعه کنید. در صورت بروز هر گونه مشکل در نتیجه رعایت نکردن نکات بخش **ارتقا** و **تغییرات** در به روز رسانی به نسخه‌های **Minor**، تیم چابک مسئولیتی را نمی‌پذیرد. توصیه می‌کنیم که هر سه تا شش ماه اقدام به بررسی نسخه‌های **Minor** نمایید. به عنوان مثال به‌ روز رسانی کتابخانه چابک از نسخه `2.12.1` به نسخه `2.13.2` مربوط به این سطح می‌شود.
-- `Major:` این سطح از تغییرات مخصوص **بازنویسی** و یا **تغییرات اساسی** در کتابخانه چابک است. در به روز رسانی به این نسخه‌ها حتما باید بخش [**ارتقا**](/javascript/release-note.html#ارتقا) و [**تغییرات**](/javascript/release-note.html#تغییرات) تغییرات صفحه لیست تغییرات را با دقت مطالعه کنید. در صورت بروز هر گونه مشکل در نتیجه رعایت نکردن نکات بخش **ارتقا** و **تغییرات** در به روز رسانی به نسخه‌های **Major**، تیم چابک مسئولیتی را نمی‌پذیرد. بنابراین توصیه می‌کنیم که هر یک سال اقدام به بررسی نسخه‌های **Major** نمایید. به عنوان مثال به‌روزرسانی کتابخانه چابک از نسخه `1.0.1` به نسخه `2.13.2` مربوط به این سطح می‌شود.
 
 <Br>
 
@@ -167,7 +171,8 @@ const options = {
         enabled: true,
         publicKey: 'VAPID_Public_Key'
       },
-      silent: false,
+        silent: false,
+        realtime: false
     };
 const chabok = new chabokpush.Chabok(auth, options)
 ```
