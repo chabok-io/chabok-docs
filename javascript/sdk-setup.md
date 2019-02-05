@@ -107,7 +107,7 @@ yarn add chabokpush
 <td align="center">✓ v39+ *</td>
 <td align="center">✓</td>
 <td align="right">
- <div markdown="1">* وب‌پوش را فقط روی اندروید پشتیبانی می‌کند (و نه روی دسکتاپ) <br>  `gcm_sender_id`  را باید حتما به فایل  `manifest.json`  اضافه کنید.</div>
+ <span markdown="1">* وب‌پوش را فقط روی اندروید پشتیبانی می‌کند (و نه روی دسکتاپ) <br>  `gcm_sender_id`  را باید حتما به فایل  `manifest.json`  اضافه کنید.</span>
 </td>
 </tr>
 <tr>
@@ -121,7 +121,7 @@ yarn add chabokpush
 <td align="center">✓ v4.0.10-53+</td>
 <td align="center">✓</td>
 <td align="right">
- <div markdown="1"> `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</div>
+ <span markdown="1"> `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</span>
 </td>
 </tr>
 </tbody>
