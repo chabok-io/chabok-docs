@@ -87,17 +87,17 @@ yarn add chabokpush
 <td align="center"><strong>Chrome</strong></td>
 <td align="center">✓ v42 +</td>
 <td align="center">✓</td>
-<td align="right"><span markdown="1">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</span>
+<td markdown="1" align="right"><div markdown="1">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</div>
 </td>
 </tr>
 <tr>
-<td align="center"><strong>Edge</strong></td>
+  <td align="center"><strong>Edge</strong></td>
 <td align="center">✓ v17+</td>
 <td align="center">✓</td>
 <td align="center">-</td>
 </tr>
 <tr>
-<td align="center"><strong>Firefox</strong></td>
+  <td align="center"><strong>Firefox</strong></td>
 <td align="center">✓ v44+</td>
 <td align="center">✓</td>
 <td align="center">-</td>
@@ -106,30 +106,27 @@ yarn add chabokpush
   <td align="center"><strong>Opera</strong></td>
 <td align="center">✓ v39+ *</td>
 <td align="center">✓</td>
-<td align="right">
- <span markdown="1">* وب‌پوش را فقط روی اندروید پشتیبانی می‌کند (و نه روی دسکتاپ) <br>  `gcm_sender_id`  را باید حتما به فایل  `manifest.json`  اضافه کنید.</span>
-</td>
+<td align="right"><div markdown="1">* وب‌پوش را فقط روی اندروید پشتیبانی می‌کند (و نه روی دسکتاپ) <p>  `gcm_sender_id`  را باید حتما به فایل  `manifest.json`  اضافه کنید.</p></div></td>
 </tr>
 <tr>
-<td align="center"><strong>Safari</strong></td>
+  <td align="center"><strong>Safari</strong></td>
 <td align="center">✗</td>
 <td align="center">✓</td>
 <td align="center">-</td>
 </tr>
 <tr>
-<td align="center"><strong>Samsung Internet Browser</strong></td>
+  <td align="center"><strong>Samsung Internet Browser</strong></td>
 <td align="center">✓ v4.0.10-53+</td>
 <td align="center">✓</td>
-<td align="right">
- <span markdown="1"> `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</span>
+<td align="right"><div markdown="1"> `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</div>
 </td>
 </tr>
 </tbody>
 </table>
 
-برای پشتیبانی وب‌پوش روی مرورگرهای **کروم**، **اپرا** و **سامسونگ** باید `gcm_sender_id` را به فایل `manifest.json` اضافه کنید. 
+برای پشتیبانی وب‌پوش روی مرورگرهای **کروم**، **اپرا** و **سامسونگ** باید `gcm_sender_id` را به فایل `manifest.json` اضافه کنید: 
 
-> `نکته`: در صورتی که از کلاینت اندروید استفاده می‌کردید، می‌توانید `gcm_sender_id` را از بخش تنظیمات پنل از **کارت اندروید** کپی کنید. در غیر این صورت می‌توانید با مطالعه صفحه [پیش‌نیازهای اندروید](https://doc.chabokpush.com/android/required.html#دریافت-کلیدهای-گوگل) آن را ایجاد کنید.
+> `نکته`: در صورتی که از کلاینت اندروید استفاده می‌کردید، می‌توانید `gcm_sender_id` را از بخش تنظیمات پنل، **کارت اندروید** کپی کنید. در غیر این صورت می‌توانید با مطالعه صفحه [پیش‌نیازهای اندروید](https://doc.chabokpush.com/android/required.html#دریافت-کلیدهای-گوگل) آن را ایجاد کنید.
 
 ```javascript
 {
