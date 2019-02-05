@@ -87,7 +87,7 @@ yarn add chabokpush
 <td align="center"><strong>Chrome</strong></td>
 <td align="center">✓ v42 +</td>
 <td align="center">✓</td>
-<td markdown="1" align="right"><div markdown="1">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</div>
+<td markdown="1" align="right"><span markdown="1">در نسخه‌های 51 به پایین `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</span>
 </td>
 </tr>
 <tr>
@@ -106,7 +106,7 @@ yarn add chabokpush
   <td align="center"><strong>Opera</strong></td>
 <td align="center">✓ v39+ *</td>
 <td align="center">✓</td>
-<td align="right"><div markdown="1">* وب‌پوش را فقط روی اندروید پشتیبانی می‌کند (و نه روی دسکتاپ) <br>  `gcm_sender_id`  را باید حتما به فایل  `manifest.json`  اضافه کنید.</br></div></td>
+<td align="right"><span markdown="1">* وب‌پوش را فقط روی اندروید پشتیبانی می‌کند (و نه روی دسکتاپ) <br>  `gcm_sender_id`  را باید حتما به فایل  `manifest.json`  اضافه کنید.</br></span></td>
 </tr>
 <tr>
   <td align="center"><strong>Safari</strong></td>
@@ -118,7 +118,7 @@ yarn add chabokpush
   <td align="center"><strong>Samsung Internet Browser</strong></td>
 <td align="center">✓ v4.0.10-53+</td>
 <td align="center">✓</td>
-<td align="right"><div markdown="1"> `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</div>
+<td align="right"><span markdown="1"> `gcm_sender_id`  را باید حتما به فایل  `manifest.json` اضافه کنید.</span>
 </td>
 </tr>
 </tbody>
