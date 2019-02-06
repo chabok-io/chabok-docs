@@ -20,7 +20,7 @@ prev: troubleshoot.html
 
 * افزودن کلید `tokenStatus`
 
-* حل مشکل متدهای `subscribe` ،`unsubscribe` و `publish` زمانی کاربر ثبت نشده بود 
+* حل مشکل متدهای `subscribe` ،`unsubscribe` و `publish` زمانی که کاربر ثبت نشده بود. 
 
 
 ## [نسخه ۱.۱.۰ - ۱۳۹۷/۱۰/۰۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.1.0)
