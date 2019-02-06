@@ -20,7 +20,7 @@ prev: troubleshoot.html
 
 * افزودن کلید `tokenStatus`
 
-* حل مشکل متدهای `subscribe` ،`unsubscribe` و `publish` زمانی کاربر ثبت نشده بود 
+* حل مشکل متدهای `subscribe` ،`unsubscribe` و `publish` زمانی که کاربر ثبت نشده بود. 
 
 
 ## [نسخه ۱.۱.۰ - ۱۳۹۷/۱۰/۰۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.1.0)
@@ -51,8 +51,7 @@ const auth = {
 }
 ```
 
-
-> ‍‍‍‍‍`نکته:` برای استفاده از شناسه `webKey` باید در تنظیمات پنل > [بخش دسترسی‌ها و توکن‌ها](https://sandbox.push.adpdigital.com/front/setting/access)، **دامنه** وبسایت خود را ثبت کنید و سپس در همان صفحه شناسه `webKey` را کپی کنید.
+> `نکته ` : برای استفاده از شناسه `webKey` حتما باید **دامنه** وبسایت خود را در پنل بخش تنظیمات قسمت **دسترسی‌ و توکن‌ها** ثبت کرده‌ باشید. در صورتی هم که می‌خواهید روی سیستم محلی تست کنید کافیست فقط `localhost` (بدون پورت) را در بخش دامنه قرار دهید. 
 
 ## [نسخه ۱.۰.۳ - ۱۳۹۷/۰۷/۲۸](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.0.3)
 
