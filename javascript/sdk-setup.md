@@ -31,10 +31,10 @@ npm install chabokpush --save
 ```bash
 yarn add chabokpush
 ```
-و یا با استفاده از [CDN](https://unpkg.com/chabokpush@1.1.0/dist/chabokpush.min.js)، چابک را به پروژه خود اضافه کنید.
+و یا با استفاده از [CDN](https://unpkg.com/chabokpush@1.2.0/dist/chabokpush.min.js)، چابک را به پروژه خود اضافه کنید.
 
 ```bash
-<script src="https://unpkg.com/chabokpush@1.1.0/dist/chabokpush.min.js"></script>
+<script src="https://unpkg.com/chabokpush@1.2.0/dist/chabokpush.min.js"></script>
 ```
 
 > `نکته`: دقت داشته باشید که **به هیچ عنوان** برای دریافت کتابخانه چابک از لینک بالا **بدون مشخص کردن نسخه آن** استفاده **نکنید** زیرا آن لینک به طور خودکار آخرین نسخه کتابخانه را در اختیارتان می‌گذارد که در صورت نخواندن تغییرات لیست کتابخانه و هماهنگ شدن با آن، **با مشکل مواجه خواهید شد**.
