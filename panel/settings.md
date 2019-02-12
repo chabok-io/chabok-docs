@@ -27,7 +27,7 @@ next: account-management.html
 
 > `نکته :` برای استفاده از شناسه `webKey` حتما باید **دامنه** وبسایت خود را در پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها ثبت کرده‌ باشید.
 
-![عکس مربوطه](http://uupload.ir/files/atct_access-token.png)
+![عکس مربوطه](http://uupload.ir/files/5op2_tokenaccess.png)
 
 <Br>
 
