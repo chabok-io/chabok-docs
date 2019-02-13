@@ -10,6 +10,13 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۱.۲.۱ - ۱۳۹۷/۱۱/۲۳](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.2.1)
+
+### تغییرات
+
+* افزودن متد `registerAsGuest` برای ثبت کاربر مهمان
+
+
 ## [نسخه ۱.۲.۰ - ۱۳۹۷/۱۱/۱۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.2.0)
 
 ### تغییرات
