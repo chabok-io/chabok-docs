@@ -56,8 +56,12 @@ permalink: panel/building-a-new-segment.html
 
 ### رصد سگمنت‌
 
-پس از ایجاد یک سگمنت جدید می‌توانید آن را در داشبورد بخش **گروه‌ها** به دو صورت **کارت** و **نمودار** مشاهده کنید.
+پس از ایجاد یک سگمنت جدید می‌توانید آن را در داشبورد بخش **گروه‌ها** به دو صورت **کارت**:
 
- ![عکس مربوطه](http://uupload.ir/files/pjg9_segment-cart.png)
- ![عکس مربوطه](http://uupload.ir/files/8m5v_segment-chart.png)
-  
+ ![عکس مربوطه](http://uupload.ir/files/4k81_segment-cart1.png)
+
+<br><br>
+
+ و **نمودار** مشاهده کنید:
+
+ ![عکس مربوطه](http://uupload.ir/files/jtw3_segment-chart1.png)
