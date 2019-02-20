@@ -16,7 +16,7 @@ permalink: panel/building-a-new-segment.html
 
 ۱- در ابتدا به صفحه **ارسال پیام متنی** بروید و در بخش گیرندگان وارد **ایجاد سگمنت جدید** شوید.
 
-۲- نام سگمنت را می‌نویسیم. در اینجا مثلا مشتریان جدید ورزشی را وارد می‌کنیم. پس از آن فیلترها را یک به یک اضافه می‌کنیم. 
+۲- **نام سگمنت** را می‌نویسیم. در اینجا مثلا **مشتریان جدید ورزشی** را وارد می‌کنیم. پس از آن فیلترها را یک به یک اضافه می‌کنیم. 
 
  ![عکس مربوطه](http://uupload.ir/files/qkbp_all-filters.png)
 
@@ -60,4 +60,4 @@ permalink: panel/building-a-new-segment.html
 
  ![عکس مربوطه](http://uupload.ir/files/pjg9_segment-cart.png)
  ![عکس مربوطه](http://uupload.ir/files/8m5v_segment-chart.png)
-   
+  
