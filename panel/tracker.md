@@ -205,6 +205,7 @@ next: users.html
 ```
 https://sand.chabokpush.com/637z3i?campaign=CAMPAIGN&adgroup=AD_GROUP&creative=CREATIVE&redirect=https://www.google.com&redirect_ios=https://www.ios.com&redirect_android=https://www.android.com
 ```
+در این نمونه می‌توانید به جای `CAMPAIGN`، `AD_GROUP`، `CREATIVE` و لینک‌های ری‌دایرکت اطلاعات کمپین خود را قرار دهید.
 
 <Br>
 
