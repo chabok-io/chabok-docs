@@ -21,7 +21,7 @@ next: users.html
 <Br>
 
 ![عکس مربوطه](http://uupload.ir/files/1its_new-tracker1.png)
-![عکس مربوطه](http://uupload.ir/files/ghqt_new-tracker2.png)
+![عکس مربوطه](http://uupload.ir/files/cp6m_newtracker2.png)
 
 <Br>
 
@@ -202,10 +202,7 @@ next: users.html
 
 برای مثال به کال‌بک زیر توجه کنید:
 
-```
-https://sand.chabokpush.com/637z3i?campaign=CAMPAIGN&adgroup=AD_GROUP&creative=CREATIVE&redirect=https://www.google.com&redirect_ios=https://www.ios.com&redirect_android=https://www.android.com
-```
-در این نمونه می‌توانید به جای `CAMPAIGN`، `AD_GROUP`، `CREATIVE` و لینک‌های ری‌دایرکت اطلاعات کمپین خود را قرار دهید.
+![عکس مربوطه](http://uupload.ir/files/ut47_callback-example.png)
 
 <Br>
 
@@ -219,7 +216,7 @@ https://sand.chabokpush.com/637z3i?campaign=CAMPAIGN&adgroup=AD_GROUP&creative=C
 
 با کلیک روی هر ترکر می‌توانید جزئیات آن را به صورت لحظه‌ای مشاهده کنید.
 
-![عکس مربوطه](http://uupload.ir/files/8qnn_trackerperformance1.png)
+![عکس مربوطه](http://uupload.ir/files/o994_8qnn_trackerperformance1.png)
 ![عکس مربوطه](http://uupload.ir/files/kmvo_trackerperformance2.png)
 
 **نمودارهای آماری**:
