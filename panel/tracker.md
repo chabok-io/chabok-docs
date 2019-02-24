@@ -21,7 +21,7 @@ next: users.html
 <Br>
 
 ![عکس مربوطه](http://uupload.ir/files/1its_new-tracker1.png)
-![عکس مربوطه](http://uupload.ir/files/ghqt_new-tracker2.png)
+![عکس مربوطه](http://uupload.ir/files/cp6m_newtracker2.png)
 
 <Br>
 
@@ -56,39 +56,55 @@ next: users.html
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">id</td>
+<td align="center">activity_kind</td>
+<td align="right">نوع فعالیت (کلیک، نصب و...)</td>
+</tr>
+<tr>
+<td align="center">tracker</td>
 <td align="right">شناسه ترکر</td>
 </tr>
 <tr>
-<td align="center">name</td>
+<td align="center">tracker_name</td>
 <td align="right">نام ترکر</td>
 </tr>
 <tr>
-<td align="center">eventType</td>
-<td align="right">نوع رویداد (کلیک، نصب و...)</td>
+<td align="center">network_name</td>
+<td align="right">نام شبکه تبلیغاتی</td>
 </tr>
 <tr>
-<td align="center">osName </td>
-<td align="right">سیستم‌عامل</td>
+<td align="center">campaign_name</td>
+<td align="right">نام کمپین</td>
 </tr>
 <tr>
-<td align="center">osVersion</td>
-<td align="right">نسخه سیستم‌عامل</td>
+<td align="center">adgroup_name</td>
+<td align="right">نام گروه تبلیغاتی</td>
 </tr>
 <tr>
-<td align="center">deviceModel</td>
-<td align="right">مدل دستگاه</td>
+<td align="center">creative_name</td>
+<td align="right">نام کریتیو</td>
 </tr>
 <tr>
-<td align="center">deviceManufacturer</td>
-<td align="right">برند دستگاه</td>
-</tr>
-<tr>
-<td align="center">ip</td>
+<td align="center">ip_address</td>
 <td align="right">آی‌پی کاربر</td>
 </tr>
 <tr>
-<td align="center">clickAt</td>
+<td align="center">os_name</td>
+<td align="right">سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">os_version</td>
+<td align="right">نسخه سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">device_manufacturer</td>
+<td align="right">برند دستگاه</td>
+</tr>
+<tr>
+<td align="center">device_name</td>
+<td align="right">مدل دستگاه</td>
+</tr>
+<tr>
+<td align="center">click_time</td>
 <td align="right">زمان کلیک</td>
 </tr>
 </tbody></table>
@@ -107,68 +123,76 @@ next: users.html
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">id</td>
+<td align="center">activity_kind</td>
+<td align="right">نوع فعالیت (کلیک، نصب و...)</td>
+</tr>
+<tr>
+<td align="center">tracker</td>
 <td align="right">شناسه ترکر</td>
 </tr>
 <tr>
-<td align="center">name</td>
+<td align="center">tracker_name</td>
 <td align="right">نام ترکر</td>
 </tr>
 <tr>
-<td align="center">eventType</td>
-<td align="right">نوع رویداد (کلیک، نصب و ...)</td>
+<td align="center">network_name</td>
+<td align="right">نام شبکه تبلیغاتی</td>
 </tr>
 <tr>
-<td align="center">osName </td>
-<td align="right">سیستم‌عامل</td>
+<td align="center">campaign_name</td>
+<td align="right">نام کمپین</td>
 </tr>
 <tr>
-<td align="center">osVersion</td>
-<td align="right">نسخه سیستم‌عامل</td>
+<td align="center">adgroup_name</td>
+<td align="right">نام گروه تبلیغاتی</td>
 </tr>
 <tr>
-<td align="center">deviceModel</td>
-<td align="right">مدل دستگاه</td>
+<td align="center">creative_name</td>
+<td align="right">نام کریتیو</td>
 </tr>
 <tr>
-<td align="center">deviceManufacturer</td>
-<td align="right">برند دستگاه</td>
-</tr>
-<tr>
-<td align="center">ip</td>
+<td align="center">ip_address</td>
 <td align="right">آی‌پی کاربر</td>
 </tr>
 <tr>
-<td align="center">clickAt</td>
+<td align="center">os_name</td>
+<td align="right">سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">os_version</td>
+<td align="right">نسخه سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">device_manufacturer</td>
+<td align="right">برند دستگاه</td>
+</tr>
+<tr>
+<td align="center">device_name</td>
+<td align="right">مدل دستگاه</td>
+</tr>
+<tr>
+<td align="center">click_time</td>
 <td align="right">زمان کلیک</td>
 </tr>
 <tr>
-<td align="center">appId</td>
-<td align="right">شناسه اپ</td>
+<td align="center">app_id</td>
+<td align="right">شناسه اپلیکیشن</td>
 </tr>
 <tr>
-<td align="center">appVersion</td>
-<td align="right">نسخه اپ</td>
+<td align="center">app_version</td>
+<td align="right">نسخه اپلیکیشن</td>
 </tr>
 <tr>
-<td align="center">uniqueId</td>
+<td align="center">connection_type</td>
+<td align="right">نوع اتصال</td>
+</tr>
+<tr>
+<td align="center">unique_id</td>
 <td align="right">شناسه یکتای دستگاه</td>
 </tr>
 <tr>
-<td align="center">installationId</td>
-<td align="right">شناسه نصب یا دستگاه</td>
-</tr>
-<tr>
-<td align="center">installSource</td>
-<td align="right">منبع نصب</td>
-</tr>
-<tr>
-<td align="center">installAt</td>
+<td align="center">installed_at</td>
 <td align="right">زمان نصب</td>
-</tr>
-<tr>
-<td align="center">connection</td>
-<td align="right">نوع اتصال</td>
 </tr>
 </tbody></table>
 </p>
@@ -178,7 +202,7 @@ next: users.html
 
 برای مثال به کال‌بک زیر توجه کنید:
 
-![عکس مربوطه](http://uupload.ir/files/guk_callback.png)
+![عکس مربوطه](http://uupload.ir/files/ut47_callback-example.png)
 
 <Br>
 
@@ -192,7 +216,7 @@ next: users.html
 
 با کلیک روی هر ترکر می‌توانید جزئیات آن را به صورت لحظه‌ای مشاهده کنید.
 
-![عکس مربوطه](http://uupload.ir/files/8qnn_trackerperformance1.png)
+![عکس مربوطه](http://uupload.ir/files/o994_8qnn_trackerperformance1.png)
 ![عکس مربوطه](http://uupload.ir/files/kmvo_trackerperformance2.png)
 
 **نمودارهای آماری**:
