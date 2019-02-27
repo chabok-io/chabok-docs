@@ -3,7 +3,7 @@ id: user-management
 title: گروه‌بندی کاربران
 layout: android
 permalink: android/user-management.html
-prev: push-notification.html
+prev: tracker.html
 next: behavior-tracking.html
 ---
 
