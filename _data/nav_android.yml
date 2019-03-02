@@ -8,8 +8,6 @@
       title: پیام چابک
     - id: push-notification	
       title: پوش‌نوتیفیکیشن
-    - id: tracker
-      title: ترکر
     - id: user-management
       title: ‌گروه‌بندی کاربران
     - id: behavior-tracking
