@@ -4,7 +4,7 @@ title: راه‌اندازی
 layout: android
 permalink: android/sdk-setup.html
 prev: required.html
-next: chabok-messaging.html
+next: tracker.html
 ---
 
 پس از طی کردن مراحل صفحه [پیش‌نیازها](/android/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/android/sdk-setup.html#۱--نصب-کتابخانه) و سپس برای فعالسازی پوش‌نوتیفیکیشن چابک بخش‌ [افزودن `GcmReceiver` به فایل `Manifest`](/android/sdk-setup.html#۲--افزودن-کلاس--gcmreceiver-به-فایل-manifest) را مطالعه کرده و همانند مستندات بیان شده پیش بروید. در انتها، [مقداردهی و راه‌اندازی](/android/sdk-setup.html#۳--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/android/sdk-setup.html#۴--ثبت-کاربر-register) را حتما پشت سر بگذارید.
