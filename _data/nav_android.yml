@@ -4,8 +4,6 @@
       title: پیش‌نیازها
     - id: sdk-setup
       title: راه‌اندازی
-    - id: tracker
-      title: ترکر
     - id: chabok-messaging
       title: پیام چابک
     - id: push-notification	
