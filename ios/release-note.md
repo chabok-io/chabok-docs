@@ -10,6 +10,20 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۱.۱۸.۱ - ۱۳۹۷/۱۲/۱۳](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.18.1) 
+
+### تغییرات
+
+- حل مشکل لاگ‌های غیر ضروری
+
+- بهبود تایید نصب
+
+- افزودن قابلیت تشخیص **Build** اپلیکیشن (`Debug` یا `Release`) و انقضای آن
+
+- افزودن متد `registerAsGuest` برای اپلیکیشن‌هایی که کاربر مهمان دارند یا می‌خواهند نصب با اولین بازدید شمرده شود (مانند سرویس ادجاست)
+
+- حل مشکل اجرا روی simulator با معماری x86
+
 ## [نسخه ۱.۱۸.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.18.0) 
 
 ### تغییرات
