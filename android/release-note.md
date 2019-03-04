@@ -10,6 +10,13 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۲.۱۴.۲ - ۱۳۹۷/۱۲/۱۳](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.2)
+
+### تغییرات
+
+- افزودن متد ‍‍‍‍‍`registerAsGuest` برای اپلیکیشن‌هایی که کاربر مهمان دارند یا می‌خواهند نصب با اولین بازدید شمرده شود (مانند سرویس ادجاست)
+
+
 ##  [نسخه ۲.۱۴.۱ - ۱۳۹۷/۱۰/۱۷](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.1)
 
 ### تغییرات
