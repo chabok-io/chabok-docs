@@ -153,7 +153,11 @@ public void onCreate() {
 
         //If user is not registered verify the user and
         //call AdpPushClient.get().register("USER_ID") method at login page
-        AdpPushClient.get().register("USER_ID");
+        
+        //If you have user guests
+        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+        AdpPushClient.get().registerAsGuest();
+
     }
 }
 ```
