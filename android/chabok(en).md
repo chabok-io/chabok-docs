@@ -19,18 +19,21 @@ Note: After creating a new account, you will have your keys in dashboard's setti
 ### 1.2 Configuring notifications
 `Android:`
 To send notifications on android , you'll need to enter your **API key** and **senderId** in chabok panel.
-If you don't have the keys, [see how to get them](). After that, place them in chabok panel→ settings→ platforms→android cart.
+If you don't have the keys, [see how to get them](https://webkul.com/blog/generate-api-key-fcm-sender-id/). After that, place them in chabok panel→ settings→ platforms→android cart.
 
 `IOS: `
-To send notifications on ios, you'll need to upload your p8 file in chabok panel. If you don't have the p8 file [See how see how to get it](). After that, place it in chabok panel→ settings→ platforms→ios cart.
+To send notifications on ios, you'll need to upload your p8 file in chabok panel. After that, place it in chabok panel→ settings→ platforms→ios cart.
 
 ## 2. SDK Integration
 
 To successfully integrate our SDK, follow the steps below:
-- 1- Add chabok library to your project
-- 2- Add push notification support (only for android)
-- 3- Initialize library
-- 4- Register users
+[- 1- Add chabok library to your project](/android/chabok(en).html#21-add-chabok-library-to-your-project)
+
+[- 2- Add push notification support (only for android)](/android/chabok(en).html#22-add-push-notification-support-android-only)
+
+[- 3- Initialize library](/android/chabok(en).html#23-initialize-library)
+
+[- 4- Register users](/android/chabok(en).html#24-register-users)
 
 ### 2.1 Add chabok library to your project
 `Android:` 
