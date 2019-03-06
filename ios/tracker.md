@@ -289,7 +289,7 @@ NSDictionary *data = @{
                        };
 
 [_manager track:@"purchase"
-                                   data:data];
+                   data:data];
 ```
 ```swift
 //Swift
