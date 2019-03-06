@@ -280,12 +280,14 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 با کد زیر می‌توانید  رفتار کاربر (رویداد) را در چابک رصد کنید:  
   
 ```java  
-JSONObject data = new JSONObject();  
-data.put("currency", "EUR");  
-data.put("revenue", 0.01)  
-data.put("orderId", "{OrderId}");  
-  
-AdpPushClient.get().track("purchase", data);  
+NSDictionary *data = @{
+                       @"currency": @"EUR",
+                       @"revenue": @(0.01),
+                       @"orderId": @"{OrderId}"
+                       };
+
+[PushClientManager.defaultManager track:@"purchase"
+                                   data:data];
 ```
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/ios/behavior-tracking.html) را مطالعه کنید.
 
