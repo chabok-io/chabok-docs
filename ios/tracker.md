@@ -1,8 +1,8 @@
 ---
 id: tracker
 title: ترکر
-layout: android
-permalink: android/tracker.html
+layout: ios
+permalink: ios/tracker.html
 prev: push-notification.html
 next: user-management.html
 ---
