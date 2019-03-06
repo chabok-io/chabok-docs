@@ -4,7 +4,7 @@ title: راه‌اندازی
 layout: ios
 permalink: ios/sdk-setup.html
 prev: required.html
-next: chabok-messaging.html
+next: tracker.html
 ---
 
 پس از طی کردن مراحل صفحه [پیش‌نیازها](/ios/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/ios/sdk-setup.html#۱--نصب-کتابخانه)، سپس [مقداردهی و راه‌اندازی](/ios/sdk-setup.html#۲--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و در آخر برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/ios/sdk-setup.html#۳--ثبت-کاربر-register) را حتما پشت سر بگذارید.
