@@ -1,119 +1,188 @@
 ---
 id: tracker
 title: ترکر نصب
-layout: android
-permalink: android/tracker.html
-prev: push-notification.html
-next: user-management.html
+layout: ios
+permalink: ios/tracker.html
+next: push-notification.html
+prev: sdk-setup.html
 ---
 
-ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/android/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/android/tracker.html#۴-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
+ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/ios/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/ios/tracker.html#۴-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
 
  نگران راه‌اندازی هم نباشید این صفحه به طور کامل مراحل **پیاده‌سازی و استفاده از ترکر** را قدم به قدم مرور می‌کند.  
 
 <br>
 
->‍‍`نکته:` در صورتی که از قبل **SDK** چابک را نصب کرده‌‌اید، از [**رصد رویدادها**](/android/tracker.html#۲۱-رصد-رویدادها-tracking-events) شروع کنید.
+>‍‍`نکته:` در صورتی که از قبل **SDK** چابک را نصب کرده‌‌اید، از [**رصد رویدادها**](/ios/tracker.html#۲۱-رصد-رویدادها-tracking-events) شروع کنید.
  
 ### ۱. پیاده‌سازی (SDK Integration)
 ---
 
-برای ایجاد حساب کاربری کافیست در وبسایت چابک وارد صفحه [شروع کنید](https://chabokpush.com/register.html) شوید و حساب شخصی خود را بسازید. پس از ایجاد حساب و ثبت اپلیکیشن خود، با مراجعه به بخش [تنظیمات پنل](https://sandbox.push.adpdigital.com/front/setting/access) پارامترهای اتصال به چابک که در مرحله [مقداردهی](/android/tracker.html#ج--مقداردهی-initialize) مورد نیاز است، در دسترس خواهد بود.
+برای ایجاد حساب کاربری کافیست در وبسایت چابک وارد صفحه [شروع کنید](https://chabokpush.com/register.html) شوید و حساب شخصی خود را بسازید. پس از ایجاد حساب و ثبت اپلیکیشن خود، با مراجعه به بخش [تنظیمات پنل](https://sandbox.push.adpdigital.com/front/setting/access) پارامترهای اتصال به چابک که در مرحله [مقداردهی](/ios/tracker.html#ج--مقداردهی-initialize) مورد نیاز است، در دسترس خواهد بود.
 
 
 #### ۱.۱. مراحل پیاده‌سازی 
 
 برای راه‌اندازی SDK چابک **۴ مرحله** زیر را به ترتیب انجام ‌دهید:
 
-[الف- افزودن کتابخانه](/android/tracker.html#الف--افزودن-کتابخانه)
+[الف- افزودن کتابخانه](/ios/tracker.html#الف--افزودن-کتابخانه)
 
-[ب- توکن پوش‌نوتیفیکیشن](/android/tracker.html#ب--توکن-پوشنوتیفیکیشن)
+[ب- مقداردهی](/ios/tracker.html#ج--مقداردهی-initialize)
 
-[ج- مقداردهی](/android/tracker.html#ج--مقداردهی-initialize)
-
-[د- ثبت کاربر](/android/tracker.html#د--ثبت-کاربر-register)
+[ج- ثبت کاربر](/ios/tracker.html#د--ثبت-کاربر-register)
 
 ##### الف- افزودن کتابخانه
 
-کتابخانه چابک از طریق `jcenter` در دسترس است. برای این منظور ابتدا در فایل `gradle` اصلی پروژه، `jcenter` را بعنوان `repository` مطابق قطعه کد زیر اضافه نمایید:
+کتابخانه چابک از طریق **CocoaPods** در دسترس است، برای نصب آن خط زیر را به `Podfile` خود اضافه کنید:
 
-```javascript
-buildscript {
-  repositories {
-    jcenter()
-  }
-}  
-```
 
-فایل `build.gradle` در مسیر `app` را باز کرده و در بخش `dependencies` خط زیر را اضافه نمایید:
+```bash
+target 'YourProject' do
+  use_frameworks!
 
-```javascript
-dependencies {
-    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation 'com.adpdigital.push:chabok-lib:2.14.1'
-    implementation 'com.google.android.gms:play-services-gcm:10.2.6' 
-}
-```
-
-> `نکته:` توجه داشته باشید که برای اطلاع از آخرین نسخه کتابخانه [این صفحه](/android/release-note.html) را ببینید. همچنین توصیه می‌کنیم بخش [مدل نسخه‌گذاری در چابک](/android/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
-
-<br>
-
-##### ب- توکن پوش‌نوتیفیکیشن
-
- چابک برای **نمایش پوش‌نوتیفیکیشن** و همچنین تشخیص **حذف و نصب مجدد اپلیکیشن** به دریافت توکن نیاز دارد.
- 
-کد زیر را به فایل `AndroidManifest.xml` بخش `application` اضافه کنید:  
+  pod 'ChabokPush'
   
-```xml  
-<receiver
-    android:name="com.google.android.gms.gcm.GcmReceiver"
-    android:enabled="true"
-    android:exported="true"
-    android:permission="com.google.android.c2dm.permission.SEND">
-    <intent-filter>
-        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-        <category android:name="MY_APPLICATION_PACKAGE_ID" />
-    </intent-filter>
-</receiver>
-```  
+end
+```
+
+سپس با روش زیر آن را نصب کنید:
+
+```bash
+$ pod install
+```
+
+> `نکته:` توجه داشته باشید که برای اطلاع از آخرین نسخه کتابخانه [این صفحه](/ios/release-note.html) را ببینید. همچنین توصیه می‌کنیم بخش [مدل نسخه‌گذاری در چابک](/ios/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 
 <br>
 
 ##### ج- مقداردهی (Initialize)
 
-چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `init` چابک **باید** در کلاس `Application` در متد `onCreate` تحت هر شرایطی فراخوانی شود.
+چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `registerApplication` چابک **باید** در کلاس `AppDelegate` در متد `didFinishLaunchingWithOptions` تحت هر شرایطی فراخوانی شود.
 
-```java
-public class MyAppClass extends Application {
+> `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
+کد زیر **تمام متدهایی** که باید مقداردهی شوند را در بر دارد:
 
-        //AdpPushClient.init() should always be called in onCreate of Application class
-        AdpPushClient.init(
-                getApplicationContext(),
-                MY_ACTIVITY.class,
-                "APP_ID/SENDER_ID", //based on your environment
-                "API_KEY",          //based on your environment
-                "SDK_USERNAME",     //based on your environment
-                "SDK_PASSWORD"      //based on your environment
-        );
+```objectivec
+//Objective-C
 
-        //true connects to Sandbox environment
-        //false connects to Production environment
-        AdpPushClient.get().setDevelopment(DEV_MODE);
+#import "AppDelegate.h"
+#import <AdpPushClient/AdpPushClient.h>
+
+@interface AppDelegate ()<PushClientManagerDelegate>
+@property (nonatomic, strong) PushClientManager *manager;
+@end
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application
+            didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //YES connects to Sandbox environment
+    //NO connects to Production environment
+    [PushClientManager setDevelopment:YES];
+    //Reset badge and clear notification when app launched.
+    [PushClientManager  resetBadge];
+
+	_manager = PushClientManager.defaultManager;
+    [_manager addDelegate:self];
+    
+    //Initialize with credential keys
+    BOOL state = [_manager
+		                 registerApplication:@"APP_ID" //based on your environment
+                         apiKey:@"API_KEY"             //based on your environment
+                         userName:@"SDK_USERNAME"      //based on your environment
+                         password:@"SDK_PASSWORD"];    //based on your environment
+    
+    if (state) {
+        NSLog(@"Initialized");
+    } else {
+	    NSLog(@"Not initialized");
     }
     
-    @Override
-    public void onTerminate() {
-        if (AdpPushClient.get() != null) {
-            AdpPushClient.get().dismiss();
-        }
+    if ([_manager application:application didFinishLaunchingWithOptions:launchOptions]) {
+        NSLog(@"Launched by tapping on notification");
+    }
+ 
+    return YES;
+}
 
-        super.onTerminate();
+#pragma mark - Notification AppDelegation
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    // Handle failure of get Device token from Apple APNS Server
+    [_manager application:application didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    // Handle receive Device Token From APNS Server
+    [_manager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    // Handle iOS 8 remote Notificaiton Settings
+    [_manager application:application didRegisterUserNotificationSettings:notificationSettings];
+}
+@end
+```
+
+```swift
+//Swift:
+
+import UIKit
+import AdpPushClient
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate {
+    
+    var window: UIWindow?
+    let _manager = PushClientManager.default()
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        //true connects to Sandbox environment
+        //false connects to Production environment
+        PushClientManager.setDevelopment(true)
+        //Reset badge and clear notification when app launched.
+        PushClientManager.resetBadge()
+        
+        _manager?.addDelegate(self)
+        
+        //Initialize with credential keys
+        let state = _manager?.registerApplication("APP_ID",					//based on your environment
+                                                 apiKey: "API_KEY",     	//based on your environment
+                                                 userName: "SDK_USERNAME",  //based on your environment
+                                                 password: "SDK_PASSWORD")  //based on your environment
+        
+        if state == true {
+            print("Initialized")
+        } else {
+            print("Not initialized")
+        }
+        
+        if _manager?.application(application, didFinishLaunchingWithOptions: launchOptions) == true {
+            print("Launched by tapping on notification")
+        }
+      
+        return true
+    }
+    
+    //MARK : Notification AppDelegation
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        // Handle failure of get Device token from Apple APNS Server
+        _manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // Handle receive Device Token From APNS Server
+        _manager?.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
+    
+    @available(iOS 8.0, *)
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        // Handle iOS 8 remote Notificaiton Settings
+        _manager?.application(application, didRegister: notificationSettings)
     }
 }
 ```
@@ -130,43 +199,69 @@ public class MyAppClass extends Application {
 
 یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و [سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید](/panel/users.html#جزئیات-کاربر).
 
+```objectivec
+//Objective-C
 
-```java
-@Override
-public void onCreate() {
-    super.onCreate();
-
+- (BOOL)application:(UIApplication *)application
+            didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     ...
     
-    String userId = AdpPushClient.get().getUserId();
-    
-    if (userId != null && !userId.isEmpty()) {
-        AdpPushClient.get().register(userId);
+    if (_manager.userId) {
+        [_manager registerUser:_manager.userId];
     } else {
-
         //If user is not registered verify the user and
-        //call AdpPushClient.get().register("USER_ID") method at login page
-        
+        //call [_manager registerUser:@"USER_ID"]; method at login page
+
         //If you have guest users
         // should be called here (If you want to track installs on user's first app launch (just like Adjust))
-        AdpPushClient.get().registerAsGuest();
-
+        [_manager registerAsGuest];
     }
+    
+    return YES;
 }
 ```
 
-متد `registerAsGuest` کاربر را به عنوان **کاربر مهمان** ثبت می‌کند. این متد به طور خودکار  یک تگ مهمان (CHABOK_GUEST) به کاربر اختصاص می‌دهد. 
+```swift
+//Swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
- متد `register` علاوه بر ثبت کاربر، عمل **اتصال به سرور چابک** را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرای اپلیکیشن (در کلاس application) فراخوانی شود: (برای اطلاعات بیشتر می‌توانید بخش [ثبت کاربر](/android/sdk-setup.html#۴--ثبت-کاربر-register) را مطالعه کنید.) 
+    ...
+    
+    if let userId = _manager?.userId {
+        _manager?.registerUser(userId)
+    } else {
+        //If user is not registered verify the user and
+        //call manager?.registerUser("USER_ID") method at login page
 
->` نکته:` دقت کنید که متد `registerAsGuest` را تنها استفاده نکنید و مانند بالا عمل کنید. در صورت فراخوانی این متد به تنهایی کاربر با هر بازدید به عنوان یک مهمان جدید محاسبه خواهد شد.
+        //If you have guest users
+        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+        _manager?.registerAsGuest()  
+    }
+
+    return true
+}
+```
+
+متد `registerAsGuest` در بالا، کاربر را به عنوان **کاربر مهمان** ثبت می‌کند. این متد به طور خودکار  یک تگ مهمان (CHABOK_GUEST) به کاربر اختصاص می‌دهد. 
+
+
+ متد `register` علاوه بر ثبت کاربر، عمل **اتصال** به سرور چابک را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرای اپلیکیشن (در کلاس application) فراخوانی شود: (برای اطلاعات بیشتر می‌توانید بخش [ثبت کاربر](/ios/sdk-setup.html#۴--ثبت-کاربر-register) را مطالعه کنید.) 
+
 
 ترکرها به طور معمول نصب را **اولین بازدید** حساب می‌کنند (مانند سرویس ادجاست)، اما مزیت ترکر چابک در شمارش نصب این است که شما می‌توانید علاوه بر مدل ادجاست نصب را **پس از ورود کاربر و احراز هویت او** در اپلیکیشنتان تعریف کنید. با این کار شما یک اقدام دیگری برای جلوگیری از تقلب در شمارش نصب انجام می‌دهید، به این دلیل که امضاهای کاربر، قبل و بعد از ثبت او (register) مطابقت داده می‌شوند و در صورت تایید به عنوان یک نصب سالم در نظر گرفته می‌شوند. 
 
 به عنوان مثال اگر اپلیکیشن شما دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای (در کلاس `Application` متد `onCreate`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
 
-```java
-AdpPushClient.get().register("USER_ID");
+```objectivec
+//Objective-C:
+
+[_manager registerUser:@"USER_ID"];
+```
+```swift
+//Swift:
+
+_manager?.registerUser("USER_ID")
 ```
 
 > `نکته`: کاراکترهای ‍`#,+,*,\,/` و فاصله در `USER_ID` مجاز نیستند، همچنین طول این رشته نباید کمتر از ۳ و بیشتر از ۳۲ کاراکتر باشد.
@@ -180,17 +275,33 @@ AdpPushClient.get().register("USER_ID");
 
 با کد زیر می‌توانید  رفتار کاربر (رویداد) را در چابک رصد کنید:  
   
-```java  
-JSONObject data = new JSONObject();  
-data.put("currency", "EUR");  
-data.put("revenue", 0.01)  
-data.put("orderId", "{OrderId}");  
-  
-AdpPushClient.get().track("purchase", data);  
+```objectivec
+//Objective-C
+
+NSDictionary *data = @{
+                       @"currency": @"EUR",
+                       @"revenue": @(0.01),
+                       @"orderId": @"{OrderId}"
+                       };
+
+[_manager track:@"purchase"
+                   data:data];
 ```
-برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/android/behavior-tracking.html) را مطالعه کنید.
+```swift
+//Swift
+
+var data = [
+    "currency": "EUR",
+    "revenue": NSNumber(value: 0.01),
+    "orderId": "{OrderId}"
+]
+
+_manager?.track("purchase", data: data)
+```
+برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/ios/behavior-tracking.html) را مطالعه کنید.
 
 <br>
+
 
 #### ۳.۱. تست راه‌اندازی 
 
@@ -264,7 +375,7 @@ SDK چابک به گونه‌ای پیاده‌سازی شده است که ام�
 
 - **Prevent SDK Spoofing**:
 
-**SDK Spoofing** یکی از راه‌های تقلب است که نصب‌ها را روی دستگاه‌های واقعی شبیه‌سازی می‌کند و آن را جزو نصب‌های کمپین محاسبه می‌نماید. این کار معمولا از اپلیکیشن‌های دیگر روی دستگاه صورت می‌گیرد و نصب‌های بی‌شمار غیر واقعی را وارد کمپین‌ شما می‌کند.
+SDK Spoofing یکی از راه‌های تقلب است که نصب‌ها را روی دستگاه‌های واقعی شبیه‌سازی می‌کند و آن را جزو نصب‌های کمپین محاسبه می‌نماید. این کار معمولا از اپلیکیشن‌های دیگر روی دستگاه صورت می‌گیرد و نصب‌های بی‌شمار غیر واقعی را وارد کمپین‌ شما می‌کند.
 
 - **SDK Signature**:
 
