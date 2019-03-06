@@ -43,7 +43,7 @@ buildscript {
 ```javascript
 dependencies {
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation 'com.adpdigital.push:chabok-lib:2.14.1'
+    implementation 'com.adpdigital.push:chabok-lib:2.14.2'
 
     //If you want to get the push notification, add to dependencies
     implementation 'com.google.android.gms:play-services-gcm:10.2.6' 
@@ -58,7 +58,7 @@ dependencies {
 ```javascript
 dependencies {
    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-   implementation 'com.adpdigital.push:chabok-lib-geo:2.14.1'
+   implementation 'com.adpdigital.push:chabok-lib-geo:2.14.2'
    implementation 'com.google.android.gms:play-services-location:10.2.6'
 
   //If you want to get the push notification, add to dependencies
@@ -284,9 +284,8 @@ AdpPushClient.get().register("USER_ID", new String[]{"CHANNEL_NAME1", "CHANNEL_N
 
 در صورتی که اپلیکیشن شما قابلیت  **ایجاد حساب کاربری**  داشته باشد می‌توانید کاربر را تا زمانی که حساب ایجاد نکرده است به عنوان  **کاربر مهمان**  در سیستم خود ثبت کنید و سپس به محض ایجاد حساب و دریافت اطلاعات او، آن کاربر را به عنوان  **کاربر دائم**  خود مانند بالا ثبت کنید.
 
-با توجه به اینکه این متد در ابتدای هر بازدید فراخوانی می‌شود، در **ترکر نصب** می‌توانید از آن برای شمارش نصب با **بازدید اول کاربر** استفاده کنید (مانند سرویس ادجاست). 
+> `نکته:` در صورتی که می‌خواهید از ترکر نصب استفاده کنید و نصب‌ها را به محض اولین ورود کاربر محاسبه کنید (مانند سرویس ادجاست) باید از این متد استفاده کنید. دقت داشته باشید که این متد را به تنهایی به کار نبرید زیرا هر بازدید کاربر را مهمان جدید محاسبه می‌کند. برای اطلاعات بیشتر مستندات [ترکر نصب](/android/tracker.html) را مطالعه کنید.
 
-متد `registerAsGuest` ، کاربر را به عنوان **کاربر مهمان** ثبت می‌کند. این متد به طور خودکار  یک تگ مهمان (CHABOK_GUEST) به کاربر اختصاص می‌دهد:
 ```java
 AdpPushClient.get().registerAsGuest();
 ```
