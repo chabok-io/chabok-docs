@@ -288,7 +288,7 @@ NSDictionary *data = @{
                        @"orderId": @"{OrderId}"
                        };
 
-[PushClientManager.defaultManager track:@"purchase"
+[_manager track:@"purchase"
                                    data:data];
 ```
 ```swift
@@ -300,7 +300,7 @@ var data = [
     "orderId": "{OrderId}"
 ]
 
-PushClientManager.defaultManager.track("purchase", data: data)
+_manager?.track("purchase", data: data)
 ```
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/ios/behavior-tracking.html) را مطالعه کنید.
 
