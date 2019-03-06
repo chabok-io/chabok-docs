@@ -240,8 +240,25 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
  > `نکته :` در بخش `Deployment Info` گزینه `Deployment Target` را `iOS 10` قرار دهید.
 
  ![تنظیمات تارگ](http://uupload.ir/files/51rz_project_settings.png)
+
+ 5) خط زیر را به `podfile‍` خود اضافه کنید:
+
+ ```bash
+target 'YOUR_NOTIFICATION_EXTENSION_SERVICE' do
+  use_frameworks!
+
+  pod 'ChabokPush'
+  
+end
+```
+
+سپس با روش زیر آن را نصب کنید:
+
+```bash
+$ pod install
+```
  
- 5) فایل `Info.plist` تارگت ساخته شده را به صورت `Source Code` باز کرده و کلید زیر را در آن قرار دهید :
+ 6) فایل `Info.plist` تارگت ساخته شده را به صورت `Source Code` باز کرده و کلید زیر را در آن قرار دهید:
 
 ```markup
 <key>NSAppTransportSecurity</key>
@@ -251,7 +268,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 </dict>
 ```
 
- 6) فایل `NotificationService.m` یا `NotificationService.swift` را
+ 7) فایل `NotificationService.m` یا `NotificationService.swift` را
     باز کرده و کد زیر را در آن قرار دهید.
 
 ```objectivec
@@ -367,4 +384,3 @@ curl -X POST \
 ```
 
 <img src="https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/ios/rich-notification.png" alt="Its You" height="583px" width="289.5px">
- 
