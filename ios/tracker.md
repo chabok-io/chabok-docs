@@ -279,7 +279,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 با کد زیر می‌توانید  رفتار کاربر (رویداد) را در چابک رصد کنید:  
   
-```java  
+```objectivec
+//Objective-C
+
 NSDictionary *data = @{
                        @"currency": @"EUR",
                        @"revenue": @(0.01),
@@ -288,6 +290,18 @@ NSDictionary *data = @{
 
 [PushClientManager.defaultManager track:@"purchase"
                                    data:data];
+```
+```swift
+//Swift
+
+var data = [
+    "currency": "EUR",
+    "revenue": NSNumber(value: 0.01),
+    "orderId": "{OrderId}"
+]
+
+PushClientManager.defaultManager.track("purchase", data: data)
+
 ```
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/ios/behavior-tracking.html) را مطالعه کنید.
 
