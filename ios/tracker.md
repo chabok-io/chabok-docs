@@ -301,7 +301,6 @@ var data = [
 ]
 
 PushClientManager.defaultManager.track("purchase", data: data)
-
 ```
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/ios/behavior-tracking.html) را مطالعه کنید.
 
