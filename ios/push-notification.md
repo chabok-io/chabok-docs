@@ -3,8 +3,8 @@ id: push-notification
 title: پوش‌نوتیفیکیشن
 layout: ios
 permalink: ios/push-notification.html
-next: chabok-messaging.html
-prev: tracker.html
+prev: chabok-messaging.html
+next: user-management.html
 ---
 
 چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. شما می‌توانید نمایش این پوش‌نوتیفیکیشن‌ها را [شخصی‌سازی کنید.](/ios/push-notification.html#شخصیسازی-نمایش-اعلان) برای اعلان کلیک [تعیین کنید و دیتای آن را دریافت کنید ](/ios/push-notification.html#کلیک-و-دریافت-دیتای-اعلان-آیاواس-۱۰-به-بالا). همینطور با [تنظیم پوش‌نوتیفیشکیشن چند رسانه‌ای](/ios/push-notification.html#تنظیم-نوتیفیکیشن-چندرسانهای-rich-push-notification) می‌توانید برای هرکدام اکشن تعیین نمایید. 
