@@ -10,6 +10,12 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۱.۲.۲ - ۱۳۹۷/۱۲/۱۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.2.2)
+
+### تغییرات
+
+* از این پس `userId` می‌تواند **۳ کاراکتر یا بیشتر** باشد
+
 ## [نسخه ۱.۲.۱ - ۱۳۹۷/۱۱/۲۳](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.2.1)
 
 ### تغییرات
