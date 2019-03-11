@@ -623,7 +623,19 @@ footer {
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
-#content {
+#ltrcontent{
+
+}
+#ltrcontent{
+  h1, h2, h3, h4, h5, h6 {
+    direction: rtl;
+    text-align: right;
+  }
+  p {
+    direction: rtl;
+  }
+}
+.content {
   padding: 100px 30px 30px;
   min-height: 100vh;
   transition: all 0.3s;
@@ -634,12 +646,9 @@ footer {
   .doc-content {
     padding-right: 15px;
     p {
-      direction: rtl;
       text-align: justify;
     }
     h1, h2, h3, h4, h5, h6 {
-      direction: rtl;
-      text-align: right;
       margin-top: 30px;
 
       a {
