@@ -378,7 +378,12 @@ footer {
 }
 
 .sidebarltr{
-
+  ul{
+    direction: ltr;
+    text-align: left;
+    margin-left: 30px;
+    margin-right: 0!important;
+  }
 }
 
 .platfrom-box {
@@ -749,4 +754,7 @@ div.code-toolbar > .toolbar{
 ::-webkit-scrollbar-thumb {
   background: gray;
   border-radius: 40px;
+}
+footer{
+  position: relative;
 }
