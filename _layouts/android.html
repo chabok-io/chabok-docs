@@ -6,7 +6,7 @@ sectionid: android
     <div class="container-fluid">
         <div class="row">
             {% include nav_android.html %}
-            <div class="entry post col-12 col-lg-9" id="content">
+            <div class="entry post col-12 col-lg-9" {% if page.direction %}  {% else %} id="content" {% endif %}>
                 <h1>
                     <a id="sideMenuHandler">
                         <img src="../images/menu.svg" width="32" class="d-inline-block d-lg-none"/>
@@ -15,7 +15,7 @@ sectionid: android
                 </h1>
                 <div class="subHeader">{{ page.description }}</div>
                 <div class="row">
-                    <div class="col-lg-9 col-md-9 col-12">
+                    <div class="col-lg-9 col-md-9 col-12 content-dir-{{ page.direction }}">
                         <div class="doc-content">
                             {{ content }}
                         </div>
@@ -28,7 +28,7 @@ sectionid: android
                             {% endif %}
                         </div>
                     </div>
-                    <div id="toc" class="col-lg-3 col-md-3 d-md-block d-none"></div>
+                    <div id="toc" class="col-lg-3 col-md-3 d-md-block d-none sidebar{{ page.direction }}"></div>
                 </div>
             </div>
         </div>
