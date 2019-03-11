@@ -740,3 +740,14 @@ footer {
 div.code-toolbar > .toolbar{
   right: 0!important;
 }
+.sidebar{
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  height: 4px!important;
+  width: 4px!important;
+}
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 40px;
+}
