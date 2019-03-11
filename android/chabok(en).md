@@ -3,7 +3,7 @@ id: chabok(en)
 title: Chabok Integration
 layout: android
 permalink: android/chabok(en).html
-dir: ltr
+direction: ltr
 ---
 
 ## 1. Prerequisites
