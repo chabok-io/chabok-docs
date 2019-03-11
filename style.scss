@@ -743,6 +743,9 @@ div.code-toolbar > .toolbar{
 .sidebar{
   overflow-y: scroll;
 }
+#toc{
+  overflow-y: scroll;
+}
 ::-webkit-scrollbar {
   height: 4px!important;
   width: 4px!important;
