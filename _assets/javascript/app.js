@@ -16,9 +16,9 @@
         var height = $(window).height() - (visibleBottom - visibleTop)
 
         if ((visibleBottom - visibleTop) > 0){
-            $('.toc-list').css("height", height)
+            $('#toc ul:first-child').css("height", height)
         } else {
-            $('.toc-list').css("height", 'auto')
+            $('#toc ul:first-child').first().css("height", 'auto')
         }
     }
     $(window).on('scroll resize', getVisiblePartOfFooter);
