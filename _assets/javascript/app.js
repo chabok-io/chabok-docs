@@ -8,6 +8,7 @@
     sticky_relocate();
     function sticky_relocate() {
         var scrollBottom = $(window).scrollTop() + $(window).height();
+        $('.toc-list').addClass('scroll-overflow');
         console.log('scrollBottom', scrollBottom)
         console.log('$(window).scrollTop()', $(window).scrollTop())
         console.log('$(window).height()', $(window).height())
