@@ -16,7 +16,7 @@
         var height = $(window).height() - (visibleBottom - visibleTop)
 
         if ((visibleBottom - visibleTop) > 0){
-            $('.affix').css("height", height)
+            $('.affix').css("height", height - 30)
         } else {
             $('.affix').css("height", 'auto')
         }
