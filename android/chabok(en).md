@@ -8,32 +8,33 @@ direction: ltr
 
 ## 1. Prerequisites
 
-Before you start first you'll need a chabok account and your API Keys to setup notifications on android and ios.
+Before you start, first you'll need a Chabok account and your API Keys (to setup notifications on android and ios).
 
-### 1.1 Getting Started (Creating Chabok Account) 
+### 1.1 Getting Started: Creating Chabok Account
 
-There are two kinds of accounts in Chabok. One is for testing which is on the sandbox environment. The other is for launching your app and is based on the production environment. Our sandbox account has limited support for users, so if you want to release your app we recommend on using our production account.
+There are two kinds of accounts in Chabok. Our free account which is for **testing** and is based on sandbox environment. And our premium which is for launching your app and is based on production environment. Our sandbox account has a limited capacity for users and does not support more, therefore if you want to release your app we recommend on using our production account.
 
-Note: After creating a new account, you will have your keys in dashboard's settings. These keys are needed for **initializing our SDK**.
+> `Note:` After creating a new account, you will have your keys in panel→settings. These keys are needed for **initializing our SDK**.
 
 ### 1.2 Configuring notifications
 `Android:`
-To send notifications on android , you'll need to enter your **API key** and **senderId** in chabok panel.
-If you don't have the keys, [see how to get them](https://webkul.com/blog/generate-api-key-fcm-sender-id/). After that, place them in chabok panel→ settings→ platforms→android cart.
+To send notifications on android , you'll need to enter your **API key** and **senderId** in your panel.
+If you don't have the keys, [see how to get them](https://webkul.com/blog/generate-api-key-fcm-sender-id/). After that, place them in panel→ settings→ platforms→android cart.
 
-`IOS: `
-To send notifications on ios, you'll need to upload your p8 file in chabok panel. After that, place it in chabok panel→ settings→ platforms→ios cart.
+`IOS:`
+To send notifications on ios, you'll need to upload your p8 file to your panel. After that, place it in panel→ settings→ platforms→ios cart.
 
 ## 2. SDK Integration
 
 To successfully integrate our SDK, follow the steps below:
-[- 1- Add chabok library to your project](/android/chabok(en).html#21-add-chabok-library-to-your-project)
 
-[- 2- Add push notification support (only for android)](/android/chabok(en).html#22-add-push-notification-support-android-only)
+[ 1- Add chabok library to your project](/android/chabok(en).html#21-add-chabok-library-to-your-project)
 
-[- 3- Initialize library](/android/chabok(en).html#23-initialize-library)
+[ 2- Add push notification support (only for android)](/android/chabok(en).html#22-add-push-notification-support-android-only)
 
-[- 4- Register users](/android/chabok(en).html#24-register-users)
+[ 3- Initialize library](/android/chabok(en).html#23-initialize-library)
+
+[ 4- Register users](/android/chabok(en).html#24-register-users)
 
 ### 2.1 Add chabok library to your project
 `Android:` 
@@ -53,7 +54,7 @@ then open `build.gradle` in `app` file and add the following dependencies:
 ```javascript
 dependencies {
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation 'com.adpdigital.push:chabok-lib:2.14.1'
+    implementation 'com.adpdigital.push:chabok-lib:2.14.2'
 
     //If you want to get the push notification, add to dependencies
     implementation 'com.google.android.gms:play-services-gcm:10.2.6' 
@@ -266,9 +267,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 You'll find your chabok API keys (`APP_ID`, `API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD`)  panel→Settings → access keys and tokens:
 
 ### 2.4 Register Users
-One of chabok's advantages is identifying each and every user with a unique Id. This will allow you to manage all devices of a user and gather user history just like a CRM system. This Id can be used on several devices of a user. You can setup this Id on any meaningful field related to your business. It can be users' phone or social security number, email and even your data-base's Id. This way your messages will be sent through this Id and not tokens or device Ids.
+One of chabok's advantages is identifying each and every user with a unique Id. This will allow you to manage all devices of a user and gather user info just like a CRM system. This Id can be used on several devices of a user. You can setup this Id on any meaningful field related to your business. It can be users' phone or social security number, email and even your data-base's Id. This way your messages will be sent through this Id and not tokens or device Ids.
 
-> Info: Trackers usually count installs on the first app launch. But with chabok's tracker you can count an install after user login or verification. By doing this you are taking yet another step to prevent fraud. This way users' signatures will be checked before and after registration. 
+> `note:` Trackers usually count installs on the first app launch. But with chabok's tracker you can count an install after user login or verification. By doing this you are taking yet another step to prevent fraud. This way users' signatures will be checked before and after registration. 
 
 `Android:`
 
@@ -308,7 +309,7 @@ _manager?.registerAsGuest()
 ```
 
 ## 3. Chabok Messaging and Push notification  
-For messaging, chabok utilizes two ways. When user is connected to chabok, we use our own channels to send in-app messages in realtime and if not, we'll automatically send a notification to get users to open the application and receive your message.
+For messaging, chabok utilizes two ways. When user is connected to Chabok, we use our own channels to send in-app messages in realtime and if not, we'll automatically send a notification to get users to open the application and receive your message.
 
 ### 3.1 Click and Personalized Display on Notification 
 Chabok automatically shows notifications for its messaging. You can add your code to modify notification display and click. To do that you need to sample a `NotificcationHandler` object. Have a look at the following example:
@@ -352,7 +353,7 @@ if (chabokNotification.getExtras() != null) {
 
 `IOS:`
 
-For personalizing notifications you can use the `delegate` method of `pushClientManagerUILocalNotificationDidReceivedMessage`(if you do this chabok will not show `LocalNotifications`) . Have a look the code below: 
+For personalizing notifications you can use the `delegate` method of `pushClientManagerUILocalNotificationDidReceivedMessage`(if you do this Chabok will not show `LocalNotifications`) . Have a look the code below: 
 
 ```objectivec
 //Objective-C:
@@ -452,7 +453,7 @@ AdpPushClient.get().addTag("Premium_User", new Callback() {
 	}  
 });
 ```
-IOS:
+`IOS:`
 ```objectivec
 //Objective-C:
 
@@ -486,7 +487,7 @@ manager.addTags(["Premium_User", "MALE", "Teenage"], success: { count in
 ### 5.2 Remove Tags
 You can also use `removeTag` method to remove assigned tags.
 
-Android:
+`Android:`
 ```java
 AdpPushClient.get().removeTag("TAG_NAME", new Callback() {...});
 ```
@@ -504,7 +505,7 @@ AdpPushClient.get().removeTag("Premium_User", new Callback() {
 	}  
 });
 ```
-IOS: 
+`IOS:`
 ```objectivec
 //Objective-C:
 
@@ -527,4 +528,3 @@ example:
 
 self.manager?.removeTag("TAG_NAME")
 ```
-

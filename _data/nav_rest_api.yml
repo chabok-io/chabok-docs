@@ -2,9 +2,7 @@
   items:
     - id: guide
       title: راهنمای استفاده
-    - id: send-chabok-message
-      title: ارسال پیام چابک
-    - id: send-push-notification
-      title: ارسال پوش‌نوتیفیکیشن
+    - id: send-push
+      title: ارسال پوش
     - id: add-tag
       title: افزودن تگ
