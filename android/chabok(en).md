@@ -300,7 +300,7 @@ AdpPushClient.get().registerAsGuest();
 ```objectivec
 //Objective-C:
 
-[_manager registerAsGuest:];
+[_manager registerAsGuest];
 ```
 ```swift
 //Swift:
