@@ -23,8 +23,6 @@
     }
     $(window).on('scroll resize', getVisiblePartOfFooter);
 
-
-
   var Affix = function (element, options) {
     this.options = $.extend({}, Affix.DEFAULTS, options)
 
