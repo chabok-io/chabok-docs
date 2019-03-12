@@ -3,6 +3,23 @@
 
   // AFFIX CLASS DEFINITION
   // ======================
+    function getVisiblePartOfFooter() {
+        var $el = $('#footer'),
+            scrollTop = $(this).scrollTop(),
+            scrollBot = scrollTop + $(this).height(),
+            elTop = $el.offset().top,
+            elBottom = elTop + $el.outerHeight(),
+            visibleTop = elTop < scrollTop ? scrollTop : elTop,
+            visibleBottom = elBottom > scrollBot ? scrollBot : elBottom;
+        $('#notification').text(visibleBottom - visibleTop);
+
+        var height = $(window).height() - (visibleBottom - visibleTop)
+        $('.toc-list').css("height", height)
+    }
+    $(window).on('scroll resize', getVisiblePartOfFooter);
+
+
+
   var Affix = function (element, options) {
     this.options = $.extend({}, Affix.DEFAULTS, options)
 
