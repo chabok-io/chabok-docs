@@ -14,6 +14,7 @@ Before you start, first you'll need a Chabok account and your API Keys (to setup
 
 There are two kinds of accounts in Chabok. Our free account which is for **testing** and is based on sandbox environment. And our premium which is for launching your app and is based on production environment. Our sandbox account has a limited capacity for users and does not support more, therefore if you want to release your app we recommend on using our production account.
 
+For creating a Chabok account [go here](https://chabokpush.com/register.html).
 > `Note:` After creating a new account, you will have your keys in panel→settings. These keys are needed for **initializing our SDK**.
 
 ### 1.2 Configuring notifications
@@ -294,18 +295,71 @@ If your application has a signup or register section, you can use this method to
 
 `Android:`
 ```java
-AdpPushClient.get().registerAsGuest();
+@Override
+public void onCreate() {
+    super.onCreate();
+
+    ...
+    
+    String userId = AdpPushClient.get().getUserId();
+    
+    if (userId != null && !userId.isEmpty()) {
+        AdpPushClient.get().register(userId);
+    } else {
+
+        //If user is not registered verify the user and
+        //call AdpPushClient.get().register("USER_ID") method at login page
+        
+        //If you have guest users
+        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+        AdpPushClient.get().registerAsGuest();
+
+    }
+}
 ```
+
 `IOS:`
 ```objectivec
-//Objective-C:
+//Objective-C
 
-[_manager registerAsGuest];
-```
+- (BOOL)application:(UIApplication *)application
+            didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    ...
+    
+    if (_manager.userId) {
+        [_manager registerUser:_manager.userId];
+    } else {
+        //If user is not registered verify the user and
+        //call [_manager registerUser:@"USER_ID"]; method at login page
+
+        //If you have guest users
+        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+        [_manager registerAsGuest];
+    }
+    
+    return YES;
+}
+
 ```swift
-//Swift:
+//Swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-_manager?.registerAsGuest()
+    ...
+    
+    if let userId = _manager?.userId {
+        _manager?.registerUser(userId)
+    } else {
+        //If user is not registered verify the user and
+        //call manager?.registerUser("USER_ID") method at login page
+
+        //If you have guest users
+        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+        _manager?.registerAsGuest()  
+    }
+
+    return true
+}
 ```
 
 ## 3. Chabok Messaging and Push notification  

@@ -3,23 +3,6 @@
 
   // AFFIX CLASS DEFINITION
   // ======================
-
-    $(window).scroll(sticky_relocate);
-    sticky_relocate();
-    function sticky_relocate() {
-        var scrollBottom = $(window).scrollTop() + $(window).height();
-        console.log('scrollBottom', scrollBottom)
-        console.log('$(window).scrollTop()', $(window).scrollTop())
-        console.log('$(window).height()', $(window).height())
-        console.log("$('#footer').height()", $('#footer').height())
-        // var sidebarHeight = $(window).height() -
-        if (scrollBottom < $('#footer').height()){
-            $('.toc-list').addClass('scroll-overflow');
-        } else {
-            $('.toc-list').addClass('scroll-overflow');
-        }
-    }
-
   var Affix = function (element, options) {
     this.options = $.extend({}, Affix.DEFAULTS, options)
 
