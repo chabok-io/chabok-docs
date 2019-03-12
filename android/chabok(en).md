@@ -22,7 +22,7 @@ To send notifications on android , you'll need to enter your **API key** and **s
 If you don't have the keys, [see how to get them](https://webkul.com/blog/generate-api-key-fcm-sender-id/). After that, place them in panel→ settings→ platforms→android cart.
 
 `IOS:`
-To send notifications on ios, you'll need to upload your p8 file to your panel. After that, place it in panel→ settings→ platforms→ios cart.
+To send notifications on ios, you'll need to upload your p8 file in panel→ settings→ platforms→ios cart.
 
 ## 2. SDK Integration
 
@@ -290,22 +290,76 @@ AdpPushClient.get().register("USER_ID");
 _manager?.registerUser("USER_ID")
 ```
 #### Register Guest Users
-If your application has a signup or register section, you can use this method to register users who don't register, as **guests users**. This method will register those users as guests and automatically assign a `guest` tag to them. This way you can **send messages to guest users** and also **track installs based on users' first app launch (just like Adjust)**.
+If your application has a signup or register section, you can use this method to register users who don't register, as **guests users**. This method will register those users as guests and automatically assigns a `guest` tag to them. This way you can **send messages to guest users** and also **track installs based on users' first app launch (just like Adjust)**.
 
 `Android:`
 ```java
-AdpPushClient.get().registerAsGuest();
+@Override
+public void onCreate() {
+    super.onCreate();
+
+    ...
+    
+    String userId = AdpPushClient.get().getUserId();
+    
+    if (userId != null && !userId.isEmpty()) {
+        AdpPushClient.get().register(userId);
+    } else {
+
+        //If user is not registered verify the user and
+        //call AdpPushClient.get().register("USER_ID") method at login page
+        
+        //If you have guest users
+        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+        AdpPushClient.get().registerAsGuest();
+
+    }
+}
 ```
+
 `IOS:`
 ```objectivec
-//Objective-C:
+//Objective-C
 
-[_manager registerAsGuest:];
+- (BOOL)application:(UIApplication *)application
+            didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    ...
+    
+    if (_manager.userId) {
+        [_manager registerUser:_manager.userId];
+    } else {
+        //If user is not registered verify the user and
+        //call [_manager registerUser:@"USER_ID"]; method at login page
+
+        //If you have guest users
+        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+        [_manager registerAsGuest];
+    }
+    
+    return YES;
+}
 ```
-```swift
-//Swift:
 
-_manager?.registerAsGuest()
+```swift
+//Swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+    ...
+    
+    if let userId = _manager?.userId {
+        _manager?.registerUser(userId)
+    } else {
+        //If user is not registered verify the user and
+        //call manager?.registerUser("USER_ID") method at login page
+
+        //If you have guest users
+        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+        _manager?.registerAsGuest()  
+    }
+
+    return true
+}
 ```
 
 ## 3. Chabok Messaging and Push notification  
