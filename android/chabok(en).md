@@ -22,7 +22,7 @@ To send notifications on android , you'll need to enter your **API key** and **s
 If you don't have the keys, [see how to get them](https://webkul.com/blog/generate-api-key-fcm-sender-id/). After that, place them in panel→ settings→ platforms→android cart.
 
 `IOS:`
-To send notifications on ios, you'll need to upload your p8 file to your panel. After that, place it in panel→ settings→ platforms→ios cart.
+To send notifications on ios, you'll need to upload your p8 file in panel→ settings→ platforms→ios cart.
 
 ## 2. SDK Integration
 
@@ -290,7 +290,7 @@ AdpPushClient.get().register("USER_ID");
 _manager?.registerUser("USER_ID")
 ```
 #### Register Guest Users
-If your application has a signup or register section, you can use this method to register users who don't register, as **guests users**. This method will register those users as guests and automatically assign a `guest` tag to them. This way you can **send messages to guest users** and also **track installs based on users' first app launch (just like Adjust)**.
+If your application has a signup or register section, you can use this method to register users who don't register, as **guests users**. This method will register those users as guests and automatically assigns a `guest` tag to them. This way you can **send messages to guest users** and also **track installs based on users' first app launch (just like Adjust)**.
 
 `Android:`
 ```java
