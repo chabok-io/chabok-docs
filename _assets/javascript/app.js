@@ -9,7 +9,8 @@
     function sticky_relocate() {
         var scrollBottom = $(window).scrollTop() + $(window).height();
         console.log('scrollBottom', scrollBottom)
-
+        console.log('$(window).scrollTop()', $(window).scrollTop())
+        // var sidebarHeight = $(window).height() -
         if (scrollBottom < $('#footer').height()){
             $('.toc-list').addClass('scroll-overflow');
         } else {
