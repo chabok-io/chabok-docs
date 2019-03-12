@@ -8,15 +8,15 @@ direction: ltr
 
 ## 1. Prerequisites
 
-Before you start, first you'll need a **Chabok account** and your **API Keys** (to setup notifications on android and ios).
+Before you start, first you'll need a **Chabok account** and your notification **API Keys** (to setup notifications on android and ios).
 
 ### 1.1 Getting Started: Creating Chabok Account
 
-There are two kinds of accounts in Chabok. Our free account which is for **testing** and is based on sandbox environment. And our premium which is for launching your app and is based on production environment. Our sandbox account has a limited capacity for users and does not support more, therefore if you want to release your app we recommend on using our production account.
+There are two kinds of accounts in Chabok. Our free account which is for **testing** and is based on sandbox environment. And our premium which is for launching your app and is based on production environment. Our sandbox account has a limited capacity for users and does not support more. Therefore if you want to release your app, we recommend on using our production account which has no limitations.
 
 For creating a Chabok account [go here](https://chabokpush.com/register.html).
 
-> `Note:` After creating a new account, you will have your keys in panel→settings. These keys are needed for **initializing our SDK**.
+> `Note:` After creating a new account, you will have your **SDK keys** in panel→settings. These keys are needed for [**initializing our SDK**](/android/chabok(en).html#23-initialize-library).
 
 ### 1.2 Configuring notifications
 `Android:`
