@@ -13,7 +13,7 @@
         if (scrollBottom < $('#footer').height()){
             $('.toc-list').addClass('scroll-overflow');
         } else {
-            $('#sticky').removeClass('stick');
+            $('.toc-list').addClass('scroll-overflow');
         }
     }
 
