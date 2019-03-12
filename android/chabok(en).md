@@ -14,6 +14,7 @@ Before you start, first you'll need a Chabok account and your API Keys (to setup
 
 There are two kinds of accounts in Chabok. Our free account which is for **testing** and is based on sandbox environment. And our premium which is for launching your app and is based on production environment. Our sandbox account has a limited capacity for users and does not support more, therefore if you want to release your app we recommend on using our production account.
 
+For creating a Chabok account [go here](https://chabokpush.com/register.html).
 > `Note:` After creating a new account, you will have your keys in panel→settings. These keys are needed for **initializing our SDK**.
 
 ### 1.2 Configuring notifications
@@ -339,7 +340,6 @@ public void onCreate() {
     
     return YES;
 }
-```
 
 ```swift
 //Swift
