@@ -17,8 +17,10 @@
 
         if ((visibleBottom - visibleTop) > 0){
             $('.affix').css("height", height - 60)
+            $('.affix-bottom').css("height", height - 60)
         } else {
             $('.affix').css("height", 'auto')
+            $('.affix-bottom').css("height", 'auto')
         }
     }
     $(window).on('scroll resize', getVisiblePartOfFooter);
