@@ -4,19 +4,6 @@
   // AFFIX CLASS DEFINITION
   // ======================
 
-    $(window).scroll(sticky_relocate);
-    sticky_relocate();
-    function sticky_relocate() {
-        var scrollBottom = $(window).scrollTop() + $(window).height();
-        console.log('scrollBottom', scrollBottom)
-
-        if (scrollBottom < 600){
-            $('#sticky').addClass('stick');
-        } else {
-            $('#sticky').removeClass('stick');
-        }
-    }
-
   var Affix = function (element, options) {
     this.options = $.extend({}, Affix.DEFAULTS, options)
 
