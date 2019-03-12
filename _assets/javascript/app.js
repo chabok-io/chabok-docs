@@ -11,6 +11,7 @@
         console.log('scrollBottom', scrollBottom)
         console.log('$(window).scrollTop()', $(window).scrollTop())
         console.log('$(window).height()', $(window).height())
+        console.log("$('#footer').height()", $('#footer').height())
         // var sidebarHeight = $(window).height() -
         if (scrollBottom < $('#footer').height()){
             $('.toc-list').addClass('scroll-overflow');
