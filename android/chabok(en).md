@@ -284,7 +284,7 @@ You'll find your chabok API keys (`APP_ID`, `API_KEY`, `SDK_USERNAME`, `SDK_PASS
 <br>
 
 ### 2.4 Register Users
-One of chabok's advantages is identifying each and every user with a unique Id. This will allow you to manage all devices of a user and gather user info just like a CRM system. This Id can be used on several devices of a user. You can setup this Id on any meaningful field related to your business. It can be users' phone or social security number, email and even your data-base's Id. This way your messages will be sent through this Id and not tokens or device Ids.
+One of chabok's advantages is identifying each and every user with a unique Id. This will allow you to manage all devices of a user and gather user info just like a CRM system. This Id can be used on several devices of a user. You can setup this Id on any meaningful field related to your business. It can be users' phone or social security number, email and even your database's Id. This way your messages will be sent through this Id and not tokens or device Ids.
 
 > `note:` Trackers usually count installs on the first app launch. But with chabok's tracker you can count an install after user login or verification. By doing this you are taking yet another step to prevent fraud. This way users' signatures will be checked before and after registration. 
 
