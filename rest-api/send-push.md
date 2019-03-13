@@ -11,7 +11,7 @@ next: add-tag.html
 
 <Br>
 
->`نکته:` توجه داشته باشید که **پیام چابک** به طور پیش‌فرض شامل **نوتیفیکیشن** هم می‌شود. 
+>`نکته:` توجه داشته باشید که **پیام چابک** به طور پیش‌فرض شامل **نوتیفیکیشن** هم می‌شود. برای اطلاعات بیشتر درباره تفاوت **پیام چابک** و **نوتیفیکیشن** [این قسمت](/panel/send.html#سیاست-ارسال) را مطالعه کنید.
 
 <Br>
 
@@ -152,6 +152,8 @@ curl -X POST \
 
 </div>
 </details>
+
+<br>
 
 <details style="text-align: right"><summary> جدول پارامترهای نوتیفیکیشن</summary>
 <p>
@@ -294,11 +296,11 @@ curl -X POST \
 -d "{ \"user\": \"Test\", \"content\": \"پرواز شما دچار نیم ساعت تاخیر شده است.\", \"useAsAlert\": true}"
 ```
 
-##### مثال ارسال شخصی پیام چابک به چند کاربر
+##### مثال ارسال شخصی پیام چابک به چند کاربر با یک محتوا
 
-برای ارسال پیام چابک به به چند شناسه کاربری می‌توانید از دو روش زیر استفاده کنید:
+برای ارسال پیام چابک به به چند شناسه کاربری می‌توانید از روش زیر استفاده کنید:
 
-پی‌لود روش اول:
+پی‌لود:
 
 ```bash
 {
@@ -315,11 +317,14 @@ curl -X POST \
 
 ```bash
 curl -X POST "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" -H "accept: application/json" -H "Content-Type: application/json" \
--d { \"users\": [\"USER_1\", \"USER_2\", \"USER_3\", \"USER_4\"], \"content\": \"سفارش شما با موفقیت ثبت شد\", \"channel\": \"default\", \"notification\": { \"title\": \"چابک\", \"body\": \"سفارش ثبت شد\" } }
+-d "{ \"users\": [\"USER_1\", \"USER_2\", \"USER_3\", \"USER_4\"], \"content\": \"سفارش شما با موفقیت ثبت شد\", \"channel\": \"default\", \"notification\": { \"title\": \"چابک\", \"body\": \"سفارش ثبت شد\" } }"
 ```
 
+##### مثال ارسال شخصی پیام چابک به چند کاربر با محتواهای متفاوت
 
-پی‌لود روش دوم:
+برای ارسال پیام چابک به به چند شناسه کاربری با محتواهای متفاوت می‌توانید از روش زیر استفاده کنید:
+
+پی‌لود:
 
 ```bash
 [
@@ -356,7 +361,7 @@ curl -X POST "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=
 
 ```bash
 curl -X POST "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" -H "accept: application/json" -H "Content-Type: application/json" \
--d [ { \"user\": \"USER_1\", \"content\": \"سفارش شما با موفقیت ثبت شد\", \"channel\": \"default\", \"notification\": { \"title\": \"چابک\", \"body\": \"سفارش ثبت شد\" } }, { \"user\": \"USER_2\", \"content\": \"سفارش شما با موفقیت ثبت شد\", \"channel\": \"default\", \"notification\": { \"title\": \"چابک\", \"body\": \"سفارش ثبت شد\" } }, { \"user\": \"USER_2\", \"content\": \"سفارش شما با موفقیت ثبت شد\", \"channel\": \"default\", \"notification\": { \"title\": \"چابک\", \"body\": \"سفارش ثبت شد\" } } ]
+-d [ "{ \"user\": \"USER_1\", \"content\": \"سفارش شما با موفقیت ثبت شد\", \"channel\": \"default\", \"notification\": { \"title\": \"چابک\", \"body\": \"سفارش ثبت شد\" } }, { \"user\": \"USER_2\", \"content\": \"سفارش شما با موفقیت ثبت شد\", \"channel\": \"default\", \"notification\": { \"title\": \"چابک\", \"body\": \"سفارش ثبت شد\" } }, { \"user\": \"USER_2\", \"content\": \"سفارش شما با موفقیت ثبت شد\", \"channel\": \"default\", \"notification\": { \"title\": \"چابک\", \"body\": \"سفارش ثبت شد\" } }" ]
 ```
 <br>
 
@@ -381,7 +386,7 @@ curl -X POST \
 
 این قسمت مخصوص ارسال گروهی یا اجرای کمپین است. پیام گروهی به شما امکان می‌دهد به یک سگمنتی (سگمنت‌ آی‌دی یا فیلترهای سگمنت) پوش بفرستید: 
 
-برای مشاهده نحوه استفاده از [سگمنت](/rest-api/send-chabok-message.html#نحوه-استفاده-از-سگمنتها-در-api) اینجا را مطالعه کنید.
+برای مشاهده نحوه استفاده از [سگمنت](/rest-api/send-push.html#نحوه-استفاده-از-سگمنتها-در-api) اینجا را مطالعه کنید.
 
 #### ارسال گروهی پیام چابک
 
@@ -501,6 +506,8 @@ curl -X POST \
 
 </div>
 </details>
+
+<br>
 
 <details style="text-align: right"><summary> جدول پارامترهای نوتیفیکیشن</summary>
 <p>
@@ -799,6 +806,8 @@ curl -X POST \
 </div>
 </details>
 
+<br>
+
 <details style="text-align: right"><summary> جدول پارامترهای نوتیفیکیشن</summary>
 <p>
 <table class="table table-striped table-bordered">
@@ -937,24 +946,13 @@ curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
--d "{ \"user\": \"*\", \"content\": \"نسخه جدید اپلیکیشن را نصب کنید.\", \"useAsAlert\": true}"
+-d "{ \"user\": \"*\", \"content\": \"نسخه جدید اپلیکیشن را نصب کنید.\", \"channel\": \"public/sport\", \"useAsAlert\": true}"
 ```
 <br>
 
 #### ارسال عمومی نوتیفیکیشن 
 
-برای ارسال عمومی نوتیفیکیش می‌توانید از لینک `https://sandbox.push.adpdigital.com/api/push/notifyUsers` استفاده کنید. 
-
-نمونه زیر یک cURL معتبر است:
-
-```bash
-curl -X POST \
-"https://sandbox.push.adpdigital.com/api/push/notifyUsers?access_token=<ACCESS_TOKEN>" \
--H "accept: application/json" \
--H "Content-Type: application/json" \
--d "@payload.json"
-```
->` نکته:` متد ارسال نوتیفیکیشن پی‌لودهای ارسال پیام چابک را پشتیبانی می‌کند، بنابراین می‌توانید از مثال‌های آن استفاده کنید و فقط کافیست متد را از `toUsers` به `notifyUsers` تغییر دهید.
+با توجه به این که در نوتیفیکیشن مفهوم **کانال** معنی نمی‌دهد بنابراین ارسال عمومی هم قابل اجرا نیست. در صورتی که می‌خواهید به همه کاربران نوتیفیکیشن بفرستید باید از [ارسال گروهی](/send-push.html#ارسال-گروهی-نوتیفیکیشن) این کار را انجام دهید.
 
 <br>
 
@@ -1012,6 +1010,8 @@ curl -X POST \
 
 - `osVersion`: نسخه سیستم‌عامل
 
+مثال زیر کاربرانی را هدف قرار می‌دهد که **بعد از ۶ ساعت پیش**، برنامه‌ را نصب کرده‌اند و **بیش از ۲ بار** هم آن را باز نموده‌اند:
+
 #### نمونه
 
 ```bash
@@ -1030,4 +1030,3 @@ curl -X POST \
   ]
 }
 ```
-مثال بالا کاربرانی را هدف قرار می‌دهد که بعد از ۶ ساعت پیش، برنامه‌ را نصب کرده‌اند و بیش از ۲ بار هم آن را باز نموده‌اند.
