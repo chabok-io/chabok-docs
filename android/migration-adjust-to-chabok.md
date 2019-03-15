@@ -54,7 +54,7 @@ implementation 'com.google.android.gms:play-services-analytics:16.0.4'
   
 ```javascript  
 implementation 'me.leolin:ShortcutBadger:1.1.22@aar' 
-implementation 'com.adpdigital.push:chabok-lib:2.14.0'  
+implementation 'com.adpdigital.push:chabok-lib:2.14.2'  
 implementation 'com.google.android.gms:play-services-gcm:10.2.6'  
 ```  
 
@@ -124,13 +124,6 @@ public class GlobalApplication extends Application {
 
 		...
     }
-    
-    @Override
-    public void onTerminate() {
-        AdpPushClient.get().dismiss();
-
-        super.onTerminate();
-    }
 }
 ```  
 در متد `init` به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
@@ -140,11 +133,8 @@ public class GlobalApplication extends Application {
  
 #### ۴. ثبت کاربر  
 
-یکی از مزیت‌های چابک نسبت به ادجاست، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد تا **دستگاه‌های متعدد** کاربر را مدیریت کنید.
 
- شناسه کاربر می‌تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید.**شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی **شناسه دیتابیس‌تان** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. یکی از کاربردهای این شناسه امکان تشخیص اینکه کدام کاربر اپلیکیشن را حذف کرده و یا مجددا نصب کرده می‌باشد.
- 
-متد `register` عمل **اتصال** به سرور چابک را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرا اپلیکیشن (در کلاس application) فراخوانی شود. برای اطلاعات بیشتر می‌توانید بخش ثبت کاربر را مطالعه کنید.
+ترکرها به طور معمول نصب را **اولین بازدید** حساب می‌کنند (مانند سرویس ادجاست)، اما مزیت ترکر چابک در شمارش نصب این است که شما می‌توانید علاوه بر مدل ادجاست نصب را **پس از ورود کاربر و احراز هویت او** در اپلیکیشنتان تعریف کنید. با این کار شما یک اقدام دیگری برای جلوگیری از تقلب در شمارش نصب انجام می‌دهید، به این دلیل که امضاهای کاربر، قبل و بعد از ثبت او (register) مطابقت داده می‌شوند و در صورت تایید به عنوان یک نصب سالم در نظر گرفته می‌شوند.
   
 ```java  
 String userId = AdpPushClient.get().getUserId();
@@ -154,10 +144,19 @@ if (userId != null && !userId.isEmpty()) {
 } else {
 	
 	//If user is not registered verify the user and
-	//call AdpPushClient.get().register("USER_ID") method at login page 
-	AdpPushClient.get().register("USER_ID");
+        //call AdpPushClient.get().register("USER_ID") method at login page
+        
+        //If you have guest users
+        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+        AdpPushClient.get().registerAsGuest();
 }  
 ```  
+
+متد `registerAsGuest` کاربر را به عنوان **کاربر مهمان** ثبت می‌کند. این متد به طور خودکار  یک تگ مهمان (CHABOK_GUEST) به کاربر اختصاص می‌دهد. 
+
+ متد `register` علاوه بر ثبت کاربر، عمل **اتصال به سرور چابک** را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرای اپلیکیشن (در کلاس application) فراخوانی شود: (برای اطلاعات بیشتر می‌توانید بخش [ثبت کاربر](/android/sdk-setup.html#۴--ثبت-کاربر-register) را مطالعه کنید.) 
+
+>` نکته:` دقت کنید که متد `registerAsGuest` را تنها استفاده نکنید و مانند بالا عمل کنید. در صورت فراخوانی این متد به تنهایی کاربر با هر بازدید به عنوان یک مهمان جدید محاسبه خواهد شد. 
 
 <Br>  
    
