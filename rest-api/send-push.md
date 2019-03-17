@@ -640,14 +640,14 @@ curl -X POST \
 
 ##### مثال ارسال گروهی پیام چابک 
 
-نمونه زیر یک cURL معتبر از ارسال پیام چابک گروهی (با فیلتر دستگاه‌های آی‌اواس) است:
+نمونه زیر یک cURL معتبر از ارسال پیام چابک گروهی است. گروه مخاطب این پیام، خانم‌هایی هستند که بیش از یک بار خرید داشته‌اند و از موبایل (دستگاه‌های اندروید و آی‌اواس) استفاده می‌کنند.
 
 ```bash
 curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/byQuery?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
--d "{\t\"target\": {\t\t\"deviceType\": \"ios\"\t},\t\"content\": \"سلام به اپلیکیشن ما خوش‌آمدید. برای خرید اولتان از اپلیکیشن می‌توانید از کد تخفیف 10٪ استفاده کنید. کد تخفیف: NewApp10\",\t\"useAsAlert\": true}"
+-d "{\"segment\": { \"all\": [ { \"name\": \"deviceType\", \"operator\": \"include\", \"value\": [ \"android\", \"ios\" ] }, { \"name\": \"tags\", \"operator\": \"include\", \"value\": [ \"FEMALE\" ] }, { \"name\": \"purchase.count\", \"operator\": \"greater_than\", \"value\": 1 } ] },\"content\": \"خریدهای عیدتان را از همین الان شروع کنید!\",\"useAsAlert\": \"true\"}"
 ```
 <br>
 
