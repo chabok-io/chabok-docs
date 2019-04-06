@@ -40,10 +40,10 @@ next: users.html
 https://sand.chabokpush.com/637z3i?campaign=CAMPAIGN_1‍‍‍‍‍‍
 ```
 
-علاوه بر آن پارامترهای دیگری را مانند `fallback` ،`redirect_ios` ،`redirect_android`، `click_id` ،`android_id` می‌توانید در لینک ترکر خود بگذارید. لینک زیر مثالی از تمام پارامترهایی است که می‌توانید در لینک خود قرار دهید. 
+علاوه بر آن پارامترهای دیگری را مانند `fallback` ،`redirect_ios` ،`redirect_android`، `click_id` ،`android_id` و `install_callback` می‌توانید در لینک ترکر خود بگذارید. لینک زیر مثالی از تمام پارامترهایی است که می‌توانید در لینک خود قرار دهید. 
 
 ```markup
-https://sand.chabokpush.com/637z3i?campaign=CAMPAIGN&adgroup=AD_GROUP&creative=CREATIVE&redirect_ios=https://itunes.apple.com/us/genre/ios/id36?mt=8&redirect_android=https://play.google.com/store&fallback=https://mylandingpage.com/&click_id=11111&android_id=ANDROID_ID
+https://sand.chabokpush.com/637z3i?campaign=CAMPAIGN&adgroup=AD_GROUP&creative=CREATIVE&redirect_ios=https://itunes.apple.com/us/genre/ios/id36?mt=8&redirect_android=https://play.google.com/store&fallback=https://mylandingpage.com/&click_id=11111&android_id=ANDROID_ID&install_callback=https://mylandingpage.com/
 ```
 
 <Br>
