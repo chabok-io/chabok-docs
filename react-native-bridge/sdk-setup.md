@@ -51,14 +51,12 @@ android {
 }
 dependencies {
     ...
-    compile "com.google.android.gms:play-services-gcm:10.2.6"
-    compile 'me.leolin:ShortcutBadger:1.1.22@aar'
-    compile 'com.adpdigital.push:chabok-lib:+'
+    implementation "com.google.android.gms:play-services-gcm:10.2.6"
+    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
+    implementation 'com.adpdigital.push:chabok-lib:2.14.2'
     ...
 }
 ```
-
-> `نکته`: برای اینکه نسخه کتابخانه‌ای که استفاده می‌کنید **آخرین** نسخه باشد، می‌توانید به جای ‌VERSION از + استفاده نمایید.
 
 آخرین نسخه فایل کتابخانه چابک از  [اینجا](https://bintray.com/bintray/jcenter?filterByPkgName=com.adpdigital.push) قابل دسترس می‌باشد.
 در انتها گزینه سینک را بزنید.
@@ -79,7 +77,7 @@ dependencies {
 $ cd ios
 $ pod init
 ```
-سپس dependency` chabokPush` را به `Podfile` خود مانند زیر اضافه کنید:
+سپس chabokPush` dependency` را به `Podfile` خود مانند زیر اضافه کنید:
 
 ```bash
 use_frameworks!
