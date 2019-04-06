@@ -36,9 +36,9 @@ next: sdk-setup.html
 <img src="http://uupload.ir/files/gx28_vjyi_clousd.png" alt="Its You" height="440px" width="867px">
 
 
-۴- کلیدهای **Legacy server key** و **Sender ID** را به ترتیب در فیلدهای مربوطه در بخش تنظیمات پیشرفته حساب خود در پنل چابک وارد نمایید.
+۴- کلیدهای **Legacy server key** و **Sender ID** را به ترتیب در فیلدهای مربوطه در بخش **تنظیمات**->**پلتفرم‌ها** در پنل چابک وارد نمایید.
 
-<img src="http://uupload.ir/files/uq24_android-push.png" alt="Its You" height="328px" width="867px">
+![عکس مربوطه](http://uupload.ir/files/b8mh_android-push-settings.png)
 
 > `نکته`: مقدار **Sender ID** علاوه بر این قسمت، به عنوان یکی از پارامترهای مقداردهی اولیه در [راه‌اندازی](/android/sdk-setup.html) چابک نیز مورد استفاده قرار خواهد گرفت.
 
