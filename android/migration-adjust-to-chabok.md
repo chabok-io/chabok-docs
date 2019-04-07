@@ -172,7 +172,7 @@ if (userId != null && !userId.isEmpty()) {
 
 شما در همین صفحه می‌توانید لیستی از ترکرهای فعال همراه با **تعداد کلیک، نصب و نرخ تبدیل** مشاهده کنید.
 
- ![عکس مربوطه](http://uupload.ir/files/m2p_tracker-list.png)
+ ![عکس مربوطه](http://uupload.ir/files/ad9h_tracker-saved.png)
 
 <Br>
   
