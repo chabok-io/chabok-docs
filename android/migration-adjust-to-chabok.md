@@ -140,24 +140,37 @@ public class GlobalApplication extends Application {
  
 #### ۴. ثبت کاربر  
 
-یکی از مزیت‌های چابک نسبت به ادجاست، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد تا **دستگاه‌های متعدد** کاربر را مدیریت کنید.
+یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید.
 
- شناسه کاربر می‌تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید.**شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی **شناسه دیتابیس‌تان** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. یکی از کاربردهای این شناسه امکان تشخیص اینکه کدام کاربر اپلیکیشن را حذف کرده و یا مجددا نصب کرده می‌باشد.
- 
-متد `register` عمل **اتصال** به سرور چابک را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرا اپلیکیشن (در کلاس application) فراخوانی شود. برای اطلاعات بیشتر می‌توانید بخش ثبت کاربر را مطالعه کنید.
-  
-```java  
-String userId = AdpPushClient.get().getUserId();
 
-if (userId != null && !userId.isEmpty()) {
-	AdpPushClient.get().register(userId);
-} else {
-	
-	//If user is not registered verify the user and
-	//call AdpPushClient.get().register("USER_ID") method at login page 
-	AdpPushClient.get().register("USER_ID");
-}  
-```  
+```java
+@Override
+public void onCreate() {
+    super.onCreate();
+
+    ...
+    
+    String userId = AdpPushClient.get().getUserId();
+    
+    if (userId != null && !userId.isEmpty()) {
+        AdpPushClient.get().register(userId);
+    } else {
+
+        //If user is not registered verify the user and
+        //call AdpPushClient.get().register("USER_ID") method at login page
+        
+        //If you have guest users
+        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+        AdpPushClient.get().registerAsGuest();
+
+    }
+}
+```
+
+متد `registerAsGuest` کاربر را به عنوان **کاربر مهمان** ثبت می‌کند. این متد به طور خودکار  یک تگ مهمان (CHABOK_GUEST) به کاربر اختصاص می‌دهد. 
+
+ متد `register` علاوه بر ثبت کاربر، عمل **اتصال به سرور چابک** را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرای اپلیکیشن (در کلاس application) فراخوانی شود: (برای اطلاعات بیشتر می‌توانید بخش [ثبت کاربر](/android/sdk-setup.html#۴--ثبت-کاربر-register) را مطالعه کنید.) 
+
 
 <Br>  
    
