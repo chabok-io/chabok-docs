@@ -23,7 +23,7 @@ next: users.html
 <Br>
 
 ![عکس مربوطه](http://uupload.ir/files/4sx_new-tracker-p1.png)
-![عکس مربوطه](http://uupload.ir/files/iqf_new-tracker-p2.png)
+![عکس مربوطه](http://uupload.ir/files/j9uj_new-tracker-p2.png)
 
 
 <Br>
