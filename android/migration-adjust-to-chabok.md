@@ -54,7 +54,7 @@ implementation 'com.google.android.gms:play-services-analytics:16.0.4'
   
 ```javascript  
 implementation 'me.leolin:ShortcutBadger:1.1.22@aar' 
-implementation 'com.adpdigital.push:chabok-lib:2.14.0'  
+implementation 'com.adpdigital.push:chabok-lib:2.14.2'  
 implementation 'com.google.android.gms:play-services-gcm:10.2.6'  
 ```  
 
@@ -124,13 +124,6 @@ public class GlobalApplication extends Application {
 
 		...
     }
-    
-    @Override
-    public void onTerminate() {
-        AdpPushClient.get().dismiss();
-
-        super.onTerminate();
-    }
 }
 ```  
 در متد `init` به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
@@ -171,6 +164,7 @@ public void onCreate() {
 
  متد `register` علاوه بر ثبت کاربر، عمل **اتصال به سرور چابک** را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرای اپلیکیشن (در کلاس application) فراخوانی شود: (برای اطلاعات بیشتر می‌توانید بخش [ثبت کاربر](/android/sdk-setup.html#۴--ثبت-کاربر-register) را مطالعه کنید.) 
 
+>` نکته:` دقت کنید که متد `registerAsGuest` را تنها استفاده نکنید و مانند بالا عمل کنید. در صورت فراخوانی این متد به تنهایی کاربر با هر بازدید به عنوان یک مهمان جدید محاسبه خواهد شد. 
 
 <Br>  
    
