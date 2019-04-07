@@ -133,26 +133,32 @@ public class GlobalApplication extends Application {
  
 #### ۴. ثبت کاربر  
 
+یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید.
 
-یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و [سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید](/panel/users.html#جزئیات-کاربر).
 
-ترکرها به طور معمول نصب را **اولین بازدید** حساب می‌کنند (مانند سرویس ادجاست)، اما مزیت ترکر چابک در شمارش نصب این است که شما می‌توانید علاوه بر مدل ادجاست نصب را **پس از ورود کاربر و احراز هویت او** در اپلیکیشنتان تعریف کنید. با این کار شما یک اقدام دیگری برای جلوگیری از تقلب در شمارش نصب انجام می‌دهید، به این دلیل که امضاهای کاربر، قبل و بعد از ثبت او (register) مطابقت داده می‌شوند و در صورت تایید به عنوان یک نصب سالم در نظر گرفته می‌شوند.
-  
-```java  
-String userId = AdpPushClient.get().getUserId();
+```java
+@Override
+public void onCreate() {
+    super.onCreate();
 
-if (userId != null && !userId.isEmpty()) {
-	AdpPushClient.get().register(userId);
-} else {
-	
-	//If user is not registered verify the user and
+    ...
+    
+    String userId = AdpPushClient.get().getUserId();
+    
+    if (userId != null && !userId.isEmpty()) {
+        AdpPushClient.get().register(userId);
+    } else {
+
+        //If user is not registered verify the user and
         //call AdpPushClient.get().register("USER_ID") method at login page
         
         //If you have guest users
         // should be called here (If you want to track installs on user's first app launch (just like Adjust))
         AdpPushClient.get().registerAsGuest();
-}  
-```  
+
+    }
+}
+```
 
 متد `registerAsGuest` کاربر را به عنوان **کاربر مهمان** ثبت می‌کند. این متد به طور خودکار  یک تگ مهمان (CHABOK_GUEST) به کاربر اختصاص می‌دهد. 
 
@@ -166,14 +172,14 @@ if (userId != null && !userId.isEmpty()) {
   
 برای رصد کمپین‌ها، باید در ابتدا با **پر کردن فرم ترکر جدید**، آن را برای چابک تعریف کنید. این فرم پنل صفحه ترکر قرار دارد. به عنوان مثال می‌خواهید ترکر کمپینی را به مناسبت **یک جشنواره** برای نصب اپلیکیشنتان از طریق **کافه بازار** تعریف کنید:
 
- ![عکس مربوطه](http://uupload.ir/files/3lxm_newtracker1.png)
- ![عکس مربوطه](http://uupload.ir/files/zav3_newtracker2.png)
+ ![عکس مربوطه](http://uupload.ir/files/su8z_new-tracker-1.png)
+ ![عکس مربوطه](http://uupload.ir/files/exgm_new-tracker-2.png)
 
 <Br>
 
 شما در همین صفحه می‌توانید لیستی از ترکرهای فعال همراه با **تعداد کلیک، نصب و نرخ تبدیل** مشاهده کنید.
 
- ![عکس مربوطه](http://uupload.ir/files/m2p_tracker-list.png)
+ ![عکس مربوطه](http://uupload.ir/files/ad9h_tracker-saved.png)
 
 <Br>
   
