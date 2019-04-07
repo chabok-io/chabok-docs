@@ -22,10 +22,9 @@ next: users.html
 
 <Br>
 
-![عکس مربوطه](http://uupload.ir/files/rty6_tracker-details.png)
-![عکس مربوطه](http://uupload.ir/files/t64a_tracker-redirect-link.png)
-![عکس مربوطه](http://uupload.ir/files/4vfm_tracker-callback.png)
-![عکس مربوطه](http://uupload.ir/files/qzkp_tracker-attribution.png)
+![عکس مربوطه](http://uupload.ir/files/4sx_new-tracker-p1.png)
+![عکس مربوطه](http://uupload.ir/files/j9uj_new-tracker-p2.png)
+
 
 <Br>
 
