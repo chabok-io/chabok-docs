@@ -165,8 +165,8 @@ if (userId != null && !userId.isEmpty()) {
   
 برای رصد کمپین‌ها، باید در ابتدا با **پر کردن فرم ترکر جدید**، آن را برای چابک تعریف کنید. این فرم پنل صفحه ترکر قرار دارد. به عنوان مثال می‌خواهید ترکر کمپینی را به مناسبت **یک جشنواره** برای نصب اپلیکیشنتان از طریق **کافه بازار** تعریف کنید:
 
- ![عکس مربوطه](http://uupload.ir/files/3lxm_newtracker1.png)
- ![عکس مربوطه](http://uupload.ir/files/zav3_newtracker2.png)
+ ![عکس مربوطه](http://uupload.ir/files/su8z_new-tracker-1.png)
+ ![عکس مربوطه](http://uupload.ir/files/exgm_new-tracker-2.png)
 
 <Br>
 
