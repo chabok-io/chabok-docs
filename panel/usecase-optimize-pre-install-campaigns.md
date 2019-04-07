@@ -51,15 +51,15 @@ permalink: panel/usecase-optimize-pre-install-campaigns.html
 
 برای رصد کمپین‌ها، باید در ابتدا با **پر کردن فرم ترکر جدید**، آن را برای چابک تعریف کنید. این فرم در پنل صفحه ترکر قرار دارد. به عنوان مثال می‌خواهید ترکر کمپینی را به مناسبت **یک جشنواره** برای نصب اپلیکیشنتان از طریق **کافه بازار** تعریف کنید:
 
- ![عکس مربوطه](http://uupload.ir/files/3lxm_newtracker1.png)
- ![عکس مربوطه](http://uupload.ir/files/zav3_newtracker2.png)
+ ![عکس مربوطه](http://uupload.ir/files/su8z_new-tracker-1.png)
+ ![عکس مربوطه](http://uupload.ir/files/exgm_new-tracker-2.png)
 
 
 <Br>
 
 شما در همین صفحه می‌توانید لیستی از ترکرهای فعال خود را همراه با **تعداد کلیک، نصب، رد شده و نرخ تبدیل** مشاهده کنید.
 
- ![عکس مربوطه](http://uupload.ir/files/m2p_tracker-list.png)
+ ![عکس مربوطه](http://uupload.ir/files/ad9h_tracker-saved.png)
 
 <Br>
 
