@@ -72,7 +72,7 @@ prev: settings.html
 
 در آخر می‌توانید **لیست** اعضای تیم خود را مشاهده کنید:
 
-![عکس مربوطه](http://uupload.ir/files/78dt_member-list.png)
+![عکس مربوطه](http://uupload.ir/files/upbq_new-member.png)
 
 #### تغییر سطح دسترسی عضو
 
