@@ -74,6 +74,19 @@ prev: settings.html
 
 ![عکس مربوطه](http://uupload.ir/files/78dt_member-list.png)
 
+#### تغییر سطح دسترسی عضو
+
+پس از ایجاد عضو جدید، شما می‌توانید سطح دسترسی عضو را تغییر دهید:
+
+![عکس مربوطه](http://uupload.ir/files/xl31_edit-membership.png)
+
+در اینجا به عنوان مثال دسترسی را از بازاریاب به تحلیل‌گر تغییر می‌دهیم:
+
+![عکس مربوطه](http://uupload.ir/files/kthz_edit-membership-access.png)
+
+همانطور که در تصویر زیر مشاهده می‌کنید تغییر سطح دسترسی عضو با موفقیت انجام شد:
+
+![عکس مربوطه](http://uupload.ir/files/elxz_edit-membership-done.png)
 
 <Br>
 
