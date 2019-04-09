@@ -53,7 +53,6 @@ dependencies {
     implementation 'com.adpdigital.push:chabok-lib:2.14.2'
     implementation 'com.google.android.gms:play-services-gcm:10.2.6' 
     implementation 'com.android.installreferrer:installreferrer:1.0'
-
 }
 ```
 
@@ -283,9 +282,13 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 
 از طریق Referrer شما اطلاعات کلیدی ترکر خود مانند منبع نصب، آی‌دی ترکر و سطح ترکر را ارسال می‌کنید.
 
-##### روش آی‌دی ترکر
+##### روش آی‌دی ترکر (Pre-Install Campaigns)
 
 اگر هم استورهای غیر از گوگل پلی Referrer را کلا پشتیبانی نکنند شما همچنان می‌توانید منبع (Source) نصب را در کمپین خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید و **آی‌دی ترکر** را در کد apk خود قرار دهید. 
+
+```java
+adjustConfig.setDefaultTracker("{TrackerToken}");
+```
 
 >`نکته:` دقت داشته باشید که آی‌دی ترکر شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد.
 
