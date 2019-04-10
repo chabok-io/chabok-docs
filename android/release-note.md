@@ -10,6 +10,41 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۲.۱۵.۰ - ۱۳۹۸/۰۱/۲۱](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.15.0)
+
+### تغییرات
+
+- تغییر رفتار در متد `registerAsGuest` (دیگر با هر بار فراخوانی کاربر جدید ایجاد نمی‌کند.)
+
+- حالا چابک ‍‍`osBuild` و ‍‍`locale` کاربر را برای آنالیتیکس جمع‌آوری می‌کند
+
+- افزودن متد `setDefaultTracker` برای ترک کمپین‌های نصب (Pre-Install Campaigns)
+
+- حل مشکل ارسال اطلاعات کاربر در متد `setUserInfo`
+
+- پشتیبانی از **advertisingId** گوگل
+
+- پشتیبانی از `INSTALL_REFERRER` intent برای [ترک استورهای غیر از گوگلی پلی](/android/tracker.html#استورهای-غیر-از-گوگل-پلی-third-party-app-stores):
+
+```java
+<receiver
+    android:name="com.adpdigital.push.ChabokReferrerReceiver"
+    android:permission="android.permission.INSTALL_PACKAGES"
+    android:exported="true">
+       <intent-filter>
+            <action android:name="com.android.vending.INSTALL_REFERRER" />
+        </intent-filter>
+</receiver>
+```
+
+### ارتقا
+
+- پشتیبانی از `INSTALL_REFERRER` برای [گوگل پلی استور](/android/tracker.html#گوگل-پلی-استور):
+
+```java
+implementation 'com.android.installreferrer:installreferrer:1.0'
+```
+
 ##  [نسخه ۲.۱۴.۲ - ۱۳۹۷/۱۲/۱۳](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.2)
 
 ### تغییرات
@@ -200,5 +235,3 @@ public void publish(String channel, String text, JSONObject data, Callback clbk)
 ```java
 public void publishEvent(final String event, final JSONObject data, final boolean live)
 ```
-
-
