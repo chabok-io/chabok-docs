@@ -265,7 +265,7 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 
 ##### روش Referrer
 
-در صورتی که می‌خواهید از استورهای غیر از گوگل پلی که Referrer را پشتیبانی می‌کنند ترک کنید، تگ `receiver` را در کلاس `application`  فایل `AndroidManifest.xml` خود قرار دهید: 
+در صورتی که می‌خواهید از استورهای غیر از گوگل پلی که Referrer را **پشتیبانی می‌کنند** ترک کنید، تگ `receiver` را در کلاس `application`  فایل `AndroidManifest.xml` خود قرار دهید: 
 
 ```java
 <receiver
@@ -284,7 +284,7 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 
 ##### روش آی‌دی ترکر (Pre-Install Campaigns)
 
-اگر هم استورهای غیر از گوگل پلی Referrer را کلا پشتیبانی نکنند شما همچنان می‌توانید منبع (Source) نصب را در کمپین خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید و **آی‌دی ترکر** را در کد apk خود قرار دهید. 
+اگر هم استورهای غیر از گوگل پلی Referrer را کلا **پشتیبانی نکنند** شما همچنان می‌توانید منبع (Source) نصب را در کمپین خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید و **آی‌دی ترکر** را در کد apk خود قرار دهید. 
 
 ```java
 AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
