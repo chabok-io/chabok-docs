@@ -14,17 +14,17 @@ prev: troubleshoot.html
 
 ### تغییرات
 
-- تغییر رفتار در متد `registerAsGuest` (دیگر با هر بار فرخوانی کاربر جدید ایجاد نمی‌کند.)
+- تغییر رفتار در متد `registerAsGuest` (دیگر با هر بار فراخوانی کاربر جدید ایجاد نمی‌کند.)
 
 - حالا چابک ‍‍`osBuild` و ‍‍`locale` کاربر را برای آنالیتیکس جمع‌آوری می‌کند
 
-- افزودن متد `setDefaultTracker` برای ترک کمپین‌های نصب
+- افزودن متد `setDefaultTracker` برای ترک کمپین‌های نصب (Pre-Install Campaigns)
 
 - حل مشکل ارسال اطلاعات کاربر در متد `setUserInfo`
 
 - پشتیبانی از **advertisingId** گوگل
 
-- پشتیبانی از `INSTALL_REFERRER` INTENT برای [ترک استورهای غیر از گوگلی پلی](/android/tracker.html#استورهای-غیر-از-گوگل-پلی-third-party-app-stores):
+- پشتیبانی از `INSTALL_REFERRER` intent برای [ترک استورهای غیر از گوگلی پلی](/android/tracker.html#استورهای-غیر-از-گوگل-پلی-third-party-app-stores):
 
 ```java
 <receiver
