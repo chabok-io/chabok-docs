@@ -22,8 +22,8 @@ next: users.html
 
 <Br>
 
-![عکس مربوطه](http://uupload.ir/files/4sx_new-tracker-p1.png)
-![عکس مربوطه](http://uupload.ir/files/j9uj_new-tracker-p2.png)
+![عکس مربوطه](http://uupload.ir/files/7f8_new-tracker-1.png)
+![عکس مربوطه](http://uupload.ir/files/msyg_new-tracker-2.png)
 
 
 <Br>
@@ -273,7 +273,7 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 
 با کلیک روی هر ترکر می‌توانید جزئیات آن را به صورت لحظه‌ای مشاهده کنید.
 
-![عکس مربوطه](http://uupload.ir/files/gdga_tracker-analytics.png)
+![عکس مربوطه](http://uupload.ir/files/l57b_tracker-analytics-.png)
 
 در بخش **آمار ترکر** می‌توانید آمار سطح‌های ترکر (نام کمپین، شبکه تبلیغاتی، گروه تبلیغاتی و خلاقانه) خود را مشاهده کنید. با کلیک روی نام کمپین وارد شبکه‌های تبلیغاتی آن کمپین می‌شوید و به همین ترتیب وارد سطح‌های کوچکتر شوید. 
 
