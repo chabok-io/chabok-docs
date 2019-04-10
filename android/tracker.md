@@ -290,7 +290,7 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
 ```
 
->`نکته:` دقت داشته باشید که آی‌دی ترکر شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل->ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
+>`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
 
 ![عکس مربوط](http://uupload.ir/files/5rrb_tracker-analytics-s.png)
 
