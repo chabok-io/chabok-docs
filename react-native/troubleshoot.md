@@ -63,7 +63,7 @@ next: release-note.html
  
 امکان دریافت پوش‌نویفیکیشن بر روی Simulator آی‌او‌اس وجود ندارد.
 
-> `نکته:‍` توجه داشته باشید هنگامی که گواهی **sandbox اپل** را در پنل تستی قرار می‌دهید، فقط امکان دریافت Cloud Messaging در **حالت debug** وجود خواهد داشت. اما اگر گواهی **production اپل** را در محیط عملیاتی قرار دهید، زمانی Cloud Messaging را دریافت خواهید کرد که اقدام به ساخت **ipa** از پروژه خود کرده و از طریق TestFlight یا Enterprise اپلیکیشن خود را نصب کنید.
+> `نکته:‍` توجه داشته باشید هنگامی که گواهی **sandbox اپل** را در پنل تستی قرار می‌دهید، فقط امکان دریافت Push Notification در **حالت debug** وجود خواهد داشت. اما اگر گواهی **production اپل** را در محیط عملیاتی قرار دهید، زمانی Push Notification را دریافت خواهید کرد که اقدام به ساخت **ipa** از پروژه خود کرده و از طریق TestFlight یا Enterprise اپلیکیشن خود را نصب کنید.
 
 ##### ۴- تنظیمات GCM (پوش‌نوتیفیشکن) خود را چک کنید
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
