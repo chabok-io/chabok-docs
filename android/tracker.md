@@ -269,12 +269,12 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 
 ```java
 <receiver
-    android:name="com.adjust.sdk.AdjustReferrerReceiver"
+    android:name="com.adpdigital.push.ChabokReferrerReceiver"
     android:permission="android.permission.INSTALL_PACKAGES"
-    android:exported="true" >
-    <intent-filter>
-        <action android:name="com.android.vending.INSTALL_REFERRER" />
-    </intent-filter>
+    android:exported="true">
+       <intent-filter>
+            <action android:name="com.android.vending.INSTALL_REFERRER" />
+        </intent-filter>
 </receiver>
 ```
 
@@ -287,10 +287,12 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 اگر هم استورهای غیر از گوگل پلی Referrer را کلا پشتیبانی نکنند شما همچنان می‌توانید منبع (Source) نصب را در کمپین خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید و **آی‌دی ترکر** را در کد apk خود قرار دهید. 
 
 ```java
-adjustConfig.setDefaultTracker("{TrackerToken}");
+AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
 ```
 
->`نکته:` دقت داشته باشید که آی‌دی ترکر شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد.
+>`نکته:` دقت داشته باشید که آی‌دی ترکر شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل->ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
+
+![عکس مربوط](http://uupload.ir/files/5rrb_tracker-analytics-s.png)
 
 <br><br>
 
