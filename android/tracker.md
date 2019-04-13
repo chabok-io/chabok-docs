@@ -259,6 +259,8 @@ https://a.chabok.io/JY@4sc
 implementation 'com.android.installreferrer:installreferrer:1.0'
 ```
 
+<br>
+
 #### استورهای غیر از گوگل پلی (Third-Party App Stores)
 
 این کار را چابک با دو روش **استفاده از روش Referrer** و **آی‌دی ترکر** انجام می‌دهد. 
