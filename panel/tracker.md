@@ -231,6 +231,10 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 <td align="center">installed_at</td>
 <td align="right">زمان نصب</td>
 </tr>
+<tr>
+<td align="center">adid</td>
+<td align="right">شناسه تبلیغاتی</td>
+</tr>
 </tbody></table>
 </p>
 </details>
