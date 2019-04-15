@@ -3,8 +3,8 @@ id: tracker
 title: ترکر نصب
 layout: android
 permalink: android/tracker.html
-prev: push-notification.html
-next: user-management.html
+prev: sdk-setup.html
+next: chabok-messaging.html
 ---
 
 ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/android/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/android/tracker.html#۴-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
