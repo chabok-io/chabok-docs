@@ -10,6 +10,18 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۱/۲۶](https://github.com/chabokpush/chabok-client-rn-js/releases/tag/1.4.0)
+
+### تغییرات
+
+- بهبود تایید نصب
+- افزودن متد `registerAsGuest` برای اپلیکیشن‌هایی که کاربر مهمان دارند یا می‌خواهند نصب با اولین بازدید شمرده شود (مانند سرویس ادجاست)
+- افزودن کلید `uniqueId` برای تشخیص تمام دستگاه‌ها
+- حالا چابک `appBundleId`, `sdkType`, `installDate`, `newIns` و `locale` هر کاربر را برای آنالیتیکس جمع‌آوری می‌کنند
+- تشخیص `newInstall` و `launch`
+- حل مشکل متد `getUserId` در بازدید اول
+- حالا چابک **نسخه 0.44.0 ریکت نیتیو** را پشتیبانی می‌کند
+
 ## [نسخه ۱.۳.۰ - ۱۳۹۷/۰۶/۱۷](https://github.com/chabokpush/chabok-client-rn-js/releases/tag/1.3.0)
 
 ### تغییرات
