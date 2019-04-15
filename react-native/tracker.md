@@ -186,14 +186,14 @@ this.chabok.register('USER_ID').then(({deviceId}) => {
 
 با کد زیر می‌توانید  رفتار کاربر (رویداد) را در چابک رصد کنید:  
   
-```java  
-JSONObject data = new JSONObject();  
-data.put("currency", "EUR");  
-data.put("revenue", 0.01)  
-data.put("orderId", "{OrderId}");  
-  
-AdpPushClient.get().track("purchase", data);  
+```javascript
+const data = {
+  "orderId": OrderId
+}
+
+this.chabok.track('purchase', data)
 ```
+
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/react-native/behavior-tracking.html) را مطالعه کنید.
 
 <br>
