@@ -4,7 +4,7 @@ title: راه‌اندازی
 layout: react-native
 permalink: react-native/sdk-setup.html
 prev: required.html
-next: chabok-messaging.html
+next: tracker.html
 ---
 
 پس از طی کردن مراحل صفحه [پیش‌نیازها](/react-native/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/react-native/sdk-setup.html#۱--نصب-کتابخانه). در انتها، [مقداردهی و راه‌اندازی](/react-native/sdk-setup.html#۲--مقداردهی-اولیه) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/react-native/sdk-setup.html#۳--ثبت-کاربر) را حتما پشت سر بگذارید.
