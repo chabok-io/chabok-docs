@@ -10,13 +10,13 @@ prev: troubleshoot.html
 
 <Br>
 
-## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۱/۲۶](https://github.com/chabokpush/chabok-client-rn-js/releases/tag/v1.4.0)
+## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۱/۲۷](https://github.com/chabokpush/chabok-client-rn-js/releases/tag/v1.4.0)
 
 ### تغییرات
 
 - بهبود تایید نصب
 - افزودن متد `registerAsGuest` برای [اپلیکیشن‌هایی که کاربر مهمان دارند یا می‌خواهند نصب با اولین بازدید شمرده شود (مانند سرویس ادجاست)](/react-native/tracker.html#ج--ثبت-کاربر-register-users)
-- افزودن کلید `uniqueId` برای منحصر به فرد بودن دستگاه‌ها
+- افزودن کلید `uniqueId` برای منحصر به فرد کردن دستگاه‌ها
 - حالا چابک `appBundleId`, `sdkType`, `installDate` و `locale` هر کاربر را برای آنالیتیکس جمع‌آوری می‌کنند
 - تشخیص `newInstall` و `launch`
 - حل مشکل متد `getUserId` در بازدید اول
