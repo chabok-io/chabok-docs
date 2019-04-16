@@ -189,7 +189,7 @@ componentDidMount(){
 متد زیر کاربر را به عنوان کاربر مهمان ثبت می‌کند و به طور خودکار یک تگ مهمان (CHABOK_GUEST) به او اختصاص می‌دهد:
 
 ```java
-AdpPushClient.get().registerAsGuest();
+this.register.registerAsGuest();
 ```
 
 ### متد تایید ثبت کاربر
@@ -197,7 +197,7 @@ AdpPushClient.get().registerAsGuest();
 متد `isRegistered` یا همان تایید ثبت کاربر به شما این امکان را می‌دهد که بررسی کنید آیا عملیات ثبت‌نام انجام شده است یا خیر.
 
 ```javascript
-chabok.isRegistered()
+chabok.isRegistered();
 ```
 
 ### حذف کاربر (Unregister)
