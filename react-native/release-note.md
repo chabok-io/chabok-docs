@@ -15,13 +15,13 @@ prev: troubleshoot.html
 ### تغییرات
 
 - بهبود تایید نصب
-- افزودن متد `registerAsGuest` برای اپلیکیشن‌هایی که کاربر مهمان دارند یا می‌خواهند نصب با اولین بازدید شمرده شود (مانند سرویس ادجاست)
-- افزودن کلید `uniqueId` برای تشخیص تمام دستگاه‌ها
-- حالا چابک `appBundleId`, `sdkType`, `installDate`, `newIns` و `locale` هر کاربر را برای آنالیتیکس جمع‌آوری می‌کنند
+- افزودن متد `registerAsGuest` برای [اپلیکیشن‌هایی که کاربر مهمان دارند یا می‌خواهند نصب با اولین بازدید شمرده شود (مانند سرویس ادجاست)](/react-native/tracker.html#ج--ثبت-کاربر-register-users)
+- افزودن کلید `uniqueId` برای منحصر به فرد بودن دستگاه‌ها
+- حالا چابک `appBundleId`, `sdkType`, `installDate` و `locale` هر کاربر را برای آنالیتیکس جمع‌آوری می‌کنند
 - تشخیص `newInstall` و `launch`
 - حل مشکل متد `getUserId` در بازدید اول
 - حالا چابک **نسخه 0.44.0 ریکت نیتیو** را پشتیبانی می‌کند
-- افزودن متد `setDefaultTracker` برای ترک کمپین‌های نصب (Pre-Install Campaigns)
+- افزودن متد `setDefaultTracker` برای [ترک کمپین‌های نصب (Pre-Install Campaigns)](/react-native/tracker.html#روش-آیدی-ترکر-pre-install-campaigns)
 - پشتیبانی از `INSTALL_REFERRER` intent برای [ترک استورهای غیر از گوگلی پلی](/android/tracker.html#استورهای-غیر-از-گوگل-پلی-third-party-app-stores)
 
 ## [نسخه ۱.۳.۰ - ۱۳۹۷/۰۶/۱۷](https://github.com/chabokpush/chabok-client-rn-js/releases/tag/1.3.0)
