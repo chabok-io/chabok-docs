@@ -7,172 +7,268 @@ prev: sdk-setup.html
 next: chabok-messaging.html
 ---
 
-ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/react-native/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/react-native/tracker.html#۴-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
+ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/react-native-bridge/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/react-native-bridge/tracker.html#۴-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
 
  نگران راه‌اندازی هم نباشید این صفحه به طور کامل مراحل **پیاده‌سازی و استفاده از ترکر** را قدم به قدم مرور می‌کند.  
 
 <br>
 
->‍‍`نکته:` در صورتی که از قبل **SDK** چابک را نصب کرده‌‌اید، از [**رصد رویدادها**](/react-native/tracker.html#۲۱-رصد-رویدادها-tracking-events) شروع کنید.
+>‍‍`نکته:` در صورتی که از قبل **SDK** چابک را نصب کرده‌‌اید، از [**رصد رویدادها**](/react-native-bridge/tracker.html#۲۱-رصد-رویدادها-tracking-events) شروع کنید.
  
 ### ۱. پیاده‌سازی (SDK Integration)
 ---
 
-برای ایجاد حساب کاربری کافیست در وبسایت چابک وارد صفحه [شروع کنید](https://chabokpush.com/register.html) شوید و حساب شخصی خود را بسازید. پس از ایجاد حساب و ثبت اپلیکیشن خود، با مراجعه به بخش [تنظیمات پنل](https://sandbox.push.adpdigital.com/front/setting/access) پارامترهای اتصال به چابک که در مرحله [مقداردهی](/react-native/tracker.html#ج--مقداردهی-initialize) مورد نیاز است، در دسترس خواهد بود.
+برای ایجاد حساب کاربری کافیست در وبسایت چابک وارد صفحه [شروع کنید](https://chabokpush.com/register.html) شوید و حساب شخصی خود را بسازید. پس از ایجاد حساب و ثبت اپلیکیشن خود، با مراجعه به بخش [تنظیمات پنل](https://sandbox.push.adpdigital.com/front/setting/access) پارامترهای اتصال به چابک که در مرحله [مقداردهی](/react-native-bridge/tracker.html#ج--مقداردهی-initialize) مورد نیاز است، در دسترس خواهد بود.
 
 
 #### ۱.۱. مراحل پیاده‌سازی 
 
 برای راه‌اندازی SDK چابک ۳ مرحله زیر را به ترتیب انجام ‌دهید:
 
-[ الف- نصب کتابخانه](/react-native/sdk-setup.html#۱--نصب-کتابخانه)
+[ الف- نصب کتابخانه](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه)
 
-[ب- مقداردهی اولیه (Initialize)](/react-native/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
+[ب- مقداردهی اولیه (Initialize)](/react-native-bridge/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
 
-[ج- ثبت کاربر (Register)](/react-native/sdk-setup.html#۳--ثبت-کاربر-register)
+[ج- ثبت کاربر (Register)](/react-native-bridge/sdk-setup.html#۳--ثبت-کاربر-register)
 
 <Br>
 
 #### الف- نصب کتابخانه
 
-در این مرحله شما باید دو پکیج `chabokpush` و ‍‍‍‍‍‍‍‍‍‍‍`react-native-device-info`(دریافت اطلاعات دستگاه) را نصب نمایید. همینطور با توجه به این که چابک به طور پیش‌فرض پوش‌نوتیفیکیشن نمایش نمی‌دهد، برای همین در صورتی که می‌خواهید از این امکان استفاده کنید **باید حتما** پکیج `react-native-push-notification` را هم نصب کنید.
-
-برای **نصب** از طریق `npm`:
+برای نصب از طریق `npm`:
 
 ```bash
-# install chabok library
-npm install chabokpush-rn --save
-react-native link chabokpush-rn 
-
-# receive user device info
-npm install react-native-device-info --save
-react-native link react-native-device-info
-
-# configure push notification
-npm install react-native-push-notification --save
-react-native link react-native-push-notification
+npm install react-native-chabok --save
 ```
  یا `yarn`:
 
 ```bash
-# install chabok library
-yarn add chabokpush-rn
-react-native link chabokpush-rn
+yarn add react-native-chabok
+```
+بعد از اتمام نصب، دستور زیر را اجرا کنید تا ماژول به پروژه شما **لینک** شود:
 
-# receive user device info
-yarn add react-native-device-info
-react-native link react-native-device-info
-
-# configure push notification
-yarn add react-native-push-notification
-react-native link react-native-push-notification
+```bash
+react-native link react-native-chabok
 ```
 
-- ترکر چابک برای شمارش **حذف‌ها** از قابلیت **پوش‌نوتیفیکیشن** استفاده می‌کند. برای همین کتابخانه `react-native-push-notification` را باید مانند بالا نصب کنید.
+>`نکته:` دقت داشته باشید که [اندروید](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه-اندروید) و [آی‌اواس](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه-آی‌او‌اس) نیاز به نصب جداگانه دارند که در ادامه به هر دو پرداخته می‌شود:
 
-> `نکته `: دقت داشته باشید که در ریکت، چابک به طور پیش‌فرض **توکن پوش** نمی‌گیرد، بنابراین برای استفاده از **پوش‌نوتیفیکیشن** باید تنظیمات آن را در صفحه پوش‌نوتیفیکیشن برای [اندروید](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-اندروید) و [آی‌اواس](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-آیاواس) مطالعه نمایید و روی پروژه خود پیاده‌سازی کنید.
+#### نصب کتابخانه اندروید
 
-<br>
-
-#### ب- مقدار‌دهی اولیه (Initialize)
-
-برای ارتباط با سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقدار‌دهی کنید.
-برای مقدار‌دهی اولیه می‌بایست از طریق متد `chabok` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. 
-
-> `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود.  
-
-برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقداردهی نمایید. فراخوانی این متد فقط یکبار کافی است. به قطعه کد زیر دقت کنید:
+فایل `build.gradle` در پوشه `android/app` را به صورت زیر ویرایش نمایید:
 
 ```javascript
-import React from 'react';
-import chabokpush from 'chabokpush-rn';
-
-export default class App extends React.Component {
-
-    componentDidMount() {
-        const authConfig = {
-            //true connects to Sandbox environment
-            //false connects to Production environment
-            devMode: true,
-            appId: 'APP_ID',            //based on your environment
-            apiKey: 'API_KEY',          //based on your environment
-            username: 'SDK_USERNAME',   //based on your environment
-            password: 'SDK_PASSWORD'    //based on your environment
-        };
-        const options = {
-            silent: false,
-            realtime: true, //Enable ChabokPush realtime
-        };
-        this.chabok = new chabokpush(authConfig, options);
-    }
-
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    ...
+}
+dependencies {
+    ...
+    implementation "com.google.android.gms:play-services-gcm:10.2.6"
+    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
+    implementation 'com.adpdigital.push:chabok-lib:2.14.2'
+    ...
 }
 ```
 
-در `authConfig` به جای پارامتر‌های `APP_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/react-native/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.
+آخرین نسخه فایل کتابخانه چابک از  [اینجا](https://bintray.com/bintray/jcenter?filterByPkgName=com.adpdigital.push) قابل دسترس می‌باشد.
+در انتها گزینه سینک را بزنید.
 
-مقدار `devMode` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
-مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (`appId`, `apiKey`, `username` و `password`) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `devMode` کلید‌های دسترسی آن هم باید تغییر داده شود.
+<blockquote markdown="1">
+ `نکته:` در اندروید ۹ به بالا در صورت مقداردهی `targetSdkVersion` در فایل `build.gradle` به مقدار `28`،  کد زیر را به فایل `AndroidManifest.xml` در تگ `application` اضافه کنید:
 
-> `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید تا پس از تایید و ساخت حساب عملیاتی شما، اطلاعات جدید حسابتان (`appId`, `apiKey`, `username` و `password`) تعیین گردد. 
+```xml 
+<uses-library android:name="org.apache.http.legacy" android:required="false" /> 
+```
+</blockquote>
+
+#### نصب کتابخانه آی‌اواس
+
+چابک از طریق CocoaPods در دسترس است. بنابراین برای نصب، در فایل `ios` پروژه خود یک `Podfile` اضافه کنید:
+
+```bash
+$ cd ios
+$ pod init
+```
+سپس chabokPush` dependency` را به `Podfile` خود مانند زیر اضافه کنید:
+
+```bash
+use_frameworks!
+platform :ios, '9.0'
+
+target 'YOUR_TARGET_NAME' do
+
+  # Pods for AwesomeProject
+  pod 'ChabokPush'
+
+end
+```
+
+پس از آن با روش زیر `Podfile` را نصب کنید:
+
+```bash
+$ pod install
+```
+پس از اجرای دستورات بالا اگر با خطایی روبه رو شدید ، دستور زیر را وارد کنید سپس `pod install` را دوباره اجرا کنید.
+
+```bash
+$ pod update
+```
+حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کردید، نصب کتابخانه آی‌او‌اس موفقیت آمیز بوده است.
 
 
+پس از آن پروژه آی‌اواس خود را در `xcworkspace.` با `xcode` و همینطور `node_modules/react-native-chabok/` را باز کنید. فایل‌های `ios/AdpPushClient.h` و `ios/AdpPushClient.m` را به پروژه خود اضافه کنید.
 
-##### تنظیمات اولیه
+اکنون داخل کلاس `AppDelegate`، ایمپورت را مانند زیر انجام دهید:
 
-| توضیحات | پیش‌فرض | نوع | پارامتر |
-| --- | --- | --- | --- |
-|  |  | `Object` | **[options]** |
-| فعال/غیرفعال سازی ارتباط آنی | <code>true</code> | <code>Boolean</code> | **[options.realtime]** |
-| دریافت مخفی پیام | <code>true</code> | <code>Boolean</code> | **[options.silent]** |
+
+```objectivec
+#import <AdpPushClient/AdpPushClient.h>
+
+....
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+  // Hook and handle failure of get Device token from Apple APNS Server
+  [PushClientManager.defaultManager application:application didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+  // Manager hook and handle receive Device Token From APNS Server
+  [PushClientManager.defaultManager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+  // Manager hook and Handle iOS 8 remote Notificaiton Settings
+  [PushClientManager.defaultManager application:application didRegisterUserNotificationSettings:notificationSettings];
+}
+```
 
 <Br>
 
-#### ج- ثبت کاربر (Register Users)
+### ب- مقدار‌دهی اولیه (Initialize)
 
-یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و [سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید](/panel/users.html#جزئیات-کاربر).
+در ابتدا برای **اندروید** در فایل `MainApplication.java` کد زیر اضافه نمایید:
 
+> `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود.  
 
 ```java
-@Override
-public void onCreate() {
-    super.onCreate();
+public class MyAppClass extends Application {
 
-    ...
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        //AdpPushClient.init() should always be called in onCreate of Application class
+        AdpPushClient.init(
+                getApplicationContext(),
+                MY_ACTIVITY.class,
+                "APP_ID/SENDER_ID", //based on your environment
+                "API_KEY",          //based on your environment
+                "SDK_USERNAME",     //based on your environment
+                "SDK_PASSWORD"      //based on your environment
+        );
+    }
     
-    String userId = AdpPushClient.get().getUserId();
-    
-    if (userId != null && !userId.isEmpty()) {
-        AdpPushClient.get().register(userId);
-    } else {
+    @Override
+    public void onTerminate() {
+        AdpPushClient.get().dismiss();
 
-        //If user is not registered verify the user and
-        //call AdpPushClient.get().register("USER_ID") method at login page
-        
-        //If you have guest users
-        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
-        AdpPushClient.get().registerAsGuest();
-
+        super.onTerminate();
     }
 }
 ```
 
-متد `registerAsGuest` کاربر را به عنوان **کاربر مهمان** ثبت می‌کند. این متد به طور خودکار  یک تگ مهمان (CHABOK_GUEST) به کاربر اختصاص می‌دهد. 
+برای ارتباط با سرور چابک، لازم است یک نمونه از کلاس `chabok.AdpPushClient` بسازید و آن را مقدار‌دهی کنید.
+ فراخوانی این متد فقط یکبار کافی است.
 
- متد `register` علاوه بر ثبت کاربر، عمل **اتصال به سرور چابک** را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرای اپلیکیشن (در کلاس application) فراخوانی شود: (برای اطلاعات بیشتر می‌توانید بخش [ثبت کاربر](/react-native/sdk-setup.html#۴--ثبت-کاربر-register) را مطالعه کنید.) 
+ برای مقدار‌دهی اولیه می‌بایست از طریق متد `init` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. در `const options` به جای پارامتر‌های `APP_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/react-native/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.
 
->` نکته:` دقت کنید که متد `registerAsGuest` را تنها استفاده نکنید و مانند بالا عمل کنید. در صورت فراخوانی این متد به تنهایی کاربر با هر بازدید به عنوان یک مهمان جدید محاسبه خواهد شد.
-
-ترکرها به طور معمول نصب را **اولین بازدید** حساب می‌کنند (مانند سرویس ادجاست)، اما مزیت ترکر چابک در شمارش نصب این است که شما می‌توانید علاوه بر مدل ادجاست نصب را **پس از ورود کاربر و احراز هویت او** در اپلیکیشنتان تعریف کنید. با این کار شما یک اقدام دیگری برای جلوگیری از تقلب در شمارش نصب انجام می‌دهید، به این دلیل که امضاهای کاربر، قبل و بعد از ثبت او (register) مطابقت داده می‌شوند و در صورت تایید به عنوان یک نصب سالم در نظر گرفته می‌شوند. 
-
-به عنوان مثال اگر اپلیکیشن شما دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای (در کلاس `Application` متد `onCreate`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
+ به قطعه کد زیر دقت کنید:
 
 ```javascript
-this.chabok.register('USER_ID').then(({deviceId}) => {
-	console.log('Regsitered ', deviceId)
+import { NativeEventEmitter, NativeModules } from 'react-native';
+import chabok from 'react-native-chabok';
+
+componentDidMount(){
+	const options = {
+		appId: "APP_ID/GOOGLE_SENDER_ID", //based on your environment
+		apiKey: "API_KEY",				  //based on your environment
+		username: "SDK_USERNAME",		  //based on your environment
+		password: "SDK_PASSWORD", 		  //based on your environment
+
+		//true connects to Sandbox environment
+		//false connects to Production environment
+		devMode: true
+	};
+
+	this.chabok = new chabok.AdpPushClient();
+
+	this.chabok.init(
+		    options.appId,
+		    options.apiKey,
+		    options.username,
+		    options.password,
+		    options.devMode
+	).then((state) => {
+		    console.log("Initialize SDK ", state);
+	}).catch((error) => {
+		    console.error("Not Initialize error: ", error);
+	});
+	
+	...
+}
+```
+
+در  `options`  به جای پارامتر‌های  `APP_ID`,  `API_KEY(SDK_KEY)`,  `SDK_USERNAME`,  `SDK_PASSWORD`مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش  [پیش‌نیازها](/react-native-bridge/required.html)  توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از  [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7)  بردارید.
+
+مقدار  `devMode`  تعیین می‌کند که اپلیکیشن شما به محیط  [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com/)  و یا  [عملیاتی (Production)](https://panel.push.adpdigital.com/) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد. مقدار  `true`  به محیط آزمایشی و مقدار`false`  به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (`appId`,  `apiKey`,  `username`  و  `password`) خودش در متد  `init`  نیاز دارد. بنابراین در صورت تغییر مقدار  `devMode`  کلید‌های دسترسی آن هم باید تغییر داده شود.
+
+> `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید تا پس از تایید و ساخت حساب عملیاتی شما، اطلاعات جدید حسابتان (`appId`, `apiKey`, `username` و `password`) تعیین گردد. 
+
+### ج- ثبت کاربر (Register Users)
+
+یکی از مزیت‌های چابک نسبت به درگاه‌های ارسال پوش‌نوتیفیکیشن، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید. این شناسه می‌تواند برای **دستگاه‌های متعدد یک کاربر** استفاده شود. شناسه کاربر می‌تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. **شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی **شناسه دیتابیس‌تان** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود.
+
+>` نکته:` ترکرها به طور معمول نصب را **اولین بازدید** حساب می‌کنند (مانند سرویس ادجاست)، اما مزیت ترکر چابک در شمارش نصب این است که شما می‌توانید علاوه بر مدل ادجاست نصب را **پس از ورود کاربر و احراز هویت او** در اپلیکیشنتان تعریف کنید. با این کار شما یک اقدام دیگری برای جلوگیری از تقلب در شمارش نصب انجام می‌دهید، به این دلیل که امضاهای کاربر، قبل و بعد از ثبت او (register) مطابقت داده می‌شوند و در صورت تایید به عنوان یک نصب سالم در نظر گرفته می‌شوند. 
+
+با استفاده از متد `register` می‌توانید یک نام کاربری به هر کاربر اختصاص دهید. این متد `شناسه کاربر` را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت‌نام می‌کند:
+
+> `نکته` : متد `register` باید فقط **یک بار** در طول اجرا اپلیکیشن فراخوانی شود.
+
+```javascript
+this.chabok.register('USER_ID');
+```
+
+>   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `LocalStorage` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از [دریافت شناسه کاربر](/react-native-bridge/features.html#دریافت-شناسه-کاربر) در صفحه امکانات دیگر استفاده نمایید.
+
+```javascript
+this.chabok.getUserId().then(userId => {
+	console.log('userId: ', userId)
 }).catch(error => {
-	console.log('Fail to register user ', error)
+	console.log('Fail to getUserId', error)
 })
+```
+
+به عنوان مثال اگر اپلیکیشن شما دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `register` را در صفحه **ورود** یا **ثبت‌نام**پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای (در فایل `App` متد `componentDidMount`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
+
+```javascript
+componentDidMount(){
+    ...
+    
+    this.chabok.getUserId().then(userId => {
+        if (userId) {
+            this.chabok.register(userId)
+        } else {
+        
+            //If user is not registered verify the user and
+            //call this.chabok.register('USER_ID') method at login page
+            this.chabok.register('USER_ID');
+        }
+    }).catch(error => {
+        console.log('Fail to getUserId ', error)
+    })
+}
 ```
 
 > `نکته`: کاراکترهای ‍`#,+,*,\,/` و فاصله در `USER_ID` مجاز نیستند، همچنین طول این رشته نباید کمتر از ۳ و بیشتر از ۳۲ کاراکتر باشد.
@@ -194,7 +290,7 @@ const data = {
 this.chabok.track('purchase', data)
 ```
 
-برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/react-native/behavior-tracking.html) را مطالعه کنید.
+برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/react-native-bridge/behavior-tracking.html) را مطالعه کنید.
 
 <br>
 
@@ -203,6 +299,11 @@ this.chabok.track('purchase', data)
 اگر عملیات ثبت‌ کاربر به درستی انجام شده باشد، اطلاعات کاربر در [پنل](https://sandbox.push.adpdigital.com/front/users/subscribers/list)  چابک قسمت **کاربران** قابل مشاهده خواهد بود.  
 
 البته محیط آزمایشی فقط برای تست و آشنایی با امکانات است و دارای محدودیت سقف کاربر می‌باشد. بنابراین برای اپلیکیشن‌های تجاری و اپ‌استور توصیه می‌کنیم از حساب عملیاتی که این سقف را ندارد، استفاده کنید.
+
+> `نکته` : در صورتی که مقداردهی اولیه و ثبت کاربر به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید.
+
+در صورتی که مقداردهی اولیه و ثبت کاربر به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید.
+
 
 #### ۴.۱. انتشار اپلیکیشن در استورها
 
