@@ -133,27 +133,24 @@ export default class App extends React.Component {
 یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و [سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید](/panel/users.html#جزئیات-کاربر).
 
 
-```java
-@Override
-public void onCreate() {
-    super.onCreate();
-
+```javascript
+componentDidMount() {
     ...
     
-    String userId = AdpPushClient.get().getUserId();
-    
-    if (userId != null && !userId.isEmpty()) {
-        AdpPushClient.get().register(userId);
-    } else {
-
-        //If user is not registered verify the user and
-        //call AdpPushClient.get().register("USER_ID") method at login page
+    this.chabok.getUserId()
+    	.then(userId => {
+            if (userId) {
+                this.chabok.register(userId);
+            } else {
+                //If user is not registered verify the user and
+                //call this.chabok.register"USER_ID") method at login page
         
-        //If you have guest users
-        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
-        AdpPushClient.get().registerAsGuest();
-
-    }
+                //If you have guest users
+                // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+                this.chabok.registerAsGuest()
+            }
+	})
+    ...
 }
 ```
 
@@ -284,8 +281,8 @@ https://a.chabok.io/JY@4sc
 
 اگر هم استورهای غیر از گوگل پلی Referrer را کلا **پشتیبانی نکنند** شما همچنان می‌توانید منبع (Source) نصب را در کمپین خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید و **آی‌دی ترکر** را در کد apk خود قرار دهید. 
 
-```java
-AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
+```javascript
+this.chabok.setDefaultTracker("YOUR_TRACKER_ID");
 ```
 
 >`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
