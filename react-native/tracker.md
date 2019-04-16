@@ -147,7 +147,7 @@ componentDidMount() {
         
                 //If you have guest users
                 // should be called here (If you want to track installs on user's first app launch (just like Adjust))
-                this.chabok.registerAsGuest()
+                this.chabok.registerAsGuest();
             }
 	})
     ...
