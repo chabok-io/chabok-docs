@@ -21,6 +21,19 @@ prev: troubleshoot.html
 - تشخیص `newInstall` و `launch`
 - حل مشکل متد `getUserId` در بازدید اول
 - حالا چابک **نسخه 0.44.0 ریکت نیتیو** را پشتیبانی می‌کند
+- افزودن متد `setDefaultTracker` برای ترک کمپین‌های نصب (Pre-Install Campaigns)
+- پشتیبانی از `INSTALL_REFERRER` intent برای [ترک استورهای غیر از گوگلی پلی](/android/tracker.html#استورهای-غیر-از-گوگل-پلی-third-party-app-stores):
+
+```java
+<receiver
+    android:name="com.adpdigital.push.ChabokReferrerReceiver"
+    android:permission="android.permission.INSTALL_PACKAGES"
+    android:exported="true">
+       <intent-filter>
+            <action android:name="com.android.vending.INSTALL_REFERRER" />
+        </intent-filter>
+</receiver>
+```
 
 ## [نسخه ۱.۳.۰ - ۱۳۹۷/۰۶/۱۷](https://github.com/chabokpush/chabok-client-rn-js/releases/tag/1.3.0)
 
