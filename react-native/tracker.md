@@ -1,167 +1,160 @@
 ---
 id: tracker
 title: ترکر نصب
-layout: android
-permalink: android/tracker.html
+layout: react-native
+permalink: react-native/tracker.html
 prev: sdk-setup.html
 next: chabok-messaging.html
 ---
 
-ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/android/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/android/tracker.html#۴-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
+ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/react-native/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/react-native/tracker.html#۴-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
 
  نگران راه‌اندازی هم نباشید این صفحه به طور کامل مراحل **پیاده‌سازی و استفاده از ترکر** را قدم به قدم مرور می‌کند.  
 
 <br>
 
->‍‍`نکته:` در صورتی که از قبل **SDK** چابک را نصب کرده‌‌اید، از [**رصد رویدادها**](/android/tracker.html#۲۱-رصد-رویدادها-tracking-events) شروع کنید.
+>‍‍`نکته:` در صورتی که از قبل **SDK** چابک را نصب کرده‌‌اید، از [**رصد رویدادها**](/react-native/tracker.html#۲۱-رصد-رویدادها-tracking-events) شروع کنید.
  
 ### ۱. پیاده‌سازی (SDK Integration)
 ---
 
-برای ایجاد حساب کاربری کافیست در وبسایت چابک وارد صفحه [شروع کنید](https://chabokpush.com/register.html) شوید و حساب شخصی خود را بسازید. پس از ایجاد حساب و ثبت اپلیکیشن خود، با مراجعه به بخش [تنظیمات پنل](https://sandbox.push.adpdigital.com/front/setting/access) پارامترهای اتصال به چابک که در مرحله [مقداردهی](/android/tracker.html#ج--مقداردهی-initialize) مورد نیاز است، در دسترس خواهد بود.
+برای ایجاد حساب کاربری کافیست در وبسایت چابک وارد صفحه [شروع کنید](https://chabokpush.com/register.html) شوید و حساب شخصی خود را بسازید. پس از ایجاد حساب و ثبت اپلیکیشن خود، با مراجعه به بخش [تنظیمات پنل](https://sandbox.push.adpdigital.com/front/setting/access) پارامترهای اتصال به چابک که در مرحله [مقداردهی](/react-native/tracker.html#ج--مقداردهی-initialize) مورد نیاز است، در دسترس خواهد بود.
 
 
 #### ۱.۱. مراحل پیاده‌سازی 
 
-برای راه‌اندازی SDK چابک **۴ مرحله** زیر را به ترتیب انجام ‌دهید:
+برای راه‌اندازی SDK چابک ۳ مرحله زیر را به ترتیب انجام ‌دهید:
 
-[الف- افزودن کتابخانه](/android/tracker.html#الف--افزودن-کتابخانه)
+[ الف- نصب کتابخانه](/react-native/sdk-setup.html#۱--نصب-کتابخانه)
 
-[ب- توکن پوش‌نوتیفیکیشن](/android/tracker.html#ب--توکن-پوشنوتیفیکیشن)
+[ب- مقداردهی اولیه (Initialize)](/react-native/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
 
-[ج- مقداردهی](/android/tracker.html#ج--مقداردهی-initialize)
+[ج- ثبت کاربر (Register)](/react-native/sdk-setup.html#۳--ثبت-کاربر-register)
 
-[د- ثبت کاربر](/android/tracker.html#د--ثبت-کاربر-register)
+<Br>
 
-##### الف- افزودن کتابخانه
+#### الف- نصب کتابخانه
 
-کتابخانه چابک از طریق `jcenter` در دسترس است. برای این منظور ابتدا در فایل `gradle` اصلی پروژه، `jcenter` را بعنوان `repository` مطابق قطعه کد زیر اضافه نمایید:
+در این مرحله شما باید دو پکیج `chabokpush` و ‍‍‍‍‍‍‍‍‍‍‍`react-native-device-info`(دریافت اطلاعات دستگاه) را نصب نمایید. همینطور با توجه به این که چابک به طور پیش‌فرض پوش‌نوتیفیکیشن نمایش نمی‌دهد، برای همین در صورتی که می‌خواهید از این امکان استفاده کنید **باید حتما** پکیج `react-native-push-notification` را هم نصب کنید.
 
-```javascript
-buildscript {
-  repositories {
-    jcenter()
-  }
-}  
+برای **نصب** از طریق `npm`:
+
+```bash
+# install chabok library
+npm install chabokpush-rn --save
+react-native link chabokpush-rn 
+
+# receive user device info
+npm install react-native-device-info --save
+react-native link react-native-device-info
+
+# configure push notification
+npm install react-native-push-notification --save
+react-native link react-native-push-notification
+```
+ یا `yarn`:
+
+```bash
+# install chabok library
+yarn add chabokpush-rn
+react-native link chabokpush-rn
+
+# receive user device info
+yarn add react-native-device-info
+react-native link react-native-device-info
+
+# configure push notification
+yarn add react-native-push-notification
+react-native link react-native-push-notification
 ```
 
-فایل `build.gradle` در مسیر `app` را باز کرده و در بخش `dependencies` خط زیر را اضافه نمایید:
+> `نکته:` ترکر چابک برای شمارش **حذف‌ها** از قابلیت **پوش‌نوتیفیکیشن** استفاده می‌کند. برای همین کتابخانه `react-native-push-notification` را باید مانند بالا نصب کنید. همینطور دقت داشته باشید که در ریکت، چابک به طور پیش‌فرض **توکن پوش** نمی‌گیرد، بنابراین برای استفاده از **پوش‌نوتیفیکیشن** باید تنظیمات آن را در صفحه پوش‌نوتیفیکیشن برای [اندروید](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-اندروید) و [آی‌اواس](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-آیاواس) مطالعه نمایید و روی پروژه خود پیاده‌سازی کنید.
+
+<br>
+
+#### ب- مقدار‌دهی اولیه (Initialize)
+
+برای ارتباط با سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقدار‌دهی کنید.
+برای مقدار‌دهی اولیه می‌بایست از طریق متد `chabok` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. 
+
+> `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود.  
+
+برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس `chabokpush` بسازید و آن را مقداردهی نمایید. فراخوانی این متد فقط یکبار کافی است. به قطعه کد زیر دقت کنید:
 
 ```javascript
-dependencies {
-    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation 'com.adpdigital.push:chabok-lib:2.14.2'
-    implementation 'com.google.android.gms:play-services-gcm:10.2.6' 
-    implementation 'com.android.installreferrer:installreferrer:1.0'
+import React from 'react';
+import chabokpush from 'chabokpush-rn';
+
+export default class App extends React.Component {
+
+    componentDidMount() {
+        const authConfig = {
+            //true connects to Sandbox environment
+            //false connects to Production environment
+            devMode: true,
+            appId: 'APP_ID',            //based on your environment
+            apiKey: 'API_KEY',          //based on your environment
+            username: 'SDK_USERNAME',   //based on your environment
+            password: 'SDK_PASSWORD'    //based on your environment
+        };
+        const options = {
+            silent: false,
+            realtime: true, //Enable ChabokPush realtime
+        };
+        this.chabok = new chabokpush(authConfig, options);
+    }
+
 }
 ```
 
-> `نکته:` توجه داشته باشید که برای اطلاع از آخرین نسخه کتابخانه [این صفحه](/android/release-note.html) را ببینید. همچنین توصیه می‌کنیم بخش [مدل نسخه‌گذاری در چابک](/android/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
+در `authConfig` به جای پارامتر‌های `APP_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/react-native/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.
 
-<br>
+مقدار `devMode` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
+مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (`appId`, `apiKey`, `username` و `password`) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `devMode` کلید‌های دسترسی آن هم باید تغییر داده شود.
 
-##### ب- توکن پوش‌نوتیفیکیشن
-
- چابک برای **نمایش پوش‌نوتیفیکیشن** و همچنین تشخیص **حذف و نصب مجدد اپلیکیشن** به دریافت توکن نیاز دارد.
- 
-کد زیر را به فایل `AndroidManifest.xml` بخش `application` اضافه کنید:  
-  
-```xml  
-<receiver
-    android:name="com.google.android.gms.gcm.GcmReceiver"
-    android:enabled="true"
-    android:exported="true"
-    android:permission="com.google.android.c2dm.permission.SEND">
-    <intent-filter>
-        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-        <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-        <category android:name="MY_APPLICATION_PACKAGE_ID" />
-    </intent-filter>
-</receiver>
-```  
-
-<br>
-
-##### ج- مقداردهی (Initialize)
-
-چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `init` چابک **باید** در کلاس `Application` در متد `onCreate` تحت هر شرایطی فراخوانی شود.
-
-```java
-public class MyAppClass extends Application {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
-        //AdpPushClient.init() should always be called in onCreate of Application class
-        AdpPushClient.init(
-                getApplicationContext(),
-                MY_ACTIVITY.class,
-                "APP_ID/SENDER_ID", //based on your environment
-                "API_KEY",          //based on your environment
-                "SDK_USERNAME",     //based on your environment
-                "SDK_PASSWORD"      //based on your environment
-        );
-
-        //true connects to Sandbox environment
-        //false connects to Production environment
-        AdpPushClient.get().setDevelopment(DEV_MODE);
-    }
-    
-    @Override
-    public void onTerminate() {
-        if (AdpPushClient.get() != null) {
-            AdpPushClient.get().dismiss();
-        }
-
-        super.onTerminate();
-    }
-}
-```
-
-در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.
-
-
-مقدار `SENDER_ID` در پارامتر `APP_ID/SENDER_ID` همان **شناسه گوگل** برای *دریافت پوش‌نوتیفیکیشن* می‌باشد که در پنل در بخش [تنظیمات پلتفرم اندروید](/panel/settings.html#پلتفرمها) قرار داده‌اید و `APP_ID` همان `APP_ID‌`ای که در پنل در بخش [دسترسی و توکن‌ها](/panel/settings.html#دسترسیها-و-توکنها) قرار داده شده است، می‌باشد.
-
-متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد. مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
+> `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید تا پس از تایید و ساخت حساب عملیاتی شما، اطلاعات جدید حسابتان (`appId`, `apiKey`, `username` و `password`) تعیین گردد. 
 
 
 
-<br>
+##### تنظیمات اولیه
 
-##### د- ثبت کاربر (Register Users)
+| توضیحات | پیش‌فرض | نوع | پارامتر |
+| --- | --- | --- | --- |
+|  |  | `Object` | **[options]** |
+| فعال/غیرفعال سازی ارتباط آنی | <code>true</code> | <code>Boolean</code> | **[options.realtime]** |
+| دریافت مخفی پیام | <code>true</code> | <code>Boolean</code> | **[options.silent]** |
 
-یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و [سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید](/panel/users.html#جزئیات-کاربر).
+<Br>
+
+#### ج- ثبت کاربر (Register Users)
+
+یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) [در اختیار داشته باشید](/panel/users.html#جزئیات-کاربر).
 
 
-```java
-@Override
-public void onCreate() {
-    super.onCreate();
-
+```javascript
+componentDidMount() {
     ...
     
-    String userId = AdpPushClient.get().getUserId();
-    
-    if (userId != null && !userId.isEmpty()) {
-        AdpPushClient.get().register(userId);
-    } else {
-
-        //If user is not registered verify the user and
-        //call AdpPushClient.get().register("USER_ID") method at login page
+    this.chabok.getUserId()
+    	.then(userId => {
+            if (userId) {
+                this.chabok.register(userId);
+            } else {
+                //If user is not registered verify the user and
+                //call this.chabok.register"USER_ID") method at login page
         
-        //If you have guest users
-        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
-        AdpPushClient.get().registerAsGuest();
-
-    }
+                //If you have guest users
+                // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+                this.chabok.registerAsGuest();
+            }
+	})
+    ...
 }
 ```
 
 متد `registerAsGuest` کاربر را به عنوان **کاربر مهمان** ثبت می‌کند. این متد به طور خودکار  یک تگ مهمان (CHABOK_GUEST) به کاربر اختصاص می‌دهد. 
 
- متد `register` علاوه بر ثبت کاربر، عمل **اتصال به سرور چابک** را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرای اپلیکیشن (در کلاس application) فراخوانی شود: (برای اطلاعات بیشتر می‌توانید بخش [ثبت کاربر](/android/sdk-setup.html#۴--ثبت-کاربر-register) را مطالعه کنید.) 
+ متد `register` علاوه بر ثبت کاربر، عمل **اتصال به سرور چابک** را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرای اپلیکیشن (در کلاس application) فراخوانی شود: (برای اطلاعات بیشتر می‌توانید بخش [ثبت کاربر](/react-native/sdk-setup.html#۴--ثبت-کاربر-register) را مطالعه کنید.) 
 
 >` نکته:` دقت کنید که متد `registerAsGuest` را تنها استفاده نکنید و مانند بالا عمل کنید. در صورت فراخوانی این متد به تنهایی کاربر با هر بازدید به عنوان یک مهمان جدید محاسبه خواهد شد.
 
@@ -169,8 +162,12 @@ public void onCreate() {
 
 به عنوان مثال اگر اپلیکیشن شما دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای (در کلاس `Application` متد `onCreate`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
 
-```java
-AdpPushClient.get().register("USER_ID");
+```javascript
+this.chabok.register('USER_ID').then(({deviceId}) => {
+	console.log('Regsitered ', deviceId)
+}).catch(error => {
+	console.log('Fail to register user ', error)
+})
 ```
 
 > `نکته`: کاراکترهای ‍`#,+,*,\,/` و فاصله در `USER_ID` مجاز نیستند، همچنین طول این رشته نباید کمتر از ۳ و بیشتر از ۳۲ کاراکتر باشد.
@@ -184,15 +181,15 @@ AdpPushClient.get().register("USER_ID");
 
 با کد زیر می‌توانید  رفتار کاربر (رویداد) را در چابک رصد کنید:  
   
-```java  
-JSONObject data = new JSONObject();  
-data.put("currency", "EUR");  
-data.put("revenue", 0.01)  
-data.put("orderId", "{OrderId}");  
-  
-AdpPushClient.get().track("purchase", data);  
+```javascript
+const data = {
+  "orderId": OrderId
+}
+
+this.chabok.track('purchase', data)
 ```
-برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/android/behavior-tracking.html) را مطالعه کنید.
+
+برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/react-native/behavior-tracking.html) را مطالعه کنید.
 
 <br>
 
@@ -249,38 +246,19 @@ https://a.chabok.io/JY@4sc
 
 شما می‌توانید  نصب‌های خود که از استور‌های مختلف اندروید گرفته‌اید را ترک کنید. 
 
->‍`نکته:‍‍‍‍` دقت داشته باشید که برای ترک کمپین‌های نصب باید حتما نسخه SDK چابک شما **۲.۱۵.۰ به بالا** باشد.
-
-#### گوگل پلی استور
-
-برای انجام این کار باید از `INSTALL_REFERRER` intent اندروید استفاده کنید. این Referrer وظیفه اطلاع رسانی نصب از گوگل پلی را  به SDK چابک دارد. فقط کافیست اپلیکیشن شما آن را دریافت کند. بنابراین اطمینان یابید که کد زیر در `build.gradle` شما اضافه شده باشد:
-
-```java
-implementation 'com.android.installreferrer:installreferrer:1.0'
-```
+>‍`نکته:‍‍‍‍` دقت داشته باشید که برای ترک کمپین‌های نصب باید حتما نسخه SDK چابک شما **۱.۴.۰ به بالا** باشد.
 
 <br>
 
 #### استورهای غیر از گوگل پلی (Third-Party App Stores)
 
-این کار را چابک با دو روش **استفاده از روش Referrer** و **آی‌دی ترکر** انجام می‌دهد. 
+این کار را چابک از دو طریق **استفاده از Referrer** و **آی‌دی ترکر** انجام می‌دهد. 
+
+> `نکته:` این روش را می‌توانید برای ترک نصب از **گوگل پلی استور** هم استفاده کنید. فقط **زمان کلیک** و **زمان شروع دانلود** را در اختیار شما قرار نمی‌دهد.
 
 ##### روش Referrer
 
-در صورتی که می‌خواهید از استورهای غیر از گوگل پلی که Referrer را **پشتیبانی می‌کنند** ترک کنید، تگ `receiver` را در کلاس `application`  فایل `AndroidManifest.xml` خود قرار دهید: 
-
-```java
-<receiver
-    android:name="com.adpdigital.push.ChabokReferrerReceiver"
-    android:permission="android.permission.INSTALL_PACKAGES"
-    android:exported="true">
-       <intent-filter>
-            <action android:name="com.android.vending.INSTALL_REFERRER" />
-        </intent-filter>
-</receiver>
-```
-
-زمانی که شما دریافت Referrer را در اپلیکیشن خود پیاده‌سازی کردید، اطلاعات کمپین را دریافت می‌کند و به شما انتقال خواهد داد.
+کتابخانه `react-native-device-info` به طور پیش‌فرض Referrer را دریافت می‌کند. بنابراین می‌توانید استورهایی که از Referrer پشتیبانی می‌کنند را از این طریق ترک کنید.   
 
 از طریق Referrer شما اطلاعات کلیدی ترکر خود مانند منبع نصب، آی‌دی ترکر و سطح ترکر را ارسال می‌کنید.
 
@@ -288,8 +266,8 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 
 اگر هم استورهای غیر از گوگل پلی Referrer را کلا **پشتیبانی نکنند** شما همچنان می‌توانید منبع (Source) نصب را در کمپین خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید و **آی‌دی ترکر** را در کد apk خود قرار دهید. 
 
-```java
-AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
+```javascript
+this.chabok.setDefaultTracker("YOUR_TRACKER_ID");
 ```
 
 >`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
