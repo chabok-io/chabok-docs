@@ -69,6 +69,12 @@ next: inbox.html
 
 ![عکس مربوطه](http://uupload.ir/files/6yr_file-example2.png)
 
+سپس فایل مورد نظر را با فرمت CSV مانند زیر ذخیره کنید:
+
+![عکس مربوطه](http://uupload.ir/files/vu4e_save-as-csv.png)
+
+>`نکته:` دقت داشته باشید که فرمت‌های (CSV (Macintosh و (CSV UTF-8 (Comma delimited پشتیبانی **نمی‌شود**.
+
 با داشتن فایل، آن را در بخش **گیرندگان** می‌توانید آپلود کنید:
 
 ![عکس مربوطه](http://uupload.ir/files/waa4_from-file.png)
