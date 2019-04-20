@@ -336,4 +336,4 @@ public void onEvent(AppState state) {
 AdpPushClient.get().unregister();
 ```
 
-> `نکته:`  تمامی مراحلی که در این راهنما بیان شده، در یک پروژه [starter](https://github.com/chabokpush/chabok-starter-android) پیاده‌سازی شده است.
+> `نکته:` پروژه [Starter](https://github.com/chabokpush/chabok-starter-android) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از سرویس چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.
