@@ -26,7 +26,7 @@ prev: troubleshoot.html
 
 - حالا چابک ‍‍`osBuild` و ‍‍`locale` کاربر را برای آنالیتیکس جمع‌آوری می‌کند
 
-- افزودن متد `setDefaultTracker` برای ترک کمپین‌های نصب (Pre-Install Campaigns)
+- افزودن متد `setDefaultTracker` برای [ترک کمپین‌های نصب (Pre-Install Campaigns)](/android/tracker.html#روش-آیدی-ترکر-pre-install-campaigns)
 
 - حل مشکل ارسال اطلاعات کاربر در متد `setUserInfo`
 
