@@ -10,6 +10,14 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۲.۱۵.۱ - ۱۳۹۸/۰۲/۰۲](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.15.1)
+
+### تغییرات
+
+- حل مشکل متد `registerAsGuest` 
+
+- حل مشکل crash کردن `INSTALL_REFERRER` برای دستگاهایی که Google Play Services ندارند
+
 ##  [نسخه ۲.۱۵.۰ - ۱۳۹۸/۰۱/۲۱](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.15.0)
 
 ### تغییرات
