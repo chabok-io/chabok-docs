@@ -11,26 +11,6 @@ next: troubleshoot.html
 
 <Br>
 
-### ثبت اطلاعات کاربر
-
-با متد زیر می‌توانید اطلاعات دلخواهی که از کاربر دارید (نام، نام خانوادگی، جنسیت، سن و ...) را در پروفایل او ثبت کنید.
-
-```objectivec
-//Objective-C:
-
-NSString *installationId = [self.manager setUserInfo];
-```
-``` swift
-//Swift:
-
-let installationId:NSString = manager?.setUserInfo() as! NSString
-```
-پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در پنل>جزئیات دستگاه>کارت اطلاعات کاربر مانند زیر مشاهده کنید:
-
-![عکس مربوطه](http://uupload.ir/files/g9vk_set-user-info-1.png)
-
-<br><br>
-
 ### دریافت شناسه دستگاه 
 
 هر **دستگاه** در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
