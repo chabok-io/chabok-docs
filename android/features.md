@@ -11,72 +11,18 @@ next: troubleshoot.html
 
 <Br>
 
-### وضعیت اتصال به چابک
+### ثبت اطلاعات کاربر
 
-برای دریافت وضعیت اتصال به چابک، می‌توانید از دو روش رویداد `onEvent` و متد `getStatus` استفاده کنید.
-
-#### رویداد وضعیت اتصال
-
-با استفاده از متد `onEvent`، همانند قطعه کد زیر پیاده‌سازی قادر به دریافت وضعیت اتصال به چابک خواهید بود و با فراخوانی متد `addListener`، کلاسی را که متد `onEvent` در آن پیاده‌سازی شده است را به چابک معرفی کنید.
+با متد زیر می‌توانید اطلاعات دلخواهی که از کاربر دارید (نام، نام خانوادگی، جنسیت، سن و ...) را در پروفایل او ثبت کنید.
 
 ```java
-AdpPushClient.get().addListener(this);
-public void onEvent(final ConnectionStatus status) {
-    switch (status) {
-        case CONNECTED:
-            Log.d(TAG, "Connected to the chabok");
-            break;
-        case CONNECTING:
-            Log.d(TAG, "Connecting to the chabok");
-            break;
-        case DISCONNECTED:
-            Log.d(TAG, "Disconnected");
-            break;
-        default:
-            Log.d(TAG, "Disconnected");
-    }
-}
+AdpPushClient.get().setUserInfo();
 ```
+پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در پنل>جزئیات دستگاه>کارت اطلاعات کاربر مانند زیر مشاهده کنید:
 
-#### متد وضعیت اتصال
+![عکس مربوطه](http://uupload.ir/files/ovf0_set-user-info.png)
 
-با فراخوانی متد `getStatus` می‌توانید از وضعیت آخر اتصال به چابک مطلع شوید.
-
-```java
-AdpPushClient.get().getStatus(new Callback<ConnectionStatus>() {
-    @Override
-    public void onSuccess(ConnectionStatus connectionStatus) {
-        Log.d(TAG, "Connection status is " + connectionStatus.name());
-    }
-    @Override
-    public void onFailure(Throwable throwable) {
-        Log.d(TAG, "Error happend " + throwable.getMessage());
-    }
-});
-```
-
-> `نکته:` اگر می‌خواهید تغییرات وضعیت اتصال به سرور چابک را در سمت لایه UI نشان دهید، چون ممکن است قبل از اینکه کلاس شما به عنوان `listener` معرفی شود، ایونت تغییر وضعیت اتصال به شما برسد و شما آن را از دست بدهید، بهتر است برای اولین بار وضعیت اتصال را با استفاده از متد `getStatus` از چابک دریافت نمایید.
-
-### رویداد وضعیت اپلیکیشن
-
-با پیاده‌سازی متد `onEvent` و معرفی کلاس آن به متد `addListener` قادر به دریافت وضعیت اپلیکیشنتان (**ثبت کاربر**، **نصب**، **باز شدن اپلیکیشن** و **برنامه‌های حفاظت شده**) خواهید بود.
- 
-```java
-AdpPushClient.get().addListener(this);
-
-public void onEvent(AppState state) {
-    if (state == AppState.REGISTERED) {
-        Log.d(TAG, "User successfully registered...");
-    } else if (state == AppState.INSTALL) {
-        //This state will call one time.
-        Log.d(TAG, "The application installed");
-    } else if (state == AppState.LAUNCH) {
-        Log.d(TAG, "The application launched");
-    } else if (state == AppState.PROTECTED_GRANT_NEEDED) {
-        Log.d(TAG, "Protected grant needed");
-    }
-}
-```
+<br><br>
 
 ### دریافت شناسه دستگاه
 
@@ -86,6 +32,8 @@ public void onEvent(AppState state) {
 AdpPushClient.get().getInstallationId();
 ``` 
 
+<br><br>
+
 ### دریافت شناسه کاربر
 
 چابک شناسه کاربر را پس از ثبت به صورت **رمزنگاری** شده در حافظه دستگاه ذخیره می‌کند. توصیه می‌شود از ذخیره‌سازی این شناسه **خودداری کنید** و با استفاده از متد `getUserId` شناسه کاربر را دریافت کنید:
@@ -94,7 +42,9 @@ AdpPushClient.get().getInstallationId();
 AdpPushClient.get().getUserId();
 ```
 
-###  مدیریت نشان‌ها (Badge)
+<br><br>
+
+### مدیریت نشان‌ها (Badge)
 
 اگر می‌خواهید شماره **badge** برنامه خود را بازنشانی کنید، با روش زیر می‌توانید: 
 
@@ -146,7 +96,78 @@ xmlns:tools="http://schemas.android.com/tools"
 ```markup
 <meta-data android:name="com.adpdigital.push.client.BadgeCount" android:value="DISABLE" />
 ```
-<Br>
+<br><br>
+
+### وضعیت اتصال به چابک
+
+برای دریافت وضعیت اتصال به چابک، می‌توانید از دو روش رویداد `onEvent` و متد `getStatus` استفاده کنید.
+
+#### رویداد وضعیت اتصال
+
+با استفاده از متد `onEvent`، همانند قطعه کد زیر پیاده‌سازی قادر به دریافت وضعیت اتصال به چابک خواهید بود و با فراخوانی متد `addListener`، کلاسی را که متد `onEvent` در آن پیاده‌سازی شده است را به چابک معرفی کنید.
+
+```java
+AdpPushClient.get().addListener(this);
+public void onEvent(final ConnectionStatus status) {
+    switch (status) {
+        case CONNECTED:
+            Log.d(TAG, "Connected to the chabok");
+            break;
+        case CONNECTING:
+            Log.d(TAG, "Connecting to the chabok");
+            break;
+        case DISCONNECTED:
+            Log.d(TAG, "Disconnected");
+            break;
+        default:
+            Log.d(TAG, "Disconnected");
+    }
+}
+```
+
+#### متد وضعیت اتصال
+
+با فراخوانی متد `getStatus` می‌توانید از وضعیت آخر اتصال به چابک مطلع شوید.
+
+```java
+AdpPushClient.get().getStatus(new Callback<ConnectionStatus>() {
+    @Override
+    public void onSuccess(ConnectionStatus connectionStatus) {
+        Log.d(TAG, "Connection status is " + connectionStatus.name());
+    }
+    @Override
+    public void onFailure(Throwable throwable) {
+        Log.d(TAG, "Error happend " + throwable.getMessage());
+    }
+});
+```
+
+> `نکته:` اگر می‌خواهید تغییرات وضعیت اتصال به سرور چابک را در سمت لایه UI نشان دهید، چون ممکن است قبل از اینکه کلاس شما به عنوان `listener` معرفی شود، ایونت تغییر وضعیت اتصال به شما برسد و شما آن را از دست بدهید، بهتر است برای اولین بار وضعیت اتصال را با استفاده از متد `getStatus` از چابک دریافت نمایید.
+
+<br><br>
+
+### رویداد وضعیت اپلیکیشن
+
+با پیاده‌سازی متد `onEvent` و معرفی کلاس آن به متد `addListener` قادر به دریافت وضعیت اپلیکیشنتان (**ثبت کاربر**، **نصب**، **باز شدن اپلیکیشن** و **برنامه‌های حفاظت شده**) خواهید بود.
+ 
+```java
+AdpPushClient.get().addListener(this);
+
+public void onEvent(AppState state) {
+    if (state == AppState.REGISTERED) {
+        Log.d(TAG, "User successfully registered...");
+    } else if (state == AppState.INSTALL) {
+        //This state will call one time.
+        Log.d(TAG, "The application installed");
+    } else if (state == AppState.LAUNCH) {
+        Log.d(TAG, "The application launched");
+    } else if (state == AppState.PROTECTED_GRANT_NEEDED) {
+        Log.d(TAG, "Protected grant needed");
+    }
+}
+```
+
+<br><br>
 
 ### دریافت وضعیت اپلیکیشن
 
