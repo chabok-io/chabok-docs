@@ -11,11 +11,25 @@ next: troubleshoot.html
 
 <Br>
 
+### ثبت اطلاعات کاربر
+
+با متد زیر می‌توانید اطلاعات دلخواهی که از کاربر دارید (نام، نام خانوادگی، جنسیت، سن و ...) را در پروفایل او ثبت کنید.
+
+```javascript
+chabok.setUserInfo()
+```
+پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در پنل>جزئیات دستگاه>کارت اطلاعات کاربر مانند زیر مشاهده کنید:
+
+![عکس مربوطه](http://uupload.ir/files/9p2w_set-user-info-2.png)
+
+<br><br>
+
 ### دریافت شناسه کاربر
 
 ```javascript
 chabok.getUserId()
 ```
+<Br><Br>
 
 ### دریافت شناسه دستگاه
 
@@ -24,7 +38,7 @@ chabok.getUserId()
 ```javascript
 chabok.getInstallationId()
 ```
-<Br>
+<Br><Br>
 
 ### وضعیت اتصال به سرور
 
