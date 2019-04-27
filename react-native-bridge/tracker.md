@@ -25,11 +25,11 @@ next: chabok-messaging.html
 
 برای راه‌اندازی SDK چابک ۳ مرحله زیر را به ترتیب انجام ‌دهید:
 
-[ الف- نصب کتابخانه](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه)
+[ الف- نصب کتابخانه](/react-native-bridge/tracker.html#الف--نصب-کتابخانه)
 
-[ب- مقداردهی اولیه (Initialize)](/react-native-bridge/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
+[ب- مقداردهی اولیه (Initialize)](/react-native-bridge/tracker.html#ب--مقداردهی-اولیه-initialize)
 
-[ج- ثبت کاربر (Register)](/react-native-bridge/sdk-setup.html#۳--ثبت-کاربر-register)
+[ج- ثبت کاربر (Register)](/react-native-bridge/tracker.html#ج--ثبت-کاربر-register-users)
 
 <Br>
 
