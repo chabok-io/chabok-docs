@@ -11,6 +11,83 @@ next: troubleshoot.html
 
 <Br>
 
+### دریافت شناسه دستگاه 
+
+هر **دستگاه** در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
+
+```objectivec
+//Objective-C:
+
+NSString *installationId = [self.manager getInstallationId];
+```
+``` swift
+//Swift:
+
+let installationId:NSString = manager?.getInstallationId() as! NSString
+```
+<br><br>
+
+### دریافت شناسه کاربر
+
+هر **کاربر** در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
+
+```objectivec
+//Objective-C
+[PushClientManager defaultManager].userId;
+```
+```swift
+//Swift
+PushClientManager.default().userId
+```
+<br><br>
+
+### مدیریت نشان‌ها (Badge)
+
+در صورت تمایل می‌توانید شماره badge اپلیکیشنتان را با متد زیر بازنشانی کنید:
+
+```objectivec
+//Objetive-C: 
+
+- (void)applicationDidEnterBackground:(UIApplication *)application { 
+	[PushClientManager resetBadge]; 
+} 
+- (void)applicationWillEnterForeground:(UIApplication *)application { 
+	[PushClientManager resetBadge]; 
+}
+```
+```swift
+//Swift: 
+
+func applicationDidEnterBackground(_ application: UIApplication) { 
+	PushClientManager.resetBadge() 
+} 
+
+func applicationWillEnterForeground(_ application: UIApplication) { 
+	PushClientManager.resetBadge() 
+} 
+``` 
+<br><br>
+
+### ارسال موقعیت مکانی در هنگام باز شدن اپلیکیشن
+
+با فعال کردن قابلیت `enableLocationOnLaunch`، کتابخانه چابک به هنگام باز شدن برنامه و در صورت پیدا کردن موقعیت مکانی کاربر،‌ موقعیت آن را توسط [انتشار رویداد](/ios/events.html) به سرور ارسال می کند.
+
+> `نکته` : برای ارسال داده خاصی همراه با انتشار رویداد فوق می توانید
+> داده خود را property به `locationOnLaunchWithDictionary` داده تا همراه
+> با انتشار رویداد ارسال شود.
+
+```objectivec
+//Objetive-C: 
+
+[self.manager.enableLocationOnLaunch = YES];
+```
+```swift
+//Swift:
+
+self.manager?.enableLocationOnLaunch = true
+```
+
+<br><br>
 
 ### وضعیت اتصال به چابک
 
@@ -91,7 +168,7 @@ func pushClientManagerDidChangedServerConnectionState (){
 }
 ```
 
-<Br>
+<br><br>
 
 ### رویداد وضعیت اپلیکیشن
 
@@ -201,100 +278,9 @@ func application(_ application: UIApplication,
         print("App launched")
     }
 }
-```
-
-<Br>
-
-### دریافت شناسه کاربر
-
-هر **کاربر** در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
-
-```objectivec
-//Objective-C
-[PushClientManager defaultManager].userId;
-```
-```swift
-//Swift
-PushClientManager.default().userId
-```
-
-### دریافت شناسه دستگاه 
-
-هر **دستگاه** در سرویس چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
-
-```objectivec
-//Objective-C:
-
-NSString *installationId = [self.manager getInstallationId];
-```
-``` swift
-//Swift:
-
-let installationId:NSString = manager?.getInstallationId() as! NSString
-```
-
-<Br>
-
-### مدیریت نشان‌ها (Badge)
-
-در صورت تمایل می‌توانید شماره badge اپلیکیشنتان را با متد زیر بازنشانی کنید:
-
-```objectivec
-//Objetive-C: 
-
-- (void)applicationDidEnterBackground:(UIApplication *)application { 
-	[PushClientManager resetBadge]; 
-} 
-- (void)applicationWillEnterForeground:(UIApplication *)application { 
-	[PushClientManager resetBadge]; 
-}
-```
-```swift
-//Swift: 
-
-func applicationDidEnterBackground(_ application: UIApplication) { 
-	PushClientManager.resetBadge() 
-} 
-
-func applicationWillEnterForeground(_ application: UIApplication) { 
-	PushClientManager.resetBadge() 
-} 
 ``` 
-<Br>
+<br><br>
 
-### ارسال موقعیت مکانی در هنگام باز شدن اپلیکیشن
-
-با فعال کردن قابلیت `enableLocationOnLaunch`، کتابخانه چابک به هنگام باز شدن برنامه و در صورت پیدا کردن موقعیت مکانی کاربر،‌ موقعیت آن را توسط [انتشار رویداد](/ios/events.html) به سرور ارسال می کند.
-
-> `نکته` : برای ارسال داده خاصی همراه با انتشار رویداد فوق می توانید
-> داده خود را property به `locationOnLaunchWithDictionary` داده تا همراه
-> با انتشار رویداد ارسال شود.
-
-```objectivec
-//Objetive-C: 
-
-[self.manager.enableLocationOnLaunch = YES];
-```
-```swift
-//Swift:
-
-self.manager?.enableLocationOnLaunch = true
-```
-
-<Br>
-
-### فعال‌سازی گزارش‌های چابک
-
-با استفاده از `property`، `enableLog`  می‌توانید گزارش‌های چابک را در بخش `Debugger Output` مشاهده کنید:
-
-```objectivec
-//Objective-C
-PushClientManager.defaultManager.enableLog = YES;
-```
-```swift
-//Swift
-PushClientManager.default().enableLog = true
-```
 ### دریافت وضعیت اپلیکیشن
 
 جهت بررسی وضعیت اپلیکیشن خود در حال اجرا (**Background** یا **Foreground**) می‌توانید متد‌های زیر را فراخوانی کنید:
@@ -328,4 +314,19 @@ switch UIApplication.shared.applicationState {
 	case .background:
 		print("App is in background")
 }
+```
+
+<br><br>
+
+### فعال‌سازی گزارش‌های چابک
+
+با استفاده از `property`، `enableLog`  می‌توانید گزارش‌های چابک را در بخش `Debugger Output` مشاهده کنید:
+
+```objectivec
+//Objective-C
+PushClientManager.defaultManager.enableLog = YES;
+```
+```swift
+//Swift
+PushClientManager.default().enableLog = true
 ```

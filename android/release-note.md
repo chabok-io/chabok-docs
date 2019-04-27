@@ -10,6 +10,18 @@ prev: troubleshoot.html
 
 <Br>
 
+<!--
+
+##  [نسخه ۲.۱۵.۱ - ۱۳۹۸/۰۲/۰۲](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.15.1)
+
+### تغییرات
+
+- حل مشکل متد `registerAsGuest` 
+
+- حل مشکل crash کردن `INSTALL_REFERRER` برای دستگاهایی که Google Play Services ندارند
+
+-->
+
 ##  [نسخه ۲.۱۵.۰ - ۱۳۹۸/۰۱/۲۱](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.15.0)
 
 ### تغییرات
@@ -18,7 +30,7 @@ prev: troubleshoot.html
 
 - حالا چابک ‍‍`osBuild` و ‍‍`locale` کاربر را برای آنالیتیکس جمع‌آوری می‌کند
 
-- افزودن متد `setDefaultTracker` برای ترک کمپین‌های نصب (Pre-Install Campaigns)
+- افزودن متد `setDefaultTracker` برای [ترک کمپین‌های نصب (Pre-Install Campaigns)](/android/tracker.html#روش-آیدی-ترکر-pre-install-campaigns)
 
 - حل مشکل ارسال اطلاعات کاربر در متد `setUserInfo`
 
