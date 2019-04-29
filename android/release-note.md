@@ -12,9 +12,19 @@ prev: troubleshoot.html
 
 <!--
 
-##  [نسخه ۲.۱۵.۱ - ۱۳۹۸/۰۲/۰۲](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.15.1)
+##  [نسخه ۲.۱۶.۰ - ۱۳۹۸/۰۲/۰۹](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.16.0)
 
 ### تغییرات
+
+- پشتیبانی از **دیپ لینک** (deep link) و **ری‌دایرکت** (redirect) برای کلیک روی نوتیفیکیشن
+
+- افزودن متد `appWillOpenUrl` برای ارسال اطلاعات اتریبیوشن دیپ لینک
+
+- بهبود **رصد رویداد** برای پشتیبانی از کاربرانی که از وی‌پی‌ان استفاده می‌کنند
+
+- افزودن آمار و آنالیتیکس برای کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن (dismiss))
+
+- افزودن رویداد `notificationOpened` برای دریافت اطلاعات کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن (dismiss))
 
 - حل مشکل متد `registerAsGuest` 
 
