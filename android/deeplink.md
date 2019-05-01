@@ -6,8 +6,7 @@ permalink: android/deeplink.html
 prev: push-notification.html
 next: user-management.html
 ---
-
-
+ 
 دیپ لینک یا لینک عمقی در واقع استفاده از لینکی است که کاربران را به داخل یک صفحه خاص در وبسایت، و یا **قسمت خاصی از اپلیکیشن** هدایت می‌کند. به عبارت دیگر، دیپ لینک را می‌توانید به عنوان یک **میانبر (Shortcut) هوشمند** در نظر بگیرید که کاربر را به مقصدهای مرتبط (با پیام شما) هدایت می‌کند.
 
 <br>
@@ -16,7 +15,7 @@ next: user-management.html
 
 قابلیت دیپ لینک به شما کمک می‌کند تا **نرخ تبدیل** کمپین‌های خود را به صورت چشمگیری **افزایش دهید**. به عنوان مثال، کاربر شما محصولی را به سبد خرید خود اضافه کرده است اما سبد خود را رها کرده و خرید را تکمیل نکرده است. در این صورت شما می‌توانید با یک نوتیفیکیشن به موقع تخفیف روی آن محصول، کاربر را **مستقیما به صفحه محصول** هدایت کنید و به انجام خرید تشویق کنید.
 
-<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://uupload.ir/files/kz0_deeplinking.jpg" alt="آپلود عکس" border="0" /></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://uupload.ir/files/z6lx_deeplinkings.png" alt="آپلود عکس" border="0" /></p>
 
 <br>
 
@@ -43,7 +42,6 @@ next: user-management.html
     </intent-filter>
 </activity>
 ```
-
 <br>
 
 ### نحوه استفاده در ترکر
