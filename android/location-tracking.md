@@ -7,7 +7,7 @@ prev: behavior-tracking.html
 next: event-handling.html
 ---
 
-چابک به طور گسترده از **خدمات مکانی (Location Services)** پشتیبانی می‌کند. از جمله این خدمات **رصد موقعیت مکانی کاربر** (Geo-tracking یا location tracking)، **تعیین محدوده جغرافیایی** (Geo-fencing)، **پوش بر اساس موقعیت مکانی** (Location-Based Push Notifications) و **پوش‌خودکار مکانی** (Geofence Push Notifications) است.
+چابک به طور گسترده از **خدمات مکانی (Location Services)** پشتیبانی می‌کند. از جمله این خدمات **رصد موقعیت مکانی کاربر** (Geo-tracking یا location tracking)، **تعیین محدوده جغرافیایی** (Geo-fencing)، **پوش بر اساس موقعیت مکانی** (Location-Based Push Notifications) و **پوش خودکار مکانی** (Geofence Push Notifications) است.
 
 
 چابک کنترل و تعامل با API‌ های مربوط به GPS و سرویس‌دهنده‌های دیگر را مدیریت می نماید.
