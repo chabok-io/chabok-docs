@@ -10,7 +10,7 @@ prev: troubleshoot.html
 
 <Br>
  
- ##  [نسخه ۱.۱۹.۰ - ۱۳۹۸/۰۲/۱۸](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.19.0)
+##  [نسخه ۱.۱۹.۰ - ۱۳۹۸/۰۲/۱۸](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.19.0)
 
 ### تغییرات
 
