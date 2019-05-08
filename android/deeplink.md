@@ -36,11 +36,12 @@ next: user-management.html
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
-        <!-- Accepts URIs that begin with "twitter://user” -->
+        <!-- Accepts URIs that begin with "twitter://user” 
         <data android:scheme="twitter"
+        -->
               android:host="user" />
-        <data android:scheme="appname"
-              android:host="pagename" />
+        <data android:scheme="APP_NAME"
+              android:host="PAGE_NAME" />
     </intent-filter>
 </activity>
 ```
@@ -51,7 +52,7 @@ next: user-management.html
 همچنین اگر می‌خواهید **از دیپ لینک در ترکر** خود استفاده کنید، نامی که به `scheme` اختصاص دادید را در پارامتر `deep_link` لینک ترکر قرار دهید. به نمونه زیر دقت کنید:
 
 ```java
-https://a.chabok.io/abc123?deep_link=appname%3A%2F%2Fpagename
+https://a.chabok.io/abc123?deep_link=APP_NAME%3A%2F%2Fpagename
 ```
 
 **مقصد** پارامتر `deep_link` را کلاس **activity** در `android:launchMode` فایل Manifest مشخص می‌کند.
