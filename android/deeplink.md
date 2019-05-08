@@ -36,10 +36,11 @@ next: user-management.html
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
+        
         <!-- Accepts URIs that begin with "twitter://user” 
         <data android:scheme="twitter"
-        -->
-              android:host="user" />
+              android:host="user" />  -->
+              
         <data android:scheme="APP_NAME"
               android:host="PAGE_NAME" />
     </intent-filter>
