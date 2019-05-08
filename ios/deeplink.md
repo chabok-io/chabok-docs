@@ -21,31 +21,42 @@ next: user-management.html
 
 ## پیاده‌سازی 
 
-### افزودن intent filter
+### برای آی‌اواس پایین ۹ (URL Schemes)
 
-برای استفاده از دیپ لینک باید **مقصد** مورد نظر را در قالب `host`، `scheme` و `prefix` (در صورت نیاز) تعیین کنید. این پارامترها را باید در دیتای کلاس `intent-filter` در **activity** دلخواه خود (صفحه‌ای که می‌خواهید هنگام اجرای اپلیکیشن باز شود) در فایل `AndroidManifest.xml` تعریف کنید:
+برای استفاده از این روش باید Scheme مورد نظر را برای اپلیکیشن خود مشخص کنید. این کار را با باز کردن xcode>project settings> info و وارد کردن Scheme به **The URL Types** انجام دهید. Scheme مورد نظر را به شکل com.myApp وارد کنید.
 
-```java
-<activity
-    android:name=".MainActivity"
-    android:configChanges="orientation|keyboardHidden"
-    android:label="@string/app_name"
-    android:screenOrientation="portrait">
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://uupload.ir/files/q1u_ios-deeplink-scheme.png" alt="آپلود عکس" border="0" /></p>
 
-    <intent-filter android:label="@string/filter_view_example_gizmos">
-        <action android:name="android.intent.action.VIEW" />
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
+برای اینکه آی‌او‌اس لینک شما را بشناسد باید شکل آن را مانند url کنید (به این صورت scheme ://resource). به عنوان مثال com.myApp://main را وارد می‌کنیم. 
+
+در صورتی هم که می‌خواهید کاربر را به اخل یک اپلیکیشن هدایت کنید؛ باید متد زیر را در **AppDelegate** پیاده‌سازی کنید.
+
+```swift
+func application(_ app: UIApplication, open url: URL,
+                 options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    if let scheme = url.scheme,
+        scheme.localizedCaseInsensitiveCompare("com.myApp") == .orderedSame,
+        let view = url.host {
         
-        <!-- Accepts URIs that begin with "twitter://user” 
-        <data android:scheme="twitter"
-              android:host="user" />  -->
-              
-        <data android:scheme="APP_NAME"
-              android:host="PAGE_NAME" />
-    </intent-filter>
-</activity>
+        var parameters: [String: String] = [:]
+        URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.forEach {
+            parameters[$0.name] = $0.value
+        }
+        
+        redirect(to: view, with: parameters)
+    }
+    return true
+}
 ```
+
+اینگونه نتیجه ”com.myApp://profile?user=”Hossein مانند زیر خواهد شد:
+
+```swift
+url.scheme = “com.myApp”
+url.host = “profile”
+parameters = [ “user” : “Hossein” ]
+```
+
 <br>
 
 ### نحوه استفاده در ترکر
@@ -53,10 +64,9 @@ next: user-management.html
 همچنین اگر می‌خواهید **از دیپ لینک در ترکر** خود استفاده کنید، نامی که به `scheme` اختصاص دادید را در پارامتر `deep_link` لینک ترکر قرار دهید. به نمونه زیر دقت کنید:
 
 ```java
-https://a.chabok.io/abc123?deep_link=APP_NAME%3A%2F%2Fpagename
+https://a.chabok.io/abc123?deep_link=myapp%3A%2F%2Fpagename
 ```
 
-**مقصد** پارامتر `deep_link` را کلاس **activity** در `android:launchMode` فایل Manifest مشخص می‌کند.
 
 <br>
 
@@ -86,3 +96,7 @@ protected void onNewIntent(Intent intent) {
     AdpPushClient.get().appWillOpenUrl(data);
 }
 ```
+
+### برای آی‌اواس ۹ به بالا (Universal Link)
+
+اپل برای آی‌اواس ۹ به بالا تغییری را برای بالا بردن امنیت در این مکانیزم انجام داده است. به این صورت که برای مطمئن شدن از اختصاص یک اپلیکیشن به وبسایت آن باید حتما فایلی را به نام **apple-app-site-association** در وبسایت خود برای اعتبارسنجی و تایید اپل قرار دهید.
