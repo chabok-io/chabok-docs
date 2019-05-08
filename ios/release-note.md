@@ -30,7 +30,7 @@ prev: troubleshoot.html
 
 - افزودن متد `appWillOpenUrl` برای **ارسال اطلاعات اتریبیوشن دیپ لینک و لینک همگانی (universal link)**
 
-- تغییر رفتار در متد registerAsGuest (دیگر با هر بار فراخوانی کاربر جدید ایجاد نمی‌کند.)
+- تغییر رفتار در متد `registerAsGuest` (دیگر با هر بار فراخوانی کاربر جدید ایجاد نمی‌کند.)
 
 - افزودن رویداد ‍‍`userNotificationCenter:willPresentNotification:withCompletionHandler:` برای مدیریت نمایش نوتیفیکیشن در فورگراند
 
