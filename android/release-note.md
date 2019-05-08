@@ -11,7 +11,7 @@ prev: troubleshoot.html
 <Br>
 
 
-##  [نسخه ۲.۱۶.۰ - ۱۳۹۸/۰۲/۰۱۸](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.16.0)
+##  [نسخه ۲.۱۶.۰ - ۱۳۹۸/۰۲/۱۸](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.16.0)
 
 ### تغییرات
 
