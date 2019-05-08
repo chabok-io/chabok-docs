@@ -10,11 +10,12 @@ prev: troubleshoot.html
 
 <Br>
 
-<!--
 
-##  [نسخه ۲.۱۶.۰ - ۱۳۹۸/۰۲/۰۹](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.16.0)
+##  [نسخه ۲.۱۶.۰ - ۱۳۹۸/۰۲/۰۱۸](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.16.0)
 
 ### تغییرات
+
+- پشتیبانی از R8 (کوتاه کننده کد گوگل)
 
 - پشتیبانی از **دیپ لینک** (deep link) و **ری‌دایرکت** (redirect) برای کلیک روی نوتیفیکیشن
 
@@ -30,7 +31,6 @@ prev: troubleshoot.html
 
 - حل مشکل crash کردن `INSTALL_REFERRER` برای دستگاهایی که Google Play Services ندارند
 
--->
 
 ##  [نسخه ۲.۱۵.۰ - ۱۳۹۸/۰۱/۲۱](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.15.0)
 
