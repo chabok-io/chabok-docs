@@ -21,7 +21,7 @@ next: user-management.html
 
 ## پیاده‌سازی 
 
-### برای آی‌اواس پایین ۹ (URL Schemes)
+### برای آی‌اواس پایین‌تر از ۹ (URL Schemes)
 
 برای استفاده از این روش باید Scheme مورد نظر را برای اپلیکیشن خود مشخص کنید. این کار را با باز کردن xcode>project settings> info و وارد کردن Scheme به **The URL Types** انجام دهید. Scheme مورد نظر را به شکل com.myApp وارد کنید.
 
