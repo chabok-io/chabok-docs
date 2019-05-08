@@ -9,6 +9,35 @@ prev: troubleshoot.html
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](/ios/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 
 <Br>
+ 
+ ##  [نسخه ۱.۱۹.۰ - ۱۳۹۸/۰۲/۱۸](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.19.0)
+
+### تغییرات
+
+- پشتیبانی از **advertisingId**
+
+- بهبود **رصد رویداد** برای پشتیبانی از کاربرانی که از **vpn** استفاده می‌کنند
+
+- حل مشکل ارسال اطلاعات کاربر در متد `setUserInfo`
+
+- افزودن آمار و آنالیتیکس برای کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن (dismiss))
+
+- افزودن متد `setDefaultTracker` برای ترک کمپین‌های نصب (Pre-Install Campaigns)
+
+- حالا چابک ‍‍`osBuild` و ‍‍`locale` کاربر را برای آنالیتیکس جمع‌آوری می‌کند
+
+- پشتیبانی از [**دیپ لینک**](/ios/deeplink.html) (deep link) و **ری‌دایرکت** (redirect) برای کلیک روی نوتیفیکیشن
+
+- افزودن متد `appWillOpenUrl` برای **ارسال اطلاعات اتریبیوشن دیپ لینک و لینک همگانی (universal link)**
+
+- تغییر رفتار در متد registerAsGuest (دیگر با هر بار فراخوانی کاربر جدید ایجاد نمی‌کند.)
+
+- افزودن رویداد ‍‍`userNotificationCenter:willPresentNotification:withCompletionHandler:` برای مدیریت نمایش نوتیفیکیشن در فورگراند
+
+### ارتقا
+
+- برای دریافت **advertisingId** باید `AdSupport.framework` را به **Linked Frameworks and Libraries** آن پروژه اضافه کنید
+
 
 ## [نسخه ۱.۱۸.۱ - ۱۳۹۷/۱۲/۱۳](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.18.1) 
 
