@@ -358,8 +358,16 @@ https://a.chabok.io/JY@4sc
 
 شما می‌توانید منبع (Source) نصب را در کمپین‌های خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید و **آی‌دی ترکر** را در کد ipa خود قرار دهید. 
 
-```java
-AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
+```objectivec
+//Objective-C
+
+[_manager setDefaultTracker:@"YOUR_TRACKER_ID"];
+```
+
+```swift
+//Swift
+
+_manager?.setDefaultTracker("YOUR_TRACKER_ID");
 ```
 
 >`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
