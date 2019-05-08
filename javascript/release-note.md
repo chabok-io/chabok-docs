@@ -10,6 +10,15 @@ prev: troubleshoot.html
 
 <Br>
 
+
+## [نسخه ۱.۲.۳ - ۱۳۹۸/۰۱/۲۱](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.2.3)
+
+### تغییرات
+
+* بهبود مدیریت توکن
+
+* بهبود مدیریت خطاها
+
 ## [نسخه ۱.۲.۲ - ۱۳۹۷/۱۲/۱۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.2.2)
 
 ### تغییرات
