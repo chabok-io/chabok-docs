@@ -28,13 +28,13 @@ next: introducing.html
 
 - پشتیبانی از `INSTALL_REFERRER` برای [گوگل پلی استور](/android/tracker.html#گوگل-پلی-استور) (کد زیر را به gradle اضافه کنید:)
 
-```
+```groovy
     implementation 'com.android.installreferrer:installreferrer:1.0'
 ```
 - برای دریافت اکشن نوتیفیکیشن، کد زیر را در کلاس `MainApplication` متد `onCreate` قرار دهید:
 
-```
-//diff
+```diff
+//Java
 
     @Override
     public void onCreate() {
@@ -72,9 +72,8 @@ next: introducing.html
 - افزودن متد ‍‍‍‍‍`notificationOpened:` برای ارسال رویداد اکشن نوتیفیکیشن
 - افزودن متد `registerToUNUserNotificationCenter` برای دریافت اکشن نوتیفیکیشن با پیاده‌سازی کد زیر (برای نمایش نوتیفیکیشن چند رسانه‌ای (Rich) [این بخش](https://doc.chabokpush.com/ios/push-notification.html) از مستندات را مطالعه کنید):
 
-```
-//diff
-
+```diff
+//Objective-C
 
 + @interface AppDelegate ()<PushClientManagerDelegate>
 
