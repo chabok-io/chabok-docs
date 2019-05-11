@@ -53,7 +53,7 @@ dependencies {
     ...
     implementation "com.google.android.gms:play-services-gcm:10.2.6"
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation 'com.adpdigital.push:chabok-lib:2.14.2'
+    implementation 'com.adpdigital.push:chabok-lib:2.16.0'
     ...
 }
 ```
