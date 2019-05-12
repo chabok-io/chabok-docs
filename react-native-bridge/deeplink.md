@@ -26,7 +26,7 @@ next: user-management.html
 
 برای استفاده از دیپ لینک باید **مقصد** مورد نظر را در قالب `host`، `scheme` و `prefix` (در صورت نیاز) تعیین کنید. این پارامترها را باید در دیتای کلاس `intent-filter` در **activity** دلخواه خود (صفحه‌ای که می‌خواهید هنگام اجرای اپلیکیشن باز شود) در فایل `AndroidManifest.xml` تعریف کنید:
 
-```java
+```xml
 <activity
     android:name=".MainActivity"
     android:configChanges="orientation|keyboardHidden"
@@ -98,17 +98,29 @@ parameters = [ “screen_name” : “ChabokPush” ]
 
 پس از پیاده‌سازی دیپ لینک در اندروید و آی‌اواس با فراخوانی متد زیر می‌توانید آن را دریافت کنید:
 
-```java
+```javascipt
 componentDidMount() {
-  Linking.addEventListener('url', this.handleOpenURL);
+  ...
+  
+  Linking.getInitialURL().then((url) => {
+    if (url) {
+      this.handleOpenURL({ url });
+    }
+  });
+  if (Platform.OS === 'ios') {
+    Linking.addEventListener('url', this.handleOpenURL.bind(this));
+  }
 }
+
 componentWillUnmount() {
   Linking.removeEventListener('url', this.handleOpenURL);
 }
+
 handleOpenURL(event) {
-  console.log(event.url);
-  const route = e.url.replace(/.*?:\/\//g, '');
+  console.log("Got deep-link url = ", event.url);
+  const route = event.url.replace(/.*?:\/\//g, '');
   // do something with the url, in our case navigate(route)
+
 }
 ```
 
@@ -128,11 +140,15 @@ https://a.chabok.io/abc123?deep_link=APP_NAME%3A%2F%2Fpagename
 
 شما می‌توانید از متد `handleOpenURL` اطلاعات را **از اپلیکیشن به سرور چابک** مانند زیر ارسال کنید:
 
-```java
+```javascipt
 handleOpenURL(event) {
-  console.log(event.url);
-  const route = e.url.replace(/.*?:\/\//g, '');
+  console.log("Got deep-link url = ", event.url);
+  const route = event.url.replace(/.*?:\/\//g, '');
   // do something with the url, in our case navigate(route)
+
+  if (event && event.url) {
+    this.chabok.appWillOpenUrl(event.url);
+  }
 }
 ```
 
