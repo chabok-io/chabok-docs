@@ -3,7 +3,7 @@ id: chabok-messaging
 title: پیام چابک
 layout: react-native-bridge
 permalink: react-native-bridge/chabok-messaging.html
-prev: sdk-setup.html
+prev: tracker.html
 next: push-notification.html
 ---
 
