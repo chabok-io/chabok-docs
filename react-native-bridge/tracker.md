@@ -237,26 +237,21 @@ componentDidMount(){
 
 
 ```java
-@Override
-public void onCreate() {
-    super.onCreate();
+componentDidMount() {
 
     ...
     
-    String userId = AdpPushClient.get().getUserId();
-    
-    if (userId != null && !userId.isEmpty()) {
-        AdpPushClient.get().register(userId);
-    } else {
-
-        //If user is not registered verify the user and
-        //call AdpPushClient.get().register("USER_ID") method at login page
-        
-        //If you have guest users
-        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
-        AdpPushClient.get().registerAsGuest();
-
-    }
+    this.chabok.getUserId()
+     .then(userId => {
+        if (userId) {
+            this.setState({userId});
+            this.chabok.register(userId);
+        }
+     })
+    .catch((e)=> {
+        //User not registered yet...
+        this.chabok.registerAsGuest();
+    });
 }
 ```
 
@@ -383,7 +378,7 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 
 در صورتی که می‌خواهید از استورهای غیر از گوگل پلی که Referrer را **پشتیبانی می‌کنند** ترک کنید، تگ `receiver` را در کلاس `application`  فایل `AndroidManifest.xml` خود قرار دهید: 
 
-```java
+```xml
 <receiver
     android:name="com.adpdigital.push.ChabokReferrerReceiver"
     android:permission="android.permission.INSTALL_PACKAGES"
@@ -403,24 +398,8 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 اگر هم استورها Referrer را کلا **پشتیبانی نکنند** شما همچنان می‌توانید منبع (Source) نصب را در کمپین خود برای اندروید و آی‌اواس بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید و **آی‌دی ترکر** را در کد apk یا ipa خود قرار دهید.
 
 
-**اندروید**: 
-
-```java
-AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
-```
-
-**آی‌اواس**:
-
-```objectivec
-//Objective-C
-
-[_manager setDefaultTracker:@"YOUR_TRACKER_ID"];
-```
-
-```swift
-//Swift
-
-_manager?.setDefaultTracker("YOUR_TRACKER_ID");
+```javascript
+this.chabok.setDefaultTracker("YOUR_TRACKER_ID");
 ```
 
 >`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
