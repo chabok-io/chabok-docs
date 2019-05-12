@@ -107,9 +107,8 @@ componentDidMount() {
       this.handleOpenURL({ url });
     }
   });
-  if (Platform.OS === 'ios') {
-    Linking.addEventListener('url', this.handleOpenURL.bind(this));
-  }
+  
+  Linking.addEventListener('url', this.handleOpenURL.bind(this));
 }
 
 componentWillUnmount() {
@@ -121,6 +120,9 @@ handleOpenURL(event) {
   const route = event.url.replace(/.*?:\/\//g, '');
   // do something with the url, in our case navigate(route)
 
+  if (event && event.url) {
+    this.chabok.appWillOpenUrl(event.url);
+  }
 }
 ```
 
@@ -136,20 +138,10 @@ https://a.chabok.io/abc123?deep_link=APP_NAME%3A%2F%2Fpagename
 
 <br>
 
+<!-- کل عبارت پایین رو ببر تو بخش دریافت دیپ لینک -->
 ### ارسال اطلاعات به سرور
 
-شما می‌توانید از متد `handleOpenURL` اطلاعات را **از اپلیکیشن به سرور چابک** مانند زیر ارسال کنید:
+شما می‌توانید از متد `appWillOpenUrl` اطلاعات را **از اپلیکیشن به سرور چابک** مانند زیر ارسال کنید:
 
-```javascipt
-handleOpenURL(event) {
-  console.log("Got deep-link url = ", event.url);
-  const route = event.url.replace(/.*?:\/\//g, '');
-  // do something with the url, in our case navigate(route)
-
-  if (event && event.url) {
-    this.chabok.appWillOpenUrl(event.url);
-  }
-}
-```
 
 >‍`نکته:‍` برای اطلاعات بیشتر می‌توانید [این صفحه](https://medium.com/react-native-training/deep-linking-your-react-native-app-d87c39a1ad5e) را مطالعه کنید.
