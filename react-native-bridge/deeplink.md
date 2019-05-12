@@ -20,7 +20,7 @@ next: user-management.html
 <br>
 
 
-## پیاده‌سازی اندروید
+### پیاده‌سازی اندروید
 
 #### افزودن intent filter
 
@@ -50,7 +50,7 @@ next: user-management.html
 <br>
 
 
-## پیاده‌سازی آی‌اواس
+### پیاده‌سازی آی‌اواس
 
 برای استفاده از این روش باید Scheme مورد نظر را برای اپلیکیشن خود مشخص کنید. این کار را با باز کردن **xcode>project settings> info** و وارد کردن Scheme به **The URL Types** انجام دهید. Scheme مورد نظر را به شکل APP_NAME وارد کنید.
 
@@ -124,7 +124,7 @@ https://a.chabok.io/abc123?deep_link=APP_NAME%3A%2F%2Fpagename
 
 <br>
 
-## ارسال اطلاعات به سرور
+### ارسال اطلاعات به سرور
 
 شما می‌توانید از متد `handleOpenURL` اطلاعات را **از اپلیکیشن به سرور چابک** مانند زیر ارسال کنید:
 
