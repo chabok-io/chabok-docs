@@ -19,9 +19,10 @@ next: user-management.html
 
 <br>
 
-## پیاده‌سازی 
 
-### افزودن intent filter
+## پیاده‌سازی اندروید
+
+#### افزودن intent filter
 
 برای استفاده از دیپ لینک باید **مقصد** مورد نظر را در قالب `host`، `scheme` و `prefix` (در صورت نیاز) تعیین کنید. این پارامترها را باید در دیتای کلاس `intent-filter` در **activity** دلخواه خود (صفحه‌ای که می‌خواهید هنگام اجرای اپلیکیشن باز شود) در فایل `AndroidManifest.xml` تعریف کنید:
 
@@ -48,6 +49,69 @@ next: user-management.html
 ```
 <br>
 
+
+## پیاده‌سازی آی‌اواس
+
+برای استفاده از این روش باید Scheme مورد نظر را برای اپلیکیشن خود مشخص کنید. این کار را با باز کردن **xcode>project settings> info** و وارد کردن Scheme به **The URL Types** انجام دهید. Scheme مورد نظر را به شکل APP_NAME وارد کنید.
+
+
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/ios/URL_SCHEME.png" alt="آپلود عکس" border="0" /></p>
+
+
+برای اینکه آی‌او‌اس لینک شما را بشناسد باید شکل آن را مانند url کنید (به این صورت scheme ://resource). به عنوان مثال APP_NAME://PAGE_NAME را وارد می‌کنیم. 
+
+در این حالت، نتیجه twitter://user?screen_name=ChabokPush مانند زیر خواهد شد:
+
+```swift
+url.scheme = “twitter”
+url.host = “user”
+parameters = [ “screen_name” : “ChabokPush” ]
+```
+
+پس از آن کد زیر را `AppDelegate.m` اضافه کنید:
+
+```objectivec
+#import <React/RCTLinkingManager.h>
+```
+در آخر، پایین implementation کد زیر را هم اضافه کنید:
+
+```objectivec
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+  return [RCTLinkingManager application:application openURL:url
+                      sourceApplication:sourceApplication annotation:annotation];
+}
+
+// Only if your app is using [Universal Links](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/UniversalLinks.html).
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
+ restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler
+{
+ return [RCTLinkingManager application:application
+                  continueUserActivity:userActivity
+                    restorationHandler:restorationHandler];
+}
+```
+<br>
+
+### دریافت دیپ لینک
+
+پس از پیاده‌سازی دیپ لینک در اندروید و آی‌اواس با فراخوانی متد زیر می‌توانید آن را دریافت کنید:
+
+```java
+componentDidMount() {
+  Linking.addEventListener('url', this.handleOpenURL);
+}
+componentWillUnmount() {
+  Linking.removeEventListener('url', this.handleOpenURL);
+}
+handleOpenURL(event) {
+  console.log(event.url);
+  const route = e.url.replace(/.*?:\/\//g, '');
+  // do something with the url, in our case navigate(route)
+}
+```
+
 ### نحوه استفاده در ترکر
 
 همچنین اگر می‌خواهید **از دیپ لینک در ترکر** خود استفاده کنید، نامی که به `scheme` اختصاص دادید را در پارامتر `deep_link` لینک ترکر قرار دهید. به نمونه زیر دقت کنید:
@@ -56,33 +120,20 @@ next: user-management.html
 https://a.chabok.io/abc123?deep_link=APP_NAME%3A%2F%2Fpagename
 ```
 
-**مقصد** پارامتر `deep_link` را کلاس **activity** در `android:launchMode` فایل Manifest مشخص می‌کند.
+**مقصد** پارامتر `deep_link` را در **اندروید**، کلاس **activity** در `android:launchMode` فایل Manifest مشخص می‌کند.
 
 <br>
 
 ## ارسال اطلاعات به سرور
 
-آمار دیپ لینک از طریق متدهای `onCreate` و یا `onNewIntent` انتقال داده می‌شود. زمانی که اپ را باز کنید و یکی از این متدها فراخوانی شوند، می‌توانید اطلاعات دیپ لینک را دریافت کنید. 
-
-پس از اینکه اطلاعات دیپ لینک را در اپلیکیشن خود دریافت کردید، متد `appWillOpenUrl` را فراخوانی کنید. این متد اطلاعات را **از اپلیکیشن به سرور چابک** ارسال می‌کند تا بررسی کند که اتریبیوشن جدید رخ داده است یا خیر.
-
-به نمونه زیر دقت کنید:
+شما می‌توانید از متد `handleOpenURL` اطلاعات را **از اپلیکیشن به سرور چابک** مانند زیر ارسال کنید:
 
 ```java
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-
-    Intent intent = getIntent();
-    AdpPushClient.get().appWillOpenUrl(data);
-}
-
-@Override
-protected void onNewIntent(Intent intent) {
-    super.onNewIntent(intent);
-
-    Uri data = intent.getData();
-    AdpPushClient.get().appWillOpenUrl(data);
+handleOpenURL(event) {
+  console.log(event.url);
+  const route = e.url.replace(/.*?:\/\//g, '');
+  // do something with the url, in our case navigate(route)
 }
 ```
+
+>‍`نکته:‍` برای اطلاعات بیشتر می‌توانید [این صفحه](https://medium.com/react-native-training/deep-linking-your-react-native-app-d87c39a1ad5e) را مطالعه کنید.
