@@ -236,7 +236,7 @@ componentDidMount(){
 یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) [در اختیار داشته باشید](/panel/users.html#جزئیات-کاربر).
 
 
-```java
+```javascript
 componentDidMount() {
 
     ...
@@ -249,8 +249,13 @@ componentDidMount() {
         }
      })
     .catch((e)=> {
-        //User not registered yet...
-        this.chabok.registerAsGuest();
+        //If user is not registered verify the user and
+        //call  this.chabok.register("USER_ID") method at login page
+        
+        //If you have guest users
+        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
+	
+	this.chabok.registerAsGuest();
     });
 }
 ```
