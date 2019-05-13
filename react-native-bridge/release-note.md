@@ -33,7 +33,7 @@ next: introducing.html
 ```
 - برای دریافت اکشن نوتیفیکیشن، کد زیر را در کلاس `MainApplication` متد `onCreate` قرار دهید:
 
-```diff
+```java
 //Java
 
     @Override
@@ -72,7 +72,7 @@ next: introducing.html
 - افزودن متد ‍‍‍‍‍`:notificationOpened` برای ارسال رویداد اکشن نوتیفیکیشن
 - افزودن متد `registerToUNUserNotificationCenter` برای دریافت اکشن نوتیفیکیشن با پیاده‌سازی کد زیر (برای نمایش نوتیفیکیشن چند رسانه‌ای (Rich Notification) [این بخش](https://doc.chabokpush.com/ios/push-notification.html) از مستندات را مطالعه کنید):
 
-```diff
+```objectivec
 //Objective-C
 
 + @interface AppDelegate ()<PushClientManagerDelegate>
