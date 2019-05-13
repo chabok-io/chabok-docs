@@ -282,8 +282,8 @@ componentDidMount(){
 
 متد زیر کاربر را به عنوان کاربر مهمان ثبت می‌کند و به طور خودکار یک تگ مهمان (CHABOK_GUEST) به او اختصاص می‌دهد:
 
-```java
-AdpPushClient.get().registerAsGuest();
+```javascript
+this.chabok.registerAsGuest();
 ```
 
 #### رویداد تایید ثبت کاربر
