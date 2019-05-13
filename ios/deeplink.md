@@ -9,7 +9,7 @@ next: user-management.html
  
 دیپ لینک یا لینک عمقی در واقع استفاده از لینکی است که کاربران را به داخل یک صفحه خاص در وبسایت، و یا **قسمت خاصی از اپلیکیشن** هدایت می‌کند. به عبارت دیگر، دیپ لینک را می‌توانید به عنوان یک **میانبر (Shortcut) هوشمند** در نظر بگیرید که کاربر را به مقصدهای مرتبط (با پیام شما) هدایت می‌کند.
 
-<br>
+<br/>
 
 ## مزایا
 
@@ -17,7 +17,7 @@ next: user-management.html
 
 <p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://uupload.ir/files/z6lx_deeplinkings.png" alt="آپلود عکس" border="0" /></p>
 
-<br>
+<br/>
 
 ## پیاده‌سازی 
 
@@ -57,7 +57,7 @@ parameters = [ “screen_name” : “ChabokPush” ]
 ```java
 https://a.chabok.io/abc123?deep_link=APP_NAME%3A%2F%2FPAGE_NAME
 ```
-<br>
+<br/>
 
 ## ارسال اطلاعات به سرور
 
@@ -116,7 +116,7 @@ func application(_ application: UIApplication,
     return true
 }
 ```
-<br>
+<br/>
 
 ### نمونه Curl
 
@@ -132,4 +132,3 @@ curl -X POST \
 با وارد کردن دستور زیر نوتیفیکیشن زیر همراه با دیپ لینک ارسال خواهد شد:
 
 <img src="http://uupload.ir/files/0qha_ios-deep-link.png" alt="Its You" height="583px" width="289.5px">
-
