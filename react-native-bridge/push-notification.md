@@ -7,7 +7,7 @@ prev: chabok-messaging.html
 next: deeplink.html
 ---
 
-چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات زیر برای [اندروید](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-اندروید) و [آی‌اواس](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-آیاواس) انجام دهید، سپس توکن‌ها را به چابک [اضافه نمایید](/react-native/push-notification.html#متد-افزودن-توکن-برای-ارسال-پوشنوتیفیکیشن). همچنین می‌توانید از نمایش اعلان به صورت **local** [استفاده کنید](/react-native/push-notification.html#نمایش-local-notifications).
+چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات زیر برای [اندروید](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-اندروید) و [آی‌اواس](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-آیاواس) انجام دهید، سپس توکن‌ها را به چابک [اضافه نمایید](/react-native/push-notification.html#متد-افزودن-توکن-برای-ارسال-پوشنوتیفیکیشن). همچنین می‌توانید از نمایش نوتیفیکیشن به صورت **local** [استفاده کنید](/react-native/push-notification.html#نمایش-local-notifications).
 
 <Br>
 
@@ -36,7 +36,7 @@ next: deeplink.html
 </application>
 ```
 
-- در ادامه برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی اعلان و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به [این صفحه](/android/push-notification.html) مراجعه نمایید.
+- در ادامه برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی نوتیفیکیشن و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به [این صفحه](/android/push-notification.html) مراجعه نمایید.
 
 <Br>
 
@@ -48,13 +48,100 @@ next: deeplink.html
 
 و علامت `Remote Notifications`ها را در `Setting > Capabilities > Background Modes` بررسی کنید.
 
-- در ادامه برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی اعلان و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به [این صفحه](/ios/push-notification.html) مراجعه نمایید.
+- در ادامه برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی نوتیفیکیشن و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به [این صفحه](/ios/push-notification.html) مراجعه نمایید.
 
 <br>
 
-### دریافت اکشن‌های کلیک روی نوتیفیکیشن
+### دریافت اکشن‌های نوتیفیکیشن
 
-برای دریافت اکشن‌های کلیک روی نوتیفیکیشن باید مانند زیر به رویداد ‍‍`notificationOpened` شنونده اضافه کنید:
+برای دریافت اکشن‌های کلیک روی نوتیفیکیشن باید در ابتدا در در **اندروید** و **آی‌اواس** کدهای زیر را قرار دهید. این کدها، اکشن‌ها را تا لود شدن لایه ریکت نینیو نگه می‌دارند:
+
+
+#### اندروید
+
+کد زیر را در کلاس `MainApplication` متد `onCreate` قرار دهید:
+
+```java
+//Java
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        SoLoader.init(this, /* native exopackage */ false);
+        
+        if (chabok == null) {
+            chabok = AdpPushClient.init(
+                    getApplicationContext(),
+                    MainActivity.class,
+                    "APP_ID/SENDER_ID",
+                    "API_KEY",
+                    "USERNAME",
+                    "PASSWORD"
+            );
+
++               //true connects to Sandbox environment  
++               //false connects to Production environment  
++             AdpPushClient.get().setDevelopment(DEV_MODE);
+
++            chabok.addNotificationHandler(new NotificationHandler(){
++                @Override
++                public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
++                    ChabokReactPackage.notificationOpened(message, notificationAction);
++                   return super.notificationOpened(message, notificationAction);
++                }
++            });
+        }
+    }
+```
+
+>‍‍`نکته:` دقت داشته باشید که در صورت تغییر محیط چابک (سندباکس و عملیاتی)، در این قسمت هم کلیدهای همان محیط را قرار دهید.
+
+#### آی‌اواس
+
+متد `registerToUNUserNotificationCenter` را مانند زیر قرار دهید:
+
+```objectivec
+//Objective-C
+
++ @interface AppDelegate ()<PushClientManagerDelegate>
+
++ @end
+
+@implementation AppDelegate
+
+ - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+  {
+    
++    [PushClientManager.defaultManager addDelegate:self];
++    [AdpPushClient registerToUNUserNotificationCenter];
+  
+    ...
+    
+    return true;
+  }
+
++ -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
++     [AdpPushClient notificationOpened:response.notification.request.content.userInfo actionId:response.actionIdentifier];
++ }
+  
++ -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
++     [AdpPushClient notificationOpened:userInfo];
++ }
+  
++ -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
++    [AdpPushClient notificationOpened:userInfo];
++ }
+  
++ -(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler{
++     [AdpPushClient notificationOpened:userInfo actionId:identifier];
++ }
+```
+
+<br>
+
+#### افزودن شنونده
+
+سپس برای دریافت اکشن‌ها مانند زیر به رویداد ‍‍`notificationOpened` شنونده اضافه کنید:
 
 ```javascript
 chabokEmitter.addListener(
@@ -81,3 +168,4 @@ chabokEmitter.addListener(
 ```
 
 در آخر متد `notificationOpenedHandler`را قرار دهید. این متد زمانی که اپلیکیشن بسته است، اکشن‌های نوتیفیکیشن را نگه می‌دارد و به محض لود شدن لایه‌ی ریکت نیتیو، `notificationOpened` را صدا می‌زند.
+
