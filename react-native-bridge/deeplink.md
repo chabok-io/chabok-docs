@@ -19,12 +19,9 @@ next: user-management.html
 
 <br>
 
-
 ### پیاده‌سازی اندروید
 
-#### افزودن intent filter
-
-برای استفاده از دیپ لینک باید **مقصد** مورد نظر را در قالب `host`، `scheme` و `prefix` (در صورت نیاز) تعیین کنید. این پارامترها را باید در دیتای کلاس `intent-filter` در **activity** دلخواه خود (صفحه‌ای که می‌خواهید هنگام اجرای اپلیکیشن باز شود) در فایل `AndroidManifest.xml` تعریف کنید:
+ در اندروید، برای استفاده از دیپ لینک باید **مقصد** مورد نظر را در قالب `host`، `scheme` و `prefix` (در صورت نیاز) تعیین کنید. این پارامترها را باید در دیتای کلاس `intent-filter` در **activity** دلخواه خود (صفحه‌ای که می‌خواهید هنگام اجرای اپلیکیشن باز شود) در فایل `AndroidManifest.xml` تعریف کنید:
 
 ```xml
 <activity
@@ -52,7 +49,7 @@ next: user-management.html
 
 ### پیاده‌سازی آی‌اواس
 
-برای استفاده از این روش باید Scheme مورد نظر را برای اپلیکیشن خود مشخص کنید. این کار را با باز کردن **xcode>project settings> info** و وارد کردن Scheme به **The URL Types** انجام دهید. Scheme مورد نظر را به شکل APP_NAME وارد کنید.
+در آی‌اواس هم باید `Scheme` مورد نظر را در اپلیکیشن خود مشخص کنید. این کار را با باز کردن **xcode>project settings> info** و وارد کردن `Scheme` به **The URL Types** انجام دهید. `Scheme` مورد نظر را به شکل APP_NAME وارد کنید.
 
 
 <p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/ios/URL_SCHEME.png" alt="آپلود عکس" border="0" /></p>
@@ -73,7 +70,7 @@ parameters = [ “screen_name” : “ChabokPush” ]
 ```objectivec
 #import <React/RCTLinkingManager.h>
 ```
-در آخر، پایین implementation کد زیر را هم اضافه کنید:
+در آخر، پایین `implementation` کد زیر را هم اضافه کنید:
 
 ```objectivec
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
@@ -96,7 +93,8 @@ parameters = [ “screen_name” : “ChabokPush” ]
 
 ### دریافت دیپ لینک
 
-پس از پیاده‌سازی دیپ لینک در اندروید و آی‌اواس با فراخوانی متد زیر می‌توانید آن را دریافت کنید:
+پس از پیاده‌سازی دیپ لینک در **اندروید و آی‌اواس** با فراخوانی متد زیر می‌توانید آن را دریافت کنید. همچنین شما می‌توانید با استفاده از متد `appWillOpenUrl` اطلاعات را **از اپلیکیشن به سرور چابک** ارسال کنید:
+
 
 ```javascript
 componentDidMount() {
@@ -125,8 +123,6 @@ handleOpenURL(event) {
   }
 }
 ```
-شما می‌توانید با استفاده از متد `appWillOpenUrl` اطلاعات را **از اپلیکیشن به سرور چابک** مانند زیر ارسال کنید:
-
 
 >‍`نکته:‍` برای اطلاعات بیشتر می‌توانید [این صفحه](https://medium.com/react-native-training/deep-linking-your-react-native-app-d87c39a1ad5e) را مطالعه کنید.
 
