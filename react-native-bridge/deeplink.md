@@ -125,6 +125,12 @@ handleOpenURL(event) {
   }
 }
 ```
+شما می‌توانید با استفاده از متد `appWillOpenUrl` اطلاعات را **از اپلیکیشن به سرور چابک** مانند زیر ارسال کنید:
+
+
+>‍`نکته:‍` برای اطلاعات بیشتر می‌توانید [این صفحه](https://medium.com/react-native-training/deep-linking-your-react-native-app-d87c39a1ad5e) را مطالعه کنید.
+
+<br>
 
 ### نحوه استفاده در ترکر
 
@@ -137,10 +143,3 @@ https://a.chabok.io/abc123?deep_link=APP_NAME%3A%2F%2Fpagename
 **مقصد** پارامتر `deep_link` را در **اندروید**، کلاس **activity** در `android:launchMode` فایل Manifest مشخص می‌کند.
 
 <br>
-
-<!-- کل عبارت پایین رو ببر تو بخش دریافت دیپ لینک -->
-
-شما می‌توانید از متد `appWillOpenUrl` اطلاعات را **از اپلیکیشن به سرور چابک** مانند زیر ارسال کنید:
-
-
->‍`نکته:‍` برای اطلاعات بیشتر می‌توانید [این صفحه](https://medium.com/react-native-training/deep-linking-your-react-native-app-d87c39a1ad5e) را مطالعه کنید.
