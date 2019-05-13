@@ -300,7 +300,7 @@ AdpPushClient.get().removeTag("Premium_User", new Callback() {
 ```
 <br><br>
 
-## Tracking Installs from App Stores
+## Tracking Installs from Application Stores
 
 With Chabok tracker you can track your installs from different android stores. 
 
@@ -319,6 +319,16 @@ You have **two ways** of doing this depending on whether the store supports the 
 
 For tracking third-party stores that support the referrer, **add** the following `receiver` tag inside the `application` tag in your `AndroidManifest.xml`:
 
+```java
+<receiver
+    android:name="com.adpdigital.push.ChabokReferrerReceiver"
+    android:permission="android.permission.INSTALL_PACKAGES"
+    android:exported="true">
+       <intent-filter>
+            <action android:name="com.android.vending.INSTALL_REFERRER" />
+        </intent-filter>
+</receiver>
+```
 #### Using Tracker ID
 
 For tracking third-party stores that don't support the referrer, you can **use Chabok's tracker ID to figure out the install source**. To do that first you have to create a tracker then put the ID in your apk file.
