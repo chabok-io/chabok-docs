@@ -334,11 +334,11 @@ AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
 
 ## Deeplink
 
-Deep linking refers to the use of a specific URL that directs users to a particular page on a website, mobile site, or a precise location within the app. 
+Deep linking refers to the use of a specific URL that **directs users to a particular page** on a website, mobile site, or a precise location within the app. 
 
 ![enter image description here](http://uupload.ir/files/kc0g_deeplinking.jpg)
 
-To configure deeplink, you'll need to specify your destination by scheme, host and prefix (if necessary). You'll have to assign them to the activity you want to launch once your app opens in the`AndroidManifest.xml`file. Add the  `intent-filter`  section to your desired activity in the manifest file and assign an  `android:scheme` property value with the desired scheme name:
+To configure deeplink, you'll need to specify your destination by **scheme, host and prefix (if necessary)**. You'll have to **assign them to the activity** you want to launch once your app opens in the`AndroidManifest.xml`file. Add the  `intent-filter`  section to your desired activity in the manifest file and assign an  `android:scheme` property value with the desired scheme name:
 
 ```java
 <activity
@@ -361,13 +361,13 @@ To configure deeplink, you'll need to specify your destination by scheme, host a
     </intent-filter>
 </activity>
 ```
-If you want your app to launch once the tracker URL is selected, use the assigned scheme name in the Chabok tracker URL's  `deep_link`  parameter. It would look something like this:
+If you want your app to **launch once the tracker URL is selected**, use the assigned scheme name in the Chabok tracker URL's  `deep_link`  parameter. It would look something like this:
 
 ```java
 https://a.chabok.io/abc123?deep_link=APP_NAME%3A%2F%2Fpagename
 ```
 
-Once you have received the deeplink content in your app, you can call  `appWillOpenUrl`  method for sending information to the Chabok backend.
+Once you have received the deeplink content in your app, you can call  `appWillOpenUrl`  method for **sending information to the Chabok backend**.
 Here's how its done:
 
 ```java
