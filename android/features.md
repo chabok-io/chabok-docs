@@ -17,13 +17,13 @@ next: troubleshoot.html
 
 ```java
 AdpPushClient.get().setUserInfo({
-           lastName: 'LAST_NAME',
-           firstName: 'FIRST_NAME',
-           gender: 'GENDER',
-           age: 'AGE' 
+           lastName: 'اخوان',
+           firstName: 'محمدرضا',
+           gender: 'مرد',
+           age: '۳۵' 
 });
 ```
-پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در پنل>جزئیات دستگاه>کارت اطلاعات کاربر مانند زیر مشاهده کنید:
+پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
 
 ![عکس مربوطه](http://uupload.ir/files/ovf0_set-user-info.png)
 
