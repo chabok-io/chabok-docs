@@ -98,7 +98,7 @@ parameters = [ “screen_name” : “ChabokPush” ]
 
 پس از پیاده‌سازی دیپ لینک در اندروید و آی‌اواس با فراخوانی متد زیر می‌توانید آن را دریافت کنید:
 
-```javascipt
+```javascript
 componentDidMount() {
   ...
   
@@ -139,7 +139,6 @@ https://a.chabok.io/abc123?deep_link=APP_NAME%3A%2F%2Fpagename
 <br>
 
 <!-- کل عبارت پایین رو ببر تو بخش دریافت دیپ لینک -->
-### ارسال اطلاعات به سرور
 
 شما می‌توانید از متد `appWillOpenUrl` اطلاعات را **از اپلیکیشن به سرور چابک** مانند زیر ارسال کنید:
 
