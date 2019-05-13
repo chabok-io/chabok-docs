@@ -75,8 +75,8 @@ chabokEmitter.addListener(
                 }
             }
         );
-// when app is closed, keeps notification actions until react native loads
-this.chabok.notificationOpenedHandler();
+        // when app is closed, keeps notification actions until react native loads
+        this.chabok.notificationOpenedHandler();
     }
 ```
 
