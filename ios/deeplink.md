@@ -9,7 +9,7 @@ next: user-management.html
  
 دیپ لینک یا لینک عمقی در واقع استفاده از لینکی است که کاربران را به داخل یک صفحه خاص در وبسایت، و یا **قسمت خاصی از اپلیکیشن** هدایت می‌کند. به عبارت دیگر، دیپ لینک را می‌توانید به عنوان یک **میانبر (Shortcut) هوشمند** در نظر بگیرید که کاربر را به مقصدهای مرتبط (با پیام شما) هدایت می‌کند.
 
-<br/>
+<br>
 
 ## مزایا
 
@@ -17,7 +17,7 @@ next: user-management.html
 
 <p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://uupload.ir/files/z6lx_deeplinkings.png" alt="آپلود عکس" border="0" /></p>
 
-<br/>
+<br>
 
 ## پیاده‌سازی 
 
@@ -57,7 +57,7 @@ parameters = [ “screen_name” : “ChabokPush” ]
 ```java
 https://a.chabok.io/abc123?deep_link=APP_NAME%3A%2F%2FPAGE_NAME
 ```
-<br/>
+<br>
 
 ## ارسال اطلاعات به سرور
 
@@ -116,11 +116,11 @@ func application(_ application: UIApplication,
     return true
 }
 ```
-<br/>
+<br>
 
 ### نمونه Curl
 
-با اجرای دستور زیر در **Terminal** می‌توانید یک نوتیفیکیشن با **دیپ لینک** ارسال کنید. دقت کنید که در دستور زیر مقدار <ACCESS_TOKEN> حساب کاربری خود و مقدار USER_ID را شناسه‌ کاربری که می‌خواهید پیام به او تحویل داده شود، وارد نمایید. (این دستور برای ارسال به یک کاربر به خصوص است. برای ارسال به گروهی از کاربران به [این صفحه](https://doc.chabokpush.com/rest-api/send-push.html#%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%DA%AF%D8%B1%D9%88%D9%87%DB%8C-%D9%86%D9%88%D8%AA%DB%8C%D9%81%DB%8C%DA%A9%DB%8C%D8%B4%D9%86) مراجعه کنید.)
+با اجرای دستور زیر در **Terminal** می‌توانید یک نوتیفیکیشن با **دیپ لینک** ارسال کنید. دقت کنید که در دستور زیر مقدار <ACCESS_TOKEN> حساب کاربری خود و مقدار USER_ID را شناسه‌ کاربری که می‌خواهید پیام به او تحویل داده شود، وارد نمایید. (این دستور برای ارسال به یک کاربر به خصوص است. برای ارسال به گروهی از کاربران به [این صفحه](https://doc.chabokpush.com/rest-api/send-push.html#%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%DA%AF%D8%B1%D9%88%D9%87%DB%8C%D9%86%D9%88%D8%AA%DB%8C%D9%81%DB%8C%DA%A9%DB%8C%D8%B4%D9%86) مراجعه کنید.)
 
 ```bash
 curl -X POST \
