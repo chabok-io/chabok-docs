@@ -132,3 +132,4 @@ curl -X POST \
 با وارد کردن دستور زیر نوتیفیکیشن زیر همراه با دیپ لینک ارسال خواهد شد:
 
 <img src="http://uupload.ir/files/0qha_ios-deep-link.png" alt="Its You" height="583px" width="289.5px">
+
