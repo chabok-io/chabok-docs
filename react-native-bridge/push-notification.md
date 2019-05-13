@@ -49,3 +49,35 @@ next: deeplink.html
 و علامت `Remote Notifications`ها را در `Setting > Capabilities > Background Modes` بررسی کنید.
 
 - در ادامه برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی اعلان و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به [این صفحه](/ios/push-notification.html) مراجعه نمایید.
+
+<br>
+
+### دریافت اکشن‌های کلیک روی نوتیفیکیشن
+
+برای دریافت اکشن‌های کلیک روی نوتیفیکیشن باید مانند زیر به رویداد ‍‍`notificationOpened` شنونده اضافه کنید:
+
+```javascript
+chabokEmitter.addListener(
+            'notificationOpened',
+            (msg) => {
+                console.log(msg);
+
+                if (msg.actionType === 'opened'){
+                    console.log("Notification opened by user");
+                } else if (msg.actionType === 'dismissed'){
+                    console.log("Notification dismissed by user");
+                } else if (msg.actionType === 'action_taken'){
+                    console.log("User tapped on notification " , msg.actionId , " action");
+                }
+
+                if (msg.actionUrl) {
+                    console.log("Got deep link (", msg.actionUrl, ")");
+                }
+            }
+        );
+// when app is closed, keeps notification actions until react native loads
+this.chabok.notificationOpenedHandler();
+    }
+```
+
+در آخر متد `notificationOpenedHandler`را قرار دهید. این متد زمانی که اپلیکیشن بسته است، اکشن‌های نوتیفیکیشن را نگه می‌دارد و به محض لود شدن لایه‌ی ریکت نیتیو، `notificationOpened` را صدا می‌زند.
