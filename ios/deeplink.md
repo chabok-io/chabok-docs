@@ -89,9 +89,11 @@ func application(_ app: UIApplication,
 ```
 ### برای آی‌اواس ۹ به بالا (Universal Link)
 
-اپل برای آی‌اواس ۹ به بالا تغییری را برای بالا بردن امنیت در این مکانیزم انجام داده است. به این صورت که برای مطمئن شدن از اختصاص یک اپلیکیشن به وبسایت آن باید حتما فایلی را به نام **apple-app-site-association** در وبسایت خود برای اعتبارسنجی و تایید اپل قرار دهید.
+اپل برای آی‌اواس ۹ به بالا تغییری را برای بالا بردن امنیت در این مکانیزم انجام داده است. به این صورت که برای مطمئن شدن از اختصاص یک اپلیکیشن به وبسایت آن باید حتما فایلی را به نام **apple-app-site-association** در وبسایت خود برای اعتبارسنجی و تایید اپل قرار دهید. 
 
-```objective-c
+زمانی که کاربر با Universal Link وارد وبسایت شما شود، متد زیر فرخوانی می‌شود:
+
+```objectivec
 //Objective-C
 -(BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
                 restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
@@ -114,3 +116,19 @@ func application(_ application: UIApplication,
     return true
 }
 ```
+<br>
+
+### نمونه Curl
+
+با اجرای دستور زیر در **Terminal** می‌توانید یک نوتیفیکیشن با **دیپ لینک** ارسال کنید. دقت کنید که در دستور زیر مقدار <ACCESS_TOKEN> حساب کاربری خود و مقدار USER_ID را شناسه‌ کاربری که می‌خواهید پیام به او تحویل داده شود، وارد نمایید. (این دستور برای ارسال به یک کاربر به خصوص است. برای ارسال به گروهی از کاربران به [این صفحه](https://doc.chabokpush.com/rest-api/send-push.html#%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%DA%AF%D8%B1%D9%88%D9%87%DB%8C-%D9%86%D9%88%D8%AA%DB%8C%D9%81%DB%8C%DA%A9%DB%8C%D8%B4%D9%86) مراجعه کنید.)
+
+```bash
+curl -X POST \
+"https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{ "user": "USER_ID", "content": "ما را در توئیتر دنبال کنید", "notification": { "clickUrl": "twitter://user?screen_name=chabokpush", "title": "ما را در توئیتر دنبال کنید", "body": "با فالو کردن چابک، از تخفیف ۲۰٪ ما بهرمند شوید.", "actions": [ { "id": "new_tweet_action", "title": "توئیت جدید", "options": 5, "url": "twitter://post?message=%40chabokpush%20%D8%B1%D9%88%20%D9%81%D8%A7%D9%84%D9%88%20%DA%A9%D8%B1%D8%AF%D9%85%20%D9%88%20%D8%AA%D8%AE%D9%81%DB%8C%D9%81%D9%85%D9%88%20%DA%AF%D8%B1%D9%81%D8%AA%D9%85%20" }], "mediaType": "jpeg", "mediaUrl": "https://raw.githubusercontent.com/chabokpush/chabok-assets/master/samples/notification/chabokpush_twitter.jpeg", "mutableContent": true, "category": "__TWITTER_FOLLOW__" } }'
+```
+با وارد کردن دستور زیر نوتیفیکیشن زیر همراه با دیپ لینک ارسال خواهد شد:
+
+<img src="http://uupload.ir/files/0qha_ios-deep-link.png" alt="Its You" height="583px" width="289.5px">
