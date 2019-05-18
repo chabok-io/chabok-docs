@@ -13,19 +13,28 @@ next: troubleshoot.html
 
 ### ثبت اطلاعات کاربر
 
-با متد زیر می‌توانید اطلاعات دلخواهی که از کاربر دارید (نام، نام خانوادگی، جنسیت، سن و ...) را در پروفایل او ثبت کنید.
+شما می‌توانید اطلاعاتی که از کاربر دارید (مانند نام، نام خانوادگی، جنسیت، سن و ...) را به طور دلخواه با استفاده از متد زیر، در پروفایل او ثبت کنید:
 
 ```objectivec
-//Objective-C:
+//Objective-C
 
-NSString *installationId = [self.manager setUserInfo];
+[PushClientManager.defaultManager setUserInfo:@{
+                                                    @"firstName": @"نسیم",
+                                                    @"lastName" : @"پرتوی",
+                                                    @"age"      : @"۳۶",
+                                                    @"gender"   : @"زن"
+                                                    }];
 ```
 ``` swift
-//Swift:
+//Swift
 
-let installationId:NSString = manager?.setUserInfo() as! NSString
+PushClientManager.default()?.userInfo = [
+                       "firstName": "نسیم",
+                       "lastName": "پرتوی",
+                       "age": "۳۶",
+                       "gender": "زن"]
 ```
-پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در پنل>جزئیات دستگاه>کارت اطلاعات کاربر مانند زیر مشاهده کنید:
+پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
 
 ![عکس مربوطه](http://uupload.ir/files/g9vk_set-user-info-1.png)
 
