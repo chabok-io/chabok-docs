@@ -10,9 +10,111 @@ next: introducing.html
 
 <Br>
 
+## [نسخه ۱.۳.۰ - ۱۳۹۸/۰۲/۲۱](https://github.com/chabokpush/chabok-client-rn/releases/tag/v1.3.0)
+
+### تغییرات
+
+- به روز رسانی کتابخانه اندروید به [نسخه ۲.۱۶.۰](https://doc.chabokpush.com/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B6%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B8%DB%B0%DB%B2%DB%B1%DB%B8)
+- به روز رسانی کتابخانه آی‌او‌اس به [نسخه ۱.۱۹.۰](https://doc.chabokpush.com/ios/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B1%DB%B1%DB%B9%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B8%DB%B0%DB%B2%DB%B1%DB%B8)
+- افزودن متد `setUserInfo` برای ارسال اطلاعات کاربر
+- افزودن متد `setDefaultTracker` برای [ترک کمپین‌های نصب](/react-native-bridge/tracker.html#روش-آیدی-ترکر-pre-install-campaigns)
+- افزودن متد `appWillOpenUrl` برای [ارسال اطلاعات اتریبیوشن دیپ لینک](/react-native-bridge/deeplink.html#دریافت-دیپ-لینک)
+- افزودن رویداد `notificationOpened` برای [دریافت اطلاعات کلیک روی نوتیفیکیشن](/react-native-bridge/push-notification.html#دریافت-اکشنهای-نوتیفیکیشن) (اکشن‌ها و رد کردن (dismiss))
+- افزودن متد ‍‍‍‍‍`registerAsGuest` برای اپلیکیشن‌هایی که [کاربر مهمان](/react-native-bridge/sdk-setup.html#کاربر-مهمان) دارند یا می‌خواهند نصب با اولین بازدید شمرده شود (مانند سرویس ادجاست)
+
+### ارتقا
+
+**اندروید**:
+
+- پشتیبانی از `INSTALL_REFERRER` برای [گوگل پلی استور](/react-native-bridge/tracker.html#گوگل-پلی-استور)
+
+ کد زیر را به gradle اضافه کنید:
+
+```groovy
+    implementation 'com.android.installreferrer:installreferrer:1.0'
+```
+- برای دریافت اکشن نوتیفیکیشن، کد زیر را در کلاس `MainApplication` متد `onCreate` قرار دهید:
+
+```java
+//Java
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        SoLoader.init(this, /* native exopackage */ false);
+        
+        if (chabok == null) {
+            chabok = AdpPushClient.init(
+                    getApplicationContext(),
+                    MainActivity.class,
+                    "APP_ID/SENDER_ID",
+                    "API_KEY",
+                    "USERNAME",
+                    "PASSWORD"
+            );
+
++               //true connects to Sandbox environment  
++               //false connects to Production environment  
++             AdpPushClient.get().setDevelopment(DEV_MODE);
+
++            chabok.addNotificationHandler(new NotificationHandler(){
++                @Override
++                public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
++                    ChabokReactPackage.notificationOpened(message, notificationAction);
++                   return super.notificationOpened(message, notificationAction);
++                }
++            });
+        }
+    }
+```
+
+**آی‌اواس**:
+
+- برای دریافت **advertisingId** باید **AdSupport.framework** را به `Linked Frameworks and Libraries` آن پروژه اضافه کنید
+- افزودن متد ‍‍‍‍‍`:notificationOpened` برای ارسال رویداد اکشن نوتیفیکیشن
+- افزودن متد `registerToUNUserNotificationCenter` برای دریافت اکشن نوتیفیکیشن با پیاده‌سازی کد زیر (برای نمایش نوتیفیکیشن چند رسانه‌‌ای) [این بخش](https://doc.chabokpush.com/ios/push-notification.html) از مستندات را مطالعه کنید):
+
+```objectivec
+//Objective-C
+
++ @interface AppDelegate ()<PushClientManagerDelegate>
+
++ @end
+
+@implementation AppDelegate
+
+ - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+  {
+    
++    [PushClientManager.defaultManager addDelegate:self];
++    [AdpPushClient registerToUNUserNotificationCenter];
+  
+    ...
+    
+    return true;
+  }
+
++ -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
++     [AdpPushClient notificationOpened:response.notification.request.content.userInfo actionId:response.actionIdentifier];
++ }
+  
++ -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
++     [AdpPushClient notificationOpened:userInfo];
++ }
+  
++ -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
++    [AdpPushClient notificationOpened:userInfo];
++ }
+  
++ -(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler{
++     [AdpPushClient notificationOpened:userInfo actionId:identifier];
++ }
+```
+
 ## [نسخه ۱.۲.۰ - ۱۳۹۷/۰۹/۱۳](https://github.com/chabokpush/chabok-client-rn/releases/tag/v1.2.0)
 
 ### تغییرات
+
 - حل مشکل اتصال به محیط عملیاتی  
 
 ### ارتقا
@@ -41,8 +143,8 @@ initializeApp(options)
 ## [نسخه ۱.۱.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabokpush/chabok-client-rn/releases/tag/v1.1.0)
 
 ### تغییرات
-- به روز رسانی کتابخانه اندروید به نسخه [۲.۱۴.۰](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.0)
-- به روز رسانی کتابخانه آی‌او‌اس به نسخه [۱.۱۸.۰](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.18.0)
+- به روز رسانی کتابخانه اندروید به نسخه [۲.۱۴.۰](https://doc.chabokpush.com/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B4%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B7%DB%B0%DB%B8%DB%B2%DB%B1)
+- به روز رسانی کتابخانه آی‌او‌اس به نسخه [۱.۱۸.۰](https://doc.chabokpush.com/ios/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B1%DB%B1%DB%B8%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B7%DB%B0%DB%B8%DB%B2%DB%B1)
 - حل مشکل رد کردن پرامیس در فراخوانی متدهای `getUserId` و `getInstallationId`
 
 

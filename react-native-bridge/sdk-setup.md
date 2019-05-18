@@ -4,7 +4,7 @@ title: راه‌اندازی
 layout: react-native-bridge
 permalink: react-native-bridge/sdk-setup.html
 prev: required.html
-next: chabok-messaging.html
+next: tracker.html
 ---
 
 پس از طی کردن مراحل صفحه [پیش‌نیازها](/react-native-bridge/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه). در انتها، [مقداردهی و راه‌اندازی](/react-native-bridge/sdk-setup.html#۲--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/react-native-bridge/sdk-setup.html#۳--ثبت-کاربر-register) را حتما پشت سر بگذارید.
@@ -53,7 +53,8 @@ dependencies {
     ...
     implementation "com.google.android.gms:play-services-gcm:10.2.6"
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation 'com.adpdigital.push:chabok-lib:2.14.2'
+    implementation 'com.adpdigital.push:chabok-lib:2.16.0'
+    implementation 'com.android.installreferrer:installreferrer:1.0'
     ...
 }
 ```
@@ -272,6 +273,18 @@ componentDidMount(){
 > `نکته` : در صورتی که مقداردهی اولیه و ثبت کاربر به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید.
 
 در صورتی که مقداردهی اولیه و ثبت کاربر به درستی اعمال شده باشد، می‌توانید اطلاعات دستگاه متصل خود را در [بخش مشترکین پنل چابک](https://sandbox.push.adpdigital.com/front/users/subscribers/list) مشاهده کنید. 
+
+#### کاربر مهمان
+
+در صورتی که اپلیکیشن شما قابلیت  **ایجاد حساب کاربری**  داشته باشد می‌توانید کاربر را تا زمانی که حساب ایجاد نکرده است به عنوان  **کاربر مهمان**  در سیستم خود ثبت کنید و سپس به محض ایجاد حساب و دریافت اطلاعات او، آن کاربر را به عنوان **کاربر دائم** خود مانند بالا ثبت کنید. 
+
+> `نکته:` در صورتی که می‌خواهید از ترکر نصب استفاده کنید و نصب‌ها را به محض اولین ورود کاربر محاسبه کنید (مانند سرویس ادجاست) باید از این متد استفاده کنید. دقت داشته باشید که این متد را به تنهایی به کار نبرید زیرا هر بازدید کاربر را مهمان جدید محاسبه می‌کند. برای اطلاعات بیشتر مستندات [ترکر نصب](/react-native-bridge/tracker.html) را مطالعه کنید.
+
+متد زیر کاربر را به عنوان کاربر مهمان ثبت می‌کند و به طور خودکار یک تگ مهمان (CHABOK_GUEST) به او اختصاص می‌دهد:
+
+```javascript
+this.chabok.registerAsGuest();
+```
 
 #### رویداد تایید ثبت کاربر
 

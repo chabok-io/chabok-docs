@@ -10,13 +10,27 @@ prev: troubleshoot.html
 
 <Br>
 
-##  [نسخه ۲.۱۵.۱ - ۱۳۹۸/۰۲/۰۲](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.15.1)
+
+##  [نسخه ۲.۱۶.۰ - ۱۳۹۸/۰۲/۱۸](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.16.0)
 
 ### تغییرات
+
+- پشتیبانی از **R8** (کوتاه کننده کد گوگل)
+
+- پشتیبانی از [**دیپ لینک**](/android/deeplink.html) (deep link) و **ری‌دایرکت** (redirect) برای کلیک روی نوتیفیکیشن
+
+- افزودن متد `appWillOpenUrl` برای **ارسال اطلاعات اتریبیوشن دیپ لینک**
+
+- بهبود **رصد رویداد** برای پشتیبانی از کاربرانی که از **vpn** استفاده می‌کنند
+
+- افزودن آمار و آنالیتیکس برای کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن (dismiss))
+
+- افزودن رویداد `notificationOpened` برای دریافت اطلاعات کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن (dismiss))
 
 - حل مشکل متد `registerAsGuest` 
 
 - حل مشکل crash کردن `INSTALL_REFERRER` برای دستگاهایی که Google Play Services ندارند
+
 
 ##  [نسخه ۲.۱۵.۰ - ۱۳۹۸/۰۱/۲۱](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.15.0)
 

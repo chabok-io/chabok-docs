@@ -3,7 +3,7 @@ id: user-management
 title: گروه‌بندی کاربران
 layout: ios
 permalink: ios/user-management.html
-prev: push-notification.html
+prev: deeplink.html
 next: behavior-tracking.html
 ---
 	

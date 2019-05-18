@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "3P8VW5SG6R.com.adpdigital.adppush.client",
+        "paths": [
+          "/",
+          "/android/*",
+          "/ios/*"
+        ]
+      }
+    ]
+  }
+}

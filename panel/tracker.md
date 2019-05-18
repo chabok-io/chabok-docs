@@ -231,6 +231,10 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 <td align="center">installed_at</td>
 <td align="right">زمان نصب</td>
 </tr>
+<tr>
+<td align="center">adid</td>
+<td align="right">شناسه تبلیغاتی</td>
+</tr>
 </tbody></table>
 </p>
 </details>
@@ -273,7 +277,9 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 
 <Br>
 
-با کلیک روی هر ترکر می‌توانید جزئیات آن را به صورت لحظه‌ای مشاهده کنید.
+با کلیک روی هر ترکر، وارد سطح‌ کوچکتر آن ترکر می‌شوید. به عنوان مثال کلیک روی ترکر وارد کمپین‌های آن می‌شود سپس کلیک روی کمپین وارد شبکه‌های آن کمپین می‌شود و به همین ترتیب ادامه پیدا می‌کند. 
+
+برای مشاهده آمار دقیق ترکر کافی است در لیست ترکرهای فعال خود در بخش دستورات، جزئیات را کلیک کنید.
 
 ![عکس مربوطه](http://uupload.ir/files/l57b_tracker-analytics-.png)
 
