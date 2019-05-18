@@ -73,7 +73,7 @@ next: inbox.html
 
 ![عکس مربوطه](http://uupload.ir/files/6k8b_save-as-csv.png)
 
->`نکته:` دقت داشته باشید که فرمت‌های (CSV (Macintosh و (CSV UTF-8 (Comma delimited پشتیبانی **نمی‌شود**.
+>`نکته:` دقت داشته باشید که فایل CSV شما به صورت **CRLF** باشد. همچنین فرمت‌های (CSV (Macintosh و (CSV UTF-8 (Comma delimited پشتیبانی **نمی‌شوند**.
 
 با داشتن فایل، آن را در بخش **گیرندگان** می‌توانید آپلود کنید:
 
