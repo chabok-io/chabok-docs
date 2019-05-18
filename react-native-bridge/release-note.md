@@ -26,7 +26,9 @@ next: introducing.html
 
 **اندروید**:
 
-- پشتیبانی از `INSTALL_REFERRER` برای [گوگل پلی استور](/react-native-bridge/tracker.html#گوگل-پلی-استور) (کد زیر را به gradle اضافه کنید:)
+- پشتیبانی از `INSTALL_REFERRER` برای [گوگل پلی استور](/react-native-bridge/tracker.html#گوگل-پلی-استور)
+
+ کد زیر را به gradle اضافه کنید:
 
 ```groovy
     implementation 'com.android.installreferrer:installreferrer:1.0'
