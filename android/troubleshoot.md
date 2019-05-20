@@ -7,22 +7,20 @@ prev: features.html
 next: release-note.html
 ---
 
-در این صفحه به عیب‌یابی مشکلات متداول توسعه‌دهندگان در پیاده‌سازی چابک و ارائه راه‌‌حل‌های مربوط به آن می‌پردازیم. برخی از این مشکلات عبارتند از [کرش کردن اپلیکیشن]()، عدم [دریافت پوش‌نوتیفیکیشن](/android/troubleshoot.html#پوش-نمیگیرم) و [نمایش اعلان](/android/troubleshoot.html#اعلانها-نمایش-داده-نمیشوند).
+در این صفحه به عیب‌یابی مشکلات متداول توسعه‌دهندگان در پیاده‌سازی چابک و ارائه راه‌‌حل‌های مربوط به آن می‌پردازیم. برخی از این مشکلات عبارتند از [کرش کردن اپلیکیشن](/android/troubleshoot.html#اپلیکیشنم-کرش-میکند)، عدم [دریافت پوش‌نوتیفیکیشن](/android/troubleshoot.html#پوش-نمیگیرم) و [نمایش اعلان](/android/troubleshoot.html#اعلانها-نمایش-داده-نمیشوند).
 
 <Br>
 
 ## اپلیکیشنم کرش می‌کند
 ---
 
-### مواردی که مربوط به `inti` می‌شود
-
 #### چابک را حتما intialize کنید
 
-در صورتی که با ارور "AdpPushClient not initialized, Make sure to call AdpPushClient.init in your Application class onCreate" مواجه شدید، اطمینان یابید چابک را intialize کرده باشید. این کار را از طریق متد `init` با وارد کردن پارامتر‌های مخصوص حساب خود انجام دهید.
+در صورتی که با ارور **"AdpPushClient not initialized, Make sure to call AdpPushClient.init in your Application class onCreate"** مواجه شدید، اطمینان یابید چابک را intialize کرده باشید. این کار را از طریق متد `init` با وارد کردن پارامتر‌های مخصوص حساب خود انجام دهید.
 
 #### به مقدار `APP_ID/SENDER_ID` دقت کنید
 
-در صورتی که با ارور "Application ID should be in `app-name/number` format" مواجه شدید، از صحیح بودن مقدار `APP_ID/SENDER_ID` در متد `init` اطمینان یابید. مقدار این پارامتر باید `APP_ID` به اضافه `SENDER_ID` (بدون فاصله) باشد.
+در صورتی که با ارور **"Application ID should be in `app-name/number` format"** مواجه شدید، از صحیح بودن مقدار `APP_ID/SENDER_ID` در متد `init` اطمینان یابید. مقدار این پارامتر باید `APP_ID` به اضافه `SENDER_ID` (بدون فاصله) باشد.
 
 برای اطلاعات بیشتر می‌توانید مستندات [راه‌اندازی](/android/sdk-setup.html#۳--مقداردهی-اولیه-initialize) را مطالعه کنید.
 
