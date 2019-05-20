@@ -18,11 +18,15 @@ next: release-note.html
 
 در صورتی که با ارور **"AdpPushClient not initialized, Make sure to call AdpPushClient.init in your Application class onCreate"** مواجه شدید، اطمینان یابید چابک را intialize کرده باشید. این کار را از طریق متد `init` با وارد کردن پارامتر‌های مخصوص حساب خود انجام دهید.
 
+<Br>
+
 #### به مقدار `APP_ID/SENDER_ID` دقت کنید
 
 در صورتی که با ارور **"Application ID should be in `app-name/number` format"** مواجه شدید، از صحیح بودن مقدار `APP_ID/SENDER_ID` در متد `init` اطمینان یابید. مقدار این پارامتر باید `APP_ID` به اضافه `SENDER_ID` (بدون فاصله) باشد.
 
 برای اطلاعات بیشتر می‌توانید مستندات [راه‌اندازی](/android/sdk-setup.html#۳--مقداردهی-اولیه-initialize) را مطالعه کنید.
+
+<Br><Br>
 
 ## پوش نمی‌گیرم
 ---
