@@ -251,9 +251,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 >` نکته:` دقت کنید که متد `registerAsGuest` را به درستی استفاده کرده‌ باشید. برای این کار پس از نصب کاربر به **پنل > کاربران** بروید و از اضافه شدن کارت آن کاربر مانند زیر مطمئن شوید:
 
-![عکس مربوط](http://uupload.ir/files/8m2q_regis-as-guest2.png)
-
-
+![عکس مربوط](http://uupload.ir/files/lawy_regis-as-guest2.png)
 
 
  متد `register` علاوه بر ثبت کاربر، عمل **اتصال** به سرور چابک را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرای اپلیکیشن (در کلاس application) فراخوانی شود: (برای اطلاعات بیشتر می‌توانید بخش [ثبت کاربر](/ios/sdk-setup.html#۴--ثبت-کاربر-register) را مطالعه کنید.) 
