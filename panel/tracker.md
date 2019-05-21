@@ -83,7 +83,8 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 
 شما می‌توانید به ترکر خود **لینک کال‌بک** اضافه کنید. در اختصاص لینک کال‌بک، شما ‌می‌توانید پارامترهایی را درخواست دهید. این پارامترها در **جدول‌های زیر** قابل مشاهده هستند. هر کدام از این پارامترها را به دلخواه خودتان می‌توانید انتخاب کنید.  
 
-<details style="text-align: right"><summary>جدول پارامترهای کال‌بک کلیک</summary>
+**جدول پارامترهای کال‌بک کلیک**
+
 <p>
 <table>
 <thead>
@@ -146,11 +147,11 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 </tr>
 </tbody></table>
 </p>
-</details>
 
 <Br>
 
-<details style="text-align: right"><summary>جدول پارامترهای کال‌بک نصب</summary>
+**جدول پارامترهای کال‌بک نصب**
+
 <p>
 <table>
 <thead>
@@ -237,7 +238,6 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 </tr>
 </tbody></table>
 </p>
-</details>
 
 <Br>
 
