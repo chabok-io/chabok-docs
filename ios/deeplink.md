@@ -52,11 +52,17 @@ parameters = [ “screen_name” : “ChabokPush” ]
 
 ### نحوه استفاده در ترکر
 
-همچنین اگر می‌خواهید **از دیپ لینک در ترکر** خود استفاده کنید، نامی که به `scheme` اختصاص دادید را در پارامتر `deep_link` لینک ترکر قرار دهید. به نمونه زیر دقت کنید:
+اگر می‌خواهید **از دیپ لینک در ترکر** خود استفاده کنید، نامی که به `scheme` اختصاص دادید را در پارامتر `deep_link` لینک ترکر قرار دهید. به نمونه زیر دقت کنید:
 
 ```java
-https://a.chabok.io/abc123?deep_link=APP_NAME%3A%2F%2FPAGE_NAME
+https://a.chabok.io/TRACKER_ID?deep_link=APP_NAME%3A%2F%2Fpagename
 ```
+
+همچنین در لینک ترکر خود می‌توانید از پارامتر ‍‍‍‍‍`redirect` هم استفاده کنید تا در صورت کار نکردن دیپ لینک، کاربر به این مقصد هدایت شود:
+
+```java
+https://a.chabok.io/TRACKER_ID?deep_link=APP_NAME%3A%2F%2Fpagename&redirect=https://chabok.io
+``` 
 
 <br>
 
