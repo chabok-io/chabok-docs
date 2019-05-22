@@ -25,20 +25,30 @@ next: user-management.html
 
 برای راه‌اندازی SDK چابک **۴ مرحله** زیر را به ترتیب انجام ‌دهید:
 
-[الف- افزودن کتابخانه](/unity/tracker.html#الف--افزودن-کتابخانه)
+[الف- افزودن Dependency](/unity/tracker.html#الف--افزودن-کتابخانه)
 
-[ب- مقداردهی](/unity/tracker.html#ج--مقداردهی-initialize)
+[ب- نصب کتابخانه ](/unity/tracker.html#ب--نصب-کتابخانه)
 
-[د- ثبت کاربر](/unity/tracker.html#د--ثبت-کاربر-register)
+[ج- مقداردهی (Initialize)](/unity/tracker.html#ج--مقداردهی-اولیه-initialize)
 
-### نصب کتابخانه
+[د- ثبت کاربر (Register)](/unity/tracker.html#د--ثبت-کاربر-register)
+
+<Br>
+
+##### الف- افزودن Dependency
+
+در ابتدا دقت نمایید که ‍‍`dependency`‌ های لازم را از [این قسمت](https://github.com/Husseinhj/chabok-starter-unity/tree/master/Assets/Plugins/Android) دانلود کنید و در مقصد `myproject/Assets/Plugins/Android` قرار دهید.
+
+<Br>
+
+##### ب- نصب کتابخانه
 
 برای اضافه کردن کتابخانه چابک به پروژه‌تان باید تمام فایل‌هایی که در [فولدر `chabokpush`](https://github.com/Husseinhj/chabok-starter-unity/tree/master/Assets/Scripts/ChabokPush) است را در `Scripts` پروژه خودتان قرار دهید.
 بیاورد. 
 
 <Br>
 
-### مقداردهی اولیه (Initialize)
+##### ج- مقداردهی اولیه (Initialize)
 
 چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. برای همین متد `init` چابک باید در کلاس `Main.cs` تحت هر شرایطی فراخوانی شود.
 
@@ -74,7 +84,7 @@ public class Main : MonoBehaviour
 
 <Br>
 
-### ثبت کاربر (Register)
+##### د- ثبت کاربر (Register)
 
 یکی از مزیت‌های چابک نسبت به درگاه‌های ارسال پوش‌نوتیفیکیشن، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید.   
   
@@ -86,14 +96,14 @@ public class Main : MonoBehaviour
   
 ```csharp
 var userId = chabok.GetUserId();
-        if (userId != null)
-        {
-            chabok.Register(userId);
-        }
-        else
-        {
-            chabok.RegisterAsGuest();
-        }
+if (userId != null)
+{
+    chabok.Register(userId);
+}
+else
+{
+    chabok.RegisterAsGuest();
+}
 ```
 
 

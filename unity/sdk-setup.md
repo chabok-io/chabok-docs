@@ -1,29 +1,34 @@
 ---
 id: sdk-setup
 title: راه‌اندازی
-layout: sdk-setup
+layout: unity
 permalink: unity/sdk-setup.html
 next: tracker.html
 ---
 
-پس از طی کردن مراحل صفحه [پیش‌نیازها](/unity/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/unity/sdk-setup.html#۱--نصب-کتابخانه). پس از آن، [مقداردهی و راه‌اندازی](/unity/sdk-setup.html#۳--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/unity/sdk-setup.html#۴--ثبت-کاربر-register) را حتما پشت سر بگذارید.
+پس از طی کردن مراحل صفحه [پیش‌نیازها](/unity/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید یک سری **Dependency** را به پروژه خود [اضافه کنید](/unity/sdk-setup.html#۱--افزودن-dependency) و بعد کتابخانه چابک را [نصب کنید](/unity/sdk-setup.html#۱--نصب-کتابخانه). پس از آن، [مقداردهی و راه‌اندازی](/unity/sdk-setup.html#۳--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/unity/sdk-setup.html#۴--ثبت-کاربر-register) را حتما پشت سر بگذارید.
 
 برای انجام موفق این کار باید تمام مراحل زیر را به ترتیب انجام دهید:
 
-[۱- نصب کتابخانه](/unity/sdk-setup.html#۱--نصب-کتابخانه)
+[۱- افزودن Dependency](/unity/sdk-setup.html#۱--افزودن-dependency)
 
-[۲- مقداردهی اولیه (Initialize)](/unity/sdk-setup.html#۳--مقداردهی-اولیه-initialize)
+[۲- نصب کتابخانه](/unity/sdk-setup.html#۲--نصب-کتابخانه)
 
-[۳- ثبت کاربر (Register)](/unity/sdk-setup.html#۴--ثبت-کاربر-register)
+[۳- مقداردهی اولیه (Initialize)](/unity/sdk-setup.html#۳--مقداردهی-اولیه-initialize)
+
+[۴- ثبت کاربر (Register)](/unity/sdk-setup.html#۴--ثبت-کاربر-register)
 
 <Br>
 
-### افزودن Dependency
+### ۱- افزودن Dependency
+---
 
 در ابتدا دقت نمایید که ‍‍`dependency`‌ های لازم را از [این قسمت](https://github.com/Husseinhj/chabok-starter-unity/tree/master/Assets/Plugins/Android) دانلود کنید و در مقصد `myproject/Assets/Plugins/Android` قرار دهید.
 
+<br>
 
-### نصب کتابخانه
+### ۲- نصب کتابخانه
+---
 
 برای اضافه کردن کتابخانه چابک به پروژه‌تان باید تمام فایل‌هایی که در [فولدر `chabokpush`](https://github.com/Husseinhj/chabok-starter-unity/tree/master/Assets/Scripts/ChabokPush) است را در `Scripts` پروژه خودتان قرار دهید.
 
@@ -39,7 +44,8 @@ next: tracker.html
 
 <Br>
 
-### مقداردهی اولیه (Initialize)
+### ۳- مقداردهی اولیه (Initialize)
+---
 
 چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. برای همین متد `init` چابک باید در کلاس `Main.cs` تحت هر شرایطی فراخوانی شود.
 
@@ -75,7 +81,8 @@ public class Main : MonoBehaviour
 
 <Br>
 
-### ثبت کاربر (Register)
+### ۴- ثبت کاربر (Register)
+---
 
 یکی از مزیت‌های چابک نسبت به درگاه‌های ارسال پوش‌نوتیفیکیشن، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید.   
   
@@ -87,14 +94,14 @@ public class Main : MonoBehaviour
   
 ```csharp
 var userId = chabok.GetUserId();
-        if (userId != null)
-        {
-            chabok.Register(userId);
-        }
-        else
-        {
-            chabok.RegisterAsGuest();
-        }
+if (userId != null)
+{
+    chabok.Register(userId);        
+}
+else
+{
+    chabok.RegisterAsGuest();        
+}
 ```
 
 #### کاربر مهمان  
