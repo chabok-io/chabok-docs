@@ -244,7 +244,6 @@ componentDidMount() {
     this.chabok.getUserId()
      .then(userId => {
         if (userId) {
-            this.setState({userId});
             this.chabok.register(userId);
         }
      })
