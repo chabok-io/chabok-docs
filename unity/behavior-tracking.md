@@ -15,7 +15,7 @@ next: release-note.html
 
 برای رصد رفتار کاربر باید از متد `track` استفاده کنید. این متد دارای مقدار ورودی **نام** و **داده** رفتار (`trackName`,`data`) می‌باشد.
 
-```java
+```csharp
 chabok.Track("LIKE");
 ```
 
