@@ -26,6 +26,12 @@ next: release-note.html
 
 برای اطلاعات بیشتر می‌توانید مستندات [راه‌اندازی](/android/sdk-setup.html#۳--مقداردهی-اولیه-initialize) را مطالعه کنید.
 
+<Br>
+
+#### نسخه‌ سرویس‌های گوگل پلی را بررسی کنید
+
+در صورتی با ارورهای **;java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/iid/InstanceID** و یا **Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.android.gms.iid.InstanceID** مواجه شدید، دقت کنید که نسخه‌ سرویس‌های گوگل پلی شما با هم، همخوانی و تطابق داشته باشند.
+
 <Br><Br>
 
 ## پوش نمی‌گیرم
