@@ -16,12 +16,14 @@ next: troubleshoot.html
 شما می‌توانید اطلاعاتی که از کاربر دارید (مانند نام، نام خانوادگی، جنسیت، سن و ...) را به طور دلخواه با استفاده از متد زیر، در پروفایل او ثبت کنید:
 
 ```java
-AdpPushClient.get().setUserInfo({
-           lastName: 'اخوان',
-           firstName: 'محمدرضا',
-           gender: 'مرد',
-           age: '۳۵' 
-});
+HashMap<String, Object> userInfo = new HashMap<>();
+
+userInfo.put("firstName", "محمدرضا");
+userInfo.put("lastName", "اخوان");
+userInfo.put("age", 35);
+userInfo.put("gender", "مرد");
+
+AdpPushClient.get().setUserInfo(userInfo);
 ```
 پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
 

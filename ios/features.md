@@ -21,7 +21,7 @@ next: troubleshoot.html
 [PushClientManager.defaultManager setUserInfo:@{
                                                     @"firstName": @"نسیم",
                                                     @"lastName" : @"پرتوی",
-                                                    @"age"      : @"۳۶",
+                                                    @"age"      : ۳۶,
                                                     @"gender"   : @"زن"
                                                     }];
 ```
@@ -31,7 +31,7 @@ next: troubleshoot.html
 PushClientManager.default()?.userInfo = [
                        "firstName": "نسیم",
                        "lastName": "پرتوی",
-                       "age": "۳۶",
+                       "age": ۳۶,
                        "gender": "زن"]
 ```
 پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
