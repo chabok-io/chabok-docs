@@ -54,13 +54,6 @@
   starter:
   issue: https://github.com/chabokpush/chabok-php-demo/issues
 
-- name: Unity
-  image: unity.svg
-  document: /unity/introducing.html
-  demo:
-  starter:  https://github.com/chabokpush/chabok-starter-unity
-  issue: https://github.com/chabokpush/chabok-client-unity/issues
-
 - name: Panel
   image: panel.svg
   document: /panel/introducing.html
