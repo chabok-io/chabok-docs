@@ -23,7 +23,7 @@ next: tracker.html
 ### ۱- افزودن Dependency
 ---
 
-در ابتدا دقت نمایید که ‍‍`dependency`‌ های لازم را از [این قسمت](https://github.com/Husseinhj/chabok-starter-unity/tree/master/Assets/Plugins/Android) دانلود کنید و در مقصد `myproject/Assets/Plugins/Android` قرار دهید.
+در ابتدا دقت نمایید که ‍‍`dependency`‌ های لازم را از [این قسمت](https://github.com/chabokpush/chabok-starter-unity/tree/master/Assets/Plugins/Android) دانلود کنید و در مقصد `myproject/Assets/Plugins/Android` قرار دهید.
 
 <br>
 
@@ -41,7 +41,7 @@ next: tracker.html
 
 <Br>
 
-برای اضافه کردن کتابخانه چابک به پروژه‌تان باید تمام فایل‌هایی که در [فولدر `chabokpush`](https://github.com/Husseinhj/chabok-starter-unity/tree/master/Assets/Scripts/ChabokPush) است را در `Scripts` پروژه خودتان قرار دهید.
+برای اضافه کردن کتابخانه چابک به پروژه‌تان باید تمام فایل‌هایی که در [فولدر `chabokpush`](https://github.com/chabokpush/chabok-starter-unity/tree/master/Assets/Scripts/ChabokPush) است را در `Scripts` پروژه خودتان قرار دهید.
 
 #### مدل نسخه‌گذاری در چابک (Semantic Versioning)
 
@@ -77,10 +77,20 @@ public class Main : MonoBehaviour
         AndroidJavaObject context = currentActivity.Call<AndroidJavaObject>("getApplicationContext");
 
         var chabok = new ChabokPush();
-        chabok.Init(context, unityPlayerActivity, "APP_ID/SENDER_ID", "API_KEY", "USERNAME", "PASSWORD");
+        chabok.Init(
+        context,
+        unityPlayerActivity,
+        "APP_ID/SENDER_ID", //based on your environment
+        "API_KEY",          //based on your environment
+        "USERNAME",         //based on your environment
+        "PASSWORD"          //based on your environment
+        );
+        
+        //true connects to Sandbox environment  
+        //false connects to Production environment  
         chabok.SetDevelopment(true);
-}
     }
+}
 ```
 
 در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/unity/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.
