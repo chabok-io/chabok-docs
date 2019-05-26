@@ -29,18 +29,6 @@ next: tracker.html
 
 ### ۲- نصب کتابخانه
 ---
-پس از طی کردن مراحل صفحه [پیش‌نیازها](/unity/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/unity/sdk-setup.html#۱--نصب-کتابخانه). پس از آن، [مقداردهی و راه‌اندازی](/unity/sdk-setup.html#۳--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/unity/sdk-setup.html#۴--ثبت-کاربر-register) را حتما پشت سر بگذارید.
-
-برای انجام موفق این کار باید تمام مراحل زیر را به ترتیب انجام دهید:
-
-[۱- نصب کتابخانه](/unity/sdk-setup.html#۱--نصب-کتابخانه)
-
-[۲- مقداردهی اولیه (Initialize)](/unity/sdk-setup.html#۳--مقداردهی-اولیه-initialize)
-
-[۳- ثبت کاربر (Register)](/unity/sdk-setup.html#۴--ثبت-کاربر-register)
-
-<Br>
-
 برای اضافه کردن کتابخانه چابک به پروژه‌تان باید تمام فایل‌هایی که در [فولدر `chabokpush`](https://github.com/chabokpush/chabok-starter-unity/tree/master/Assets/Scripts/ChabokPush) است را در `Scripts` پروژه خودتان قرار دهید.
 
 #### مدل نسخه‌گذاری در چابک (Semantic Versioning)
