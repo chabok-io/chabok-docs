@@ -44,8 +44,8 @@
   image: unity.svg
   document: /unity/introducing.html
   demo:
-  starter:  https://github.com/Husseinhj/chabok-starter-unity
-  issue: https://github.com/Husseinhj/chabok-starter-unity/issues
+  starter:  https://github.com/chabokpush/chabok-starter-unity
+  issue: https://github.com/chabokpush/chabok-starter-unity/issues
 
 - name: REST API
   image: api.svg
