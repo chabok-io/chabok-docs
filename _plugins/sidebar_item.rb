@@ -12,6 +12,10 @@ module Jekyll
       return sidebar_helper(item, 'android')
     end
 
+    def unity_sidebar_link(item)
+        return sidebar_helper(item, 'unity')
+    end
+
     def windows_sidebar_link(item)
       return sidebar_helper(item, 'windows')
     end
