@@ -25,7 +25,7 @@ next: user-management.html
 
 برای راه‌اندازی SDK چابک **۴ مرحله** زیر را به ترتیب انجام ‌دهید:
 
-[الف- افزودن Dependency](/unity/tracker.html#الف--افزودن-کتابخانه)
+[الف- افزودن Dependency](/unity/tracker.html#الف--افزودن-dependency)
 
 [ب- نصب کتابخانه ](/unity/tracker.html#ب--نصب-کتابخانه)
 
