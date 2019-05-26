@@ -37,13 +37,13 @@ next: user-management.html
 
 ##### الف- افزودن Dependency
 
-در ابتدا دقت نمایید که ‍‍`dependency`‌ های لازم را از [این قسمت](https://github.com/Husseinhj/chabok-starter-unity/tree/master/Assets/Plugins/Android) دانلود کنید و در مقصد `myproject/Assets/Plugins/Android` قرار دهید.
+در ابتدا دقت نمایید که ‍‍`dependency`‌ های لازم را از [این قسمت](https://github.com/chabokpush/chabok-starter-unity/tree/master/Assets/Plugins/Android) دانلود کنید و در مقصد `myproject/Assets/Plugins/Android` قرار دهید.
 
 <Br>
 
 ##### ب- نصب کتابخانه
 
-برای اضافه کردن کتابخانه چابک به پروژه‌تان باید تمام فایل‌هایی که در [فولدر `chabokpush`](https://github.com/Husseinhj/chabok-starter-unity/tree/master/Assets/Scripts/ChabokPush) است را در `Scripts` پروژه خودتان قرار دهید.
+برای اضافه کردن کتابخانه چابک به پروژه‌تان باید تمام فایل‌هایی که در [فولدر `chabokpush`](https://github.com/chabokpush/chabok-starter-unity/tree/master/Assets/Scripts/ChabokPush) است را در `Scripts` پروژه خودتان قرار دهید.
 بیاورد. 
 
 <Br>
@@ -68,7 +68,17 @@ public class Main : MonoBehaviour
         AndroidJavaObject context = currentActivity.Call<AndroidJavaObject>("getApplicationContext");
 
         var chabok = new ChabokPush();
-        chabok.Init(context, unityPlayerActivity, "APP_ID/SENDER_ID", "API_KEY", "USERNAME", "PASSWORD");
+        chabok.Init(
+        context,
+        unityPlayerActivity,
+        "APP_ID/SENDER_ID", //based on your environment
+        "API_KEY",          //based on your environment
+        "USERNAME",         //based on your environment
+        "PASSWORD"          //based on your environment
+        );
+        
+        //true connects to Sandbox environment  
+        //false connects to Production environment  
         chabok.SetDevelopment(true);
 }
     }
@@ -115,7 +125,7 @@ else
 با کد زیر می‌توانید  رفتار کاربر (رویداد) را در چابک رصد کنید:  
   
 ```csharp
-chabok.Track("LIKE");
+chabok.Track("PURCHASE");
 ```
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/android/behavior-tracking.html) را مطالعه کنید.
 
