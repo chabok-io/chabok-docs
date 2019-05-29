@@ -1,3 +1,4 @@
+
 ---
 id: features
 title: امکانات‌ دیگر 
@@ -18,12 +19,12 @@ next: troubleshoot.html
 ```objectivec
 //Objective-C
 
-[PushClientManager.defaultManager setUserInfo:@{
-                                                    @"firstName": @"نسیم",
-                                                    @"lastName" : @"پرتوی",
-                                                    @"age"      : ۳۶,
-                                                    @"gender"   : @"زن"
-                                                    }];
+[PushClientManager.defaultManager  setUserInfo:@{
+		@"firstName": @"نسیم",
+		@"lastName" : @"پرتوی",
+		@"age"  : @(36),
+		@"gender" : @"زن"
+}];
 ```
 ``` swift
 //Swift
@@ -31,12 +32,44 @@ next: troubleshoot.html
 PushClientManager.default()?.userInfo = [
                        "firstName": "نسیم",
                        "lastName": "پرتوی",
-                       "age": ۳۶,
+                       "age": 36,
                        "gender": "زن"]
 ```
+
 پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
 
 ![عکس مربوطه](http://uupload.ir/files/g9vk_set-user-info-1.png)
+
+> نکته: لطفا property زیر را [بعد از register شدن کاربر](/ios/sdk-setup.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%AB%D8%A8%D8%AA-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1) فراخوانی کنید به عنوان مثال، به قطعه کد زیر توجه کنید:
+> 
+```objective-c
+//Objective-C
+
+[PushClientManager.defaultManager  registerUser:@"USER_ID"  registrationHandler:^(BOOL isRegistered, NSString *userId, NSError *error) {
+	if (isRegistered) {
+		[PushClientManager.defaultManager  setUserInfo:@{
+				@"firstName": @"نسیم",
+				@"lastName" : @"پرتوی",
+				@"age"  : @(36),
+				@"gender" : @"زن"
+		}];
+	}
+}];
+```
+```swift
+//Swift
+
+PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (register, userId, error) in
+	if register {
+		PushClientManager.default()?.userInfo = [
+                       "firstName": "نسیم",
+                       "lastName": "پرتوی",
+                       "age": 36,
+                       "gender": "زن"]
+	}
+})
+
+```
 
 <br><br>
 
