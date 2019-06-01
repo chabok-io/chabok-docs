@@ -79,7 +79,7 @@ chabok.getUserId().then(userId => {
 this.chabok.setUserInfo({
                 firstName: 'مهدی',
                 lastName: 'یعقوبی',
-                age: ۱۹,
+                age: 19,
                 gender: 'مرد'
             });
 ```

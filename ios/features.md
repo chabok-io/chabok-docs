@@ -1,4 +1,3 @@
-
 ---
 id: features
 title: امکانات‌ دیگر 
