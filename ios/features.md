@@ -69,7 +69,6 @@ PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (reg
                        "gender": "زن"]
 	}
 })
-
 ```
 
 <br><br>
