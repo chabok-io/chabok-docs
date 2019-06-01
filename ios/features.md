@@ -41,6 +41,8 @@ PushClientManager.default()?.userInfo = [
 
 > نکته: لطفا property زیر را [بعد از register شدن کاربر](/ios/sdk-setup.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%AB%D8%A8%D8%AA-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1) فراخوانی کنید به عنوان مثال، به قطعه کد زیر توجه کنید:
 > 
+
+
 ```objective-c
 //Objective-C
 
