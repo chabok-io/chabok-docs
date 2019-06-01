@@ -43,7 +43,7 @@ PushClientManager.default()?.userInfo = [
 > 
 
 
-```objective-c
+```objectivec
 //Objective-C
 
 [PushClientManager.defaultManager  registerUser:@"USER_ID"  registrationHandler:^(BOOL isRegistered, NSString *userId, NSError *error) {
