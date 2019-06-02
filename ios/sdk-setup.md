@@ -341,7 +341,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
  متد `registerUser` عمل **اتصال** به سرور چابک را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرا اپلیکیشن (در کلاس `AppDelegate`) فراخوانی شود. 
 
->` نکته:` دقت داشته باشید که متدهای `registerUser` و `registerAsGuest` در **background thread** فراخوانی **نشوند** و آن‌ها را حتما در **main thread** قرار دهید.
+>` نکته:` دقت داشته باشید که متدهای `registerUser` و `registerAsGuest` را در **background thread** فراخوانی **نکنید** و آن‌ها را حتما در **main thread** قرار دهید.
 
 این متد با دو امضای متفاوت وجود دارد:
 
