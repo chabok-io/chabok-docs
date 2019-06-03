@@ -10,6 +10,31 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۱.۳.۰ - ۱۳۹۸/۰۳/۱۳](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.3.0)
+
+### تغییرات
+
+* رد ‍‍‍‍`subscribe` کردن کاربرانی که از قبل روی کانال مورد نظر عضویت داشته‌اند (رد Resubscribe)
+
+* بهبود رفتار متدهای `subscribe` و `unsubscribe`
+
+* تشخیص افزودن وبسایت به home screen توسط کاربر
+
+* افزودن تنظیمات `serviceWorker` برای مدیریت `serviceWorker`‌های متعدد:
+
+```javascript
+const options = {
+      webpush: {
+        enabled: true,
+        publicKey: 'xxxxxxxxx'
+      },
+      silent: false,
+      serviceWorker : {
+        path : '/MY_SERVICE_WORKER.js',
+        scope: '/'
+      }
+    };
+```
 
 ## [نسخه ۱.۲.۳ - ۱۳۹۸/۰۱/۲۱](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.2.3)
 
