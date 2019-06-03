@@ -14,13 +14,13 @@ prev: troubleshoot.html
 
 ### تغییرات
 
-* رد ‍‍‍‍`subscribe` کردن کاربرانی که از قبل روی کانال مورد نظر عضویت داشته‌اند (رد Resubscribe)
+* جلوگیری از `subscribe` مجدد در صورت عضو بودن کاربر روی کانال
 
 * بهبود رفتار متدهای `subscribe` و `unsubscribe`
 
 * تشخیص افزودن وبسایت به home screen توسط کاربر
 
-* افزودن تنظیمات `serviceWorker` برای مدیریت `serviceWorker`‌های متعدد:
+* افزودن تنظیمات `serviceWorker` برای استفاده از چند `serviceWorker`‌ به صورت همزمان:
 
 ```javascript
 const options = {
