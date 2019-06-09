@@ -73,23 +73,7 @@ yarn add chabokpush
 
 > `نکته`: اگر اپلیکیشن شما **PWA** بوده و در دستگاه **add to homescreen** شده باشد، روی **اندروید** پوش دریافت می‌کنید اما آی‌اواس این قابلیت را پشتیبانی نمی‌کند.
 
-#### استفاده همزمان از چند Service Worker
-
-در صورتی که شما از قبل `serviceWorker` خود را استفاده می کردید و اکنون می‌خواهید `serviceWorker` چابک را هم به پروژه خودتان اضافه کنید و از هر دوی آن‌ها **همزمان** استفاده کنید، کافی است در تنظیمات `serviceWorker` مسیر آن یکی را مانند زیر قرار دهید:
-
-```javascript
-const options = {
-      webpush: {
-        enabled: true,
-        publicKey: 'xxxxxxxxx'
-      },
-      silent: false,
-      serviceWorker : {
-        path : '/MY_SERVICE_WORKER.js',
-        scope: '/'
-      }
-    };
-```
+در صورتی که می‌خواهید از **چند service worker به صورت همزمان استفاده کنید**، [این قسمت](/javascript/sdk-setup.html#استفاده-همزمان-از-چند-service-worker) را مطالعه کنید.
 <br>
 
 #### پشتیبانی وب‌پوش روی مرورگرها
@@ -221,6 +205,35 @@ const chabok = new chabokpush.Chabok(auth, options)
 
 > `نکته ` : زمانی که پارامتر `realtime` را false بگذارید، شنونده‌ (Listener) رویدادهای چابک مانند `connected` و ... فراخوانی **نخواهند شد**.
 
+<Br>
+
+#### استفاده همزمان از چند Service Worker
+
+اگر شما از `serviceWorker` خود استفاده می‌کنید و می‌خواهید از `serviceWorker` چابک هم به صورت همزمان استفاده کنید، کافیست داخل `serviceWorker` خود`serviceWorker` چابک را مانند زیر ایمپورت کنید (یا می‌توانید از CDN استفاده کنید):
+
+``` javascript
+//MY_SERVICE_WORKER.js
+importScripts('/chabok/ChabokSDKWorker.js')
+
+...
+
+```
+سپس در **تنظیمات راه‌اندازی** نام و scope مربوط به `serviceWorker` خودتان را بگذارید:
+
+
+```javascript
+const options = {
+      webpush: {
+        enabled: true,
+        publicKey: 'xxxxxxxxx'
+      },
+      silent: false,
+      serviceWorker : {
+        path : '/MY_SERVICE_WORKER.js',
+        scope: '/'
+      }
+    };
+```
 <Br>
 
 ### ۳- ثبت کاربر (Register)
