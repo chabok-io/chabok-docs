@@ -209,7 +209,7 @@ const chabok = new chabokpush.Chabok(auth, options)
 
 #### استفاده همزمان از چند Service Worker
 
-اگر شما از `serviceWorker` خود استفاده می‌کنید و می‌خواهید از `serviceWorker` چابک هم به صورت همزمان استفاده کنید، کافیست داخل `serviceWorker` خود`serviceWorker` چابک را مانند زیر ایمپورت کنید (یا می‌توانید از CDN استفاده کنید):
+اگر شما از `serviceWorker` خود استفاده می‌کنید و می‌خواهید از `serviceWorker` چابک هم به صورت همزمان استفاده کنید، کافیست داخل `serviceWorker` خود `serviceWorker` چابک را مانند زیر ایمپورت کنید (یا می‌توانید از CDN استفاده کنید):
 
 ``` javascript
 //MY_SERVICE_WORKER.js
