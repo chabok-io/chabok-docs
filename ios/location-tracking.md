@@ -161,7 +161,7 @@ func receivedLocationUpdates(_ locations: [CLLocation]) {
 
 ### مکان یابی بر اساس مدت زمان و فاصله
 
-با استفاده از متد `trackMeUntil:byMeter` می توانید موقعیت کاربر را بر اساس فاصله و بازه زمانی تعیین شده دنبال کنید : 
+با استفاده از متد `trackMeUntil:byMeter` می توانید موقعیت کاربر را بر اساس فاصله و بازه زمانی (**برحسب ثانیه**) تعیین شده دنبال کنید : 
 ```objectivec
 //Objective-C :
 
@@ -174,6 +174,8 @@ CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 let locationManager = CoreGeoLocation.sharedInstance()
 locationManager.trackMe(until: 3600, byMeter:100)
 ```
+
+> `نکته :` دقت داشته باشید که مدت زمان در متد `trackMeUntil` برحسب ثانیه است. به عنوان مثال در کد بالا مدت زمان ۳۶۰۰ ثانیه تعیین شده است.
 
 > `نکته :`  متد فوق بعد از دریافت موقعیت مکانی، رویداد 
 > `receivedLocationUpdates:locations` را فراخوانی می کند. همچنین پس از
