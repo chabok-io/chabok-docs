@@ -20,7 +20,7 @@ prev: troubleshoot.html
 
 * تشخیص افزودن وبسایت به home screen توسط کاربر
 
-* افزودن تنظیمات `serviceWorker` برای استفاده از چند `serviceWorker`‌ به صورت همزمان:
+* افزودن تنظیمات `serviceWorker` برای [استفاده از چند `serviceWorker`‌ به صورت همزمان](/javascript/sdk-setup.html#استفاده-همزمان-از-چند-service-worker):
 
 ```javascript
 const options = {
