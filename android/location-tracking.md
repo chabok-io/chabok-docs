@@ -9,17 +9,25 @@ next: event-handling.html
 
 چابک به طور گسترده از **خدمات مکانی (Location Services)** پشتیبانی می‌کند. از جمله این خدمات **رصد موقعیت مکانی کاربر** (Geo-tracking یا location tracking)، **تعیین محدوده جغرافیایی** (Geo-fencing)، **پوش بر اساس موقعیت مکانی** (Location-Based Push Notifications) و **پوش خودکار مکانی** (Geofence Push Notifications) است.
 
+<br><br>
+
+
+### قابلیت‌های مکانی
 
 چابک کنترل و تعامل با API‌ های مربوط به GPS و سرویس‌دهنده‌های دیگر را مدیریت می نماید.
-قابلیت مکان‌یابی در اندروید با استفاده از API های Google Play services بهبود یافته است. امکاناتی مانند دریافت آخرین موقعیت مکانی کاربر، دریافت متناوب موقعیت مکانی، قابلیت تعریف محدوده جغرافیایی و ... از جمله امکانات ارايه شده درآن هستند.
-چابک با استفاده از این قابلیتها در هسته خود، می تواند کارکردن با این ابزارها را سهولت بخشد و کاربر خود را از ورود به کارکردهای سطح پایین رها سازد.
+قابلیت مکان‌یابی در اندروید با استفاده از API های Google Play services بهبود یافته است. **دریافت آخرین موقعیت مکانی کاربر، دریافت متناوب موقعیت مکانی، قابلیت تعریف محدوده جغرافیایی** و ... از جمله امکانات ارائه شده هستند.
+چابک با استفاده از این قابلیت‌ها در کتابخانه خود، می تواند کارکردن با این ابزارها را سهولت بخشد.
 
-بعنوان مثال شما برای دریافت یک موقعیت مکانی در شروع برنامه لازم نیست با API های اندروید درگیر شده و حالات مختلف را کنترل نمایید، بلکه کافیست با استفاده از متد `enableLocationOnLaunch` و پیاده سازی Listener ‌مربوطه، به سادگی نیاز خود را برطرف سازید.
+<!--
+به عنوان مثال شما برای دریافت یک موقعیت مکانی در شروع برنامه لازم نیست با API های اندروید درگیر شده و حالات مختلف را کنترل نمایید، بلکه کافیست با استفاده از متد `enableLocationOnLaunch` و پیاده سازی Listener ‌مربوطه، به سادگی نیاز خود را برطرف سازید.
 همچنین برای استفاده از قابلیت Tracking درطول زمان و جابجایی معین، کافیست متد `startTrackingMe` را با پارامترهای مربوط فراخوانی کنید و پس از آن در دوره زمانی تعیین شده و میزان جابجایی که در پارامترها مشخص نموده‌اید موقعیت مکانی را دریافت خواهید کرد و پس از طی این زمان نیز سرویس مکان‌یابی بصورت خودکار متوقف خواهد شد.
+--->
 
-## تعریف مجوزهای دسترسی به مکان
+<br>
 
-برای استفاده از امکانات مکان‌یابی چابک لازم است دو مجوز `ACCESS_FINE_LOCATION` و `ACCESS_COARSE_LOCATION`  را در فایل `AndroidManifest.xml` قرار دهید:
+### تعریف مجوزهای دسترسی به موقعیت مکانی
+
+برای استفاده از امکانات مکان‌یابی چابک لازم است حتما دو مجوز `ACCESS_FINE_LOCATION` و `ACCESS_COARSE_LOCATION`  را در فایل `AndroidManifest.xml` قرار دهید:
 
 ```markup
 <?xml version="1.0" encoding="utf-8"?>
@@ -40,9 +48,11 @@ next: event-handling.html
 
 در ادامه این بخش به معرفی امکانات مکان‌یابی چابک خواهیم پرداخت:
 
+<br>
+
 ### دریافت موقعیت مکانی در حالت kill
 
-برای دریافت گزارش موقعیت مکانی درحالت `kill` لازم است یک `IntentService`  تعریف نمایید تا بتوانید از سرویس مکان‌یابی استفاده کنید.
+برای دریافت گزارش موقعیت مکانی درحالت `kill` لازم است یک `IntentService` تعریف نمایید تا بتوانید از سرویس مکان‌یابی استفاده کنید.
 سپس با استفاده از متد `addCallbackIntent` بایستی Intent فراخوانی سرویس خود را به شیء `LocationManager‌` معرفی کنید، مانند نمونه زیر:
 ‍
 ```java
@@ -116,7 +126,10 @@ public class LocationHostService extends IntentService {
 locationManager.removeCallbackIntent();
 ```
 
+<br>
+
 ### استفاده از شیء LocationManager
+
 برای استفاده از قابلیت مکان‌یابی چابک لازم است از شیء `LocationManager` استفاده نمایید. برای مقداردهی اولیه متد `init` را با context موردنظر فراخوانی نمایید، به شکل زیر:
 
 ```java
@@ -125,7 +138,10 @@ LocationManager locationManager = LocationManager.init(getApplicationContext());
 
 همه متدهای موردنیاز برای مکان‌یابی در این شیء قرار دارد.
 
+<br>
+
 ### دریافت موقعیت مکانی
+
 برای دریافت موقعیت مکانی بصورت مداوم، باید متد `startLocationUpdates` با پارامتر مربوطه که در ادامه توضیح داده می‌شود فراخوانی شود. 
 
 درصورتی که نیازی به دریافت مداوم موقعیت مکانی ندارید، می‌توانید از روش‌های کم هزینه‌تر مانند درخواست فقط یکبار با استفاده از متد `requestSingleLocation` یا درخواست به مدت معین با استفاده از متد `startTrackingMe` و روش‌های دیگری که توسط چابک ارائه می‌شود، استفاده نمایید.
@@ -173,6 +189,8 @@ LocationParams params = new Builder().setAccuracy(LocationAccuracy.HIGH).setDist
 در این نمونه دقت مکان‌یابی حداکثر، جابجایی موقعیت مکانی حداقل صفر و زمان تناوب گزارش مکان‌یابی ۵۰۰ میلی‌ثانیه می‌باشد.
 در ادامه توضیحات هریک از متدهای شیء `LocationParams` را مشاهده می‌کنید.
 
+<br>
+
 ##### دقت مکان‌یابی
 
 متد `setAccuracy`
@@ -207,6 +225,8 @@ enum LocationAccuracy {
 اگر مصرف باتری برایتان خیلی مهم است، ولی به‌روزرسانی موقعیت مکانی را فقط وقتی در دسترس باشد نیاز دارید، از این مقدار استفاده کنید.
 با این تنظیم، برنامه شما هیچ به‌روزرسانی موقعیت مکانی را درخواست نخواهد کرد،‌ولی درخواست به‌روزرسانی توسط برنامه‌های دیگر را دریافت خواهد نمود.
 
+<br>
+
 ##### حداقل فاصله
 
 متد `setDistance`
@@ -227,6 +247,7 @@ setDistance(float distance)
 setInterval(long interval)
 ```
 
+<br>
 
 #### متد addListener
 
@@ -302,6 +323,8 @@ public class GeoFragment extends Fragment
 }
 ```
 
+<br>
+
 #### متدهای OnLocationUpdateListener
 
 - متد `onConnected`
@@ -325,6 +348,8 @@ public class GeoFragment extends Fragment
 درصورتی که با متد `setUpGeofence` اقدام به تعریف geofence کرده باشید و با موفقیت ثبت شود، متد فوق فراخوانی خواهد
 شد.
 
+<br>
+
 ### متد addCallbackIntent
 
 با استفاده از متد `addCallbackIntent` بایستی Intent فراخوانی سرویس خود را به شیء LocationManager‌ معرفی کنید، مانند نمونه زیر:
@@ -346,6 +371,8 @@ locationManager.addCallbackIntent(intent);
 public void enableLocationOnLaunch()
 ```
 
+<br>
+
 ### دریافت یک موقعیت مکانی
 
  با هربار فراخوانی متد `requestSingleLocation` می‌توانید موقعیت مکانی به‌روزشده را در کلاس listener خود دریافت نمایید.
@@ -365,7 +392,10 @@ locationManager.requestSingleLocation(new LocationListener() {
 >`نکته:`
 >درصورتی که با استفاده از متد `startTrackingMe` مکان‌یابی زمان‌دار را فعال کرده باشید، تا زمانی که این مدت زمان به پایان نرسیده است، متد `requestSingleLocation` عمل نخواهدکرد.
 
+<br>
+
 ### مکان‌یابی براساس مدت زمان و جابجایی
+
 با کمک متد `startTrackingMe` می توانید در طول زمانی مشخص، با یک تناوب زمانی معین و حداقل فاصله جابجایی، گزارش تغییرات موقعیت مکانی را دریافت نمایید.
 
 ```java
@@ -378,6 +408,8 @@ public void startTrackingMe(long duration, long interval, float distance)
 
 >`نکته:`
 >توجه داشته باشید که در حالت Tracking متد `requestSingleLocation` عمل نخواهدکرد.
+
+<br>
 
 ### تعیین محدوده جغرافیایی
 
@@ -400,6 +432,8 @@ GeofenceParams geofenceParams = new GeofenceParams.Builder()
 `پارامتر سوم` نیز پیام متنی برای نمایش در زمان خروج از محدوده می‌باشد.
 `پارامتر چهارم` این متد نیز یک عدد برای تعیین حداکثر تعداد نمایش مجموع پیام‌های ورود و خروج به محدوده است.
 
+<br>
+
 #### متدهای GeofenceParams
 متد `setCenter`
 
@@ -414,6 +448,7 @@ GeofenceParams geofenceParams = new GeofenceParams.Builder()
 
 شعاع محدوده تعیین شده را با این متد تنظیم نمایید.
 
+<br>
 
 #### حذف یک Geofence
 به کمک متد `removeGeofenceById` و با شناسه یکتای Geofence که در زمان ایجاد آن تعیین نمودید می‌توانید Geofence موردنظر را حذف نمایید.
@@ -422,6 +457,8 @@ GeofenceParams geofenceParams = new GeofenceParams.Builder()
 public void removeGeofenceById(String geofenceId)
 ```
 
+<br>
+
 #### حذف گروهی Geofence ها
 با استفاده از متد `removeGeofencesByIds` و لیستی از شناسه‌های Geofence ها می‌توانید همه آنها را یکجا حذف کنید.
 
@@ -429,7 +466,10 @@ public void removeGeofenceById(String geofenceId)
 public void removeGeofencesByIds(List<String> geofenceIds)
 ```
 
+<br>
+
 ### دریافت آخرین مکان ثبت شده کاربر
+
 پس از اینکه کلاینت مکان‌یابی متصل شد، با استفاده از متد `getLastLocation` از شیء `locationManager` می توانید آخرین موقعیت مکانی ثبت شده را دریافت نمایید.
 
 معمولا با استفاده از این مقدار می‌توانید مقداردهی‌های اولیه در نمایش را انجام دهید، مثلا می‌توانید آخرین موقعیت مکانی ثبت شده را برای نمایش نقطه اولیه روی نقشه دریافت نمایید.
@@ -454,12 +494,16 @@ public Location getLastLocation()
 <!-- > -->
 <!-- > لذا در این دوحالت لازم نیست متد `publishLocation` را فراخوانی کنید، زیرا بصورت خودکار فراخوانی می‌‌شود. -->
 
+<br>
+
 ### متد enableBackgroundMode
 درصورتی که بخواهید سرویس مکان‌یابی حتی زمانی که برنامه شما Terminate شده یا وقتی که در background قرار دارد، عمل گزارش موقعیت مکانی را ادامه دهد، می‌توانید توسط متد enableBackgroundMode آن را فعال کنید.
 
 ```java
 public void enableBackgroundMode()
 ```
+
+<br>
 
 ### متد disableBackgroundMode
 برای غیرفعال‌سازی امکان background می‌توانید این متد را فراخوانی کنید.
@@ -476,7 +520,10 @@ public void disableBackgroundMode()
 >`نکته:`
 >وقتی از امکان Geofence و Tracking استفاده می‌کنید حالت Background‌ بصورت خودکار فعال می شود.
 
+<br>
+
 ### isBackgoundModeEnabled
+
 برای بررسی فعال بودن یا نبودن حالت background می‌توانید از این متد استفاده کنید، مقدار بازگشتی یک boolean‌ می‌باشد.
 
 ```java
