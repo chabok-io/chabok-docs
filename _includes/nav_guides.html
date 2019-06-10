@@ -25,40 +25,22 @@
             </svg>
         </h3>
     </div>
-    {% for section in site.data.nav_ios %}
+
     <div class="nav-docs-section">
         <h3><a href="/ios/introducing.html">
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill="#333">
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill="#999">
                 <g>
                     <path d="M0,21.45C0,18,.7,15,2.91,12.67c2.71-2.91,6-4.06,9.82-2.49a8.49,8.49,0,0,0,6.86,0A9.27,9.27,0,0,1,29.84,12c.75.69.79,1.13,0,1.88-4.78,4.46-4.39,10.47.92,14.19.83.58,1,1,.61,1.95a25.82,25.82,0,0,1-4.26,6.82,5,5,0,0,1-6.43,1.54,9,9,0,0,0-8,0C10.27,39.57,8.22,39,6.43,37A24.84,24.84,0,0,1,0,21.45Z"></path>
                     <path d="M23.57,1.14a8.5,8.5,0,0,1-5.78,7.43C16.32,9,15.7,8.66,16,7a8.77,8.77,0,0,1,6-6.81C23.28-.23,23.9,0,23.57,1.14Z"></path>
                 </g>
             </svg>
-            iOS
-        </a>
-            <svg class="svg-icon" viewBox="0 0 20 20" transform='rotate(-90)'>
+            iOS</a>
+            <svg class="svg-icon" viewBox="0 0 20 20">
                 <path fill="#333"
                       d="M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z"></path>
             </svg>
         </h3>
-        <ul>
-            {% for item in section.items %}
-            <li>
-                {{ item | ios_sidebar_link}}
-                {% if item.subitems %}
-                <ul>
-                    {% for subitem in item.subitems %}
-                    <li>
-                        {{ subitem | ios_sidebar_link }}
-                    </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
     </div>
-    {% endfor %}
     <div class="nav-docs-section">
         <h3><a href="/javascript/introducing.html">
             <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
@@ -171,6 +153,21 @@
     </div>
 
     <div class="nav-docs-section">
+        <h3><a href="/cordova/introducing.html">
+            <svg viewBox="0 0 256 246" xmlns="http://www.w3.org/2000/svg">
+                <g fill-rule="nonzero" fill="#999">
+                    <path d="M232.727 244.364h-41.454l2.909-34.91h-20.364l-2.909 34.91H85.091l-2.91-34.91H61.819l2.91 34.91H23.272L0 93.09 58.182 0h139.636L256 93.09l-23.273 151.274zM186.182 46.545h-37.403L151.273 64h-46.546l2.494-17.455H69.818L46.545 93.091l11.637 93.09h139.636l11.637-93.09-23.273-46.546zm-20.364 108.742c-3.213 0-5.818-9.69-5.818-21.643 0-11.954 2.605-21.644 5.818-21.644 3.213 0 5.818 9.69 5.818 21.644 0 11.953-2.605 21.643-5.818 21.643zm-73.454 1.804c-3.213 0-5.819-9.69-5.819-21.644 0-11.953 2.606-21.643 5.819-21.643s5.818 9.69 5.818 21.643c0 11.954-2.605 21.644-5.818 21.644z"/>
+                </g>
+            </svg>
+            Cordova</a>
+            <svg class="svg-icon" viewBox="0 0 20 20">
+                <path fill="#333"
+                      d="M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z"></path>
+            </svg>
+        </h3>
+    </div>
+
+    <div class="nav-docs-section">
         <h3><a href="/windows/introducing.html">
             <svg viewBox="0 0 476 476" xmlns="http://www.w3.org/2000/svg">
                 <g fill-rule="nonzero" fill="#999">
@@ -185,7 +182,7 @@
         </h3>
     </div>
 
-<div class="nav-docs-section">
+    <div class="nav-docs-section">
         <h3><a href="/rest-api/introducing.html">
             <svg width="25" height="24" viewBox="0 0 25 24" xmlns="http://www.w3.org/2000/svg">
                 <title>rest</title>
@@ -198,6 +195,7 @@
             </svg>
         </h3>
     </div>
+
 
     <div class="nav-docs-section">
         <h3><a href="/panel/introducing.html">
@@ -219,12 +217,14 @@
         </h3>
     </div>
 
+    {% for section in site.data.nav_guides %}
     <div class="nav-docs-section">
-        <h3><a href="/guides/introducing.html">
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                 viewBox="0 0 23.625 23.625" style="enable-background:new 0 0 23.625 23.625;" xml:space="preserve">
+        <h3 class="selected">
+            <a href="/guides/introducing.html">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 23.625 23.625" style="enable-background:new 0 0 23.625 23.625;" xml:space="preserve">
 <g>
-	<path style="fill:#999;" d="M11.812,0C5.289,0,0,5.289,0,11.812s5.289,11.813,11.812,11.813s11.813-5.29,11.813-11.813
+	<path style="fill:#00a1f1;" d="M11.812,0C5.289,0,0,5.289,0,11.812s5.289,11.813,11.812,11.813s11.813-5.29,11.813-11.813
 		S18.335,0,11.812,0z M14.271,18.307c-0.608,0.24-1.092,0.422-1.455,0.548c-0.362,0.126-0.783,0.189-1.262,0.189
 		c-0.736,0-1.309-0.18-1.717-0.539s-0.611-0.814-0.611-1.367c0-0.215,0.015-0.435,0.045-0.659c0.031-0.224,0.08-0.476,0.147-0.759
 		l0.761-2.688c0.067-0.258,0.125-0.503,0.171-0.731c0.046-0.23,0.068-0.441,0.068-0.633c0-0.342-0.071-0.582-0.212-0.717
@@ -237,12 +237,31 @@
 		c0-0.465,0.18-0.865,0.533-1.196c0.356-0.332,0.784-0.497,1.28-0.497c0.497,0,0.923,0.165,1.275,0.497
 		c0.353,0.331,0.53,0.731,0.53,1.196C14.667,6.703,14.49,7.101,14.137,7.429z"/>
             </svg>
-            راهنما</a>
-            <svg class="svg-icon" viewBox="0 0 20 20">
+
+                راهنما
+            </a>
+            <svg class="svg-icon" viewBox="0 0 20 20" transform='rotate(-90)'>
                 <path fill="#333"
                       d="M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z"></path>
             </svg>
         </h3>
+        <ul>
+            {% for item in section.items %}
+            <li>
+                {{ item | guides_sidebar_link}}
+                {% if item.subitems %}
+                <ul>
+                    {% for subitem in item.subitems %}
+                    <li>
+                        {{ subitem | guides_sidebar_link }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
     </div>
+    {% endfor %}
 
 </nav>
