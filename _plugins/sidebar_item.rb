@@ -20,6 +20,10 @@ module Jekyll
       return sidebar_helper(item, 'windows')
     end
 
+    def guides_sidebar_link(item)
+          return sidebar_helper(item, 'guides')
+    end
+
     def panel_sidebar_link(item)
         return sidebar_helper(item, 'panel')
     end
