@@ -1,6 +1,6 @@
 ---
 id: how-to-announce-new-features
-title: چگونه نسخه جدید را اعلام کنیم؟
+title: چگونه انتشار نسخه جدید اپلیکیشن را اعلام کنیم؟
 layout: guides
 permalink: guides/how-to-announce-new-features.html
 ---
