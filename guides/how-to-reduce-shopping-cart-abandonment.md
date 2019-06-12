@@ -25,9 +25,9 @@ permalink: guides/how-to-reduce-shopping-cart-abandonment.html
 
 ۲- کمپین خود را نامگذاری کنید. (برای مثال: **پوش ترک سبد خرید**)
 
-۳- در سیاست ارسال، **صندوق پیام چابک** را خاموش کنید.
+۳- در سیاست ارسال، **صندوق پیام چابک** را خاموش کنید.(تا فقط نوتیفیکیشن ارسال شود)
 
-۴- در گیرندگان، **نوع دستگاه** را انتخاب کنید و پلتفرم‌های خود را انتخاب کنید. (برای مثال: اندروید و آی‌او‌اس)
+۴- در گیرندگان برای قرار دادن همه کاربران، **نوع دستگاه** را انتخاب کنید و پلتفرم‌های خود را انتخاب کنید. (برای مثال: اندروید و آی‌او‌اس)
 
 ۵- در محتوا، عنوان و متن پوش را بنویسید. (برای مثال: خریدت یادت نره! قبل از اینکه آیتم‌های سبدت تموم شه، خریدتو کامل کن.)
 
@@ -37,8 +37,13 @@ permalink: guides/how-to-reduce-shopping-cart-abandonment.html
 
 > ‍‍‍`نکته:` برای آشنایی بیشتر با تعیین و رصد رویدادها صفحه **رصد رفتار درون‌برنامه‌ای** را در مستندات ([اندروید](https://doc.chabokpush.com/android/event-tracking.html)، [آی‌اواس](https://doc.chabokpush.com/ios/event-tracking.html) و [وب](https://doc.chabokpush.com/javascript/event-tracking.html))  مطالعه نمایید.
 
-۸- **۱ روز تاخیر** برای پوش بگذارید.
+۸- **۱ روز تاخیر** برای پوش بگذارید. 
 
 ۹- **رویداد متوقف کننده** را تعیین کنید. (برای مثال: Purchase)
 
 ۱۰- در آخر برای فعال کردن پوش **ذخیره و اجرا** را بزنید.
+
+
+<div align="center">   
+    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="https://sandbox.push.adpdigital.com/login">ورود به پنل</a>
+</div>
