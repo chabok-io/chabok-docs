@@ -9,11 +9,14 @@ permalink: guides/how-to-announce-new-features.html
 
 <Br>
 
-### کمپین جدید
+### مراحل اجرا
 
  برای این کار فقط کافیست یک **کمپین** ایجاد کنید و کاربران خود را **براساس نسخه برنامه سگمنت کنید.**
 
-#### مراحل ایجاد کمپین 
+تمامی مراحل را می‌توانید از طریق گیف زیر مشاهده کنید:
+
+ ![عکس مربوطه](http://uupload.ir/files/8itt_announcing-new-features-gif.gif)
+
 
 ۱- وارد پنل شوید و به صفحه **کمپین جدید** در تب **پیام‌ها** بروید.
 
@@ -33,8 +36,8 @@ permalink: guides/how-to-announce-new-features.html
 
 ۹- در آخر برای ارسال کمپین **ذخیره و اجرا** را بزنید.
 
-#### گیف ایجاد کمپین
+<br>
 
-تمامی مراحل بالا را می‌توانید از طریق گیف زیر مشاهده کنید:
-
- ![عکس مربوطه](http://uupload.ir/files/8itt_announcing-new-features-gif.gif)
+<div align="center">   
+    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="https://sandbox.push.adpdigital.com/login">ورود به پنل و اجرای کمپین</a>
+</div>
