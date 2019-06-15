@@ -168,6 +168,19 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 
 در صورتی که شما از سرویس‌های دیگری هم استفاده می‌کنید و کتابخانه‌های آن‌ها را نصب کرده‌اید امکان عدم نمایش اعلان برای شما وجود خواهد داشت. به عنوان مثال اگر کتابخانه **پوشه** را علاوه بر چابک روی اپ خود داشته باشید، زمانی که اپ شما بسته است، پوش‌نوتیفیکیشن دریافت می‌شود اما اعلان آن در دستگاه کاربر **نمایش داده نمی‌شود**.
 
+##### ۷- خطای firebase
+
+در صورتی که برای نمایش نوتیفیکیشن با خطای زیر در logcat مواجه شدید:
+
+```
+java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService
+``` 
+باید در `gradle` کد زیر را اضافه کنید:
+
+```javascript
+```implementation "com.google.firebase:firebase-messaging:18.0.+"
+```
+
 <Br>
 
 ## موارد بالا را بررسی کردم اما همچنان مشکلم برطرف نشده
