@@ -172,13 +172,13 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 
 در صورتی که برای نمایش نوتیفیکیشن با خطای زیر در logcat مواجه شدید:
 
-```
+```bash
 java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService
 ``` 
 باید در `gradle` کد زیر را اضافه کنید:
 
 ```javascript
-```implementation "com.google.firebase:firebase-messaging:18.0.+"
+implementation "com.google.firebase:firebase-messaging:18.0.+"
 ```
 
 <Br>
