@@ -1,17 +1,20 @@
 ---
 id: push-notification
-title: تنظیم پوش‌نوتیفیکیشن 
+title: پوش‌نوتیفیکیشن 
 layout: react-native-bridge
 permalink: react-native-bridge/push-notification.html
 prev: chabok-messaging.html
 next: deeplink.html
 ---
 
-چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات زیر برای [اندروید](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-اندروید) و [آی‌اواس](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-آیاواس) انجام دهید، سپس توکن‌ها را به چابک [اضافه نمایید](/react-native/push-notification.html#متد-افزودن-توکن-برای-ارسال-پوشنوتیفیکیشن). همچنین می‌توانید از نمایش نوتیفیکیشن به صورت **local** [استفاده کنید](/react-native/push-notification.html#نمایش-local-notifications). 
+چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات زیر برای [اندروید](/react-native-bridge/push-notification.html#اندروید) و [آی‌اواس](/react-native-bridge/push-notification.html#آیاوس) انجام دهید.
 
 <Br>
 
-### تنظیم پوش‌نوتیفیکیشن اندروید
+### تنظیم پوش‌نوتیفیکیشن
+---
+
+#### اندروید
 
 برای دریافت پوش‌نوتیفیکیشن باید `GcmReceiver` را در بخش `application` به فایل `AndroidManifest.xml` اضافه نمایید تا بتوانید پوش‌نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
@@ -36,11 +39,9 @@ next: deeplink.html
 </application>
 ```
 
-- در ادامه برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی نوتیفیکیشن و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به [این صفحه](/android/push-notification.html) مراجعه نمایید.
-
 <Br>
 
-### تنظیم پوش‌نوتیفیکیشن آی‌او‌اس
+#### آی‌اوس
 
 ابتدا مطمئن شوید که `MobileCoreServices.framework` ،`SystemConfiguration.framework` و `CoreData` را از **Linked Frameworks and Libraries** وارد کرده‌اید.
 
@@ -48,11 +49,19 @@ next: deeplink.html
 
 و علامت `Remote Notifications`ها را در `Setting > Capabilities > Background Modes` بررسی کنید.
 
-- در ادامه برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی نوتیفیکیشن و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به [این صفحه](/ios/push-notification.html) مراجعه نمایید.
 
 <br>
 
+### پوش‌نوتیفیکیشن چندرسانه‌ای (Rich Push Notifcation)
+---
+
+برای تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای به صفحات پوش [اندروید](/android/push-notification.html#تنظیم-پوشنوتیفیکیشن-چندرسانهای-rich-push-notification) و [آی‌اواس](/ios/push-notification.html#تنظیم-نوتیفیکیشن-چندرسانهای-rich-push-notification) مراجعه نمایید.
+
+<br>
+
+
 ### دریافت اکشن‌های نوتیفیکیشن
+---
 
 برای دریافت اکشن‌های کلیک روی نوتیفیکیشن باید ابتدا در **اندروید** و **آی‌اواس** کدهای زیر را قرار دهید. این کدها، اکشن‌ها را تا لود شدن لایه ریکت نینیو نگه می‌دارند:
 
