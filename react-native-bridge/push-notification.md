@@ -1,6 +1,6 @@
 ---
 id: push-notification
-title: تنظیم پوش‌نوتیفیکیشن 
+title: پوش‌نوتیفیکیشن 
 layout: react-native-bridge
 permalink: react-native-bridge/push-notification.html
 prev: chabok-messaging.html
@@ -12,6 +12,7 @@ next: deeplink.html
 <Br>
 
 ### تنظیم پوش‌نوتیفیکیشن
+---
 
 #### اندروید
 
@@ -52,6 +53,7 @@ next: deeplink.html
 <br>
 
 ### پوش‌نوتیفیکیشن چندرسانه‌ای (Rich Push Notifcation)
+---
 
 برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی نوتیفیکیشن و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به صفحات پوش [اندروید](/android/push-notification.html) و [آی‌اواس](/ios/push-notification.html) مراجعه نمایید.
 
@@ -59,6 +61,7 @@ next: deeplink.html
 
 
 ### دریافت اکشن‌های نوتیفیکیشن
+---
 
 برای دریافت اکشن‌های کلیک روی نوتیفیکیشن باید ابتدا در **اندروید** و **آی‌اواس** کدهای زیر را قرار دهید. این کدها، اکشن‌ها را تا لود شدن لایه ریکت نینیو نگه می‌دارند:
 
