@@ -7,7 +7,7 @@ prev: chabok-messaging.html
 next: deeplink.html
 ---
 
-چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات زیر برای [اندروید](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-اندروید) و [آی‌اواس](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-آیاواس) انجام دهید، سپس توکن‌ها را به چابک [اضافه نمایید](/react-native/push-notification.html#متد-افزودن-توکن-برای-ارسال-پوشنوتیفیکیشن). همچنین می‌توانید از نمایش نوتیفیکیشن به صورت **local** [استفاده کنید](/react-native/push-notification.html#نمایش-local-notifications). 
+چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات زیر برای [اندروید](/react-native-bridge/push-notification.html#اندروید) و [آی‌اواس](/react-native-bridge/push-notification.html#آیاوس) انجام دهید.
 
 <Br>
 
@@ -55,7 +55,7 @@ next: deeplink.html
 ### پوش‌نوتیفیکیشن چندرسانه‌ای (Rich Push Notifcation)
 ---
 
-برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی نوتیفیکیشن و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به صفحات پوش [اندروید](/android/push-notification.html) و [آی‌اواس](/ios/push-notification.html) مراجعه نمایید.
+برای تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای به صفحات پوش [اندروید](/android/push-notification.html#تنظیم-پوشنوتیفیکیشن-چندرسانهای-rich-push-notification) و [آی‌اواس](/ios/push-notification.html#تنظیم-نوتیفیکیشن-چندرسانهای-rich-push-notification) مراجعه نمایید.
 
 <br>
 
