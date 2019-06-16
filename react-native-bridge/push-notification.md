@@ -11,7 +11,9 @@ next: deeplink.html
 
 <Br>
 
-### تنظیم پوش‌نوتیفیکیشن اندروید
+### تنظیم پوش‌نوتیفیکیشن
+
+#### اندروید
 
 برای دریافت پوش‌نوتیفیکیشن باید `GcmReceiver` را در بخش `application` به فایل `AndroidManifest.xml` اضافه نمایید تا بتوانید پوش‌نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
@@ -36,11 +38,9 @@ next: deeplink.html
 </application>
 ```
 
-- در ادامه برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی نوتیفیکیشن و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به [این صفحه](/android/push-notification.html) مراجعه نمایید.
-
 <Br>
 
-### تنظیم پوش‌نوتیفیکیشن آی‌او‌اس
+#### آی‌اوس
 
 ابتدا مطمئن شوید که `MobileCoreServices.framework` ،`SystemConfiguration.framework` و `CoreData` را از **Linked Frameworks and Libraries** وارد کرده‌اید.
 
@@ -48,9 +48,15 @@ next: deeplink.html
 
 و علامت `Remote Notifications`ها را در `Setting > Capabilities > Background Modes` بررسی کنید.
 
-- در ادامه برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی نوتیفیکیشن و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به [این صفحه](/ios/push-notification.html) مراجعه نمایید.
 
 <br>
+
+### پوش‌نوتیفیکیشن چندرسانه‌ای (Rich Push Notifcation)
+
+برای **شخصی‌سازی نمایش، دریافت دیتا، کلیک روی نوتیفیکیشن و تنظیم پوش‌نوتیفیکیشن چند رسانه‌ای** به صفحات پوش [اندروید](/android/push-notification.html) و [آی‌اواس](/ios/push-notification.html) مراجعه نمایید.
+
+<br>
+
 
 ### دریافت اکشن‌های نوتیفیکیشن
 
