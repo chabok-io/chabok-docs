@@ -13,8 +13,8 @@ permalink: mobile-usecases/shopping-cart-abandonment.html
 
 خیلی از اوقات کاربر از فروشگاه شما اقدام به خرید می‌کند و محصولاتی را به سبد خرید خود اضافه می‌نماید، اما **هرگز خرید را نهایی نمی‌کند**. ممکن است که حواس کاربر در هنگام خرید پرت شده باشد و به طور کلی **خرید خود را فراموش کند**. با چابک می‌توانید به کاربر **یادآوری کنید** که محصولاتش همچنان در سبد موجودند و در انتظار خرید هستند.
 
-<div style="text-align: center;"><img src="http://uupload.ir/files/tc60_shopping-cart-abandonment.jpeg" class="img-fluid" style="
-    width: 800px;
+<div style="text-align: center;"><img src="http://uupload.ir/files/p0kg_cio-cart-abandonment.png" class="img-fluid" style="
+    width: 500px;
 "></div> 
 
 <br>
