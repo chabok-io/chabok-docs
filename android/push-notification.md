@@ -83,7 +83,7 @@ notificationManager.notify(0, builder.build());
 
 <Br>
 
-#### پشتیبانی چینش راست به چپ (RTL)
+#### پشتیبانی چینش راست به چپ (RTL Support)
 
 برای پشتیبانی از چینش راست به چپ باید `android:supportsRtl="true"` را به کلاس ‍‍`application` در `AndroidManifest.xml` اضافه کنید.
 
