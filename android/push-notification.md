@@ -83,6 +83,23 @@ notificationManager.notify(0, builder.build());
 
 <Br>
 
+#### پشتیبانی چینش راست به چپ (RTL)
+
+برای پشتیبانی از چینش راست به چپ باید `android:supportsRtl="true"` را به کلاس ‍‍`application` در `AndroidManifest.xml` اضافه کنید.
+
+```xml
+<application
+             android:supportsRtl="true"
+             android:icon="@drawable/ic_launcher"
+             android:theme="@style/AppTheme"
+             android:label="Chabok Example"
+             android:name=".ChabokExampleApp">
+     ...
+  </application>
+```
+
+<Br>
+
 ### تنظیم پوش‌نوتیفیکیشن چندرسانه‌ای (Rich Push Notification)
 
 ۱- ابتدا در فایل `AndroidManifest.xml` اکشن‌های خود را برای `‌BroadcastReceiver` تعیین کنید تا بتوانید برای هر اکشن عملیات مناسب را اعمال کنید:
