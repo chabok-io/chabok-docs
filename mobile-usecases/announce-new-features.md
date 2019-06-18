@@ -15,7 +15,7 @@ permalink: mobile-usecases/announce-new-features.html
 
 
 <div style="text-align: center;"><img src="http://uupload.ir/files/5lqe_announcement.png" class="img-fluid" style="
-    width: 350px;
+    width: 300px;
 "></div> 
 
 <br>
