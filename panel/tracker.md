@@ -293,8 +293,8 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 
 برای مشاهده آمار دقیق ترکر کافی است در لیست ترکرهای فعال خود در بخش دستورات، **جزئیات** را کلیک کنید.
 
-![عکس مربوطه](http://uupload.ir/files/q63j_tracker-details-1.png)
-![عکس مربوطه](http://uupload.ir/files/9eps_tracker-details-2.png)
+![عکس مربوطه](http://uupload.ir/files/bjhv_tracker-detail-1.png)
+![عکس مربوطه](http://uupload.ir/files/xymw_tracker-detail-2.png)
 
 
 در بخش **آمار ترکر** می‌توانید آمار سطح‌های ترکر (نام کمپین، شبکه تبلیغاتی، گروه تبلیغاتی و خلاقانه) خود را مشاهده کنید. با کلیک روی نام کمپین وارد شبکه‌های تبلیغاتی آن کمپین می‌شوید و به همین ترتیب وارد سطح‌های کوچکتر شوید. 
