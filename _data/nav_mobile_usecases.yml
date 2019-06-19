@@ -1,0 +1,8 @@
+- title: شروع سریع mobile-usecases
+  items:
+    - id: shopping-cart-abandonment
+      title: ترک سبد خرید
+    - id: re-engage-dormant-users
+      title:  فعال کردن کاربران غیر فعال
+    - id: announce-new-features
+      title: انتشار نسخه جدید اپلیکیشن

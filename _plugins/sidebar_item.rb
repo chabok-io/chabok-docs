@@ -24,6 +24,10 @@ module Jekyll
           return sidebar_helper(item, 'guides')
     end
 
+    def mobile_usecases_sidebar_link(item)
+          return sidebar_helper(item, 'mobile-usecases')
+    end
+
     def panel_sidebar_link(item)
         return sidebar_helper(item, 'panel')
     end
