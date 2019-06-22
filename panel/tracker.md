@@ -36,7 +36,7 @@ next: users.html
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">Network name</td>
+<td align="center">Ad Network name</td>
 <td align="center">utm_source</td>
 <td align="center">شبکه تبلیغاتی</td>
 </tr>
@@ -46,7 +46,7 @@ next: users.html
 <td align="center">نام کمپین</td>
 </tr>
 <tr>
-<td align="center">Adgroup name</td>
+<td align="center">Ad group name</td>
 <td align="center">utm_content</td>
 <td align="center">محتوای کمپین</td>
 </tr>
@@ -99,15 +99,15 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 
 <Br>
 
-![عکس مربوطه](http://uupload.ir/files/hmzz_iq4d_new-tracker-1.png)
-![عکس مربوطه](http://uupload.ir/files/37jj_new-tracker-2.png)
+![عکس مربوطه](http://uupload.ir/files/3z7l_new-tracker1.png)
+![عکس مربوطه](http://uupload.ir/files/jjd9_new-tracker2.png)
 
 
 <Br>
 
 #### جزئیات
 
-شما می‌توانید نام کمپین، شبکه تبلیغاتی، گروه تبلیغاتی و خلاقانه مخصوص خود را به ترکر اضافه کنید. با این کار شما ترکرهای خود را **سطح‌بندی** می‌کنید تا آن‌ها را به صورت جداگانه بررسی کنید. این سطح‌بندی‌ها پیش‌فرض هستند و شما می‌توانید از طریق [افزودن پارامتر](/panel/tracker.html#افزودن-پارامتر-به-لینک-ترکر) آن را پویا کنید.
+شما می‌توانید نام کمپین، شبکه تبلیغاتی، گروه تبلیغاتی و خلاقانه مخصوص خود را به ترکر اضافه کنید. با این کار شما ترکرهای خود را **سطح‌بندی** می‌کنید تا آن‌ها را به صورت جداگانه بررسی کنید. سطح‌بندی‌های داخل پنل پیش‌فرض هستند و شما می‌توانید از طریق [افزودن پارامتر](/panel/tracker.html#افزودن-پارامتر-به-لینک-ترکر) آن را پویا کنید.
 
 پارامتر **خلاقانه (Creative)** در واقع آخرین و ریزترین سطح دسته‌بندی ترکر است که شما یا آژانس تبلیغاتی خود می‌توانید آن را به دلخواه استفاده کنید.
 
