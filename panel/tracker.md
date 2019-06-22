@@ -41,28 +41,28 @@ next: users.html
 <tr>
 <th style="text-align: center">پارامترهای چابک</th>
 <th style="text-align: center">پارمترهای UTM گوگل</th>
-<th style="text-align: right">توضیح</th>
+<th style="text-align: center">توضیح</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="center">Network name</td>
-<td align="right">utm_source</td>
-<td align="right">شبکه تبلیغاتی</td>
+<td align="center">utm_source</td>
+<td align="center">شبکه تبلیغاتی</td>
 </tr>
 <tr>
 <td align="center">Campaign name</td>
-<td align="right">utm_campaign</td>
-<td align="right">نام کمپین</td>
+<td align="center">utm_campaign</td>
+<td align="center">نام کمپین</td>
 </tr>
 <tr>
 <td align="center">Adgroup name</td>
-<td align="right">utm_content</td>
-<td align="right">محتوای کمپین</td>
+<td align="center">utm_content</td>
+<td align="center">محتوای کمپین</td>
 </tr>
 <tr>
 <td align="center">Creative name</td>
-<td align="right">utm_term</td>
-<td align="right">کلیدواژه کمپین</td>
+<td align="center">utm_term</td>
+<td align="center">کلیدواژه کمپین</td>
 </tr>
 </tbody></table>
 </p>
