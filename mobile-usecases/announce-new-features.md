@@ -20,7 +20,7 @@ permalink: mobile-usecases/announce-new-features.html
 
 <br>
 
-### مزایای شما
+### چه تاثیراتی دارد؟
 
 ##### بروزرسانی را تشویق کنید
 
