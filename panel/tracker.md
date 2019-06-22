@@ -335,7 +335,7 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 
 برای مشاهده آمار دقیق ترکر کافی است در لیست ترکرهای فعال خود در بخش دستورات، **جزئیات** را کلیک کنید.
 
-![عکس مربوطه](http://uupload.ir/files/bjhv_tracker-detail-1.png)
+![عکس مربوطه](http://uupload.ir/files/53ep_tracker-detail-1.png)
 ![عکس مربوطه](http://uupload.ir/files/xymw_tracker-detail-2.png)
 
 
