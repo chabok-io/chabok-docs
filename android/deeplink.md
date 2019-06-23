@@ -103,15 +103,15 @@ protected void onNewIntent(Intent intent) {
 
 ```java
 AdpPushClient.get().setOnDeeplinkResponseListener(new OnDeeplinkResponseListener() {
-            @Override
-            public boolean launchReceivedDeeplink(Uri uri) {
-                if (shouldChabokSdkLaunchTheDeeplink(uri)) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        });
+    @Override
+    public boolean launchReceivedDeeplink(Uri uri) {
+        if (shouldChabokSdkLaunchTheDeeplink(uri)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+});
 ```
 
 در صورتی که در بالا `true` برگردانید، چابک آن را باز می‌کند. اگر هم `false` برگردانید، خودتان تصمیم می‌گیرید که چه اتفاقی رخ دهد.
