@@ -36,6 +36,20 @@ NotificationHandler notificationHandler = new NotificationHandler() {
     	// otherwise true
         return true;
     }
+
+    @Override
+    public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
+        if (notificationAction.type == ChabokNotificationAction.ActionType.ActionTaken){
+            //Click on an action.
+        } else if (notificationAction.type == ChabokNotificationAction.ActionType.Opened){
+            //Notification opened
+        } else if (notificationAction.type == ChabokNotificationAction.ActionType.Dismissed){
+            //Notification dismissed
+        }
+
+        //false to prevent launch activity that returned from getActivityClass or navigation to a url.
+        return super.notificationOpened(message, notificationAction);
+    }
 };
 
 AdpPushClient.get().addNotificationHandler(notificationHandler);
@@ -43,6 +57,7 @@ AdpPushClient.get().addNotificationHandler(notificationHandler);
 
 - شما می‌توانید از کلاس `getActivityClass` برای تعیین صفحه مقصد روی کلیک استفاده کنید.
 - در متد `buildNotification` با پارامترهای ورودی متد یعنی `ChabokNotification` و `NotificationCompat.Builder` می‌توانید اعلان دریافتی را **به دلخواه تغییر داده** و **درباره نمایش آن تصمیم بگیرید**. در صورتی که مقدار بازگشتی از این متد `true` باشد، کتابخانه با توجه به تنظیمات مربوطه اعلان را نمایش می‌دهد ولی اگر مقدار بازگشتی `false` باشد بدین معنی است که شما خودتان نمایش را به عهده می‌گیرید.
+- با متد `notificationOpened` می‌توانید دیتای کلیک، اکشن یا dimiss اعلان را دریافت کنید. 
 
 #### دریافت دیتای اعلان
 
