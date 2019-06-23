@@ -38,7 +38,14 @@ AdpPushClient.get().track("purchase-clothing", data);
 
 ### رصد درآمد (Tracking Revenue)
 
-شما می‌توانید در‌آمدی که کاربران با نشان دادن رفتاری از خود (مانند خرید) تولید می‌کنند را رصد و ذخیره کنید. این کار را باید با متد `trackPurchase` انجام دهید. به نمونه زیر دقت کنید:
+شما می‌توانید در‌آمدی که کاربران با نشان دادن رفتاری از خود (مانند خرید) تولید می‌کنند را رصد و ذخیره کنید. این کار را باید با متد `trackPurchase` انجام دهید. به عنوان مثال کاربر خریدی را با ارزش ۵۰ هزار تومان انجام داده است:
+
+```java
+ChabokEvent event = new ChabokEvent(500000, "RIAL");
+                event.setData(data);
+                
+                AdpPushClient.get().trackPurchase("Purchase", event);
+```
 
 <Br>
 
