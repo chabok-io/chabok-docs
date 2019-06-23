@@ -18,7 +18,7 @@ prev: troubleshoot.html
 
 - پشتیبانی از **بازخورد (influence) نوتیفیکیشن** به صورت مستقیم یا غیر مستقیم
 
-- پشتیبانی از **دیپ لینک در صورت نداشتن اپلیکیشن** (differed deep linking) با متد `setOnDeeplinkResponseListener`
+- پشتیبانی از **دیپ لینک در صورت نداشتن اپلیکیشن** (deferred deep linking) با متد `setOnDeeplinkResponseListener`
 
 - افزودن متد `incrementUserAttribute` برای افزایش مقدار داده‌های کمیتی کاربر
 
@@ -28,13 +28,15 @@ prev: troubleshoot.html
 
 - حل مشکل **بسته شدن نوتیفیکیشن** پس از کلیک کاربر روی دکمه هدایت به وبسایت
 
-- امکان اطلاع از **دیده شدن نوتیفیکیشن (impression)** با true دادن به مقدار `notifDelivery` در payload نوتیفیکیشن
+- معرفی `notifDelivery` برای اطلاع از **دیده شدن نوتیفیکیشن (impression)**
 
 - افزایش تعداد کاراکترهای قابل قبول در `userId` به ۶۴
 
 - افزودن متد `publishBackground` برای انتشار رویداد در بک‌گراند 
 
 - حل مشکل proguard در تداخل با کتابخانه‌های دیگر
+
+- افزودن متدهای `getUserAttributes` و `setUserAttributes`
 
 - با قرار دادن کد زیر در فایل `AndroidManifest.xml` فقط نوتیفیکیشن‌های چابک را نمایش دهید
 
