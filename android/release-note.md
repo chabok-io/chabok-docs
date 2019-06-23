@@ -10,6 +10,46 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۲.۱۷.۰ - ۱۳۹۸/۰۴/۰۲](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.17.0)
+
+### تغییرات
+
+- پشتیبانی از مقدار [**درآمد**](/android/behavior-tracking.html#رصد-درآمد-tracking-revenue) با استفاده از متد `trackPurchase`
+
+- پشتیبانی از **بازخورد (influence) نوتیفیکیشن** به صورت مستقیم یا غیر مستقیم
+
+- پشتیبانی از [**دیپ لینک در صورت نداشتن اپلیکیشن** (deferred deep linking)](/android/deeplink.html#دیپ-لینک-قبل-از-نصب-اپلیکیشن-deferred-deep-linking) با متد `setOnDeeplinkResponseListener`
+
+- افزودن متد `incrementUserAttribute` برای افزایش مقدار داده‌های کمیتی کاربر
+
+- افزودن متد `setDefaultNotificationChannel` برای **تغییر نام پیش‌فرض کانال نوتیفیکیشن** (برای اندروید ۸ به بالا)
+
+- حل مشکل **نمایش Summary نوتیفیکیشن** در نوتیفیکیشن چند رسانه‌ای
+
+- حل مشکل **بسته شدن نوتیفیکیشن** پس از کلیک کاربر روی دکمه هدایت به وبسایت
+
+- معرفی `notifDelivery` برای اطلاع از **دیده شدن نوتیفیکیشن (impression)**
+
+- افزایش تعداد کاراکترهای قابل قبول در `userId` به ۶۴ کاراکتر
+
+- افزودن متد `publishBackground` برای انتشار رویداد در بک‌گراند 
+
+- حل مشکل proguard در تداخل با کتابخانه‌های دیگر
+
+- افزودن متدهای `getUserAttributes` و `setUserAttributes`
+
+- با قرار دادن کد زیر در فایل `AndroidManifest.xml` فقط نوتیفیکیشن‌های چابک را نمایش دهید
+
+```xml
+<meta-data android:name="com.adpdigital.push.client.SHOW_ONLY_CHABOK_NOTIFICATIONS" android:value="ENABLE" />
+```
+
+### ارتقا
+
+- جایگزین شدن متدهای `getUserInfo` و `setUserinfo` با متدهای `getUserAttributes` و `setUserAttributes`
+
+- تغییر رفتار در متد `notificationOpened` در [دریافت دیتای نوتیفیکیشن](/android/push-notification.html#شخصیسازی-نمایش-و-کلیک-روی-اعلان) و باز کردن اپلیکیشن
+
 
 ##  [نسخه ۲.۱۶.۰ - ۱۳۹۸/۰۲/۱۸](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.16.0)
 

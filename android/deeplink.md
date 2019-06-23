@@ -91,6 +91,30 @@ protected void onNewIntent(Intent intent) {
     AdpPushClient.get().appWillOpenUrl(data);
 }
 ```
+<br>
+
+### دیپ لینک قبل از نصب اپلیکیشن (Deferred Deep Linking)
+
+این حالت زمانی اتفاق می‌افتد که شما از پارامترها `deep_link` استفاده کرده باشید، اما کاربر در زمان کلیک اپلیکیشن را هنوز روی گوشی خود نداشته باشد. در این حالت کاربر به یکی از مارکت‌هایی که شما در ترکر تعیین کرد‌اید، هدایت می‌شود. پس از نصب اپلیکیشن، کاربر با اولین بازدید دیپ لینک را دریافت خواهد کرد. 
+
+#### کالبک دیپ لینک قبل از نصب اپلیکیشن
+
+اگر می‌خواهید تعیین کنید که چابک این دیپ لینک را باز کند یا خودتان تصمیم بگیرید، می‌توانید از کالبک زیر استفاده کنید:
+
+```java
+AdpPushClient.get().setOnDeeplinkResponseListener(new OnDeeplinkResponseListener() {
+    @Override
+    public boolean launchReceivedDeeplink(Uri uri) {
+        if (shouldChabokSdkLaunchTheDeeplink(uri)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+});
+```
+
+در صورتی که در بالا `true` برگردانید، چابک آن را باز می‌کند. اگر هم `false` برگردانید، خودتان تصمیم می‌گیرید که چه اتفاقی رخ دهد.
 
 <br>
 
