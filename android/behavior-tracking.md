@@ -44,9 +44,9 @@ AdpPushClient.get().track("purchase-clothing", data);
 
 ```java
 ChabokEvent event = new ChabokEvent(500000, "RIAL");
-                event.setData(data);
+event.setData(data);
                 
-                AdpPushClient.get().trackPurchase("Purchase", event);
+AdpPushClient.get().trackPurchase("Purchase", event);
 ```
 
 <Br>
