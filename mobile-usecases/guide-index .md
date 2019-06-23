@@ -31,3 +31,9 @@ permalink: mobile-usecases/guide-index.html
 - [چگونه کاربران غیر فعال را فعال کنیم؟](/guides/how-to-re-engage-dormant-users.html)
 
 - [چگونه انتشار نسخه جدید اپلیکیشن را اعلام کنیم؟](/guides/how-to-announce-new-features.html)
+
+<br>
+
+<div align="center">   
+    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="/mobile-usecases/shopping-cart-abandonment.html">مطالعه این موارد را آغاز کنید</a>
+</div>
