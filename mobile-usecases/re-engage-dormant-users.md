@@ -19,7 +19,7 @@ permalink: mobile-usecases/re-engage-dormant-users.html
 
 <br>
 
-### مزایای شما
+### فرصت‌های شما
 
 ##### تعامل با کاربر را افزایش دهید
 
