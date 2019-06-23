@@ -19,7 +19,7 @@ permalink: mobile-usecases/shopping-cart-abandonment.html
 
 <br>
 
-### مزایای شما
+### فرصت‌های شما
 
 ##### نرخ بازگشت را افزایش دهید
 
