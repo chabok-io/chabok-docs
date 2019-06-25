@@ -43,6 +43,30 @@ self.manager.track("purchase-clothing", data: ["clothes_id":35147652])
 ```
 <Br>
 
+### رصد درآمد (Tracking Revenue)
+
+شما می‌توانید در‌آمدی که کاربران با نشان دادن رفتاری از خود (مانند خرید) تولید می‌کنند را رصد و ذخیره کنید. این کار را باید با متد `trackPurchase` انجام دهید. به عنوان مثال کاربر خریدی را با ارزش ۵۰ هزار تومان انجام داده است.
+
+نمونه:
+
+```objectivec
+//Objective-C
+ChabokEvent *chabokEvent = [[ChabokEvent alloc]
+                                initWithRevenue:20000
+                                currency:@"RIAL"];
+    
+[PushClientManager.defaultManager trackPurchase:@"Purchase"
+                                        chabokEvent:chabokEvent];
+```
+```swift
+//Swift
+let chabokEvent = ChabokEvent(revenue: 20000, currency: "RIAL")
+
+PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
+```
+
+<Br>
+
 ### ارسال پیام براساس رفتار
 
 رفتارهایی که شما برای رصد تعیین می‌کنید **به صورت خودکار** در بخش **ارسال پیام متنی پنل در قسمت سگمنت** با سه پارامتر **اولین**، **آخرین** و **تعداد** اضافه خواهند شد. در نتیجه از این راه می‌توانید براساس آن رفتارها **کاربرانتان را دسته‌بندی کنید** و **برایشان پیام ارسال کنید**. 

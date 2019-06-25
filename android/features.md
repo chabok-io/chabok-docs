@@ -23,7 +23,7 @@ next: troubleshoot.html
 
 <Br>
 
-### ثبت اطلاعات کاربر
+### ثبت اطلاعات کاربر (User Attributes)
 
 با فراخوانی متد زیر می‌توانید اطلاعات و سوابق کاربر را جمع‌آوری و ذخیره کنید:
 
@@ -61,6 +61,17 @@ userInfo.put("age", 35);
 userInfo.put("gender", "مرد");
 
 AdpPushClient.get().setUserInfo(userInfo);
+```
+
+<br><br>
+
+### افزایش داده‌های کمیتی کاربر
+
+شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی** و .. را به تعداد دلخواهتان **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
+
+```java
+AdpPushClient.get().incrementUserAttribute("visit");
+AdpPushClient.get().incrementUserAttribute("visit", 5);
 ```
 
 <br><br>

@@ -11,14 +11,14 @@ next: troubleshoot.html
 
 <Br>
 
-### ثبت اطلاعات کاربر
+### ثبت اطلاعات کاربر (User Attributes)
 
-شما می‌توانید اطلاعاتی که از کاربر دارید (مانند نام، نام خانوادگی، جنسیت، سن و ...) را به طور دلخواه با استفاده از متد زیر، در پروفایل او ثبت کنید:
+شما می‌توانید اطلاعاتی که از کاربر دارید (مانند نام، نام خانوادگی، جنسیت، سن و ...) را به طور دلخواه با استفاده از property زیر، در پروفایل او ثبت کنید:
 
 ```objectivec
 //Objective-C
 
-[PushClientManager.defaultManager  setUserInfo:@{
+[PushClientManager.defaultManager.userAttributes = @{
 		@"firstName": @"نسیم",
 		@"lastName" : @"پرتوی",
 		@"age"  : @(36),
@@ -28,7 +28,31 @@ next: troubleshoot.html
 ``` swift
 //Swift
 
-PushClientManager.default()?.userInfo = [
+PushClientManager.default().userAttributes = [
+                       "firstName": "نسیم",
+                       "lastName": "پرتوی",
+                       "age": 36,
+                       "gender": "زن"]
+```
+
+
+دقت داشته باشید برای **نسخه‌های ۱.۱۹.۰۰ یا پایین‌تر** از پراپرتی زیر استفاده کنید.
+
+
+```objectivec
+//Objective-C
+
+[PushClientManager.defaultManager.userInfo = @{
+		@"firstName": @"نسیم",
+		@"lastName" : @"پرتوی",
+		@"age"  : @(36),
+		@"gender" : @"زن"
+}];
+```
+``` swift
+//Swift
+
+PushClientManager.default().userInfo = [
                        "firstName": "نسیم",
                        "lastName": "پرتوی",
                        "age": 36,
@@ -69,6 +93,27 @@ PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (reg
                        "gender": "زن"]
 	}
 })
+```
+
+<br><br>
+
+### افزایش داده‌های کمیتی کاربر
+
+شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی و ..** را به تعداد دلخواهتان **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
+
+```objectivec
+//Objective-C:
+
+[PushClientManager.defaultManager incrementUserAttribute:@"visit_comedy_shows"];
+
+[PushClientManager.defaultManager incrementUserAttribute:@"visit_comedy_shows" value:3];
+```
+``` swift
+//Swift:
+
+PushClientManager.default().incrementUserAttribute("visit_comedy_shows")
+
+PushClientManager.default().incrementUserAttribute("visit_comedy_shows", value: 3)
 ```
 
 <br><br>
