@@ -27,9 +27,12 @@ prev: sdk-setup.html
 
 [الف- افزودن کتابخانه](/ios/tracker.html#الف--افزودن-کتابخانه)
 
-[ب- مقداردهی](/ios/tracker.html#ج--مقداردهی-initialize)
+[ب- مقداردهی](/ios/tracker.html#ب--مقداردهی-initialize)
 
-[ج- ثبت کاربر](/ios/tracker.html#د--ثبت-کاربر-register)
+[ج- ثبت کاربر](/ios/tracker.html#ج--ثبت-کاربر-register)
+
+[د- ثبت اطلاعات کاربر (User Attributes)](/ios/tracker.html#ثبت-اطلاعات-کاربر-user-attributes)
+
 
 <br>
 
@@ -59,7 +62,7 @@ $ pod install
 
 <br>
 
-##### ج- مقداردهی (Initialize)
+##### ب- مقداردهی (Initialize)
 
 چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `registerApplication` چابک **باید** در کلاس `AppDelegate` در متد `didFinishLaunchingWithOptions` تحت هر شرایطی فراخوانی شود.
 
@@ -199,7 +202,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
 <br>
 
-##### د- ثبت کاربر (Register Users)
+##### ج- ثبت کاربر (Register Users)
 
 یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و [سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید](/panel/users.html#جزئیات-کاربر).
 
@@ -273,6 +276,34 @@ _manager?.registerUser("USER_ID")
 ```
 
 > `نکته`: مقدار `USER_ID` می‌تواند **بین ۳ تا ۳۲** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
+
+
+<br>
+
+##### د- ثبت اطلاعات کاربر (User Attributes)
+
+شما می‌توانید اطلاعاتی که از کاربر دارید (مانند نام، نام خانوادگی، جنسیت، سن و ...) را به طور دلخواه با استفاده از property زیر، در پروفایل او ثبت کنید:
+
+```objectivec
+//Objective-C
+
+[PushClientManager.defaultManager.userAttributes = @{
+		@"firstName": @"نسیم",
+		@"lastName" : @"پرتوی",
+		@"age"  : @(36),
+		@"gender" : @"زن"
+}];
+```
+``` swift
+//Swift
+
+PushClientManager.default().userAttributes = [
+                       "firstName": "نسیم",
+                       "lastName": "پرتوی",
+                       "age": 36,
+                       "gender": "زن"]
+```
+
 
 <br>
 
