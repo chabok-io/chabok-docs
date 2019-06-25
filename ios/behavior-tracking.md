@@ -49,11 +49,20 @@ self.manager.track("purchase-clothing", data: ["clothes_id":35147652])
 
 نمونه:
 
-```java
-ChabokEvent event = new ChabokEvent(500000, "RIAL");
-event.setData(data);
-                
-AdpPushClient.get().trackPurchase("Purchase", event);
+```objectivec
+//Objective-C
+ChabokEvent *chabokEvent = [[ChabokEvent alloc]
+                                initWithRevenue:20000
+                                currency:@"RIAL"];
+    
+[PushClientManager.defaultManager trackPurchase:@"Purchase"
+                                        chabokEvent:chabokEvent];
+```
+```swift
+//Swift
+let chabokEvent = ChabokEvent(revenue: 20000, currency: "RIAL")
+
+PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 ```
 
 <Br>
