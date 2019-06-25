@@ -99,3 +99,19 @@ data.put("tripId", 12345678);
 
 AdpPushClient.get().publishEvent("shareTrip", data);
 ```
+
+#### انتشار رویداد در بک گراند
+
+شما می‌توانید در مواقعی که اپلیکیشن بسته (kill) یا در بک گراند است هم رویداد منتشر کنید. 
+
+برای نمونه از مثال بالا استفاده می‌کنیم:
+
+```java
+JSONObject data = new JSONObject();
+
+data.put("lat", 35.7583719);
+data.put("lng", 51.4082228);
+data.put("tripId", 12345678);
+
+AdpPushClient.get().publishBackground("shareTrip", data);
+```

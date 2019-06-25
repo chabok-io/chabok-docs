@@ -9,6 +9,28 @@ prev: troubleshoot.html
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](/ios/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 
 <Br>
+
+
+##  [نسخه ۱.۲۰.۰ - ۱۳۹۸/۰۴/۰۴](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.0)
+
+- پشتیبانی از مقدار **درآمد** با استفاده از متد `trackPurchase`
+
+- پشتیبانی از **بازخورد  نوتیفیکیشن (influence)** به صورت مستقیم یا غیر مستقیم
+
+- پشتیبانی از **دیپ لینک در صورت نداشتن اپلیکیشن** با delegate کالبک `:chabokDeeplinkResponse`
+
+- افزودن متد `incrementUserAttribute` برای افزایش مقدار داده‌های کمیتی کاربر
+
+- افزایش تعداد کاراکترهای قابل قبول در `userId` به ۶۴ کاراکتر
+
+- افزودن پراپرتی `userAttributes`
+
+- حل مشکل افزودن تگ `CHABOK_GUEST` با متد `registerAsGuest`
+
+### ارتقا
+
+- جایگزین شدن `userinfo` با `userAttributes`
+
  
 ##  [نسخه ۱.۱۹.۰ - ۱۳۹۸/۰۲/۱۸](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.19.0)
 

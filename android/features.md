@@ -11,9 +11,46 @@ next: troubleshoot.html
 
 <Br>
 
+### نمایش فقط نوتیفیکیشن‌های چابک 
+
+شما می‌توانید تنظیم کنید که فقط نوتیفیکیشن‌های مربوط به چابک برای کاربر نمایش داده شوند. این قابلیت به شما امکان می‌دهد تا در صورتی که از دو یا چند کتابخانه استفاده می‌کنید، برای کاربر دو یا چند تا پوش ارسال نشود.
+
+برای این کار کد زیر در فایل `AndroidManifest.xml` قرار دهید:
+
+```xml
+<meta-data android:name="com.adpdigital.push.client.SHOW_ONLY_CHABOK_NOTIFICATIONS" android:value="ENABLE" />
+```
+
+<Br>
+
 ### ثبت اطلاعات کاربر
 
-شما می‌توانید اطلاعاتی که از کاربر دارید (مانند نام، نام خانوادگی، جنسیت، سن و ...) را به طور دلخواه با استفاده از متد زیر، در پروفایل او ثبت کنید:
+با فراخوانی متد زیر می‌توانید اطلاعات و سوابق کاربر را جمع‌آوری و ذخیره کنید:
+
+```java
+HashMap<String, Object> userInfo = new HashMap<>();
+
+userInfo.put("firstName", "محمدرضا");
+userInfo.put("lastName", "اخوان");
+userInfo.put("age", 35);
+userInfo.put("gender", "مرد");
+
+AdpPushClient.get().setUserAttributes(userInfo);
+```
+
+پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
+
+![عکس مربوطه](http://uupload.ir/files/ovf0_set-user-info.png)
+
+#### دریافت اطلاعات کاربر
+
+برای دریافت اطلاعت کاربر متد زیر را فراخوانی کنید:
+
+```java
+AdpPushClient.get().getUserAttributes(userInfo);
+```
+
+>`نکته:` در نسخه‌های ۲.۱۶.۰ یا پایین‌تر از متد زیر استفاده کنید:
 
 ```java
 HashMap<String, Object> userInfo = new HashMap<>();
@@ -25,9 +62,6 @@ userInfo.put("gender", "مرد");
 
 AdpPushClient.get().setUserInfo(userInfo);
 ```
-پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
-
-![عکس مربوطه](http://uupload.ir/files/ovf0_set-user-info.png)
 
 <br><br>
 
@@ -186,4 +220,14 @@ AdpPushClient.get().isBackground();
 
 //App is in foreground.
 AdpPushClient.get().isForeground();
+```
+
+<br><br>
+
+### تغییر نام پیش‌فرض کانال نوتیفیکیشن (مخصوص اندروید ۸ به بالا)
+
+اندروید در نسخه‌های ۸ به بالا از کانال نوتیفیکیشن استفاده می‌کند. به این صورت که کاربر در تنظیمات اپلیکیشن می‌تواند این کانال‌ها را مشاهده و یا آن‌ها را غیر فعال کند. شما می‌توانید با متد زیر نام این کانال را به دلخواهتان تغییر دهید:
+
+```java
+AdpPushClient.get().setDefaultNotificationChannel(“Personal Alert”);
 ```
