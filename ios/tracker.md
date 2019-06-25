@@ -33,7 +33,6 @@ prev: sdk-setup.html
 
 [د- ثبت اطلاعات کاربر (User Attributes)](/ios/tracker.html#د--ثبت-اطلاعات-کاربر-user-attributes)
 
-
 <br>
 
 >`نکته:` برای دریافت **advertisingId** باید ‍`AdSupport.framework` را به `Linked Frameworks and Libraries` آن پروژه اضافه کنید.
@@ -304,6 +303,9 @@ PushClientManager.default().userAttributes = [
                        "gender": "زن"]
 ```
 
+پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
+
+![عکس مربوطه](http://uupload.ir/files/g9vk_set-user-info-1.png)
 
 <br>
 
