@@ -129,6 +129,38 @@ func application(_ application: UIApplication,
 
 <br>
 
+### دیپ لینک قبل از نصب اپلیکیشن (Deferred Deep Linking)
+
+این حالت زمانی اتفاق می‌افتد که شما از پارامترها `deep_link` استفاده کرده باشید، اما کاربر در زمان کلیک اپلیکیشن را هنوز روی گوشی خود نداشته باشد. در این حالت می‌توانید یک delegate کالبک را بگذارید تا قبل از باز شدن دیپ لینک، تصمیم بگیرید چابک آن را باز کند یا خودتان مدیریت کنید.
+
+
+```objectivec
+//Objective-C
+- (BOOL)chabokDeeplinkResponse:(NSURL *)deeplink {
+    // deeplink object contains information about deferred deep link content
+
+    // Apply your logic to determine whether the Chabok SDK should try to open the deep link
+    return YES;
+    // or
+    // return NO;
+}
+```
+
+```swift
+//Swift
+func chabokDeeplinkResponse(_ deeplink: URL?) -> Bool {
+    // deeplink object contains information about deferred deep link content
+
+    // Apply your logic to determine whether the Chabok SDK should try to open the deep link
+    return true
+    // or
+    // return false;
+}
+```
+این کالبک پس از دریافت دیپ لینک فراخوانی می‌شود. مقدار `true` یا `false` بودن تعیین می‌کند که چابک آن را باز کند یا خیر.
+
+<br>
+
 ### نمونه Curl
 
 با اجرای دستور زیر در **Terminal** می‌توانید یک نوتیفیکیشن با **دیپ لینک** ارسال کنید. دقت کنید که در دستور زیر مقدار `<ACCESS_TOKEN>` حساب کاربری خود و مقدار `USER_ID` را شناسه‌ کاربری که می‌خواهید پیام به او تحویل داده شود، وارد نمایید. (این دستور برای ارسال به یک کاربر به خصوص است. برای ارسال به گروهی از کاربران به [این صفحه](https://doc.chabokpush.com/rest-api/send-push.html#%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%DA%AF%D8%B1%D9%88%D9%87%DB%8C) مراجعه کنید.)
