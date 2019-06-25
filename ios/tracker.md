@@ -29,9 +29,9 @@ prev: sdk-setup.html
 
 [ب- مقداردهی](/ios/tracker.html#ب--مقداردهی-initialize)
 
-[ج- ثبت کاربر](/ios/tracker.html#ج--ثبت-کاربر-register)
+[ج- ثبت کاربر](/ios/tracker.html#ج--ثبت-کاربر-register-users)
 
-[د- ثبت اطلاعات کاربر (User Attributes)](/ios/tracker.html#ثبت-اطلاعات-کاربر-user-attributes)
+[د- ثبت اطلاعات کاربر (User Attributes)](/ios/tracker.html#د--ثبت-اطلاعات-کاربر-user-attributes)
 
 
 <br>
