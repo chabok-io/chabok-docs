@@ -72,7 +72,7 @@ PushClientManager.defaultManager.userInfo = [
 
 [PushClientManager.defaultManager  registerUser:@"USER_ID"  registrationHandler:^(BOOL isRegistered, NSString *userId, NSError *error) {
 	if (isRegistered) {
-		[PushClientManager.defaultManager  setUserInfo:@{
+		[PushClientManager.defaultManager  userAttributes = @{
 				@"firstName": @"نسیم",
 				@"lastName" : @"پرتوی",
 				@"age"  : @(36),
@@ -86,7 +86,7 @@ PushClientManager.defaultManager.userInfo = [
 
 PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (register, userId, error) in
 	if register {
-		PushClientManager.default()?.userInfo = [
+		PushClientManager.default()?.userAttributes = [
                        "firstName": "نسیم",
                        "lastName": "پرتوی",
                        "age": 36,
