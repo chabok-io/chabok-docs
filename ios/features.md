@@ -13,12 +13,12 @@ next: troubleshoot.html
 
 ### ثبت اطلاعات کاربر
 
-شما می‌توانید اطلاعاتی که از کاربر دارید (مانند نام، نام خانوادگی، جنسیت، سن و ...) را به طور دلخواه با استفاده از متد زیر، در پروفایل او ثبت کنید:
+شما می‌توانید اطلاعاتی که از کاربر دارید (مانند نام، نام خانوادگی، جنسیت، سن و ...) را به طور دلخواه با استفاده از property زیر، در پروفایل او ثبت کنید:
 
 ```objectivec
 //Objective-C
 
-[PushClientManager.defaultManager  setUserInfo:@{
+[PushClientManager.defaultManager.userAttributes = @{
 		@"firstName": @"نسیم",
 		@"lastName" : @"پرتوی",
 		@"age"  : @(36),
@@ -28,7 +28,31 @@ next: troubleshoot.html
 ``` swift
 //Swift
 
-PushClientManager.default()?.userInfo = [
+PushClientManager.defaultManager.userAttributes = [
+                       "firstName": "نسیم",
+                       "lastName": "پرتوی",
+                       "age": 36,
+                       "gender": "زن"]
+```
+
+
+دقت داشته باشید برای **نسخه‌های ۱.۱۹.۰ یا پایین‌تر** از پراپرتی زیر استفاده کنید.
+
+
+```objectivec
+//Objective-C
+
+[PushClientManager.defaultManager.userInfo = @{
+		@"firstName": @"نسیم",
+		@"lastName" : @"پرتوی",
+		@"age"  : @(36),
+		@"gender" : @"زن"
+}];
+```
+``` swift
+//Swift
+
+PushClientManager.defaultManager.userInfo = [
                        "firstName": "نسیم",
                        "lastName": "پرتوی",
                        "age": 36,
