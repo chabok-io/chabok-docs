@@ -17,7 +17,7 @@ prev: troubleshoot.html
 
 - پشتیبانی از **بازخورد  نوتیفیکیشن (influence)** به صورت مستقیم یا غیر مستقیم
 
-- پشتیبانی از **دیپ لینک در صورت نداشتن اپلیکیشن** با delegate کالبک `chabokDeeplinkResponse:`
+- پشتیبانی از **دیپ لینک در صورت نداشتن اپلیکیشن** با delegate کالبک `:chabokDeeplinkResponse`
 
 - افزودن متد `incrementUserAttribute` برای افزایش مقدار داده‌های کمیتی کاربر
 
