@@ -28,7 +28,7 @@ next: troubleshoot.html
 ``` swift
 //Swift
 
-PushClientManager.defaultManager.userAttributes = [
+PushClientManager.default().userAttributes = [
                        "firstName": "نسیم",
                        "lastName": "پرتوی",
                        "age": 36,
@@ -36,7 +36,7 @@ PushClientManager.defaultManager.userAttributes = [
 ```
 
 
-دقت داشته باشید برای **نسخه‌های ۱.۱۹.۰ یا پایین‌تر** از پراپرتی زیر استفاده کنید.
+دقت داشته باشید برای **نسخه‌های ۱.۱۹.۰۰ یا پایین‌تر** از پراپرتی زیر استفاده کنید.
 
 
 ```objectivec
@@ -52,7 +52,7 @@ PushClientManager.defaultManager.userAttributes = [
 ``` swift
 //Swift
 
-PushClientManager.defaultManager.userInfo = [
+PushClientManager.default().userInfo = [
                        "firstName": "نسیم",
                        "lastName": "پرتوی",
                        "age": 36,
@@ -72,7 +72,7 @@ PushClientManager.defaultManager.userInfo = [
 
 [PushClientManager.defaultManager  registerUser:@"USER_ID"  registrationHandler:^(BOOL isRegistered, NSString *userId, NSError *error) {
 	if (isRegistered) {
-		[PushClientManager.defaultManager  userAttributes = @{
+		[PushClientManager.defaultManager  setUserInfo:@{
 				@"firstName": @"نسیم",
 				@"lastName" : @"پرتوی",
 				@"age"  : @(36),
@@ -86,13 +86,34 @@ PushClientManager.defaultManager.userInfo = [
 
 PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (register, userId, error) in
 	if register {
-		PushClientManager.default()?.userAttributes = [
+		PushClientManager.default()?.userInfo = [
                        "firstName": "نسیم",
                        "lastName": "پرتوی",
                        "age": 36,
                        "gender": "زن"]
 	}
 })
+```
+
+<br><br>
+
+### افزایش داده‌های کمیتی کاربر
+
+شما می‌توانید داده‌های کمیتی کاربر را مانند بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی و .. را به تعداد دلخواهتان **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
+
+```objectivec
+//Objective-C:
+
+[PushClientManager.defaultManager incrementUserAttribute:@"visit_comedy_shows"];
+
+[PushClientManager.defaultManager incrementUserAttribute:@"visit_comedy_shows" value:3];
+```
+``` swift
+//Swift:
+
+PushClientManager.default().incrementUserAttribute("visit_comedy_shows")
+
+PushClientManager.default().incrementUserAttribute("visit_comedy_shows", value: 3)
 ```
 
 <br><br>
