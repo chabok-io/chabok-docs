@@ -70,8 +70,8 @@ AdpPushClient.get().setUserInfo(userInfo);
 شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی** و .. را به تعداد دلخواهتان **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
 
 ```java
-AdpPushClient.get().incrementUserAttribute("visit");
-AdpPushClient.get().incrementUserAttribute("visit", 5);
+AdpPushClient.get().incrementUserAttribute("visit_comedy_shows");
+AdpPushClient.get().incrementUserAttribute("visit_comedy_shows", 5);
 ```
 
 <br><br>

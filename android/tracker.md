@@ -31,7 +31,10 @@ next: chabok-messaging.html
 
 [ج- مقداردهی](/android/tracker.html#ج--مقداردهی-initialize)
 
-[د- ثبت کاربر](/android/tracker.html#د--ثبت-کاربر-register)
+[د- ثبت کاربر](/android/tracker.html#د--ثبت-کاربر-register-users)
+
+[ه- ثبت اطلاعات کاربر (User Attributes)](/android/tracker.html#د--ثبت-اطلاعات-کاربر-user-attributes)
+
 
 ##### الف- افزودن کتابخانه
 
@@ -180,6 +183,25 @@ AdpPushClient.get().register("USER_ID");
 > `نکته`: مقدار `USER_ID` می‌تواند **بین ۳ تا ۳۲** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
 
 <br>
+
+##### ه- ثبت اطلاعات کاربر (User Attributes)
+
+با فراخوانی متد زیر می‌توانید اطلاعات و سوابق کاربر را جمع‌آوری و ذخیره کنید:
+
+```java
+HashMap<String, Object> userInfo = new HashMap<>();
+
+userInfo.put("firstName", "محمدرضا");
+userInfo.put("lastName", "اخوان");
+userInfo.put("age", 35);
+userInfo.put("gender", "مرد");
+
+AdpPushClient.get().setUserAttributes(userInfo);
+```
+
+پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
+
+![عکس مربوطه](http://uupload.ir/files/ovf0_set-user-info.png)
 
 #### ۲.۱. رصد رویدادها (Tracking Events)
 
