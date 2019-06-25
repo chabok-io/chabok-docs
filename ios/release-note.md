@@ -13,17 +13,17 @@ prev: troubleshoot.html
 
 ##  [نسخه ۱.۲۰.۰ - ۱۳۹۸/۰۴/۰۴](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.0)
 
-- پشتیبانی از مقدار **درآمد** با استفاده از متد `trackPurchase`
+- پشتیبانی از مقدار [**درآمد**](/ios/behavior-tracking.html#رصد-درآمد-tracking-revenue) با استفاده از متد `trackPurchase`
 
-- پشتیبانی از **بازخورد  نوتیفیکیشن (influence)** به صورت مستقیم یا غیر مستقیم
+- پشتیبانی از **بازخورد نوتیفیکیشن (influence)** به صورت مستقیم یا غیر مستقیم
 
-- پشتیبانی از **دیپ لینک در صورت نداشتن اپلیکیشن** با delegate کالبک `:chabokDeeplinkResponse`
+- پشتیبانی از [**دیپ لینک در صورت نداشتن اپلیکیشن**](/ios/deeplink.html#دیپ-لینک-قبل-از-نصب-اپلیکیشن-deferred-deep-linking) با delegate کالبک `:chabokDeeplinkResponse`
 
-- افزودن متد `incrementUserAttribute` برای افزایش مقدار داده‌های کمیتی کاربر
+- افزودن متد `incrementUserAttribute` برای [افزایش مقدار داده‌های کمیتی کاربر](/ios/features.html#افزایش-دادههای-کمیتی-کاربر)
 
 - افزایش تعداد کاراکترهای قابل قبول در `userId` به ۶۴ کاراکتر
 
-- افزودن پراپرتی `userAttributes`
+- [افزودن پراپرتی `userAttributes`](/ios/features.html#ثبت-اطلاعات-کاربر-user-attributes)
 
 - حل مشکل افزودن تگ `CHABOK_GUEST` با متد `registerAsGuest`
 
