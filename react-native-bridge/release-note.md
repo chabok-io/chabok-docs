@@ -26,6 +26,12 @@ next: introducing.html
 
 - جایگزین شدن متدهای `getUserInfo` و `setUserinfo` با متدهای `getUserAttributes` و `setUserAttributes`
 
+>‍‍‍‍`نکته:` دقت داشته باشید که برای iOS دستور زیر را انجام دهید:
+
+```bash
+cd ios
+pod update
+```
 
 ## [نسخه ۱.۳.۰ - ۱۳۹۸/۰۲/۲۱](https://github.com/chabokpush/chabok-client-rn/releases/tag/v1.3.0)
 
