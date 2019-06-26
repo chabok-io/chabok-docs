@@ -10,6 +10,29 @@ next: introducing.html
 
 <Br>
 
+## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۴/۰۵](https://github.com/chabokpush/chabok-client-rn/releases/tag/v1.4.0)
+
+### تغییرات
+
+- به روز رسانی کتابخانه اندروید به [نسخه ۲.۱۷.۰](/android/release-note.html#نسخه-۲۱۷۰---۱۳۹۸۰۴۰۲)
+- به روز رسانی کتابخانه آی‌او‌اس به [نسخه ۱.۲۰.۰](/ios/release-note.html#نسخه-۱۲۰۰---۱۳۹۸۰۴۰۴)
+- پشتیبانی از مقدار [**درآمد**](/react-native-bridge/behavior-tracking.html#رصد-درآمد-tracking-revenue) با استفاده از متد `trackPurchase`
+- پشتیبانی از **بازخورد  نوتیفیکیشن (influence)** به صورت مستقیم یا غیر مستقیم
+- پشتیبانی از [**دیپ لینک در صورت نداشتن اپلیکیشن** (deferred deep linking)](/react-native-bridge/deeplink.html#دیپ-لینک-قبل-از-نصب-اپلیکیشن-deferred-deep-linking) با متد `setDeeplinkCallbackListener`
+- [افزودن متدهای `getUserAttributes` و `setUserAttributes`](/react-native-bridge/features.html#ثبت-اطلاعات-کاربر-user-attributes)
+- افزودن متد `setDefaultNotificationChannel` برای **تغییر نام پیش‌فرض کانال نوتیفیکیشن** (برای اندروید ۸ به بالا)
+
+### ارتقا
+
+- جایگزین شدن متدهای `getUserInfo` و `setUserinfo` با متدهای `getUserAttributes` و `setUserAttributes`
+
+>‍‍‍‍`نکته:` دقت داشته باشید که برای iOS دستور زیر را انجام دهید:
+
+```bash
+cd ios
+pod update
+```
+
 ## [نسخه ۱.۳.۰ - ۱۳۹۸/۰۲/۲۱](https://github.com/chabokpush/chabok-client-rn/releases/tag/v1.3.0)
 
 ### تغییرات
