@@ -46,7 +46,7 @@ this.chabok.track('purchase-clothing', data)
 نمونه:
 
 ```java
-this.chabok.trackPurchase('AddToCard', {revenue: 50000, currency: "RIAL"});
+this.chabok.trackPurchase('Purchase', {revenue: 50000, currency: "RIAL"});
 ```
 
 <Br>
