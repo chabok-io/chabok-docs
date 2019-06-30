@@ -18,7 +18,7 @@ permalink: panel/building-a-new-segment.html
 
 ۲- **نام سگمنت** را می‌نویسیم. در اینجا مثلا **مشتریان جدید ورزشی** را وارد می‌کنیم. پس از آن فیلترها را یک به یک اضافه می‌کنیم. 
 
- ![عکس مربوطه](http://uupload.ir/files/qkbp_all-filters.png)
+ ![عکس مربوطه](http://uupload.ir/files/6ujw_segment1.png)
 
 > `نکته:` چون در این مثال می‌خواهیم تمام فیلترها **با هم** اعمال شوند، گزینه **همه** را تغییر نمی‌دهیم.
 
@@ -26,31 +26,31 @@ permalink: panel/building-a-new-segment.html
 
 ۴- فیلتر **کمپین نصب** را اضافه کرده و روی کمپین‌های **جام‌جهانی** و **دربی پایتخت** می‌گذاریم. 
 
- ![عکس مربوطه](http://uupload.ir/files/k7jd_aquisition-campaign.png)
+ ![عکس مربوطه](http://uupload.ir/files/dl84_segment2.png)
 
 <br>
 
 ۵- فیلتر **تگ** را اضافه کرده و روی تگ **مرد** می‌گذاریم.
 
- ![عکس مربوطه](http://uupload.ir/files/yrpy_male-tag.png)
+ ![عکس مربوطه](http://uupload.ir/files/6aq6_segment3.png)
 
 <br>
 
 ۶- فیلتر **تگ** را اضافه کرده و روی تگ **جوان** می‌گذاریم.
 
- ![عکس مربوطه](http://uupload.ir/files/pcz_teenage-tag.png)
+ ![عکس مربوطه](http://uupload.ir/files/5rri_segment4.png)
 
 <br>
 
 ۷- فیلتر **نوع دستگاه** را اضافه کرده و روی **اندروید و آی‌اواس** (موبایل) می‌گذاریم.
 
- ![عکس مربوطه](http://uupload.ir/files/koda_mobile-filter.png)
+ ![عکس مربوطه](http://uupload.ir/files/1heg_segment5.png)
 
 <br>
 
 ۸- فیلتر **تعداد رخداد Pay** را اضافه کرده و روی **بزرگتر یا ۲** می‌گذاریم.
 
- ![عکس مربوطه](http://uupload.ir/files/mxv_behavior-filter.png)
+ ![عکس مربوطه](http://uupload.ir/files/9fwp_segment6.png)
 
 <br>
 
