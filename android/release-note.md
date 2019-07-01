@@ -36,7 +36,7 @@ prev: troubleshoot.html
 
 - حل مشکل proguard در تداخل با کتابخانه‌های دیگر
 
-- [افزودن متدهای `getUserAttributes` و `setUserAttributes`](/android/custom-data.html#ثبت-اطلاعات-کاربر-user-attributes)
+- [افزودن متدهای `getUserAttributes` و `setUserAttributes`](/android/custom-data.html#مدیریت-اطلاعات-کاربر-user-attributes)
 
 - با قرار دادن کد زیر در فایل `AndroidManifest.xml` فقط نوتیفیکیشن‌های چابک را نمایش دهید
 
