@@ -19,11 +19,11 @@ prev: troubleshoot.html
 
 - پشتیبانی از [**دیپ لینک در صورت نداشتن اپلیکیشن**](/ios/deeplink.html#دیپ-لینک-قبل-از-نصب-اپلیکیشن-deferred-deep-linking) با delegate کالبک `:chabokDeeplinkResponse`
 
-- افزودن متد `incrementUserAttribute` برای [افزایش مقدار داده‌های کمیتی کاربر](/ios/features.html#افزایش-دادههای-کمیتی-کاربر)
+- افزودن متد `incrementUserAttribute` برای [افزایش مقدار داده‌های کمیتی کاربر](/ios/custom-data.html#افزایش-دادههای-کمیتی-کاربر)
 
 - افزایش تعداد کاراکترهای قابل قبول در `userId` به ۶۴ کاراکتر
 
-- [افزودن پراپرتی `userAttributes`](/ios/features.html#ثبت-اطلاعات-کاربر-user-attributes)
+- [افزودن پراپرتی `userAttributes`](/ios/custom-data.html#مدیریت-اطلاعات-کاربر-user-attributes)
 
 - حل مشکل افزودن تگ `CHABOK_GUEST` با متد `registerAsGuest`
 
