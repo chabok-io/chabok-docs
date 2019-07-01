@@ -10,6 +10,14 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۲.۱۷.۱ - ۱۳۹۸/۰۴/۱۰](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.17.1)
+
+### تغییرات
+
+- پشتیبانی متد `incrementUserAttribute` از آرایه‌‌ای از اطلاعات کاربر
+
+- حل مشکل proguard در صورت `true` دادن `minifyEnabled`
+
 ##  [نسخه ۲.۱۷.۰ - ۱۳۹۸/۰۴/۰۲](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.17.0)
 
 ### تغییرات
