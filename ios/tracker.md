@@ -314,30 +314,41 @@ PushClientManager.default().userAttributes = [
 رویدادها در واقع همان تعامل کاربر با اپلیکیشنتان است. از این رو آن‌ها را **رفتار** کاربر می‌نامیم. شما می‌توانید رفتار کاربر را در اپلیکیشن خود به طور **لحظه‌ای** رصد کنید. این امر به شما امکان می‌دهد تا **CPA های پیشرفته** برای کمپین‌هایتان [تعریف کنید](/panel/tracker.html#افزودن-cpa) و نصب‌هایتان با تحقق اهدافی که برای کاربران تعیین کرده‌اید شمرده شوند. 
 
 
-با کد زیر می‌توانید  رفتار کاربر (رویداد) را در چابک رصد کنید:  
-  
+ به عنوان مثال می‌خواهید رفتار **افزودن به سبد خرید** از فروشگاه اینترنتی خودتان را رصد کنید. برای ثبت این رفتار کد زیر را با الگوی بالا وارد می‌نماییم.
+
+نمونه:
 ```objectivec
 //Objective-C
-
-NSDictionary *data = @{
-                       @"currency": @"EUR",
-                       @"revenue": @(0.01),
-                       @"orderId": @"{OrderId}"
-                       };
-
-[_manager track:@"purchase"
-                   data:data];
+[self.manager track:@"add-to-card" data:@{@"value":@(35000)}];
 ```
 ```swift
 //Swift
+self.manager.track("add-to-card", data: ["value":35000])
+```
+>‍‍‍`نکته:` در متد `track` در صورتی که به `value` مقدار عددی بدهید، آن رفتار در سگمنت با پیشوند **آخرین و مجموع** اضافه می‌شود. اما در صورتی که مقدار غیر عددی (string) بدهید، آن رفتار فقط با پیشوند **آخرین** به سگمنت اضافه می‌شود.
 
-var data = [
-    "currency": "EUR",
-    "revenue": NSNumber(value: 0.01),
-    "orderId": "{OrderId}"
-]
+<Br>
 
-_manager?.track("purchase", data: data)
+##### رصد درآمد (Tracking Revenue)
+
+شما می‌توانید در‌آمدی که کاربران با نشان دادن رفتاری از خود (مانند خرید) تولید می‌کنند را رصد و ذخیره کنید. این کار را باید با متد `trackPurchase` انجام دهید. به عنوان مثال کاربر خریدی را با ارزش ۵۰ هزار تومان انجام داده است.
+
+نمونه:
+
+```objectivec
+//Objective-C
+ChabokEvent *chabokEvent = [[ChabokEvent alloc]
+                                initWithRevenue:20000
+                                currency:@"RIAL"];
+    
+[PushClientManager.defaultManager trackPurchase:@"Purchase"
+                                        chabokEvent:chabokEvent];
+```
+```swift
+//Swift
+let chabokEvent = ChabokEvent(revenue: 20000, currency: "RIAL")
+
+PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 ```
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/ios/behavior-tracking.html) را مطالعه کنید.
 
@@ -393,7 +404,7 @@ https://a.chabok.io/JY@4sc
 
 ### ۳. ترک نصب از استورها
 
-شما می‌توانید منبع (Source) نصب را در کمپین‌های خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید و **آی‌دی ترکر** را در کد ipa خود قرار دهید. 
+شما می‌توانید منبع (Source) نصب را در کمپین‌های خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید، **آی‌دی ترکر** را در متد زیر قرار دهید و پس از گرفتن خروجی ipa گرفتن آن را در استور مورد نظر بگذارید. 
 
 ```objectivec
 //Objective-C
