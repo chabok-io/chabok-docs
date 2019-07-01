@@ -67,29 +67,3 @@ chabok.getUserId().then(userId => {
 	console.log('Fail to getUserId', error)
 })
 ```
-<Br>
-
-### مدیریت اطلاعات کاربر
-
-شما با دو متد زیر می‌توانید اطلاعات کاربر را ثبت و دریافت کنید. 
-
-- متد `setUserInfo` برای تنظیم اطلاعات کاربر:
-
-```javascript
-this.chabok.setUserInfo({
-                firstName: 'مهدی',
-                lastName: 'یعقوبی',
-                age: 19,
-                gender: 'مرد'
-            });
-```
-
-پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
-
-![عکس مربوطه](http://uupload.ir/files/9p2w_set-user-info-2.png)
-
-- متد `getUserInfo` برای دریافت اطلاعات کاربر:
-
-```javascript
-chabok.getUserInfo()
-```
