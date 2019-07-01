@@ -12,8 +12,8 @@
       title: پوش‌نوتیفیکیشن
     - id: deeplink
       title: دیپ لینک
-    - id: user-management
-      title: گروه‌بندی کاربران
+    - id: custom-data
+      title: داده‌های سفارشی کاربر
     - id: behavior-tracking
       title: رصد رفتار درون‌برنامه‌ای
     - id: event-handling
