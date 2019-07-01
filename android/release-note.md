@@ -20,7 +20,7 @@ prev: troubleshoot.html
 
 - پشتیبانی از [**دیپ لینک در صورت نداشتن اپلیکیشن** (deferred deep linking)](/android/deeplink.html#دیپ-لینک-قبل-از-نصب-اپلیکیشن-deferred-deep-linking) با متد `setOnDeeplinkResponseListener`
 
-- افزودن متد `incrementUserAttribute` برای [افزایش مقدار داده‌های کمیتی کاربر](/android/features.html#افزایش-دادههای-کمیتی-کاربر)
+- افزودن متد `incrementUserAttribute` برای [افزایش مقدار داده‌های کمیتی کاربر](/android/custom-data.html#افزایش-دادههای-کمیتی-کاربر)
 
 - افزودن متد `setDefaultNotificationChannel` برای **تغییر نام پیش‌فرض کانال نوتیفیکیشن** (برای اندروید ۸ به بالا)
 
@@ -36,7 +36,7 @@ prev: troubleshoot.html
 
 - حل مشکل proguard در تداخل با کتابخانه‌های دیگر
 
-- [افزودن متدهای `getUserAttributes` و `setUserAttributes`](/android/features.html#ثبت-اطلاعات-کاربر-user-attributes)
+- [افزودن متدهای `getUserAttributes` و `setUserAttributes`](/android/custom-data.html#ثبت-اطلاعات-کاربر-user-attributes)
 
 - با قرار دادن کد زیر در فایل `AndroidManifest.xml` فقط نوتیفیکیشن‌های چابک را نمایش دهید
 
