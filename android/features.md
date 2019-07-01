@@ -21,59 +21,6 @@ next: troubleshoot.html
 <meta-data android:name="com.adpdigital.push.client.SHOW_ONLY_CHABOK_NOTIFICATIONS" android:value="ENABLE" />
 ```
 
-<Br>
-
-### ثبت اطلاعات کاربر (User Attributes)
-
-با فراخوانی متد زیر می‌توانید اطلاعات و سوابق کاربر را جمع‌آوری و ذخیره کنید:
-
-```java
-HashMap<String, Object> userInfo = new HashMap<>();
-
-userInfo.put("firstName", "محمدرضا");
-userInfo.put("lastName", "اخوان");
-userInfo.put("age", 35);
-userInfo.put("gender", "مرد");
-
-AdpPushClient.get().setUserAttributes(userInfo);
-```
-
-پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
-
-![عکس مربوطه](http://uupload.ir/files/ovf0_set-user-info.png)
-
-#### دریافت اطلاعات کاربر
-
-برای دریافت اطلاعت کاربر متد زیر را فراخوانی کنید:
-
-```java
-AdpPushClient.get().getUserAttributes(userInfo);
-```
-
->`نکته:` در نسخه‌های ۲.۱۶.۰ یا پایین‌تر از متد زیر استفاده کنید:
-
-```java
-HashMap<String, Object> userInfo = new HashMap<>();
-
-userInfo.put("firstName", "محمدرضا");
-userInfo.put("lastName", "اخوان");
-userInfo.put("age", 35);
-userInfo.put("gender", "مرد");
-
-AdpPushClient.get().setUserInfo(userInfo);
-```
-
-<br><br>
-
-### افزایش داده‌های کمیتی کاربر
-
-شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی** و .. را به تعداد دلخواهتان **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
-
-```java
-AdpPushClient.get().incrementUserAttribute("visit_comedy_shows");
-AdpPushClient.get().incrementUserAttribute("visit_comedy_shows", 5);
-```
-
 <br><br>
 
 ### دریافت شناسه دستگاه

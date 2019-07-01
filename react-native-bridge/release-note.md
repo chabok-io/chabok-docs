@@ -19,7 +19,8 @@ next: introducing.html
 - پشتیبانی از مقدار [**درآمد**](/react-native-bridge/behavior-tracking.html#رصد-درآمد-tracking-revenue) با استفاده از متد `trackPurchase`
 - پشتیبانی از **بازخورد  نوتیفیکیشن (influence)** به صورت مستقیم یا غیر مستقیم
 - پشتیبانی از [**دیپ لینک در صورت نداشتن اپلیکیشن** (deferred deep linking)](/react-native-bridge/deeplink.html#دیپ-لینک-قبل-از-نصب-اپلیکیشن-deferred-deep-linking) با متد `setDeeplinkCallbackListener`
-- [افزودن متدهای `getUserAttributes` و `setUserAttributes`](/react-native-bridge/features.html#ثبت-اطلاعات-کاربر-user-attributes)
+- افزودن متد `incrementUserAttribute` برای [افزایش مقدار داده‌های کمیتی کاربر](/react-native-bridge/custom-data.html#افزایش-دادههای-کمیتی-کاربر)
+- [افزودن متدهای `getUserAttributes` و `setUserAttributes`](/react-native-bridge/custom-data.html#مدیریت-اطلاعات-کاربر-user-attributes)
 - افزودن متد `setDefaultNotificationChannel` برای **تغییر نام پیش‌فرض کانال نوتیفیکیشن** (برای اندروید ۸ به بالا)
 
 ### ارتقا
