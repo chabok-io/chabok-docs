@@ -28,12 +28,12 @@ next: behavior-tracking.html
 ```java
 HashMap<String, Object> userInfo = new HashMap<>();
 
-userInfo.put("firstName", "محمدرضا");
-userInfo.put("lastName", "اخوان");
-userInfo.put("age", 35);
-userInfo.put("gender", "مرد");
+userAttribute.put("firstName", "محمدرضا");
+userAttribute.put("lastName", "اخوان");
+userAttribute.put("age", 35);
+userAttribute.put("gender", "مرد");
 
-AdpPushClient.get().setUserAttributes(userInfo);
+AdpPushClient.get().setUserAttributes(userAttribute);
 ```
 
 پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
@@ -59,7 +59,7 @@ AdpPushClient.get().setUserInfo(userInfo);
 برای دریافت اطلاعات کاربر متد زیر را فراخوانی کنید:
 
 ```java
-AdpPushClient.get().getUserAttributes(userInfo);
+AdpPushClient.get().getUserAttributes(userAttribute);
 ```
 
 <br>
