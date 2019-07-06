@@ -1,6 +1,6 @@
 ---
 id: analyze-your-campaigns
-title: تجزیه و تحلیل کمپین‌ها 
+title: بازخورد کمپین‌ها
 layout: mobile-usecases
 permalink: mobile-usecases/analyze-your-campaigns.html
 ---
@@ -12,8 +12,6 @@ permalink: mobile-usecases/analyze-your-campaigns.html
 <br>
 
 تیم‌های بازاریابی با توجه به ایده‌ و حس‌هایی که دارند، کمپین‌هایی را طراحی و ارسال می‌کنند. این کمپین‌ها می‌توانند گاهی اوقات هدفشان را محقق کنند و گاهی اوقات هم باعث حذف برخی از کاربران شوند. با چابک می‌توانید از **حس‌های خود مطمئن شوید** و آن‌ها را به چالش بکشانید. 
-
-از لحظه‌ای که کمپین را ارسال می‌کنید، آمار و داده‌های آن در اختیار شما قرار می‌گیرد. از این طریق می‌توانید دقت کنید که **چگونه از پیام شما استقبال می‌شود** و یک **بازخورد کامل و دقیق** داشته باشید.
 
 <div style="text-align: center;"><img src="http://uupload.ir/files/yo9o_analytics.jpg" class="img-fluid" style="
     width: 400px;
@@ -49,5 +47,5 @@ permalink: mobile-usecases/analyze-your-campaigns.html
 <br>
 
 <div align="center">   
-    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="/guides/how-to-announce-new-features.html">آموزش اجرا و تحلیل کمپین را ببینید.</a>
+    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="/guides/how-to-analyze-your-campaigns.html">آموزش گرفتن بازخورد از کمپین را ببینید.</a>
 </div>
