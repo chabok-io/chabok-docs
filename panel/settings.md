@@ -65,6 +65,8 @@ next: account-management.html
 
 ![عکس مربوطه](http://uupload.ir/files/qva7_cafe-bazaar-ads.png)
 
+<Br>
+
  سپس **لینک داده شده** را کپی کنید و آن را در پنل کافه بازار خود> تبلیغات> کمپین‌ها در **لینک اثر گذاری Tracker** مانند زیر قرار دهید:
 
 ![عکس مربوطه](http://uupload.ir/files/uwhu_cafe-bazaar.png)
