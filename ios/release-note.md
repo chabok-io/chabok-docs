@@ -11,6 +11,11 @@ prev: troubleshoot.html
 <Br>
 
 
+##  [نسخه ۱.۲۰.۱ - ۱۳۹۸/۰۴/۱۶](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.1)
+
+- پشتیبانی متد `incrementUserAttribute` از آرایه‌‌ای از اطلاعات کاربر
+
+
 ##  [نسخه ۱.۲۰.۰ - ۱۳۹۸/۰۴/۰۴](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.0)
 
 - پشتیبانی از مقدار [**درآمد**](/ios/behavior-tracking.html#رصد-درآمد-tracking-revenue) با استفاده از متد `trackPurchase`
