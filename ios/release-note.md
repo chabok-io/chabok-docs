@@ -11,10 +11,13 @@ prev: troubleshoot.html
 <Br>
 
 
-##  [نسخه ۱.۲۰.۱ - ۱۳۹۸/۰۴/۱۶](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.1)
+##  [نسخه ۱.۲۰.۱ - ۱۳۹۸/۰۴/۱۷](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.1)
 
-- پشتیبانی متد `incrementUserAttribute` از آرایه‌‌ای از اطلاعات کاربر
+- پشتیبانی متد `incrementUserAttribute` از آرایه‌‌ای از اطلاعات (attribute) کاربر
 
+- افزودن متد `incrementUserAttributeValue:value` برای افزایش هرکدام از اطلاعات کاربر (attribute) به مقدار دلخواه
+
+- افزودن متد `incrementUserAttributeValues:value` برای افزایش بیش‌ از یکی از اطلاعات کاربر (attribute) به مقدار دلخواه (این متد از dictionary از اطلاعات کاربر پشتیبانی می‌کند)
 
 ##  [نسخه ۱.۲۰.۰ - ۱۳۹۸/۰۴/۰۴](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.0)
 
