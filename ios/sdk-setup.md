@@ -26,7 +26,7 @@ next: tracker.html
 target 'YourProject' do
   use_frameworks!
 
-  pod 'ChabokPush'
+  pod 'ChabokPush', '~> 1.20.1'
   
 end
 ```

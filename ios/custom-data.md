@@ -109,21 +109,76 @@ PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (reg
 
 #### افزایش داده‌های کمیتی کاربر
 
-شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی و ..** را به تعداد دلخواهتان **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
+شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی و ..** را **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
 
 ```objectivec
 //Objective-C:
 
 [PushClientManager.defaultManager incrementUserAttribute:@"visit_comedy_shows"];
-
-[PushClientManager.defaultManager incrementUserAttribute:@"visit_comedy_shows" value:3];
 ```
 ``` swift
 //Swift:
 
 PushClientManager.default().incrementUserAttribute("visit_comedy_shows")
+```
+<br>
 
-PushClientManager.default().incrementUserAttribute("visit_comedy_shows", value: 3)
+##### افزودن به چند attribute
+
+همچنین متد بالا از آرایه‌ای از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. برای همین می‌توانید به بیش از یک attribute اضافه کنید. به نمونه زیر دقت کنید: 
+
+```objectivec
+//Objective-C:
+
+NSArray<NSString *> *attributes = @[@"comedy_move", @"shoes_size"];
+    
+[PushClientManager.defaultManager incrementUserAttributes:attributes];
+```
+``` swift
+//Swift:
+
+let attributes = ["comedy_move", "shoes_size"]
+
+PushClientManager.default().incrementUserAttributes(attributes)
+```
+<br>
+
+##### افزودن مقدار دلخواه به یک attribute
+
+با متد زیر می‌توانید به یک attribute مقدار دلخواهتان را اضافه کنید:
+
+```objectivec
+//Objective-C:
+
+[PushClientManager.defaultManager incrementUserAttributeValue:@"player_level" value:2];
+```
+``` swift
+//Swift:
+
+PushClientManager.default().incrementUserAttributeValue("player_level", value: 2)
+```
+<br>
+
+##### افزودن مقدار دلخواه به چند attribute
+
+متد زیر از dictionary از attributeها پشتیبانی می‌کند، بنابراین می‌توانید به چند attribute مقدار دلخواهتان را اضافه کنید:
+
+```objectivec
+//Objective-C:
+
+NSMutableDictionary<NSString *, NSNumber *> *attributesDic = [NSMutableDictionary new];
+[attributesDic setObject:[NSNumber numberWithDouble:5] forKey:@"visit"];
+[attributesDic setObject:[NSNumber numberWithDouble:100] forKey:@"workout"];
+    
+[PushClientManager.defaultManager incrementUserAttributeValues:[attributesDic copy]];
+```
+``` swift
+//Swift:
+
+let attributesDic = ["visit":NSNumber(5),
+		     "workout":NSNumber(100)]
+
+PushClientManager.default().incrementUserAttributeValues(attributesDic)
 ```
 
 <br><br>
