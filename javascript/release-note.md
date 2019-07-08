@@ -10,6 +10,42 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۴/۱۷](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.4.0)
+
+### تغییرات
+
+- پشتیبانی از مقدار [**درآمد**](/javascript/behavior-tracking.html#رصد-درآمد-tracking-revenue) با استفاده از متد `trackPurchase`
+
+- پشتیبانی از **بازخورد نوتیفیکیشن (influence)** به صورت مستقیم یا غیر مستقیم
+
+- افزودن متد `incrementUserAttribute` برای [افزایش مقدار داده‌های کمیتی کاربر](/javascript/custom-data.html#افزایش-دادههای-کمیتی-کاربر)
+
+- بهبود رفتار متدهای `subscribe`
+
+- افزودن آمار تاریخ نصب و add to home screen (برای PWA)
+
+- پشتیبانی از نوتیفیکیشن‌های چند رسانه‌ای یا Rich (دکمه، تصویر، جهت محتوا و لغزش موقع دریافت)
+
+- افزودن آمار و آنالیتیکس برای کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن (dismiss))
+
+- افزودن رویداد `notificationOpened` برای دریافت اطلاعات کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن (dismiss))
+
+- معرفی `notifDelivery` برای اطلاع از **مشاهده شدن نوتیفیکیشن (impression)**
+
+- [افزودن متدهای `getUserAttributes` و `setUserAttributes`](/javascript/custom-data.html#مدیریت-اطلاعات-کاربر-user-attributes)
+
+- بهبود نمایش نوتیفیکیشن در برخی از دستگاه‌های اندروید
+
+- بهبود مدیریت اتصال
+
+### ارتقا 
+
+- جایگزین شدن متدهای `getUserInfo` و `setUserinfo` با متدهای `getUserAttributes` و `setUserAttributes`
+
+
+- انتقال داده‌های سفارشی به data key در متدهای `publishEvent` و `track`
+
+
 ## [نسخه ۱.۳.۰ - ۱۳۹۸/۰۳/۱۳](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.3.0)
 
 ### تغییرات
