@@ -167,7 +167,7 @@ public class MyAppClass extends Application {
         //AdpPushClient.init() should always be called in onCreate of Application class
         AdpPushClient.init(
                 getApplicationContext(),
-                MY_ACTIVITY.class,
+                MainActivity.class,
                 "APP_ID/SENDER_ID", //based on your environment
                 "API_KEY",          //based on your environment
                 "SDK_USERNAME",     //based on your environment

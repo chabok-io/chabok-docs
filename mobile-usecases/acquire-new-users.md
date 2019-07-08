@@ -15,7 +15,7 @@ permalink: mobile-usecases/acquire-new-users.html
 
 
 <div style="text-align: center;"><img src="http://uupload.ir/files/sngu_acquisition.jpg" class="img-fluid" style="
-    width: 400px;
+    width: 500px;
 "></div> 
 
 <br>
