@@ -175,9 +175,8 @@ NSMutableDictionary<NSString *, NSNumber *> *attributesDic = [NSMutableDictionar
 ``` swift
 //Swift:
 
-var attributesDic: [String : NSNumber] = [:]
-attributesDic["visit"] = NSNumber(value: 5)
-attributesDic["workout"] = NSNumber(value: 100)
+let attributesDic = ["visit":NSNumber(5),
+		     "workout":NSNumber(100)]
 
 PushClientManager.default().incrementUserAttributeValues(attributesDic)
 ```
