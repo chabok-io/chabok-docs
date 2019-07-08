@@ -123,9 +123,9 @@ PushClientManager.default().incrementUserAttribute("visit_comedy_shows")
 ```
 <br>
 
-##### افزودن مقدار یک عدد به چند attribute
+##### افزودن به چند attribute
 
-همچنین متد بالا از آرایه‌ای از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. برای همین می‌توانید به بیش از یک attribute یک عدد اضافه کنید. به نمونه زیر دقت کنید: 
+همچنین متد بالا از آرایه‌ای از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. برای همین می‌توانید به بیش از یک attribute اضافه کنید. به نمونه زیر دقت کنید: 
 
 ```objectivec
 //Objective-C:
