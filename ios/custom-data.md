@@ -109,49 +109,77 @@ PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (reg
 
 #### افزایش داده‌های کمیتی کاربر
 
-شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی و ..** را به تعداد دلخواهتان **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
+شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی و ..** را **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
 
 ```objectivec
 //Objective-C:
 
 [PushClientManager.defaultManager incrementUserAttribute:@"visit_comedy_shows"];
-
-[PushClientManager.defaultManager incrementUserAttribute:@"visit_comedy_shows" value:3];
 ```
 ``` swift
 //Swift:
 
 PushClientManager.default().incrementUserAttribute("visit_comedy_shows")
-
-PushClientManager.default().incrementUserAttribute("visit_comedy_shows", value: 3)
 ```
+<br>
 
+##### افزودن مقدار یک عدد به چند attribute
 
-همچنین این متد از آرایه‌ای از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. به نمونه زیر دقت کنید: 
+همچنین متد بالا از آرایه‌ای از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. برای همین می‌توانید به بیش از یک attribute یک عدد اضافه کنید. به نمونه زیر دقت کنید: 
 
-```java
-ArrayList<String> attributes = new ArrayList<>();
+```objectivec
+//Objective-C:
 
-attributes.add("comedy_movie");
-attributes.add("action_movie");
-attributes.add("view_movie_detail");
-
-AdpPushClient.get()
-                .incrementUserAttribute(attributes);
+NSArray<NSString *> *attributes = @[@"comedy_move", @"shoes_size"];
+    
+[PushClientManager.defaultManager incrementUserAttributes:attributes];
 ```
-کد بالا به هر کدام از attributeها **یک عدد** اضافه می‌کند.
+``` swift
+//Swift:
 
-برای اضافه کردن **تعداد دلخواه** می‌توانید از کد زیر استفاده کنید:
+let attributes = ["comedy_move", "shoes_size"]
 
-```java
-ArrayList<String> attributes = new ArrayList<>();
+PushClientManager.default().incrementUserAttributes(attributes)
+```
+<br>
 
-attributes.add("comedy_movie");
-attributes.add("action_movie");
-attributes.add("view_movie_detail");
+##### افزودن مقدار دلخواه به یک attribute
 
-AdpPushClient.get()
-                .incrementUserAttribute(attributes);
+با متد زیر می‌توانید به یک attribute مقدار دلخواهتان را اضافه کنید:
+
+```objectivec
+//Objective-C:
+
+[PushClientManager.defaultManager incrementUserAttributeValue:@"player_level" value:2];
+```
+``` swift
+//Swift:
+
+PushClientManager.default().incrementUserAttributeValue("player_level", value: 2)
+```
+<br>
+
+##### افزودن مقدار دلخواه به چند attribute
+
+متد زیر از dictionary از attributeها پشتیبانی می‌کند، بنابراین می‌توانید به چند attribute مقدار دلخواهتان را اضافه کنید:
+
+```objectivec
+//Objective-C:
+
+NSMutableDictionary<NSString *, NSNumber *> *attributesDic = [NSMutableDictionary new];
+[attributesDic setObject:[NSNumber numberWithDouble:5] forKey:@"visit"];
+[attributesDic setObject:[NSNumber numberWithDouble:100] forKey:@"workout"];
+    
+[PushClientManager.defaultManager incrementUserAttributeValues:[attributesDic copy]];
+```
+``` swift
+//Swift:
+
+var attributesDic: [String : NSNumber] = [:]
+attributesDic["visit"] = NSNumber(value: 5)
+attributesDic["workout"] = NSNumber(value: 100)
+
+PushClientManager.default().incrementUserAttributeValues(attributesDic)
 ```
 
 <br><br>
