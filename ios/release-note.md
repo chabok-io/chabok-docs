@@ -15,7 +15,7 @@ prev: troubleshoot.html
 
 - پشتیبانی متد `incrementUserAttribute` از [آرایه‌‌ای از اطلاعات (attribute) کاربر](/ios/custom-data.html#افزودن-به-چند-attribute)
 
-- افزودن متد `incrementUserAttributeValue:value` برای [افزایش هرکدام از اطلاعات کاربر (attribute) به مقدار دلخواه](/ios/custom-data.html#افزودن-مقدار-دلخواه-به-یک-attribute)
+- افزودن متد `incrementUserAttributeValue:value` برای [افزایش هر کدام از اطلاعات کاربر (attribute) به مقدار دلخواه](/ios/custom-data.html#افزودن-مقدار-دلخواه-به-یک-attribute)
 
 - افزودن متد `incrementUserAttributeValues:value` برای [افزایش بیش‌ از یکی از اطلاعات کاربر (attribute) به مقدار دلخواه](/ios/custom-data.html#افزودن-مقدار-دلخواه-به-چند-attribute) (این متد از dictionary از اطلاعات کاربر پشتیبانی می‌کند)
 
