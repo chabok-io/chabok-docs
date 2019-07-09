@@ -38,6 +38,12 @@ prev: troubleshoot.html
 
 - بهبود مدیریت اتصال
 
+- بهبود بروزرسانی توکن پوش نوتیفیکیشن
+
+- امکان تعیین شناسه کاربر مهمان (guestUserId) به متد `registerAsGuest`
+
+- بروزرسانی فایل `ChabokSDKWorker.js`
+
 ### ارتقا 
 
 - جایگزین شدن متدهای `getUserInfo` و `setUserinfo` با متدهای `getUserAttributes` و `setUserAttributes`
