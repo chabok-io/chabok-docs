@@ -14,22 +14,22 @@ prev: troubleshoot.html
 
 ### تغییرات
 
-- پشتیبانی از مقدار [**درآمد**](/javascript/behavior-tracking.html#رصد-درآمد-tracking-revenue) با استفاده از متد `trackPurchase`
+- پشتیبانی از مقدار [درآمد](/javascript/behavior-tracking.html#رصد-درآمد-tracking-revenue) با استفاده از متد `trackPurchase`
 
 - [افزودن متدهای `getUserAttributes` و `setUserAttributes`](/javascript/custom-data.html#مدیریت-اطلاعات-کاربر-user-attributes)
 
 - افزودن متد `incrementUserAttribute` برای [افزایش مقدار داده‌های کمیتی کاربر](/javascript/custom-data.html#افزایش-دادههای-کمیتی-کاربر)
 
-- پشتیبانی از **نوتیفیکیشن‌های چند رسانه‌ای یا Rich** (دکمه، تصویر، جهت چینش محتوا و ویبره دستگاه‌های اندرویدی)
+- پشتیبانی از نوتیفیکیشن‌های چند رسانه‌ای یا Rich (دکمه، تصویر، جهت چینش محتوا و ویبره دستگاه‌های اندرویدی)
 
 - افزودن آمار و آنالیتیکس برای کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن (dismiss))
 
 - افزودن رویداد `notificationOpened` برای دریافت اطلاعات کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن (dismiss))
 - پشتیبانی از **بازخورد نوتیفیکیشن (influence)** به صورت مستقیم یا غیر مستقیم
 
-- معرفی `notifDelivery` برای اطلاع از **مشاهده شدن نوتیفیکیشن (impression)**
+- معرفی `notifDelivery` برای اطلاع از مشاهده شدن نوتیفیکیشن (impression)
 
-- افزودن **آمار تاریخ نصب و add to home screen** (برای PWA)
+- افزودن آمار تاریخ نصب و add to home screen (برای PWA)
 
 - امکان [تعیین شناسه کاربر مهمان (guestUserId)](/javascript/sdk-setup.html#کاربر-مهمان) به متد `registerAsGuest`
 
