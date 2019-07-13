@@ -28,9 +28,10 @@ chabok.track('YOUR_TRACK_NAME', {"KEY":"VALUE"})
  به عنوان مثال می‌خواهید رفتار **افزودن به سبد خرید** از فروشگاه اینترنتی خودتان را رصد کنید. برای ثبت این رفتار کد زیر را با الگوی بالا وارد می‌نماییم.
 
 نمونه:
+
 ```javascript
 const data = {
-  "value": 35000
+  value: 35000
 }
 
 chabok.track('add-to-card', data)
