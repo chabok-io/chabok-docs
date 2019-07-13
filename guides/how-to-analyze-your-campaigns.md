@@ -13,7 +13,7 @@ permalink: guides/how-to-analyze-your-campaigns.html
 
 پس از ارسال کمپین، خیلی مهم است که شما بدانید کاربر در **برخورد اول** با آن چه واکنشی نشان داده است. آیا کمپین را مشاهده کرده؟ اگر مشاهده کرده آیا بی توجه از آن رد شده یا بالعکس وارد اپلیکیشن شده؟ اگر وارد اپلیکیشن شده با چه دکمه‌ای و وارد چه صفحه‌ای؟ همه این‌ها سوالاتی هستند که شما باید جواب آن‌ها را بدانید تا از بازخورد کمپین خود مطلع شوید. 
 
-<div style="text-align: center;"><img src="http://uupload.ir/files/uk8h_notification-impression.png">
+<div style="text-align: center;"><img src="http://uupload.ir/files/o4nd_notification-impression2.png">
 </div> 
 
 <Br>
@@ -22,7 +22,7 @@ permalink: guides/how-to-analyze-your-campaigns.html
 
 در این قسمت چابک به شما نشان می‌دهد کمپینی که ارسال کرده‌اید، چقدر در **تحقق هدفش (Conversion)** موفق بوده است. طوری که رویداد مد نظرتان پس از ارسال کمپین رصد می‌شود و کاربرانی که به صورت **مستقیم یا غیر مستقیم (مدتی پس از کمپین)** آن را انجام داده‌اند، مشخص خواهند شد. 
 
-<div style="text-align: center;"><img src="http://uupload.ir/files/47np_influenced-conversions.png">
+<div style="text-align: center;"><img src="http://uupload.ir/files/0vbd_influenced-conversions.png">
 </div> 
 
 <br>
