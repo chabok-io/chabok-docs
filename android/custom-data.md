@@ -96,7 +96,7 @@ attributes.put("action_movie", 2d);
 attributes.put("view_movie_detail", 1d);
                 
 AdpPushClient.get()
-              .incrementUserAttribute(attributes);
+                .incrementUserAttribute(attributes);
 ```
 
 <br><br>
