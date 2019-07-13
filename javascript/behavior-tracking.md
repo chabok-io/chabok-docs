@@ -47,10 +47,11 @@ chabok.track('add-to-card', data)
 نمونه:
 
 ```javascript
-ChabokEvent event = new ChabokEvent(500000, "RIAL");
-event.setData(data);
-                
-AdpPushClient.get().trackPurchase("Purchase", event);
+const eventData = {
+          revenue: 500000,
+          currency: 'RIAL'
+}
+chabok.trackPurchase('Purchase', eventData)
 ```
 
 <Br>
