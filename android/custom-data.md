@@ -89,14 +89,14 @@ AdpPushClient.get()
 برای اضافه کردن **تعداد دلخواه** می‌توانید از کد زیر استفاده کنید:
 
 ```java
-ArrayList<String> attributes = new ArrayList<>();
-
-attributes.add("comedy_movie");
-attributes.add("action_movie");
-attributes.add("view_movie_detail");
-
+HashMap<String, Double> attributes = new HashMap<>();
+                
+attributes.put("comedy_movie", 5d);
+attributes.put("action_movie", 2d);
+attributes.put("view_movie_detail", 1d);
+                
 AdpPushClient.get()
-                .incrementUserAttribute(attributes);
+              .incrementUserAttribute(attributes);
 ```
 
 <br><br>
