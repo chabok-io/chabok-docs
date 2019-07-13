@@ -65,7 +65,7 @@ chabok.incrementUserAttribute('comedy_movie', 3)
  همچنین این متد از **آرایه‌ای** از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. به نمونه زیر دقت کنید: 
 
 ```javascript
-chabok.incrementUserAttribute([‘comedy_movie’, ‘workout’])
+chabok.incrementUserAttribute(['comedy_movie', 'workout'])
 ```
 کد بالا به هر کدام از attributeها **یک عدد** اضافه می‌کند.
 
