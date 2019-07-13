@@ -60,7 +60,7 @@ this.chabok.setUserInfo({
 chabok.incrementUserAttribute('comedy_movie')
 chabok.incrementUserAttribute('comedy_movie', 3)
 ```
- همچنین این متد از آرایه‌ای از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. به نمونه زیر دقت کنید: 
+ همچنین این متد از **آرایه‌ای** از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. به نمونه زیر دقت کنید: 
 
 ```javascript
 chabok.incrementUserAttribute([‘comedy_movie’, ‘workout’])
