@@ -31,7 +31,7 @@ prev: troubleshoot.html
 
 - افزودن **آمار تاریخ نصب و add to home screen** (برای PWA)
 
-- امکان تعیین شناسه کاربر مهمان (guestUserId) به متد `registerAsGuest`
+- امکان [تعیین شناسه کاربر مهمان (guestUserId)](/javascript/sdk-setup.html#کاربر-مهمان) به متد `registerAsGuest`
 
 - بهبود نمایش نوتیفیکیشن در برخی از دستگاه‌های اندروید
 
