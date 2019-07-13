@@ -72,7 +72,7 @@ AdpPushClient.get().getUserAttributes(userAttribute);
 AdpPushClient.get().incrementUserAttribute("visit_comedy_shows");
 AdpPushClient.get().incrementUserAttribute("visit_comedy_shows", 5);
 ```
- همچنین این متد از آرایه‌ای از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. به نمونه زیر دقت کنید: 
+ همچنین این متد از **آرایه‌ای** از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. به نمونه زیر دقت کنید: 
 
 ```java
 ArrayList<String> attributes = new ArrayList<>();
@@ -89,12 +89,12 @@ AdpPushClient.get()
 برای اضافه کردن **تعداد دلخواه** می‌توانید از کد زیر استفاده کنید:
 
 ```java
-ArrayList<String> attributes = new ArrayList<>();
-
-attributes.add("comedy_movie");
-attributes.add("action_movie");
-attributes.add("view_movie_detail");
-
+HashMap<String, Double> attributes = new HashMap<>();
+                
+attributes.put("comedy_movie", 5d);
+attributes.put("action_movie", 2d);
+attributes.put("view_movie_detail", 1d);
+                
 AdpPushClient.get()
                 .incrementUserAttribute(attributes);
 ```
