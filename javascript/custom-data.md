@@ -27,6 +27,23 @@ next: behavior-tracking.html
 شما می‌توانید اطلاعاتی که از کاربر دارید (مانند نام، نام خانوادگی، جنسیت، سن و ...) را به طور دلخواه با استفاده از متد زیر، در پروفایل او ثبت کنید:
 
 ```javascript
+const attributes = {
+          firstName: 'مهدی',
+          lastName: 'یعقوبی',
+          age: 19,
+          gender: 'مرد'
+        }
+chabok.setUserAttributes(attributes)
+```
+
+
+پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
+
+![عکس مربوطه](http://uupload.ir/files/9p2w_set-user-info-2.png)
+
+>`نکته:` دقت داشته باشید که برای ثبت اطلاعات کاربر در **نسخه‌های ۱.۴.۰ به پایین** باید از متد زیر استفاده کنید:
+
+```javascript
 this.chabok.setUserInfo({
                 firstName: 'مهدی',
                 lastName: 'یعقوبی',
@@ -35,9 +52,26 @@ this.chabok.setUserInfo({
             });
 ```
 
-پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
+#### افزایش داده‌های کمیتی کاربر
 
-![عکس مربوطه](http://uupload.ir/files/9p2w_set-user-info-2.png)
+شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی** و .. را به تعداد دلخواهتان **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
+
+```javascript
+chabok.incrementUserAttribute('comedy_movie')
+chabok.incrementUserAttribute('comedy_movie', 3)
+```
+ همچنین این متد از آرایه‌ای از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. به نمونه زیر دقت کنید: 
+
+```javascript
+chabok.incrementUserAttribute([‘comedy_movie’, ‘workout’])
+```
+کد بالا به هر کدام از attributeها **یک عدد** اضافه می‌کند.
+
+برای اضافه کردن **تعداد دلخواه** به چند attribute می‌توانید از کد زیر استفاده کنید:
+
+```javascript
+chabok.incrementUserAttribute({workout: 10, size: 40})
+```
 
 <br><br>
 
