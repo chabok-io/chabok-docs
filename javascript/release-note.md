@@ -16,23 +16,22 @@ prev: troubleshoot.html
 
 - پشتیبانی از مقدار [**درآمد**](/javascript/behavior-tracking.html#رصد-درآمد-tracking-revenue) با استفاده از متد `trackPurchase`
 
-- پشتیبانی از **بازخورد نوتیفیکیشن (influence)** به صورت مستقیم یا غیر مستقیم
+- [افزودن متدهای `getUserAttributes` و `setUserAttributes`](/javascript/custom-data.html#مدیریت-اطلاعات-کاربر-user-attributes)
 
 - افزودن متد `incrementUserAttribute` برای [افزایش مقدار داده‌های کمیتی کاربر](/javascript/custom-data.html#افزایش-دادههای-کمیتی-کاربر)
 
-- بهبود رفتار متدهای `subscribe`
-
-- افزودن **آمار تاریخ نصب و add to home screen** (برای PWA)
-
-- پشتیبانی از **نوتیفیکیشن‌های چند رسانه‌ای یا Rich** (دکمه، تصویر، جهت محتوا و لغزش موقع دریافت)
+- پشتیبانی از **نوتیفیکیشن‌های چند رسانه‌ای یا Rich** (دکمه، تصویر، جهت محتوا و ویبره دستگاه‌های اندرویدی)
 
 - افزودن آمار و آنالیتیکس برای کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن (dismiss))
 
 - افزودن رویداد `notificationOpened` برای دریافت اطلاعات کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن (dismiss))
+- پشتیبانی از **بازخورد نوتیفیکیشن (influence)** به صورت مستقیم یا غیر مستقیم
 
 - معرفی `notifDelivery` برای اطلاع از **مشاهده شدن نوتیفیکیشن (impression)**
 
-- [افزودن متدهای `getUserAttributes` و `setUserAttributes`](/javascript/custom-data.html#مدیریت-اطلاعات-کاربر-user-attributes)
+- افزودن **آمار تاریخ نصب و add to home screen** (برای PWA)
+
+- امکان تعیین شناسه کاربر مهمان (guestUserId) به متد `registerAsGuest`
 
 - بهبود نمایش نوتیفیکیشن در برخی از دستگاه‌های اندروید
 
@@ -40,7 +39,7 @@ prev: troubleshoot.html
 
 - بهبود بروزرسانی توکن پوش نوتیفیکیشن
 
-- امکان تعیین شناسه کاربر مهمان (guestUserId) به متد `registerAsGuest`
+- بهبود رفتار متدهای `subscribe`
 
 - بروزرسانی فایل `ChabokSDKWorker.js`
 
