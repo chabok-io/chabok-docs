@@ -85,7 +85,7 @@ next: release-note.html
 ##### ۷- از تعریف GCMReceiver برای دریافت پوش اطمینان یابید
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
- اطمینان یابید که [کد GcmReceiver در فایل AndroidManifes.xml قرار داده شده باشد.](https://doc.chabokpush.com/android/application-class.html#%DB%B3-%D8%AA%D8%B9%D8%B1%DB%8C%D9%81-%D8%B1%D8%B3%DB%8C%D9%88%D8%B1-gcmreceiver)
+ اطمینان یابید که [کد GcmReceiver در فایل AndroidManifest.xml قرار داده شده باشد.](https://doc.chabokpush.com/android/application-class.html#%DB%B3-%D8%AA%D8%B9%D8%B1%DB%8C%D9%81-%D8%B1%D8%B3%DB%8C%D9%88%D8%B1-gcmreceiver)
 همچنین برای `YOUR_APPLICATION_PACKAGE_ID` حتما باید `bundleId` اپلیکیشن خود را قرار دهید.
 
 ##### ۸- متد `init` را برای شروع حتما فراخوانی کنید
@@ -199,7 +199,7 @@ RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNo
 RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService.access$000(RNPushNotificationListenerService.java:28)
 RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService$1.run(RNPushNotificationListenerService.java:86)
 ```
-کد زیر را در فایل `AndroidManifes.xml` خود قرار دهید.
+کد زیر را در فایل `AndroidManifest.xml` خود قرار دهید.
 
 ```xml
 <meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_name"
