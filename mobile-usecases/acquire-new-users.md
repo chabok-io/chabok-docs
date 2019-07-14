@@ -49,5 +49,5 @@ permalink: mobile-usecases/acquire-new-users.html
 <br>
 
 <div align="center">   
-    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="/guides/how-to-optimize-acquisition.html">آموزش بهینه‌سازی جذب را ببینید.</a>
+    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="guides/how-to-optimize-user-acquisition.html">آموزش بهینه‌سازی جذب را ببینید.</a>
 </div>
