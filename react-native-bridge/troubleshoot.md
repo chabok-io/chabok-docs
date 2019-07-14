@@ -199,7 +199,7 @@ RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNo
 RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService.access$000(RNPushNotificationListenerService.java:28)
 RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService$1.run(RNPushNotificationListenerService.java:86)
 ```
-کد زیر را در فایل AndroidManifes.xml خود قرار دهید.
+کد زیر را در فایل `AndroidManifes.xml` خود قرار دهید.
 
 ```xml
 <meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_name"
