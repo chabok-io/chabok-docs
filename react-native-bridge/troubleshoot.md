@@ -7,7 +7,7 @@ prev: features.html
 next: release-note.html
 ---
 
-در این صفحه به عیب‌یابی مشکلات متداول توسعه‌دهندگان در پیاده‌سازی چابک و ارائه راه‌‌حل‌های مربوط به آن می‌پردازیم. برخی از این مشکلات عبارتند از عدم [دریافت پوش‌نوتیفیکیشن](/react-native-bridge/troubleshoot.html#پوش-نمیگیرم) و [نمایش اعلان](/react-native-bridge/troubleshoot.html#اعلانها-نمایش-داده-نمیشوند).
+در این صفحه به عیب‌یابی مشکلات متداول توسعه‌دهندگان در پیاده‌سازی چابک و ارائه راه‌‌حل‌های مربوط به آن می‌پردازیم. برخی از این مشکلات عبارتند از عدم [دریافت پوش‌نوتیفیکیشن](/react-native-bridge/troubleshoot.html#پوش-نمیگیرم) و [نمایش نوتیفیکیشن](/react-native-bridge/troubleshoot.html#نوتیفیکیشنها-نمایش-داده-نمیشوند).
 
 <Br>
 
@@ -85,7 +85,7 @@ next: release-note.html
 ##### ۷- از تعریف GCMReceiver برای دریافت پوش اطمینان یابید
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
- اطمینان یابید که [کد GcmReceiver در فایل AndroidManifes.xml قرار داده شده باشد.](https://doc.chabokpush.com/android/application-class.html#%DB%B3-%D8%AA%D8%B9%D8%B1%DB%8C%D9%81-%D8%B1%D8%B3%DB%8C%D9%88%D8%B1-gcmreceiver)
+ اطمینان یابید که [کد GcmReceiver در فایل AndroidManifest.xml قرار داده شده باشد.](https://doc.chabokpush.com/android/application-class.html#%DB%B3-%D8%AA%D8%B9%D8%B1%DB%8C%D9%81-%D8%B1%D8%B3%DB%8C%D9%88%D8%B1-gcmreceiver)
 همچنین برای `YOUR_APPLICATION_PACKAGE_ID` حتما باید `bundleId` اپلیکیشن خود را قرار دهید.
 
 ##### ۸- متد `init` را برای شروع حتما فراخوانی کنید
@@ -112,16 +112,16 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 
 <Br>
 
-## اعلان‌ها نمایش داده نمی‌شوند
+## نوتیفیکیشن‌ها نمایش داده نمی‌شوند
 ---
 
-یکی دیگر از مشکلات متداول عدم نمایش اعلان (نوتیفیکیشن) در دستگاه مخاطب است. در این قسمت به دلایل احتمالی این مشکل اشاره‌ خواهیم کرد.
+یکی دیگر از مشکلات متداول عدم نمایش نوتیفیکیشن در دستگاه مخاطب است. در این قسمت به دلایل احتمالی این مشکل اشاره‌ خواهیم کرد.
 
 ##### ۱- اپلکیشن روی صفحه نمایش باز نباشد
 
-اعلان‌ها در زمانی که اپلیکیشن روی دستگاه شما **باز** و **نمایان** است، نشان داده نمی‌شوند.
+نوتیفیکیشن‌ها در زمانی که اپلیکیشن روی دستگاه شما **باز** و **نمایان** است، نشان داده نمی‌شوند.
 
-##### ۲- تنظیمات اکشن کلیک و محتوا در اعلان به درستی قرار داده‌ شود
+##### ۲- تنظیمات اکشن کلیک و محتوا در نوتیفیکیشن به درستی قرار داده‌ شود
 <span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
 
 
@@ -177,8 +177,34 @@ AdpPushClient not initialized yet, please first call AdpPushClient.get with para
 ##### ۶- وجود کتابخانه‌های دیگر در کنار چابک
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
-در صورتی که شما از سرویس‌های دیگری هم استفاده می‌کنید و کتابخانه‌های آن‌ها را نصب کرده‌اید امکان عدم نمایش اعلان برای شما وجود خواهد داشت. به عنوان مثال اگر کتابخانه **پوشه** را علاوه بر چابک روی اپ خود داشته باشید، زمانی که اپ شما بسته است، پوش‌نوتیفیکیشن دریافت می‌شود اما اعلان آن در دستگاه کاربر **نمایش داده نمی‌شود**.
+در صورتی که شما از سرویس‌های دیگری هم استفاده می‌کنید و کتابخانه‌های آن‌ها را نصب کرده‌اید امکان عدم نمایش نوتیفیکیشن برای شما وجود خواهد داشت. به عنوان مثال اگر کتابخانه **پوشه** را علاوه بر چابک روی اپ خود داشته باشید، زمانی که اپ شما بسته است، پوش‌نوتیفیکیشن دریافت می‌شود اما نوتیفیکیشن آن در دستگاه کاربر **نمایش داده نمی‌شود**.
 
+##### ۷- خطای نمایش پوش‌نوتیفیکیشن در اندروید ۷ به بالا (در ساخت Notification Channel)
+<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
+
+در صورتی که در اندروید ۷ به بالا در نمایش نوتیفیکیشن با ارور زیر در Logcat خود مواجه شدید؛
+
+```bash
+‍‍RNPushNotification: failed to send push notification
+RNPushNotification: java.lang.IllegalArgumentException
+RNPushNotification:    at android.os.Parcel.createException(Parcel.java:1970)
+RNPushNotification:    at android.os.Parcel.readException(Parcel.java:1934)
+RNPushNotification:    at android.os.Parcel.readException(Parcel.java:1884)
+RNPushNotification:    at android.app.INotificationManager$Stub$Proxy.createNotificationChannels(INotificationManager.java:1888)
+RNPushNotification:    at android.app.NotificationManager.createNotificationChannels(NotificationManager.java:577)
+RNPushNotification:    at android.app.NotificationManager.createNotificationChannel(NotificationManager.java:565)
+RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNotificationHelper.checkOrCreateChannel(RNPushNotificationHelper.java:577)
+RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNotificationHelper.sendToNotificationCentre(RNPushNotificationHelper.java:326)
+RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService.handleRemotePushNotification(RNPushNotificationListenerService.java:135)
+RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService.access$000(RNPushNotificationListenerService.java:28)
+RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNotificationListenerService$1.run(RNPushNotificationListenerService.java:86)
+```
+کد زیر را در فایل `AndroidManifest.xml` خود قرار دهید.
+
+```xml
+<meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_name"
+                android:value="default"/>
+```
 <Br>
 
 ## موارد بالا را بررسی کردم اما همچنان مشکلم برطرف نشده
