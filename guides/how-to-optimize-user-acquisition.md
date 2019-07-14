@@ -16,6 +16,8 @@ permalink: guides/how-to-optimize-user-acquisition.html
 <div style="text-align: center;"><img src="http://uupload.ir/files/nxjl_tracker-number-analytics.png">
 </div> 
 
+<Br>
+
 ### اهدافی که برای کاربران جدید تعیین کرده‌اید
 
 پس ارزیابی کانال و کمپین شما می‌توانید یک قدم جلوتر بروید و **کاربران جذب شده** را ارزیابی کنید. این کار را می‌توانید با تعیین **اهداف معنی‌دار** برای کاربران جدیدتان انجام دهید. به عنوان مثال شما به عنوان فروشگاه می‌توانید تعداد یا ارزش سفارشات کاربران جدید را هدف قرار دهید و تصمیم بگیرید آیا این کاربران مناسب کسب و کار شما هستند یا خیر. 
@@ -23,8 +25,8 @@ permalink: guides/how-to-optimize-user-acquisition.html
 <div style="text-align: center;"><img src="http://uupload.ir/files/muly_tracker-goals.png">
 </div> 
 
-<br>
-
+<Br><Br>
+    
 ### تحلیل آمار ترکر یک کمپین
 
 برای این کار فقط کافیست مدتی پس از ایجاد یک ترکر به **جزئیات ترکر** بروید و آمار زیر را مطالعه کنید.
