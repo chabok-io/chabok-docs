@@ -22,6 +22,8 @@ permalink: mobile-usecases/acquire-new-users.html
 
 ### فرصت‌های شما
 
+<br>
+
 ##### کانال‌های جذب مناسب خود را بیابید
 
 با استفاده از اتریبیوشن، **عملکرد** هر کانالی که برای جذب انتخاب می‌کنید **قابل اندازه‌گیری می‌شود**. با این امکان شما می‌توانید با بررسی کردن داده‌های هر کانال، مناسب‌ترین آن را برای خود انتخاب کنید و متمرکز روی همان هزینه کنید. 
@@ -49,5 +51,5 @@ permalink: mobile-usecases/acquire-new-users.html
 <br>
 
 <div align="center">   
-    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="/guides/how-to-optimize-acquisition.html">آموزش بهینه‌سازی جذب را ببینید.</a>
+    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="/guides/how-to-optimize-user-acquisition.html">آموزش بهینه‌سازی جذب را ببینید.</a>
 </div>
