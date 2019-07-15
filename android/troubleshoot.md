@@ -22,7 +22,8 @@ next: release-note.html
 
 #### به مقدار `APP_ID/SENDER_ID` دقت کنید
 
-در صورتی که با ارور **Application ID should be in `app-name/number` format** مواجه شدید، از صحیح بودن مقدار `APP_ID/SENDER_ID` در متد `init` اطمینان یابید. مقدار این پارامتر باید `APP_ID` به اضافه `SENDER_ID` (بدون فاصله) باشد.
+در صورتی که با خطای **Application ID should be in `app-name/number` format** مواجه شدید، از صحیح بودن مقدار `APP_ID/SENDER_ID` در متد `init` اطمینان یابید. مقدار این پارامتر باید `APP_ID` به اضافه `SENDER_ID` (بدون فاصله) باشد. به عنوان مثال این مقدار برای حساب دموی چابک 839879285435/chabok-starter می‌شود (مقدار عددی **SENDER_ID** است). 
+
 
 برای اطلاعات بیشتر می‌توانید مستندات [راه‌اندازی](/android/sdk-setup.html#۳--مقداردهی-اولیه-initialize) را مطالعه کنید.
 
