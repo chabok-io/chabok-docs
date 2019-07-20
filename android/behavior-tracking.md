@@ -79,4 +79,4 @@ AdpPushClient.get().trackPurchase("Purchase", event);
 
 شما می‌توانید رفتارهای هر کاربر را به صورت لیستی از رویدادها به ترتیب و با جزئیات زمان رخ دادن آن‌ها در بخش مشترکین پنل در قسمت **جزئیات دستگاه** مشاهده کنید.
 
-![عکس مربوطه](http://uupload.ir/files/ftel_logg.png)
+![عکس مربوطه](http://uupload.ir/files/20aq_activity.png)
