@@ -59,7 +59,7 @@ AdpPushClient.get().trackPurchase("Purchase", event);
 
 در ادامه مثال بالا، اکنون می‌خواهید برای کسانی که پوشاک خریداری کرده‌اند پیامی بفرستید که آن‌ها را از رسیدن کالکشن‌های جدید فصل خبردار کنید.
 
-![عکس مربوطه](http://uupload.ir/files/2oig_track.png)
+![عکس مربوطه](http://uupload.ir/files/h69l_behavior-based-push.png)
 
 <Br>
 
