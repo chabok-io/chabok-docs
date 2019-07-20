@@ -44,13 +44,13 @@ this.chabok.setUserAttributes({
 برای دریافت اطلاعت کاربر متد زیر را فراخوانی کنید:
 
 ```java
-this.chabok.getInstallationId()
+this.chabok.getUserAttributes()
 ```
 
 >`نکته:` در نسخه‌های ۱.۴.۰ یا پایین‌تر از متد زیر استفاده کنید:
 
 ```javascript
-this.chabok.setUserAttributes({
+this.chabok.setUserInfo({
                 firstName: 'مهدی',
                 lastName: 'یعقوبی',
                 age: 19,
