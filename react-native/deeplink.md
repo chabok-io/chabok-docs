@@ -4,7 +4,7 @@ title: دیپ لینک (Deeplink)
 layout: react-native
 permalink: react-native/deeplink.html
 prev: push-notification.html
-next: user-management.html
+next: custom-data.html
 ---
  
 دیپ لینک یا لینک عمقی در واقع استفاده از لینکی است که کاربران را به داخل یک صفحه خاص در وبسایت، و یا **قسمت خاصی از اپلیکیشن** هدایت می‌کند. به عبارت دیگر، دیپ لینک را می‌توانید به عنوان یک **میانبر (Shortcut) هوشمند** در نظر بگیرید که کاربر را به مقصدهای مرتبط (با پیام شما) هدایت می‌کند.
