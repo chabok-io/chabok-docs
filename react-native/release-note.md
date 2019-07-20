@@ -34,6 +34,8 @@ prev: troubleshoot.html
 
 - حالا متد `registerAsGuest` از شناسه کاربری مهمان پشتیبانی می‌کند 
 
+- افزودن پارامتر **AdvertisingId** برای متدهای `register(USER_ID, Ad_Id)` و `registerAsGuest(GUEST_USER_ID, Ad_Id)`
+
 - بهبود مدیریت اتصال به چابک
 
 - حل مشکل نمایش هشدار `setTimeout` در اندروید
