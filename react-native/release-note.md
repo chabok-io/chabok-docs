@@ -10,6 +10,40 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۱.۵.۰ - ۱۳۹۸/۰۴/۲۹](https://github.com/chabokpush/chabok-client-rn-js/releases/tag/v1.5.0)
+
+### تغییرات
+
+- پشتیبانی از [دیپ لینک در صورت نداشتن اپلیکیشن (deferred deep linking)](/react-native/deeplink.html#دیپ-لینک-قبل-از-نصب-اپلیکیشن-deferred-deep-linking) با متد `setOnDeeplinkResponseListener`
+
+- افزودن متد `appWillOpenUrl` برای ارسال اطلاعات اتریبیوشن دیپ لینک
+
+- پشتیبانی از مقدار [درآمد](/react-native/behavior-tracking.html#رصد-درآمد-tracking-revenue) با استفاده از متد `trackPurchase`
+
+- معرفی `notifDelivery` برای اطلاع از مشاهده شدن نوتیفیکیشن (impression)
+
+- پشتیبانی از بازخورد نوتیفیکیشن (influence) به صورت مستقیم یا غیر مستقیم
+
+- افرودن متدهای `notificationClicked`، `notificationShown`، `notificationDismissed` و `notificationActionClicked` برای نمایش آمار و آنالیتیکس
+
+- [افزودن متدهای `getUserAttributes` و `setUserAttributes`](/react-native/custom-data.html#مدیریت-اطلاعات-کاربر-user-attributes)
+
+- افزودن متد `incrementUserAttribute` برای [افزایش مقدار داده‌های کمیتی کاربر](/react-native/custom-data.html#افزایش-دادههای-کمیتی-کاربر) (این متد از آرایه‌ای از Attribute پشتیبانی می‌کند.)
+
+- بهبود رفتار متد `track` (زمانی که پارامتر **realtime** در تنظیمات **false** است.)
+
+- حالا متد `registerAsGuest` از شناسه کاربری مهمان پشتیبانی می‌کند 
+
+- بهبود مدیریت اتصال به چابک
+
+- حل مشکل نمایش هشدار `setTimeout` در اندروید
+
+### ارتقا
+
+- جایگزین شدن متدهای `getUserInfo` و `setUserinfo` با متدهای `getUserAttributes` و `setUserAttributes`
+
+- انتقال داده‌های سفارشی به data key در متدهای `publishEvent` و `track`
+
 ## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۱/۲۷](https://github.com/chabokpush/chabok-client-rn-js/releases/tag/v1.4.0)
 
 ### تغییرات
