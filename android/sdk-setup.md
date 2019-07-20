@@ -59,7 +59,8 @@ dependencies {
 ```xml
 <meta-data android:name="com.adpdigital.push.client.SHOW_ONLY_CHABOK_NOTIFICATIONS" android:value="ENABLE" />
 ```
-  
+<Br>  
+
 #### نصب کتابخانه با قابلیت مکان‌یابی چابک  
   
 درصورتی که در برنامه خود نیاز به استفاده از موقعیت مکانی کاربر دارید، لازم است در ابتدا کتابخانه `chabok-lib` را **حذف** و کتابخانه `chabok-lib-geo` را **جایگزین کنید**.   
