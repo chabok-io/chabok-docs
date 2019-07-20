@@ -3,7 +3,7 @@ id: custom-data
 title: داده‌های سفارشی کاربر
 layout: react-native
 permalink: react-native/custom-data.html
-prev: push-notification.html
+prev: deeplink.html
 next: behavior-tracking.html
 ---
 
