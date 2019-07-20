@@ -75,7 +75,7 @@ PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 
 در ادامه مثال بالا، اکنون می‌خواهید برای کسانی که پوشاک خریداری کرده‌اند پیامی بفرستید که آن‌ها را از رسیدن کالکشن‌های جدید فصل خبردار کنید.
 
-![عکس مربوطه](http://uupload.ir/files/2oig_track.png)
+![عکس مربوطه](http://uupload.ir/files/p1lb_behavior-based-push.png)
 
 <Br>
 
@@ -93,4 +93,4 @@ PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 
 - تاریخچه رویداد‌ها در جزئیات دستگاه
 
-![عکس مربوطه](http://uupload.ir/files/ftel_logg.png)
+![عکس مربوطه](http://uupload.ir/files/xurb_activity.png)
