@@ -49,7 +49,16 @@ dependencies {
     implementation 'com.google.android.gms:play-services-gcm:10.2.6'   
     implementation 'com.android.installreferrer:installreferrer:1.0'  
 }  
-```  
+``` 
+> `نکته:` چابک در حال حاضر از FCM بهره می‌برد؛ در عین حال به خاطر قابلیت backward compatibility خود از کاربرانی که از نسخه‌های پایین‌تر اندروید استفاده می‌کنند یا از GCM به FCM مهاجرت نکرده‌اند، پشتیبانی می‌کند. توجه داشته باشید که موضوع بسته شدن GCM برای سرورهای خودش است و در کلاینت‌های اندروید چابک، دریافت توکن پوش همچنان امکان‌پذیر است.
+
+- اگر از سرویس‌های پوش دیگری در کنار چابک استفاده می‌کنید می‌توانید با کد زیر از نمایش دوباره آن جلوگیری کنید.
+
+برای این کار کد زیر در فایل `AndroidManifest.xml` قرار دهید:
+
+```xml
+<meta-data android:name="com.adpdigital.push.client.SHOW_ONLY_CHABOK_NOTIFICATIONS" android:value="ENABLE" />
+```
   
 #### نصب کتابخانه با قابلیت مکان‌یابی چابک  
   
