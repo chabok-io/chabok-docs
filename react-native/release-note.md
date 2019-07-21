@@ -14,7 +14,7 @@ prev: troubleshoot.html
 
 ### تغییرات
 
-- پشتیبانی از [دیپ لینک در صورت نداشتن اپلیکیشن (deferred deep linking)](/react-native/deeplink.html#دیپ-لینک-قبل-از-نصب-اپلیکیشن-deferred-deep-linking) با متد `setOnDeeplinkResponseListener`
+- پشتیبانی از دیپ لینک استاندارد و Deferred ([قبل از نصب اپلیکیشن](/react-native/deeplink.html#دیپ-لینک-قبل-از-نصب-اپلیکیشن-deferred-deep-linking))
 
 - افزودن متد `appWillOpenUrl` برای ارسال اطلاعات اتریبیوشن دیپ لینک
 
