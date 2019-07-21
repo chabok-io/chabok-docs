@@ -59,7 +59,7 @@ AdpPushClient.get().trackPurchase("Purchase", event);
 
 در ادامه مثال بالا، اکنون می‌خواهید برای کسانی که پوشاک خریداری کرده‌اند پیامی بفرستید که آن‌ها را از رسیدن کالکشن‌های جدید فصل خبردار کنید.
 
-![عکس مربوطه](http://uupload.ir/files/2oig_track.png)
+![عکس مربوطه](http://uupload.ir/files/h69l_behavior-based-push.png)
 
 <Br>
 
@@ -79,4 +79,4 @@ AdpPushClient.get().trackPurchase("Purchase", event);
 
 شما می‌توانید رفتارهای هر کاربر را به صورت لیستی از رویدادها به ترتیب و با جزئیات زمان رخ دادن آن‌ها در بخش مشترکین پنل در قسمت **جزئیات دستگاه** مشاهده کنید.
 
-![عکس مربوطه](http://uupload.ir/files/ftel_logg.png)
+![عکس مربوطه](http://uupload.ir/files/20aq_activity.png)

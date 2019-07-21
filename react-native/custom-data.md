@@ -3,7 +3,7 @@ id: custom-data
 title: داده‌های سفارشی کاربر
 layout: react-native
 permalink: react-native/custom-data.html
-prev: push-notification.html
+prev: deeplink.html
 next: behavior-tracking.html
 ---
 
@@ -23,12 +23,10 @@ next: behavior-tracking.html
 
 #### ثبت اطلاعات کاربر 
 
-شما با دو متد زیر می‌توانید اطلاعات کاربر را ثبت و دریافت کنید. 
-
-- متد `setUserInfo` برای تنظیم اطلاعات کاربر:
+شما می‌توانید اطلاعاتی که از کاربر دارید (مانند نام، نام خانوادگی، جنسیت، سن و ...) را به طور دلخواه با استفاده از متد زیر، در پروفایل او ثبت کنید:
 
 ```javascript
-this.chabok.setUserInfo({
+this.chabok.setUserAttributes({
                 firstName: 'مهدی',
                 lastName: 'یعقوبی',
                 age: 19,
@@ -40,12 +38,33 @@ this.chabok.setUserInfo({
 
 ![عکس مربوطه](http://uupload.ir/files/9p2w_set-user-info-2.png)
 
-#### دریافت اطلاعات کاربر 
+#### دریافت اطلاعات کاربر
 
-- متد `getUserInfo` برای دریافت اطلاعات کاربر:
+برای دریافت اطلاعت کاربر متد زیر را فراخوانی کنید:
+
+```java
+this.chabok.getUserAttributes()
+```
+
+>`نکته:` در نسخه‌های ۱.۴.۰ یا پایین‌تر از متد زیر استفاده کنید:
 
 ```javascript
-chabok.getUserInfo()
+this.chabok.setUserInfo({
+                firstName: 'مهدی',
+                lastName: 'یعقوبی',
+                age: 19,
+                gender: 'مرد'
+            });
+```
+
+<br>
+
+#### افزایش داده‌های کمیتی کاربر
+
+شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی** و .. را به تعداد دلخواهتان **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
+
+```javascript
+this.chabok.incrementUserAttribute('visit_comedy_shows');
 ```
 <br><br>
 
@@ -55,6 +74,7 @@ chabok.getUserInfo()
 یکی از قوانین سگمنت، **تگ** یا همان **برچسب‌گذاری کاربران** می‌باشد. به عنوان مثال می‌توانید کاربران خود را بر اساس **جنسیت** برچسب‌گذاری کرده و به آن‌ها پیام خاصی را ارسال کنید و یا به کاربرانی که از پرداخت درون برنامه‌ای شما استفاده می‌کنند یک `Tag` با عنوان `Premium_User` اختصاص دهید.
 
 #### افزودن تگ
+
 با استفاده از متد زیر، شما می‌توانید به کاربر فعلی یک `Tag` اختصاص دهید :
 
 ```javascript
@@ -93,4 +113,3 @@ chabok.removeTags("Premium_User", "Male", "Teenage")
 ```
 
 > ‌ `نکته:` برای حذف همه تگ‌های یک کاربر می‌توانید در متد بالا، جای نام تگ‌ها را خالی بگذارید.
-
