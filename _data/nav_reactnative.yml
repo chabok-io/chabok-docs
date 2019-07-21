@@ -10,6 +10,8 @@
       title: پیام چابک
     - id: push-notification
       title: پوش‌نوتیفیکیشن
+    - id: deeplink
+      title: دیپ لینک
     - id: custom-data
       title: داده‌های سفارشی کاربر
     - id: behavior-tracking
