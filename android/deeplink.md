@@ -62,6 +62,24 @@ https://a.chabok.io/TRACKER_ID?deep_link=APP_NAME%3A%2F%2Fpagename
 ```java
 https://a.chabok.io/TRACKER_ID?deep_link=APP_NAME%3A%2F%2Fpagename&redirect=https://chabok.io
 ``` 
+<br>
+
+### نحوه استفاده در نوتیفیکیشن
+
+- نمونه Curl
+
+با اجرای دستور زیر در **Terminal** می‌توانید یک نوتیفیکیشن با **دیپ لینک** ارسال کنید. دقت کنید که در دستور زیر مقدار `<ACCESS_TOKEN>` حساب کاربری خود و مقدار `USER_ID` را شناسه‌ کاربری که می‌خواهید پیام به او تحویل داده شود، وارد نمایید. (این دستور برای ارسال به یک کاربر به خصوص است. برای ارسال به گروهی از کاربران به [این صفحه](https://doc.chabokpush.com/rest-api/send-push.html#%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%DA%AF%D8%B1%D9%88%D9%87%DB%8C) مراجعه کنید.)
+
+```bash
+curl -X POST \
+"https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
+-H "accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{ "user": "USER_ID", "content": "ما را در توئیتر دنبال کنید", "notification": { "clickUrl": "twitter://user?screen_name=chabokpush", "title": "ما را در توئیتر دنبال کنید", "body": "با فالو کردن چابک، از تخفیف ۲۰٪ ما بهرمند شوید.", "actions": [ { "id": "new_tweet_action", "title": "توئیت جدید", "options": 5, "url": "twitter://post?message=%40chabokpush%20%D8%B1%D9%88%20%D9%81%D8%A7%D9%84%D9%88%20%DA%A9%D8%B1%D8%AF%D9%85%20%D9%88%20%D8%AA%D8%AE%D9%81%DB%8C%D9%81%D9%85%D9%88%20%DA%AF%D8%B1%D9%81%D8%AA%D9%85%20" }], "mediaType": "jpeg", "mediaUrl": "https://raw.githubusercontent.com/chabokpush/chabok-assets/master/samples/notification/chabokpush_twitter.jpeg", "mutableContent": true, "category": "__TWITTER_FOLLOW__" } }'
+```
+با وارد کردن دستور زیر نوتیفیکیشن زیر همراه با دیپ لینک ارسال خواهد شد:
+
+<img src="http://uupload.ir/files/591w_android-deeplink.png" alt="Its You" height="583px" width="289.5px">
 
 <br>
 
@@ -91,6 +109,7 @@ protected void onNewIntent(Intent intent) {
     AdpPushClient.get().appWillOpenUrl(data);
 }
 ```
+
 <br>
 
 ### دیپ لینک قبل از نصب اپلیکیشن (Deferred Deep Linking)
@@ -115,20 +134,3 @@ AdpPushClient.get().setOnDeeplinkResponseListener(new OnDeeplinkResponseListener
 ```
 
 در صورتی که در بالا `true` برگردانید، چابک آن را باز می‌کند. اگر هم `false` برگردانید، خودتان تصمیم می‌گیرید که چه اتفاقی رخ دهد.
-
-<br>
-
-### نمونه Curl
-
-با اجرای دستور زیر در **Terminal** می‌توانید یک نوتیفیکیشن با **دیپ لینک** ارسال کنید. دقت کنید که در دستور زیر مقدار `<ACCESS_TOKEN>` حساب کاربری خود و مقدار `USER_ID` را شناسه‌ کاربری که می‌خواهید پیام به او تحویل داده شود، وارد نمایید. (این دستور برای ارسال به یک کاربر به خصوص است. برای ارسال به گروهی از کاربران به [این صفحه](https://doc.chabokpush.com/rest-api/send-push.html#%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%DA%AF%D8%B1%D9%88%D9%87%DB%8C) مراجعه کنید.)
-
-```bash
-curl -X POST \
-"https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
--H "accept: application/json" \
--H "Content-Type: application/json" \
--d '{ "user": "USER_ID", "content": "ما را در توئیتر دنبال کنید", "notification": { "clickUrl": "twitter://user?screen_name=chabokpush", "title": "ما را در توئیتر دنبال کنید", "body": "با فالو کردن چابک، از تخفیف ۲۰٪ ما بهرمند شوید.", "actions": [ { "id": "new_tweet_action", "title": "توئیت جدید", "options": 5, "url": "twitter://post?message=%40chabokpush%20%D8%B1%D9%88%20%D9%81%D8%A7%D9%84%D9%88%20%DA%A9%D8%B1%D8%AF%D9%85%20%D9%88%20%D8%AA%D8%AE%D9%81%DB%8C%D9%81%D9%85%D9%88%20%DA%AF%D8%B1%D9%81%D8%AA%D9%85%20" }], "mediaType": "jpeg", "mediaUrl": "https://raw.githubusercontent.com/chabokpush/chabok-assets/master/samples/notification/chabokpush_twitter.jpeg", "mutableContent": true, "category": "__TWITTER_FOLLOW__" } }'
-```
-با وارد کردن دستور زیر نوتیفیکیشن زیر همراه با دیپ لینک ارسال خواهد شد:
-
-<img src="http://uupload.ir/files/591w_android-deeplink.png" alt="Its You" height="583px" width="289.5px">
