@@ -7,7 +7,7 @@ prev: chabok-messaging.html
 next: deeplink.html
 ---
 
-چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات زیر برای [اندروید](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-اندروید) و [آی‌اواس](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-آیاواس) انجام دهید، سپس توکن‌ها را به چابک [اضافه نمایید](/react-native/push-notification.html#متد-افزودن-توکن-برای-ارسال-پوشنوتیفیکیشن). همچنین می‌توانید از نمایش اعلان به صورت **local** [استفاده کنید](/react-native/push-notification.html#نمایش-local-notifications).
+چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. برای بکارگیری آن لطفا تنظیمات زیر برای [اندروید](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-اندروید) و [آی‌اواس](/react-native/push-notification.html#تنظیم-پوشنوتیفیکیشن-آیاواس) انجام دهید، سپس توکن‌ها را به چابک [اضافه نمایید](/react-native/push-notification.html#متد-افزودن-توکن-برای-ارسال-پوشنوتیفیکیشن). همچنین می‌توانید از نمایش نوتیفیکیشن به صورت **local** [استفاده کنید](/react-native/push-notification.html#نمایش-local-notifications).
 
 <Br>
 
@@ -202,7 +202,7 @@ Link Binary With Libraries: libRCTPushNotification.a
 this.chabok.setPushNotificationToken("TOKEN")
 ```
 
-برای **نمایش اعلان** باید دسترسی‌های زیر را برای دستگاهتان در **اندروید** و **آی‌اواس** ایجاد کنید:
+برای **نمایش نوتیفیکیشن** باید دسترسی‌های زیر را برای دستگاهتان در **اندروید** و **آی‌اواس** ایجاد کنید:
 
 ```javascript
 var PushNotification = require('react-native-push-notification');
@@ -213,9 +213,16 @@ PushNotification.configure({
                     this.chabok.setPushNotificationToken(token)
                 }
             },
-            // (required) Called when a remote or local notification is opened or received
-            onNotification: function(notification) {
-                console.warn( 'NOTIFICATION:', notification );
+           // (required) Called when a remote or local notification is opened or received
+            onNotification: (notification) => {
+                console.warn( 'NOTIFICATION: ' + JSON.stringify(notification));
+
+                if (notification.userInteraction){
+                    this.chabok.notificationClicked(notification)
+                } else {
+                    this.chabok.notificationShown(notification)
+                }
+
                 // required on iOS only (see fetchCompletionHandler docs: https://facebook.github.io/react-native/docs/pushnotificationios.html)
                 notification.finish(PushNotificationIOS.FetchResult.NoData);
             },
@@ -230,11 +237,15 @@ PushNotification.configure({
         });
 ```
 
+با استفاده از پکیجی که در بالا معرفی کردیم (`react-native-push-notification`) می‌توانید با متدهای `notificationClicked` و `notificationShown` کلیک روی نوتیفیکیشن و نمایش آن را دریافت کنید.
+
+> `نکته:` در صورتی که از کتابخانه‌ای استفاده می‌کنید که در آن کلیک روی دکمه یا رد کردن نوتیفیکیشن تعریف شده است می‌توانید برای دریافت آن‌ها از متدهای `notificationActionClicked` و `notificationDismissed` استفاده کنید.
+
 <Br>
 
 ### نمایش Local Notifications
 
-برای نمایش اعلان (notification) به صورت Local روی پیام‌هایتان ([دقت داشته باشید که dependency آن را اعمال کرده‌باشید](https://doc.chabokpush.com/react-native/setup.html#%D9%85%D8%AA%D8%AF-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D8%AA%D9%88%DA%A9%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D9%BE%D9%88%D8%B4)) ، باید دستور زیر را اجرا کنید.
+برای نمایش نوتیفیکیشن به صورت Local روی پیام‌هایتان ([دقت داشته باشید که dependency آن را اعمال کرده‌باشید](https://doc.chabokpush.com/react-native/setup.html#%D9%85%D8%AA%D8%AF-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D8%AA%D9%88%DA%A9%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D9%BE%D9%88%D8%B4)) ، باید دستور زیر را اجرا کنید.
 
 
 ```bash
@@ -278,5 +289,3 @@ PushNotification.localNotification({
     actions: '["Yes", "No"]',  // (Android only) See the doc for notification actions to know more
 });
 ```
-
-

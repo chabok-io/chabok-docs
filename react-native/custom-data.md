@@ -66,6 +66,18 @@ this.chabok.setUserInfo({
 ```javascript
 this.chabok.incrementUserAttribute('visit_comedy_shows');
 ```
+ همچنین این متد از **آرایه‌ای** از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. به نمونه زیر دقت کنید: 
+
+```javascript
+this.chabok.incrementUserAttribute(['comedy_movie', 'workout'])
+```
+کد بالا به هر کدام از attributeها **یک عدد** اضافه می‌کند.
+
+برای اضافه کردن **تعداد دلخواه** به چند attribute می‌توانید از کد زیر استفاده کنید:
+
+```javascript
+this.chabok.incrementUserAttribute({workout: 10, size: 40})
+```
 <br><br>
 
 ### مدیریت تگ‌ها
