@@ -81,19 +81,39 @@ if (chabokNotification.getExtras() != null) {
 
 #### نمایش کامل متن‌های بلند در اعلان
 
-چابک به صورت پیش‌فرض متن پیام و پوش‌نوتیفیکیشن را به صورت `bigText` نمایش **نمی‌دهد**. در این حالت می‌توانید برای نمایش متن پیام و پوش‌نوتیفیکیشن با استفاده از متد `buildNotification` اقدام به نمایش اعلان شخصی‌سازی شده خود کنید و از قطعه کد زیر در متد فوق استفاده کنید: (دقت کنید که در متد فوق در صورت نمایش اعلان شخصی‌سازی شده، باید `return false` برگردانید)
+چابک به صورت پیش‌فرض متن پیام و پوش‌نوتیفیکیشن را به صورت `bigText` نمایش **نمی‌دهد**. در این حالت می‌توانید برای نمایش متن پیام و پوش‌نوتیفیکیشن با استفاده از متد `buildNotification` اقدام به نمایش اعلان شخصی‌سازی شده خود کنید و از قطعه کد زیر در متد فوق استفاده کنید:
 
 ```java
-NotificationManager notificationManager = (NotificationManager)
-		getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+@Override
+public boolean buildNotification(ChabokNotification chabokNotification, NotificationCompat.Builder builder) {
+	boolean isRichNotification = false;
 
-String notifText = chabokNotification.getText();
-builder.setStyle(new NotificationCompat.BigTextStyle().bigText(notifText));
-if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-    builder.setPriority(Notification.PRIORITY_MAX);
+	if (chabokNotification.getExtras() != null) {
+        	Bundle payload = chabokNotification.getExtras();
+
+        	//FCM message
+        	isRichNotification = payload.containsKey("mediaUrl");
+	} else if (chabokNotification.getMessage() != null) {
+        	PushMessage payload = chabokNotification.getMessage();
+
+        	//Chabok message
+        	if (payload.getNotification() != null) {
+                	isRichNotification = payload.getNotification().has("mediaUrl");
+        	}
+	}
+
+	if (!isRichNotification) {
+        	String notifText = chabokNotification.getText();
+        	if (notifText != null) {
+                	builder.setStyle(new NotificationCompat.BigTextStyle().bigText(notifText));
+                	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        	builder.setPriority(Notification.PRIORITY_MAX);
+                	}
+        	}
+	}
+	
+	return super.buildNotification(chabokNotification, builder);
 }
-
-notificationManager.notify(0, builder.build());
 ```
 
 <Br>
