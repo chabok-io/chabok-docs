@@ -187,7 +187,6 @@ this.chabok.register('USER_ID').then(({deviceId}) => {
 
 > `نکته`: مقدار `USER_ID` می‌تواند **بین ۳ تا ۳۲** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
 
-<br>
 
 ##### ورودی Advertising ID 
 
@@ -203,6 +202,7 @@ this.chabok.register(USER_ID, Ad_Id);
 ```javascript
 this.chabok.registerAsGuest(GUEST_USER_ID, Ad_Id);
 ```
+<br>
 
 #### ۲.۱. رصد رویدادها (Tracking Events)
 
