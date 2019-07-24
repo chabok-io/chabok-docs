@@ -96,51 +96,71 @@ dependencies {
 
 ##### ج- مقداردهی (Initialize)
 
-چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `init` چابک **باید** در کلاس `Application` در متد `onCreate` تحت هر شرایطی فراخوانی شود.
+چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `init` چابک **باید** در کلاس `Application` در متد `onCreate` تحت هر شرایطی فراخوانی شود.  
+  
+```java  
+public class MyAppClass extends Application {  
+  
+    @Override  
+    public void onCreate() {  
+        super.onCreate();  
+  
+        //AdpPushClient.init() should always be called in onCreate of Application class  
+        AdpPushClient.init(  
+                getApplicationContext(),  
+                MY_ACTIVITY.class,  
+                "APP_ID/SENDER_ID", //based on your environment  
+                "API_KEY",          //based on your environment  
+                "SDK_USERNAME",     //based on your environment  
+                "SDK_PASSWORD"      //based on your environment  
+        );  
+  
+        //true connects to Sandbox environment  
+        //false connects to Production environment  
+        AdpPushClient.get().setDevelopment(DEV_MODE);  
+    }  
+      
+    @Override  
+    public void onTerminate() {  
+        if (AdpPushClient.get() != null) {  
+            AdpPushClient.get().dismiss();  
+        }  
+  
+        super.onTerminate();  
+    }  
+}  
+```  
+  
+  > `نکته`: در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.  
+ 
+- ‍‍‍‍‍**MY_ACTIVITY**: این مقدار را نام کلاس `Activity` ای قرار دهید که چابک به طور پیش‌فرض پس از کلیک شدن روی اعلان، `Activity` تعیین شده را باز کند. (برای شخصی‌سازی اعلان‌ها [این بخش](/android/push-notification.html#شخصیسازی-نمایش-و-کلیک-روی-اعلان) را مشاهده کنید.)  
+  
+- **APP_ID/SENDER_ID**: برای این مقدار کافی است فقط `SENDER_ID` (شناسه‌ گوگل برای پوش‌نوتیفیکیشن) و `APP_ID` (شناسه چابک برای هر اپلیکیشن) را در کنار هم قرار دهید. به عنوان مثال این مقدار برای حساب دموی چابک `839879285/chabok-starter` می‌شود. (مقدار عددی `SENDER_ID` است.) 
 
-```java
-public class MyAppClass extends Application {
+- **API_KEY**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
+- **SDK_USERNAME**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
-        //AdpPushClient.init() should always be called in onCreate of Application class
-        AdpPushClient.init(
-                getApplicationContext(),
-                MY_ACTIVITY.class,
-                "APP_ID/SENDER_ID", //based on your environment
-                "API_KEY",          //based on your environment
-                "SDK_USERNAME",     //based on your environment
-                "SDK_PASSWORD"      //based on your environment
-        );
+- **SDK_PASSWORD**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
-        //true connects to Sandbox environment
-        //false connects to Production environment
-        AdpPushClient.get().setDevelopment(DEV_MODE);
-    }
+- ‍‍‍‍‍‍‍‍**setDevelopment**: متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
     
-    @Override
-    public void onTerminate() {
-        if (AdpPushClient.get() != null) {
-            AdpPushClient.get().dismiss();
-        }
+مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.  
+  
+```java  
+AdpPushClient.get().setDevelopment(DEV_MODE);  
+```  
 
-        super.onTerminate();
-    }
-}
-```
+> `نکته`: توجه داشته باشید متد `AdpPushClient.init` تحت هر شرایط **حتما** باید در کلاس `Application` و در متد `onCreate` فراخوانی شود. متد فوق برای مقداردهی پارامتر‌های ضروری چابک می‌باشد و در صورت عدم فراخوانی آن در حالت **بسته** (Kill) بودن اپلیکیشن، با خطا مواجه خواهید شد.  
+  
+> `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید تا پس از تایید و ساخت حساب عملیاتی شما، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد.  
 
-در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.
-
-
-مقدار `SENDER_ID` در پارامتر `APP_ID/SENDER_ID` همان **شناسه گوگل** برای *دریافت پوش‌نوتیفیکیشن* می‌باشد که در پنل در بخش [تنظیمات پلتفرم اندروید](/panel/settings.html#پلتفرمها) قرار داده‌اید و `APP_ID` همان `APP_ID‌`ای که در پنل در بخش [دسترسی و توکن‌ها](/panel/settings.html#دسترسیها-و-توکنها) قرار داده شده است، می‌باشد.
-
-متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد. مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
-
-
-
-<br>
+- **dismiss**: در متد `onTerminate` کلاس `Application` که در واقع آخرین فراخوانی در چرخه حیات این کلاس است، متد `dismiss` از کلاینت چابک را فراخوانی نمایید تا منابع در اختیار آزاد شوند. واضح است بعد از فراخوانی این متد دیگر نمی‌توان از نمونه جاری کلاینت استفاده کرد و باید دوباره نمونه‌سازی کنید.  
+  
+```java  
+AdpPushClient.get().dismiss();  
+```  
+<Br>  
 
 ##### د- ثبت کاربر (Register Users)
 
