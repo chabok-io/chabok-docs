@@ -38,7 +38,7 @@ next: sdk-setup.html
 
 ۴- کلیدهای **Legacy server key** و **Sender ID** را به ترتیب در فیلدهای مربوطه در بخش **تنظیمات**->**پلتفرم‌ها** در پنل چابک وارد نمایید.
 
-![عکس مربوطه](http://uupload.ir/files/b8mh_android-push-settings.png)
+![عکس مربوطه](http://uupload.ir/files/aeau_platform-settings-android.png)
 
 > `نکته`: مقدار **Sender ID** علاوه بر این قسمت، به عنوان یکی از پارامترهای مقداردهی اولیه در [راه‌اندازی](/android/sdk-setup.html) چابک نیز مورد استفاده قرار خواهد گرفت.
 
