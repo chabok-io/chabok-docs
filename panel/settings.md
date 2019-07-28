@@ -3,7 +3,7 @@ id: settings
 title: تنظیمات
 layout: panel
 permalink: panel/settings.html
-prev: send.html
+prev: inbox.html
 next: account-management.html
 ---
 
