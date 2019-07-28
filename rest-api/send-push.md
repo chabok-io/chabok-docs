@@ -216,28 +216,10 @@ curl -X POST \
 <td style="text-align: right;">نام آیکون</td>
 </tr>
 <tr>
-<td style="text-align: center;">(id (action</td>
-<td style="text-align: right;">شناسه اکشن</td>
-<td style="text-align: center;">string</td>
-<td style="text-align: right;">check</td>
-</tr>
-<tr>
-<td style="text-align: center;">(title (action</td>
-<td style="text-align: right;">عنوان اکشن</td>
-<td style="text-align: center;">string</td>
-<td style="text-align: right;">status</td>
-</tr>
-<tr>
-<td style="text-align: center;">(options (action</td>
-<td style="text-align: right;">رفتار اکشن (فقط آی&zwnj;او&zwnj;اس)</td>
-<td style="text-align: center;">number</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr>
-<td style="text-align: center;">(icon (action</td>
-<td style="text-align: right;">نام آیکون در فولدر drawable (فقط اندروید)</td>
-<td style="text-align: center;">string</td>
-<td style="text-align: right;">نام آیکون</td>
+<td style="text-align: center;">actions</td>
+<td style="text-align: right;">دکمه (اکشن)</td>
+<td style="text-align: center;">array</td>
+<td style="text-align: right;">آرایه‌ای از جدول زیر</td>
 </tr>
 <tr>
 <td style="text-align: center;">mediaType</td>
@@ -268,6 +250,49 @@ curl -X POST \
 <td style="text-align: right;">شناسه نوتیفیکیشن برای ذخیره آن</td>
 <td style="text-align: center;">string</td>
 <td style="text-align: right;">delivery</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">پارامترها</th>
+<th style="text-align: right">توضیح</th>
+<th style="text-align: center">نوع مقدار</th>
+<th style="text-align: right">مثال</th>
+</tr>
+</thead>
+<tbody><tr>
+<td style="text-align: center;">(id (action</td>
+<td style="text-align: right;">شناسه اکشن</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">forecast_action</td>
+</tr>
+<tr>
+<td style="text-align: center;">(title (action</td>
+<td style="text-align: right;">عنوان اکشن</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">پیش‌بینی کن</td>
+</tr>
+<tr>
+<td style="text-align: center;">(options (action</td>
+<td style="text-align: right;">رفتار اکشن (فقط آی&zwnj;او&zwnj;اس)</td>
+<td style="text-align: center;">number</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">(icon (action</td>
+<td style="text-align: right;">نام آیکون در فولدر drawable (فقط اندروید)</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">نام آیکون</td>
+</tr>
+<tr>
+<td style="text-align: center;">(url (action</td>
+<td style="text-align: right;">لینک مقصد یا دیپ لینک</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">starter:/detail?id=123</td>
 </tr>
 </tbody>
 </table>
@@ -509,6 +534,7 @@ curl -X POST \
 
 <br>
 
+
 <details style="text-align: right"><summary> جدول پارامترهای نوتیفیکیشن</summary>
 <p>
 <table class="table table-striped table-bordered">
@@ -570,28 +596,10 @@ curl -X POST \
 <td style="text-align: right;">نام آیکون</td>
 </tr>
 <tr>
-<td style="text-align: center;">(id (action</td>
-<td style="text-align: right;">شناسه اکشن</td>
-<td style="text-align: center;">string</td>
-<td style="text-align: right;">check</td>
-</tr>
-<tr>
-<td style="text-align: center;">(title (action</td>
-<td style="text-align: right;">عنوان اکشن</td>
-<td style="text-align: center;">string</td>
-<td style="text-align: right;">status</td>
-</tr>
-<tr>
-<td style="text-align: center;">(options (action</td>
-<td style="text-align: right;">رفتار اکشن (فقط آی&zwnj;او&zwnj;اس)</td>
-<td style="text-align: center;">number</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr>
-<td style="text-align: center;">(icon (action</td>
-<td style="text-align: right;">نام آیکون در فولدر drawable (فقط اندروید)</td>
-<td style="text-align: center;">string</td>
-<td style="text-align: right;">نام آیکون</td>
+<td style="text-align: center;">actions</td>
+<td style="text-align: right;">دکمه (اکشن)</td>
+<td style="text-align: center;">array</td>
+<td style="text-align: right;">آرایه‌ای از جدول زیر</td>
 </tr>
 <tr>
 <td style="text-align: center;">mediaType</td>
@@ -625,9 +633,53 @@ curl -X POST \
 </tr>
 </tbody>
 </table>
+
+<br>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">پارامترها</th>
+<th style="text-align: right">توضیح</th>
+<th style="text-align: center">نوع مقدار</th>
+<th style="text-align: right">مثال</th>
+</tr>
+</thead>
+<tbody><tr>
+<td style="text-align: center;">(id (action</td>
+<td style="text-align: right;">شناسه اکشن</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">forecast_action</td>
+</tr>
+<tr>
+<td style="text-align: center;">(title (action</td>
+<td style="text-align: right;">عنوان اکشن</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">پیش‌بینی کن</td>
+</tr>
+<tr>
+<td style="text-align: center;">(options (action</td>
+<td style="text-align: right;">رفتار اکشن (فقط آی&zwnj;او&zwnj;اس)</td>
+<td style="text-align: center;">number</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">(icon (action</td>
+<td style="text-align: right;">نام آیکون در فولدر drawable (فقط اندروید)</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">نام آیکون</td>
+</tr>
+<tr>
+<td style="text-align: center;">(url (action</td>
+<td style="text-align: right;">لینک مقصد یا دیپ لینک</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">starter:/detail?id=123</td>
+</tr>
+</tbody>
+</table>
 </p>
 
 <div markdown="1">
+
 
 > `نکته :` نماد <font color="red">*</font> در جدول پارامترها به معنی **الزامی** بودن پارامتر است و بدون آن‌ درخواست شما صورت نمی‌گیرد. 
 <br>
@@ -870,28 +922,10 @@ curl -X POST \
 <td style="text-align: right;">نام آیکون</td>
 </tr>
 <tr>
-<td style="text-align: center;">(id (action</td>
-<td style="text-align: right;">شناسه اکشن</td>
-<td style="text-align: center;">string</td>
-<td style="text-align: right;">check</td>
-</tr>
-<tr>
-<td style="text-align: center;">(title (action</td>
-<td style="text-align: right;">عنوان اکشن</td>
-<td style="text-align: center;">string</td>
-<td style="text-align: right;">status</td>
-</tr>
-<tr>
-<td style="text-align: center;">(options (action</td>
-<td style="text-align: right;">رفتار اکشن (فقط آی&zwnj;او&zwnj;اس)</td>
-<td style="text-align: center;">number</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr>
-<td style="text-align: center;">(icon (action</td>
-<td style="text-align: right;">نام آیکون در فولدر drawable (فقط اندروید)</td>
-<td style="text-align: center;">string</td>
-<td style="text-align: right;">نام آیکون</td>
+<td style="text-align: center;">actions</td>
+<td style="text-align: right;">دکمه (اکشن)</td>
+<td style="text-align: center;">array</td>
+<td style="text-align: right;">آرایه‌ای از جدول زیر</td>
 </tr>
 <tr>
 <td style="text-align: center;">mediaType</td>
@@ -925,9 +959,53 @@ curl -X POST \
 </tr>
 </tbody>
 </table>
+
+<br>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">پارامترها</th>
+<th style="text-align: right">توضیح</th>
+<th style="text-align: center">نوع مقدار</th>
+<th style="text-align: right">مثال</th>
+</tr>
+</thead>
+<tbody><tr>
+<td style="text-align: center;">(id (action</td>
+<td style="text-align: right;">شناسه اکشن</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">forecast_action</td>
+</tr>
+<tr>
+<td style="text-align: center;">(title (action</td>
+<td style="text-align: right;">عنوان اکشن</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">پیش‌بینی کن</td>
+</tr>
+<tr>
+<td style="text-align: center;">(options (action</td>
+<td style="text-align: right;">رفتار اکشن (فقط آی&zwnj;او&zwnj;اس)</td>
+<td style="text-align: center;">number</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">(icon (action</td>
+<td style="text-align: right;">نام آیکون در فولدر drawable (فقط اندروید)</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">نام آیکون</td>
+</tr>
+<tr>
+<td style="text-align: center;">(url (action</td>
+<td style="text-align: right;">لینک مقصد یا دیپ لینک</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">starter:/detail?id=123</td>
+</tr>
+</tbody>
+</table>
 </p>
 
 <div markdown="1">
+
 
 > `نکته :` نماد <font color="red">*</font> در جدول پارامترها به معنی **الزامی** بودن پارامتر است و بدون آن‌ درخواست شما صورت نمی‌گیرد. 
 <br>
