@@ -289,7 +289,7 @@ curl -X POST \
 <td style="text-align: right;">نام آیکون</td>
 </tr>
 <tr>
-<td style="text-align: center;">(url(action</td>
+<td style="text-align: center;">(url (action</td>
 <td style="text-align: right;">لینک مقصد یا دیپ لینک</td>
 <td style="text-align: center;">string</td>
 <td style="text-align: right;">starter:/detail?id=123</td>
@@ -669,7 +669,7 @@ curl -X POST \
 <td style="text-align: right;">نام آیکون</td>
 </tr>
 <tr>
-<td style="text-align: center;">(url(action</td>
+<td style="text-align: center;">(url (action</td>
 <td style="text-align: right;">لینک مقصد یا دیپ لینک</td>
 <td style="text-align: center;">string</td>
 <td style="text-align: right;">starter:/detail?id=123</td>
@@ -995,7 +995,7 @@ curl -X POST \
 <td style="text-align: right;">نام آیکون</td>
 </tr>
 <tr>
-<td style="text-align: center;">(url(action</td>
+<td style="text-align: center;">(url (action</td>
 <td style="text-align: right;">لینک مقصد یا دیپ لینک</td>
 <td style="text-align: center;">string</td>
 <td style="text-align: right;">starter:/detail?id=123</td>
