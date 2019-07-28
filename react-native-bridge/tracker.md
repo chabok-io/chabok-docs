@@ -158,6 +158,12 @@ $ pod update
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود.  
 
 ```java
+import com.adpdigital.push.PushMessage;
+import com.adpdigital.push.AdpPushClient;
+import com.adpdigital.push.ChabokNotification;
+import com.adpdigital.push.NotificationHandler;
+import com.adpdigital.push.ChabokNotificationAction;
+
 public class MyAppClass extends Application {
 
     @Override
@@ -173,6 +179,15 @@ public class MyAppClass extends Application {
                 "SDK_USERNAME",     //based on your environment
                 "SDK_PASSWORD"      //based on your environment
         );
+	
+	AdpPushClient.get().addNotificationHandler(new NotificationHandler(){
+        	@Override
+        	public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
+          		ChabokReactPackage.notificationOpened(message, notificationAction);
+          		return super.notificationOpened(message, notificationAction);
+        	}
+      	});
+
     }
     
     @Override
