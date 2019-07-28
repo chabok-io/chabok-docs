@@ -6,10 +6,12 @@
       title: ترکر
     - id: users
       title: کاربران
+    - id: segment 
+      title: سگمنت
+    - id: send
+      title: ایجاد کمپین
     - id: inbox
       title: پیام‌ها
-    - id: send
-      title:  ایجاد کمپین
     - id: settings
       title: تنظیمات
     - id: account-management
