@@ -216,10 +216,28 @@ curl -X POST \
 <td style="text-align: right;">نام آیکون</td>
 </tr>
 <tr>
-<td style="text-align: center;">actions</td>
-<td style="text-align: right;">دکمه‌ها (اکشن)</td>
-<td style="text-align: center;">array</td>
-<td style="text-align: right;">آرایه‌ای از جدول زیر</td>
+<td style="text-align: center;">(id (action</td>
+<td style="text-align: right;">شناسه اکشن</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">check</td>
+</tr>
+<tr>
+<td style="text-align: center;">(title (action</td>
+<td style="text-align: right;">عنوان اکشن</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">status</td>
+</tr>
+<tr>
+<td style="text-align: center;">(options (action</td>
+<td style="text-align: right;">رفتار اکشن (فقط آی&zwnj;او&zwnj;اس)</td>
+<td style="text-align: center;">number</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">(icon (action</td>
+<td style="text-align: right;">نام آیکون در فولدر drawable (فقط اندروید)</td>
+<td style="text-align: center;">string</td>
+<td style="text-align: right;">نام آیکون</td>
 </tr>
 <tr>
 <td style="text-align: center;">mediaType</td>
@@ -255,11 +273,7 @@ curl -X POST \
 </table>
 </p>
 
-<div markdown="1">
-
 <br>
-
-<p>
 <table>
 <thead>
 <tr>
@@ -299,7 +313,6 @@ curl -X POST \
 <td style="text-align: center;">string</td>
 <td style="text-align: right;">starter:/detail?id=123</td>
 </tr>
-</p>
 
 <div markdown="1">
 
