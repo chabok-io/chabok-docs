@@ -82,7 +82,7 @@ next: settings.html
 
 پس از فعال کردن کمپین خودکار، می‌توانید جزئیات آن را مانند گیرندگان، تحویل‌های پیام و نوتیفیکیشن، رویداد شروع کننده و متوقف کننده (در صورت تعیین آن) و ... مشاهده کنید.  
 
-![عکس مربوطه](http://uupload.ir/files/mvwd_automated-campaign-analytics.png)
+![عکس مربوطه](http://uupload.ir/files/r39m_autopush-details.png)
 
 <Br><Br>
 
