@@ -150,52 +150,100 @@ $ pod update
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود.  
 
 ```java
-import com.adpdigital.push.PushMessage;
+import android.app.Application;
+
+//React-Native
+import com.facebook.react.ReactPackage;
+import com.facebook.react.ReactNativeHost;
+import com.facebook.react.ReactApplication;
+import com.adpdigital.push.rn.ChabokReactPackage;
+import com.facebook.react.shell.MainReactPackage;
+
+//Chabok
 import com.adpdigital.push.AdpPushClient;
 import com.adpdigital.push.ChabokNotification;
 import com.adpdigital.push.NotificationHandler;
 import com.adpdigital.push.ChabokNotificationAction;
 
-public class MyAppClass extends Application {
+//Java
+import java.util.List;
+import java.util.Arrays;
+
+public class MainApplication extends Application implements ReactApplication {
+
+  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+    @Override
+    public boolean getUseDeveloperSupport() {
+      return BuildConfig.DEBUG;
+    }
 
     @Override
-    public void onCreate() {
-        super.onCreate();
-
-        //AdpPushClient.init() should always be called in onCreate of Application class
-        AdpPushClient.init(
-                getApplicationContext(),
-                MainActivity.class,
-                "APP_ID/SENDER_ID", //based on your environment
-                "API_KEY",          //based on your environment
-                "SDK_USERNAME",     //based on your environment
-                "SDK_PASSWORD"      //based on your environment
-        );
-	
-	AdpPushClient.get().addNotificationHandler(new NotificationHandler(){
-        	@Override
-        	public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
-          		ChabokReactPackage.notificationOpened(message, notificationAction);
-          		return super.notificationOpened(message, notificationAction);
-        	}
-      	});
-
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+              new MainReactPackage(),
+              new ChabokReactPackage()
+      );
     }
-    
+
     @Override
-    public void onTerminate() {
-        AdpPushClient.get().dismiss();
-
-        super.onTerminate();
+    protected String getJSMainModuleName() {
+      return "index";
     }
+  };
+
+  @Override
+  public void onCreate() {
+    super.onCreate();
+
+    //AdpPushClient.init() should always be called in onCreate of Application class
+    AdpPushClient.init(
+            getApplicationContext(),
+            MainActivity.class,
+            "APP_ID/SENDER_ID", //based on your environment
+            "API_KEY",          //based on your environment
+            "USERNAME",     //based on your environment
+            "PASSWORD"      //based on your environment
+    );
+
+    AdpPushClient.get().addNotificationHandler(new NotificationHandler(){
+      @Override
+      public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
+        ChabokReactPackage.notificationOpened(message, notificationAction);
+        return super.notificationOpened(message, notificationAction);
+      }
+    });
+
+  }
+
+  @Override
+  public void onTerminate() {
+    AdpPushClient.get().dismiss();
+
+    super.onTerminate();
+  }
+
+  @Override
+  public ReactNativeHost getReactNativeHost() {
+    return mReactNativeHost;
+  }
 }
 ```
+
+  > `نکته`: در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/react-native-bridge/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.   
+  
+- **APP_ID/SENDER_ID**: برای این مقدار کافی است فقط `SENDER_ID` ([شناسه‌ گوگل برای پوش‌نوتیفیکیشن](/android/required.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D9%84%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%DA%AF%D9%88%DA%AF%D9%84)) و `APP_ID` (شناسه چابک برای هر اپلیکیشن) را در کنار هم قرار دهید. به عنوان مثال این مقدار برای حساب دموی چابک `839879285/chabok-starter` می‌شود. (مقدار عددی `SENDER_ID` است.) 
+
+- **API_KEY**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
+
+- **SDK_USERNAME**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
+
+- **SDK_PASSWORD**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
+
 
 برای ارتباط با سرور چابک، لازم است یک نمونه از کلاس `chabok.AdpPushClient` بسازید و آن را مقدار‌دهی کنید.
  فراخوانی این متد فقط یکبار کافی است.
 
- برای مقدار‌دهی اولیه می‌بایست از طریق متد `init` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. در `const options` به جای پارامتر‌های `APP_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/react-native/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.
-
+ برای مقدار‌دهی اولیه می‌بایست از طریق متد `init` اطلاعات حساب چابک و تنظیمات اولیه را وارد نمایید. در `const options` به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را که در بالا توضیح داده شده، وارد نمایید.
  به قطعه کد زیر دقت کنید:
 
 ```javascript
@@ -204,10 +252,10 @@ import chabok from 'react-native-chabok';
 
 componentDidMount(){
 	const options = {
-		appId: "APP_ID/GOOGLE_SENDER_ID", //based on your environment
-		apiKey: "API_KEY",				  //based on your environment
-		username: "SDK_USERNAME",		  //based on your environment
-		password: "SDK_PASSWORD", 		  //based on your environment
+		appId: "APP_ID/SENDER_ID", 		//based on your environment
+		apiKey: "API_KEY",			//based on your environment
+		username: "SDK_USERNAME",		//based on your environment
+		password: "SDK_PASSWORD", 		//based on your environment
 
 		//true connects to Sandbox environment
 		//false connects to Production environment
@@ -232,7 +280,7 @@ componentDidMount(){
 }
 ```
 
-در  `options`  به جای پارامتر‌های  `APP_ID`,  `API_KEY(SDK_KEY)`,  `SDK_USERNAME`,  `SDK_PASSWORD`مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش  [پیش‌نیازها](/react-native-bridge/required.html)  توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از  [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7)  بردارید.
+در  `options`  به جای پارامتر‌های  `APP_ID/SENDER_ID`,  `API_KEY(SDK_KEY)`,  `SDK_USERNAME`,  `SDK_PASSWORD`مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش  [پیش‌نیازها](/react-native-bridge/required.html)  توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از  [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7)  بردارید.
 
 مقدار  `devMode`  تعیین می‌کند که اپلیکیشن شما به محیط  [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com/)  و یا  [عملیاتی (Production)](https://panel.push.adpdigital.com/) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد. مقدار  `true`  به محیط آزمایشی و مقدار`false`  به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (`appId`,  `apiKey`,  `username`  و  `password`) خودش در متد  `init`  نیاز دارد. بنابراین در صورت تغییر مقدار  `devMode`  کلید‌های دسترسی آن هم باید تغییر داده شود.
 
