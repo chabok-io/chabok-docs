@@ -77,7 +77,7 @@ next: sdk-setup.html
 
 <Br>
 
-![عکس مربوطه](http://uupload.ir/files/ae8b_certificateq.png)
+![عکس مربوطه](http://uupload.ir/files/89cz_ios-push-settings.png)
 
 <Br>
 
