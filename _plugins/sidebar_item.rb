@@ -51,9 +51,15 @@ module Jekyll
     def sidebar_helper(item, group)
       forceInternal = item["forceInternal"]
 
+      subItems = item["subitems"]
       pageID = @context.registers[:page]["id"]
       itemID = item["id"]
-      href = item["href"] || "/#{group}/#{itemID}.html"
+      if item["href"] != nil
+        href = "#{pageID}.html##{item["href"]}" || "/#{group}/#{itemID}.html"
+        itemID = pageID
+      else
+        href = item["href"] || "/#{group}/#{itemID}.html"
+      end
       classes = []
       if pageID == itemID
         classes.push("active")
@@ -63,7 +69,17 @@ module Jekyll
       end
       className = classes.size > 0  ? " class=\"#{classes.join(' ')}\"" : ""
 
-      return "<a href=\"#{href}\"#{className}>#{item["title"]}</a>"
+      result = ""
+      if subItems != nil && pageID == itemID
+        result = "<ul><a href=\"#{href}\"#{className}>#{item["title"]}</a>"
+        subItems.each {|curItem|
+          result += "<li><a href=\"#{pageID}.html##{curItem["href"]}\">#{curItem["title"]}</a></li>"
+        }
+        result += "</ul>"
+      else
+        result = "<a href=\"#{href}\"#{className}>#{item["title"]}</a>"
+      end
+      return result
     end
 
   end
