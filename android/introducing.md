@@ -32,7 +32,7 @@ next: required.html
 
 - **آنالیتیکس (Analytics)**: تمام داده‌های کاربردی یکجا و به صورت آنی به نمایش گذاشته می‌شوند.
 
-<div style="text-align: center ;"><img src="https://svgshare.com/i/Br6.svg" class="img-fluid" style="
+<div style="text-align: center ;"><img src="https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/attribution-introducing.svg?sanitize=true" class="img-fluid" style="
     height: 260px;
 "></div> 
 
@@ -53,7 +53,7 @@ next: required.html
 - **خدمات مبتنی بر مکان** (رصد یابی مکانی، جستجوی کاربران نزدیک و …)
 
 
-<div style="text-align: center;"><img src="https://svgshare.com/i/7xC.svg" /></div> 
+<div style="text-align: center;"><img src="https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/realtime-backend-service.svg?sanitize=true" /></div> 
 
 <br>
 
