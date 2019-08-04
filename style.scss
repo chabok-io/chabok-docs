@@ -803,3 +803,26 @@ footer{
   width : 24px!important;
   top:5px!important;
 }
+
+.editBtn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 62px;
+  height: 40px;
+  float: left;
+  border-radius: 4px;
+}
+
+.edit-page-link {
+  border-color: #0D47A1;
+  color: #0D47A1;
+}
+
+.edit-page-link:hover {
+  background-color: #0D47A1;
+  color: white;
+}
