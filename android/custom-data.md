@@ -38,7 +38,7 @@ AdpPushClient.get().setUserAttributes(userAttribute);
 
 ![عکس مربوطه](http://uupload.ir/files/ovf0_set-user-info.png)
 
->`نکته:` در صورتی که از نسخه ۲.۱۶.۰ یا پایین‌‌تر چابک استفاده می‌کنید، باید از متد زیر را به کار ببرید.
+>`نکته:` در صورتی که از نسخه ۲.۱۶.۰ یا پایین‌‌تر چابک استفاده می‌کنید، باید متد زیر را به کار ببرید.
 
 ```java
 HashMap<String, Object> userInfo = new HashMap<>();
