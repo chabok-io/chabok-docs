@@ -22,8 +22,29 @@
            
     - id: tracker
       title: ترکر نصب
+      subitems:
+        - title: پیاده‌سازی
+          href: ۱-پیادهسازی-sdk-integration
+        - title: ترک نصب‌ها
+          href: ۲-ترک-نصبها-tracking-installs
+        - title: ترک نصب‌ها از استورها
+          href: ۳-ترک-کمپینهای-نصب-از-استورها
+        - title: مکانیزم ضد تقلب
+          href: ۶-مکانیزم-ضد-تقلب-fraud-prevention
+        - title: مفاهیم ترکر
+          href: ۷-آشنایی-با-برخی-مفاهیم-ترکر
+    
+    
     - id: chabok-messaging
       title: پیام چابک
+      subitems:
+        - title: دریافت پیام
+          href: دریافت-پیام
+        - title: ارسال پیام
+          href: ارسال-پیام
+        - title: کانال
+          href: کانال
+  
     - id: push-notification	
       title: پوش‌نوتیفیکیشن
       subitems:
