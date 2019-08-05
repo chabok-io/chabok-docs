@@ -10,14 +10,12 @@ prev: troubleshoot.html
 
 <Br>
 
-
-
 ## [نسخه ۲.۱۷.۲ - ۱۳۹۸/۰۵/۱۴](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.17.2)
 
 ### تغییرات
 
 - بهبود ثبت کاربر برای دستگاه‌هایی که از play services پشتیبانی نمی‌کنند. (پس از نمایش هشدار)
-- افزودن متد `setEnableAlertForNotSupportingGcm` برای نمایش هشدار مربوط به عدم پشتیبانی از play services
+- افزودن متد `setEnableAlertForNotSupportingGcm` برای مدیریت نمایش هشدار مربوط به عدم پشتیبانی از play services
 - بهبود دریافت آمار کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن) 
 - بهبود نمایش پوش خودکار مکانی (Geo-fence)
 - از این پس متد `registerAsGuest` شناسه مهمان (`guestId`) می‌گیرد.
