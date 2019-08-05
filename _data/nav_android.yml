@@ -2,8 +2,8 @@
   items:
     - id: required
       title: پیش‌نیازها
-	    subitems:
-		    - title: ایجاد حساب
+      subitems:
+	- title: ایجاد حساب
           href: ایجاد-حساب-چابک
         - title: دریافت کلیدهای گوگل
           href: دریافت-کلیدهای-گوگل
@@ -11,7 +11,7 @@
     - id: sdk-setup
       title: راه‌اندازی
       subitems:
-		    - title: نصب کتابخانه
+        - title: نصب کتابخانه
           href: ۱--نصب-کتابخانه
         - title: افزودن GcmReceiver
           href: ۲--افزودن-کلاس-gcmreceiver-به-فایل-manifest
