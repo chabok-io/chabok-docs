@@ -23,7 +23,7 @@ prev: troubleshoot.html
 - از این پس متد `registerAsGuest` شناسه مهمان (`guestId`) می‌گیرد.
 - از این پس **push service** چابک، از اجازه اجرا در `Background` **اندروید O** پیروی می کند.
 - حالا حداقل طول `userId` **یک** کاراکتر است.
-- افزودن متد `init(context, mainActivityClass, APP_ID, API_KEY, USERNAME, PASSWORD, SENDER_ID)` جدید با قابلیت اختیاری بودن `SENDER_ID`
+- افزودن متد `)init(context, mainActivityClass, APP_ID, API_KEY, USERNAME, PASSWORD, SENDER_ID` جدید با قابلیت اختیاری بودن `SENDER_ID`
 - حل مشکل دریافت `advertisingId ` از دستگاه‌هایی که OEM buildهای مختلفی دارند
 - حل مشکل کرش کردن دستگاه‌هایی که `androidId` ندارند
 
