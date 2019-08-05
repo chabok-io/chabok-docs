@@ -207,15 +207,15 @@
             {% for item in section.items %}
             <li>
                 {{ item | panel_sidebar_link}}
-                {% if item.subitems %}
-                <ul>
-                    {% for subitem in item.subitems %}
-                    <li>
-                        {{ subitem | panel_sidebar_link }}
-                    </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
+                <!--{% if item.subitems %}-->
+                <!--<ul>-->
+                    <!--{% for subitem in item.subitems %}-->
+                    <!--<li>-->
+                        <!--{{ subitem | panel_sidebar_link }}-->
+                    <!--</li>-->
+                    <!--{% endfor %}-->
+                <!--</ul>-->
+                <!--{% endif %}-->
             </li>
             {% endfor %}
         </ul>

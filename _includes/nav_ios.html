@@ -45,15 +45,15 @@
             {% for item in section.items %}
             <li>
                 {{ item | ios_sidebar_link}}
-                {% if item.subitems %}
-                <ul>
-                    {% for subitem in item.subitems %}
-                    <li>
-                        {{ subitem | ios_sidebar_link }}
-                    </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
+                <!--{% if item.subitems %}-->
+                <!--<ul>-->
+                    <!--{% for subitem in item.subitems %}-->
+                    <!--<li>-->
+                        <!--{{ subitem | ios_sidebar_link }}-->
+                    <!--</li>-->
+                    <!--{% endfor %}-->
+                <!--</ul>-->
+                <!--{% endif %}-->
             </li>
             {% endfor %}
         </ul>

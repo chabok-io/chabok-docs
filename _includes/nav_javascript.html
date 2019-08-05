@@ -72,15 +72,15 @@
             {% for item in section.items %}
             <li>
                 {{ item | javascript_sidebar_link}}
-                {% if item.subitems %}
-                <ul>
-                    {% for subitem in item.subitems %}
-                    <li>
-                        {{ subitem | javascript_sidebar_link }}
-                    </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
+                <!--{% if item.subitems %}-->
+                <!--<ul>-->
+                    <!--{% for subitem in item.subitems %}-->
+                    <!--<li>-->
+                        <!--{{ subitem | javascript_sidebar_link }}-->
+                    <!--</li>-->
+                    <!--{% endfor %}-->
+                <!--</ul>-->
+                <!--{% endif %}-->
             </li>
             {% endfor %}
         </ul>

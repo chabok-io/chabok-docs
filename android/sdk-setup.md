@@ -13,7 +13,7 @@ next: tracker.html
   
 [ ۱- نصب کتابخانه](/android/sdk-setup.html#۱--نصب-کتابخانه)  
   
-[۲- افزودن `GcmReceiver` به فایل `Manifest`](/android/sdk-setup.html#۲--افزودن-کلاس--gcmreceiver-به-فایل-manifest)  
+[۲- افزودن `GcmReceiver` به فایل `Manifest`](/android/sdk-setup.html#۲--افزودن-کلاس-gcmreceiver-به-فایل-manifest)  
   
 [۳- مقداردهی اولیه (Initialize)](/android/sdk-setup.html#۳--مقداردهی-اولیه-initialize)  
   

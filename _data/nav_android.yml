@@ -2,29 +2,130 @@
   items:
     - id: required
       title: پیش‌نیازها
+      subitems:
+        - title: ایجاد حساب
+          href: ایجاد-حساب-چابک
+        - title: دریافت کلیدهای گوگل
+          href: دریافت-کلیدهای-گوگل
+           
     - id: sdk-setup
       title: راه‌اندازی
+      subitems:
+        - title: نصب کتابخانه
+          href: ۱--نصب-کتابخانه
+        - title: افزودن GcmReceiver
+          href: ۲--افزودن-کلاس-gcmreceiver-به-فایل-manifest
+        - title: مقداردهی اولیه
+          href: ۳--مقداردهی-اولیه-initialize
+        - title: ثبت کاربر
+          href: ۴--ثبت-کاربر-register    
+           
     - id: tracker
       title: ترکر نصب
+      subitems:
+        - title: پیاده‌سازی
+          href: ۱-پیادهسازی-sdk-integration
+        - title: ترک نصب‌ها
+          href: ۲-ترک-نصبها-tracking-installs
+        - title: ترک نصب‌ها از استورها
+          href: ۳-ترک-کمپینهای-نصب-از-استورها
+        - title: مکانیزم ضد تقلب
+          href: ۶-مکانیزم-ضد-تقلب-fraud-prevention
+        - title: مفاهیم ترکر
+          href: ۷-آشنایی-با-برخی-مفاهیم-ترکر
+    
+    
     - id: chabok-messaging
       title: پیام چابک
+      subitems:
+        - title: دریافت پیام
+          href: دریافت-پیام
+        - title: ارسال پیام
+          href: ارسال-پیام
+        - title: کانال
+          href: کانال
+  
     - id: push-notification	
       title: پوش‌نوتیفیکیشن
+      subitems:
+        - title: شخصی‌سازی نمایش و کلیک روی اعلان
+          href: شخصیسازی-نمایش-و-کلیک-روی-اعلان
+        - title: نمایش کامل متن‌های بلند در اعلان
+          href: نمایش-کامل-متنهای-بلند-در-اعلان
+        - title: دریافت دیتای اعلان
+          href: دریافت-دیتای-اعلان
+
     - id: deeplink
       title: دیپ لینک
+      subitems:
+        - title: پیاده‌سازی
+          href: پیادهسازی
+        - title: نحوه استفاده در ترکر
+          href: نحوه-استفاده-در-ترکر
+        - title: نحوه استفاده در نوتیفیکیشن
+          href: نحوه-استفاده-در-نوتیفیکیشن
+        - title: دیپ لینک قبل از نصب اپلیکیشن
+          href: دیپ-لینک-قبل-از-نصب-اپلیکیشن-deferred-deep-linking
+  
     - id: custom-data
       title: ‌داده‌های سفارشی کاربر
+      subitems:
+        - title: مدیریت Attributes
+          href: مدیریت-اطلاعات-کاربر-user-attributes
+        - title: مدیریت تگ‌ها
+          href: مدیریت-تگها
+    
     - id: behavior-tracking
       title: رصد رفتار درون‌برنامه‌ای
+      subitems:
+        - title: متد رصد
+          href: متد-رصد
+        - title: رصد درآمد
+          href: رصد-درآمد-tracking-revenue
+        - title: ارسال پیام براساس رفتار
+          href: ارسال-پیام-براساس-رفتار
+  
+    
     - id: location-tracking
       title: ‌خدمات مکانی
     - id: event-handling
       title: ‌رویداد‌های آنی
+      subitems:
+        - title: عضویت روی رویداد
+          href: عضویت-روی-رویداد
+        - title: دریافت رویداد
+          href: دریافت-رویداد
+        - title: انتشار رویداد
+          href: انتشار-رویداد
+  
+   
     - id: verification
       title: اعتبارسنجی شناسه کاربری
     - id: features
       title: امکانات‌ دیگر 
+      subitems:
+        - title: دریافت شناسه دستگاه
+          href: دریافت-شناسه-دستگاه
+        - title: دریافت شناسه کاربر
+          href: دریافت-شناسه-کاربر
+        - title: مدیریت badge
+          href: مدیریت-نشانها-badge
+        - title: وضعیت اتصال به چابک
+          href: وضعیت-اتصال-به-چابک
+        - title: تغییر نام پیش‌فرض کانال نوتیفیکیشن
+          href: تغییر-نام-پیشفرض-کانال-نوتیفیکیشن-مخصوص-اندروید-۸-به-بالا
+    
+      
     - id: troubleshoot
       title: عیب‌ یابی
+      subitems:
+        - title: اپلیکیشنم کرش می‌کند
+          href: اپلیکیشنم-کرش-میکند
+        - title: پوش نمیگیرم
+          href: پوش-نمیگیرم
+        - title: نوتیفیکیشن‌ها نمایش داده نمی‌شوند
+          href: نوتیفیکیشنها-نمایش-داده-نمیشوند
+  
+   
     - id: release-note
       title: لیست تغییرات

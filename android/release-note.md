@@ -10,6 +10,21 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۲.۱۷.۲ - ۱۳۹۸/۰۵/۱۴](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.17.2)
+
+### تغییرات
+
+- بهبود ثبت کاربر برای دستگاه‌هایی که از play services پشتیبانی نمی‌کنند. (پس از نمایش هشدار)
+- افزودن متد `setEnableAlertForNotSupportingGcm` برای مدیریت نمایش هشدار مربوط به عدم پشتیبانی از play services
+- بهبود دریافت آمار کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن) 
+- بهبود نمایش پوش خودکار مکانی (Geo-fence)
+- از این پس متد `registerAsGuest` شناسه مهمان (`guestId`) می‌گیرد.
+- از این پس **push service** چابک، از اجازه اجرا در `Background` **اندروید O** پیروی می کند.
+- حالا حداقل طول `userId` **یک** کاراکتر است.
+- افزودن متد `(init(context, mainActivityClass, APP_ID, API_KEY, USERNAME, PASSWORD, SENDER_ID` جدید با قابلیت اختیاری بودن `SENDER_ID`
+- حل مشکل دریافت `advertisingId ` از دستگاه‌هایی که OEM buildهای مختلفی دارند
+- حل مشکل کرش کردن دستگاه‌هایی که `androidId` ندارند
+
 ##  [نسخه ۲.۱۷.۱ - ۱۳۹۸/۰۴/۱۰](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.17.1)
 
 ### تغییرات
@@ -24,7 +39,7 @@ prev: troubleshoot.html
 
 - پشتیبانی از مقدار [**درآمد**](/android/behavior-tracking.html#رصد-درآمد-tracking-revenue) با استفاده از متد `trackPurchase`
 
-- پشتیبانی از **بازخورد  نوتیفیکیشن (influence)** به صورت مستقیم یا غیر مستقیم
+- پشتیبانی از **بازخورد نوتیفیکیشن (influence)** به صورت مستقیم یا غیر مستقیم
 
 - پشتیبانی از [**دیپ لینک در صورت نداشتن اپلیکیشن** (deferred deep linking)](/android/deeplink.html#دیپ-لینک-قبل-از-نصب-اپلیکیشن-deferred-deep-linking) با متد `setOnDeeplinkResponseListener`
 
