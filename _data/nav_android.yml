@@ -2,8 +2,24 @@
   items:
     - id: required
       title: پیش‌نیازها
+	    subitems:
+		    - title: ایجاد حساب
+          href: ایجاد-حساب-چابک
+        - title: دریافت کلیدهای گوگل
+          href: دریافت-کلیدهای-گوگل
+           
     - id: sdk-setup
       title: راه‌اندازی
+      subitems:
+		    - title: نصب کتابخانه
+          href: ۱--نصب-کتابخانه
+        - title: افزودن GcmReceiver
+          href: ۲--افزودن-کلاس-gcmreceiver-به-فایل-manifest
+        - title: مقداردهی اولیه
+          href: ۳--مقداردهی-اولیه-initialize
+        - title: ثبت کاربر
+          href: ۴--ثبت-کاربر-register    
+           
     - id: tracker
       title: ترکر نصب
     - id: chabok-messaging
