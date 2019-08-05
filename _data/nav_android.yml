@@ -3,7 +3,7 @@
     - id: required
       title: پیش‌نیازها
       subitems:
-	- title: ایجاد حساب
+        - title: ایجاد حساب
           href: ایجاد-حساب-چابک
         - title: دریافت کلیدهای گوگل
           href: دریافت-کلیدهای-گوگل
