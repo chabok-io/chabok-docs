@@ -267,7 +267,7 @@ AdpPushClient.get().dismiss();
 امضای اول فقط شناسه کاربر را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام می‌کند.  
   
 ```java  
-AdpPushClient.get().register("USER_ID");  
+AdpPushClient.get().register(USER_ID);  
 ```  
 >` نکته:` ترکرها به طور معمول نصب را **اولین بازدید** حساب می‌کنند (مانند سرویس ادجاست)، اما مزیت ترکر چابک در شمارش نصب این است که شما می‌توانید علاوه بر مدل ادجاست، نصب را **ایجاد حساب و احراز هویت او** در اپلیکیشنتان تعریف کنید. با این کار شما یک اقدام دیگری برای جلوگیری از تقلب در شمارش نصب انجام می‌دهید، به این دلیل که امضاهای کاربر، قبل و بعد از ثبت او (register) مطابقت داده می‌شوند و در صورت تایید به عنوان یک نصب سالم در نظر گرفته می‌شوند.   
   
@@ -287,8 +287,8 @@ public void onCreate() {
     } else {  
   
         //If user is not registered verify the user and  
-        //call AdpPushClient.get().register("USER_ID") method at login page  
-        AdpPushClient.get().register("USER_ID");  
+        //call AdpPushClient.get().register(USER_ID) method at login page  
+        AdpPushClient.get().registerAsGuest();  
     }  
 }  
 ```  
@@ -304,7 +304,7 @@ public void onCreate() {
 امضای دوم علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی (برای آشنایی با مفهوم کانال و کاربرد آن [این قسمت](/android/chabok-messaging.html#کانال) را مطالعه نمایید) که کاربر باید روی آن‌ها عضو شود را نیز دریافت می‌کند. با عضویت روی کانال‌های داده شده، کاربر قادر به دریافت پیام‌های ارسالی روی آن‌ کانال‌ها خواهد بود.   
   
 ```java  
-AdpPushClient.get().register("USER_ID", new String[]{"CHANNEL_NAME1", "CHANNEL_NAME2", ...});  
+AdpPushClient.get().register(USER_ID, new String[]{"CHANNEL_NAME1", "CHANNEL_NAME2", ...});  
 ```    
 اگر عملیات ثبت‌ کاربر به درستی انجام شده باشد، اطلاعات کاربر در **پنل** چابک مربوط به [حساب](https://sandbox.push.adpdigital.com/front/users/subscribers/list) برنامه، در قسمت **مشترکین** قابل مشاهده خواهد بود و شما می‌توانید از پنل برای کاربر **پیام** ارسال کنید.  
 
