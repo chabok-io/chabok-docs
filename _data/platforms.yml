@@ -19,13 +19,6 @@
   starter:
   issue: https://github.com/chabokpush/chabok-client-wp/issues
 
-- name: React Native (Pure JS)
-  image: react.svg
-  document: /react-native/introducing.html
-  demo: https://github.com/chabokpush/chabok-rn-chat
-  issue: https://github.com/chabokpush/chabok-client-rn-js/issues
-  starter: https://github.com/chabokpush/chabok-starter-rn-js
-
 - name: React Native (Bridge)
   image: react.svg
   document: /react-native-bridge/introducing.html
