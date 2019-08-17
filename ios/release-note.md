@@ -10,6 +10,14 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۱.۲۰.۲ - ۱۳۹۸/۰۵/۲۶](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.2)
+
+- از این پس متد `registerWithGuestId` شناسه مهمان (`guestId`) می‌گیرد.
+
+- حالا حداقل طول  `userId`  **یک**  کاراکتر است.
+
+- حل مشکل برداشته شدن تگ مهمان پس از ثبت نام کاربر
+
 
 ##  [نسخه ۱.۲۰.۱ - ۱۳۹۸/۰۴/۱۷](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.1)
 
