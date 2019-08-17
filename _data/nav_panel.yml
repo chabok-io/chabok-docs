@@ -9,8 +9,12 @@
     - id: segment
       title: سگمنت
       subitems: 
-        - id: frequently-used-segments
-          title: سگمنت‌های متداول
+        - title: فیلترها
+          href: فیلترهای-سگمنت
+        - title: جزئیات و آمار
+          href: جزئیات-سگمنت
+        - title: سگمنت‌های متداول
+          href: سگمنتهای-متداول
     - id: send
       title: ایجاد کمپین
     - id: inbox
