@@ -18,6 +18,7 @@ prev: troubleshoot.html
 
 - حل مشکل برداشته شدن تگ مهمان پس از ثبت نام کاربر
 
+- از این پس `trackName` در متد `trackPurchase` و `track` از white space پشتیبانی می‌کند.
 
 ##  [نسخه ۱.۲۰.۱ - ۱۳۹۸/۰۴/۱۷](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.1)
 
