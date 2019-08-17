@@ -134,3 +134,5 @@ next: send.html
 برای این کار کافیست ۲ بار آخرین رفتار را با بازه زمانی مشخص کنید.
 
 ![enter image description here](http://uupload.ir/files/kw7u_doing-something-in-the-past.png)
+
+ >`نکته:` در صورتی که در ایجاد سگمنت مورد نظرتان به مشکل خوردید یا مایل هستید ما را در بهبود این لیست کمک کنید، آن را حتما با ما [به اشتراک بگذارید]([https://github.com/chabokpush/chabok-panel/issues](https://github.com/chabokpush/chabok-panel/issues)).
