@@ -6,8 +6,11 @@
       title: ترکر
     - id: users
       title: کاربران
-    - id: segment 
+    - id: segment
       title: سگمنت
+      subitems: 
+        - id: frequently-used-segments
+          title: سگمنت‌های متداول
     - id: send
       title: ایجاد کمپین
     - id: inbox
