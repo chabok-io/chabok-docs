@@ -1,6 +1,6 @@
 ---
 id: event-handling
-title: رویدادهای آنی
+title: پیام‌رسانی آنی
 layout: javascript
 permalink: javascript/event-handling.html
 prev: behavior-tracking.html
