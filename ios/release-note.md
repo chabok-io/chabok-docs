@@ -12,7 +12,9 @@ prev: troubleshoot.html
 
 ##  [نسخه ۱.۲۰.۲ - ۱۳۹۸/۰۵/۲۶](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.2)
 
-- از این پس متد `registerWithGuestId` شناسه مهمان (`guestId`) می‌گیرد.
+### تغییرات
+
+- از این پس متد `registerWithGuestId` [شناسه مهمان (`guestId`) می‌گیرد.](/ios/sdk-setup.html#کاربر-مهمان-با-شناسه-سفارشی)
 
 - حالا حداقل طول  `userId`  **یک**  کاراکتر است.
 
@@ -22,6 +24,8 @@ prev: troubleshoot.html
 
 ##  [نسخه ۱.۲۰.۱ - ۱۳۹۸/۰۴/۱۷](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.1)
 
+### تغییرات
+
 - پشتیبانی متد `incrementUserAttribute` از [آرایه‌‌ای از اطلاعات (attribute) کاربر](/ios/custom-data.html#افزودن-به-چند-attribute)
 
 - افزودن متد `incrementUserAttributeValue:value` برای [افزایش هر کدام از اطلاعات کاربر (attribute) به مقدار دلخواه](/ios/custom-data.html#افزودن-مقدار-دلخواه-به-یک-attribute)
@@ -29,6 +33,8 @@ prev: troubleshoot.html
 - افزودن متد `incrementUserAttributeValues:value` برای [افزایش بیش‌ از یکی از اطلاعات کاربر (attribute) به مقدار دلخواه](/ios/custom-data.html#افزودن-مقدار-دلخواه-به-چند-attribute) (این متد از dictionary از اطلاعات کاربر پشتیبانی می‌کند)
 
 ##  [نسخه ۱.۲۰.۰ - ۱۳۹۸/۰۴/۰۴](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.0)
+
+### تغییرات
 
 - پشتیبانی از مقدار [**درآمد**](/ios/behavior-tracking.html#رصد-درآمد-tracking-revenue) با استفاده از متد `trackPurchase`
 
