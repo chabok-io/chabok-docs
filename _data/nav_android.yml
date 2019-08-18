@@ -89,7 +89,7 @@
     - id: location-tracking
       title: ‌خدمات مکانی
     - id: event-handling
-      title: ‌رویداد‌های آنی
+      title: پیام‌رسانی آنی
       subitems:
         - title: عضویت روی رویداد
           href: عضویت-روی-رویداد
