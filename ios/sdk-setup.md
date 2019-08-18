@@ -491,6 +491,8 @@ func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 _manager?.registerAsGuest()
 ```
 
+##### کاربر مهمان با شناسه سفارشی 
+
 همچنین می‌توانید کاربر مهمان را با **شناسه دلخواهتان** ثبت کنید: 
 
 ```objectivec
