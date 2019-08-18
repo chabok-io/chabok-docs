@@ -491,6 +491,20 @@ func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 _manager?.registerAsGuest()
 ```
 
+همچنین می‌توانید کاربر مهمان را با **شناسه دلخواهتان** ثبت کنید: 
+
+```objectivec
+//Objective-C
+
+[_manager registerWithGuestId:@"MY_GUEST_ID"];
+```
+
+```swift
+//Swift:
+
+_manager.default()?.register(withGuestId: "MY_GUEST_ID")
+```
+
 
 #### حذف کاربر (Unregister)
 
