@@ -12,7 +12,7 @@ prev: troubleshoot.html
 
 ##  [نسخه ۱.۲۰.۲ - ۱۳۹۸/۰۵/۲۶](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.2)
 
-- از این پس متد `registerWithGuestId` شناسه مهمان (`guestId`) می‌گیرد.
+- از این پس متد `registerWithGuestId` [شناسه مهمان (`guestId`) می‌گیرد.](/ios/sdk-setup.html#کاربر-مهمان-با-شناسه-سفارشی)
 
 - حالا حداقل طول  `userId`  **یک**  کاراکتر است.
 
