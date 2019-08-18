@@ -1,6 +1,6 @@
 ---
 id: event-handling
-title: رویدادهای آنی
+title: پیام‌رسانی آنی
 layout: android
 permalink: android/event-handling.html
 prev: location-tracking.html
