@@ -116,7 +116,7 @@ next: tracker.html
 
 در این تب رفتارهای کاربر شما از طریق **رصد** تمام رخدادها و رویدادهایی که در اپ شما اتفاق می‌افتد، قابل مشاهده است.
 
-![عکس مربوطه](http://uupload.ir/files/pjjh_ckco_event-tracking.png)
+![عکس مربوطه](http://uupload.ir/files/zkz_dashboard-behavior.png)
 <Br>
 
 ##### رخداد
