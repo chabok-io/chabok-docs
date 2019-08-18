@@ -1,6 +1,6 @@
 ---
 id: event-handling
-title: رویدادهای آنی
+title: پیام‌رسانی آنی
 layout: react-native-bridge
 permalink: react-native-bridge/event-handling.html
 prev: behavior-tracking.html
