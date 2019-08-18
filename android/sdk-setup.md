@@ -319,6 +319,14 @@ AdpPushClient.get().register("USER_ID", new String[]{"CHANNEL_NAME1", "CHANNEL_N
 ```java  
 AdpPushClient.get().registerAsGuest();  
 ```  
+
+##### کاربر مهمان با شناسه سفارشی 
+
+همچنین می‌توانید کاربر مهمان را با **شناسه دلخواهتان** ثبت کنید: 
+
+```java
+AdpPushClient.get().registerAsGuest("MY_GUEST_ID");
+```
   
 ##### دریافت وضعیت ثبت کاربر  
   
