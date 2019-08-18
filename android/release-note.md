@@ -18,7 +18,7 @@ prev: troubleshoot.html
 - افزودن متد `setEnableAlertForNotSupportingGcm` برای مدیریت نمایش هشدار مربوط به عدم پشتیبانی از play services
 - بهبود دریافت آمار کلیک روی نوتیفیکیشن (اکشن‌ها و رد کردن) 
 - بهبود نمایش پوش خودکار مکانی (Geo-fence)
-- از این پس متد `registerAsGuest` شناسه مهمان (`guestId`) می‌گیرد.
+- از این پس متد `registerAsGuest` [شناسه مهمان (`guestId`) می‌گیرد.](/android/sdk-setup.html#کاربر-مهمان-با-شناسه-سفارشی)
 - از این پس **push service** چابک، از اجازه اجرا در `Background` **اندروید O** پیروی می کند.
 - حالا حداقل طول `userId` **یک** کاراکتر است.
 - افزودن متد `(init(context, mainActivityClass, APP_ID, API_KEY, USERNAME, PASSWORD, SENDER_ID` جدید با قابلیت اختیاری بودن `SENDER_ID`
