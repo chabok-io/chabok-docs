@@ -33,8 +33,10 @@ next: tracker.html
 برای نصب کتابخانه کافیست تا این [پکیج](https://github.com/chabokpush/chabok-starter-unity/raw/master/chabok-unity.unitypackage) را دریافت کنید و پس از باز نمودن فایل روی ایمپورت کلیک کنید.
 
 <div style="text-align: center ;"><img src="http://uupload.ir/files/o52_unity-package2.png" class="img-fluid" style="
-    height: 260px;
+    height: 500px;
 "></div> 
+
+<br>
 
 #### مدل نسخه‌گذاری در چابک (Semantic Versioning)
 
