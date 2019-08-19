@@ -29,7 +29,11 @@ next: tracker.html
 
 ### ۲- نصب کتابخانه
 ---
-برای اضافه کردن کتابخانه چابک به پروژه‌تان باید تمام فایل‌هایی که در [فولدر `chabokpush`](https://github.com/chabokpush/chabok-starter-unity/tree/master/Assets/Scripts/ChabokPush) است را در `Scripts` پروژه خودتان قرار دهید.
+
+برای نصب کتابخانه کافیست تا این [پکیج](https://github.com/chabokpush/chabok-starter-unity/raw/master/chabok-unity.unitypackage) را دریافت کنید و پس از باز نمودن فایل روی ایمپورت کلیک کنید.
+
+![enter image description here](http://uupload.ir/files/o52_unity-package2.png)
+
 
 #### مدل نسخه‌گذاری در چابک (Semantic Versioning)
 
