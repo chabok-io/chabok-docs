@@ -6,28 +6,19 @@ permalink: unity/sdk-setup.html
 next: tracker.html
 ---
 
-پس از طی کردن مراحل صفحه [پیش‌نیازها](/unity/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید یک سری **Dependency** را به پروژه خود [اضافه کنید](/unity/sdk-setup.html#۱--افزودن-dependency) و بعد کتابخانه چابک را [نصب کنید](/unity/sdk-setup.html#۱--نصب-کتابخانه). پس از آن، [مقداردهی و راه‌اندازی](/unity/sdk-setup.html#۳--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/unity/sdk-setup.html#۴--ثبت-کاربر-register) را حتما پشت سر بگذارید.
+پس از طی کردن مراحل صفحه [پیش‌نیازها](/unity/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا کتابخانه چابک را [نصب کنید](/unity/sdk-setup.html#۱--نصب-کتابخانه). پس از آن، [مقداردهی و راه‌اندازی](/unity/sdk-setup.html#۲--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/unity/sdk-setup.html#۳--ثبت-کاربر-register) را حتما پشت سر بگذارید.
 
 برای انجام موفق این کار باید تمام مراحل زیر را به ترتیب انجام دهید:
 
-[۱- افزودن Dependency](/unity/sdk-setup.html#۱--افزودن-dependency)
+[۱- نصب کتابخانه](/unity/sdk-setup.html#۱--نصب-کتابخانه)
 
-[۲- نصب کتابخانه](/unity/sdk-setup.html#۲--نصب-کتابخانه)
+[۲- مقداردهی اولیه (Initialize)](/unity/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
 
-[۳- مقداردهی اولیه (Initialize)](/unity/sdk-setup.html#۳--مقداردهی-اولیه-initialize)
-
-[۴- ثبت کاربر (Register)](/unity/sdk-setup.html#۴--ثبت-کاربر-register)
+[۳- ثبت کاربر (Register)](/unity/sdk-setup.html#۳--ثبت-کاربر-register)
 
 <Br>
 
-### ۱- افزودن Dependency
----
-
-در ابتدا دقت نمایید که ‍‍`dependency`‌ های لازم را از [این قسمت](https://github.com/chabokpush/chabok-starter-unity/tree/master/Assets/Plugins/Android) دانلود کنید و در مقصد `myproject/Assets/Plugins/Android` قرار دهید.
-
-<br>
-
-### ۲- نصب کتابخانه
+### ۱- نصب کتابخانه
 ---
 
 برای نصب کتابخانه کافیست تا این [پکیج](https://github.com/chabokpush/chabok-starter-unity/raw/master/chabok-unity.unitypackage) را دریافت کنید و پس از باز نمودن فایل روی **Import** کلیک کنید.
