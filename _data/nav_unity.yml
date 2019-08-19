@@ -10,4 +10,5 @@
       title: گروه‌بندی کاربران
     - id: behavior-tracking
       title: رصد رفتار درون‌برنامه‌ای
-    
+    - id: release-note
+      title: لیست تغییرات
