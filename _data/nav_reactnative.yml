@@ -86,8 +86,6 @@
         - title: ارسال پیام براساس رفتار
           href: ارسال-پیام-براساس-رفتار
     
-    - id: location-tracking
-      title: ‌خدمات مکانی
     - id: event-handling
       title: پیام‌رسانی آنی
       subitems:
