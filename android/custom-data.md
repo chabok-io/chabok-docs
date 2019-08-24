@@ -57,6 +57,27 @@ userInfo.put("gender", "مرد");
 AdpPushClient.get().setUserInfo(userInfo);
 ```
 
+> `نکته` : دقت داشته باشید  **type** مقداری که به `value` در متد `setUserAttributes` داده‌اید، را نمی‌توانید تغییر دهید. به این معنی که اگر `boolean` ذخیره کرده‌اید، دیگر **نمی‌توانید** عدد یا `string` دهید. به مثال زیر توجه کنید.
+
+به عنوان مثال اگر مقدار `status` را مانند زیر `boolean` قرار داده باشید:
+
+```java
+HashMap<String, Object> userInfo = new HashMap<>();
+
+userAttribute.put("firstName", "محمدرضا");
+
+AdpPushClient.get().setUserAttributes(userAttribute);
+```
+دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
+
+```java
+HashMap<String, Object> userInfo = new HashMap<>();
+
+userAttribute.put("firstName", 123456);
+
+AdpPushClient.get().setUserAttributes(userAttribute);
+```
+
 <br>
 
 #### دریافت اطلاعات کاربر
