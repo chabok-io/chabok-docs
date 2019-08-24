@@ -47,7 +47,7 @@ data.put("status", true);
 AdpPushClient.get().track("add-to-card", data);
 ```
 
-دیگر عدد قرار دادن آن مانند زیر اشتباه خواهد بود:
+دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
 
 ```java
 JSONObject data = new JSONObject();
