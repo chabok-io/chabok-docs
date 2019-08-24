@@ -11,7 +11,6 @@ next: behavior-tracking.html
 
 <Br><Br>
 
-
 ### مدیریت اطلاعات کاربر (User Attributes)
 ---
 
@@ -52,6 +51,26 @@ this.chabok.setUserInfo({
                 age: 19,
                 gender: 'مرد'
             });
+```
+
+> `نکته` : دقت داشته باشید  **type** مقداری که به `value` در متد `setUserAttributes` داده‌اید، را نمی‌توانید تغییر دهید . به این معنی که اگر `boolean` ذخیره کرده‌اید، دیگر **نمی‌توانید** عدد یا `string` دهید یا برعکس. به مثال زیر توجه کنید. 
+
+به عنوان مثال اگر مقدار `age` را مانند زیر `string` قرار داده باشید:
+
+```javascript
+const attributes = {
+          age: 'نوزده'
+        }
+chabok.setUserAttributes(attributes)
+```
+
+دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
+
+```javascript
+const attributes = {
+          age: 19
+        }
+chabok.setUserAttributes(attributes)
 ```
 
 <br>
