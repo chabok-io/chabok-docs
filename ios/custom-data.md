@@ -109,6 +109,40 @@ PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (reg
 })
 ```
 
+> `نکته` : دقت داشته باشید  **type** مقداری که به `value` در متد `userAttributes` داده‌اید، را نمی‌توانید تغییر دهید . به این معنی که اگر `boolean` ذخیره کرده‌اید، دیگر **نمی‌توانید** عدد یا `string` دهید یا برعکس. به مثال زیر توجه کنید. 
+
+به عنوان مثال اگر مقدار `age` را مانند زیر `string` قرار داده باشید:
+
+```objectivec
+//Objective-C
+
+[PushClientManager.defaultManager.userAttributes = @{
+		@"age": @"نوزده"
+}];
+```
+``` swift
+//Swift
+
+PushClientManager.default().userAttributes = [
+                       "age": "نوزده"]
+```
+
+دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
+
+```objectivec
+//Objective-C
+
+[PushClientManager.defaultManager.userAttributes = @{
+		@"age": @19
+}];
+```
+``` swift
+//Swift
+
+PushClientManager.default().userAttributes = [
+                       "age": 19]
+```
+
 <br>
 
 #### افزایش داده‌های کمیتی کاربر

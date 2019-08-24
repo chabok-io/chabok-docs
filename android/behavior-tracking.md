@@ -36,6 +36,26 @@ AdpPushClient.get().track("add-to-card", data);
 
 >‍‍‍`نکته:` در متد `track` در صورتی که به `value` مقدار عددی بدهید، آن رفتار در سگمنت با پیشوند **آخرین و مجموع** اضافه می‌شود. اما در صورتی که مقدار غیر عددی (string) بدهید، آن رفتار فقط با پیشوند **آخرین** به سگمنت اضافه می‌شود.
 
+> `نکته` : دقت داشته باشید  **type** مقداری که به `value` در متد `track` داده‌اید، را نمی‌توانید تغییر دهید. به این معنی که اگر `boolean` ذخیره کرده‌اید، دیگر **نمی‌توانید** عدد یا `string` دهید. به مثال زیر توجه کنید.
+
+به عنوان مثال اگر مقدار `status` را مانند زیر `boolean` قرار داده باشید:
+
+```java
+JSONObject data = new JSONObject();
+data.put("status", true);
+
+AdpPushClient.get().track("add-to-card", data);
+```
+
+دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
+
+```java
+JSONObject data = new JSONObject();
+data.put("status", 35000);
+
+AdpPushClient.get().track("add-to-card", data);
+```
+
 <Br>
 
 ### رصد درآمد (Tracking Revenue)

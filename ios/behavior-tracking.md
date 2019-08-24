@@ -33,6 +33,7 @@ self.manager.track("YOUR_TRACK_NAME", data: ["KEY":"VALUE"])
  به عنوان مثال می‌خواهید رفتار **افزودن به سبد خرید** از فروشگاه اینترنتی خودتان را رصد کنید. برای ثبت این رفتار کد زیر را با الگوی بالا وارد می‌نماییم.
 
 نمونه:
+
 ```objectivec
 //Objective-C
 [self.manager track:@"add-to-card" data:@{@"value":@(35000)}];
@@ -41,7 +42,32 @@ self.manager.track("YOUR_TRACK_NAME", data: ["KEY":"VALUE"])
 //Swift
 self.manager.track("add-to-card", data: ["value":35000])
 ```
+
 >‍‍‍`نکته:` در متد `track` در صورتی که به `value` مقدار عددی بدهید، آن رفتار در سگمنت با پیشوند **آخرین و مجموع** اضافه می‌شود. اما در صورتی که مقدار غیر عددی (string) بدهید، آن رفتار فقط با پیشوند **آخرین** به سگمنت اضافه می‌شود.
+
+> `نکته` : دقت داشته باشید  **type** مقداری که به `value` در متد `track` داده‌اید، را نمی‌توانید تغییر دهید. به این معنی که اگر `boolean` ذخیره کرده‌اید، دیگر **نمی‌توانید** عدد یا `string` دهید. به مثال زیر توجه کنید.
+
+به عنوان مثال اگر مقدار `status` را مانند زیر `boolean` قرار داده باشید:
+
+```objectivec
+//Objective-C
+[self.manager track:@"add-to-card" data:@{@"status":@(true)}];
+```
+```swift
+//Swift
+self.manager.track("add-to-card", data: ["status":true])
+```
+
+دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
+
+```objectivec
+//Objective-C
+[self.manager track:@"add-to-card" data:@{@"status":@(35000)}];
+```
+```swift
+//Swift
+self.manager.track("add-to-card", data: ["status":35000])
+```
 
 <Br>
 
