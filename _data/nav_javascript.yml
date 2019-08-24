@@ -54,8 +54,6 @@
         - title: ارسال پیام براساس رفتار
           href: ارسال-پیام-براساس-رفتار
   
-    - id: location-tracking
-      title: ‌خدمات مکانی
     - id: event-handling
       title: پیام‌رسانی آنی
       subitems:
@@ -66,7 +64,6 @@
         - title: انتشار رویداد
           href: انتشار-رویداد
   
-   
     - id: verification
       title: اعتبارسنجی شناسه کاربری
     - id: features
@@ -82,8 +79,6 @@
     - id: troubleshoot
       title: عیب‌ یابی
       subitems:
-        - title: اپلیکیشنم کرش می‌کند
-          href: اپلیکیشنم-کرش-میکند
         - title: پوش نمیگیرم
           href: پوش-نمیگیرم
         - title: نوتیفیکیشن‌ها نمایش داده نمی‌شوند
