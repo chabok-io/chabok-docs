@@ -124,7 +124,7 @@ PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (reg
 //Swift
 
 PushClientManager.default().userAttributes = [
-                       "firstName": "نسیم"]
+                       "age": "نوزده"]
 ```
 
 دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
