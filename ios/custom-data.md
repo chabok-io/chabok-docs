@@ -109,7 +109,7 @@ PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (reg
 })
 ```
 
-> `نکته` : دقت داشته باشید  **type** مقداری که به `value` در متد `setUserAttributes` داده‌اید، را نمی‌توانید تغییر دهید. به این معنی که اگر `boolean` ذخیره کرده‌اید، دیگر **نمی‌توانید** عدد یا `string` دهید. به مثال زیر توجه کنید.
+> `نکته` : دقت داشته باشید  **type** مقداری که به `value` در متد `setUserAttributes` داده‌اید، را نمی‌توانید تغییر دهید . به این معنی که اگر `boolean` ذخیره کرده‌اید، دیگر **نمی‌توانید** عدد یا `string` دهید یا برعکس. به مثال زیر توجه کنید. 
 
 به عنوان مثال اگر مقدار `age` را مانند زیر `string` قرار داده باشید:
 
@@ -140,7 +140,7 @@ PushClientManager.default().userAttributes = [
 //Swift
 
 PushClientManager.default().userAttributes = [
-                       "age": "19"]
+                       "age": 19]
 ```
 
 <br>
