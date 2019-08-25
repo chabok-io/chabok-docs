@@ -1,7 +1,5 @@
 - title: شروع سریع windows
   items:
-    - id : introducing
-      title: معرفی چابک
     - id: installation
       title: نصب چابک
     - id: setup
