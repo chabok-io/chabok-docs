@@ -2,10 +2,48 @@
   items:
     - id: dashboard
       title: داشبورد
+      subitems: 
+        - title: ترافیک
+          href: ترافیک
+        - title: گروه‌ها
+          href: گروهها
+        - title: رفتار
+          href: رفتار
+        - title: مخاطبین
+          href: مخاطبین
+        - title: پراکندگی جغرافیایی
+          href: پراکندگی-جغرافیایی
+      
     - id: tracker
       title: ترکر
+      subitems: 
+        - title: سطح‌بندی پویا
+          href: سطحبندی-پویا
+        - title: ایجاد ترکر
+          href: ایجاد-ترکر
+        - title: کال‌بک
+          href: کالبک
+        - title: افزودن cpa
+          href: افزودن-cpa
+        - title: آمار ترکر
+          href: آمار-ترکر
+        - title: ترکرهای پیش‌فرض چابک
+          href: ترکرهای-پیشفرض-چابک
+          
     - id: users
       title: کاربران
+      subitems: 
+        - title: ارسال پیام
+          href: ارسال-پیام
+        - title: جزئیات کاربر
+          href: جزئیات-کاربر
+        - title: جزئیات دستگاه
+          href: جزئیات-دستگاه
+        - title: تست نوتیفیکیشن
+          href: تست-نوتیفیکیشن
+        - title: حذف
+          href: حذف
+      
     - id: segment
       title: سگمنت
       subitems: 
@@ -14,12 +52,19 @@
         - title: جزئیات و آمار
           href: جزئیات-سگمنت
         - title: سگمنت‌های متداول
-          href: سگمنتهای-متداول
+          href: سگمنت‌های-متداول
+          
     - id: send
       title: ایجاد کمپین
+      
+      
     - id: inbox
       title: پیام‌ها
+      
+      
     - id: settings
       title: تنظیمات
+      
+      
     - id: account-management
       title: مدیریت حساب
