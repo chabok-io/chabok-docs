@@ -24,11 +24,11 @@
         - title: ترک نصب‌ها
           href: ۲-ترک-نصبها-tracking-installs
         - title: ترک نصب از استورها
-          href: ۳-ترک-کمپینهای-نصب-از-استورها
+          href: ۳-ترک-کمپینهای-نصب-از-استورها-pre-install-campaigns
         - title: مکانیزم ضد تقلب
-          href: ۶-مکانیزم-ضد-تقلب-fraud-prevention
+          href: ۵-مکانیزم-ضد-تقلب-fraud-prevention
         - title: مفاهیم ترکر
-          href: ۷-آشنایی-با-برخی-مفاهیم-ترکر
+          href: ۶-آشنایی-با-برخی-مفاهیم-ترکر
 
     - id: user-management
       title: گروه‌بندی کاربران
