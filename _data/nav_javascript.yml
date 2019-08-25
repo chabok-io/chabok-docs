@@ -1,24 +1,89 @@
-- title: شروع سریع Javascript
+- title: نصب و راه ‌اندازی
   items:
     - id: required
       title: پیش‌نیازها
+      subitems:
+        - title: ایجاد حساب
+          href: ایجاد-حساب-چابک
+          
     - id: sdk-setup
       title: راه‌اندازی
+      subitems:
+        - title: نصب کتابخانه
+          href: ۱--نصب-کتابخانه
+        - title: مقداردهی اولیه
+          href: ۲--مقداردهی-اولیه-initialize
+        - title: ثبت کاربر
+          href: ۳--ثبت-کاربر-register    
+             
     - id: chabok-messaging
       title: پیام چابک
-    - id: push-notification
+      subitems:
+        - title: دریافت پیام
+          href: دریافت-پیام
+        - title: ارسال پیام
+          href: ارسال-پیام
+        - title: کانال
+          href: کانال
+  
+    - id: push-notification	
       title: پوش‌نوتیفیکیشن
+      subitems:
+        - title: نوتیفیکیشن local
+          href: local-notification
+        - title: نوتیفیکیشن در پس‌زمینه
+          href: background-notification
+        - title: آیکون وب‌پوش
+          href: آیکون-پیشفرض-وب-پوش
+
     - id: custom-data
-      title: داده‌های سفارشی کاربر
+      title: ‌داده‌های سفارشی کاربر
+      subitems:
+        - title: مدیریت Attributes
+          href: مدیریت-اطلاعات-کاربر-user-attributes
+        - title: مدیریت تگ‌ها
+          href: مدیریت-تگها
+    
     - id: behavior-tracking
-      title: ‌رصد رفتار درون‌برنامه‌ای
+      title: رصد رفتار درون‌برنامه‌ای
+      subitems:
+        - title: متد رصد
+          href: متد-رصد
+        - title: رصد درآمد
+          href: رصد-درآمد-tracking-revenue
+        - title: ارسال پیام براساس رفتار
+          href: ارسال-پیام-براساس-رفتار
+  
     - id: event-handling
       title: پیام‌رسانی آنی
+      subitems:
+        - title: عضویت روی رویداد
+          href: عضویت-روی-رویداد
+        - title: دریافت رویداد
+          href: دریافت-رویداد
+        - title: انتشار رویداد
+          href: انتشار-رویداد
+  
     - id: verification
       title: اعتبارسنجی شناسه کاربری
     - id: features
-      title: امکانات‌ دیگر
+      title: امکانات‌ دیگر 
+      subitems:
+        - title: دریافت شناسه دستگاه
+          href: دریافت-شناسه-دستگاه
+        - title: دریافت شناسه کاربر
+          href: دریافت-شناسه-کاربر
+        - title: وضعیت اتصال به سرور
+          href: وضعیت-اتصال-به-سرور    
+      
     - id: troubleshoot
-      title: عیب یابی
+      title: عیب‌ یابی
+      subitems:
+        - title: پوش نمیگیرم
+          href: پوش-نمیگیرم
+        - title: نوتیفیکیشن‌ها نمایش داده نمی‌شوند
+          href: نوتیفیکیشنها-نمایش-داده-نمیشوند
+  
+   
     - id: release-note
       title: لیست تغییرات

@@ -1,28 +1,120 @@
-- title: شروع سریع windows
+- title: نصب و راه ‌اندازی
   items:
     - id: required
       title: پیش‌نیازها
+      subitems:
+        - title: ایجاد حساب
+          href: ایجاد-حساب-چابک
+        - title: دریافت کلیدهای گوگل
+          href: دریافت-کلیدهای-گوگل
+        - title: گواهی اپل
+          href: ایجاد-گواهی-اپل  
+          
     - id: sdk-setup
       title: راه‌اندازی
+      subitems:
+        - title: نصب کتابخانه
+          href: ۱--نصب-کتابخانه
+        - title: مقداردهی اولیه
+          href: ۲--مقداردهی-اولیه-initialize
+        - title: ثبت کاربر
+          href: ۳--ثبت-کاربر-register    
+           
     - id: tracker
       title: ترکر نصب
+      subitems:
+        - title: پیاده‌سازی
+          href: ۱-پیادهسازی-sdk-integration
+        - title: ترک نصب‌ها
+          href: ۲-ترک-نصبها-tracking-installs
+        - title: ترک نصب از استورها
+          href: ۳-ترک-کمپینهای-نصب-از-استورها
+        - title: مکانیزم ضد تقلب
+          href: ۶-مکانیزم-ضد-تقلب-fraud-prevention
+        - title: مفاهیم ترکر
+          href: ۷-آشنایی-با-برخی-مفاهیم-ترکر
+    
     - id: chabok-messaging
       title: پیام چابک
-    - id: push-notification
+      subitems:
+        - title: دریافت پیام
+          href: دریافت-پیام
+        - title: ارسال پیام
+          href: ارسال-پیام
+        - title: کانال
+          href: کانال
+  
+    - id: push-notification	
       title: پوش‌نوتیفیکیشن
+      subitems:
+        - title: اندروید
+          href: تنظیم-پوشنوتیفیکیشن-اندروید
+        - title: آی‌اواس
+          href: تنظیم-پوشنوتیفیکیشن-آیاواس
+        - title: نمایش local
+          href: نمایش-local-notifications
+
     - id: deeplink
       title: دیپ لینک
+      subitems:
+        - title: پیاده‌سازی اندروید
+          href: پیادهسازی-اندروید
+        - title: پیاده‌سازی آی‌اواس
+          href: پیادهسازی-آیاواس
+        - title: نحوه استفاده در ترکر
+          href: نحوه-استفاده-در-ترکر
+        - title: نحوه استفاده در نوتیفیکیشن
+          href: نحوه-استفاده-در-نوتیفیکیشن
+        - title: دیپ لینک قبل از نصب اپلیکیشن
+          href: دیپ-لینک-قبل-از-نصب-اپلیکیشن-deferred-deep-linking
+          
     - id: custom-data
-      title: داده‌های سفارشی کاربر
+      title: ‌داده‌های سفارشی کاربر
+      subitems:
+        - title: مدیریت Attributes
+          href: مدیریت-اطلاعات-کاربر-user-attributes
+        - title: مدیریت تگ‌ها
+          href: مدیریت-تگها
+    
     - id: behavior-tracking
       title: رصد رفتار درون‌برنامه‌ای
+      subitems:
+        - title: متد رصد
+          href: متد-رصد
+        - title: رصد درآمد
+          href: رصد-درآمد-tracking-revenue
+        - title: ارسال پیام براساس رفتار
+          href: ارسال-پیام-براساس-رفتار
+    
     - id: event-handling
       title: پیام‌رسانی آنی
+      subitems:
+        - title: عضویت روی رویداد
+          href: عضویت-روی-رویداد
+        - title: دریافت رویداد
+          href: دریافت-رویداد
+        - title: انتشار رویداد
+          href: انتشار-رویداد
+  
     - id: verification
       title: اعتبارسنجی شناسه کاربری
     - id: features
-      title: امکانات‌ دیگر
+      title: امکانات‌ دیگر 
+      subitems:
+        - title: دریافت شناسه دستگاه
+          href: دریافت-شناسه-دستگاه
+        - title: دریافت شناسه کاربر
+          href: دریافت-شناسه-کاربر
+        - title: وضعیت اتصال به سرور
+          href: وضعیت-اتصال-به-سرور
+      
     - id: troubleshoot
-      title: عیب یابی
+      title: عیب‌ یابی
+      subitems:
+        - title: پوش نمیگیرم
+          href: پوش-نمیگیرم
+        - title: نوتیفیکیشن‌ها نمایش داده نمی‌شوند
+          href: نوتیفیکیشنها-نمایش-داده-نمیشوند
+  
     - id: release-note
       title: لیست تغییرات
