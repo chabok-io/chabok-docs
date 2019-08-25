@@ -104,7 +104,7 @@
           
     - id: account-management
       title: مدیریت حساب
-       subitems: 
+      subitems: 
         - title: مدیریت تیم
           href: مدیریت-تیم
         - title: اطلاعات حساب
