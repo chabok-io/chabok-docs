@@ -7,11 +7,11 @@ prev: chabok-messaging.html
 next: deeplink.html
 ---
 
-چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. شما می‌توانید نمایش این پوش‌نوتیفیکیشن‌ها را [شخصی‌سازی کنید.](/ios/push-notification.html#شخصیسازی-نمایش-اعلان) برای اعلان کلیک [تعیین کنید و دیتای آن را دریافت کنید ](/ios/push-notification.html#کلیک-و-دریافت-دیتای-اعلان-آیاواس-۱۰-به-بالا). همینطور با [تنظیم پوش‌نوتیفیشکیشن چند رسانه‌ای](/ios/push-notification.html#تنظیم-نوتیفیکیشن-چندرسانهای-rich-push-notification) می‌توانید برای هرکدام اکشن تعیین نمایید. 
+چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. شما می‌توانید نمایش این پوش‌نوتیفیکیشن‌ها را [شخصی‌سازی کنید.](/ios/push-notification.html#شخصیسازی-نمایش-نوتیفیکیشن) برای نوتیفیکیشن کلیک [تعیین کنید و دیتای آن را دریافت کنید ](/ios/push-notification.html#کلیک-و-دریافت-دیتای-نوتیفیکیشن-آیاواس-۱۰-به-بالا). همینطور با [تنظیم پوش‌نوتیفیشکیشن چند رسانه‌ای](/ios/push-notification.html#تنظیم-نوتیفیکیشن-چندرسانهای-rich-push-notification) می‌توانید برای هرکدام اکشن تعیین نمایید. 
 
 <Br>
 
-### شخصی‌سازی نمایش اعلان
+### شخصی‌سازی نمایش نوتیفیکیشن
 
 کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی (پیام چابک و پوش‌نوتیفیکیشن)، اعلان (**نوتیفیکیشن**) نمایش می‌دهد. درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` استفاده کنید. به قطعه کد زیر دقت فرمایید: (در صورت استفاده از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` کتابخانه چابک دیگر اقدام به نمایش `LocalNotification` نمی‌کند.)
 
@@ -48,9 +48,9 @@ func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClien
 }
 ```
 
-#### حذف اعلان
+#### حذف نوتیفیکیشن
 
-برای حذف یا پاک کردن یک اعلان خاص در `Notification Center` می‌توانید از متد زیر استفاده کنید:
+برای حذف یا پاک کردن یک نوتیفیکیشن خاص در `Notification Center` می‌توانید از متد زیر استفاده کنید:
 
 ```objectivec
 //Objective-C:
@@ -62,7 +62,7 @@ func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClien
 
 UIApplication.shared.cancelLocalNotification(UILocalNotification)
 ```
-همچنین برای حذف یا پاک کردن تمام اعلان ها می‌توانید از متد زیر استفاده کنید:
+همچنین برای حذف یا پاک کردن تمام نوتیفیکیشن‌ها می‌توانید از متد زیر استفاده کنید:
 
 ```objectivec
 //Objective-C:
@@ -77,9 +77,9 @@ UIApplication.shared.cancelAllLocalNotifications()
 
 <Br>
 
-### کلیک و دریافت دیتای اعلان (آی‌اواس ۱۰ به بالا)
+### کلیک و دریافت دیتای نوتیفیکیشن (آی‌اواس ۱۰ به بالا)
 
-برای مدیریت کلیک بر روی اعلان پیام‌های چابک متد `:userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` را فراخوانی نمایید. به نمونه زیر دقت کنید:
+برای مدیریت کلیک بر روی نوتیفیکیشن پیام‌های چابک متد `:userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` را فراخوانی نمایید. به نمونه زیر دقت کنید:
 
 ```objectivec
 //Objective-C
@@ -127,9 +127,9 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 }
 ```
 
-### کلیک و دریافت دیتای اعلان (آی‌اواس ۹ به پایین)
+### کلیک و دریافت دیتای نوتیفیکیشن (آی‌اواس ۹ به پایین)
 
-سرویس چابک دارای پوش‌نوتیفیکیشن و پیام چابک می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل (پوش‌نوتیفیکیشن) باشد با کلیک بر روی اعلان، `delegate` متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ (پیام چابک) باشد، از `delegate` متد `didReceiveLocalNotification` استفاده کنید.
+سرویس چابک دارای پوش‌نوتیفیکیشن و پیام چابک می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی نوتیفیکیشن، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل (پوش‌نوتیفیکیشن) باشد با کلیک بر روی نوتیفیکیشن، `delegate` متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ (پیام چابک) باشد، از `delegate` متد `didReceiveLocalNotification` استفاده کنید.
 
 #### ۱. LocalNotification
 
@@ -156,11 +156,11 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 }
 ```
 
-همچنین  `delegate` متد `didReceiveLocalNotification` به شما کمک می‌کند که بعد از کلیک، کاربر بر روی اعلان به چه صفحه‌ای هدایت شود.
+همچنین  `delegate` متد `didReceiveLocalNotification` به شما کمک می‌کند که بعد از کلیک، کاربر بر روی نوتیفیکیشن به چه صفحه‌ای هدایت شود.
 
 #### ۲. ‌APNs Notification
 
-`delegate` متد `didReceiveRemoteNotification` توسط سیستم عامل به هنگام کلیک بر روی اعلان فرخوانی می‌شود. 
+`delegate` متد `didReceiveRemoteNotification` توسط سیستم عامل به هنگام کلیک بر روی نوتیفیکیشن فرخوانی می‌شود. 
 
 > `نکته` : اگر برنامه شما `Terminate` شده باشد، با کلیک بر روی Notification برنامه شما با کلید `UIApplicationLaunchOptionsRemoteNotificationKey` در `delegate` متد `didFinishLaunchingWithOptions` اجرا خواهد شد و پس از آن متد `didReceiveRemoteNotification` فرخوانی خواهد شد. پس پیشنهاد می‌کنیم، کد مربوط به `Navigate` به یک صفحه خاص را در متد `didReceiveRemoteNotification` استفاده کنید.
 
