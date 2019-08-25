@@ -1,14 +1,50 @@
-- title: شروع سریع unity
+- title: نصب و راه ‌اندازی
   items:
     - id: required
       title: پیش‌نیازها
+      subitems:
+        - title: ایجاد حساب
+          href: ایجاد-حساب-چابک
+          
     - id: sdk-setup
       title: راه‌اندازی
+      subitems:
+        - title: نصب کتابخانه
+          href: ۱--نصب-کتابخانه
+        - title: مقداردهی اولیه
+          href: ۲--مقداردهی-اولیه-initialize
+        - title: ثبت کاربر
+          href: ۳--ثبت-کاربر-register 
+                   
     - id: tracker
       title: ترکر نصب
+      subitems:
+        - title: پیاده‌سازی
+          href: ۱-پیادهسازی-sdk-integration
+        - title: ترک نصب‌ها
+          href: ۲-ترک-نصبها-tracking-installs
+        - title: ترک نصب از استورها
+          href: ۳-ترک-کمپینهای-نصب-از-استورها
+        - title: مکانیزم ضد تقلب
+          href: ۶-مکانیزم-ضد-تقلب-fraud-prevention
+        - title: مفاهیم ترکر
+          href: ۷-آشنایی-با-برخی-مفاهیم-ترکر
+
     - id: user-management
       title: گروه‌بندی کاربران
+      subitems:
+        - title: سگمنت
+          href: ایجاد-و-ذخیره-سگمنت
+        - title: تگ‌ها
+          href: تگها
+
     - id: behavior-tracking
       title: رصد رفتار درون‌برنامه‌ای
+      subitems:
+        - title: متد رصد
+          href: متد-رصد
+        - title: ارسال پیام براساس رفتار
+          href: ارسال-پیام-براساس-رفتار
+          
     - id: release-note
       title: لیست تغییرات
