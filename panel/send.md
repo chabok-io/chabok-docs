@@ -85,6 +85,9 @@ next: inbox.html
 در پیش‌نمایش محتوا شما می‌توانید علاوه بر متن پیامتان، **تصویر** و **دکمه‌ای** که قرار می‌دهید را قبل از ارسال در تمام پلتفرم‌ها مشاهده کنید و از مناسب بودن آن اطمینان یابید.
 
 ![enter image description here](http://uupload.ir/files/myzr_preview.png)
+
+<Br>
+
 <Br>
 
 #### نوتیفیکیشن پیشرفته (Rich Notification)
