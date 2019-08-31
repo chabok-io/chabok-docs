@@ -6,7 +6,7 @@ permalink: android/chabok(en).html
 direction: ltr
 ---
 
-## 1. Prerequisites
+## 1. Prerequisites-----
 
 Before you start, first you'll need a **Chabok account** and your notification **API Keys** (to setup notifications on android and ios).
 
