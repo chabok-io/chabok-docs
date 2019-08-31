@@ -255,4 +255,4 @@ chabok.isRegistered();
 chabok.unregister()
 ```
 
-> نحوه صحیح پیاده سازی متد و رویدادها در قالب پروژه [دمو](https://github.com/chabokpush/chabok-rn-chat) پیاده‌سازی شده است.
+> نحوه صحیح پیاده سازی متد و رویدادها در قالب پروژه [دمو](https://github.com/chabok-io/chabok-rn-chat) پیاده‌سازی شده است.
