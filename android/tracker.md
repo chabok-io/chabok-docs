@@ -53,7 +53,7 @@ buildscript {
 ```javascript
 dependencies {
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation 'com.adpdigital.push:chabok-lib:2.17.2'
+    implementation 'com.adpdigital.push:chabok-lib:2.17.3'
     implementation 'com.google.android.gms:play-services-gcm:10.2.6' 
     implementation 'com.android.installreferrer:installreferrer:1.0'
 }
