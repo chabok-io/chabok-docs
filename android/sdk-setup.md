@@ -43,7 +43,7 @@ buildscript {
 ```javascript  
 dependencies {  
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
-    implementation 'com.adpdigital.push:chabok-lib:2.17.2'  
+    implementation 'com.adpdigital.push:chabok-lib:2.17.3'  
   
     //If you want to get the push notification, add to dependencies  
     implementation 'com.google.android.gms:play-services-gcm:10.2.6'   
@@ -69,7 +69,7 @@ dependencies {
 ```javascript  
 dependencies {  
    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
-   implementation 'com.adpdigital.push:chabok-lib-geo:2.17.2'  
+   implementation 'com.adpdigital.push:chabok-lib-geo:2.17.3'  
    implementation 'com.google.android.gms:play-services-location:10.2.6'  
   
   //If you want to get the push notification, add to dependencies  

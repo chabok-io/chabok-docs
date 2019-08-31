@@ -10,6 +10,13 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۲.۱۷.۳ - ۱۳۹۸/۰۶/۰۹](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.17.3)
+
+### تغییرات
+
+- بهبود Proguard rules در استفاده از reflection
+- حل مشکل تغییر شبکه ریکت نیتیو (پیام خطا: `BroadcastReceiver components are not allowed to register to receive intents`)
+
 ## [نسخه ۲.۱۷.۲ - ۱۳۹۸/۰۵/۱۴](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.17.2)
 
 ### تغییرات
