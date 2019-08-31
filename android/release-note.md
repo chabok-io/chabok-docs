@@ -10,7 +10,7 @@ prev: troubleshoot.html
 
 <Br>
 
-## [نسخه ۲.۱۷.۳ - ۱۳۹۸/۰۶/۰۹](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.17.2)
+## [نسخه ۲.۱۷.۳ - ۱۳۹۸/۰۶/۰۹](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.17.3)
 
 ### تغییرات
 
