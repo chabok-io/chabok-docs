@@ -10,6 +10,18 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۱.۵.۰ - ۱۳۹۸/۰۶/۰۹](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.5.0)
+
+### تغییرات
+
+- بهبود تایید نصب
+
+- بهبود دریافت توکن پوش‌نوتیفیکیشن
+
+-  حالا حداقل طول  `userId`  **یک**  کاراکتر است.
+
+-   بهبود رفتار متد  `track` و `trackPurchase`  (زمانی که پارامتر  **realtime**  در تنظیمات  **false**  است.)
+
 ## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۴/۱۸](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.4.0)
 
 ### تغییرات
