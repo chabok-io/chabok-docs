@@ -10,7 +10,7 @@ prev: troubleshoot.html
 
 <Br>
 
-## [نسخه ۱.۵.۰ - ۱۳۹۸/۰۶/۰۹](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.5.0)
+## [نسخه ۱.۵.۰ - ۱۳۹۸/۰۶/۰۹](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.5.0)
 
 ### تغییرات
 
