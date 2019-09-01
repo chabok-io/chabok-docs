@@ -150,6 +150,7 @@ next: send.html
 
 ![enter image description here](http://uupload.ir/files/kw7u_doing-something-in-the-past.png)
 
+
 <br>
 
- >`نکته:` در صورتی که در ایجاد سگمنت مورد نظرتان به راهنمایی نیاز داشتید یا مایل هستید ما را در **بهبود این لیست کمک کنید**، آن را حتما با ما [به اشتراک بگذارید](https://github.com/chabokpush/chabok-docs/issues).
+ >`نکته:` در صورتی که در ایجاد سگمنت مورد نظرتان به راهنمایی نیاز داشتید یا مایل هستید ما را در **بهبود این لیست کمک کنید**، آن را حتما با ما [به اشتراک بگذارید](https://github.com/chabok-io/chabok-docs/issues).

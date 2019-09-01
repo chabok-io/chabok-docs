@@ -34,11 +34,12 @@ npm install chabokpush --save
 ```bash
 yarn add chabokpush
 ```
-و یا با استفاده از [CDN](https://unpkg.com/chabokpush@1.4.0/dist/chabokpush.min.js)، چابک را به پروژه خود اضافه کنید.
+
+و یا با استفاده از [CDN](https://unpkg.com/chabokpush@1.5.0/dist/chabokpush.min.js)، چابک را به پروژه خود اضافه کنید.
 
 ```bash
-<script src="https://unpkg.com/chabokpush@1.4.0/dist/chabokpush.min.js"></script>
-```
+<script src="https://unpkg.com/chabokpush@1.5.0/dist/chabokpush.min.js"></script>
+
 
 > `نکته`: توجه داشته باشید که CDN بالا روی مرورگر safari بدون vpn لود نمی‌شود. برای همین توصیه می‌کنیم روی پروژه خودتان آن را هاست کنید.
 
@@ -58,7 +59,7 @@ yarn add chabokpush
 
  برای **ارسال پوش‌نوتیفیکشن در پس‌زمینه (‌Background)** باید فایل `ChabokSDKWorker.js` را از [این لینک](https://raw.githubusercontent.com/chabokpush/chabok-client-js/master/dist/ChabokSDKWorker.js) دریافت نموده و در روت پروژه قرار دهید.
  
- اگر از **Github Desktop** استفاده می‌کنید، برای دریافت آن می‌توانید از [این لینک](x-github-client://openRepo/https://github.com/chabokpush/chabok-client-js?branch=master&filepath=dist%2FChabokSDKWorker.js) استفاده نمایید.
+ اگر از **Github Desktop** استفاده می‌کنید، برای دریافت آن می‌توانید از [این لینک](x-github-client://openRepo/https://github.com/chabok-io/chabok-client-js?branch=master&filepath=dist%2FChabokSDKWorker.js) استفاده نمایید.
 
 اگر هم از **Webpack** استفاده می‌کنید، می‌توانید از پلاگین [CopyWebpackPlugin](https://github.com/webpack-contrib/copy-webpack-plugin)‍ برای انتقال **service worker** به پوشه `dist` استفاده نمایید.
 

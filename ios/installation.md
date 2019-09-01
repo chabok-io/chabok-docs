@@ -36,6 +36,6 @@ $ pod update
 
 <Br>
 
-برای دسترسی به کتابخانه چابک هم می‌توانید وارد [این صفحه](https://github.com/chabokpush/chabok-client-ios) شوید.
+برای دسترسی به کتابخانه چابک هم می‌توانید وارد [این صفحه](https://github.com/chabok-io/chabok-client-ios) شوید.
 
 
