@@ -34,11 +34,12 @@ npm install chabokpush --save
 ```bash
 yarn add chabokpush
 ```
+
 و یا با استفاده از [CDN](https://unpkg.com/chabokpush@1.5.0/dist/chabokpush.min.js)، چابک را به پروژه خود اضافه کنید.
 
 ```bash
 <script src="https://unpkg.com/chabokpush@1.5.0/dist/chabokpush.min.js"></script>
-```
+
 
 > `نکته`: توجه داشته باشید که CDN بالا روی مرورگر safari بدون vpn لود نمی‌شود. برای همین توصیه می‌کنیم روی پروژه خودتان آن را هاست کنید.
 
