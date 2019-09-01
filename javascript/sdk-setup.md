@@ -39,6 +39,7 @@ yarn add chabokpush
 
 ```bash
 <script src="https://unpkg.com/chabokpush@1.5.0/dist/chabokpush.min.js"></script>
+```
 
 
 > `نکته`: توجه داشته باشید که CDN بالا روی مرورگر safari بدون vpn لود نمی‌شود. برای همین توصیه می‌کنیم روی پروژه خودتان آن را هاست کنید.
