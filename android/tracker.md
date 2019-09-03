@@ -87,7 +87,7 @@ dependencies {
     <intent-filter>
         <action android:name="com.google.android.c2dm.intent.RECEIVE" />
         <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-        <category android:name="MY_APPLICATION_PACKAGE_ID" />
+        <category android:name="${applicationId}" />
     </intent-filter>
 </receiver>
 ```  
@@ -167,6 +167,14 @@ AdpPushClient.get().setDevelopment(DEV_MODE);
 AdpPushClient.get().dismiss();  
 ```  
 <Br>  
+ 
+ در صورت عدم نیاز به قابلیت آنی (real-time) چابک از کد زیر در فایل `AndroidManifest.xml` استفاده کنید:
+
+``` xml
+<application ... >
+    <meta-data android:name="com.adpdigital.push.client.DISABLE_REALTIME" android:value="TRUE" />
+<application />
+```
 
 ##### د- ثبت کاربر (Register Users)
 
