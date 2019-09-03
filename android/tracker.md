@@ -108,11 +108,12 @@ public class MyAppClass extends Application {
         //AdpPushClient.init() should always be called in onCreate of Application class  
         AdpPushClient.init(  
                 getApplicationContext(),  
-                MY_ACTIVITY.class,  
-                "APP_ID/SENDER_ID", //based on your environment  
+                MainActivity.class,  
+                "APP_ID", //based on your environment  
                 "API_KEY",          //based on your environment  
                 "SDK_USERNAME",     //based on your environment  
-                "SDK_PASSWORD"      //based on your environment  
+                "SDK_PASSWORD",      //based on your environment  
+                "SENDER_ID"
         );  
   
         //true connects to Sandbox environment  
@@ -131,17 +132,22 @@ public class MyAppClass extends Application {
 }  
 ```  
   
-  > `نکته`: در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.  
+  > `نکته`: در این متد به جای پارامتر‌های `APP_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.  
  
 - ‍‍‍‍‍**MY_ACTIVITY**: این مقدار را نام کلاس `Activity` ای قرار دهید که چابک به طور پیش‌فرض پس از کلیک شدن روی اعلان، `Activity` تعیین شده را باز کند. (برای شخصی‌سازی اعلان‌ها [این بخش](/android/push-notification.html#شخصیسازی-نمایش-و-کلیک-روی-اعلان) را مشاهده کنید.)  
   
-- **APP_ID/SENDER_ID**: برای این مقدار کافی است فقط `SENDER_ID` ([شناسه‌ گوگل برای پوش‌نوتیفیکیشن](/android/required.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D9%84%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%DA%AF%D9%88%DA%AF%D9%84)) و `APP_ID` (شناسه چابک برای هر اپلیکیشن) را در کنار هم قرار دهید. به عنوان مثال این مقدار برای حساب دموی چابک `839879285/chabok-starter` می‌شود. (مقدار عددی `SENDER_ID` است.) 
+- **APP_ID**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
 - **API_KEY**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
 - **SDK_USERNAME**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
 - **SDK_PASSWORD**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
+
+- **SENDER_ID**: برای این مقدار کافی است بخش [شناسه‌ گوگل برای پوش‌نوتیفیکیشن](/android/required.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D9%84%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%DA%AF%D9%88%DA%AF%D9%84) را مطالعه کنید.
+
+> `نکته:` در صورت عدم استفاده از پوش‌نوتیفیکیشن این مقدار را`null` قرار دهید. (شمارش حذف و دریافت نوتیفیکیشن در اپلیکیشن‌تان غیرفعال خواهد شد.)
+
 
 - ‍‍‍‍‍‍‍‍**setDevelopment**: متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
     
