@@ -10,6 +10,22 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۲.۱۸.۰ - ۱۳۹۸/۰۶/۱۲](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.18.0)
+
+### تغییرات
+
+- از این پس نوتیفیکیشن‌های ساده (بدون تصویر) از متن بلند پشتیبانی می‌کند.
+- به کمک متد `isChabokPushNotification` می‌توانید برای تشخیص نوتیفیکیشن دریافتی استفاده کنید.
+- با استفاده از کد زیر می‌توانید سرویس آنی (real-time) چابک را غیر فعال کنید:
+```
+<application ... >
+    <meta-data android:name="com.adpdigital.push.client.DISABLE_REALTIME" android:value="TRUE" />
+<application />
+```
+
+### ارتقا
+- از این پس چابک فقط وظیفه نمایش نوتیفیکیشن خود را دارد.
+
 ## [نسخه ۲.۱۷.۳ - ۱۳۹۸/۰۶/۰۹](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.17.3)
 
 ### تغییرات
