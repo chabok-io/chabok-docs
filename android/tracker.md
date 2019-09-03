@@ -146,7 +146,7 @@ public class MyAppClass extends Application {
 
 - **SENDER_ID**: برای این مقدار کافی است بخش [شناسه‌ گوگل برای پوش‌نوتیفیکیشن](/android/required.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D9%84%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%DA%AF%D9%88%DA%AF%D9%84) را مطالعه کنید.
 
-> `نکته:` در صورت عدم استفاده از پوش‌نوتیفیکیشن این مقدار را `null` قرار دهید. (شمارش حذف و دریافت نوتیفیکیشن در اپلیکیشن‌تان غیرفعال خواهد شد.)
+> `نکته:` در صورت عدم استفاده از پوش‌نوتیفیکیشن مقدار **SENDER_ID** را `null` قرار دهید. (شمارش حذف و دریافت نوتیفیکیشن در اپلیکیشن‌تان غیرفعال خواهد شد.)
 
 
 - ‍‍‍‍‍‍‍‍**setDevelopment**: متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
@@ -175,6 +175,7 @@ AdpPushClient.get().dismiss();
     <meta-data android:name="com.adpdigital.push.client.DISABLE_REALTIME" android:value="TRUE" />
 <application />
 ```
+>`نکته:` در صورت غیرفعال‌سازی قابلیت آنی چابک، امکان استفاده از [پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) را از دست خواهید داد.
 
 ##### د- ثبت کاربر (Register Users)
 
