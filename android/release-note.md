@@ -18,7 +18,7 @@ prev: troubleshoot.html
 - به کمک متد `isChabokPushNotification` می‌توانید برای تشخیص نوتیفیکیشن دریافتی استفاده کنید.
 - با استفاده از کد زیر می‌توانید سرویس آنی (real-time) چابک را غیر فعال کنید:
 
-```
+``` xml
 <application ... >
     <meta-data android:name="com.adpdigital.push.client.DISABLE_REALTIME" android:value="TRUE" />
 <application />
