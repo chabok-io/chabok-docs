@@ -57,7 +57,7 @@ func  application(_  application:  UIApplication,  didFinishLaunchingWithOptions
 
 ```
 
-​### حذف در `AppDelegate`
+### حذف در `AppDelegate`
 
 
 کدهای زیر را در کلاس `AppDelegate` زیر حذف کنید:
