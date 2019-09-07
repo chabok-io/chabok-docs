@@ -23,7 +23,7 @@ next: chabok-messaging.html
 
 #### ۱.۱. مراحل پیاده‌سازی 
 
-برای راه‌اندازی SDK چابک **۴ مرحله** زیر را به ترتیب انجام ‌دهید:
+برای راه‌اندازی SDK چابک **۵ مرحله** زیر را به ترتیب انجام ‌دهید:
 
 [الف- افزودن کتابخانه](/android/tracker.html#الف--افزودن-کتابخانه)
 
@@ -33,8 +33,7 @@ next: chabok-messaging.html
 
 [د- ثبت کاربر](/android/tracker.html#د--ثبت-کاربر-register-users)
 
-[ه- ثبت اطلاعات کاربر (User Attributes)](/android/tracker.html#د--ثبت-اطلاعات-کاربر-user-attributes)
-
+[ه- ثبت اطلاعات کاربر (اختیاری)](/android/tracker.html#ه--ثبت-اطلاعات-کاربر-user-attributes)
 
 ##### الف- افزودن کتابخانه
 
@@ -53,7 +52,7 @@ buildscript {
 ```javascript
 dependencies {
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation 'com.adpdigital.push:chabok-lib:2.17.3'
+    implementation 'com.adpdigital.push:chabok-lib:2.18.0'
     implementation 'com.google.android.gms:play-services-gcm:10.2.6' 
     implementation 'com.android.installreferrer:installreferrer:1.0'
 }
