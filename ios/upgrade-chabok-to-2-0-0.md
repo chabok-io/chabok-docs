@@ -39,7 +39,7 @@ $ pod update
 
 <br>
 
-### ۲- حذف در `didFinishLaunchWithOptions`
+### ۲- حذف تنظیمات `didFinishLaunchWithOptions`
 
 کد زیر را از  `didFinishLaunchWithOptions` در کلاس `AppDelegate` حذف کنید:
 
@@ -69,7 +69,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 <br>
 
-### ۳- حذف در `AppDelegate`
+### ۳- حذف تنظیمات دریافت توکن 
 
 کدهای زیر را در کلاس `AppDelegate` زیر حذف کنید:
 
