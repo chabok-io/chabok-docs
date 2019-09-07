@@ -7,19 +7,22 @@ permalink: ios/upgrade-chabok-to-2-0-0.html
 
 این صفحه ارتقای کتابخانه‌های چابک به نسخه ۲.۰.۰ به بعد را آموزش خواهد داد.
 
+
 برای این کار فقط کافی است کدهای نمایش داده شده را از فایل‌های مربوط حذف کنید.
+
+
+<br>
 
 ### حذف در `didFinishLaunchWithOptions`
 
-کد زیر را در  `didFinishLaunchWithOptions` در کلاس `AppDelegate` حذف کنید:
+کد زیر را از  `didFinishLaunchWithOptions` در کلاس `AppDelegate` حذف کنید:
 
 ```diff
-
 //Objective-C
 
-​
 
-‌-  (BOOL)application:(UIApplication  *)application
+
+-  (BOOL)application:(UIApplication  *)application
 
             didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {     
 
@@ -34,11 +37,9 @@ permalink: ios/upgrade-chabok-to-2-0-0.html
 	...
 
 }
-
 ```
 
 ```diff
-
 //Swift:
 
 func  application(_  application:  UIApplication,  didFinishLaunchingWithOptions  launchOptions:  [UIApplicationLaunchOptionsKey:  Any]?)  ->  Bool  {
@@ -52,10 +53,11 @@ func  application(_  application:  UIApplication,  didFinishLaunchingWithOptions
 -	}
 
 	...
-
 }
 
 ```
+
+<br>
 
 ### حذف در `AppDelegate`
 
@@ -63,16 +65,15 @@ func  application(_  application:  UIApplication,  didFinishLaunchingWithOptions
 کدهای زیر را در کلاس `AppDelegate` زیر حذف کنید:
 
 ```diff
-
 //Objective-C:
 
-​
+
 
 #pragma  mark  -  Notification  AppDelegation
 
-​
 
-‌-(void)application:(UIApplication  *)application  didFailToRegisterForRemoteNotificationsWithError:(NSError  *)error{
+
+-(void)application:(UIApplication  *)application  didFailToRegisterForRemoteNotificationsWithError:(NSError  *)error{
 
     // Handle failure of get Device token from Apple APNS Server
 
@@ -80,9 +81,9 @@ func  application(_  application:  UIApplication,  didFinishLaunchingWithOptions
 
 }
 
-​
 
-‌-(void)application:(UIApplication  *)application  didRegisterForRemoteNotificationsWithDeviceToken:(NSData  *)deviceToken{
+
+-(void)application:(UIApplication  *)application  didRegisterForRemoteNotificationsWithDeviceToken:(NSData  *)deviceToken{
 
     // Handle receive Device Token From APNS Server
 
@@ -90,27 +91,25 @@ func  application(_  application:  UIApplication,  didFinishLaunchingWithOptions
 
 }
 
-​
 
-‌-(void)application:(UIApplication  *)application  didRegisterUserNotificationSettings:(UIUserNotificationSettings  *)notificationSettings{
+
+-(void)application:(UIApplication  *)application  didRegisterUserNotificationSettings:(UIUserNotificationSettings  *)notificationSettings{
 
     // Handle iOS 8 remote Notificaiton Settings
 
 -  [_manager  application:application  didRegisterUserNotificationSettings:notificationSettings];
 
 }
-
 ```
 
 ```diff
-
 //Swift  :
 
-​
+
 
 //MARK  :  Notification  AppDelegation
 
-​
+
 
 func  application(_  application:  UIApplication,  didFailToRegisterForRemoteNotificationsWithError  error:  Error)  {
 
@@ -137,5 +136,4 @@ func  application(_  application:  UIApplication,  didRegister  notificationSett
 - _manager?.application(application,  didRegister:  notificationSettings)
 
 }
-
 ```
