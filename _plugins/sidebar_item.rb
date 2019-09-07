@@ -16,6 +16,10 @@ module Jekyll
         return sidebar_helper(item, 'unity')
     end
 
+    def flutter_sidebar_link(item)
+        return sidebar_helper(item, 'flutter')
+    end
+
     def windows_sidebar_link(item)
       return sidebar_helper(item, 'windows')
     end

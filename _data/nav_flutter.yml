@@ -1,0 +1,18 @@
+- title: شروع سریع flutter
+  items:
+    - id: required
+      title: پیش‌نیازها
+    - id: sdk-setup
+      title: راه‌اندازی
+    - id: tracker
+      title: ترکر نصب
+    - id: chabok-messaging
+      title: پیام چابک
+    - id: push-notification
+      title: پوش‌نوتیفیکیشن
+    - id: custom-data
+      title: داده‌های سفارشی کاربر
+    - id: behavior-tracking
+      title: رصد رفتار درون‌برنامه‌ای
+    - id: features
+      title: امکانات دیگر
