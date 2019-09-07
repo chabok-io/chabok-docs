@@ -44,7 +44,7 @@
   image: flutter.png
   document: /flutter/introducing.html
   demo:
-  starter:  https://github.com/chabok-io/chabok-client-flutter
+  starter: https://github.com/chabok-io/chabok-client-flutter/tree/master/example
   issue: https://github.com/chabok-io/chabok-client-flutter/issues
 
 - name: REST API
