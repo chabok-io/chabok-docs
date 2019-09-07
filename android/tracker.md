@@ -33,7 +33,7 @@ next: chabok-messaging.html
 
 [د- ثبت کاربر](/android/tracker.html#د--ثبت-کاربر-register-users)
 
-[ه- ثبت اطلاعات کاربر (اختیاری)](/android/tracker.html#د--ثبت-اطلاعات-کاربر-user-attributes)
+[ه- ثبت اطلاعات کاربر (اختیاری)](/android/tracker.html#ه--ثبت-اطلاعات-کاربر-user-attributes)
 
 ##### الف- افزودن کتابخانه
 
