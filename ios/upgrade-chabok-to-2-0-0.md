@@ -5,17 +5,40 @@ layout: ios
 permalink: ios/upgrade-chabok-to-2-0-0.html
 ---
 
-با استفاده از راهنمای زیر می‌توانید نسخه کتابخانه آی‌اواس خود را به **نسخه ۲.۰.۰ به بعد ارتقا دهید**. برای این کار فقط کافیست چند قطعه کد را مطابق این صفحه از پروژه خود **بردارید**.
+با استفاده از راهنمای زیر می‌توانید نسخه کتابخانه آی‌اواس خود را به **نسخه ۲.۰.۰ به بعد ارتقا دهید**. برای این کار فقط کافیستبا استفاده از راهنمای زیر می‌توانید نسخه کتابخانه آی‌اواس خود را به **نسخه ۲.۰.۰ به بعد ارتقا دهید**. برای این کار فقط کافیست پس از دریافت نسخه جدید، چند قطعه کد را از پروژه خود **بردارید**.
 
 کدهایی که باید حذف کنید عبارتند از:
 
-- [۱- حذف تنظیمات `didFinishLaunchWithOptions`](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-didfinishlaunchwithoptions)
-- [۲- حذف تنظیمات دریافت توکن](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-appdelegate)
+- [۱- دریافت نسخه جدید و به روز رسانی کتابخانه]()
+
+- [۲- حذف تنظیمات `didFinishLaunchWithOptions`](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-didfinishlaunchwithoptions)
+
+- [۳- حذف تنظیمات دریافت توکن](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-appdelegate)
+ 
+<br><br>
+
+### ۱- دریافت نسخه کتابخانه ۲.۰ آی‌اواس
+
+کتابخانه چابک از طریق CocoaPods در دسترس است، برای به روز رسانی در خط زیر نسخه `ChabokPush` را به ۲.۰.۰ تغییر دهید:
 
 
+```bash
+target 'YourProject' do
+  use_frameworks!
+
+  pod 'ChabokPush', '~> 2.0.0'
+  
+end
+```
+
+سپس دستور زیر را اجرا کنید:
+
+```bash
+$ pod update
+```
 <br>
 
-### حذف در `didFinishLaunchWithOptions`
+### ۲- حذف در `didFinishLaunchWithOptions`
 
 کد زیر را از  `didFinishLaunchWithOptions` در کلاس `AppDelegate` حذف کنید:
 
@@ -45,7 +68,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 <br>
 
-### حذف در `AppDelegate`
+### ۳- حذف در `AppDelegate`
 
 کدهای زیر را در کلاس `AppDelegate` زیر حذف کنید:
 
