@@ -5,12 +5,12 @@ layout: ios
 permalink: ios/upgrade-chabok-to-2-0-0.html
 ---
 
-این صفحه ارتقای کتابخانه‌های چابک به نسخه ۲.۰.۰ به بعد را آموزش خواهد داد.
+با استفاده از راهنمای زیر می‌توانید نسخه کتابخانه آی‌اواس خود را به **نسخه ۲.۰.۰ به بعد ارتقا دهید**. برای این کار فقط کافیست چند قطعه کد را از پروژه خود **بردارید**.
 
+کدهایی که باید حذف کنید عبارتند از:
 
-برای این کار فقط کافی است کدهای نمایش داده شده را از فایل‌های مربوط حذف کنید.
-
-
+- [۱- حذف در `didFinishLaunchWithOptions`](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-didfinishlaunchwithoptions)
+- [۲- حذف در `AppDelegate`](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-appdelegate)
 <br>
 
 ### حذف در `didFinishLaunchWithOptions`
@@ -20,7 +20,7 @@ permalink: ios/upgrade-chabok-to-2-0-0.html
 ```diff
 //Objective-C
 
-
+ 
 
 -  (BOOL)application:(UIApplication  *)application
 
