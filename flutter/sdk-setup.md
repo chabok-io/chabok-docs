@@ -25,18 +25,18 @@ next: tracker.html
   
 برای نصب کتابخانه کافی است در بخش **dependencies** فایل `pubspec.yaml‍` ، چابک را مانند زیر اضافه کنید:
 
-```
+```bash
 dependencies:
 	chabokpush: ^0.0.5 
 ``` 
   و پس از آن دستور زیر را در ترمینال در مسیر پروژه خود اجرا کنید:
   
-```
+```bash
 flutter pub get
 ```
 حالا باید در پروژه خود کد زیر را ایمپورت کنید:
 
-```
+```bash
 import 'package:chabokpush/chabokpush.dart';
 ```
 
