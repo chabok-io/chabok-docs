@@ -5,12 +5,12 @@ layout: ios
 permalink: ios/upgrade-chabok-to-2-0-0.html
 ---
 
-با استفاده از راهنمای زیر می‌توانید نسخه کتابخانه آی‌اواس خود را به **نسخه ۲.۰.۰ به بعد ارتقا دهید**. برای این کار فقط کافیست چند قطعه کد را از پروژه خود **بردارید**.
+با استفاده از راهنمای زیر می‌توانید نسخه کتابخانه آی‌اواس خود را به **نسخه ۲.۰.۰ به بعد ارتقا دهید**. برای این کار فقط کافیست چند قطعه کد را مطابق این صفحه از پروژه خود **بردارید**.
 
 کدهایی که باید حذف کنید عبارتند از:
 
-- [۱- حذف در `didFinishLaunchWithOptions`](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-didfinishlaunchwithoptions)
-- [۲- حذف در `AppDelegate`](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-appdelegate)
+- [۱- حذف تنظیمات `didFinishLaunchWithOptions`](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-didfinishlaunchwithoptions)
+- [۲- حذف تنظیمات دریافت توکن](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-appdelegate)
 
 
 <br>
@@ -89,3 +89,5 @@ func  application(_  application:  UIApplication,  didRegister  notificationSett
 - 	_manager?.application(application,  didRegister:  notificationSettings)
 }
 ```
+
+پس حذف این کد، **ارتقای شما با موفقیت انجام خواهد شد.**
