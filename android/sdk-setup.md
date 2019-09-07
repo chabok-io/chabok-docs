@@ -357,4 +357,4 @@ public void onEvent(AppState state) {
 AdpPushClient.get().unregister();  
 ```  
   
-> `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-android) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از سرویس چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.
+> `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-android) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.

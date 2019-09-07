@@ -210,7 +210,7 @@ PushClientManager.setDevelopment(true)
 
 - متد `registerApplication`:
 
-به منظور استفاده از سرویس چابک، ابتدا باید متد `registerApplication` را فراخوانی کرده و مقادیر مورد نیاز جهت فعالسازی کتابخانه چابک را وارد نمایید. 
+به منظور استفاده از پلتفرم چابک، ابتدا باید متد `registerApplication` را فراخوانی کرده و مقادیر مورد نیاز جهت فعالسازی کتابخانه چابک را وارد نمایید. 
 
 همانند کد زیر، متد `registerApplication` را در کلاس `AppDelegate` و در متد `didFinishLaunchingWithOptions` فراخوانی کنید:
 
@@ -524,4 +524,4 @@ _manager.default()?.register(withGuestId: "MY_GUEST_ID")
 _manager?.unregisterUser()
 ```
 
-> `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-ios) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از سرویس چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده‌سازی متدهای چابک آشنا خواهید شد.
+> `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-ios) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده‌سازی متدهای چابک آشنا خواهید شد.
