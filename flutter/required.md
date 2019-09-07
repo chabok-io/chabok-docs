@@ -41,3 +41,4 @@ next: sdk-setup.html
 ![عکس مربوطه](http://uupload.ir/files/aeau_platform-settings-android.png)
 
 > `نکته`: مقدار **Sender ID** علاوه بر این قسمت، به عنوان یکی از پارامترهای مقداردهی اولیه در [راه‌اندازی](/flutter/sdk-setup.html) چابک نیز مورد استفاده قرار خواهد گرفت.
+
