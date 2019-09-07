@@ -12,9 +12,9 @@ permalink: ios/upgrade-chabok-to-2-0-0.html
 
 - [۱- دریافت نسخه جدید و به روز رسانی کتابخانه](/ios/upgrade-chabok-to-2-0-0.html#۱--دریافت-نسخه-۲۰-کتابخانه)
 
-- [۲- حذف تنظیمات `didFinishLaunchWithOptions`](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-didfinishlaunchwithoptions)
+- [۲- حذف تنظیمات `didFinishLaunchWithOptions`](#۲--حذف-تنظیمات-didfinishlaunchwithoptions)
 
-- [۳- حذف تنظیمات دریافت توکن](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-appdelegate)
+- [۳- حذف تنظیمات دریافت توکن](#۳--حذف-تنظیمات-دریافت-توکن)
  
 <br><br>
 
