@@ -11,6 +11,8 @@ permalink: ios/upgrade-chabok-to-2-0-0.html
 
 - [۱- حذف در `didFinishLaunchWithOptions`](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-didfinishlaunchwithoptions)
 - [۲- حذف در `AppDelegate`](/ios/upgrade-chabok-to-2-0-0.html#حذف-در-appdelegate)
+
+
 <br>
 
 ### حذف در `didFinishLaunchWithOptions`
