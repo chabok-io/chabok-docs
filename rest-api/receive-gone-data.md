@@ -10,11 +10,14 @@ permalink: rest-api/receive-gone-data.html
 
 <Br>
 
-به طور کلی برای دریافت دیتای حذف باید از لینک `https://sandbox.push.adpdigital.com/api/installations/v1/uninstall/report/:from/:to?limit=10&offset=0` استفاده کنید.
+### لینک پایه (Path)
+
+ لینک پایه دریافت دیتا `https://sandbox.push.adpdigital.com/api/installations/v1/uninstall/report/:from/:to?limit=10&offset=0` است.
 
 
 >`نکته:` دقت داشته لینک بالا برای حساب‌های سندباکس است و در صورت داشتن حاسب عملیاتی باید از لینک `https://{APP_ID}.push.adpdigital.com/api/installations/v1/uninstall/report/:from/:to?limit=10&offset=0` استافده کنید.
 
+<Br>
 
 ### پارامترها
 
@@ -34,6 +37,8 @@ permalink: rest-api/receive-gone-data.html
 - `limit` (اختیاری)
 
 این پارامتر عددی تعیین می‌کند از `offset` شما به بعد چه تعداد از نتایج درخواستی شما دریافت شود.
+
+<Br>
 
 ### نمونه Curl
 
