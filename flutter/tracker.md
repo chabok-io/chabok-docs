@@ -7,7 +7,7 @@ prev: sdk-setup.html
 next: chabok-messaging.html
 ---
 
-ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/flutter/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/android/tracker.html#۴-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
+ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/flutter/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/flutter/tracker.html#۴-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
 
  نگران راه‌اندازی هم نباشید این صفحه به طور کامل مراحل **پیاده‌سازی و استفاده از ترکر** را قدم به قدم مرور می‌کند.  
 
@@ -18,7 +18,7 @@ next: chabok-messaging.html
 ### ۱. پیاده‌سازی (SDK Integration)
 ---
 
-برای ایجاد حساب کاربری کافیست در وبسایت چابک وارد صفحه [شروع کنید](https://chabokpush.com/register.html) شوید و حساب شخصی خود را بسازید. پس از ایجاد حساب و ثبت اپلیکیشن خود، با مراجعه به بخش [تنظیمات پنل](https://sandbox.push.adpdigital.com/front/setting/access) پارامترهای اتصال به چابک که در مرحله [مقداردهی](/android/tracker.html#ج--مقداردهی-initialize) مورد نیاز است، در دسترس خواهد بود.
+برای ایجاد حساب کاربری کافیست در وبسایت چابک وارد صفحه [شروع کنید](https://chabokpush.com/register.html) شوید و حساب شخصی خود را بسازید. پس از ایجاد حساب و ثبت اپلیکیشن خود، با مراجعه به بخش [تنظیمات پنل](https://sandbox.push.adpdigital.com/front/setting/access) پارامترهای اتصال به چابک که در مرحله [مقداردهی](/flutter/tracker.html#ج--مقداردهی-initialize) مورد نیاز است، در دسترس خواهد بود.
 
 
 #### ۱.۱. مراحل پیاده‌سازی 
@@ -33,40 +33,27 @@ next: chabok-messaging.html
 
 [د- ثبت کاربر](/flutter/tracker.html#د--ثبت-کاربر-register-users)
 
-[ه- ثبت اطلاعات کاربر (User Attributes)](/flutter/tracker.html#د--ثبت-اطلاعات-کاربر-user-attributes)
+[ه- ثبت اطلاعات کاربر (اختیاری)](/flutter/tracker.html#د--ثبت-اطلاعات-کاربر-user-attributes)
 
 
 ##### الف- افزودن کتابخانه
 
-کتابخانه چابک از طریق `jcenter` در دسترس است. برای این منظور ابتدا در فایل `gradle` اصلی پروژه، `jcenter` را بعنوان `repository` مطابق قطعه کد زیر اضافه نمایید:
 
-```javascript
-buildscript {
-  repositories {
-    jcenter()
-  }
-}  
+برای نصب کتابخانه کافی است در بخش **dependencies** فایل `pubspec.yaml‍` ، چابک را مانند زیر اضافه کنید:
+
+```bash
+dependencies:
+	chabokpush: ^0.0.5 
+``` 
+  و پس از آن دستور زیر را در ترمینال مسیر پروژه خود اجرا کنید:
+  
+```bash
+flutter pub get
 ```
+حالا باید در پروژه خود کد زیر را ایمپورت کنید:
 
-فایل `build.gradle` در مسیر `app` را باز کرده و در بخش `dependencies` خط زیر را اضافه نمایید:
-
-```javascript
-dependencies {
-    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation 'com.adpdigital.push:chabok-lib:2.17.3'
-    implementation 'com.google.android.gms:play-services-gcm:10.2.6' 
-    implementation 'com.android.installreferrer:installreferrer:1.0'
-}
-```
-
-> `نکته:` چابک در حال حاضر از **FCM** بهره می‌برد؛ در عین حال به خاطر قابلیت **backward compatibility** خود از کاربرانی که از نسخه‌های پایین‌تر اندروید استفاده می‌کنند یا از **GCM** به **FCM** مهاجرت نکرده‌اند، **پشتیبانی** می‌کند. توجه داشته باشید که موضوع بسته شدن **GCM** برای سرورهای خودش است و در کلاینت‌های اندروید چابک، دریافت توکن پوش همچنان امکان‌پذیر است.
-
-- اگر از سرویس‌های پوش دیگری در کنار چابک استفاده می‌کنید می‌توانید با کد زیر از **نمایش دوباره آن جلوگیری کنید.**
-
-این کد باعث می‌شود تا فقط پوش‌نوتیفیکشن‌های چابک نمایش داده شوند؛ برای این کار کد زیر در فایل `AndroidManifest.xml` قرار دهید:
-
-```xml
-<meta-data android:name="com.adpdigital.push.client.SHOW_ONLY_CHABOK_NOTIFICATIONS" android:value="ENABLE" />
+```bash
+import 'package:chabokpush/chabokpush.dart';
 ```
 
 <br>
@@ -90,6 +77,12 @@ dependencies {
     </intent-filter>
 </receiver>
 ```  
+اگر از سرویس‌های پوش دیگری (مانند FCM) در کنار چابک استفاده می‌کنید می‌توانید با کد زیر از **نمایش دوباره آن جلوگیری کنید.**
+این کد باعث می‌شود تا فقط پوش‌نوتیفیکشن‌های چابک نمایش داده شوند؛ برای این کار کد زیر در فایل `AndroidManifest.xml` قرار دهید:
+
+```xml
+<meta-data android:name="com.adpdigital.push.client.SHOW_ONLY_CHABOK_NOTIFICATIONS" android:value="ENABLE" />
+```
 
 <br>
 
@@ -97,45 +90,28 @@ dependencies {
 
 چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `init` چابک **باید** در کلاس `Application` در متد `onCreate` تحت هر شرایطی فراخوانی شود.  
   
-```java  
-public class MyAppClass extends Application {  
+
+```dart
+@override
+
+void initState() {
+
+super.initState();
+
+ChabokPush.init('APP_ID',       //based on your environment
+				'API_KEY',      //based on your environment
+				'SDK_USERNAME', //based on your environment
+				'SDK_PASSWORD', //based on your environment
+				'SENDER_ID',    
+				 devMode);      //based on your environment
+```
+ 
   
-    @Override  
-    public void onCreate() {  
-        super.onCreate();  
-  
-        //AdpPushClient.init() should always be called in onCreate of Application class  
-        AdpPushClient.init(  
-                getApplicationContext(),  
-                MainActivity.class,  
-                "APP_ID", //based on your environment  
-                "API_KEY",          //based on your environment  
-                "SDK_USERNAME",     //based on your environment  
-                "SDK_PASSWORD",      //based on your environment  
-                "SENDER_ID"
-        );  
-  
-        //true connects to Sandbox environment  
-        //false connects to Production environment  
-        AdpPushClient.get().setDevelopment(DEV_MODE);  
-    }  
-      
-    @Override  
-    public void onTerminate() {  
-        if (AdpPushClient.get() != null) {  
-            AdpPushClient.get().dismiss();  
-        }  
-  
-        super.onTerminate();  
-    }  
-}  
-```  
-  
-  > `نکته`: در این متد به جای پارامتر‌های `APP_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.  
+  > `نکته`: در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.  
  
 - ‍‍‍‍‍**MY_ACTIVITY**: این مقدار را نام کلاس `Activity` ای قرار دهید که چابک به طور پیش‌فرض پس از کلیک شدن روی اعلان، `Activity` تعیین شده را باز کند. (برای شخصی‌سازی اعلان‌ها [این بخش](/android/push-notification.html#شخصیسازی-نمایش-و-کلیک-روی-اعلان) را مشاهده کنید.)  
   
-- **APP_ID**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
+- **APP_ID/SENDER_ID**: برای این مقدار کافی است فقط `SENDER_ID` ([شناسه‌ گوگل برای پوش‌نوتیفیکیشن](/android/required.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D9%84%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%DA%AF%D9%88%DA%AF%D9%84)) و `APP_ID` (شناسه چابک برای هر اپلیکیشن) را در کنار هم قرار دهید. به عنوان مثال این مقدار برای حساب دموی چابک `839879285/chabok-starter` می‌شود. (مقدار عددی `SENDER_ID` است.) 
 
 - **API_KEY**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
@@ -143,108 +119,59 @@ public class MyAppClass extends Application {
 
 - **SDK_PASSWORD**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
-- **SENDER_ID**: برای این مقدار کافی است بخش [شناسه‌ گوگل برای پوش‌نوتیفیکیشن](/flutter/required.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D9%84%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%DA%AF%D9%88%DA%AF%D9%84) را مطالعه کنید.
-
-> `نکته:` در صورت عدم استفاده از پوش‌نوتیفیکیشن مقدار **SENDER_ID** را `null` قرار دهید. (شمارش حذف و دریافت نوتیفیکیشن در اپلیکیشن‌تان غیرفعال خواهد شد.)
-
-
-- ‍‍‍‍‍‍‍‍**setDevelopment**: متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
+- ‍‍‍‍‍‍‍‍**devMode**: متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
     
-مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.  
-  
-```java  
-AdpPushClient.get().setDevelopment(DEV_MODE);  
-```  
-
-> `نکته`: توجه داشته باشید متد `AdpPushClient.init` تحت هر شرایط **حتما** باید در کلاس `Application` و در متد `onCreate` فراخوانی شود. متد فوق برای مقداردهی پارامتر‌های ضروری چابک می‌باشد و در صورت عدم فراخوانی آن در حالت **بسته** (Kill) بودن اپلیکیشن، با خطا مواجه خواهید شد.  
-  
+مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `devMode` کلید‌های دسترسی آن هم باید تغییر داده شود.  
+    
 > `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید تا پس از تایید و ساخت حساب عملیاتی شما، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد.  
-
-- **dismiss**: در متد `onTerminate` کلاس `Application` که در واقع آخرین فراخوانی در چرخه حیات این کلاس است، متد `dismiss` از کلاینت چابک را فراخوانی نمایید تا منابع در اختیار آزاد شوند. واضح است بعد از فراخوانی این متد دیگر نمی‌توان از نمونه جاری کلاینت استفاده کرد و باید دوباره نمونه‌سازی کنید.  
   
-```java  
-AdpPushClient.get().dismiss();  
-```  
 <Br>  
- 
- در صورت عدم نیاز به قابلیت آنی (real-time) چابک از کد زیر در فایل `AndroidManifest.xml` استفاده کنید:
-
-``` xml
-<application ... >
-    <meta-data android:name="com.adpdigital.push.client.DISABLE_REALTIME" android:value="TRUE" />
-<application />
-```
->`نکته:` در صورت غیرفعال‌سازی قابلیت آنی چابک، امکان استفاده از [پیام چابک](/flutter/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) را از دست خواهید داد.
 
 ##### د- ثبت کاربر (Register Users)
 
-یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و [سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید](/panel/users.html#جزئیات-کاربر).
-
-
-```java
-@Override
-public void onCreate() {
-    super.onCreate();
-
-    ...
-    
-    String userId = AdpPushClient.get().getUserId();
-    
-    if (userId != null && !userId.isEmpty()) {
-        AdpPushClient.get().register(userId);
-    } else {
-
-        //If user is not registered verify the user and
-        //call AdpPushClient.get().register("USER_ID") method at login page
-        
-        //If you have guest users
-        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
-        AdpPushClient.get().registerAsGuest();
-
-    }
-}
-```
-
-متد `registerAsGuest` کاربر را به عنوان **کاربر مهمان** ثبت می‌کند. این متد به طور خودکار  یک تگ مهمان (CHABOK_GUEST) به کاربر اختصاص می‌دهد.
-
->` نکته:` دقت کنید که متد `registerAsGuest` را به درستی استفاده کرده‌ باشید. برای این کار پس از نصب کاربر به **پنل > کاربران** بروید و از اضافه شدن کارت آن کاربر مانند زیر مطمئن شوید:
-
-![عکس مربوط](http://uupload.ir/files/sa5_regis-as-guest3.png)
-
- متد `register` علاوه بر ثبت کاربر، عمل **اتصال به سرور چابک** را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرای اپلیکیشن (در کلاس application) فراخوانی شود: (برای اطلاعات بیشتر می‌توانید بخش [ثبت کاربر](/android/sdk-setup.html#۴--ثبت-کاربر-register) را مطالعه کنید.) 
-
->` نکته:` دقت کنید که متد `registerAsGuest` را تنها استفاده نکنید و مانند بالا عمل کنید. در صورت فراخوانی این متد به تنهایی کاربر با هر بازدید به عنوان یک مهمان جدید محاسبه خواهد شد.
-
-ترکرها به طور معمول نصب را **اولین بازدید** حساب می‌کنند (مانند سرویس ادجاست)، اما مزیت ترکر چابک در شمارش نصب این است که شما می‌توانید علاوه بر مدل ادجاست نصب را **پس از ورود کاربر و احراز هویت او** در اپلیکیشنتان تعریف کنید. با این کار شما یک اقدام دیگری برای جلوگیری از تقلب در شمارش نصب انجام می‌دهید، به این دلیل که امضاهای کاربر، قبل و بعد از ثبت او (register) مطابقت داده می‌شوند و در صورت تایید به عنوان یک نصب سالم در نظر گرفته می‌شوند. 
-
-به عنوان مثال اگر اپلیکیشن شما دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای (در کلاس `Application` متد `onCreate`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
-
-```java
-AdpPushClient.get().register("USER_ID");
-```
-
+ ترکرها به طور معمول نصب را **اولین بازدید** حساب می‌کنند (مانند سرویس ادجاست)، اما مزیت ترکر چابک در شمارش نصب این است که شما می‌توانید علاوه بر مدل ادجاست، نصب را **ایجاد حساب و احراز هویت او** در اپلیکیشنتان تعریف کنید. با این کار شما یک اقدام دیگری برای جلوگیری از تقلب در شمارش نصب انجام می‌دهید، به این دلیل که امضاهای کاربر، قبل و بعد از ثبت او (register) مطابقت داده می‌شوند و در صورت تایید به عنوان یک نصب سالم در نظر گرفته می‌شوند.   
+  
+این شناسه می‌تواند برای **دستگاه‌های متعدد یک کاربر** استفاده شود. شناسه کاربر می‌تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. **شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی **شناسه دیتابیس‌تان** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود.  
+  
+  
+ علاوه بر ثبت کاربر،‌ متد `register` عمل **اتصال** به سرور چابک را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول  فراخوانی شود.   
+  
+به عنوان مثال اگر اپلیکیشن شما صفحه **ورود** و **ثبت‌نام** دارد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای فراخوانی کنید تا کاربر به سرور چابک متصل شود.  
+  
+```dart
+ChabokPush.shared.getUserId().then((userId) =>
+		  ChabokPush.shared.register(userId),
+		  onError: (e) =>  ChabokPush.shared.registerAsGuest());
+```  
+  
 > `نکته`: مقدار `USER_ID` می‌تواند **بین ۳ تا ۶۴** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
-
+  
+> `نکته امنیتی`: مقدار `USER_ID` را هرگز به صورت خام در `SharedPreferences` ذخیره نکنید، چون مقدار این شناسه معنادار است و می‌توان با آن، کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `getUserId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.   
+   
 <br>
 
 ##### ه- ثبت اطلاعات کاربر (User Attributes)
 
 با فراخوانی متد زیر می‌توانید اطلاعات و سوابق کاربر را جمع‌آوری و ذخیره کنید:
 
-```java
-HashMap<String, Object> userInfo = new HashMap<>();
+```dart
+_setUserAttributesButtonClicked(){
 
-userInfo.put("firstName", "محمدرضا");
-userInfo.put("lastName", "اخوان");
-userInfo.put("age", 35);
-userInfo.put("gender", "مرد");
+ChabokPush.shared.setUserAttributes(<String, dynamic>{
 
-AdpPushClient.get().setUserAttributes(userInfo);
+				'firstName': 'محمدرضا',						
+				'lastName': 'اخوان',
+				'age': 4,
+				'gender': 'مرد'
+});
+}
 ```
 
 پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
 
 ![عکس مربوطه](http://uupload.ir/files/ovf0_set-user-info.png)
+
+<br>
 
 #### ۲.۱. رصد رویدادها (Tracking Events)
 
@@ -253,11 +180,16 @@ AdpPushClient.get().setUserAttributes(userInfo);
 
 با کد زیر می‌توانید رفتار کاربر (رویداد) را در چابک رصد کنید:  
   
-```java
-JSONObject data = new JSONObject();
-data.put("value", 35000);
+```dart
+_trackAddToCartButtonClicked(){
 
-AdpPushClient.get().track("add-to-card", data);
+ChabokPush.shared.track("AddToCart", <String, dynamic>{
+
+'value': 'pID_123'
+
+});
+
+}
 ```
 
 >‍‍‍`نکته:` در متد `track` در صورتی که به `value` مقدار عددی بدهید، آن رفتار در سگمنت با پیشوند **آخرین و مجموع** اضافه می‌شود. اما در صورتی که مقدار غیر عددی (string) بدهید، آن رفتار فقط با پیشوند **آخرین** به سگمنت اضافه می‌شود.
@@ -270,11 +202,12 @@ AdpPushClient.get().track("add-to-card", data);
 
 نمونه:
 
-```java
-ChabokEvent event = new ChabokEvent(500000, "RIAL");
-event.setData(data);
-                
-AdpPushClient.get().trackPurchase("Purchase", event);
+```dart
+_trackPurchaseButtonClicked(){
+
+ChabokPush.shared.trackPurchase("Purchase", new ChabokEvent(500000,'RIAL'));
+
+}
 ```
 
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/flutter/behavior-tracking.html) را مطالعه کنید.
