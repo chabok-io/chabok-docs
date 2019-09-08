@@ -44,7 +44,7 @@ permalink: rest-api/receive-uninstall-data.html
 ```bash
 curl -X GET \  
 --header 'Accept: application/json' \  
-'https://sandbox.push.adpdigital.com/api/installations/v1/uninstall/report/1567922666521/1567836276088?limit=100&offset=100&access_token={YOUR_ACCESS_TOKEN}'
+'https://{APP_ID}.push.adpdigital.com/api/installations/v1/uninstall/report/1567922666521/1567836276088?limit=100&offset=100&access_token={YOUR_ACCESS_TOKEN}'
 ```
 
 پاسخ درخواست مانند زیر خواهد بود:
