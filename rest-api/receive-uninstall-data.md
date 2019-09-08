@@ -11,10 +11,8 @@ permalink: rest-api/receive-uninstall-data.html
 
 ### لینک پایه (Path)
 
- لینک پایه دریافت دیتا `https://sandbox.push.adpdigital.com/api/installations/v1/uninstall/report/:from/:to` است.
+ لینک پایه دریافت دیتا `https://{APP_ID}.push.adpdigital.com/api/installations/v1/uninstall/report/:from/:to` است.
 
-
->`نکته:` دقت داشته لینک بالا برای حساب‌های سندباکس است و در صورت داشتن حساب عملیاتی باید از لینک `https://{APP_ID}.push.adpdigital.com/api/installations/v1/uninstall/report/:from/:to` استفاده کنید.
 
 <Br>
 
@@ -47,4 +45,17 @@ permalink: rest-api/receive-uninstall-data.html
 curl -X GET \  
 --header 'Accept: application/json' \  
 'https://sandbox.push.adpdigital.com/api/installations/v1/uninstall/report/1567922666521/1567836276088?limit=100&offset=100&access_token={YOUR_ACCESS_TOKEN}'
+```
+
+پاسخ درخواست مانند زیر خواهد بود:
+
+```bash
+[
+  {
+    "time": "2019-08-28T22:30:18.148Z",
+    "installationId": "DEVICE_ID",
+    "deviceType": "DEVICE_TYPE(android, ios,...)",
+    "userId": "USER_ID"
+  },
+]
 ```
