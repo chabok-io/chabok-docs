@@ -46,5 +46,5 @@ permalink: rest-api/receive-uninstall-data.html
 ```bash
 curl -X GET \  
 --header 'Accept: application/json' \  
-'[https://sandbox.push.adpdigital.com/api/installations/v1/uninstall/report/1567922666521/1567836276088?limit=100&offset=100&access_token={YOUR_ACCESS_TOKEN}](https://slack-redir.net/link?url=https%3A%2F%2Fsandbox.push.adpdigital.com%2Fapi%2Finstallations%2Fv1%2Funinstall%2Freport%2F1567922666521%2F1567836276088%3Flimit%3D100%26offset%3D100%26access_token%3D%7BYOUR_ACCESS_TOKEN%7D)
+'https://sandbox.push.adpdigital.com/api/installations/v1/uninstall/report/1567922666521/1567836276088?limit=100&offset=100&access_token={YOUR_ACCESS_TOKEN}'
 ```
