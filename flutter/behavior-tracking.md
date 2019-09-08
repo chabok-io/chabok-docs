@@ -7,7 +7,7 @@ prev: custom-data.html
 next: features.html
 ---
 
-شما می‌توانید رفتارهای کاربر را در اپلیکیشن خود به طور لحظه‌ای [رصد کنید](/flutter/behavior-tracking.html#متد-رصد) و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را [دسته‌بندی کنید](/panel/dashboard.html#سگمنت) و برایشان [پیام بفرستید](/android/behavior-tracking.html#ارسال-پیام-براساس-رفتار). همچنین [آمار رفتار کاربران](/android/behavior-tracking.html#تحلیل-رفتار) را می‌توانید تحلیل کنید.
+شما می‌توانید رفتارهای کاربر را در اپلیکیشن خود به طور لحظه‌ای [رصد کنید](/flutter/behavior-tracking.html#متد-رصد) و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را [دسته‌بندی کنید](/panel/dashboard.html#سگمنت) و برایشان [پیام بفرستید](/flutter/behavior-tracking.html#ارسال-پیام-براساس-رفتار). همچنین [آمار رفتار کاربران](/flutter/behavior-tracking.html#تحلیل-رفتار) را می‌توانید تحلیل کنید.
 
 <Br>
 
@@ -15,23 +15,19 @@ next: features.html
 
 برای رصد رفتار کاربر باید از متد `track` استفاده کنید. این متد دارای مقدار ورودی **نام** و **داده** رفتار (`trackName`,`data`) می‌باشد.
 
-```java
-public void track(final String trackName, JSONObject data)
-```
 
 > نکته : مقدار `data` در متد `track` یک داده مربوط به رفتار می‌تواند باشد. شما این مقدار را می‌توانید به عنوان `JSONObject` همراه آن در نظر بگیرید.
-
-پس از اعمال کد بالا، رفتار با هر بار رخ دادن به همراه زمان وقوع ذخیره خواهد شد.
 
  به عنوان مثال می‌خواهید رفتار **افزودن به سبد خرید** از فروشگاه اینترنتی خودتان را رصد کنید. برای ثبت این رفتار کد زیر را با الگوی بالا وارد می‌نماییم.
 
 نمونه:
 
-```java
-JSONObject data = new JSONObject();
-data.put("value", 35000);
+```dart
+ChabokPush.shared.track("AddToCart", <String, dynamic>{
 
-AdpPushClient.get().track("add-to-card", data);
+'value': 'pID_123'
+
+});
 ```
 
 >‍‍‍`نکته:` در متد `track` در صورتی که به `value` مقدار عددی بدهید، آن رفتار در سگمنت با پیشوند **آخرین و مجموع** اضافه می‌شود. اما در صورتی که مقدار غیر عددی (string) بدهید، آن رفتار فقط با پیشوند **آخرین** به سگمنت اضافه می‌شود.
@@ -40,20 +36,22 @@ AdpPushClient.get().track("add-to-card", data);
 
 به عنوان مثال اگر مقدار `status` را مانند زیر `boolean` قرار داده باشید:
 
-```java
-JSONObject data = new JSONObject();
-data.put("status", true);
+```dart
+ChabokPush.shared.track("AddToCart", <String, dynamic>{
 
-AdpPushClient.get().track("add-to-card", data);
+'status': 'true'
+
+});
 ```
 
 دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
 
-```java
-JSONObject data = new JSONObject();
-data.put("status", 35000);
+```dart
+ChabokPush.shared.track("AddToCart", <String, dynamic>{
 
-AdpPushClient.get().track("add-to-card", data);
+'status': 35000
+
+});
 ```
 
 <Br>
@@ -64,11 +62,8 @@ AdpPushClient.get().track("add-to-card", data);
 
 نمونه:
 
-```java
-ChabokEvent event = new ChabokEvent(500000, "RIAL");
-event.setData(data);
-                
-AdpPushClient.get().trackPurchase("Purchase", event);
+```dart
+ChabokPush.shared.trackPurchase("Purchase", new  ChabokEvent(50000,'RIAL'));
 ```
 
 <Br>
