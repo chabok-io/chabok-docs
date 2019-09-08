@@ -1,8 +1,8 @@
 ---
-id: receive-gone-data
+id: receive-uninstall-data
 title: وب سرویس دریافت دیتای حذف
 layout: rest-api
-permalink: rest-api/receive-gone-data.html
+permalink: rest-api/receive-uninstall-data.html
 ---
 
 شما می‌توانید با فرخوانی یک وب‌ سرویس،**دیتای کاربرانی که اپلیکیشن شما را حذف کرده‌اند** را در تاریخ‌های دلخواهتان دریافت کنید.
@@ -11,10 +11,10 @@ permalink: rest-api/receive-gone-data.html
 
 ### لینک پایه (Path)
 
- لینک پایه دریافت دیتا `https://sandbox.push.adpdigital.com/api/installations/v1/uninstall/report/:from/:to?limit=10&offset=0` است.
+ لینک پایه دریافت دیتا `https://sandbox.push.adpdigital.com/api/installations/v1/uninstall/report/:from/:to` است.
 
 
->`نکته:` دقت داشته لینک بالا برای حساب‌های سندباکس است و در صورت داشتن حاسب عملیاتی باید از لینک `https://{APP_ID}.push.adpdigital.com/api/installations/v1/uninstall/report/:from/:to?limit=10&offset=0` استافده کنید.
+>`نکته:` دقت داشته لینک بالا برای حساب‌های سندباکس است و در صورت داشتن حاسب عملیاتی باید از لینک `https://{APP_ID}.push.adpdigital.com/api/installations/v1/uninstall/report/:from/:to` استافده کنید.
 
 <Br>
 
@@ -23,11 +23,11 @@ permalink: rest-api/receive-gone-data.html
 
 - `from`
 
-این پارامتر **time stamp** است. (از چه تاریخی دیتا دریافت شود.)
+این پارامتر **timestamp** است. (از چه تاریخی دیتا دریافت شود.)
 
 - `to`
 
-این پارامتر **time stamp** است. (تا چه تاریخی دیتا دریافت شود.)
+این پارامتر **timestamp** است. (تا چه تاریخی دیتا دریافت شود.)
 
 - `offset` (اختیاری)
 
@@ -44,5 +44,5 @@ permalink: rest-api/receive-gone-data.html
 نمونه زیر دریافت دیتای حذف را از تاریخ **دیروز تا امروز** از **نتایج ۱۰۰ام تا ۲۰۰ام** را درخواست می‌کند.
 
 ```bash
-curl -X GET --header 'Accept: application/json' '[https://sandbox.push.adpdigital.com/api/installations/v1/uninstall/report/1567922666521/1567836276088?limit=100&offset=100&access_token={YOUR_ACCESS_TOKEN}]
+curl -X GET --header 'Accept: application/json' 'https://sandbox.push.adpdigital.com/api/installations/v1/uninstall/report/1567922666521/1567836276088?limit=100&offset=100&access_token={YOUR_ACCESS_TOKEN}
 ```
