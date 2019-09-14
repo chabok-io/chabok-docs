@@ -24,9 +24,7 @@ next: features.html
 
 ```dart
 ChabokPush.shared.track("AddToCart", <String, dynamic>{
-
 'value': 'pID_123'
-
 });
 ```
 
@@ -38,9 +36,7 @@ ChabokPush.shared.track("AddToCart", <String, dynamic>{
 
 ```dart
 ChabokPush.shared.track("AddToCart", <String, dynamic>{
-
 'status': 'true'
-
 });
 ```
 
@@ -48,9 +44,7 @@ ChabokPush.shared.track("AddToCart", <String, dynamic>{
 
 ```dart
 ChabokPush.shared.track("AddToCart", <String, dynamic>{
-
 'status': 35000
-
 });
 ```
 
