@@ -160,7 +160,6 @@ ChabokPush.shared.setUserAttributes(<String, dynamic>{
 				'age': 4,
 				'gender': 'مرد'
 });
-}
 ```
 
 پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
@@ -180,7 +179,6 @@ ChabokPush.shared.setUserAttributes(<String, dynamic>{
 ChabokPush.shared.track("AddToCart", <String, dynamic>{
 'value': 'pID_123'
 });
-}
 ```
 
 >‍‍‍`نکته:` در متد `track` در صورتی که به `value` مقدار عددی بدهید، آن رفتار در سگمنت با پیشوند **آخرین و مجموع** اضافه می‌شود. اما در صورتی که مقدار غیر عددی (string) بدهید، آن رفتار فقط با پیشوند **آخرین** به سگمنت اضافه می‌شود.
@@ -195,7 +193,6 @@ ChabokPush.shared.track("AddToCart", <String, dynamic>{
 
 ```dart
 ChabokPush.shared.trackPurchase("Purchase", new ChabokEvent(500000,'RIAL'));
-}
 ```
 
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/flutter/behavior-tracking.html) را مطالعه کنید.
@@ -233,12 +230,12 @@ ChabokPush.shared.trackPurchase("Purchase", new ChabokEvent(500000,'RIAL'));
 
 حساب‌ رایگان:
 
-```javascipt
+```bash
 https://sand.chabokpush.com/JY@4sc
 ```  
 حساب عملیاتی:
 
-```javascipt
+```bash
 https://a.chabok.io/JY@4sc
 ```  
 
