@@ -15,31 +15,24 @@ next: custom-data.html
 
 ### دریافت دیتای نوتیفیکیشن
 
-به قطعه کد زیر دقت کنید:
+ متد `setOnShowNotificationHandler` برای دریافت دیتای **نمایش** توتیفیکیشن است: 
 
 ```dart
-ChabokPush.shared.setOnNotificationOpenedHandler((notif) {
-
-var notifObject = json.decode(notif);
-
-print('User intract with notification = ' + notifObject['action'].toString() +
-
-', \n notification payload = ' + notifObject['message'].toString());
-
-});
-
 ChabokPush.shared.setOnShowNotificationHandler((notif) {
-
 print('Notification show to user' + notif);
-
 });
 ```
 
+متد `setOnNotificationOpenedHandler` برای دریافت دیتای **کلیک، اکشن یا dismiss** نوتیفیکیشن است: 
 
-- متد `setOnNotificationOpenedHandler` برای دریافت دیتای **کلیک، اکشن یا dimiss** نوتیفیکیشن است. 
+```dart
+ChabokPush.shared.setOnNotificationOpenedHandler((notif) {
+var notifObject = json.decode(notif);
 
-- متد `setOnShowNotificationHandler` برای دریافت دیتای **نمایش** توتیفیکیشن است. 
-
+print('User intract with notification = ' + notifObject['action'].toString() +
+', \n notification payload = ' + notifObject['message'].toString());
+});
+```
 <Br>
 
 ### تنظیم پوش‌نوتیفیکیشن چندرسانه‌ای (Rich Push Notification)
