@@ -7,7 +7,7 @@ prev: sdk-setup.html
 next: chabok-messaging.html
 ---
 
-ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/flutter/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/flutter/tracker.html#۴-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
+ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/flutter/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/flutter/tracker.html#۶-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
 
  نگران راه‌اندازی هم نباشید این صفحه به طور کامل مراحل **پیاده‌سازی و استفاده از ترکر** را قدم به قدم مرور می‌کند.  
 
@@ -23,7 +23,7 @@ next: chabok-messaging.html
 
 #### ۱.۱. مراحل پیاده‌سازی 
 
-برای راه‌اندازی SDK چابک **۴ مرحله** زیر را به ترتیب انجام ‌دهید:
+برای راه‌اندازی SDK چابک **۵ مرحله** زیر را به ترتیب انجام ‌دهید:
 
 [الف- افزودن کتابخانه](/flutter/tracker.html#الف--افزودن-کتابخانه)
 
@@ -33,7 +33,7 @@ next: chabok-messaging.html
 
 [د- ثبت کاربر](/flutter/tracker.html#د--ثبت-کاربر-register-users)
 
-[ه- ثبت اطلاعات کاربر (اختیاری)](/flutter/tracker.html#د--ثبت-اطلاعات-کاربر-user-attributes)
+[ه- ثبت اطلاعات کاربر (اختیاری)](/flutter/tracker.html#ه--ثبت-اطلاعات-کاربر-user-attributes)
 
 
 ##### الف- افزودن کتابخانه
@@ -93,25 +93,22 @@ import 'package:chabokpush/chabokpush.dart';
 
 ```dart
 @override
-
 void initState() {
-
 super.initState();
 
 ChabokPush.init('APP_ID',       //based on your environment
 				'API_KEY',      //based on your environment
 				'SDK_USERNAME', //based on your environment
 				'SDK_PASSWORD', //based on your environment
-				'SENDER_ID',    
+				'SENDER_ID',    //Google Sender ID
 				 devMode);      //based on your environment
 ```
  
   
   > `نکته`: در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.  
- 
-- ‍‍‍‍‍**MY_ACTIVITY**: این مقدار را نام کلاس `Activity` ای قرار دهید که چابک به طور پیش‌فرض پس از کلیک شدن روی اعلان، `Activity` تعیین شده را باز کند. (برای شخصی‌سازی اعلان‌ها [این بخش](/android/push-notification.html#شخصیسازی-نمایش-و-کلیک-روی-اعلان) را مشاهده کنید.)  
-  
-- **APP_ID/SENDER_ID**: برای این مقدار کافی است فقط `SENDER_ID` ([شناسه‌ گوگل برای پوش‌نوتیفیکیشن](/android/required.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D9%84%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%DA%AF%D9%88%DA%AF%D9%84)) و `APP_ID` (شناسه چابک برای هر اپلیکیشن) را در کنار هم قرار دهید. به عنوان مثال این مقدار برای حساب دموی چابک `839879285/chabok-starter` می‌شود. (مقدار عددی `SENDER_ID` است.) 
+   
+
+- **APP_ID**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
 - **API_KEY**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
@@ -119,7 +116,9 @@ ChabokPush.init('APP_ID',       //based on your environment
 
 - **SDK_PASSWORD**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
-- ‍‍‍‍‍‍‍‍**devMode**: متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
+- **SENDER_ID**: برای این مقدار کافی است بخش [شناسه‌ گوگل برای پوش‌نوتیفیکیشن](/flutter/required.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D9%84%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%DA%AF%D9%88%DA%AF%D9%84) را مطالعه کنید.
+
+- ‍‍‍‍‍‍‍‍**devMode**:  تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
     
 مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `devMode` کلید‌های دسترسی آن هم باید تغییر داده شود.  
     
@@ -136,7 +135,7 @@ ChabokPush.init('APP_ID',       //based on your environment
   
  علاوه بر ثبت کاربر،‌ متد `register` عمل **اتصال** به سرور چابک را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول  فراخوانی شود.   
   
-به عنوان مثال اگر اپلیکیشن شما صفحه **ورود** و **ثبت‌نام** دارد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای فراخوانی کنید تا کاربر به سرور چابک متصل شود.  
+به عنوان مثال اگر اپلیکیشن شما صفحه **ورود** و **ثبت‌نام** دارد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای فراخوانی کنید تا کاربر به سرور چابک متصل شود. در غیر این صورت کاربر به صورت مهمان ثبت خواهد شد:  
   
 ```dart
 ChabokPush.shared.getUserId().then((userId) =>
@@ -155,10 +154,7 @@ ChabokPush.shared.getUserId().then((userId) =>
 با فراخوانی متد زیر می‌توانید اطلاعات و سوابق کاربر را جمع‌آوری و ذخیره کنید:
 
 ```dart
-_setUserAttributesButtonClicked(){
-
 ChabokPush.shared.setUserAttributes(<String, dynamic>{
-
 				'firstName': 'محمدرضا',						
 				'lastName': 'اخوان',
 				'age': 4,
@@ -181,14 +177,9 @@ ChabokPush.shared.setUserAttributes(<String, dynamic>{
 با کد زیر می‌توانید رفتار کاربر (رویداد) را در چابک رصد کنید:  
   
 ```dart
-_trackAddToCartButtonClicked(){
-
 ChabokPush.shared.track("AddToCart", <String, dynamic>{
-
 'value': 'pID_123'
-
 });
-
 }
 ```
 
@@ -203,10 +194,7 @@ ChabokPush.shared.track("AddToCart", <String, dynamic>{
 نمونه:
 
 ```dart
-_trackPurchaseButtonClicked(){
-
 ChabokPush.shared.trackPurchase("Purchase", new ChabokEvent(500000,'RIAL'));
-
 }
 ```
 
@@ -306,8 +294,8 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 
 اگر هم استورها Referrer را کلا **پشتیبانی نکنند** شما همچنان می‌توانید منبع (Source) نصب را در کمپین خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید، **آی‌دی ترکر** را در متد زیر قرار دهید و پس از خروجی apk گرفتن آن را در استور مورد نظر بگذارید. 
 
-```java
-AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
+```dart
+ChabokPush.shared.setDefaultTracker("YOUR_TRACKER_ID");
 ```
 
 >`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
