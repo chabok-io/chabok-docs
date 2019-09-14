@@ -1,0 +1,81 @@
+- title: نصب و راه ‌اندازی
+  items:
+    - id: required
+      title: پیش‌نیازها
+      subitems:
+        - title: ایجاد حساب
+          href: ایجاد-حساب-چابک
+        - title: دریافت کلیدهای گوگل
+          href: دریافت-کلیدهای-گوگل         
+              
+    - id: sdk-setup
+      title: راه‌اندازی
+      subitems:
+        - title: نصب کتابخانه
+          href: ۱--نصب-کتابخانه
+        - title: افزودن GcmReceiver
+          href: ۲--افزودن-کلاس-gcmreceiver-به-فایل-manifest         
+        - title: مقداردهی اولیه
+          href: ۳--مقداردهی-اولیه-initialize
+        - title: ثبت کاربر
+          href: ۴--ثبت-کاربر-register 
+                   
+    - id: tracker
+      title: ترکر نصب
+      subitems:
+        - title: پیاده‌سازی
+          href: ۱-پیادهسازی-sdk-integration
+        - title: ترک نصب‌ها
+          href: ۲-ترک-نصبها-tracking-installs
+        - title: ترک نصب از استورها
+          href: ۳-ترک-کمپینهای-نصب-از-استورها-pre-install-campaigns
+        - title: مکانیزم ضد تقلب
+          href: ۵-مکانیزم-ضد-تقلب-fraud-prevention
+        - title: مفاهیم ترکر
+          href: ۶-آشنایی-با-برخی-مفاهیم-ترکر
+          
+    - id: chabok-messaging
+      title: پیام چابک
+      subitems:
+        - title: دریافت پیام
+          href: دریافت-پیام
+        - title: ارسال پیام
+          href: ارسال-پیام
+        - title: کانال
+          href: کانال
+          
+    - id: push-notification	
+      title: پوش‌نوتیفیکیشن
+      subitems:
+        - title: دریافت دیتا
+          href: دریافت-دیتای-نوتیفیکیشن
+        - title: نوتیفیکیشن چند‌رسانه‌ای
+          href: تنظیم-پوشنوتیفیکیشن-چندرسانهای-rich-push-notification
+          
+    - id: custom-data
+      title: ‌داده‌های سفارشی کاربر
+      subitems:
+        - title: مدیریت Attributes
+          href: مدیریت-اطلاعات-کاربر-user-attributes
+        - title: مدیریت تگ‌ها
+          href: مدیریت-تگها
+          
+    - id: behavior-tracking
+      title: رصد رفتار درون‌برنامه‌ای
+      subitems:
+        - title: متد رصد
+          href: متد-رصد
+        - title: رصد درآمد
+          href: رصد-درآمد-tracking-revenue
+        - title: ارسال پیام براساس رفتار
+          href: ارسال-پیام-براساس-رفتار
+          
+    - id: features
+      title: امکانات‌ دیگر 
+      subitems:
+        - title: دریافت شناسه دستگاه
+          href: دریافت-شناسه-دستگاه
+        - title: دریافت شناسه کاربر
+          href: دریافت-شناسه-کاربر
+        - title: وضعیت اتصال به چابک
+          href: وضعیت-اتصال-به-چابک

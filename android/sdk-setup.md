@@ -43,7 +43,7 @@ buildscript {
 ```javascript  
 dependencies {  
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
-    implementation 'com.adpdigital.push:chabok-lib:2.17.3'  
+    implementation 'com.adpdigital.push:chabok-lib:2.18.0'  
   
     //If you want to get the push notification, add to dependencies  
     implementation 'com.google.android.gms:play-services-gcm:10.2.6'   
@@ -69,7 +69,7 @@ dependencies {
 ```javascript  
 dependencies {  
    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
-   implementation 'com.adpdigital.push:chabok-lib-geo:2.17.3'  
+   implementation 'com.adpdigital.push:chabok-lib-geo:2.18.0'  
    implementation 'com.google.android.gms:play-services-location:10.2.6'  
   
   //If you want to get the push notification, add to dependencies  
@@ -197,11 +197,12 @@ public class MyAppClass extends Application {
         //AdpPushClient.init() should always be called in onCreate of Application class  
         AdpPushClient.init(  
                 getApplicationContext(),  
-                MY_ACTIVITY.class,  
-                "APP_ID/SENDER_ID", //based on your environment  
+                MainActivity.class,  
+                "APP_ID", //based on your environment  
                 "API_KEY",          //based on your environment  
                 "SDK_USERNAME",     //based on your environment  
-                "SDK_PASSWORD"      //based on your environment  
+                "SDK_PASSWORD",      //based on your environment  
+                "SENDER_ID"
         );  
   
         //true connects to Sandbox environment  
@@ -224,13 +225,17 @@ public class MyAppClass extends Application {
  
 - ‍‍‍‍‍**MY_ACTIVITY**: این مقدار را نام کلاس `Activity` ای قرار دهید که چابک به طور پیش‌فرض پس از کلیک شدن روی اعلان، `Activity` تعیین شده را باز کند. (برای شخصی‌سازی اعلان‌ها [این بخش](/android/push-notification.html#شخصیسازی-نمایش-و-کلیک-روی-اعلان) را مشاهده کنید.)  
   
-- **APP_ID/SENDER_ID**: برای این مقدار کافی است فقط `SENDER_ID` ([شناسه‌ گوگل برای پوش‌نوتیفیکیشن](/android/required.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D9%84%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%DA%AF%D9%88%DA%AF%D9%84)) و `APP_ID` (شناسه چابک برای هر اپلیکیشن) را در کنار هم قرار دهید. به عنوان مثال این مقدار برای حساب دموی چابک `839879285/chabok-starter` می‌شود. (مقدار عددی `SENDER_ID` است.) 
+- **APP_ID**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
 - **API_KEY**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
 - **SDK_USERNAME**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
 - **SDK_PASSWORD**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
+
+- **SENDER_ID**: برای این مقدار کافی است بخش [شناسه‌ گوگل برای پوش‌نوتیفیکیشن](/android/required.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D9%84%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%DA%AF%D9%88%DA%AF%D9%84) را مطالعه کنید.
+
+> `نکته:` در صورت عدم استفاده از پوش‌نوتیفیکیشن مقدار **SENDER_ID** را `null` قرار دهید. (شمارش حذف و دریافت نوتیفیکیشن در اپلیکیشن‌تان غیرفعال خواهد شد.)
 
 - ‍‍‍‍‍‍‍‍**setDevelopment**: متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
     
@@ -249,6 +254,17 @@ AdpPushClient.get().setDevelopment(DEV_MODE);
 ```java  
 AdpPushClient.get().dismiss();  
 ```  
+
+<Br>  
+
+در صورت عدم نیاز به قابلیت آنی (real-time) چابک از کد زیر در فایل `AndroidManifest.xml` استفاده کنید:
+
+``` xml
+<application ... >
+    <meta-data android:name="com.adpdigital.push.client.DISABLE_REALTIME" android:value="TRUE" />
+<application />
+```
+>`نکته:` در صورت غیرفعال‌سازی قابلیت آنی چابک، امکان استفاده از [پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) را از دست خواهید داد.
   
 <Br>  
   
@@ -357,4 +373,4 @@ public void onEvent(AppState state) {
 AdpPushClient.get().unregister();  
 ```  
   
-> `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-android) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از سرویس چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.
+> `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-android) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.

@@ -59,7 +59,7 @@ pod update
 ```
 - برای دریافت اکشن نوتیفیکیشن، کد زیر را در کلاس `MainApplication` متد `onCreate` قرار دهید:
 
-```java
+```diff
 //Java
 
     @Override
@@ -98,7 +98,7 @@ pod update
 - افزودن متد ‍‍‍‍‍`:notificationOpened` برای ارسال رویداد اکشن نوتیفیکیشن
 - افزودن متد `registerToUNUserNotificationCenter` برای دریافت اکشن نوتیفیکیشن با پیاده‌سازی کد زیر (برای نمایش نوتیفیکیشن چند رسانه‌‌ای) [این بخش](https://doc.chabokpush.com/ios/push-notification.html) از مستندات را مطالعه کنید):
 
-```objectivec
+```diff
 //Objective-C
 
 + @interface AppDelegate ()<PushClientManagerDelegate>
