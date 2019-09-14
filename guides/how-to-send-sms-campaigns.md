@@ -39,28 +39,31 @@ permalink: guides/how-to-send-sms-campaigns.html
 
 ### انتخاب گیرندگان
 در ادامه ‌می‌توانید با استفاده از **سگمنت** و یا **ورود فایل** مخاطبان کمپین‌تان را انتخاب کنید تا فقط آن‌ها پیامتان را دریافت کنند.
+
 <br>
 
 ![enter image description here](http://uupload.ir/files/xmsa_sms-segment.png)
+
 <br><br>
 
-
 ### نوشتن متن پیام
-پس از آن محتوایی که می‌خواهید برای کمپین ارسال شود را بنویسید. 
+پس از آن محتوایی که می‌خواهید برای کمپین ارسال شود را بنویسید.
+
 <br>
 
 ![enter image description here](http://uupload.ir/files/0jsx_sms-content.png)
-<br><br>
 
+<br><br>
 
 ### تعیین زمان ارسال
 
 در آخر تعیین کنید که کمپینتان چه زمانی ارسال شود.
+
 <br>
 
 ![enter image description here](http://uupload.ir/files/zufs_sms-schedule.png)
-<br><br>
 
+<br><br>
 
 ### ارسال کمپین
 حالا می‌توانید کمپین خود را ارسال کنید!
