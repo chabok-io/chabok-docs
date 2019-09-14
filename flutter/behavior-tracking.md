@@ -23,7 +23,7 @@ next: features.html
 نمونه:
 
 ```dart
-ChabokPush.shared.track("AddToCart", <String, dynamic>{
+ChabokPush.shared.track('AddToCart', <String, dynamic>{
 'value': 'pID_123'
 });
 ```
@@ -35,7 +35,7 @@ ChabokPush.shared.track("AddToCart", <String, dynamic>{
 به عنوان مثال اگر مقدار `status` را مانند زیر `boolean` قرار داده باشید:
 
 ```dart
-ChabokPush.shared.track("AddToCart", <String, dynamic>{
+ChabokPush.shared.track('AddToCart', <String, dynamic>{
 'status': 'true'
 });
 ```
@@ -43,7 +43,7 @@ ChabokPush.shared.track("AddToCart", <String, dynamic>{
 دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
 
 ```dart
-ChabokPush.shared.track("AddToCart", <String, dynamic>{
+ChabokPush.shared.track('AddToCart', <String, dynamic>{
 'status': 35000
 });
 ```
@@ -57,7 +57,7 @@ ChabokPush.shared.track("AddToCart", <String, dynamic>{
 نمونه:
 
 ```dart
-ChabokPush.shared.trackPurchase("Purchase", new  ChabokEvent(50000,'RIAL'));
+ChabokPush.shared.trackPurchase('Purchase', new  ChabokEvent(50000,'RIAL'));
 ```
 
 <Br>
