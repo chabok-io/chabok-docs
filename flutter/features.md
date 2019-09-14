@@ -16,8 +16,8 @@ prev: behavior-tracking.html
 
 ```dart
 ChabokPush.shared.getInstallationId()
-          .then((installationId) => print(installationId)
-	,onError: (e) => print('InstallationId is null'));
+    .then((installationId) => print(installationId)		
+    ,onError: (e) => print('InstallationId is null'));
 ``` 
 
 <br><br>
