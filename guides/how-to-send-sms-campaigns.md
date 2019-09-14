@@ -13,7 +13,7 @@ permalink: guides/how-to-send-sms-campaigns.html
 
 [۲- تعیین سیاست ارسال روی پیامک یا هوشمند در پنل](/guides/how-to-send-sms-campaigns.html#تعیین-پیامک-به-عنوان-سیاست-ارسال)
 
-[۳- طراحی و ارسال کمپین](/guides/how-to-send-sms-campaigns.html#%D8%AA%D8%B9%DB%8C%DB%8C%D9%86-%D9%BE%DB%8C%D8%A7%D9%85%DA%A9-%D8%A8%D9%87-%D8%B9%D9%86%D9%88%D8%A7%D9%86-%D8%B3%DB%8C%D8%A7%D8%B3%D8%AA-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84)
+[۳- طراحی و ارسال کمپین](/guides/how-to-send-sms-campaigns.html#انتخاب-گیرندگان)
 
 <br>
 
@@ -23,35 +23,44 @@ permalink: guides/how-to-send-sms-campaigns.html
 
 پس از آن باید با ایمیل پنل خود به [چابک ایمیل بزنید](https://chabok.io/contact.html) و همراه درخواستتان شماره پیامکی را هم قرار دهید.
 
-<br>
+<br><br>
 
 ### تعیین پیامک به عنوان سیاست ارسال
 
 به محض اینکه ایمیل موفقیت‌آمیز بودن فرایند را از چابک دریافت کردید می‌توانید با ورود به پنل خود پیامک ارسال کنید. فقط کافیست در صفحه **ایجاد کمپین**، **سیاست ارسال را روی پیامک یا هوشمند** قرار دهید.
 
 
+<br>
 
 ![enter image description here](http://uupload.ir/files/r6h_sms-campaign.png)
 
-<br>
+<br><br>
+
 
 ### انتخاب گیرندگان
 در ادامه ‌می‌توانید با استفاده از **سگمنت** و یا **ورود فایل** مخاطبان کمپین‌تان را انتخاب کنید تا فقط آن‌ها پیامتان را دریافت کنند.
+<br>
 
 ![enter image description here](http://uupload.ir/files/xmsa_sms-segment.png)
-<br>
+<br><br>
+
 
 ### نوشتن متن پیام
 پس از آن محتوایی که می‌خواهید برای کمپین ارسال شود را بنویسید. 
+<br>
 
 ![enter image description here](http://uupload.ir/files/0jsx_sms-content.png)
-<br>
+<br><br>
+
 
 ### تعیین زمان ارسال
 
 در آخر تعیین کنید که کمپینتان چه زمانی ارسال شود.
-![enter image description here](http://uupload.ir/files/zufs_sms-schedule.png)
 <br>
+
+![enter image description here](http://uupload.ir/files/zufs_sms-schedule.png)
+<br><br>
+
 
 ### ارسال کمپین
 حالا می‌توانید کمپین خود را ارسال کنید!
