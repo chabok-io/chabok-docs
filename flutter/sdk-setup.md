@@ -154,9 +154,11 @@ ChabokPush.init('APP_ID',       //based on your environment
 به عنوان مثال اگر اپلیکیشن شما صفحه **ورود** و **ثبت‌نام** دارد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای فراخوانی کنید تا کاربر به سرور چابک متصل شود. در غیر این صورت کاربر به صورت مهمان ثبت خواهد شد:
   
 ```dart
-ChabokPush.shared.getUserId().then((userId) =>
-		  ChabokPush.shared.register(userId),
-		  onError: (e) =>  ChabokPush.shared.registerAsGuest());
+ChabokPush.shared.getUserId()
+	.then((userId) =>
+		ChabokPush.shared.register(userId)
+	,onError: (e) =>  
+		ChabokPush.shared.registerAsGuest());
 ```  
   
 > `نکته`: مقدار `USER_ID` می‌تواند **بین ۳ تا ۶۴** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
