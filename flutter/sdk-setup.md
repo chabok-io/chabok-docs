@@ -87,14 +87,7 @@ import 'package:chabokpush/chabokpush.dart';
 در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارائه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.  
   
 > `نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](/flutter/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید.   
-<blockquote markdown="1">  
- `نکته:` در اندروید ۹ به بالا در صورت مقداردهی `targetSdkVersion` در فایل `build.gradle` به مقدار `28`،  کد زیر را به فایل `AndroidManifest.xml` در تگ `application` اضافه کنید:  
-  
-```xml   
-<uses-library android:name="org.apache.http.legacy" android:required="false" />   
-```  
-</blockquote>  
-  
+
 <Br>  
   
 ### ۳- مقداردهی اولیه (Initialize)  
@@ -107,16 +100,16 @@ void initState() {
 	super.initState();
 
 	ChabokPush.init('APP_ID',       //based on your environment
-			'API_KEY',      //based on your environment
-			'SDK_USERNAME', //based on your environment
-			'SDK_PASSWORD', //based on your environment
-			'SENDER_ID',    //Google Sender ID
-			devMode);      //based on your environment
-}
+					'API_KEY',      //based on your environment
+					'SDK_USERNAME', //based on your environment
+					'SDK_PASSWORD', //based on your environment
+					'SENDER_ID',    //Google Sender ID
+					devMode);      //based on your environment
+}		
 ```
  
   
-  > `نکته`: در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/flutter/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.  
+  > `نکته`: در این متد به جای پارامتر‌های `APP_ID`, `API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/flutter/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.  
    
 - **APP_ID**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
 
@@ -130,9 +123,9 @@ void initState() {
 
 > `نکته:` در صورت عدم استفاده از پوش‌نوتیفیکیشن مقدار **SENDER_ID** را `null` قرار دهید. (شمارش حذف و دریافت نوتیفیکیشن در اپلیکیشن‌تان غیرفعال خواهد شد.)
     
-- ‍‍‍‍‍‍‍‍**devMode**: متد `devMode` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
+- ‍‍‍‍‍‍‍‍**devMode**:  تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
     
-مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.  
+مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `devMode` کلید‌های دسترسی آن هم باید تغییر داده شود.  
   
     
 > `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید تا پس از تایید و ساخت حساب عملیاتی شما، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد.  
