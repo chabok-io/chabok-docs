@@ -70,7 +70,7 @@ ChabokPush.shared.setUserAttributes(<String, dynamic>{
 با استفاده از متد `addTag`، شما می‌توانید به کاربر یک یا مجموعه‌ای از `Tag`ها اختصاص دهید:
 
 ```dart
-ChabokPush.shared.addTag("Premium_User");
+ChabokPush.shared.addTag('Premium_User');
 ```
 
 اگر عملیات افزودن تگ با موفقیت انجام شود، می‌توانید از طریق پنل چابک، تگ اضافه شده به کاربر را در بخش مشترکین همانند تصویر زیر مشاهده کنید:
@@ -84,5 +84,5 @@ ChabokPush.shared.addTag("Premium_User");
 با استفاده از متد `removeTag`، می‌توانید یک `Tag` خاص از کاربر جاری را حذف کنید:
 
 ```dart
-ChabokPush.shared.addTag("Premium_User");
+ChabokPush.shared.removeTag('Premium_User');
 ```
