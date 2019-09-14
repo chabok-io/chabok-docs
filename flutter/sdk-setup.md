@@ -159,6 +159,8 @@ ChabokPush.shared.getUserId()
 	.then((userId) =>
 		ChabokPush.shared.register(userId)
 	,onError: (e) =>  
+		//If user is not registered verify the user and  
+        	//call ChabokPush.shared.register(USER_ID) method at login page 
 		ChabokPush.shared.registerAsGuest());
 ```  
   
