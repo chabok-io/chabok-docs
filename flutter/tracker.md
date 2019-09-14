@@ -91,21 +91,22 @@ import 'package:chabokpush/chabokpush.dart';
 چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `init` چابک **باید** در کلاس `Application` در متد `onCreate` تحت هر شرایطی فراخوانی شود.  
   
 
+
 ```dart
 @override
 void initState() {
-super.initState();
+	super.initState();
 
-ChabokPush.init('APP_ID',       //based on your environment
-				'API_KEY',      //based on your environment
-				'SDK_USERNAME', //based on your environment
-				'SDK_PASSWORD', //based on your environment
-				'SENDER_ID',    //Google Sender ID
-				 devMode);      //based on your environment
+	ChabokPush.init('APP_ID',       //based on your environment
+					'API_KEY',      //based on your environment
+					'SDK_USERNAME', //based on your environment
+					'SDK_PASSWORD', //based on your environment
+					'SENDER_ID',    //Google Sender ID
+					devMode);      //based on your environment
+}		
 ```
- 
-  
-  > `نکته`: در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.  
+
+  > `نکته`: در این متد به جای پارامتر‌های `APP_ID`, `API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.  
    
 
 - **APP_ID**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
@@ -138,9 +139,13 @@ ChabokPush.init('APP_ID',       //based on your environment
 به عنوان مثال اگر اپلیکیشن شما صفحه **ورود** و **ثبت‌نام** دارد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای فراخوانی کنید تا کاربر به سرور چابک متصل شود. در غیر این صورت کاربر به صورت مهمان ثبت خواهد شد:  
   
 ```dart
-ChabokPush.shared.getUserId().then((userId) =>
-		  ChabokPush.shared.register(userId),
-		  onError: (e) =>  ChabokPush.shared.registerAsGuest());
+ChabokPush.shared.getUserId()
+	.then((userId) =>
+		ChabokPush.shared.register(userId)
+	,onError: (e) =>  
+		//If user is not registered verify the user and  
+        	//call ChabokPush.shared.register(USER_ID) method at login page 
+		ChabokPush.shared.registerAsGuest());
 ```  
   
 > `نکته`: مقدار `USER_ID` می‌تواند **بین ۳ تا ۶۴** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
@@ -192,7 +197,7 @@ ChabokPush.shared.track("AddToCart", <String, dynamic>{
 نمونه:
 
 ```dart
-ChabokPush.shared.trackPurchase("Purchase", new ChabokEvent(500000,'RIAL'));
+ChabokPush.shared.trackPurchase('Purchase', new ChabokEvent(500000,'RIAL'));
 ```
 
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/flutter/behavior-tracking.html) را مطالعه کنید.
@@ -292,7 +297,7 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 اگر هم استورها Referrer را کلا **پشتیبانی نکنند** شما همچنان می‌توانید منبع (Source) نصب را در کمپین خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید، **آی‌دی ترکر** را در متد زیر قرار دهید و پس از خروجی apk گرفتن آن را در استور مورد نظر بگذارید. 
 
 ```dart
-ChabokPush.shared.setDefaultTracker("YOUR_TRACKER_ID");
+ChabokPush.shared.setDefaultTracker('YOUR_TRACKER_ID');
 ```
 
 >`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
