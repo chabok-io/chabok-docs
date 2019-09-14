@@ -7,10 +7,9 @@ prev: push-notification.html
 next: behavior-tracking.html
 ---
 
- در این صفحه می‌توانید برای کاربرانتان **اطلاعات، ویژگی‌ها (attributes) و تگ** اضافه کنید. ثبت اطلاعات هر کاربر به تعامل شما با او کمک می‌کند طوری که می‌توانید **پیام‌های شخصی‌سازی شده** برایشان ارسال کنید.
+ در این صفحه می‌توانید برای کاربرانتان **اطلاعات (یا خصوصیات attributes) و تگ** اضافه کنید. ثبت اطلاعات هر کاربر به تعامل شما با او کمک می‌کند طوری که می‌توانید **پیام‌های شخصی‌سازی شده** برایشان ارسال کنید.
 
 <Br><Br>
-
 
 ### مدیریت اطلاعات کاربر (User Attributes)
 ---
@@ -25,15 +24,11 @@ next: behavior-tracking.html
 
 ```dart
 ChabokPush.shared.setUserAttributes(<String, dynamic>{
-
 'firstName': 'محمدرضا',
 'lastName': 'اخوان',
 'gender': 'مرد',
 'age': 4
-
 });
-
-}
 ```
 
 پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل > جزئیات دستگاه > کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
@@ -53,7 +48,6 @@ ChabokPush.shared.setUserAttributes(<String, dynamic>{
 
 ```dart
 ChabokPush.shared.setUserAttributes(<String, dynamic>{
-
 'age': 'نوزده',
 ```
 
@@ -61,7 +55,6 @@ ChabokPush.shared.setUserAttributes(<String, dynamic>{
 
 ```dart
 ChabokPush.shared.setUserAttributes(<String, dynamic>{
-
 'age': 19,
 ```
 
@@ -90,6 +83,6 @@ ChabokPush.shared.addTag("Premium_User");
 
 با استفاده از متد `removeTag`، می‌توانید یک `Tag` خاص از کاربر جاری را حذف کنید:
 
-```java
+```dart
 ChabokPush.shared.addTag("Premium_User");
 ```
