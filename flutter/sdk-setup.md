@@ -104,14 +104,15 @@ import 'package:chabokpush/chabokpush.dart';
 ```dart
 @override
 void initState() {
-super.initState();
+	super.initState();
 
-ChabokPush.init('APP_ID',       //based on your environment
-				'API_KEY',      //based on your environment
-				'SDK_USERNAME', //based on your environment
-				'SDK_PASSWORD', //based on your environment
-				'SENDER_ID',    //Google Sender ID
-				 devMode);      //based on your environment
+	ChabokPush.init('APP_ID',       //based on your environment
+			'API_KEY',      //based on your environment
+			'SDK_USERNAME', //based on your environment
+			'SDK_PASSWORD', //based on your environment
+			'SENDER_ID',    //Google Sender ID
+			devMode);      //based on your environment
+}
 ```
  
   
