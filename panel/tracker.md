@@ -125,6 +125,16 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 
 - در صورت **انتخاب مارکت، از کاربر با توجه به استورهایی که روی دستگاه خود دارد پرسیده می‌شود که کدام باز شود**.
 
+##### لینک آی‌اواس
+
+در اخصاص لینک برای نصب مستقیم (مدل Enterprise) باید از فرم زیر پیروی کنید:
+
+```bash
+itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/navad/navad.plist
+```
+
+<Br>
+
 در لینک مقصد می‌توانید پارامترهایی را مانند منبع، فرم یا مدل کمپین، نام کمپین و ... هم قرار دهید:
 
 ![عکس مربوطه](http://uupload.ir/files/kihu_parameters.png)
