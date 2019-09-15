@@ -11,10 +11,37 @@ next: release-note.html
 
 <Br>
  
+ ## اپلیکیشنم کرش می‌کند
+---
+
+#### چابک را حتما intialize کنید
+
+در صورتی که با ارور **AdpPushClient not initialized, Make sure to call AdpPushClient.init in your Application class onCreate** مواجه شدید، اطمینان یابید چابک را intialize کرده باشید. این کار را از طریق متد `init` با وارد کردن پارامتر‌های مخصوص حساب خود انجام دهید.
+
+<Br>
+
+#### به مقدار `APP_ID/SENDER_ID` دقت کنید
+<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
+
+در صورتی که با خطای **Application ID should be in `app-name/number` format** مواجه شدید، از صحیح بودن مقدار `APP_ID/SENDER_ID` در متد `init` اطمینان یابید. مقدار این پارامتر باید `APP_ID` به اضافه `SENDER_ID` (بدون فاصله) باشد. به عنوان مثال این مقدار برای حساب دموی چابک 839879285435/chabok-starter می‌شود. (مقدار عددی **SENDER_ID** است.) 
+
+
+برای اطلاعات بیشتر می‌توانید مستندات [راه‌اندازی](/android/sdk-setup.html#۳--مقداردهی-اولیه-initialize) را مطالعه کنید.
+
+<Br>
+
+#### نسخه‌ سرویس‌های گوگل پلی را بررسی کنید
+<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
+
+در صورتی با ارورهای **;java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/iid/InstanceID** و یا **Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.android.gms.iid.InstanceID** مواجه شدید، دقت کنید که نسخه‌ سرویس‌های گوگل پلی شما با هم، همخوانی و تطابق داشته باشند.
+
+<Br><Br>
+ 
 ## یک پوش را چند بار می‌گیرم
 ---
 
 #### از قطعه کد زیر استفاده کنید
+<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
 در صورتی که از سرویس‌های دیگر پوش استفاده کنید (3rd parties)، حتما از کد زیر استفاده کنید. 
 این کد باعث می‌شود تا فقط پوش‌نوتیفیکشن‌های چابک نمایش داده شوند؛ برای این کار کد زیر در فایل `AndroidManifest.xml` قرار دهید:
@@ -25,6 +52,8 @@ next: release-note.html
 <Br>
 
 #### از AutoNotify فایربیس استفاده نکنید
+<span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
+
 در صورتی که از Auto Notify سرویس فایربیس استفاده می‌کنید (در این مدل نمایش نوتیفیکیشن را سیستم‌عامل برعهده دارد)، در زمان‌هایی که اپلیکیشن در بک‌گراند یا بسته است، کد رسیور چابک و شما فراخوانی نخواهد شد در نتیجه نوتیفیکیشن ۲بار نمایش داده خواهد شد.
 
 
