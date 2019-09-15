@@ -133,6 +133,8 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/navad/navad.plist
 ```
 
+<Br>
+
 در لینک مقصد می‌توانید پارامترهایی را مانند منبع، فرم یا مدل کمپین، نام کمپین و ... هم قرار دهید:
 
 ![عکس مربوطه](http://uupload.ir/files/kihu_parameters.png)
