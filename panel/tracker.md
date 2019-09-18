@@ -60,11 +60,11 @@ next: users.html
 
 به یاد داشته باشید که استفاده از پارامترها کاملا بستگی دارد به ساختاری که برای کمپینتان تدارک دیده‌اید. 
 
-#### افزودن پارامتر به لینک ترکر
+##### افزودن پارامتر به لینک ترکر
 
 پارامترهایی که می‌توانید در لینک ترکر بگذارید عبارتند از:
 
-#### دسته‌بندی کاربران (Segmenting Users)
+##### دسته‌بندی کاربران (Segmenting Users)
 
 در **لینک ترکر** می‌توانید از پارامترهای ‍‍‍‍‍‍‍‍`campaign`، `adgroup` ،`creative` استفاده کنید.
 
@@ -74,7 +74,7 @@ next: users.html
 https://sand.chabokpush.com/637z3i?campaign=CAMPAIGN_1&adgroup=AD_GROUP&creative=CREATIVE
 ```
 
-#### هدایت کاربران (Redirect Users)
+##### هدایت کاربران (Redirect Users)
 
 شما می‌توانید برای هدایت کاربران به جای دلخواه از پارامترهای `fallback` ،`redirect_ios` ،`redirect_android` در لینک ترکر خود استفاده کنید. لینک زیر مثالی از تمام پارامترهایی است که می‌توانید در لینک خود قرار دهید. 
 
@@ -82,7 +82,7 @@ https://sand.chabokpush.com/637z3i?campaign=CAMPAIGN_1&adgroup=AD_GROUP&creative
 https://sand.chabokpush.com/637z3i?redirect_ios=https://itunes.apple.com/us/genre/ios/id36?mt=8&redirect_android=https://play.google.com/store&fallback=https://mylandingpage.com/&click_id=11111&android_id=ANDROID_ID&
 ```
 
-#### کال‌بک داینامیک (Dynamic Callback)
+##### کال‌بک داینامیک (Dynamic Callback)
 
 علاوه بر کال‌بک جداگانه می‌توانید در لینک خود از پارامترهای `callback` و `install_callback` استفاده کنید. برای این کار می‌توانید [جدول پارامتر‌های کال‌بک](/panel/tracker.html#کالبک) در پایین صفحه را مشاهده کنید. لینک زیر مثالی برای این مورد نشان می‌دهد:
 
@@ -90,6 +90,15 @@ https://sand.chabokpush.com/637z3i?redirect_ios=https://itunes.apple.com/us/genr
 ```markup
 https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{activity_kind}}&tracker={{tracker_name}}&install_callback=https://campaign.90tv.ir/?event={{activity_kind}}&tracker={{tracker_name}}&os={{os_name}}&ip={{ip_address}}
 ```
+
+<br>
+
+##### نکات ضروری پارامترها
+
+- همیشه پارامترها را با **&** جدا کنید.
+- حتما از **حروف کوچک** استفاده کنید زیرا پارامتر به حروف بزرگ و کوچک حساس هستند.
+- از درست نوشتن پارامترها اطمینان یابید.
+- از ترتیب سطح‌بندی پیروی کنید. به عنوان مثال زمانی که گروه تبلیغاتی هنوز خالی است خلاقانه را پر نکنید .
 
 <Br>
 
