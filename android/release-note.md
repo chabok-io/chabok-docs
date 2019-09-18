@@ -10,6 +10,13 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۲.۱۸.۱ - ۱۳۹۸/۰۶/۲۶](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.18.1)
+
+### تغییرات
+
+- بهبود تبدیل کاربر دائم (دارای حساب کاربری) به کاربر مهمان پس از خروج از حساب
+- حل مشکل وضعیت صفحه نمایش ریکت نیتیو
+
 ## [نسخه ۲.۱۸.۰ - ۱۳۹۸/۰۶/۱۲](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.18.0)
 
 ### تغییرات

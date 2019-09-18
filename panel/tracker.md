@@ -99,8 +99,8 @@ https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{ac
 
 <Br>
 
-![عکس مربوطه](http://uupload.ir/files/3z7l_new-tracker1.png)
-![عکس مربوطه](http://uupload.ir/files/jjd9_new-tracker2.png)
+![عکس مربوطه](http://uupload.ir/files/046x_new-tracker-1.png)
+![عکس مربوطه](http://uupload.ir/files/xmzo_new-tracker-2.png)
 
 
 <Br>
