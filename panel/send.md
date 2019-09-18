@@ -65,7 +65,7 @@ next: inbox.html
 
 با داشتن فایل، آن را در بخش **گیرندگان** می‌توانید آپلود کنید:
 
-![عکس مربوطه](http://uupload.ir/files/a9sf_by-file.png)
+![عکس مربوطه](http://uupload.ir/files/7569_send-by-file.png)
 
 <Br>
 
