@@ -17,8 +17,8 @@
     - id: tracker
       title: ترکر
       subitems: 
-        - title: سطح‌بندی پویا
-          href: سطحبندی-پویا
+        - title: سطح‌بندی
+          href: سطحبندی
         - title: ایجاد ترکر
           href: ایجاد-ترکر
         - title: کال‌بک
