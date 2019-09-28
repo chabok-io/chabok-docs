@@ -10,6 +10,37 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۲.۱۸.۱ - ۱۳۹۸/۰۶/۲۶](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.18.1)
+
+### تغییرات
+
+- بهبود تبدیل کاربر دائم (دارای حساب کاربری) به کاربر مهمان پس از خروج از حساب
+- حل مشکل وضعیت صفحه نمایش ریکت نیتیو
+
+## [نسخه ۲.۱۸.۰ - ۱۳۹۸/۰۶/۱۲](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.18.0)
+
+### تغییرات
+
+- از این پس در نوتیفیکیشن‌های ساده (بدون تصویر) از متن بلند پشتیبانی می‌شود.
+- از متد `isChabokPushNotification` می‌توانید برای تشخیص نوتیفیکیشن چابک استفاده کنید.
+- با استفاده از کد زیر می‌توانید سرویس آنی (real-time) چابک را غیر فعال کنید:
+
+``` xml
+<application ... >
+    <meta-data android:name="com.adpdigital.push.client.DISABLE_REALTIME" android:value="TRUE" />
+<application />
+```
+
+### ارتقا
+- از این پس چابک فقط وظیفه نمایش نوتیفیکیشن خود را دارد و نوتیفیکیشن‌های کتابخانه‌های دیگر را نمایش نمی‌دهد.
+
+## [نسخه ۲.۱۷.۳ - ۱۳۹۸/۰۶/۰۹](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.17.3)
+
+### تغییرات
+
+- بهبود Proguard rules در استفاده از reflection
+- حل مشکل تغییر شبکه ریکت نیتیو (پیام خطا: `BroadcastReceiver components are not allowed to register to receive intents`)
+
 ## [نسخه ۲.۱۷.۲ - ۱۳۹۸/۰۵/۱۴](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.17.2)
 
 ### تغییرات
@@ -270,7 +301,7 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 ### تغییرات
 
 * حذف متد `reRegister`.
-* عدم اتصال مجدد سرویس چابک با روشن شدن صفحه گوشی.
+* عدم اتصال مجدد پلتفرم چابک با روشن شدن صفحه گوشی.
 * بهبود مدیریت اتصال
 * افزودن متد `hasProtectedAppSupport`. با استفاده از این متد می‌توان بررسی نمود آیا گوشی استفاده شده برنامه را در لیست  protectedApp قرار می‌دهد یا خیر.
 * افزودن متد `showProtectedAppSettings` برای نمایش پیغام مربوط به برنامه‌های محافظت شده

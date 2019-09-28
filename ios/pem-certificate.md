@@ -81,7 +81,7 @@ Keychain Access -> Certificate Assistant -> Request a Certificate From a Certifi
 
 #### مرحله ی چهارم : آماده کردن گواهی‌های اپل 
 
-۱- اسم سرتیفیکیت SSL ای که در انتهای مرحله قبل دانلود کرده‌اید، aps_development.cer است. روی آن کلیک کنید تا در برنامه  Keychain Access نصب شود. این سرتیفیکیت SSL باید توسط سرویس چابک استفاده شود تا بتواند به `APNS` برای ارسال پو‌ش‌نوتیفیکیشن به اپلیکیشن شما متصل شود. (APNS: Apple Push Notification Service)
+۱- اسم سرتیفیکیت SSL ای که در انتهای مرحله قبل دانلود کرده‌اید، aps_development.cer است. روی آن کلیک کنید تا در برنامه  Keychain Access نصب شود. این سرتیفیکیت SSL باید توسط پلتفرم چابک استفاده شود تا بتواند به `APNS` برای ارسال پو‌ش‌نوتیفیکیشن به اپلیکیشن شما متصل شود. (APNS: Apple Push Notification Service)
 
 ۲- برنامه  Keychain Access را روی Mac خود باز کنید. به قسمت login بروید و براساس دسته بندی Certificates محتوایش را فیلتر کنید. در اینجا گزینه‌ای به نام Apple Development iOS Push Services می بینید که با یک کلید خصوصی جفت شده است.
 

@@ -129,7 +129,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 ### کلیک و دریافت دیتای نوتیفیکیشن (آی‌اواس ۹ به پایین)
 
-سرویس چابک دارای پوش‌نوتیفیکیشن و پیام چابک می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی نوتیفیکیشن، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل (پوش‌نوتیفیکیشن) باشد با کلیک بر روی نوتیفیکیشن، `delegate` متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ (پیام چابک) باشد، از `delegate` متد `didReceiveLocalNotification` استفاده کنید.
+پلتفرم چابک دارای پوش‌نوتیفیکیشن و پیام چابک می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی نوتیفیکیشن، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل (پوش‌نوتیفیکیشن) باشد با کلیک بر روی نوتیفیکیشن، `delegate` متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ (پیام چابک) باشد، از `delegate` متد `didReceiveLocalNotification` استفاده کنید.
 
 #### ۱. LocalNotification
 

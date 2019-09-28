@@ -1,62 +1,69 @@
 - name: Android
   image: android.svg
   document: /android/introducing.html
-  demo: https://github.com/chabokpush/chabok-demo-android
-  starter: https://github.com/chabokpush/chabok-starter-android
-  issue: https://github.com/chabokpush/chabok-client-android/issues
+  demo: https://github.com/chabok-io/chabok-demo-android
+  starter: https://github.com/chabok-io/chabok-starter-android
+  issue: https://github.com/chabok-io/chabok-client-android/issues
 
 - name: iOS
   image: apple.svg
   document: /ios/introducing.html
-  demo: https://github.com/chabokpush/chabok-demo-ios
-  starter: https://github.com/chabokpush/chabok-starter-ios
-  issue: https://github.com/chabokpush/chabok-client-ios/issues
+  demo: https://github.com/chabok-io/chabok-demo-ios
+  starter: https://github.com/chabok-io/chabok-starter-ios
+  issue: https://github.com/chabok-io/chabok-client-ios/issues
 
 - name: Windows
   image: wp.svg
   document: /windows/introducing.html
-  demo: https://github.com/chabokpush/chabok-demo-wp
+  demo: https://github.com/chabok-io/chabok-demo-wp
   starter:
-  issue: https://github.com/chabokpush/chabok-client-wp/issues
+  issue: https://github.com/chabok-io/chabok-client-wp/issues
 
 - name: React Native (Bridge)
   image: react.svg
   document: /react-native-bridge/introducing.html
   demo:
-  issue: https://github.com/chabokpush/chabok-client-rn/issues
-  starter: https://github.com/chabokpush/chabok-starter-rn
+  issue: https://github.com/chabok-io/chabok-client-rn/issues
+  starter: https://github.com/chabok-io/chabok-starter-rn
 
 - name: JavaScript
   image: js.svg
   document: /javascript/introducing.html
   demo: https://webpush.chabokpush.com/
   starter:
-  issue: https://github.com/chabokpush/chabok-client-js/issues
+  issue: https://github.com/chabok-io/chabok-client-js/issues
 
 - name: Unity
   image: unity.svg
   document: /unity/introducing.html
   demo:
-  starter:  https://github.com/chabokpush/chabok-starter-unity
-  issue: https://github.com/chabokpush/chabok-starter-unity/issues
+  starter:  https://github.com/chabok-io/chabok-starter-unity
+  issue: https://github.com/chabok-io/chabok-starter-unity/issues
+
+- name: Flutter
+  image: flutter.png
+  document: /flutter/introducing.html
+  demo:
+  starter: https://github.com/chabok-io/chabok-client-flutter/tree/master/example
+  issue: https://github.com/chabok-io/chabok-client-flutter/issues
 
 - name: REST API
   image: api.svg
   document: /rest-api/introducing.html
   demo: http://api.doc.chabokpush.com
   starter:
-  issue: https://github.com/chabokpush/chabok-php-demo/issues
+  issue: https://github.com/chabok-io/chabok-php-demo/issues
 
 - name: Panel
   image: panel.svg
   document: /panel/introducing.html
   demo: https://sandbox.push.adpdigital.com/front/dashboard/Analytical?token=ff7cb06dbcc4e46ff6c6f0d0e943d8fb8180efff-%7C-5a07f2d46fd7d7f040c6c766
   starter:
-  issue: https://github.com/chabokpush/chabok-panel/issues
+  issue: https://github.com/chabok-io/chabok-panel/issues
 
 - name: PHP
   image: php.svg
   document: http://api.doc.chabokpush.com
-  demo: https://github.com/chabokpush/chabok-php-demo
-  issue: https://github.com/chabokpush/chabok-php-demo/issues
+  demo: https://github.com/chabok-io/chabok-php-demo
+  issue: https://github.com/chabok-io/chabok-php-demo/issues
   starter:

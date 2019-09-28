@@ -17,14 +17,14 @@
     - id: tracker
       title: ترکر
       subitems: 
-        - title: سطح‌بندی پویا
-          href: سطحبندی-پویا
+        - title: سطح‌بندی
+          href: سطحبندی
         - title: ایجاد ترکر
           href: ایجاد-ترکر
         - title: کال‌بک
           href: کالبک
         - title: افزودن cpa
-          href: افزودن-cpa
+          href: افزودن-رویداد-مدل-cpa
         - title: آمار ترکر
           href: آمار-ترکر
         - title: ترکرهای پیش‌فرض چابک
