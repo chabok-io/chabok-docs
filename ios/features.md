@@ -325,9 +325,21 @@ switch UIApplication.shared.applicationState {
 
 ```objectivec
 //Objective-C
-PushClientManager.defaultManager.enableLog = YES;
+[PushClientManager.defaultManager setLogLevel:ChabokLogLevelVerbose];  // enable all logging
+[PushClientManager.defaultManager setLogLevel:ChabokLogLevelDebug];    // enable more logging
+[PushClientManager.defaultManager setLogLevel:ChabokLogLevelInfo];     // the default
+[PushClientManager.defaultManager setLogLevel:ChabokLogLevelWarn];     // disable info logging
+[PushClientManager.defaultManager setLogLevel:ChabokLogLevelError];    // disable warnings as well
+[PushClientManager.defaultManager setLogLevel:ChabokLogLevelAssert];   // disable errors as well
+[PushClientManager.defaultManager setLogLevel:ChabokLogLevelSuppress]; // disable all logging
 ```
 ```swift
 //Swift
-PushClientManager.default().enableLog = true
+PushClientManager.default().logLevel = ChabokLogLevelVerbose // enable all logging
+PushClientManager.default().logLevel = ChabokLogLevelDebug // enable more logging
+PushClientManager.default().logLevel = ChabokLogLevelInfo // the default
+PushClientManager.default().logLevel = ChabokLogLevelWarn // disable info logging
+PushClientManager.default().logLevel = ChabokLogLevelError // disable warnings as well
+PushClientManager.default().logLevel = ChabokLogLevelAssert // disable errors as well
+PushClientManager.default().logLevel = ChabokLogLevelSuppress  // disable all logging
 ```
