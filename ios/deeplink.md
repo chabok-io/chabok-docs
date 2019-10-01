@@ -105,7 +105,7 @@ curl -X POST \
 -(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
                         options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
                         
-    [_manager appWillOpenUrl:url];
+    NSLog(@"app opened with this deeplink %@", url);
     
     return YES;
 }
@@ -116,7 +116,7 @@ func application(_ app: UIApplication,
                 open url: URL, 
                 options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
                 
-    _manager?.appWillOpen(url)
+    print("app opened with this deeplink \(url)")
     return true
 }
 ```
@@ -135,7 +135,7 @@ func application(_ app: UIApplication,
                 restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
                         
     if ([[userActivity activityType] isEqualToString:NSUserActivityTypeBrowsingWeb]) {
-        [_manager appWillOpenUrl:[userActivity webpageURL]];
+        NSLog(@"app opened with this deeplink %@", [userActivity webpageURL]);
     }
     
     return YES;
@@ -147,7 +147,7 @@ func application(_ application: UIApplication,
                 continue userActivity: NSUserActivity, 
                 restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
     if (userActivity.activityType == NSUserActivityTypeBrowsingWeb) {
-        _manager?.appWillOpen(userActivity.webpageURL)
+        print("app opened with this deeplink \(userActivity.webpageURL)")
     }
     return true
 }
