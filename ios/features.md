@@ -321,7 +321,7 @@ switch UIApplication.shared.applicationState {
 
 ### فعال‌سازی گزارش‌های چابک
 
-با استفاده از `property`، `enableLog`  می‌توانید گزارش‌های چابک را در بخش `Debugger Output` مشاهده کنید:
+با استفاده از `property`، `logLevel`  می‌توانید گزارش‌های چابک را در بخش `Debugger Output` مشاهده کنید:
 
 ```objectivec
 //Objective-C
