@@ -97,9 +97,6 @@ curl -X POST \
 آمار دیپ لینک از طریق متدهای `onCreate` و یا `onNewIntent` انتقال داده می‌شود. زمانی که اپ را باز کنید و یکی از این متدها فراخوانی شوند، می‌توانید اطلاعات دیپ لینک را دریافت کنید. 
 
 
-پس از اینکه اطلاعات دیپ لینک را در اپلیکیشن خود دریافت کردید، متد `appWillOpenUrl` را فراخوانی کنید. این متد اطلاعات را **از اپلیکیشن به سرور چابک** ارسال می‌کند تا بررسی کند که اتریبیوشن جدید رخ داده است یا خیر.
-به نمونه زیر دقت کنید:
-
 ```objective-c
 //Objective-C
 -(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
@@ -117,6 +114,30 @@ func application(_ app: UIApplication,
                 options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
                 
     print("app opened with this deeplink \(url)")
+    return true
+}
+```
+> `نکته:` دقت داشته باشید در نسخه‌های پایین ۲ SDK چابک باید
+پس از اینکه اطلاعات دیپ لینک را در اپلیکیشن خود دریافت کردید، مت  `appWillOpenUrl` را فراخوانی کنید. این متد اطلاعات را **از اپلیکیشن به سرور چابک** ارسال می‌کند تا بررسی کند که اتریبیوشن جدید رخ داده است یا خیر.
+به نمونه زیر دقت کنید:
+
+```objective-c
+//Objective-C
+-(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
+                        options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+                        
+    [_manager appWillOpenUrl:url];
+    
+    return YES;
+}
+```
+```swift
+//Swift
+func application(_ app: UIApplication, 
+                open url: URL, 
+                options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+                
+    _manager?.appWillOpen(url)
     return true
 }
 ```
@@ -148,6 +169,33 @@ func application(_ application: UIApplication,
                 restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
     if (userActivity.activityType == NSUserActivityTypeBrowsingWeb) {
         print("app opened with this deeplink \(userActivity.webpageURL)")
+    }
+    return true
+}
+```
+
+> `نکته:` دقت داشته باشید در نسخه‌های پایین ۲ SDK چابک باید مانند زیر عمل کنید:
+
+
+```objectivec
+//Objective-C
+-(BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
+                restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
+                        
+    if ([[userActivity activityType] isEqualToString:NSUserActivityTypeBrowsingWeb]) {
+        [_manager appWillOpenUrl:[userActivity webpageURL]];
+    }
+    
+    return YES;
+}
+```
+```swift
+//Swift
+func application(_ application: UIApplication, 
+                continue userActivity: NSUserActivity, 
+                restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    if (userActivity.activityType == NSUserActivityTypeBrowsingWeb) {
+        _manager?.appWillOpen(userActivity.webpageURL)
     }
     return true
 }
