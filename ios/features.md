@@ -343,3 +343,14 @@ PushClientManager.default().logLevel = ChabokLogLevelError // disable warnings a
 PushClientManager.default().logLevel = ChabokLogLevelAssert // disable errors as well
 PushClientManager.default().logLevel = ChabokLogLevelSuppress  // disable all logging
 ```
+
+> `نکته:`  دقت داشته باشید  **در نسخه‌های پایین ۲ کتابخانه چابک**، باید مانند زیر عمل کنید:
+
+```objectivec
+//Objective-C
+PushClientManager.defaultManager.enableLog = YES;
+```
+```swift
+//Swift
+PushClientManager.default().enableLog = true
+```
