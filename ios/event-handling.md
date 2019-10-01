@@ -12,6 +12,19 @@ next: verification.html
 
 زیرساخت چابک از مدل رویدادگرا Pub/Sub استفاده می‌کند. مزیت این مدل علاوه بر آنی بودن این است که ارسال کننده نیازی به این که بداند چه کسانی دریافت می‌کنند، ندارد. برای درک بهتر آن توصیه می‌کنیم [این لینک](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) را مطالعه نمایید. از این طریق شما با [عضویت روی یک رویداد](/android/event-handling.html#عضویت-روی-رویداد)، آن را پس از هر بار رخ دادن [دریافت می‌نمایید](/android/event-handling.html#دریافت-رویداد). علاوه بر آن شما می‌توانید یک رویدادی را با داده دلخواه خود [ارسال کنید](/android/event-handling.html#انتشار-رویداد).
 
+> `نکته`: برای استفاده از پیام چابک باید حتما **قابلیت آنی (realtime)** را فعال کنید. برای این کار همانند کد زیر عمل کنید:
+
+```objectivec
+//Objective-C:
+
+[PushClientManager.defaultManager setEnableRealtime:YES];
+```
+```swift
+//Swift:
+
+PushClientManager.default()?.setEnableRealtime(true)
+```
+
 <Br>
 
 ### رویداد (Event)
