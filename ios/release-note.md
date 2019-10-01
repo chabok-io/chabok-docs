@@ -18,7 +18,7 @@ prev: troubleshoot.html
 
 - برداشته شدن **هشدارها**
 
-- از این پس، پیش‌فرض **realtime**  چابک غیر فعال است. افزودن متد `setEnabledRealtime` برای تغییر مقدار این پارامتر
+- از این پس،  **realtime**   چابک به طور پیش‌فرض غیر فعال است. افزودن متد `setEnabledRealtime` برای تغییر مقدار این پارامتر
 
 - برای غیر فعال کردن دریافت توکن پوش‌نوتیفیکیشن، کد زیر را به  فایل `info.plist` اضافه کنید:
 
@@ -43,7 +43,7 @@ prev: troubleshoot.html
 
 - افزودن پارامتر `logLevel` به جای `enableLog`
 
-- برداشته شدن متدهای زیر با swizzle کردن متدهای `UIApplicationDelegate`
+- برداشته شدن متدهای زیر با swizzle کردن متدهای `UIApplicationDelegate`:
 
 ```diff
 //Objective-C
