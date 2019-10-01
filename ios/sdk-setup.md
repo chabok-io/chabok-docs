@@ -233,7 +233,7 @@ manager?.addDelegate(self)
 PushClientManager.resetBadge()
 ```
 
-> `نکته:` دقت داشته باشید که پارامتر **realtime**  چابک به طور پیش فرض **غیر فعال** است. این پارامتر در[ پیام چابک](/ios/chabok-messaging.html) و [پیام‌رسانی آنی](/ios/event-handling.html) استفاده می‌شود.
+> `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. این قابلیت در[ پیام چابک](/ios/chabok-messaging.html) و [پیام‌رسانی آنی](/ios/event-handling.html) استفاده می‌شود.
 
 <br>
 
