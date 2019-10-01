@@ -116,7 +116,11 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 }
 ```
 
+<br>
+
 ### ۴- حذف متدهای ارسال اطلاعات دیپ لینک
+
+حذف متد `appWillOpenUrl` را مانند زیر انجام دهید.
 
 ```diff
 //Objective-C:
