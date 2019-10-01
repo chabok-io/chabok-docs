@@ -144,7 +144,8 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
 	// Handle receive iOS (4.0 and later) local notification
-	[self.manager application:application didReceiveLocalNotification:notification];
+	
+	//Do something (for example: Open MessageViewController)
 }
 ```
 
@@ -152,7 +153,9 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 //Swift:
 
 func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-	self.manager.application(application, didReceive: notification)
+	// Handle receive iOS (4.0 and later) local notification
+	
+	//Do something (for example: Open MessageViewController)
 }
 ```
 
@@ -169,7 +172,6 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 	// Handle New Remote Notification, must be use for remote payloads
-	[self.manager application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 ```
 ```swift
@@ -177,7 +179,6 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 	// Handle New Remote Notification, must be use for remote payloads
-	manager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
 }
 ```
 
