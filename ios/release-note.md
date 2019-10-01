@@ -21,6 +21,7 @@ prev: troubleshoot.html
 - از این پس، پیش‌فرض **realtime**  چابک غیر فعال است. افزودن متد `setEnabledRealtime` برای تغییر مقدار این پارامتر
 
 - برای غیر فعال کردن دریافت توکن پوش‌نوتیفیکیشن، کد زیر را به  فایل `info.plist` اضافه کنید:
+
  ```xml
 <key>CHABOK_DISABLE_PUSH_NOTIFICATION</key>
 <false/>
