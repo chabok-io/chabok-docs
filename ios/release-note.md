@@ -10,6 +10,71 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۲.۰.۰ - ۱۳۹۸/۰۷/۰۹](https://github.com/chabok-io/chabok-client-ios/releases/tag/v2.0.0)
+
+### تغییرات
+
+- افزودن پراپرتی `logLevel` برای لاگ گرفتن در سطوح مختلف (مانند  ... ,debug, warning, info)
+
+- برداشته شدن **هشدارها**
+
+- از این پس، پیش‌فرض **realtime**  چابک غیر فعال است. افزودن متد `setEnabledRealtime` برای تغییر مقدار این پارامتر
+
+- برای غیر فعال کردن دریافت توکن پوش‌نوتیفیکیشن، کد زیر را به  فایل `info.plist` اضافه کنید:
+ ```xml
+<key>CHABOK_DISABLE_PUSH_NOTIFICATION</key>
+<false/>
+```
+
+- افزودن متد `initWithAppId` به عنوان متد جدید مقداردهی اولیه چابک
+
+- افزودن مدل‌های جدید آیفون (**iPhone 11, iPhone 11 Max, iPhone 11 Pro Max**) به SDK
+
+- خودکارسازی دریافت دیتای نوتیفیکیشن از طریق swizzle کردن متدهای `UNUserNotificationCenterDelegate`
+
+- خودکارسازی دریافت توکن پوش‌نوتیفیکیشن و تشخیص بازدید اپلیکیشن از طریق swizzle کردن متدهای `UIApplicationDelegate`
+
+### ارتقا
+
+- تغییر کلاس `DeliveryMessage` به `PushClientDeliveryMessage`
+
+- تغییر مقدار پیش‌فرض پارامتر **realtime** به `NO`
+
+- افزودن پارامتر `logLevel` به جای `enableLog`
+
+- برداشته شدن متدهای زیر با swizzle کردن متدهای `UIApplicationDelegate`
+
+```diff
+//Objective-C
+
+- [PushClientManager.defaultManager application:didFailToRegisterForRemoteNotificationsWithError:];
+
+- [PushClientManager.defaultManager application:didRegisterForRemoteNotificationsWithDeviceToken:];
+
+- [PushClientManager.defaultManager application:didRegisterUserNotificationSettings:];
+
+- [PushClientManager.defaultManager application:didReceiveRemoteNotification:];
+
+- [PushClientManager.defaultManager application:didReceiveRemoteNotification:fetchCompletionHandler:];
+
+- [PushClientManager.defaultManager application:didFinishLaunchingWithOptions:];
+
+- [PushClientManager.defaultManager application:didReceiveLocalNotification:];
+
+- [PushClientManager.defaultManager applicationDidBecomeActive:];
+
+- [PushClientManager.defaultManager applicationDidEnterBackground:];
+
+- [PushClientManager.defaultManager applicationWillEnterForeground:];
+
+- [PushClientManager.defaultManager applicationWillResignActive:];
+
+- [PushClientManager.defaultManager applicationWillTerminate:];
+
+- [PushClientManager.defaultManager appWillOpenUrl:];
+
+```
+
 ##  [نسخه ۱.۲۰.۲ - ۱۳۹۸/۰۵/۲۶](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.2)
 
 ### تغییرات
