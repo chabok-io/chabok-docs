@@ -73,7 +73,6 @@ prev: troubleshoot.html
 - [PushClientManager.defaultManager applicationWillTerminate:];
 
 - [PushClientManager.defaultManager appWillOpenUrl:];
-
 ```
 
 ##  [نسخه ۱.۲۰.۲ - ۱۳۹۸/۰۵/۲۶](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.2)
