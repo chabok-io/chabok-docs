@@ -121,7 +121,7 @@ func application(_ app: UIApplication,
 پس از اینکه اطلاعات دیپ لینک را در اپلیکیشن خود دریافت کردید، متد  `appWillOpenUrl` را فراخوانی کنید. این متد اطلاعات را **از اپلیکیشن به سرور چابک** ارسال می‌کند تا بررسی کند که اتریبیوشن جدید رخ داده است یا خیر.
 به نمونه زیر دقت کنید:
 
-```objective-c
+```objectivec
 //Objective-C
 -(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
                         options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
