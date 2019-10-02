@@ -321,7 +321,7 @@ switch UIApplication.shared.applicationState {
 
 ### فعال‌سازی گزارش‌های چابک
 
-با استفاده از `property`، `logLevel`  می‌توانید گزارش‌های چابک را در بخش `Debugger Output` مشاهده کنید:
+با استفاده از  `logLevel`  می‌توانید گزارش‌های چابک را در بخش `Debugger Output` مشاهده کنید:
 
 ```objectivec
 //Objective-C
@@ -343,6 +343,8 @@ PushClientManager.default().logLevel = ChabokLogLevelError // disable warnings a
 PushClientManager.default().logLevel = ChabokLogLevelAssert // disable errors as well
 PushClientManager.default().logLevel = ChabokLogLevelSuppress  // disable all logging
 ```
+
+<br>
 
 > `نکته:`  دقت داشته باشید  **در نسخه‌های پایین ۲ کتابخانه چابک**، باید مانند زیر عمل کنید:
 
