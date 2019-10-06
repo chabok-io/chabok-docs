@@ -97,10 +97,31 @@ curl -X POST \
 آمار دیپ لینک از طریق متدهای `onCreate` و یا `onNewIntent` انتقال داده می‌شود. زمانی که اپ را باز کنید و یکی از این متدها فراخوانی شوند، می‌توانید اطلاعات دیپ لینک را دریافت کنید. 
 
 
-پس از اینکه اطلاعات دیپ لینک را در اپلیکیشن خود دریافت کردید، متد `appWillOpenUrl` را فراخوانی کنید. این متد اطلاعات را **از اپلیکیشن به سرور چابک** ارسال می‌کند تا بررسی کند که اتریبیوشن جدید رخ داده است یا خیر.
+```objectivec
+//Objective-C
+-(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
+                        options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+                        
+    NSLog(@"app opened with this deeplink %@", url);
+    
+    return YES;
+}
+```
+```swift
+//Swift
+func application(_ app: UIApplication, 
+                open url: URL, 
+                options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+                
+    print("app opened with this deeplink \(url)")
+    return true
+}
+```
+> `نکته:` دقت داشته باشید **در نسخه‌های پایین ۲ کتابخانه چابک**، باید
+پس از اینکه اطلاعات دیپ لینک را در اپلیکیشن خود دریافت کردید، متد  `appWillOpenUrl` را فراخوانی کنید. این متد اطلاعات را **از اپلیکیشن به سرور چابک** ارسال می‌کند تا بررسی کند که اتریبیوشن جدید رخ داده است یا خیر.
 به نمونه زیر دقت کنید:
 
-```objective-c
+```objectivec
 //Objective-C
 -(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
                         options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
@@ -128,6 +149,33 @@ func application(_ app: UIApplication,
 اپل برای آی‌اواس ۹ به بالا تغییری را برای بالا بردن امنیت در این مکانیزم انجام داده است. به این صورت که برای مطمئن شدن از اختصاص یک اپلیکیشن به وبسایت آن باید حتما فایلی را به نام **apple-app-site-association** در وبسایت خود برای اعتبارسنجی و تایید اپل قرار دهید. 
 
 زمانی که کاربر با Universal Link وارد وبسایت شما شود، متد زیر فرخوانی می‌شود:
+
+```objectivec
+//Objective-C
+-(BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
+                restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
+                        
+    if ([[userActivity activityType] isEqualToString:NSUserActivityTypeBrowsingWeb]) {
+        NSLog(@"app opened with this deeplink %@", [userActivity webpageURL]);
+    }
+    
+    return YES;
+}
+```
+```swift
+//Swift
+func application(_ application: UIApplication, 
+                continue userActivity: NSUserActivity, 
+                restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    if (userActivity.activityType == NSUserActivityTypeBrowsingWeb) {
+        print("app opened with this deeplink \(userActivity.webpageURL)")
+    }
+    return true
+}
+```
+
+> `نکته:` دقت داشته باشید **در نسخه‌های پایین ۲ کتابخانه چابک**، باید مانند زیر عمل کنید:
+
 
 ```objectivec
 //Objective-C

@@ -2,12 +2,13 @@
 id: push-notification
 title: پوش‌نوتیفیکیشن
 layout: ios
-permalink: ios/push-notification.html
+permalink: ios/push-notification-old-version.html
 prev: chabok-messaging.html
 next: deeplink.html
 ---
 
-> `نکته:` مستندات زیر براساس **نسخه‌های ۲ به بالا** کتابخانه چابک نوشته شده است. در صورتی که از نسخه‌ پایین‌تری استفاده می‌کنید به [ این صفحه](/ios/push-notification-old-version.html) مراجعه کنید.
+> `نکته:` مستندات زیر مربوط به **نسخه‌های پایین ۲** کتابخانه چابک است. در صورتی که می‌خواهید نسخه خود را ارتقا دهید، حتما [مستندات مهاجرت](/ios/upgrade-chabok-to-2-0-0.html) به نسخه ۲ چابک را مطالعه کنید.
+
 
 چابک علاوه بر پیام چابک، **پوش‌نوتیفیکیشن** هم ارسال می‌کند. شما می‌توانید نمایش این پوش‌نوتیفیکیشن‌ها را [شخصی‌سازی کنید.](/ios/push-notification.html#شخصیسازی-نمایش-نوتیفیکیشن) برای نوتیفیکیشن کلیک [تعیین کنید و دیتای آن را دریافت کنید ](/ios/push-notification.html#کلیک-و-دریافت-دیتای-نوتیفیکیشن-آیاواس-۱۰-به-بالا). همینطور با [تنظیم پوش‌نوتیفیشکیشن چند رسانه‌ای](/ios/push-notification.html#تنظیم-نوتیفیکیشن-چندرسانهای-rich-push-notification) می‌توانید برای هرکدام اکشن تعیین نمایید. 
 
@@ -146,8 +147,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
 	// Handle receive iOS (4.0 and later) local notification
-	
-	//Do something (for example: Open MessageViewController)
+	[self.manager application:application didReceiveLocalNotification:notification];
 }
 ```
 
@@ -155,9 +155,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 //Swift:
 
 func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-	// Handle receive iOS (4.0 and later) local notification
-	
-	//Do something (for example: Open MessageViewController)
+	self.manager.application(application, didReceive: notification)
 }
 ```
 
@@ -174,6 +172,7 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 	// Handle New Remote Notification, must be use for remote payloads
+	[self.manager application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 ```
 ```swift
@@ -181,6 +180,7 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 	// Handle New Remote Notification, must be use for remote payloads
+	manager.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
 }
 ```
 

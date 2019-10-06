@@ -2,12 +2,12 @@
 id: sdk-setup
 title: راه‌اندازی
 layout: ios
-permalink: ios/sdk-setup.html
+permalink: ios/sdk-setup-old-version.html
 prev: required.html
 next: tracker.html
 ---
 
-> `نکته:` مستندات پیاده‌سازی زیر براساس **نسخه‌های ۲ به بالا** کتابخانه چابک نوشته شده است. در صورتی که از نسخه‌ پایین‌تری استفاده می‌کنید به [ این صفحه](/ios/sdk-setup-old-version.html) مراجعه کنید.
+> `نکته:` مستندات پیاده‌سازی زیر مربوط به **نسخه‌های پایین ۲** کتابخانه چابک است. در صورتی که می‌خواهید نسخه خود را ارتقا دهید، حتما [مستندات مهاجرت](/ios/upgrade-chabok-to-2-0-0.html) به نسخه ۲ چابک را مطالعه کنید.
 
 پس از طی کردن مراحل صفحه [پیش‌نیازها](/ios/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/ios/sdk-setup.html#۱--نصب-کتابخانه)، سپس [مقداردهی و راه‌اندازی](/ios/sdk-setup.html#۲--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و در آخر برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/ios/sdk-setup.html#۳--ثبت-کاربر-register) را حتما پشت سر بگذارید.
 
@@ -28,7 +28,7 @@ next: tracker.html
 target 'YourProject' do
   use_frameworks!
 
-  pod 'ChabokPush', '~> 2.0.0'
+  pod 'ChabokPush', '~> 1.20.1'
   
 end
 ```
@@ -45,12 +45,7 @@ $ pod update
 ```
 حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کنید، افزودن کتابخانه موفقیت آمیز بوده است.
 
-> `نکته:` برای غیر فعال کردن دریافت توکن پوش‌نوتیفیکیشن، کد زیر را به  فایل `info.plist` اضافه کنید:
 
- ```xml
-<key>CHABOK_DISABLE_PUSH_NOTIFICATION</key>
-<false/>
-```
 #### نصب دستی کتابخانه 
 
 برای دسترسی به کتابخانه چابک هم می‌توانید وارد [این صفحه](https://github.com/chabok-io/chabok-client-ios) شوید. برای نصب کتابخانه، استفاده از این روش را **توصیه نمی‌کنیم** زیرا شما از به روز رسانی‌ نسخه‌های چابک مطلع نمی‌شوید.
@@ -69,7 +64,7 @@ $ pod update
 
 ### ۲- مقداردهی اولیه (Initialize)
 
-چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `initWithAppId` چابک **باید** در کلاس `AppDelegate` در متد `didFinishLaunchingWithOptions` تحت هر شرایطی فراخوانی شود.
+چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `registerApplication` چابک **باید** در کلاس `AppDelegate` در متد `didFinishLaunchingWithOptions` تحت هر شرایطی فراخوانی شود.
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
@@ -101,9 +96,9 @@ $ pod update
     
     //Initialize with credential keys
     BOOL state = [_manager
-		                 initWithAppId:@"APP_ID" //based on your environment
+		                 registerApplication:@"APP_ID" //based on your environment
                          apiKey:@"API_KEY"             //based on your environment
-                         username:@"SDK_USERNAME"      //based on your environment
+                         userName:@"SDK_USERNAME"      //based on your environment
                          password:@"SDK_PASSWORD"];    //based on your environment
     
     if (state) {
@@ -111,10 +106,30 @@ $ pod update
     } else {
 	    NSLog(@"Not initialized");
     }
+    
+    if ([_manager application:application didFinishLaunchingWithOptions:launchOptions]) {
+        NSLog(@"Launched by tapping on notification");
+    }
  
     return YES;
 }
 
+#pragma mark - Notification AppDelegation
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    // Handle failure of get Device token from Apple APNS Server
+    [_manager application:application didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    // Handle receive Device Token From APNS Server
+    [_manager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    // Handle iOS 8 remote Notificaiton Settings
+    [_manager application:application didRegisterUserNotificationSettings:notificationSettings];
+}
 @end
 ```
 
@@ -141,9 +156,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
         _manager?.addDelegate(self)
         
         //Initialize with credential keys
-        let state = _manager?.initWithAppId("APP_ID",					//based on your environment
+        let state = _manager?.registerApplication("APP_ID",					//based on your environment
                                                  apiKey: "API_KEY",     	//based on your environment
-                                                 username: "SDK_USERNAME",  //based on your environment
+                                                 userName: "SDK_USERNAME",  //based on your environment
                                                  password: "SDK_PASSWORD")  //based on your environment
         
         if state == true {
@@ -151,17 +166,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
         } else {
             print("Not initialized")
         }
-              
+        
+        if _manager?.application(application, didFinishLaunchingWithOptions: launchOptions) == true {
+            print("Launched by tapping on notification")
+        }
+      
         return true
     }
     
+    //MARK : Notification AppDelegation
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        // Handle failure of get Device token from Apple APNS Server
+        _manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // Handle receive Device Token From APNS Server
+        _manager?.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
+    
+    @available(iOS 8.0, *)
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        // Handle iOS 8 remote Notificaiton Settings
+        _manager?.application(application, didRegister: notificationSettings)
+    }
 }
 ```
 #### نکات ضروری مقداردهی متدها
 
 - متد `setDevelopment`:
 
-متد `setDevelopment` مشخص می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (production)](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد. مقدار `true` یا `YES` به محیط آزمایشی و مقدار`false` یا `NO` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (`appId`, `apiKey`, `username` و `password`) خودش در متد `initWithAppId` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
+متد `setDevelopment` مشخص می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (production)](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد. مقدار `true` یا `YES` به محیط آزمایشی و مقدار`false` یا `NO` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (`appId`, `apiKey`, `username` و `password`) خودش در متد `registerApplication` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
 
 ```objectivec
 //Objective-C:
@@ -174,26 +210,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 PushClientManager.setDevelopment(true)
 ```
 
-- متد `initWithAppId`:
+- متد `registerApplication`:
 
-به منظور استفاده از پلتفرم چابک، ابتدا باید متد `initWithAppId` را فراخوانی کرده و مقادیر مورد نیاز جهت فعالسازی کتابخانه چابک را وارد نمایید. 
+به منظور استفاده از پلتفرم چابک، ابتدا باید متد `registerApplication` را فراخوانی کرده و مقادیر مورد نیاز جهت فعالسازی کتابخانه چابک را وارد نمایید. 
 
-همانند کد زیر، متد `initWithAppId` را در کلاس `AppDelegate` و در متد `didFinishLaunchingWithOptions` فراخوانی کنید:
+همانند کد زیر، متد `registerApplication` را در کلاس `AppDelegate` و در متد `didFinishLaunchingWithOptions` فراخوانی کنید:
 
 ```objectivec
 //Objective-C:
   
-[_manager initWithAppId:@"APP_ID"             //based on your environment    
+[_manager registerApplication:@"APP_ID"             //based on your environment    
                            apiKey:@"API_KEY"    	//based on your environment
-                         username:@"SDK_USERNAME"   //based on your environment
+                         userName:@"SDK_USERNAME"   //based on your environment
                          password:@"SDK_PASSWORD"]; //based on your environment
 ```
 ```swift
 //Swift:
 
-_manager?.initWithAppId("APP_ID", 	 //based on your environment
+_manager?.registerApplication("APP_ID", 	 //based on your environment
 					apiKey: "API_KEY",		 //based on your environment
-					username: "SDK_USERNAME",//based on your environment
+					userName: "SDK_USERNAME",//based on your environment
 					password: "SDK_PASSWORD")//based on your environment
 ```
 
@@ -217,7 +253,24 @@ _manager?.initWithAppId("APP_ID", 	 //based on your environment
 
 manager?.addDelegate(self)
 ```
+- متد `didFinishLaunchingWithOptions`:
 
+چابک برای فهمیدن نحوه باز شدن اپلیکیشن نیاز به قطعه کد زیر دارد، بنابراین فراخوانی این کد **ضروری** می‌باشد:
+
+```objectivec
+//Objective-C:
+
+if ([_manager application:application didFinishLaunchingWithOptions:launchOptions]) {
+	NSLog(@"Launched by tapping on notification");
+}
+```
+```swift
+//Swift:
+
+if _manager?.application(application, didFinishLaunchingWithOptions: launchOptions) == true {
+	print("Launched by tapping on notification")
+}
+```
 - متد `resetBadge`:
 
 چابک به طور **پیش‌فرض** برای هر پیام در اپلیکیشنتان نشان (**Badge**) اعمال می‌کند. متد `resetBadge` برای خالی کردن و ریست Badge به کار می‌رود. شما با توجه به نیاز خود می‌توانید این متد را در جای خاصی از اپلیکیشنتان (مانند صندوق پیام‌ها) یا در حین باز شدن (launch) اپ خود فراخوانی کنید.
@@ -233,9 +286,54 @@ manager?.addDelegate(self)
 PushClientManager.resetBadge()
 ```
 
-> `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. این قابلیت در[ پیام چابک](/ios/chabok-messaging.html) و [پیام‌رسانی آنی](/ios/event-handling.html) استفاده می‌شود.
 
-<br>
+#### متدهای ضروری
+
+در مرحله آخر شما باید قطعه کد زیر را در کلاس `AppDelegate` قرار دهید تا کتابخانه چابک بتواند راه‌اندازی شود:
+
+```objectivec
+//Objective-C:
+
+#pragma mark - Notification AppDelegation
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    // Handle failure of get Device token from Apple APNS Server
+    [_manager application:application didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    // Handle receive Device Token From APNS Server
+    [_manager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    // Handle iOS 8 remote Notificaiton Settings
+    [_manager application:application didRegisterUserNotificationSettings:notificationSettings];
+}
+```
+```swift
+//Swift :
+
+//MARK : Notification AppDelegation
+    
+func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+	// Handle failure of get Device token from Apple APNS Server
+	_manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+}
+    
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+	// Handle receive Device Token From APNS Server
+	_manager?.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)        
+}
+    
+@available(iOS 8.0, *)
+func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+	// Handle iOS 8 remote Notificaiton Settings
+	_manager?.application(application, didRegister: notificationSettings)
+}
+```
+
+<Br>
 
 ### ۳- ثبت کاربر (Register)
 
@@ -280,7 +378,7 @@ _manager?.registerUser("USER_ID")
     } else {
         //If user is not registered verify the user and
         //call [_manager registerUser:@"USER_ID"]; method at login page
-        [_manager registerAsGuest];
+        [_manager registerUser:@"USER_ID"];
     }
     
     return YES;
@@ -298,7 +396,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     } else {
         //If user is not registered verify the user and
         //call manager?.registerUser("USER_ID") method at login page
-        _manager?.registerAsGuest()
+        _manager?.registerUser("USER_ID")
     }
 
     return true

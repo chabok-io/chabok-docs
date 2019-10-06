@@ -2,13 +2,12 @@
 id: tracker
 title: ترکر نصب
 layout: ios
-permalink: ios/tracker.html
+permalink: ios/tracker-old-version.html
 next: push-notification.html
 prev: sdk-setup.html
 ---
 
-> `نکته:` مستندات پیاده‌سازی زیر براساس **نسخه‌های ۲ به بالا** کتابخانه چابک نوشته شده است. در صورتی که از نسخه‌ پایین‌تری استفاده می کنید به [ این صفحه](/ios/tracker-old-version.html) مراجعه کنید.
-
+> `نکته:` مستندات پیاده‌سازی زیر مربوط به **نسخه‌های پایین ۲** کتابخانه چابک است. در صورتی که می‌خواهید نسخه خود را ارتقا دهید، حتما [مستندات مهاجرت](/ios/upgrade-chabok-to-2-0-0.html) به نسخه ۲ چابک را مطالعه کنید.
 
 ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/ios/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/ios/tracker.html#۴-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
 
@@ -49,7 +48,7 @@ prev: sdk-setup.html
 target 'YourProject' do
   use_frameworks!
 
-  pod 'ChabokPush', '~> 2.0.0'
+  pod 'ChabokPush', '~> 1.20.1'
   
 end
 ```
@@ -66,7 +65,7 @@ $ pod install
 
 ##### ب- مقداردهی (Initialize)
 
-چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `initWithAppId` چابک **باید** در کلاس `AppDelegate` در متد `didFinishLaunchingWithOptions` تحت هر شرایطی فراخوانی شود.
+چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `registerApplication` چابک **باید** در کلاس `AppDelegate` در متد `didFinishLaunchingWithOptions` تحت هر شرایطی فراخوانی شود.
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
@@ -98,9 +97,9 @@ $ pod install
     
     //Initialize with credential keys
     BOOL state = [_manager
-		                 initWithAppId:@"APP_ID" //based on your environment
+		                 registerApplication:@"APP_ID" //based on your environment
                          apiKey:@"API_KEY"             //based on your environment
-                         username:@"SDK_USERNAME"      //based on your environment
+                         userName:@"SDK_USERNAME"      //based on your environment
                          password:@"SDK_PASSWORD"];    //based on your environment
     
     if (state) {
@@ -108,10 +107,30 @@ $ pod install
     } else {
 	    NSLog(@"Not initialized");
     }
-     
+    
+    if ([_manager application:application didFinishLaunchingWithOptions:launchOptions]) {
+        NSLog(@"Launched by tapping on notification");
+    }
+ 
     return YES;
 }
 
+#pragma mark - Notification AppDelegation
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    // Handle failure of get Device token from Apple APNS Server
+    [_manager application:application didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    // Handle receive Device Token From APNS Server
+    [_manager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    // Handle iOS 8 remote Notificaiton Settings
+    [_manager application:application didRegisterUserNotificationSettings:notificationSettings];
+}
 @end
 ```
 
@@ -138,9 +157,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
         _manager?.addDelegate(self)
         
         //Initialize with credential keys
-        let state = _manager?.initWithAppId("APP_ID",					//based on your environment
+        let state = _manager?.registerApplication("APP_ID",					//based on your environment
                                                  apiKey: "API_KEY",     	//based on your environment
-                                                 usernname: "SDK_USERNAME",  //based on your environment
+                                                 userName: "SDK_USERNAME",  //based on your environment
                                                  password: "SDK_PASSWORD")  //based on your environment
         
         if state == true {
@@ -148,13 +167,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
         } else {
             print("Not initialized")
         }
+        
+        if _manager?.application(application, didFinishLaunchingWithOptions: launchOptions) == true {
+            print("Launched by tapping on notification")
+        }
       
         return true
+    }
+    
+    //MARK : Notification AppDelegation
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        // Handle failure of get Device token from Apple APNS Server
+        _manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // Handle receive Device Token From APNS Server
+        _manager?.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
+    
+    @available(iOS 8.0, *)
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        // Handle iOS 8 remote Notificaiton Settings
+        _manager?.application(application, didRegister: notificationSettings)
     }
 }
 ```
 
-در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/ios/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.
+در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.
 
 متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد. مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
 
