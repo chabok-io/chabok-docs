@@ -97,7 +97,7 @@ next: inbox.html
 
 **متن پیام در پنل**:
 
- {{user['firstName']}} عزیز، هنوز {{userInfo[event['add_to_cart']['value'] + 'name']}} رو تو سبدتون دارید. تا تموم نشده بخریدش!
+ {{user['firstName']}} عزیز، هنوز {{user[event['add_to_cart']['value'] + 'name']}} رو تو سبدتون دارید. تا تموم نشده بخریدش!
 
 {% endraw %}
 
