@@ -58,7 +58,7 @@ yarn add chabokpush
 
 #### افزودن Service Worker
 
- برای **ارسال پوش‌نوتیفیکشن در پس‌زمینه (‌Background)** باید فایل `ChabokSDKWorker.js` را از [این لینک](https://raw.githubusercontent.com/chabokpush/chabok-client-js/master/dist/ChabokSDKWorker.js) دریافت نموده و در روت پروژه قرار دهید.
+ برای **ارسال پوش‌نوتیفیکشن در پس‌زمینه (‌Background)** باید فایل `ChabokSDKWorker.js` را از [این لینک](https://raw.githubusercontent.com/chabok-io/chabok-client-js/master/dist/ChabokSDKWorker.js) دریافت نموده و در روت پروژه قرار دهید.
  
  اگر از **Github Desktop** استفاده می‌کنید، برای دریافت آن می‌توانید از [این لینک](x-github-client://openRepo/https://github.com/chabok-io/chabok-client-js?branch=master&filepath=dist%2FChabokSDKWorker.js) استفاده نمایید.
 
