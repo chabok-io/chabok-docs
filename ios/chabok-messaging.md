@@ -11,6 +11,8 @@ next: push-notification.html
 
 پیام‌های چابک از طریق [کانال‌](/ios/chabok-messaging.html#کانال) ارسال می‌شوند. بنابراین برای دریافت پیام، باید ابتدا کاربر را در کانال [عضو نمایید](/ios/chabok-messaging.html#عضویت-روی-کانال-subscribe). در این قسمت شما می‌توانید پیام [دریافت کنید](/ios/chabok-messaging.html#دریافت-پیام) و برای آن [وضعیت (status) ارسال کنید](/ios/chabok-messaging.html#ارسال-وضعیت-برای-پیامهای-دریافتی). همچنین می‌توانید پیام [ارسال کنید](/ios/chabok-messaging.html#ارسال-پیام) و از وضعیت تحویل آن‌ [مطلع شوید](/ios/chabok-messaging.html#دریافت-گزارش-تحویل-پیام-delivery). 
 
+> `نکته`: برای استفاده از پیام‌رسانی آنی باید حتما **قابلیت آنی (realtime)** را فعال کنید. برای این کار مقدار پیش‌فرض آن را در فایل دانلود شده (**Chabok.sandbox.plist**  یا  **Chabok.production.plist**) از پنل تغییر دهید.
+
 <Br>
 
 ### دریافت پیام 
@@ -324,4 +326,3 @@ func pushClientManagerDidFail(inUnsubscribe error: Error!) {
 	print("Error in unsubscribe from channel \(error)")
 }
 ```
-

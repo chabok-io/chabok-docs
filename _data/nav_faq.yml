@@ -1,0 +1,12 @@
+- title: شروع سریع faq
+  items:
+    - id: general
+      title: عمومی
+    - id: account-management
+      title: ثبت نام و مدیریت حساب
+    - id: attribution
+      title: اتریبیوشن
+    - id: push-notification
+      title: پوش‌نوتیفیکیشن
+    - id: custom-data
+      title: داده‌های سفارشی

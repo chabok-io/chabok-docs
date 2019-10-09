@@ -10,6 +10,76 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۲.۰.۰ - ۱۳۹۸/۰۷/۱۷](https://github.com/chabok-io/chabok-client-ios/releases/tag/v2.0.0)
+
+> `نکته:`  در صورتی که می‌خواهید نسخه خود را ارتقا دهید، حتما [مستندات مهاجرت](/ios/upgrade-chabok-to-2-0-0.html) به نسخه ۲ چابک را مطالعه کنید.
+
+### تغییرات
+
+- افزودن متد ``configureEnvironment`` برای [خودکارسازی مقداردهی](/ios/sdk-setup.html#%DB%B2--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-initialize) اولیه توسط فایل **Chabok.sandbox.plist**  یا  **Chabok.production.plist**
+
+- افزودن متدهای ‍‍`login` برای ثبت کاربر
+ 
+- افزودن متد `logout` برای تبدیل کاربر به مهمان
+
+- افزودن پراپرتی `logLevel` برای لاگ گرفتن در سطوح مختلف (مانند  ... ,debug, warning, info)
+
+- برداشته شدن **هشدارها**
+
+- از این پس قابلیت‌های آنی (realtime) و پوش‌نوتیفیکیشن به صورت پیش‌فرض در فایل **Chabok.sandbox.plist**  یا  **Chabok.production.plist** قابل تنظیم است.
+
+- افزودن مدل‌های جدید آیفون (**iPhone 11, iPhone 11 Max, iPhone 11 Pro Max**) به SDK
+
+- خودکارسازی دریافت دیتای نوتیفیکیشن از طریق swizzle کردن متدهای `UNUserNotificationCenterDelegate`
+
+- خودکارسازی دریافت توکن پوش‌نوتیفیکیشن و تشخیص بازدید اپلیکیشن از طریق swizzle کردن متدهای `UIApplicationDelegate`
+
+### ارتقا
+
+- حذف متدهای `register`  و  `unregister`. به جای این دو، از متدهای `login` و `logout` استفاده کنید.
+
+- حذف متد `registerApplication` (مقداردهی به صورت خودکار انجام می‌شود)
+
+- منسوخ شدن متد `setDevelopment`. به جای آن از متد `configureEnvironment` استفاده کنید.
+
+- تغییر کلاس `DeliveryMessage` به `PushClientDeliveryMessage`
+
+- تغییر مقدار پیش‌فرض پارامتر **realtime** به `NO`
+
+- افزودن پارامتر `logLevel` به جای `enableLog`
+
+- برداشته شدن متدهای زیر با swizzle کردن متدهای `UIApplicationDelegate`:
+
+```diff
+//Objective-C
+
+- [PushClientManager.defaultManager application:didFailToRegisterForRemoteNotificationsWithError:];
+
+- [PushClientManager.defaultManager application:didRegisterForRemoteNotificationsWithDeviceToken:];
+
+- [PushClientManager.defaultManager application:didRegisterUserNotificationSettings:];
+
+- [PushClientManager.defaultManager application:didReceiveRemoteNotification:];
+
+- [PushClientManager.defaultManager application:didReceiveRemoteNotification:fetchCompletionHandler:];
+
+- [PushClientManager.defaultManager application:didFinishLaunchingWithOptions:];
+
+- [PushClientManager.defaultManager application:didReceiveLocalNotification:];
+
+- [PushClientManager.defaultManager applicationDidBecomeActive:];
+
+- [PushClientManager.defaultManager applicationDidEnterBackground:];
+
+- [PushClientManager.defaultManager applicationWillEnterForeground:];
+
+- [PushClientManager.defaultManager applicationWillResignActive:];
+
+- [PushClientManager.defaultManager applicationWillTerminate:];
+
+- [PushClientManager.defaultManager appWillOpenUrl:];
+```
+
 ##  [نسخه ۱.۲۰.۲ - ۱۳۹۸/۰۵/۲۶](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.2)
 
 ### تغییرات
