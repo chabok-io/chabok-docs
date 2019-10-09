@@ -171,7 +171,7 @@ PushClientManager.resetBadge()
 
 یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و [سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید](/panel/users.html#جزئیات-کاربر).
 
-#### Login
+#### ورود به حساب کاربری (Login)
 
 >` نکته:` دقت داشته باشید که متدهای `login` و `logout` را در **background thread** فراخوانی **نکنید** و آن‌ها را حتما در **main thread** قرار دهید.
 
@@ -184,17 +184,19 @@ PushClientManager.resetBadge()
 ```objectivec
 //Objective-C:
 
-[PushClientManager.defaultManager login];
+[PushClientManager.defaultManager login:@"USER_ID"];
 ```
 ```swift
 //Swift:
 
-PushClientManager.default()?.login()
+PushClientManager.default()?.login("USER_ID")
 ```
+
 
 >` نکته:` در صورتی از نسخه‌های قبل چابک استفاده می‌کردید و کاربر از قبل ثبت شده بود، توصیه می‌کنیم خودتان بلافاصله پس از مقداردهی این را مدیریت کنید.
 
 <br>
+
 
 > `نکته`: مقدار `USER_ID` می‌تواند **بین ۳ تا ۶۴** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
 
@@ -208,12 +210,12 @@ PushClientManager.default()?.login()
 ```objectivec
 //Objective-C:
 
-[PushClientManager.defaultManager login:@"LOGGED_IN_USER_ID" userAttributes:];
+[PushClientManager.defaultManager login:@"USER_ID" userAttributes:];
 ```
 ```swift
 //Swift:
 
-PushClientManager.default()?.login("LOGGED_IN_USER_ID", userAttributes: [AnyHashable : Any])
+PushClientManager.default()?.login("USER_ID", userAttributes: [AnyHashable : Any])
 ```
 
 >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب](http://chabokpush.com) برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر پیام چابک و پوش‌نوتیفیکیشن بفرستید.
@@ -225,12 +227,12 @@ PushClientManager.default()?.login("LOGGED_IN_USER_ID", userAttributes: [AnyHash
 ```objectivec
 //Objective-C:
 
-[PushClientManager.defaultManager login:@"LOGGED_IN_USER_ID" event:@"EVENT_NAME" data:]
+[PushClientManager.defaultManager login:@"USER_ID" event:@"EVENT_NAME" data:]
 ```
 ```swift
 //Swift:
 
-PushClientManager.default()?.login("LOGGED_IN_USER_ID", event: "EVENT_NAME", data: [AnyHashable : Any])
+PushClientManager.default()?.login("USER_ID", event: "EVENT_NAME", data: [AnyHashable : Any])
 ```
 
 <br>
