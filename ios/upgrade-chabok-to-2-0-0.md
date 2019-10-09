@@ -140,7 +140,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         PushClientManager.resetBadge()
         PushClientManager.default()?.addDelegate(self)
 	
-	PushClientManager.default()?.configureEnvironment(.Sandbox)
++       PushClientManager.default()?.configureEnvironment(.Sandbox)
 	
 	return true
 }
