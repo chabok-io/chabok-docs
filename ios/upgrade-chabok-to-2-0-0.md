@@ -42,7 +42,7 @@ $ pod update
 
 <br>
 
-### ۲- حذف متدهای`didFinishLaunchWithOptions`
+### ۲- حذف متدهای`didFinishLaunchWithOptions` و افزودن متد `configureEnvironment`
 
 کد زیر را از  `didFinishLaunchWithOptions` در کلاس `AppDelegate` حذف کنید:
 
