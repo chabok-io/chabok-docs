@@ -50,11 +50,33 @@ $ pod update
 //Objective-C
 
 ‌-(BOOL)application:(UIApplication  *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {     
-	...  
--	  if  ([_manager  application:application  didFinishLaunchingWithOptions:launchOptions])  {
--		NSLog(@"Launched  by  tapping  on  notification");
--	  }
-	...
+
+-    [PushClientManager setDevelopment:YES];
+
+    [PushClientManager  resetBadge];
+    
+    _manager = PushClientManager.defaultManager;
+    [_manager addDelegate:self];
+    
+    //Initialize with credential keys
+-    BOOL state = [_manager
+-		                 registerApplication:@"APP_ID" //based on your environment
+-                         apiKey:@"API_KEY"             //based on your environment
+-                         userName:@"SDK_USERNAME"      //based on your environment
+-                         password:@"SDK_PASSWORD"];    //based on your environment
+  
+
+-    if  ([_manager  application:application  didFinishLaunchingWithOptions:launchOptions])  {
+-    	NSLog(@"Launched  by  tapping  on  notification");
+-    }
+
+-    if (_manager.userId) {
+-        [_manager registerUser:_manager.userId];
+-    } else {
+-        [_manager registerUser:@"USER_ID"];
+-    }
+
+     return YES
 }
 ```
 
@@ -62,11 +84,65 @@ $ pod update
 //Swift:
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-	...  
+
+-	PushClientManager.setDevelopment(true)
+
+        PushClientManager.resetBadge()
+        
+        _manager?.addDelegate(self)
+        
+        //Initialize with credential keys
+-        let state = _manager?.registerApplication("APP_ID",					//based on your environment
+-                                                 apiKey: "API_KEY",     	//based on your environment
+-                                                 userName: "SDK_USERNAME",  //based on your environment
+-                                                 password: "SDK_PASSWORD")  //based on your environment
+        
+ 
 -	if _manager?.application(application, didFinishLaunchingWithOptions: launchOptions) == true {
 -		print("Launched by tapping on notification")
 -	}
-	...
+
+	
+-	if let userId = _manager?.userId {
+-		_manager?.registerUser(userId)
+-	} else {
+-		_manager?.registerUser("USER_ID")
+-	}
+
+    return true
+}
+
+```
+
+کد زیر را به  `didFinishLaunchWithOptions` در کلاس `AppDelegate` اضافه کنید:
+
+```diff
+//Objective-C
+
+‌-(BOOL)application:(UIApplication  *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {     
+
+    [PushClientManager  resetBadge];
+    
+    _manager = PushClientManager.defaultManager;
+    [_manager addDelegate:self];
+    
++    [PushClientManager.defaultManager configureEnvironment:Sandbox];
+    
+    return YES;
+}
+```
+
+```diff
+//Swift:
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        PushClientManager.resetBadge()
+        PushClientManager.default()?.addDelegate(self)
+	
+	PushClientManager.default()?.configureEnvironment(.Sandbox)
+	
+	return true
 }
 
 ```
