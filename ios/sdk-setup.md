@@ -15,7 +15,7 @@ next: tracker.html
 
 [۲- مقداردهی اولیه (Initialize)](/ios/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
 
-[۳- ثبت کاربر (Register)](/ios/sdk-setup.html#۳--ثبت-کاربر)
+[۳- ثبت کاربر](/ios/sdk-setup.html#۳--ثبت-کاربر)
 
 <Br>
 
