@@ -157,12 +157,12 @@ PushClientManager.resetBadge()
 ```objectivec
 //Objective-C:
 
-[PushClientManager.defaultManager login:@"LOGGED_IN_USER_ID"];
+[PushClientManager.defaultManager login];
 ```
 ```swift
 //Swift:
 
-PushClientManager.default()?.login("LOGGED_IN_USER_ID")
+PushClientManager.default()?.login()
 ```
 
 >` نکته:` در صورتی از نسخه‌های قبل چابک استفاده می‌کردید و کاربر از قبل ثبت شده بود، توصیه می‌کنیم خودتان بلافاصله پس از مقداردهی این را مدیریت کنید.
