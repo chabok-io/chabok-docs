@@ -90,13 +90,41 @@ $ pod update
 ```objectivec
 //Objective-C
 
-[PushClientManager.defaultManager configureEnvironment:Sandbox];
+#import "AppDelegate.h"
+#import <AdpPushClient/AdpPushClient.h>
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application
+            didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [PushClientManager  resetBadge]; //Optional
+    [PushClientManager.defaultManager addDelegate:self]; //Optional
+    
+    [PushClientManager.defaultManager configureEnvironment:Sandbox];
+ 
+    return YES;
+}
 ```
 
 ```swift
 //Swift:
 
-PushClientManager.default()?.configureEnvironment(.Sandbox)
+import UIKit
+import AdpPushClient
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate {
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+    PushClientManager.resetBadge() //Optional
+    PushClientManager.default()?.addDelegate(self) //Optional
+    
+    PushClientManager.default()?.configureEnvironment(.Sandbox)
+    
+    return true
+}
 ```
 
 > `نکته`: متد بالا برای محیط سندباکس است. در صورتی که حساب عملیاتی دارید کافیست فقط `Sandbox` را با ‍‍`Production` عوض کنید.
