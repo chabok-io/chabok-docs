@@ -12,6 +12,8 @@ prev: troubleshoot.html
 
 ##  [نسخه ۲.۰.۰ - ۱۳۹۸/۰۷/۱۷](https://github.com/chabok-io/chabok-client-ios/releases/tag/v2.0.0)
 
+> `نکته:`  در صورتی که می‌خواهید نسخه خود را ارتقا دهید، حتما [مستندات مهاجرت](/ios/upgrade-chabok-to-2-0-0.html) به نسخه ۲ چابک را مطالعه کنید.
+
 ### تغییرات
 
 - افزودن متد ``configureEnvironment`` برای [خودکارسازی مقداردهی](/ios/sdk-setup.html#%DB%B2--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-initialize) اولیه توسط فایل **Chabok.sandbox.plist**  یا  **Chabok.production.plist**
