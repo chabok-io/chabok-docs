@@ -14,20 +14,17 @@ prev: troubleshoot.html
 
 ### تغییرات
 
+- افزودن متد ``configureEnvironment`` برای [خودکارسازی مقداردهی](/ios/sdk-setup.html#%DB%B2--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-initialize) اولیه توسط فایل **Chabok.sandbox.plist**  یا  **Chabok.production.plist**
+
+- افزودن متدهای ‍‍`login` برای ثبت کاربر
+ 
+- افزودن متد `logout` برای تبدیل کاربر به مهمان
+
 - افزودن پراپرتی `logLevel` برای لاگ گرفتن در سطوح مختلف (مانند  ... ,debug, warning, info)
 
 - برداشته شدن **هشدارها**
 
-- از این پس،  **realtime**   چابک به طور پیش‌فرض غیر فعال است. افزودن متد `setEnabledRealtime` برای تغییر مقدار این پارامتر
-
-- برای غیر فعال کردن دریافت توکن پوش‌نوتیفیکیشن، کد زیر را به  فایل `info.plist` اضافه کنید:
-
- ```xml
-<key>CHABOK_DISABLE_PUSH_NOTIFICATION</key>
-<false/>
-```
-
-- افزودن متد `initWithAppId` به عنوان متد جدید مقداردهی اولیه چابک
+- از این پس قابلیت‌های آنی (realtime) و پوش‌نوتیفیکیشن به صورت پیش‌فرض در فایل **Chabok.sandbox.plist**  یا  **Chabok.production.plist** قابل تنظیم است.
 
 - افزودن مدل‌های جدید آیفون (**iPhone 11, iPhone 11 Max, iPhone 11 Pro Max**) به SDK
 
@@ -36,6 +33,12 @@ prev: troubleshoot.html
 - خودکارسازی دریافت توکن پوش‌نوتیفیکیشن و تشخیص بازدید اپلیکیشن از طریق swizzle کردن متدهای `UIApplicationDelegate`
 
 ### ارتقا
+
+- حذف متدهای `register`  و  `unregister`. به جای این دو، از متدهای `login` و `logout` استفاده کنید.
+
+- حذف متد `registerApplication` (مقداردهی به صورت خودکار انجام می‌شود)
+
+- منسوخ شدن متد `setDevelopment`. به جای آن از متد `configureEnvironment` استفاده کنید.
 
 - تغییر کلاس `DeliveryMessage` به `PushClientDeliveryMessage`
 
