@@ -15,6 +15,10 @@ permalink: ios/upgrade-chabok-to-2-0-0.html
 - [۲- حذف متدهای `didFinishLaunchWithOptions`](#۲--حذف-متدهای-didfinishlaunchwithoptions)
 
 - [۳- حذف متدهای دریافت توکن](#۳--حذف-متدهای-دریافت-توکن)
+
+- ۴- ورود کاربر (Login)
+
+- [۵- حذف متدهای دریافت توکن](#۳--حذف-متدهای-دریافت-توکن)
  
 - [۴- حذف متدهای ارسال اطلاعات دیپ لینک](#۴--حذف-متدهای-ارسال-اطلاعات-دیپ-لینک)
 
@@ -73,7 +77,7 @@ $ pod update
 -    if (_manager.userId) {
 -        [_manager registerUser:_manager.userId];
 -    } else {
--        [_manager registerUser:@"USER_ID"];
+-        [_manager registerAsGuest];
 -    }
 
      return YES
@@ -106,7 +110,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 -	if let userId = _manager?.userId {
 -		_manager?.registerUser(userId)
 -	} else {
--		_manager?.registerUser("USER_ID")
+-		_manager?.registerAsGuest()
 -	}
 
     return true
@@ -194,7 +198,42 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 <br>
 
-### ۴- حذف متدهای ارسال اطلاعات دیپ لینک
+### ۴- ورود کاربر (Login)
+در صورتی که در اپلیکیشن‌تان، پس از احراز هویت، کاربر را با یک نام کاربری (User ID) در چابک ثبت می‌کنید، تغییرات زیر را در کدتان اعمال کنید:
+
+```diff
+//Objective-C
+- [PushClientManager.defaultManager registerUser:@"USER_ID"];
+
++ [PushClientManager.defaultManager login:@"USER_ID"];
+```
+```diff
+//Swift
+- PushClientManager.default()?.registerUser("USER_ID")
+
++ PushClientManager.default()?.login("USER_ID")
+```
+
+### ۵- حذف کاربر (Unregister)
+ 
+ چنانچه به هنگام خروج کاربر از حساب کاربری  از متد `unregister` استفاده می‌کنید، تغییرات زیر را در کد خود اعمال کنید:
+
+```diff
+//Objective-C
+- [PushClientManager.defaultManager unregisterUser];
+
++ [PushClientManager.defaultManager logout];
+```
+```diff
+//Swift
+- PushClientManager.default()?.unregisterUser()
+
++ PushClientManager.default()?.logout()
+```
+
+<br>
+
+### ۶- حذف متدهای ارسال اطلاعات دیپ لینک
 
 حذف متد `appWillOpenUrl` را مانند زیر انجام دهید.
 
@@ -211,4 +250,4 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 ```
 
 
-پس حذف این کد، **ارتقای شما با موفقیت انجام خواهد شد.**
+پس اعمال تغییرات گفته شده در بالا، **ارتقای شما با موفقیت انجام خواهد شد.**
