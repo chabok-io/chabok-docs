@@ -12,11 +12,11 @@ permalink: ios/upgrade-chabok-to-2-0-0.html
 
 - [۱- دریافت نسخه جدید و به روز رسانی کتابخانه](/ios/upgrade-chabok-to-2-0-0.html#۱--دریافت-نسخه-۲۰-کتابخانه)
 
-- [۲- حذف متدهای `didFinishLaunchWithOptions`](#۲--حذف-متدهای-didfinishlaunchwithoptions)
+- [۲- حذف متدهای `didFinishLaunchWithOptions`](#%DB%B2--%D8%AD%D8%B0%D9%81-%D9%85%D8%AA%D8%AF%D9%87%D8%A7%DB%8Cdidfinishlaunchwithoptions-%D9%88-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D9%85%D8%AA%D8%AF-configureenvironment)
 
 - [۳- حذف متدهای دریافت توکن](#۳--حذف-متدهای-دریافت-توکن)
 
-- ۴- [ورود کاربر (Login)](#%DB%B4--%D9%88%D8%B1%D9%88%D8%AF-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1-login)
+-  [۴- ورود کاربر (Login)](#%DB%B4--%D9%88%D8%B1%D9%88%D8%AF-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1-login)
 
 - [۵- حذف کاربر (Unregister)](#%DB%B5--%D8%AD%D8%B0%D9%81-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1-unregister)
  
@@ -216,7 +216,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 ### ۵- حذف کاربر (Unregister)
  
- چنانچه به هنگام خروج کاربر از حساب کاربری  از متد `unregister` استفاده می‌کنید، تغییرات زیر را در کد خود اعمال کنید:
+ چنانچه به هنگام خروج کاربر از حساب کاربری  از متد `unregisterUser` استفاده می‌کنید، تغییرات زیر را در کد خود اعمال کنید:
 
 ```diff
 //Objective-C
