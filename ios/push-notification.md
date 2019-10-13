@@ -247,11 +247,16 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
  5) خط زیر را به `podfile‍` خود اضافه کنید:
 
  ```bash
-target 'YOUR_NOTIFICATION_EXTENSION_SERVICE' do
-  use_frameworks!
+platform :ios, '9.0'
 
-  pod 'ChabokPush'
-  
+use_frameworks!
+
+target 'PROJECT_TARGET' do
+    pod 'ChabokPush', '~> 2.0.0'
+end
+
+target 'YOUR_NOTIFICATION_EXTENSION_SERVICE_TARGET' do
+    pod 'ChabokPush', '~> 2.0.0'
 end
 ```
 
