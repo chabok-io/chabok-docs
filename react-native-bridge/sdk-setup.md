@@ -88,7 +88,7 @@ platform :ios, '9.0'
 target 'YOUR_TARGET_NAME' do
 
   # Pods for AwesomeProject
-  pod 'ChabokPush'
+  pod 'ChabokPush', '~> 1.20.2'
 
 end
 ```
