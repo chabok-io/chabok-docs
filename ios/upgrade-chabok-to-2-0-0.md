@@ -6,19 +6,19 @@ permalink: ios/upgrade-chabok-to-2-0-0.html
 ---
 
 
-از راهنمای زیر می‌توانید نسخه کتابخانه آی‌اواس خود را به **نسخه ۲.۰.۰ به بعد ارتقا دهید**. برای این کار فقط کافیست پس از دریافت نسخه جدید، چند قطعه کد را از پروژه خود **بردارید**.
+با مطالعه راهنمای زیر می‌توانید نسخه کتابخانه آی‌اواس خود را به **نسخه‌های ۲.۰.۰ به بعد ارتقا دهید**. برای این کار فقط کافیست نسخه جدید را دریافت کنید، و تعدادی کد را حذف و اضافه کنید.
 
-مراحل ارتقا را به ترتیب زیر انجام دهید:
+مراحل ارتقا را باید به ترتیب زیر انجام دهید:
 
-- [۱- دریافت نسخه جدید و به روز رسانی کتابخانه](#%DB%B1--%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B0%DB%B0-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87)
+- [۱- دریافت نسخه ۲.۰.۰ و به روز رسانی کتابخانه](#%DB%B1--%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B0%DB%B0-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87)
 
-- [۲- حذف متدهای `didFinishLaunchWithOptions`](#%DB%B2--%D8%AD%D8%B0%D9%81-%D9%85%D8%AA%D8%AF%D9%87%D8%A7%DB%8Cdidfinishlaunchwithoptions-%D9%88-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D9%85%D8%AA%D8%AF-configureenvironment)
+- [۲- حذف متدهای`didFinishLaunchWithOptions` و اضافه متد `configureEnvironment`](#۲--حذف-متدهایdidfinishlaunchwithoptions-و-اضافه-متد-configureenvironment)
 
 - [۳- حذف متدهای دریافت توکن](#۳--حذف-متدهای-دریافت-توکن)
 
--  [۴- ورود کاربر (Login)](#%DB%B4--%D9%88%D8%B1%D9%88%D8%AF-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1-login)
+-  [۴- تغییرات ثبت و ورود کاربر (Login)](#۴--تغییرات-ثبت-و-ورود-کاربر-login)
 
-- [۵- حذف کاربر (Unregister)](#%DB%B5--%D8%AD%D8%B0%D9%81-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1-unregister)
+- [۵- تغییرات حذف و خروج کاربر (Logout)](#۵--تغییرات-حذف-و-خروج-کاربر-logout)
  
 - [۶- حذف متدهای ارسال اطلاعات دیپ لینک](#%DB%B6--%D8%AD%D8%B0%D9%81-%D9%85%D8%AA%D8%AF%D9%87%D8%A7%DB%8C-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA-%D8%AF%DB%8C%D9%BE-%D9%84%DB%8C%D9%86%DA%A9)
 
@@ -26,7 +26,7 @@ permalink: ios/upgrade-chabok-to-2-0-0.html
 
 ### ۱- دریافت نسخه ۲.۰.۰ کتابخانه
 
-کتابخانه چابک از طریق CocoaPods در دسترس است، برای به روز رسانی در خط زیر نسخه `ChabokPush` را به ۲.۰.۰ تغییر دهید:
+کتابخانه چابک از طریق **CocoaPods** در دسترس است، برای به روز رسانی در خط زیر نسخه `ChabokPush` را به ۲.۰.۰ **تغییر دهید**:
 
 
 ```bash
@@ -46,9 +46,9 @@ $ pod update
 
 <br>
 
-### ۲- حذف متدهای`didFinishLaunchWithOptions` و افزودن متد `configureEnvironment`
+### ۲- حذف متدهای`didFinishLaunchWithOptions` و اضافه متد `configureEnvironment`
 
-کد زیر را از  `didFinishLaunchWithOptions` در کلاس `AppDelegate` حذف کنید:
+کد زیر را از  `didFinishLaunchWithOptions` در کلاس `AppDelegate` **حذف کنید**:
 
 ```diff
 //Objective-C
@@ -118,7 +118,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ```
 
-کد زیر را به  `didFinishLaunchWithOptions` در کلاس `AppDelegate` اضافه کنید:
+سپس کد زیر را به  `didFinishLaunchWithOptions` در کلاس `AppDelegate` **اضافه کنید**: 
 
 ```diff
 //Objective-C
@@ -155,7 +155,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ### ۳- حذف متدهای دریافت توکن 
 
-کدهای زیر را در کلاس `AppDelegate` زیر حذف کنید:
+کدهای زیر را در کلاس `AppDelegate` زیر **حذف کنید**:
 
 ```diff
 //Objective-C:
@@ -198,7 +198,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 <br>
 
-### ۴- ورود کاربر (Login)
+### ۴- تغییرات ثبت و ورود کاربر (Login)
 در صورتی که در اپلیکیشن‌تان، پس از احراز هویت، کاربر را با یک نام کاربری (User ID) در چابک ثبت می‌کنید، تغییرات زیر را در کدتان اعمال کنید:
 
 ```diff
@@ -214,7 +214,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 + PushClientManager.default()?.login("USER_ID")
 ```
 
-### ۵- حذف کاربر (Unregister)
+### ۵- تغییرات حذف و خروج کاربر (Logout)
  
  چنانچه به هنگام خروج کاربر از حساب کاربری  از متد `unregisterUser` استفاده می‌کنید، تغییرات زیر را در کد خود اعمال کنید:
 
@@ -235,7 +235,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 ### ۶- حذف متدهای ارسال اطلاعات دیپ لینک
 
-حذف متد `appWillOpenUrl` را مانند زیر انجام دهید.
+**حذف** متد `appWillOpenUrl` را مانند زیر انجام دهید:
 
 ```diff
 //Objective-C:
@@ -249,5 +249,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 -	PushClientManager.default()?.appWillOpen(url)
 ```
 
+<br><br>
 
-پس اعمال تغییرات گفته شده در بالا، **ارتقای شما با موفقیت انجام خواهد شد.**
+<p style="text-align: center;"><img src="http://uupload.ir/files/l3ij_done.jpg" style="height:75px;" />پس اعمال تغییرات گفته شده در بالا، <b>ارتقای شما با موفقیت انجام خواهد شد.</b>
+</p>
