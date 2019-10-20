@@ -249,10 +249,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 -	PushClientManager.default()?.appWillOpen(url)
 ```
 
-<p>
-<div style="text-align: right ;"><img src="http://uupload.ir/files/l3ij_done.jpg" class="img-fluid" style="
-    height: 75px;
-"></div> 
+<br>
 
-پس اعمال تغییرات گفته شده در بالا، **ارتقای شما با موفقیت انجام خواهد شد.**
+<p style="text-align: right;"><img style="float: right;" src="http://uupload.ir/files/l3ij_done.jpg" alt="" height="75" />پس اعمال تغییرات گفته شده در بالا، ارتقای شما با موفقیت انجام خواهد شد.
 </p>
