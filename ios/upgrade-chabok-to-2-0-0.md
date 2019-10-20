@@ -250,5 +250,5 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 ```
 
 
-<p style="text-align: right;"><img style="float: right;" src="http://uupload.ir/files/l3ij_done.jpg" alt="" height="75" />پس اعمال تغییرات گفته شده در بالا، ارتقای شما با موفقیت انجام خواهد شد.
+<p style="text-align: right;"><img style="height: 75;" src="http://uupload.ir/files/l3ij_done.jpg" height="75" />پس اعمال تغییرات گفته شده در بالا، <b>ارتقای شما با موفقیت انجام خواهد شد.</b>
 </p>
