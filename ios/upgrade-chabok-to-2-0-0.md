@@ -214,6 +214,8 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 + PushClientManager.default()?.login("USER_ID")
 ```
 
+<br>
+
 ### ۵- تغییرات حذف و خروج کاربر (Logout)
  
  چنانچه به هنگام خروج کاربر از حساب کاربری  از متد `unregisterUser` استفاده می‌کنید، تغییرات زیر را در کد خود اعمال کنید:
