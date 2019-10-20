@@ -12,13 +12,13 @@ permalink: ios/upgrade-chabok-to-2-0-0.html
 
 - [۱- دریافت نسخه ۲.۰.۰ و به روز رسانی کتابخانه](#%DB%B1--%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B0%DB%B0-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87)
 
-- [۲- حذف متدهای`didFinishLaunchWithOptions` و اضافه متد `configureEnvironment`](#%DB%B2--%D8%AD%D8%B0%D9%81-%D9%85%D8%AA%D8%AF%D9%87%D8%A7%DB%8Cdidfinishlaunchwithoptions-%D9%88-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86-%D9%85%D8%AA%D8%AF-configureenvironment)
+- [۲- حذف متدهای`didFinishLaunchWithOptions` و اضافه متد `configureEnvironment`](#۲--حذف-متدهایdidfinishlaunchwithoptions-و-اضافه-متد-configureenvironment)
 
 - [۳- حذف متدهای دریافت توکن](#۳--حذف-متدهای-دریافت-توکن)
 
--  [۴- تغییرات ثبت و ورود کاربر (Login)](#%DB%B4--%D9%88%D8%B1%D9%88%D8%AF-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1-login)
+-  [۴- تغییرات ثبت و ورود کاربر (Login)](#۴--تغییرات-ثبت-و-ورود-کاربر-login)
 
-- [۵- تغییرات حذف و خروج کاربر (Logout)](#%DB%B5--%D8%AD%D8%B0%D9%81-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1-unregister)
+- [۵- تغییرات حذف و خروج کاربر (Logout)](#۵--تغییرات-حذف-و-خروج-کاربر-logout)
  
 - [۶- حذف متدهای ارسال اطلاعات دیپ لینک](#%DB%B6--%D8%AD%D8%B0%D9%81-%D9%85%D8%AA%D8%AF%D9%87%D8%A7%DB%8C-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA-%D8%AF%DB%8C%D9%BE-%D9%84%DB%8C%D9%86%DA%A9)
 
@@ -249,9 +249,10 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 -	PushClientManager.default()?.appWillOpen(url)
 ```
 
-<div style="text-align: center ;"><img src="http://uupload.ir/files/l3ij_done.jpg" class="img-fluid" style="
-    height: 150px;
+<p>
+<div style="text-align: right ;"><img src="http://uupload.ir/files/l3ij_done.jpg" class="img-fluid" style="
+    height: 75px;
 "></div> 
 
 پس اعمال تغییرات گفته شده در بالا، **ارتقای شما با موفقیت انجام خواهد شد.**
-
+</p>
