@@ -10,6 +10,17 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۲.۰.۱ - ۱۳۹۸/۰۷/۳۰](https://github.com/chabok-io/chabok-client-ios/releases/tag/2.0.1)
+
+### تغییرات
+
+- به کمک متد `disableSdk` می‌توانید کتابخانه چابک را غیرفعال کنید.
+
+- بهبود تعیین وضعیت اتصال برای ریکت‌نیتو
+
+- افزودن متد `login:hash` به منظور احراز هویت سرور به سرور. 
+
+
 ##  [نسخه ۲.۰.۰ - ۱۳۹۸/۰۷/۱۷](https://github.com/chabok-io/chabok-client-ios/releases/tag/v2.0.0)
 
 > `نکته:`  در صورتی که می‌خواهید نسخه خود را ارتقا دهید، حتما [مستندات مهاجرت](/ios/upgrade-chabok-to-2-0-0.html) به نسخه ۲ چابک را مطالعه کنید.
