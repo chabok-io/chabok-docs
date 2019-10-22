@@ -7,7 +7,7 @@ prev: features.html
 next: release-note.html
 ---
 
-در این صفحه به عیب‌یابی مشکلات متداول توسعه‌دهندگان در پیاده‌سازی چابک و ارائه راه‌‌حل‌های مربوط به آن می‌پردازیم. برخی از این مشکلات عبارتند از عدم [دریافت پوش‌نوتیفیکیشن](/react-native-bridge/troubleshoot.html#پوش-نمیگیرم) و [نمایش نوتیفیکیشن](/react-native-bridge/troubleshoot.html#نوتیفیکیشنها-نمایش-داده-نمیشوند).
+در این صفحه به عیب‌یابی مشکلات متداول توسعه‌دهندگان در پیاده‌سازی چابک و ارائه راه‌‌حل‌های مربوط به آن می‌پردازیم. برخی از این مشکلات عبارتند از عدم [دریافت پوش‌نوتیفیکیشن](/react-native-bridge/troubleshoot.html#پوش-نمیگیرم)، [نمایش نوتیفیکیشن](/react-native-bridge/troubleshoot.html#نوتیفیکیشنها-نمایش-داده-نمیشوند) و [نمایش تصویر نوتیفیکیشن](#تصویر-نوتیفیکیشن-نمایش-داده-نمیشود)
 
 <Br>
  
@@ -256,6 +256,25 @@ RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNo
                 android:value="default"/>
 ```
 <Br>
+ 
+## تصویر نوتیفیکیشن نمایش داده نمی‌شود
+---
+
+#### پوش را با پنل ارسال کرده‌ام
+
+دقت داشته باشید پس از انتخاب تصویر، دکمه **بارگذاری** را حتما بزنید و پیام موفقیت را مشاهده کنید.
+
+<br>
+
+#### پوش را با API ارسال کرده‌ام
+
+در این حالت باید به پارامترهای `mediaType`، `mediaUrl` و `mutableContent` (در آی‌اواس) مقادیر درست دهید.
+
+<span style="background-color: #d3d3d3; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">IOS</span>
+
+>`نکته:` در حالت **پوش پس‌زمینه** (background) با API، پارامتر `mutableContent` حتما باید `true` باشد.
+
+<br>
 
 ## موارد بالا را بررسی کردم اما همچنان مشکلم برطرف نشده
 ---
