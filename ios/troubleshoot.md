@@ -112,7 +112,7 @@ next: release-note.html
 
 در این حالت باید به پارامترهای `mediaType`، `mediaUrl` و `mutableContent` مقادیر درست دهید.
 
->`نکته:` در حالت **پوش پس‌زمینه** (background) با API پارامتر `mutableContent` حتما باید `true` باشد.
+>`نکته:` در حالت **پوش پس‌زمینه** (background) با API، پارامتر `mutableContent` حتما باید `true` باشد.
 
 ## موارد بالا را بررسی کردم اما همچنان مشکلم برطرف نشده
 ---
