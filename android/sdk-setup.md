@@ -1,6 +1,6 @@
 ---  
 id: sdk-setup  
-title: راه‌اندازی  
+title: 1راه‌اندازی  
 layout: android  
 permalink: android/sdk-setup.html  
 prev: required.html  
