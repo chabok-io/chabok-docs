@@ -2,7 +2,7 @@
 id: sdk-setup  
 title: راه‌اندازی  
 layout: android  
-permalink: android/sdk-setup.html  
+permalink: android/sdk-setup-old.html  
 prev: required.html  
 next: tracker.html  
 ---  
