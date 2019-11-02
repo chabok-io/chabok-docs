@@ -6,10 +6,7 @@ permalink: android/sdk-setup-old.html
 prev: required.html  
 next: tracker.html  
 ---  
-
-
-
-  نکته: مستندات پیاده‌سازی زیر براساس **نسخه‌های ۳ به بالا** کتابخانه چابک نوشته شده است. در صورتی که از نسخه‌ پایین‌تری استفاده می‌کنید به [این صفحه](/android/sdk-setup-old.html)\
+   > `نکته:` مستندات پیاده‌سازی زیر براساس **نسخه‌های ۳ به بالا** کتابخانه چابک نوشته شده است. در صورتی که از نسخه‌ پایین‌تری استفاده می‌کنید به [این صفحه](/android/sdk-setup-old.html)\
 مراجعه کنید.
 پس از طی کردن مراحل صفحه [پیش‌نیاز‌ها](/android/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید.
  برای انجام این مراحل ابتدا نیاز است کتابخانه چابک را [نصب](https://doc.chabok.io/android/sdk-setup.html#%DB%B1--%D9%86%D8%B5%D8%A8-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87) کنید. سپس [مقداردهی و راه‌اندازی](android/sdk-setup.html#%DB%B3--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و در آخر برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](https://doc.chabok.io/android/sdk-setup.html#%DB%B4--%D8%AB%D8%A8%D8%AA-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1-register) .را حتما پشت سر بگذارید
@@ -55,7 +52,7 @@ apply plugin: 'io.chabok.plugin.chabok-services'
 ```javascript  
 dependencies {  
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
-    implementation 'com.adpdigital.push:chabok-lib:2.18.0'  
+    implementation 'com.adpdigital.push:chabok-lib:3.0.0'  
   
     //If you want to get the push notification, add to dependencies  
     implementation 'com.google.android.gms:play-services-gcm:10.2.6'   
@@ -71,7 +68,7 @@ dependencies {
 ```javascript
 dependencies {
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation 'com.adpdigital.push:chabok-lib-geo:2.18.0'
+    implementation 'com.adpdigital.push:chabok-lib-geo:3.0.0'
     implementation 'com.google.android.gms:play-services-location:10.2.6' //If you want to get the push notification
     implementation 'com.google.android.gms:play-services-gcm:10.2.6'
     implementation 'com.android.installreferrer:installreferrer:1.0'
@@ -99,13 +96,17 @@ dependencies {
 چابک برای راه اندازی نیاز به مقداردهی اولیه دارد.
 ۱.برای مقداردهی ابتدا از پنل خود وارد بخش تنظیمات> دسترسی و توکن‌ها> کتابخانه موبایل> فعال‌سازی راه‌اندازی هوشمند> فایل **Chabok.sandbox.json** یا  **Chabok.production.json** را بسته به محیطتان دانلود کنید.
 ![](http://uupload.ir/files/y6jl_chabok.sandbox-android.gif)
->نکته: برای غیرفعال کردن دریافت توکن **پوش نوتیفیکیشن**(pushNotification)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید.
->`نکته`
- 
+>`نکته:`
+برای غیرفعال کردن دریافت توکن **پوش نوتیفیکیشن**(pushNotification)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید.
+
 ۲. فایل دانلود شده را در روت پروژه قرار دهید.
+
+![enter image description here](http://uupload.ir/files/tkv2_put-download-file-into-root-of-project.gif)
+
 ۳. در مرحله آخر نیاز است کد‌های زیر را فراخوانی کنید.
 
-```java  public class MyAppClass extends Application {  
+```java
+public class MyAppClass extends Application {  
       @Override  
       public void onCreate() {
       super.onCreate();  
@@ -113,7 +114,7 @@ dependencies {
     }
 }
 ```  
->`نکته:`متدی که در بالا قرار دادیم برای راه‌اندازی محیط سندباکس است. در صورتی که **حساب عملیاتی** دارید کافیست Environment.SANDBOX را با Environment.production عوض کنید.
+>`نکته:`متدی که در بالا قرار دادیم برای راه‌اندازی محیط سندباکس است. در صورتی که **حساب عملیاتی** دارید کافیست `Environment.SANDBOX` را با `Environment.production` عوض کنید.
  ‍‍‍‍‍‍‍‍**configureEnvironment**: متد `configureEnvironment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شده. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.   
 > `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید تا پس از تایید و ساخت حساب عملیاتی شما، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد.
    
@@ -126,7 +127,9 @@ dependencies {
 ۱. امضای اول 
 فقط شناسه کاربر را گرفته و کاربر را با آن شناسه  بر روی سرور چابک ثبت‌نام می‌کند.
 
-    ```public void login(String userId)```
+```
+public void login(String userId)
+```
 >`نکته` در صورتی که از نسخه‌های قبل چابک استفاده می‌کردید و کاربر از قبل ثبت شده بود، توصیه ما این است که خودتان بلافاصله پس از مقداردهی، این را مدیریت کنید.
 >`نکته`: 
 مقدار `USER_ID` می‌تواند **بین ۳ تا ۶۴** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
@@ -135,17 +138,24 @@ dependencies {
 >` نکته:` ترکرها به طور معمول نصب را **اولین بازدید** حساب می‌کنند (مانند سرویس ادجاست)، اما مزیت ترکر چابک در شمارش نصب این است که شما می‌توانید علاوه بر مدل ادجاست، نصب را **ایجاد حساب و احراز هویت او** در اپلیکیشنتان تعریف کنید. با این کار شما یک اقدام دیگری برای جلوگیری از تقلب در شمارش نصب انجام می‌دهید، به این دلیل که امضاهای کاربر، قبل و بعد از ثبت او (register) مطابقت داده می‌شوند و در صورت تایید به عنوان یک نصب سالم در نظر گرفته می‌شوند.   
 ۲.امضای دوم
    علاوه بر شناسه کاربر، اطلاعات (Attributes) را نیز دریافت می‌کند.
-   
-   ``` public void login(String userId, HashMap<String, Object> attributes)```
+   ```
+   public void login(String userId, HashMap<String, Object> attributes)
+   ```
 ۳. امضای سوم
 به غیر از شناسه کاربر، رفتار مورد نظر کاربر را نیز رصد می‌کند.
-   ``` public void login(String userId, String eventName, @Nullable JSONObject data)```
+   ```
+   public void login(String userId, String eventName, @Nullable JSONObject data)
+   ```
 ۴۰امضای چهارم
 به غیر از شناسه کاربر، نام کاربر را نیز دریافت می‌کند.
-``` public void login(String userId, String[] tagsName)```
+```
+public void login(String userId, String[] tagsName)
+```
 #### خروج از حساب کاربری (logout)
 در صورتی که کاربر از حساب کاربری خود خارج شد، به کمک متد زیر می‌توانید کاربر را در سیستم خود نگه دارید و تعاملتان را با آن‌ها ادامه دهید.
 
-``` public void logout()```
+```
+public void logout()
+```
 
 > `نکته:`  پروژه  [Starter](https://github.com/chabok-io/chabok-starter-android)  به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.
