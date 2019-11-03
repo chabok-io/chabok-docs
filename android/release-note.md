@@ -152,7 +152,7 @@ prev: troubleshoot.html
         </intent-filter>
 </receiver>
 ```
-
+<br>
 ### ارتقا
 
 - پشتیبانی از `INSTALL_REFERRER` برای [گوگل پلی استور](/android/tracker.html#گوگل-پلی-استور):
