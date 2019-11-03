@@ -140,7 +140,8 @@ dependencies {
 
 ۲. فایل دانلود شده را در روت پروژه قرار دهید.
 
-![enter image description here](http://uupload.ir/files/tkv2_put-download-file-into-root-of-project.gif)
+<img width="90%" src="http://uupload.ir/files/tkv2_put-download-file-into-root-of-project.gif">
+
 <br>
 
 ۳. در مرحله آخر نیاز است کد‌های زیر را فراخوانی کنید.
