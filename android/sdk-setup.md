@@ -192,7 +192,7 @@ public class MyAppClass extends Application {
 فقط شناسه کاربر را گرفته و کاربر را با آن شناسه  بر روی سرور چابک ثبت‌نام می‌کند.
 </p>
 
-```
+```java
 public void login(String userId)
 ```
 
@@ -211,7 +211,7 @@ public void login(String userId)
   علاوه بر شناسه کاربر، اطلاعات (Attributes) را نیز دریافت می‌کند.
  </p>
   
-   ```
+   ```java
    public void login(String userId, HashMap<String, Object> attributes)
    
    ```
@@ -222,7 +222,7 @@ public void login(String userId)
 به غیر از شناسه کاربر، رفتار مورد نظر کاربر را نیز رصد می‌کند.
 </p>
 
-   ```
+   ```java
    public void login(String userId, String eventName, @Nullable JSONObject data)
    ```
    
@@ -232,7 +232,7 @@ public void login(String userId)
 به غیر از شناسه کاربر، نام کاربر را نیز دریافت می‌کند.
 </p>
 
-```
+```java
 public void login(String userId, String[] tagsName)
 
 ```
