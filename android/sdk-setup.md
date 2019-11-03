@@ -13,7 +13,9 @@ next: tracker.html
 پس از طی کردن مراحل صفحه [پیش‌نیاز‌ها](/android/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید.
  برای انجام این مراحل ابتدا نیاز است کتابخانه چابک را [نصب](https://doc.chabok.io/android/sdk-setup.html#%DB%B1--%D9%86%D8%B5%D8%A8-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87) کنید. سپس [مقداردهی و راه‌اندازی](android/sdk-setup.html#%DB%B3--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و در آخر برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](https://doc.chabok.io/android/sdk-setup.html#%DB%B4--%D8%AB%D8%A8%D8%AA-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1-register) .را حتما پشت سر بگذارید
   
-[ ۱- نصب کتابخانه](/android/sdk-setup.html#۱--نصب-کتابخانه)  
+  
+  
+ 
   
 [۲- مقداردهی اولیه (Initialize)](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize)  
   
