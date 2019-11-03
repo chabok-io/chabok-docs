@@ -84,10 +84,36 @@ dependencies {
  - برای استفاده از **سرویس GCM گوگل** (پوش‌نوتیفیکیشن) لازم است `play-services-gcm` را همانند بالا (خط آخر هر دو کتابخانه) در بخش `dependencies` اضافه کنید.    
  - دقت داشته باشید که همیشه از جدیدترین نسخه **ShortcutBadger** استفاده کنید. برای اطلاع از آخرین نسخه می‌توانید به [این لینک](https://github.com/leolin310148/ShortcutBadger) مراجعه نمایید. همچنین با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید.     
 - به علت محدودیت‌‌های **اندروید ۸ به بالا** دقت کنید حتما مطابق جدول زیر تنظیمات نسخه‌ها را به درستی انجام دهید. در صورت رعایت نکردن نسخه‌های ذکر شده در جدول زیر هنگامی که اپلیکیشنتان **kill** شده باشد به هنگام دریافت نوتیفیکیشن با خطا مواجه خواهد شد. 
-
-
- <table dir="ltr">      <thead>      <tr align="center">          <th>buildTools</th>          <th>compileSdk</th>          <th>targetSdk</th>          <th>googlePlayServices</th>      </tr>      </thead>      <tbody>      <tr align="center">          <td>25.x.x</td>          <td>25</td>          <td>&gt;= 23</td>          <td>&gt;= 9.6.0</td>      </tr>      <tr align="center">          <td>26.x.x</td>          <td>26</td>          <td>&gt;= 23</td>          <td>&gt;= 9.6.0</td>      </tr>      <tr align="center">          <td>27.x.x</td>          <td>27</td>          <td>&gt;= 23</td>          <td>&gt;= 10.2.1</td>      </tr>      </tbody>  </table> 
- 
+<table dir="ltr">  
+    <thead>  
+    <tr align="center">  
+        <th>buildTools</th>  
+        <th>compileSdk</th>  
+        <th>targetSdk</th>  
+        <th>googlePlayServices</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+    <tr align="center">  
+        <td>25.x.x</td>  
+        <td>25</td>  
+        <td>&gt;= 23</td>  
+        <td>&gt;= 9.6.0</td>  
+    </tr>  
+    <tr align="center">  
+        <td>26.x.x</td>  
+        <td>26</td>  
+        <td>&gt;= 23</td>  
+        <td>&gt;= 9.6.0</td>  
+    </tr>  
+    <tr align="center">  
+        <td>27.x.x</td>  
+        <td>27</td>  
+        <td>&gt;= 23</td>  
+        <td>&gt;= 10.2.1</td>  
+    </tr>  
+    </tbody>  
+</table>  
  - توجه داشته باشید که برای `VERSION` آخرین نسخه کتابخانه را از [این صفحه](/android/release-note.html) مشاهده کنید و سپس آن را وارد نمایید، همچنین توصیه می‌شود بخش [مدل نسخه‌گذاری در چابک](/android/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.  
  
  
