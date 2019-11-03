@@ -105,7 +105,7 @@ dependencies {
 ![](http://uupload.ir/files/y6jl_chabok.sandbox-android.gif)
 >`نکته:`
 برای غیرفعال کردن دریافت توکن **پوش نوتیفیکیشن**(pushNotification)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید.
-
+<br>
 ۲. فایل دانلود شده را در روت پروژه قرار دهید.
 
 ![enter image description here](http://uupload.ir/files/tkv2_put-download-file-into-root-of-project.gif)
