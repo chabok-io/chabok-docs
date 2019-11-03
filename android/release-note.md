@@ -9,7 +9,7 @@ prev: troubleshoot.html
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](/android/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 
 <Br>
- ##[نسخه ۳.۰.۰ - ۱۳۹۸/۰۶/۲۶](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.0.0)
+ ##[نسخه ۳.۰.۰ - ۱۳۹۸/۰۸/۱۰](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.0.0)
 
 
 ### تغییرات
