@@ -15,7 +15,7 @@ next: tracker.html
   
   
   
- 
+[ ۱- نصب کتابخانه](/android/sdk-setup.html#۱--نصب-کتابخانه)  
   
 [۲- مقداردهی اولیه (Initialize)](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize)  
   
