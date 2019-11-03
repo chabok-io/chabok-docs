@@ -140,8 +140,9 @@ dependencies{
 برای غیرفعال کردن دریافت توکن **پوش نوتیفیکیشن**(pushNotification)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید.
 
 ۲. فایل دانلود شده را در روت پروژه قرار دهید.
-
+<p class="text-center">
 <img width="90%" src="http://uupload.ir/files/tkv2_put-download-file-into-root-of-project.gif">
+</p>
 
 <br>
 
