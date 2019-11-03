@@ -21,7 +21,7 @@ next: tracker.html
 [ ۳- ثبت کاربر](/android/sdk-setup.html#۳--ثبت-کاربر-register)  
   
 ### ۱- نصب کتابخانه 
-برای دریافت کتابخانه چابک دستورات زیر را به فایل `build.gradle` :اصلی پروژه اصافه کنید
+برای دریافت کتابخانه چابک دستورات زیر را به فایل `build.gradle` اصلی پروژه اصافه کنید:
 
 ```javascript  
 buildscript {
