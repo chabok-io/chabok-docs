@@ -19,19 +19,19 @@ prev: troubleshoot.html
 - افزودن متد `login(userId, userHash)` به منظور احراز هویت سرور به سرور
 - تغییر مکان از **GCM** به **FCM**
 -افزودن `disableSdk` برای غیرفعال کردن **SDK چابک**
--افزودن متد `trackRevenue`
--افزودن `logLevel` پراپرتی برای لاگ  گرفتن در سطوح مختلف مانند (debug, warning, info, ...).
+- افزودن متد `trackRevenue`
+افزودن `logLevel` پراپرتی برای لاگ  گرفتن در سطوح مختلف مانند (debug, warning, info, ...)-
 ### ارتقا
--حذف متد `init`، به جای آن از متد `configureEnvironment` استفاده کنید.
--منسوخ شدن متد `setDevelopment`، به جای آن از متد `configureEnvironment`استفاده کنید.
--حذف متد`setEnableRealtime` و مقدار قابلیت آنی (realtime) در فایل **Chabok.production.json** یا **Chabok.sandbox.json** قابل تنظیم است.
--برای پیاده‌سازی باید متدهای `ChabokFirebaseMessaging.refreshToken(token)` و  `ChabokFirebaseMessaging.onMessageReceived(remoteMessage, context)` را فراخوانی کنید.
+حذف متد `init`، به جای آن از متد `configureEnvironment` استفاده کنید.-
+- منسوخ شدن متد `setDevelopment`، به جای آن از متد `configureEnvironment`استفاده کنید.
+- حذف متد`setEnableRealtime` و مقدار قابلیت آنی (realtime) در فایل **Chabok.production.json** یا **Chabok.sandbox.json** قابل تنظیم است.
+- برای پیاده‌سازی باید متدهای `ChabokFirebaseMessaging.refreshToken(token)` و  `ChabokFirebaseMessaging.onMessageReceived(remoteMessage, context)` را فراخوانی کنید.
 -`FirebaseMessagingService`****(نمیدونم)
--حذف متدهای `register` و `unregister`، به جای این دو از متدهای `login` و `logout` استفاده کنید.
--حذف GCMReceiver از AndroidManifest.xml.
--حذف متدهای `setUserInfo` و `getUserInfo`
--تغییر مقدار پیش‌فرض realtime به`false`  
--تغییر کلاس `isChabokPushNotification` به`ChabokFirebaseMessaging`
+- حذف متدهای `register` و `unregister`، به جای این دو از متدهای `login` و `logout` استفاده کنید.
+حذف GCMReceiver از AndroidManifest.xml. -
+- حذف متدهای `setUserInfo` و `getUserInfo`
+- تغییر مقدار پیش‌فرض realtime به`false`  
+- تغییر کلاس `isChabokPushNotification` به`ChabokFirebaseMessaging`
 
 ## [نسخه ۲.۱۸.۱ - ۱۳۹۸/۰۶/۲۶](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.18.1)
 
