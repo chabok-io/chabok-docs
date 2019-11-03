@@ -150,7 +150,9 @@ public class MyAppClass extends Application {
       @Override  
       public void onCreate() {
       super.onCreate();  
-      AdpPushClient.configureEnvironment(Environment.SANDBOX); // Mandatory    
+      AdpPushClient.configureEnvironment(Environment.SANDBOX); // Mandatory  
+      AdpPushClient.setLogLevel(LogLevel.‍VERBOSE); // Optional
+      AdpPushClient.setDefaultTracker(“Ym3gy7”); // Optional
     }
 }
 ``` 
@@ -181,7 +183,7 @@ public class MyAppClass extends Application {
 متد ثبت کاربر با چهارامضای متفاوت وجود دارد:
 
 
-۱. امضای اول
+۱. امضای اول:
 
 
 فقط شناسه کاربر را گرفته و کاربر را با آن شناسه  بر روی سرور چابک ثبت‌نام می‌کند.
@@ -199,7 +201,7 @@ public void login(String userId)
 
 
 
-۲.امضای دوم
+۲.امضای دوم:
   
   علاوه بر شناسه کاربر، اطلاعات (Attributes) را نیز دریافت می‌کند.
    
@@ -209,7 +211,7 @@ public void login(String userId)
    ```
    
    
-۳. امضای سوم
+۳. امضای سوم:
 
 به غیر از شناسه کاربر، رفتار مورد نظر کاربر را نیز رصد می‌کند.
 
@@ -218,12 +220,13 @@ public void login(String userId)
    public void login(String userId, String eventName, @Nullable JSONObject data)
    ```
    
-۴۰امضای چهارم
+۴۰ امضای چهارم:
 
 به غیر از شناسه کاربر، نام کاربر را نیز دریافت می‌کند.
 
 ```
 public void login(String userId, String[] tagsName)
+
 ```
 #### خروج از حساب کاربری (logout)
 
