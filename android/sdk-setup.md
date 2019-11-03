@@ -134,7 +134,8 @@ dependencies{
 
 چابک برای راه اندازی نیاز به مقداردهی اولیه دارد.
 ۱.برای مقداردهی ابتدا از پنل خود وارد بخش تنظیمات> دسترسی و توکن‌ها> کتابخانه موبایل> فعال‌سازی راه‌اندازی هوشمند> فایل **Chabok.sandbox.json** یا  **Chabok.production.json** را بسته به محیطتان دانلود کنید.
-![](http://uupload.ir/files/y6jl_chabok.sandbox-android.gif)
+
+<img  src="http://uupload.ir/files/y6jl_chabok.sandbox-android.gif">
 >`نکته:`
 برای غیرفعال کردن دریافت توکن **پوش نوتیفیکیشن**(pushNotification)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید.
 
