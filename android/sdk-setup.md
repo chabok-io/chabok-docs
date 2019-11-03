@@ -181,8 +181,10 @@ public class MyAppClass extends Application {
 متد ثبت کاربر با چهارامضای متفاوت وجود دارد:
 
 
-۱. امضای اول 
+۱. امضای اول
+<pre>
 فقط شناسه کاربر را گرفته و کاربر را با آن شناسه  بر روی سرور چابک ثبت‌نام می‌کند.
+</pre>
 
 ```
 public void login(String userId)
