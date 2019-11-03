@@ -11,10 +11,9 @@ prev: troubleshoot.html
 
 ## [نسخه ۳.۰.۰ - ۱۳۹۸/۰۷/۱۰](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.0.0)
 
-###تغییرات 
+###تغییرات
 
-
-افزودن متد `configureEnvironment` برای [خودکارسازی مقداردهی](sdk-setup.html#%DB%B2--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-initialize) SDK به کمک فایل **Chabok.sandbox.json** یا **Chabok.production.json**-
+افزودن متد `configureEnvironment` برای [خودکارسازی مقداردهی](sdk-setup.html#%DB%B2--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-initialize) SDK به کمک فایل **Chabok.sandbox.json** یا **Chabok.production.json** -
 - از این به بعد قابلیت‌های آنی (real time) و پوش نوتیفیکیشن (pushNotification) به صورت پیش‌فرض در فایل قابل تنظیم **Chabok.sandbox.json** یا **Chabok.production.json** است.
 - افزودن متدهای `login` برای ثبت کاربر
 - افزودن متد `logout` برای تبدیل کاربر به مهمان
@@ -25,17 +24,18 @@ prev: troubleshoot.html
 - افزودن پراپرتی `logLevel` برای لاگ  گرفتن در سطوح مختلف مانند (debug, warning, info, ...)
 
 
-###  ارتقا 
+###  ارتقا
 حذف متد `init`، به جای آن از متد `configureEnvironment` استفاده کنید. -
 - منسوخ شدن متد `setDevelopment`، به جای آن از متد `configureEnvironment`استفاده کنید.
 - حذف متد `setEnableRealtime` و مقدار قابلیت آنی (realtime) در فایل **Chabok.production.json** یا **Chabok.sandbox.json** قابل تنظیم است.
 - برای پیاده‌سازی باید متدهای `ChabokFirebaseMessaging.refreshToken(token)` و  `ChabokFirebaseMessaging.onMessageReceived(remoteMessage, context)` را فراخوانی کنید.
 -`FirebaseMessagingService`****(نمیدونم)
 - حذف متدهای `register` و `unregister`، به جای این دو از متدهای `login` و `logout` استفاده کنید.
-حذف GCMReceiver از AndroidManifest.xml. -
+
+حذف `GCMReceiver` از AndroidManifest.xml -
 - حذف متدهای `setUserInfo` و `getUserInfo`
-- تغییر مقدار پیش‌فرض realtime به`false` 
-- تغییر کلاس `isChabokPushNotification` به`ChabokFirebaseMessaging`
+- تغییر مقدار پیش‌فرض realtime به `false` 
+- تغییر کلاس `isChabokPushNotification` به `ChabokFirebaseMessaging`
 
 ## [نسخه ۲.۱۸.۱ - ۱۳۹۸/۰۶/۲۶](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.18.1)
 
