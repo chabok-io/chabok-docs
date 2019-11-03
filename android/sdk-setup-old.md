@@ -19,8 +19,20 @@ next: tracker.html
   
 [ ۴- ثبت کاربر (Register)](/android/sdk-setup.html#۴--ثبت-کاربر-register)  
   
-<Br>  
-  
+<Br> 
+    
+<Br> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 ### ۱- نصب کتابخانه  
   
 کتابخانه چابک از طریق `jcenter` در دسترس است. برای این منظور ابتدا در فایل `gradle` اصلی پروژه، `jcenter` را بعنوان `repository` مطابق قطعه کد زیر اضافه نمایید:  
