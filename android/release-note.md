@@ -36,6 +36,15 @@ prev: troubleshoot.html
 - تغییر مقدار پیش‌فرض realtime به `false` 
 - تغییر کلاس `isChabokPushNotification` به `ChabokFirebaseMessaging`
 
+## [نسخه ۲.۱۸.۲ - ۱۳۹۸/۰۸/۱۳](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.18.2)
+
+### تغییرات
+
+- برطرف شدن مشکل وارنینگ unsafe cryptographic encryption patterns در پنل گوگل پلی هنگام آپلود فایل apk
+
+
+
+
 ## [نسخه ۲.۱۸.۱ - ۱۳۹۸/۰۶/۲۶](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.18.1)
 
 ### تغییرات
