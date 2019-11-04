@@ -157,7 +157,7 @@ dependencies {
 
 - فایل دانلود شده را در پوشه ماژول اصلی پروژه قرار دهید.
 <p class="text-center">
-<img width="90%" src="http://uupload.ir/files/tkv2_put-download-file-into-root-of-project.gif">
+<img width="90%" src="http://uupload.ir/files/pby6_download-file-in-main-module-of-project.gif">
 </p>
 
 <br>
