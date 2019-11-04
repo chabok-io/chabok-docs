@@ -217,9 +217,9 @@ public void login(String userId)
   علاوه بر شناسه کاربر، اطلاعات کاربر (Attributes) را نیز دریافت می‌کند.
  </p>
   
-   ```java
-     public void login(String userId, HashMap<String, Object> attributes)
-   ```
+```java
+public void login(String userId, HashMap<String, Object> attributes)
+```
    
   >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب](http://chabokpush.com) برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر، پیام چابک و پوش ‌نوتیفیکیشن بفرستید.
 
@@ -228,9 +228,9 @@ public void login(String userId)
 به غیر از شناسه کاربر، رفتار مورد نظر کاربر را نیز رصد می‌کند.
 </p>
 
-   ```java
-     public void login(String userId, String eventName, @Nullable JSONObject data)
-   ```
+```java
+public void login(String userId, String eventName, @Nullable JSONObject data)
+```
    
 - امضای چهارم:
 
@@ -242,7 +242,7 @@ public void login(String userId)
 برای کسب اطلاعات بیشتر به <a href="https://doc.chabok.io/panel/dashboard.html#%D8%AA%DA%AF">این صفحه</a> مراجعه کنید.
 
 ```java
-   public void login(String userId, String[] tagsName)
+public void login(String userId, String[] tagsName)
 ```
 
 #### خروج از حساب کاربری (logout)
