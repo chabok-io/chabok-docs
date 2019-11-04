@@ -32,7 +32,6 @@ prev: troubleshoot.html
 `FirebaseMessagingService`****
 - حذف متدهای `register` و `unregister`، به جای این دو از متدهای `login` و `logout` استفاده کنید.
 - حذف `GCMReceiver` از AndroidManifest.xml
-
 - حذف متدهای `setUserInfo` و `getUserInfo`
 - تغییر مقدار پیش‌فرض realtime به `false` 
 - تغییر کلاس `isChabokPushNotification` به `ChabokFirebaseMessaging`
