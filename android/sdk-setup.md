@@ -27,6 +27,7 @@ next: tracker.html
 ```javascript  
 buildscript {
     repositories {
+        google()
         jcenter()
         maven {
             url "https://plugins.gradle.org/m2/" 
@@ -35,14 +36,16 @@ buildscript {
     
     dependencies {    
         classpath "io.chabok.plugin:chabok-services:1.0.0"
+        classpath 'com.google.gms:google-services:4.3.2'
     }
 }
 ```
 
-دستور زیر را در انتهای فایل `build.gradle` :ماژول اپلیکیش خود اضافه کنید
+دستور زیر را در انتهای فایل `build.gradle` ماژول اپلیکیشن خود اضافه کنید:
 
 ```javascript  
 apply plugin: 'io.chabok.plugin.chabok-services'
+apply plugin: 'com.google.gms.google-services'
 ```
 >`نکته:`
  این فایل عموما در مسیر زیر وجود دارد:
@@ -52,17 +55,16 @@ apply plugin: 'io.chabok.plugin.chabok-services'
 <br>
 #### نصب کتابخانه استاندارد چابک
 برای استفاده از کتابخانه استاندارد چابک (بدون قابلیت مکان‌یابی) از کتابخانه `chabok-lib` که در زیر به آن اشاره‌ شده است، استفاده کنید.   
-فایل `build.gradle` در مسیر `app` را باز کرده و در بخش `dependencies` خط زیر را اضافه نمایید:  
+فایل `build.gradle` در ماژول اپلیکیشن را باز کرده و در بخش `dependencies` خط زیر را اضافه نمایید:  
   
 ```javascript  
-dependencies {  
+dependencies {
+    implementation 'com.adpdigital.push:chabok-lib:3.0.0'
+
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
-    implementation 'com.adpdigital.push:chabok-lib:3.0.0'  
-  
-    //If you want to get the push notification, add to dependencies  
-    implementation 'com.google.android.gms:play-services-gcm:10.2.6'   
-    implementation 'com.android.installreferrer:installreferrer:1.0'  
-}  
+    implementation 'com.google.firebase:firebase-messaging:17.1.0'
+    implementation 'com.android.installreferrer:installreferrer:1.0'
+} 
 ``` 
 >`نکته:` 
  چابک در حال حاضر از **FCM** بهره می‌برد؛ در عین حال به خاطر قابلیت **backward compatibility** خود از کاربرانی که از نسخه‌های پایین‌تر اندروید استفاده می‌کنند یا از **GCM** به **FCM** مهاجرت نکرده‌اند، **پشتیبانی** می‌کند. توجه داشته باشید که موضوع بسته شدن **GCM** برای سرورهای خودش است و در کلاینت‌های اندروید چابک، دریافت توکن پوش همچنان امکان‌پذیر است.
@@ -71,18 +73,29 @@ dependencies {
  
 درصورتی که در برنامه خود نیاز به استفاده از موقعیت مکانی کاربر دارید، لازم است در ابتدا کتابخانه `chabok-lib` را **حذف** و کتابخانه `chabok-lib-geo` را **جایگزین** کنید.    با توجه به این که در این کتابخانه از سرویس **فیوز گوگل** استفاده شده است، باید  تغییرات زیر نیز در قسمت ‌‌‌`dependencies` اعمال شود:
 ```javascript
-dependencies{
-    implementation'me.leolin:ShortcutBadger:1.1.22@aar'
-    implementation'com.adpdigital.push:chabok-lib-geo:3.0.0'
-    implementation'com.google.android.gms:play-services-location:10.2.6' //If you want to get the push notification
-    implementation'com.google.android.gms:play-services-gcm:10.2.6'
-    implementation'com.android.installreferrer:installreferrer:1.0'
+dependencies {
+    implementation 'com.adpdigital.push:chabok-lib:3.0.0'
+
+    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
+    implementation 'com.google.firebase:firebase-messaging:17.1.0'
+    implementation'com.google.android.gms:play-services-location:10.2.6'
+    implementation 'com.android.installreferrer:installreferrer:1.0'
 }
 ```    
 #### نکات ضروری نصب کتابخانه   
  - تمامی گوشی‌های با **اندروید ۴ یا بالاتر** قابلیت استفاده از کتابخانه چابک را دارند.    
  > `نکته`: برای گوشی‌هایی مانند شیاومی و هواوی که گزینه تنظیمات مربوط به برنامه‌های حفاظت شده دارند (ProtectedApps)، کاربر باید برنامه شما را در لیست برنامه‌های حفاظت شده، فعال کند تا دریافت پوش‌نوتیفیکیشن در همه حالت‌ها امکان‌پذیر شود. برای اطلاعات بیشتر می‌توانید بخش [عیب‌یابی](/android/troubleshoot.html) را مطالعه نمایید.  
- - برای استفاده از **سرویس GCM گوگل** (پوش‌نوتیفیکیشن) لازم است `play-services-gcm` را همانند بالا (خط آخر هر دو کتابخانه) در بخش `dependencies` اضافه کنید.    
+ - `google-services.json` را از پنل firebase خود دانلود کنید و در پوشه ماژول اصلی اپلیکیشن قرار دهید.
+ >`نکته:` اگر قصد کانفیگ فایل خود برای اپلیکیشن اندروید خود را دارید،قبل از انجام کار ابتدا نیاز است فایل را برای اپلیکیشن خود دانلود کنید و سپس مراحل زیر را انجام دهید: 
+ 
+ 
+ - در مرحله اول باید به Firebase متصل شوید و پروژه خود را باز کنید.
+ - آیکون تنظیمات خود را انتخاب و Project settings را باز کنید.
+ - اسم برنامه‌ای که برای کانفیگ نیاز دارید را انتخاب نمایید.
+ - google-services.json را دانلود کنید و به اپلیکیشن خود اضافه کنید.
+ 
+ 
+     
  - دقت داشته باشید که همیشه از جدیدترین نسخه **ShortcutBadger** استفاده کنید. برای اطلاع از آخرین نسخه می‌توانید به [این لینک](https://github.com/leolin310148/ShortcutBadger) مراجعه نمایید. همچنین با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید.     
 - به علت محدودیت‌‌های **اندروید ۸ به بالا** دقت کنید حتما مطابق جدول زیر تنظیمات نسخه‌ها را به درستی انجام دهید. در صورت رعایت نکردن نسخه‌های ذکر شده در جدول زیر هنگامی که اپلیکیشنتان **kill** شده باشد به هنگام دریافت نوتیفیکیشن با خطا مواجه خواهد شد. 
 <table dir="ltr">  
@@ -134,7 +147,8 @@ dependencies{
 ### ۲- مقداردهی اولیه (Initialize) 
 
 چابک برای راه اندازی نیاز به مقداردهی اولیه دارد.
-۱.برای مقداردهی ابتدا از پنل خود وارد بخش تنظیمات> دسترسی و توکن‌ها> کتابخانه موبایل> فعال‌سازی راه‌اندازی هوشمند> فایل **Chabok.sandbox.json** یا  **Chabok.production.json** را بسته به محیطتان دانلود کنید.
+<br>
+-.برای مقداردهی ابتدا از پنل خود وارد بخش تنظیمات> دسترسی و توکن‌ها> کتابخانه موبایل> فعال‌سازی راه‌اندازی هوشمند> فایل **Chabok.sandbox.json** یا  **Chabok.production.json** را بسته به محیطتان دانلود کنید.
 <p class="text-center">
 <img  src="http://uupload.ir/files/9tlr_sandbox-android-chabok-doc.gif">
 </p>

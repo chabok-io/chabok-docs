@@ -28,8 +28,7 @@ prev: troubleshoot.html
 - حذف متد `init`، به جای آن از متد `configureEnvironment` استفاده کنید.
 - منسوخ شدن متد `setDevelopment`، به جای آن از متد `configureEnvironment` استفاده کنید.
 - حذف متد `setEnableRealtime` و  مقدار قابلیت آنی (**realtime**) در فایل **Chabok.production.json** یا **Chabok.sandbox.json** قابل تنظیم است.
-- اگر می‌خواهید کلاس `FirebaseMessagingService` را خودتان پیاده‌سازی کنید و تمایل دارید چابک نیز پوش نوتیفیکیشن را دریافت کند، لازم است که متد `ChabokFirebaseMessaging.refreshToken(token)`
-  را در متد `ChabokFirebaseMessaging.onMessageReceived(remoteMessage, context)` را در `onnewmessage` فراخوانی کنید.`onnewtoken`  این کلاس و متد  
+- اگر می‌خواهید کلاس `FirebaseMessagingService` را خودتان پیاده‌سازی کنید و تمایل دارید چابک نیز پوش نوتیفیکیشن را دریافت کند، لازم است که متد ChabokFirebaseMessaging.refreshToken در متد onNewToken کلاس فایربیس و متد ChabokFirebaseMessaging.onMessageReceived در متد onMessageReceived کلاس فایربیس فراخوانی شود. 
 - حذف متدهای `register` و `unregister`، به جای این دو از متدهای `login` و `logout` استفاده کنید.
 - حذف `GCMReceiver` از **AndroidManifest.xml**
 - حذف متدهای `setUserInfo` و `getUserInfo`
