@@ -266,7 +266,7 @@ public void login(String userId, String[] tagsName)
 public void logout()
 ```
 
-##### ه- ثبت اطلاعات کاربر (User Attributes)
+##### د- ثبت اطلاعات کاربر (User Attributes)
 
 با فراخوانی متد زیر می‌توانید اطلاعات و سوابق کاربر را جمع‌آوری و ذخیره کنید:
 
