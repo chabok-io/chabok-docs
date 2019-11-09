@@ -7,8 +7,42 @@ prev: troubleshoot.html
 ---
 
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](/android/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
+<br>
 
-<Br>
+## [نسخه ۳.۰.۰ - ۱۳۹۸/۰۷/۱۰](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.0.0)
+
+###  تغییرات
+
+- افزودن متد `configureEnvironment` برای [خودکارسازی مقداردهی](sdk-setup.html#%DB%B2--%D9%85%D9%82%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%87-initialize) SDK به کمک فایل **Chabok.sandbox.json** یا **Chabok.production.json** 
+- از این به بعد قابلیت‌های آنی (**realtime**) و پوش نوتیفیکیشن (**pushNotification**) به صورت پیش‌فرض در فایل **Chabok.sandbox.json** یا **Chabok.production.json**  قابل تنظیم است.
+- افزودن متدهای `login` برای ثبت کاربر
+- افزودن متد `logout` برای تبدیل کاربر به مهمان
+- افزودن متد `login(userId, userHash)` به منظور احراز هویت سرور به سرور
+- تغییر از **GCM** به **FCM**
+- افزودن `disableSdk` برای غیرفعال کردن **SDK چابک**
+- افزودن متد `trackRevenue`
+- افزودن پراپرتی `logLevel` برای لاگ  گرفتن در سطوح مختلف مانند (debug, warning, info, ...)
+
+
+###  ارتقا
+- منسوخ شدن متد `init`، به جای آن از متد `configureEnvironment` استفاده کنید.
+- منسوخ شدن متد `setDevelopment`، به جای آن از متد `configureEnvironment` استفاده کنید.
+- منسوخ شدن متد `setEnableRealtime` و  مقدار قابلیت آنی (**realtime**) در فایل **Chabok.production.json** یا **Chabok.sandbox.json** قابل تنظیم است.
+- اگر می‌خواهید کلاس `FirebaseMessagingService` را خودتان پیاده‌سازی کنید و تمایل دارید چابک نیز  <a href="/android/push-notification.html#دریافت-پوش-نوتیفیکیشن-توسط-چابک">پوش نوتیفیکیشن</a>  را دریافت کند، لازم است که متد `ChabokFirebaseMessaging.refreshToken`  در متد `onNewToken` کلاس فایربیس و متد `ChabokFirebaseMessaging.onMessageReceived` در متد `onMessageReceived` کلاس فایربیس فراخوانی شود. 
+- حذف متدهای `register` و `unregister`، به جای این دو از متدهای `login` و `logout` استفاده کنید.
+- حذف `GCMReceiver` از **AndroidManifest.xml**
+- حذف متدهای `setUserInfo` و `getUserInfo`
+- تغییر مقدار پیش‌فرض **realtime** به `false` 
+- انتقال متد `isChabokPushNotification` به کلاس `ChabokFirebaseMessaging`
+
+## [نسخه ۲.۱۸.۲ - ۱۳۹۸/۰۸/۱۳](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.18.2)
+
+### تغییرات
+
+- برطرف شدن مشکل وارنینگ unsafe cryptographic encryption patterns در پنل گوگل پلی هنگام آپلود فایل apk
+
+
+
 
 ## [نسخه ۲.۱۸.۲ - ۱۳۹۸/۰۸/۱۳](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.18.2)
 
@@ -161,7 +195,7 @@ prev: troubleshoot.html
         </intent-filter>
 </receiver>
 ```
-
+<br>
 ### ارتقا
 
 - پشتیبانی از `INSTALL_REFERRER` برای [گوگل پلی استور](/android/tracker.html#گوگل-پلی-استور):
