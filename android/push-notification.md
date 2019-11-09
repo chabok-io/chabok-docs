@@ -15,6 +15,33 @@ next: deeplink.html
 
 <Br>
 
+### دریافت پوش نوتیفیکیشن توسط چابک
+
+اگر می‌خواهید کلاس `FirebaseMessagingService` را خودتان پیاده‌سازی کنید و تمایل دارید چابک نیز پوش نوتیفیکیشن را دریافت کند، لازم است که متد `ChabokFirebaseMessaging.refreshToken`  در متد `onNewToken` کلاس فایربیس و متد `ChabokFirebaseMessaging.onMessageReceived` در متد `onMessageReceived` کلاس فایربیس فراخوانی شود. مطابق قطعه کد زیر:
+ 
+ ```java
+public class MyFirebaseMessagingService extends FirebaseMessagingService {
+    @Override
+    public void onNewToken(String token) {
+        ChabokFirebaseMessaging.refreshToken(token);
+    }
+
+    @Override
+    public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
+        super.onMessageReceived(remoteMessage);
+
+        if (ChabokFirebaseMessaging.isChabokPushNotification(remoteMessage.getData())) {
+            ChabokFirebaseMessaging.onMessageReceived(remoteMessage, getApplicationContext());
+        }
+        /* 
+         * place your code here
+         */
+    }
+}
+
+
+```
+
 ### شخصی‌سازی نمایش و کلیک روی نوتیفیکیشن
 
 کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی (پیام چابک و پوش‌نوتیفیکیشن)، اعلان (**نوتیفیکیشن**) نمایش می‌دهد. درصورت تمایل به تنظیم نمایش نوتیفیکیشن‌ها، کد مورد نظر خود را می‌توانید به کلاینت اضافه کنید.
