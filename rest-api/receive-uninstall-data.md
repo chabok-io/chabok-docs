@@ -50,12 +50,15 @@ curl -X GET \
 پاسخ درخواست مانند زیر خواهد بود:
 
 ```bash
-[
-  {
-    "time": "2019-08-28T22:30:18.148Z",
-    "installationId": "DEVICE_ID",
-    "deviceType": "DEVICE_TYPE(android, ios,...)",
-    "userId": "USER_ID"
-  },
-]
+{
+  "count": 1,
+  "data": [
+    {
+      "time": "2019-08-28T22:30:18.148Z",
+      "installationId": "DEVICE_ID",
+      "deviceType": "DEVICE_TYPE(android, ios,...)",
+      "userId": "USER_ID"
+    }
+  ]
+}
 ```
