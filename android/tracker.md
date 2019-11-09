@@ -28,7 +28,7 @@ next: chabok-messaging.html
 
 [ب- مقداردهی](/android/tracker.html#ب--مقداردهی-initialize)
 
-[ج- ثبت کاربر](/android/tracker.html#ج--ثبت-کاربر-register-users)
+[ج- ثبت کاربر](/android/tracker.html#ج--ثبت-کاربر-login-users)
 
 [د- ثبت اطلاعات کاربر (اختیاری)](/android/tracker.html#د--ثبت-اطلاعات-کاربر-user-attributes)
 
