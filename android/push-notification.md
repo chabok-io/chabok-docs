@@ -38,8 +38,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
          */
     }
 }
-
-
 ```
 
 ### شخصی‌سازی نمایش و کلیک روی نوتیفیکیشن
