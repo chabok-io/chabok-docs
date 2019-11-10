@@ -26,7 +26,10 @@ next: release-note.html
 ۲. اگر با یکی از ارورهای **AdpPushClient not initialized, Make sure to configure correct environment** و یا **AdpPushClient not initialized, Make sure to put the json files in root of your project** مواجه شدید، یعنی فایل **Chabok.sandbox.json** یا **Chabok.production.json** در جای مناسبی قرار نگرفتند و یا اگر در جای درستی هستند، محتویات آنان کامل نیستند.
 برای اطلاعات بیشتر می‌توانید مستندات [راه‌اندازی](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) را مطالعه کنید.
 
+<br>
+
 #### نسخه‌ سرویس‌های گوگل پلی را بررسی کنید
+---
 
 در صورتی با ارورهای **;java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/iid/InstanceID** و یا **Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.android.gms.iid.InstanceID** مواجه شدید، دقت کنید که نسخه‌ سرویس‌های گوگل پلی شما با هم، همخوانی و تطابق داشته باشند.
 
