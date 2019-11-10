@@ -18,7 +18,7 @@ next: deeplink.html
 ### دریافت پوش نوتیفیکیشن توسط چابک
 
 
-اگر می‌خواهید کلاس `FirebaseMessagingService` را خودتان پیاده‌سازی کنید و تمایل دارید چابک نیز پوش نوتیفیکیشن را دریافت کند، لازم است که متد `ChabokFirebaseMessaging.refreshToken` در متد `onNewToken` کلاس فایربیس و متد `ChabokFirebaseMessaging.onMessageReceived` در متد`onMessageReceived` کلاس فایربیس فراخوانی شود. مطابق قطعه کد زیر:
+اگر می‌خواهید کلاس `FirebaseMessagingService` را خودتان پیاده‌سازی کنید و تمایل دارید چابک نیز پوش نوتیفیکیشن را دریافت کند، لازم است که متد `ChabokFirebaseMessaging.refreshToken` در متد `onNewToken` کلاس فایربیس و متد `ChabokFirebaseMessaging.onMessageReceived` در متد `onMessageReceived` کلاس فایربیس فراخوانی شود. مطابق قطعه کد زیر:
  
  ```java
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
