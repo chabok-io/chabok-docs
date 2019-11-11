@@ -150,6 +150,11 @@ android.enableJetifier=true
 
 >`نکته:` توصیه می‌کنیم برای دریافت آخرین نسخه **Bug Fix**ها از کاراکتر + (wildcard) استفاده نمایید تا gradle به صورت خودکار نسخه‌های patch را بیاورد.
 <br>
+>`نکته:` اگر از نسخه‌های پایین‌تر از ۳ کتابخانه چابک استفاده می‌کنید توصیه می‌کنیم کتابخانه چابک را به نسخه ۳ <a href="/android/release-note.html#%D8%A7%D8%B1%D8%AA%D9%82%D8%A7">**ارتقا**</a> دهید.
+
+
+<br>
+
 >`نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](/android/features.html#%D8%A8%D8%B1%D8%AF%D8%A7%D8%B4%D8%AA%D9%86-%D9%85%D8%AC%D9%88%D8%B2%D9%87%D8%A7%DB%8C-%D8%BA%DB%8C%D8%B1-%D8%B6%D8%B1%D9%88%D8%B1%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%D9%86%D8%B4%D8%A7%D9%86-badge-%D8%B1%D9%88%DB%8C-%D8%A2%DB%8C%DA%A9%D9%88%D9%86) هر کدام از آن‌ها را با اختیار خودتان بردارید.   
 
 ### ۲- مقداردهی اولیه (Initialize) 
@@ -186,7 +191,7 @@ public class MyAppClass extends Application {
 <br>
 -**configureEnvironment**: متد `configureEnvironment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شده. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.  
 
->`نکته:`متدی که در بالا قرار دادیم برای راه‌اندازی محیط سندباکس است. در صورتی که **حساب عملیاتی** دارید کافیست `Environment.SANDBOX` را با `Environment.production` عوض کنید.
+>`نکته:`متدی که در بالا قرار دادیم برای راه‌اندازی محیط سندباکس است. در صورتی که **حساب عملیاتی** دارید کافیست `Environment.SANDBOX` را با `Environment.PRODUCTION` عوض کنید.
 <br>
 
 > `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید و پس از تایید و ساخت حساب عملیاتی فایل **Chabok.production.json** را دنلود کنید و به جای فایل **Chabok.sandbox.json** در پوشه ماژول اصلی پروژه خود قراردهید. 
