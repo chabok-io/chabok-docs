@@ -104,15 +104,15 @@ next: release-note.html
 ۶- دانلود فایل <span class="bold">google-services.json</span> از پنل فایربیس 
 </h5>
 
+
  همیشه مطمئن شوید که فایل **google-services.json** پروژه را که از<a href="https://console.firebase.google.com/"> پنل فایربیس </a> دانلود کردید در پوشه ماژول اصلی پروژه خود قرار داده باشید.
 
 برای کسب اطلاعات بیشتر حتما بخش <a href="android/sdk-setup.html#نکات-ضروری-نصب-کتابخانه">نکات ضروری نصب کتابخانه </a> در راه‌اندازی را مرور  کنید. 
 
 <h5>
+-۷
 خطای <span class="bold">SENDER_ID_MISMATCH</span>
 </h5>
-
-
 
 اگر **Sender ID** داخل فایل **google-services.json** وجود داشته باشد. به این معناست که این فایل از داخل <a href="https://console.firebase.google.com/"> پنل فایربیس </a> دانلود شده و در صورتی که **Sender ID** داخل پنل چابک باشد، یعنی از روی پنل فایربیس کپی شده است.
 
