@@ -70,7 +70,7 @@ next: release-note.html
  ب- **تعیین درست محیط چابک:** متد `configureEnvironment` با توجه به محیط عملیاتی یا آزمایشی پیاده‌سازی می‌شود.
  
  
-پ- **دانلود فایل Chabok.sandbox.json یا Chabok.production.json با توجه به محیط آن:*
+پ- **دانلود فایل Chabok.sandbox.json یا Chabok.production.json با توجه به محیط آن:**
 
 با توجه به محیط sandbox یا production (عملیاتی یا آزمایشی)، فایل Chabok.sandbox.json یا Chabok.production.json را دانلود کنید و در جای مناسبی کپی کنید.
 
@@ -99,8 +99,7 @@ next: release-note.html
 در صورت مشاهده متن **غیرفعال** در کارت تنظیمات هر پلتفرم، دستگاه به بخش مشترکین اضافه نشده است. برای مثال اگر تنظیمات پوش‌نوتیفیکیشن اندروید را به درستی انجام داده باشید ولی دستگاه اندروید‌ به بخش مشترکین اضافه نشده باشد بر روی کارت تنظیمات پوش‌نوتیفیکیشن اندروید متن غیرفعال را مشاهده خواهید کرد.
 
 <h5>
-
-۶- دانلود فایل <div class="bold">google-services.json </div> از پنل فایربیس 
+۶- دانلود فایل <div class="bold">google-services.json</div> از پنل فایربیس 
 </h5>
 
  همیشه مطمئن شوید که فایل **google-services.json** پروژه را که از<a href="https://console.firebase.google.com/"> پنل فایربیس </a> دانلود کردید در پوشه ماژول اصلی پروژه قرار داده باشید.
