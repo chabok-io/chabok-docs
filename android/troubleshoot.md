@@ -72,7 +72,7 @@ next: release-note.html
  
 پ- **دانلود فایل Chabok.sandbox.json یا Chabok.production.json با توجه به محیط آن:**
 
-با توجه به محیط sandbox یا production (عملیاتی یا آزمایشی)، فایل Chabok.sandbox.json یا Chabok.production.json را دانلود کنید  و در جای مناسبی کپی کنید.
+با توجه به محیط sandbox یا production (عملیاتی یا آزمایشی)، فایل Chabok.sandbox.json یا Chabok.production.json را دانلود کنید  و در جای مناسبی کپی نمایید.
 
 پس از بررسی نکات بالا دستگاه شما باید در بخش مشترکین پنل آمده باشد. 
 >`نکته:`در صورت استفاده از پنل sandbox حتما حتما توجه داشته باشید که فایل دانلود شده شما باید با تنظیمات پنل‌تان یکسان باشد.  
