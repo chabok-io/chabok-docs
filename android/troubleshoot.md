@@ -100,9 +100,7 @@ next: release-note.html
 
 <h5>
 
-۶- دانلود فایل <div class="bold"> 
-               google-services.json
-               </div> از پنل فایربیس 
+۶- دانلود فایل <div class="bold">google-services.json </div> از پنل فایربیس 
 </h5>
 
  همیشه مطمئن شوید که فایل **google-services.json** پروژه را که از<a href="https://console.firebase.google.com/"> پنل فایربیس </a> دانلود کردید در پوشه ماژول اصلی پروژه قرار داده باشید.
