@@ -20,7 +20,7 @@ prev: troubleshoot.html
 - دریافت پارامتر **label** با استفاده از فراخوانی متد `setDeferredDataListener(DeferredDataListener)` و پیاده‌سازی متد `onReferralReceived(label)`. این پارامتر در لینک ترکر قرار می‌گیرد و جهت پیاده‌سازی فرآیند دعوت از دوستان در اپلیکیشنتان کاربرد دارد.
 - پشتیبانی از افزودن به مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `addToUserAttributeArray(attributeKey, attributeValue)`.
 - پشتیبانی از حذف مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `removeFromUserAttributeArray(attributeKey, attributeValue)`.
-- حذف داده‌های سفارشی کاربر با فراخوانی متد `unsetUserAttribute(attributeKey)`.
+- پشتیبانی از حذف داده‌های سفارشی کاربر با فراخوانی متد `unsetUserAttribute(attributeKey)`.
 - پشتیبانی از تاریخ و ساعت برای مقادیری که در رویدادها و داده‌های سفارشی کاربر ارسال می‌کنید با استفاده از کلاس `Datetime` که در کتابخانه چابک موجود هست.
 - پشتیبانی از کلاس `Bundle` برای ارسال اطلاعات در رویدادها و داده‌های سفارشی کاربر.
 
