@@ -9,6 +9,25 @@ prev: troubleshoot.html
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](/android/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 <br>
 
+## [نسخه ۳.۱.۰ - ۱۳۹۸/۰۹/۴](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.1.0)
+
+###  تغییرات
+
+- برطرف شدن مشکل ارسال پیام چابک از طریق صندوق پیام
+- برطرف شدن مشکل کرش وقتی شناسه کاربری نامعتبر به متد `login` ارسال می‌شود.
+- برطرف شدن مشکل نشت حافظه
+- افزودن متد `login` با امضای جدید برای آگاهی از نتیجه عملیات ثبت‌نام کاربر.
+- دریافت پارامتر **label** با استفاده از فراخوانی متد `setDeferredDataListener(DeferredDataListener)` و پیاده‌سازی متد `onReferralReceived(label)`. این پارامتر در لینک ترکر قرار می‌گیرد و جهت پیاده‌سازی فرآیند دعوت از دوستان در اپلیکیشنتان کاربرد دارد.
+- پشتیبانی از افزودن به مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `addToUserAttributeArray(attributeKey, attributeValue)`.
+- پشتیبانی از حذف مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `removeFromUserAttributeArray(attributeKey, attributeValue)`.
+- حذف داده‌های سفارشی کاربر با فراخوانی متد `unsetUserAttribute(attributeKey)`.
+- پشتیبانی از تاریخ و ساعت برای مقادیری که در رویدادها و داده‌های سفارشی کاربر ارسال می‌کنید با استفاده از کلاس `Datetime` که در کتابخانه چابک موجود هست.
+- پشتیبانی از کلاس `Bundle` برای ارسال اطلاعات در رویدادها و داده‌های سفارشی کاربر.
+
+###  ارتقا
+- منسوخ شدن متد `setOnDeeplinkResponseListener(deeplinkResponseListener)`. به جای آن از متد `setDeferredDataListener(DeferredDataListener)` استفاده کنید.
+
+
 ## [نسخه ۳.۰.۰ - ۱۳۹۸/۰۷/۱۰](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.0.0)
 
 ###  تغییرات
