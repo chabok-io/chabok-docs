@@ -124,6 +124,8 @@ AdpPushClient.get().setUserAttribute(userAttribute);
 >`نکته:`
 از کلاس`Datetime` و `putStringArray‍ `تنها در نسخه **۳.۱.۰ یا بالاتر کتابخانه چابک** استفاده می‌شود.
 
+<br>
+
 <h4>افزودن به مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
 
 برای اضافه کردن اطلاعات آرایه‌ای در داده‌های سفارشی کاربران کافیست متد زیر را فراخوانی نمایید:
@@ -145,6 +147,8 @@ AdpPushClient.get().addToUserAttributeArray("action_movie", "movies_02");
 AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "movies_02");
 ```
 قطعه کد بالا برای حذف کردن محصول از لیست علاقه‌مندی کاربران است.
+
+<br>
 
 <h4> حذف داده‌های سفارشی کاربران</h4>
 
