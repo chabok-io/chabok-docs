@@ -131,7 +131,7 @@ AdpPushClient.get().setUserAttribute(userAttribute);
 ```java
 AdpPushClient.get().addToUserAttributeArray("favorite_movies", "movies_05");
 ```
-کاربران وقتی به محصولی علاقه نشان می‌دهند، آن را به لیست علاقه‌مندی خود اضافه می‌کنند در این زمان، برای افزودن محصول باید شبه کد زیر را به متد اصلی اضافه ‌کنید.
+کاربران وقتی به محصولی علاقه نشان می‌دهند، آن را به لیست علاقه‌مندی خود اضافه می‌کنند که برای افزودن محصول، باید شبه کد زیر را به متد اصلی اضافه ‌کنید.
 
 ```java
 AdpPushClient.get().addToUserAttributeArray("action_movie", "movies_02");
