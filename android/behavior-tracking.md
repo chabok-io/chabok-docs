@@ -58,16 +58,38 @@ AdpPushClient.get().track("add-to-card", data);
 
 <h3>ارسال مقادیر آرایه‌ای و تاریخ</h3>
 
+شما می‌توانید رفتارهای هر کاربر را به کمک متد زیر در نسخه **اندروید `۳.۱.۰` به بالاتر** فراخوانی کنید.
+
 ```java
 Bundle data = new Bundle();
-data.put("postId", 8569);
-data.put("likeDate", new Datetime());
-data.put("seen", false);
-data.putStringArray("postTags", new String[]{"iran", "tehran"});
-AdpPushClient.get().track("likeEvent");
+data.putInt("age", 25);
+data.putParcelable("birthday", new Datetime());
+data.putStringArray("postTags", new String[]{"iran", "karaj"});
+data.putString("firstName", "محمدرضا");
+data.putString("lastName", "اخوان");
+data.put("married", false);
+AdpPushClient.get().track("customEvent");
 ```
+در غیر این صورت:
 
-دقت داشته باشید که در متد بالا مقدار `seen` بر روی `boolean` قرار دارد پس مقدار آن با `int` دیگر **کار نمی‌کند**.
+```java
+JSONObject data = new JSONObject();
+try {
+    data.put("firstName", "Chabok");
+    data.put("lastName", "Platform");
+    data.put("age", 85);
+    data.put("gender", "Male");
+    data.put("shoesSize", 69);
+    data.put("birthday", new Datetime());
+    data.put("middleFinger", true);
+    data.put("children", new JSONArray().put("Joe").put("John"));
+    data.put("families", new JSONArray().put("mommy").put("daddy"));
+} catch (JSONException e) {
+    e.printStackTrace();
+}
+AdpPushClient.get().track("customEvent", data);
+
+```
 
 <Br>
 
