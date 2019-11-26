@@ -41,7 +41,7 @@ AdpPushClient.get().setUserAttributes(userAttribute);
 
 <br>
 
-> `نکته` : در صورتی که از ویژگی  (**phone** (Attribute استفاده کنید، می‌توانید با smart API چابک اقدام به ارسال  پیامک کنید. فقط دقت داشته باشید که شماره همراه کاربر با کد کشور او شروع شود؛ به عنوان مثال **۹۸۹۱۲۰۴۹۸.**
+> `نکته` : در صورتی که از ویژگی  (**phone** (Attribute استفاده کنید، می‌توانید با smart API چابک اقدام به ارسال  پیامک کنید. فقط دقت داشته باشید که شماره همراه کاربر با کد کشور او شروع شود؛ به عنوان مثال **۹۸۹۱۲۰۴۹۸**.
 
 <br>
 
@@ -84,14 +84,16 @@ AdpPushClient.get().setUserAttributes(userAttribute);
 <h4>ارسال داده‌های سفارشی کاربران</h4>
 
 >`نکته:`در صورتی که از نسخه ۳.۱.۰ اندروید یا بالاتر چابک استفاده می‌کنید باید متد زیر را فراخوانی کنید.
+
 ```java
 Bundle userInfo = new Bundle();
-attribute.putString("firstName", "محمدرضا");
+attribute.putString("firstName", "حمیدرضا");
 attribute.putString("lastName", "اخوان");
 attribute.putInt("age", 25);
 attribute.putString("gender", "Male");
 attribute.putBoolean("married", true);
 attribute.putParcelable("birthday", new Datetime());
+attribute.putStringArray("children", new String[]{"مینا", "سارا"});
 userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movies_02", "movies_03", "movies_04"});
 AdpPushClient.get().setUserAttributes(attribute);
 ```
@@ -99,14 +101,13 @@ AdpPushClient.get().setUserAttributes(attribute);
 اما در صورتی که از نسخه‌های ۳.۱.۰ اندروید یا پایین‌تر استفاده می‌کنید، باید متد زیر را به کار ببرید.
 ```java
 HashMap<String, Object> userInfo = new HashMap<>();
-userInfo.put("firstName", "محمدرضا");
+userInfo.put("firstName", "حمیدرضا");
 userInfo.put("lastName", "اخوان");
 userInfo.put("age", 25);
 userInfo.putBoolean("married", true);
 AdpPushClient.get().setuserInfo(attribute);
 ```
 <br>
-
 
 <h4>ارسال مقادیر آرایه‌ای و تاریخ در داده‌های سفارشی کاربر</h4>
 
@@ -150,7 +151,7 @@ AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "movies_02")
 برای حذف اطلاعات کاربران(attribute)، متد زیر را فراخوانی کنید.
 
 ```java
-AdpPushClient.get().unsetUserAttribute("shoesSize");
+AdpPushClient.get().unsetUserAttribute("firstName");
 AdpPushClient.get().unsetUserAttribute("age");
 ```
 
@@ -158,7 +159,7 @@ AdpPushClient.get().unsetUserAttribute("age");
 
 #### دریافت اطلاعات کاربر
 
-برای دریافت اطلاعات کاربر، متد زیر را فراخوانی کنید:
+برای دریافت اطلاعات کاربر باید متد زیر را فراخوانی کنید:
 
 ```java
 AdpPushClient.get().getUserAttributes(userAttribute);
