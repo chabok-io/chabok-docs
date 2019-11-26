@@ -81,8 +81,33 @@ userAttribute.put("age", 19);
 
 AdpPushClient.get().setUserAttributes(userAttribute);
 ```
+<h4>ارسال داده‌های سفارشی کاربران</h4>
 
->`نکته:` در صورتی که از نسخه ۳.۱.۰ یا بالاتر چابک استفاده می‌کنید، می‌توانید از `Bundle‍` استفاده کنید.
+در صورتی که از نسخه ۳.۱.۰ اندروید یا بالاتر از آن استفاده می‌کنید باید متد زیر را فراخوانی کنید.
+```java
+Bundle userInfo = new Bundle();
+attribute.putString("firstName", "محمدرضا");
+attribute.putString("lastName", "اخوان");
+attribute.putInt("age", 25);
+attribute.putString("gender", "Male");
+attribute.putBoolean("married", true);
+attribute.putParcelable("birthday", new Datetime());
+userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movies_02", "movies_03", "movies_04"});
+AdpPushClient.get().setUserAttributes(attribute);
+```
+
+در غیر این صورت متد زیر را فراخوانی نمایید.
+
+```java
+HashMap<String, Object> userInfo = new HashMap<>();
+userInfo.put("firstName", "محمدرضا");
+userInfo.put("lastName", "اخوان");
+userInfo.put("age", 25);
+userInfo.putBoolean("married", true);
+AdpPushClient.get().setuserInfo(attribute);
+```
+<br>
+
 
 <h4>ارسال مقادیر آرایه‌ای و تاریخ در داده‌های سفارشی کاربر</h4>
 
@@ -98,18 +123,6 @@ AdpPushClient.get().setUserAttributes(attributes);
 ```
 
 >‍‍`نکته: `برای نشان‌ دادن تاریخ و زمان کاربر به کمک کلاس `Datetime` و استفاده از `putStringArray‍`، باید از نسخه **۳.۱.۰ به بالا** چابک استفاده کنید.
-
-در غیر این صورت متد زیر را فراخوانی نمایید.
-
-```java
-HashMap<String, Object> userInfo = new HashMap<>();
-userInfo.put("firstName", "محمدرضا");
-userInfo.put("lastName", "اخوان");
-userInfo.put("age", 25);
-userInfo.putBoolean("married", true);
-AdpPushClient.get().setUserAttributes(attribute);
-```
-<br>
 
 <h4>افزودن به مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
 
