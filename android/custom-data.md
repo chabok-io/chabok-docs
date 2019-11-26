@@ -107,7 +107,6 @@ userInfo.put("age", 25);
 userInfo.putBoolean("married", true);
 AdpPushClient.get().setuserInfo(attribute);
 ```
-<br>
 
 <h4>ارسال مقادیر آرایه‌ای و تاریخ در داده‌های سفارشی کاربر</h4>
 
