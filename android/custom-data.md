@@ -121,7 +121,8 @@ userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movie
 AdpPushClient.get().setUserAttributes(attributes);
 ```
 
->‍‍`نکته: `برای نشان‌ دادن تاریخ و زمان کاربر به کمک کلاس `Datetime` و استفاده از `putStringArray‍`، باید از نسخه **۳.۱.۰ به بالا** چابک استفاده کنید.
+>`نکته:`
+از کلاس`Datetime` و `putStringArray‍ `تنها در نسخه **۳.۱.۰ به بالا** چابک استفاده می‌شود.
 
 <h4>افزودن به مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
 
