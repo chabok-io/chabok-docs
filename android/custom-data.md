@@ -28,7 +28,7 @@ HashMap<String, Object> userInfo = new HashMap<>();
 
 userAttribute.put("firstName", "محمدرضا");
 userAttribute.put("lastName", "اخوان");
-userAttribute.put("age", 35);
+userAttribute.put("age", 25);
 userAttribute.put("gender", "مرد");
 
 
@@ -52,7 +52,7 @@ HashMap<String, Object> userInfo = new HashMap<>();
 
 userInfo.put("firstName", "محمدرضا");
 userInfo.put("lastName", "اخوان");
-userInfo.put("age", 35);
+userInfo.put("age", 25);
 userInfo.putBoolean("married", true);
 userInfo.put("gender", "مرد");
 
@@ -109,8 +109,7 @@ userAttribute.putParcelable("birthday", new Datetime());
 ```java
 AdpPushClient.get().addToUserAttributeArray("favorite_movies", "movies_05");
 ```
-
-به مثال زیر توجه کنید:
+کاربران وقتی به محصولی علاقه نشان می‌دهند آن را به لیست علاقه‌مندی خود اضافه می‌کند در آن زمان، برای اضافه کردن باید شبه کد زیر را به متد اصلی اضافه ‌کنید. 
 
 ```java
 AdpPushClient.get().addToUserAttributeArray("action_movie", "movies_02");
@@ -118,11 +117,12 @@ AdpPushClient.get().addToUserAttributeArray("action_movie", "movies_02");
 
 <h4>حذف از مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
 
-هم‌چنین متد زیر **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
+هم‌چنین متد زیر، **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
 
 ```java
 AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "movies_02");
 ```
+اگر بخواهید محصولی را از لیست علاقه‌مندی کاربران حذف کنید باید از قطعه کد بالا استفاده نمایید.
 
 <h4> حذف داده‌های سفارشی کاربران</h4>
 
@@ -130,6 +130,7 @@ AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "movies_02")
 
 ```java
 AdpPushClient.get().unsetUserAttribute("shoesSize");
+AdpPushClient.get().unsetUserAttribute("age");
 ```
 
 <br>
@@ -141,7 +142,6 @@ AdpPushClient.get().unsetUserAttribute("shoesSize");
 ```java
 AdpPushClient.get().getUserAttributes(userAttribute);
 HashMap<String, Object> attributes = AdpPushClient.get().getUserAttributes();
-String firstName = (String) attributes.get("firstName");
 Boolean married = (Boolean) attributes.get("married");
 String gender = (String) attributes.get("gender");
 String lastName = (String) attributes.get("lastName");
