@@ -80,6 +80,45 @@ userAttribute.put("age", 19);
 AdpPushClient.get().setUserAttributes(userAttribute);
 ```
 
+####ایجاد و حذف اطلاعات کاربران
+با فراخوانی قطعه کدهای زیر می‌توانید اطلاعات و داده‌های جدیدی را جمع‌آوری کنید و به لیست کاربران اضافه و یا حذف نمایید.
+#####ارسال مقادیر آرایه‌ای و تاریخ در داده‌های سفارشی کاربر
+
+```java
+Bundle attributes = new Bundle();
+attributes.putString("firstName", "John");
+attributes.putString("lastName", "Smith");
+attributes.putInt("age", 85);
+attributes.putString("gender", "Male");
+attributes.putInt("shoesSize", 42); 
+attributes.putParcelable("birthday", new Datetime());
+attributes.putBoolean("married", true);
+attributes.putStringArray("favorite_movies", new String[]{"m_01", "m_02", "m_03", "m_04"});
+AdpPushClient.get().setUserAttributes(attributes);
+```
+#####افزودن به مقادیر آرایه‌ای در داده‌های سفارشی کاربر
+برای اضافه کردن مقادیر آرایه‌ای در داده‌های سفارشی کاربران کافیست متد نوشته شده زیر را فراخوانی نمایید:
+```java
+AdpPushClient.get().addToUserAttributeArray("favorite_movies", "m_05");
+```
+برای حذف اطلاعات کاربران(attribute)، متد زیر را فراخوانی کنید.
+#####حذف داده‌های سفارشی کاربر
+```java
+AdpPushClient.get().unsetUserAttribute("shoesSize");
+```
+همچنین متد زیر **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
+#####حذف از مقادیر آرایه‌ای در داده‌های سفارشی کاربر
+```java
+AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "m_02");
+```
+#####دریافت داده‌های سفارشی کاربر
+برای دریافت اطلاعات کاربران(attribute)، متد زیر را فراخوانی کنید.
+```java
+HashMap<String, Object> attributes = AdpPushClient.get().getUserAttributes();
+String firstName = (String) attributes.get("firstName");
+String lastName = (String) attributes.get("lastName");
+ArrayList<String> children = (ArrayList<String>) attributes.get("favorite_movies");
+```
 <br>
 
 #### دریافت اطلاعات کاربر
