@@ -94,7 +94,7 @@ userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movie
 AdpPushClient.get().setUserAttributes(attributes);
 ```
 
->‍‍`نکته:`برای نشان‌ دادن تاریخ و زمان کاربر به کمک کلاس`Datetime` باید از نسخه **۳.۱.۰ به بالا** چابک استفاده کنید.
+>‍‍`نکته: `برای نشان‌ دادن تاریخ و زمان کاربر به کمک کلاس `Datetime`، باید از نسخه **۳.۱.۰ به بالا** چابک استفاده کنید.
 
 ```java
 userAttribute.putParcelable("birthday", new Datetime());
@@ -110,9 +110,15 @@ userAttribute.putParcelable("birthday", new Datetime());
 AdpPushClient.get().addToUserAttributeArray("favorite_movies", "movies_05");
 ```
 
+به مثال زیر توجه کنید:
+
+```java
+AdpPushClient.get().addToUserAttributeArray("action_movie", "movies_02");
+```
+
 <h4>حذف از مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
 
-همچنین متد زیر **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
+هم‌چنین متد زیر **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
 
 ```java
 AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "movies_02");
