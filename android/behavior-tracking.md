@@ -58,7 +58,7 @@ AdpPushClient.get().track("add-to-card", data);
 
 <h3>ارسال مقادیر آرایه‌ای و تاریخ</h3>
 
-شما می‌توانید رفتارهای هر کاربر را به کمک متد زیر در نسخه **اندروید ۳.۱.۰ به بالاتر** فراخوانی کنید.
+شما می‌توانید رفتارهای هر کاربر را به کمک متد زیر، در نسخه **۳.۱.۰ یا بالاتر کتابخانه چابک** فراخوانی کنید.
 
 ```java
 Bundle data = new Bundle();
@@ -67,10 +67,10 @@ data.putParcelable("birthday", new Datetime());
 data.putStringArray("postTags", new String[]{"iran", "karaj"});
 data.putString("firstName", "محمدرضا");
 data.putString("lastName", "اخوان");
-data.put("married", false);
+data.putBoolean("married", false);
 AdpPushClient.get().track("customEvent");
 ```
-در صورتی که از نسخه‌های پایین‌تر استفاده می‌کنید کافیست متد زیر را به کار ببرید.
+در صورتی که از نسخه‌های پایین‌تر استفاده می‌کنید، باید متد زیر را به کار ببرید.
 
 ```java
 JSONObject data = new JSONObject();
