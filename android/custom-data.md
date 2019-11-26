@@ -7,7 +7,7 @@ prev: deeplink.html
 next: behavior-tracking.html
 ---
 
- در این صفحه می‌توانید برای کاربرانتان **اطلاعات، ویژگی‌ها (attributes) و تگ** اضافه کنید. ثبت اطلاعات هر کاربر به تعامل شما با او کمک می‌کند طوری که می‌توانید **پیام‌های شخصی‌سازی شده** برایشان ارسال کنید.
+در این صفحه می‌توانید برای کاربرانتان **اطلاعات، ویژگی‌ها (attributes) و تگ** اضافه کنید. ثبت اطلاعات هر کاربر به تعامل شما با او کمک می‌کند طوری که می‌توانید **پیام‌های شخصی‌سازی شده** برایشان ارسال کنید.
 
 <Br><Br>
 
@@ -24,13 +24,12 @@ next: behavior-tracking.html
 با فراخوانی متد زیر می‌توانید اطلاعات و سوابق کاربر را جمع‌آوری و ذخیره کنید:
 
 ```java
-HashMap<String, Object> userInfo = new HashMap<>();
+HashMap<String, Object> userAttribute = new HashMap<>();
 
 userAttribute.put("firstName", "محمدرضا");
 userAttribute.put("lastName", "اخوان");
 userAttribute.put("age", 25);
 userAttribute.put("gender", "مرد");
-
 
 AdpPushClient.get().setUserAttributes(userAttribute);
 ```
@@ -45,18 +44,18 @@ AdpPushClient.get().setUserAttributes(userAttribute);
 
 <br>
 
->`نکته:` در صورتی که از نسخه ۲.۱۶.۰ یا پایین‌‌تر چابک استفاده می‌کنید، باید متد زیر را به کار ببرید.
+>`نکته:` در صورتی که از نسخه ۲.۱۶.۰ یا پایین‌‌تر کتابخانه چابک استفاده می‌کنید، باید متد زیر را به کار ببرید.
 
 ```java
-HashMap<String, Object> userInfo = new HashMap<>();
+HashMap<String, Object> userAttribute = new HashMap<>();
 
-userInfo.put("firstName", "محمدرضا");
-userInfo.put("lastName", "اخوان");
-userInfo.put("age", 25);
-userInfo.putBoolean("married", true);
-userInfo.put("gender", "مرد");
+userAttribute.put("firstName", "محمدرضا");
+userAttribute.put("lastName", "اخوان");
+userAttribute.put("age", 25);
+userAttribute.put("married", true);
+userAttribute.put("gender", "مرد");
 
-AdpPushClient.get().setUserInfo(userInfo);
+AdpPushClient.get().setUserAttribute(userAttribute);
 ```
 
 > `نکته` : دقت داشته باشید  **type** مقداری که به `value` در متد `setUserAttributes` داده‌اید، را نمی‌توانید تغییر دهید . به این معنی که اگر `boolean` ذخیره کرده‌اید، دیگر **نمی‌توانید** عدد یا `string` دهید یا برعکس. به مثال زیر توجه کنید. 
@@ -65,7 +64,7 @@ AdpPushClient.get().setUserInfo(userInfo);
 
 
 ```java
-HashMap<String, Object> userInfo = new HashMap<>();
+HashMap<String, Object> userAttribute = new HashMap<>();
 
 userAttribute.put("age", "نوزده");
 
@@ -75,7 +74,7 @@ AdpPushClient.get().setUserAttributes(userAttribute);
 دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
 
 ```java
-HashMap<String, Object> userInfo = new HashMap<>();
+HashMap<String, Object> userAttribute = new HashMap<>();
 
 userAttribute.put("age", 19);
 
@@ -83,47 +82,47 @@ AdpPushClient.get().setUserAttributes(userAttribute);
 ```
 <h4>ارسال داده‌های سفارشی کاربران</h4>
 
-در صورتی که از **نسخه ۳.۱.۰ اندروید** یا بالاتر چابک استفاده می‌کنید، باید برای ارسال اطلاعات کاربران متد زیر را فراخوانی کنید.
+در صورتی که از **نسخه ۳.۱.۰  یا بالاتر کتابخانه چابک** استفاده می‌کنید، باید برای ارسال اطلاعات کاربران متد زیر را فراخوانی کنید.
 
 ```java
-Bundle userInfo = new Bundle();
-attribute.putString("firstName", "حمیدرضا");
-attribute.putString("lastName", "اخوان");
-attribute.putInt("age", 25);
-attribute.putString("gender", "Male");
-attribute.putBoolean("married", true);
-attribute.putParcelable("birthday", new Datetime());
-attribute.putStringArray("children", new String[]{"مینا", "سارا"});
+Bundle userAttribute = new Bundle();
+userAttribute.putString("firstName", "حمیدرضا");
+userAttribute.putString("lastName", "اخوان");
+userAttribute.putInt("age", 25);
+userAttribute.putString("gender", "Male");
+userAttribute.putBoolean("married", true);
+userAttribute.putParcelable("birthday", new Datetime());
+userAttribute.putStringArray("children", new String[]{"مینا", "سارا"});
 userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movies_02", "movies_03", "movies_04"});
-AdpPushClient.get().setUserAttributes(attribute);
+AdpPushClient.get().setuserAttribute(userAttribute);
 ```
 
->`نکته:` در صورتی که از نسخه‌های ۳.۱.۰ اندروید یا پایین‌تر استفاده می‌کنید، باید متد زیر را به کار ببرید.
+>`نکته:` در صورتی که از نسخه ۳.۱.۰ یا بالاتر کتابخانه چابک استفاده می‌کنید، باید متد زیر را به کار ببرید.
 
 ```java
-HashMap<String, Object> userInfo = new HashMap<>();
-userInfo.put("firstName", "حمیدرضا");
-userInfo.put("lastName", "اخوان");
-userInfo.put("age", 25);
-userInfo.putBoolean("married", true);
-AdpPushClient.get().setuserInfo(attribute);
+HashMap<String, Object> userAttribute = new HashMap<>();
+userAttribute.put("firstName", "حمیدرضا");
+userAttribute.put("lastName", "اخوان");
+userAttribute.put("age", 25);
+userAttribute.put("married", true);
+AdpPushClient.get().setuserAttribute(userAttribute);
 ```
 
 <h4>ارسال مقادیر آرایه‌ای و تاریخ در داده‌های سفارشی کاربر</h4>
 
-در صورت استفاده از نسخه **۳.۱.۰ اندروید** به بالا چابک، باید متد زیر را فراخوانی کنید.
+در صورت استفاده از **نسخه ۳.۱.۰ یا بالاتر کتابخانه چابک**، باید متد زیر را فراخوانی کنید.
 
 ```java
-Bundle userInfo = new Bundle();
+Bundle userAttribute = new Bundle();
 userAttribute.putParcelable("birthday", new Datetime());
 userAttribute.putBoolean("married", true);
-userAttribute.put("age", 25);
+userAttribute.putInt("age", 25);
 userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movies_02", "movies_03", "movies_04"});
-AdpPushClient.get().setUserAttributes(attributes);
+AdpPushClient.get().setUserAttribute(userAttribute);
 ```
 
 >`نکته:`
-از کلاس`Datetime` و `putStringArray‍ `تنها در نسخه **۳.۱.۰ به بالا** چابک باید استفاده کنید.
+از کلاس`Datetime` و `putStringArray‍ `تنها در نسخه **۳.۱.۰ یا بالاتر کتابخانه چابک** استفاده می‌شود.
 
 <h4>افزودن به مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
 
@@ -149,7 +148,7 @@ AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "movies_02")
 
 <h4> حذف داده‌های سفارشی کاربران</h4>
 
-برای حذف اطلاعات کاربران(attribute)، متد زیر را فراخوانی کنید.
+برای حذف اطلاعات کاربران (attribute)، متد زیر را فراخوانی کنید.
 
 ```java
 AdpPushClient.get().unsetUserAttribute("firstName");
@@ -184,28 +183,26 @@ AdpPushClient.get().incrementUserAttribute("visit_comedy_shows", 5);
  همچنین این متد از **آرایه‌ای** از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. به نمونه زیر دقت کنید: 
 
 ```java
-ArrayList<String> attributes = new ArrayList<>();
+ArrayList<String> userAttribute = new ArrayList<>();
 
-attributes.add("comedy_movie");
-attributes.add("action_movie");
-attributes.add("view_movie_detail");
+userAttribute.add("comedy_movie");
+userAttribute.add("action_movie");
+userAttribute.add("view_movie_detail");
 
-AdpPushClient.get()
-                .incrementUserAttribute(attributes);
+AdpPushClient.get().incrementUserAttribute(userAttribute);
 ```
 کد بالا به هر کدام از attributeها **یک عدد** اضافه می‌کند.
 
 برای اضافه کردن **تعداد دلخواه** می‌توانید از کد زیر استفاده کنید:
 
 ```java
-HashMap<String, Double> attributes = new HashMap<>();
+HashMap<String, Double> userAttribute = new HashMap<>();
                 
-attributes.put("comedy_movie", 5d);
-attributes.put("action_movie", 2d);
-attributes.put("view_movie_detail", 1d);
+userAttribute.put("comedy_movie", 5d);
+userAttribute.put("action_movie", 2d);
+userAttribute.put("view_movie_detail", 1d);
                 
-AdpPushClient.get()
-                .incrementUserAttribute(attributes);
+AdpPushClient.get().incrementUserAttribute(userAttribute);
 ```
 
 <br><br>
