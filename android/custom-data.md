@@ -31,6 +31,7 @@ userAttribute.put("lastName", "اخوان");
 userAttribute.put("age", 35);
 userAttribute.put("gender", "مرد");
 
+
 AdpPushClient.get().setUserAttributes(userAttribute);
 ```
 
@@ -52,6 +53,7 @@ HashMap<String, Object> userInfo = new HashMap<>();
 userInfo.put("firstName", "محمدرضا");
 userInfo.put("lastName", "اخوان");
 userInfo.put("age", 35);
+userInfo.putBoolean("married", true);
 userInfo.put("gender", "مرد");
 
 AdpPushClient.get().setUserInfo(userInfo);
@@ -79,32 +81,24 @@ userAttribute.put("age", 19);
 
 AdpPushClient.get().setUserAttributes(userAttribute);
 ```
-<h3> ایجاد و حذف اطلاعات کاربران</h3>
 
-با فراخوانی قطعه کدهای زیر می‌توانید اطلاعات و داده‌های جدیدی را جمع‌آوری کنید و به لیست کاربران اضافه و یا حذف نمایید.
+>`نکته:` در صورتی که از نسخه ۳.۱.۰ یا بالاتر چابک استفاده می‌کنید، می‌توانید از متدهای زیر استفاده کنید.
 
 <h4>ارسال مقادیر آرایه‌ای و تاریخ در داده‌های سفارشی کاربر</h4>
 
 ```java
-Bundle attributes = new Bundle();
-attributes.putString("firstName", "John");
-attributes.putString("lastName", "Smith");
-attributes.putInt("age", 85);
-attributes.putString("gender", "Male");
-attributes.putInt("shoesSize", 42); 
-attributes.putParcelable("birthday", new Datetime());
-attributes.putBoolean("married", true);
-attributes.putStringArray("favorite_movies", new String[]{"m_01", "m_02", "m_03", "m_04"});
+Bundle userInfo = new Bundle();
+userAttribute.putParcelable("birthday", new Datetime());
+userAttribute.putBoolean("married", true);
+userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movies_02", "movies_03", "movies_04"});
 AdpPushClient.get().setUserAttributes(attributes);
 ```
->`نکته` در متد بالا بر اساس type، نوع داده نیز تغییر پیدا می‌کند.
 
-به عنوان مثال نوع داده سن بر روی int قرار دارد، پس اگر متد سن را به شکل زیر بنویسید، دیگر **کار نمی‌کند**
+>‍‍`نکته:`برای نشان‌ دادن تاریخ و زمان کاربر به کمک کلاس`Datetime` باید از نسخه **۳.۱.۰ به بالا** چابک استفاده کنید.
 
 ```java
-attributes.putInt("age", "هشتاد و پنج ");
+userAttribute.putParcelable("birthday", new Datetime());
 ```
-
 
 <br>
 
@@ -113,40 +107,38 @@ attributes.putInt("age", "هشتاد و پنج ");
 برای اضافه کردن اطلاعات آرایه‌ای در داده‌های سفارشی کاربران کافیست متد زیر را فراخوانی نمایید:
 
 ```java
-AdpPushClient.get().addToUserAttributeArray("favorite_movies", "m_05");
+AdpPushClient.get().addToUserAttributeArray("favorite_movies", "movies_05");
 ```
-برای حذف اطلاعات کاربران(attribute)، متد زیر را فراخوانی کنید.
+
+<h4>حذف از مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
+
+همچنین متد زیر **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
+
+```java
+AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "movies_02");
+```
 
 <h4> حذف داده‌های سفارشی کاربران</h4>
+
+برای حذف اطلاعات کاربران(attribute)، متد زیر را فراخوانی کنید.
 
 ```java
 AdpPushClient.get().unsetUserAttribute("shoesSize");
 ```
-همچنین متد زیر **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
 
-<h4>حذف از مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
-
-```java
-AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "m_02");
-```
-<h4>دریافت داده‌های سفارشی کاربر</h4>
-
-برای دریافت اطلاعات کاربران(attribute)، متد زیر را فراخوانی کنید.
-
-```java
-HashMap<String, Object> attributes = AdpPushClient.get().getUserAttributes();
-String firstName = (String) attributes.get("firstName");
-String lastName = (String) attributes.get("lastName");
-ArrayList<String> children = (ArrayList<String>) attributes.get("favorite_movies");
-```
 <br>
 
 #### دریافت اطلاعات کاربر
 
-برای دریافت اطلاعات کاربر متد زیر را فراخوانی کنید:
+برای دریافت اطلاعات کاربر، متد زیر را فراخوانی کنید:
 
 ```java
 AdpPushClient.get().getUserAttributes(userAttribute);
+HashMap<String, Object> attributes = AdpPushClient.get().getUserAttributes();
+String firstName = (String) attributes.get("firstName");
+
+String lastName = (String) attributes.get("lastName");
+ArrayList<String> children = (ArrayList<String>) attributes.get("favorite_movies");
 ```
 
 <br>
