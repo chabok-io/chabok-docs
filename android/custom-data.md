@@ -103,21 +103,25 @@ AdpPushClient.get().setUserAttributes(attributes);
 
 ####افزودن به مقادیر آرایه‌ای در داده‌های سفارشی کاربر
 برای اضافه کردن اطلاعات آرایه‌ای در داده‌های سفارشی کاربران کافیست متد نوشته شده زیر را فراخوانی نمایید:
+
 ```java
 AdpPushClient.get().addToUserAttributeArray("favorite_movies", "m_05");
 ```
 برای حذف اطلاعات کاربران(attribute)، متد زیر را فراخوانی کنید.
 ####حذف داده‌های سفارشی کاربر
+
 ```java
 AdpPushClient.get().unsetUserAttribute("shoesSize");
 ```
 همچنین متد زیر **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
+
 ####حذف از مقادیر آرایه‌ای در داده‌های سفارشی کاربر
 ```java
 AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "m_02");
 ```
 ####دریافت داده‌های سفارشی کاربر
 برای دریافت اطلاعات کاربران(attribute)، متد زیر را فراخوانی کنید.
+
 ```java
 HashMap<String, Object> attributes = AdpPushClient.get().getUserAttributes();
 String firstName = (String) attributes.get("firstName");
