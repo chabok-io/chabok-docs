@@ -83,7 +83,7 @@ AdpPushClient.get().setUserAttributes(userAttribute);
 ```
 <h4>ارسال داده‌های سفارشی کاربران</h4>
 
->`نکته:`در صورتی که از نسخه ۳.۱.۰ اندروید یا بالاتر چابک استفاده می‌کنید باید متد زیر را فراخوانی کنید.
+>`نکته:`در صورتی که از نسخه ۳.۱.۰ اندروید یا بالاتر چابک استفاده می‌کنید باید برای ارسال اطلاعات کاربران، متد زیر را فراخوانی کنید.
 
 ```java
 Bundle userInfo = new Bundle();
@@ -138,7 +138,7 @@ AdpPushClient.get().addToUserAttributeArray("action_movie", "movies_02");
 
 <h4>حذف از مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
 
-هم‌چنین متد زیر، **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
+متد زیر **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
 
 ```java
 AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "movies_02");
