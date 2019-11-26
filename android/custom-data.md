@@ -97,8 +97,7 @@ attribute.putStringArray("children", new String[]{"مینا", "سارا"});
 userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movies_02", "movies_03", "movies_04"});
 AdpPushClient.get().setUserAttributes(attribute);
 ```
->`نکته:`
-اما در صورتی که از نسخه‌های ۳.۱.۰ اندروید یا پایین‌تر استفاده می‌کنید، باید متد زیر را به کار ببرید.
+>`نکته:`اما در صورتی که از نسخه‌های ۳.۱.۰ اندروید یا پایین‌تر استفاده می‌کنید، باید متد زیر را به کار ببرید.
 ```java
 HashMap<String, Object> userInfo = new HashMap<>();
 userInfo.put("firstName", "حمیدرضا");
