@@ -82,7 +82,7 @@ userAttribute.put("age", 19);
 AdpPushClient.get().setUserAttributes(userAttribute);
 ```
 
->`نکته:` در صورتی که از نسخه ۳.۱.۰ یا بالاتر چابک استفاده می‌کنید، می‌توانید از متدهای زیر استفاده کنید.
+>`نکته:` در صورتی که از نسخه ۳.۱.۰ یا بالاتر چابک استفاده می‌کنید، می‌توانید از `Bundle‍` استفاده کنید.
 
 <h4>ارسال مقادیر آرایه‌ای و تاریخ در داده‌های سفارشی کاربر</h4>
 
@@ -94,7 +94,7 @@ userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movie
 AdpPushClient.get().setUserAttributes(attributes);
 ```
 
->‍‍`نکته: `برای نشان‌ دادن تاریخ و زمان کاربر به کمک کلاس `Datetime`، باید از نسخه **۳.۱.۰ به بالا** چابک استفاده کنید.
+>‍‍`نکته: `برای نشان‌ دادن تاریخ و زمان کاربر به کمک کلاس `Datetime` و استفاده از `putStringArray‍`، باید از نسخه **۳.۱.۰ به بالا** چابک استفاده کنید.
 
 ```java
 userAttribute.putParcelable("birthday", new Datetime());
@@ -142,7 +142,8 @@ AdpPushClient.get().unsetUserAttribute("shoesSize");
 AdpPushClient.get().getUserAttributes(userAttribute);
 HashMap<String, Object> attributes = AdpPushClient.get().getUserAttributes();
 String firstName = (String) attributes.get("firstName");
-
+Boolean married = (Boolean) attributes.get("married");
+String gender = (String) attributes.get("gender");
 String lastName = (String) attributes.get("lastName");
 ArrayList<String> children = (ArrayList<String>) attributes.get("favorite_movies");
 ```
