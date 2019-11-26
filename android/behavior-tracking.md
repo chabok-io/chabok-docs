@@ -56,6 +56,19 @@ data.put("status", 35000);
 AdpPushClient.get().track("add-to-card", data);
 ```
 
+<h3>ارسال مقادیر آرایه‌ای و تاریخ</h3>
+
+```java
+Bundle data = new Bundle();
+data.put("postId", 8569);
+data.put("likeDate", new Datetime());
+data.put("seen", false);
+data.putStringArray("postTags", new String[]{"iran", "tehran"});
+AdpPushClient.get().track("likeEvent");
+```
+
+دقت داشته باشید که در متد بالا مقدار `seen` بر روی `boolean` قرار دارد پس مقدار آن با `int` دیگر **کار نمی‌کند**.
+
 <Br>
 
 ### رصد درآمد (Tracking Revenue)
