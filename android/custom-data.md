@@ -83,7 +83,7 @@ AdpPushClient.get().setUserAttributes(userAttribute);
 ```
 <h4>ارسال داده‌های سفارشی کاربران</h4>
 
-در صورتی که از نسخه ۳.۱.۰ اندروید یا بالاتر از آن استفاده می‌کنید باید متد زیر را فراخوانی کنید.
+>`نکته:`در صورتی که از نسخه ۳.۱.۰ اندروید یا بالاتر چابک استفاده می‌کنید باید متد زیر را فراخوانی کنید.
 ```java
 Bundle userInfo = new Bundle();
 attribute.putString("firstName", "محمدرضا");
@@ -95,9 +95,8 @@ attribute.putParcelable("birthday", new Datetime());
 userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movies_02", "movies_03", "movies_04"});
 AdpPushClient.get().setUserAttributes(attribute);
 ```
-
-در غیر این صورت متد زیر را فراخوانی نمایید.
-
+>`نکته:`
+اما در صورتی که از نسخه‌های ۳.۱.۰ اندروید یا پایین‌تر استفاده می‌کنید، باید متد زیر را به کار ببرید.
 ```java
 HashMap<String, Object> userInfo = new HashMap<>();
 userInfo.put("firstName", "محمدرضا");
