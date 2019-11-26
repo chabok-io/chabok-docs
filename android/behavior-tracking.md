@@ -70,7 +70,7 @@ data.putString("lastName", "اخوان");
 data.put("married", false);
 AdpPushClient.get().track("customEvent");
 ```
-در غیر این صورت:
+در صورتی که از نسخه‌های پایین‌تر استفاده می‌کنید کافیست متد زیر را به کار ببرید.
 
 ```java
 JSONObject data = new JSONObject();
