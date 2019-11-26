@@ -121,7 +121,7 @@ AdpPushClient.get().setUserAttributes(attributes);
 ```
 
 >`نکته:`
-از کلاس`Datetime` و `putStringArray‍ `تنها در نسخه **۳.۱.۰ به بالا** چابک استفاده می‌شود.
+از کلاس`Datetime` و `putStringArray‍ `تنها در نسخه **۳.۱.۰ به بالا** چابک باید استفاده کنید.
 
 <h4>افزودن به مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
 
