@@ -130,7 +130,7 @@ AdpPushClient.get().setUserAttributes(attributes);
 ```java
 AdpPushClient.get().addToUserAttributeArray("favorite_movies", "movies_05");
 ```
-کاربران وقتی به محصولی علاقه نشان می‌دهند آن را به لیست علاقه‌مندی خود اضافه می‌کند در آن زمان، برای اضافه کردن باید شبه کد زیر را به متد اصلی اضافه ‌کنید. 
+کاربران وقتی به محصولی علاقه نشان می‌دهند آن را به لیست علاقه‌مندی خود اضافه می‌کند در آن زمان، برای اضافه کردن محصول باید شبه کد زیر را به متد اصلی اضافه ‌کنید.
 
 ```java
 AdpPushClient.get().addToUserAttributeArray("action_movie", "movies_02");
@@ -143,7 +143,7 @@ AdpPushClient.get().addToUserAttributeArray("action_movie", "movies_02");
 ```java
 AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "movies_02");
 ```
-اگر بخواهید محصولی را از لیست علاقه‌مندی کاربران حذف کنید باید از قطعه کد بالا استفاده نمایید.
+قطعه کد بالا برای حذف کردن محصول از لیست علاقه‌مندی کاربران است.
 
 <h4> حذف داده‌های سفارشی کاربران</h4>
 
