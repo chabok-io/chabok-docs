@@ -65,7 +65,7 @@ Bundle data = new Bundle();
 data.putStringArray("ProductSelection", new String[]{"Shirt", "Pants"});
 data.putString("firstName", "محمدرضا");
 data.putString("lastName", "اخوان");
-data.putBoolean("yellow-shirt", false);
+data.putBoolean("scarf", false);
 data.putInt("value", 35000);
 AdpPushClient.get().track("add-to-card");
 ```
@@ -77,11 +77,12 @@ try {
     data.put("firstName", "محمدرضا");
     data.put("lastName", "اخوان");
     data.put("value", 35000);
+    data.put("scarf", false);
     data.put("ProductSelection", new JSONArray().put("Shirt").put("Pants"));
     } catch (JSONException e) {
     e.printStackTrace();
     }
-AdpPushClient.get().track("customEvent", data);
+AdpPushClient.get().track("add-to-card", data);
 
 ```
 
