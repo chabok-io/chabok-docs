@@ -89,7 +89,6 @@ Bundle userAttribute = new Bundle();
 userAttribute.putString("firstName", "حمیدرضا");
 userAttribute.putString("lastName", "اخوان");
 userAttribute.putInt("age", 25);
-userAttribute.putString("gender", "Male");
 userAttribute.putBoolean("married", true);
 userAttribute.putParcelable("birthday", new Datetime());
 userAttribute.putStringArray("children", new String[]{"مینا", "سارا"});
