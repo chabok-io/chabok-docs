@@ -76,10 +76,10 @@ dependencies {
 dependencies {
    implementation 'com.adpdigital.push:chabok-lib-geo:3.0.0'
 
-    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
-    implementation 'com.google.firebase:firebase-messaging:17.1.0'
-    implementation'com.google.android.gms:play-services-location:10.2.6'
-    implementation 'com.android.installreferrer:installreferrer:1.0'
+   implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
+   implementation 'com.google.firebase:firebase-messaging:17.1.0'
+   implementation 'com.google.android.gms:play-services-location:10.2.6'
+   implementation 'com.android.installreferrer:installreferrer:1.0'
 }
 ```    
 #### نکات ضروری نصب کتابخانه   
@@ -205,7 +205,11 @@ public class MyAppClass extends Application {
 این شناسه می‌تواند برای **دستگاه‌های متعدد یک کاربر** استفاده شود. شناسه کاربر می‌تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. **شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی **شناسه دیتابیس‌تان** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود.      
  
 #### ورود به حساب کاربری (login)
-متد `login` تنها یک بار در اپلیکیشن صدا زده می‌شود و لزومی ندارد با هر بار ورود یا ثبت‌نام کاربر در اپلیکیشن، متد را نیز فراخوانی کنید.
+
+تنها یک بار در اپلیکیشن متد `login` صدا زده می‌شود، آن هم زمانیست که کاربران برای اولین بار وارد اپلیکیشن شدن و یا در آن ثبت‌نام کردند، در غیر این دو صورت لزومی ندارد، آن را فراخوانی کنید.
+
+
+متد `login` تنها یک بار و در یکی از دو حالت زیر صدا زده می‌شود و لزومی ندارد با هر بار ورود یا ثبت‌نام کاربر در اپلیکیشن، متد را نیز فراخوانی کنید.
 1. کاربرانی که برای بار اول اپلیکیشن را نصب و در آن ثبت‌نام کردند.
 2. کاربرانی که برای اولین بار وارد اپلیکیشن شدند.
 
