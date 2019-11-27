@@ -62,13 +62,12 @@ AdpPushClient.get().track("add-to-card", data);
 
 ```java
 Bundle data = new Bundle();
-data.putInt("age", 25);
-data.putParcelable("birthday", new Datetime());
-data.putStringArray("postTags", new String[]{"iran", "karaj"});
+data.putStringArray("ProductSelection", new String[]{"Shirt", "Pants"});
 data.putString("firstName", "محمدرضا");
 data.putString("lastName", "اخوان");
-data.putBoolean("married", false);
-AdpPushClient.get().track("customEvent");
+data.putBoolean("yellow-shirt", false);
+data.putInt("value", 35000);
+AdpPushClient.get().track("add-to-card");
 ```
 در صورتی که از نسخه‌های پایین‌تر کتابخانه چابک استفاده می‌کنید، باید متد زیر را به کار ببرید.
 
@@ -78,8 +77,7 @@ try {
     data.put("firstName", "محمدرضا");
     data.put("lastName", "اخوان");
     data.put("value", 35000);
-    data.put("age", 25);
-    data.put("children", new JSONArray().put("سارا").put("مینا"));
+    data.put("ProductSelection", new JSONArray().put("Shirt").put("Pants"));
     } catch (JSONException e) {
     e.printStackTrace();
     }
