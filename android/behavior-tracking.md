@@ -77,6 +77,7 @@ JSONObject data = new JSONObject();
 try {
     data.put("firstName", "محمدرضا");
     data.put("lastName", "اخوان");
+    data.put("value", 35000);
     data.put("age", 25);
     data.put("children", new JSONArray().put("سارا").put("مینا"));
     } catch (JSONException e) {
