@@ -70,23 +70,18 @@ data.putString("lastName", "اخوان");
 data.putBoolean("married", false);
 AdpPushClient.get().track("customEvent");
 ```
-در صورتی که از نسخه‌های پایین‌تر استفاده می‌کنید، باید متد زیر را به کار ببرید.
+در صورتی که از نسخه‌های پایین‌تر کتابخانه چابک استفاده می‌کنید، باید متد زیر را به کار ببرید.
 
 ```java
 JSONObject data = new JSONObject();
 try {
-    data.put("firstName", "Chabok");
-    data.put("lastName", "Platform");
-    data.put("age", 85);
-    data.put("gender", "Male");
-    data.put("shoesSize", 69);
-    data.put("birthday", new Datetime());
-    data.put("middleFinger", true);
-    data.put("children", new JSONArray().put("Joe").put("John"));
-    data.put("families", new JSONArray().put("mommy").put("daddy"));
-} catch (JSONException e) {
+    data.put("firstName", "محمدرضا");
+    data.put("lastName", "اخوان");
+    data.put("age", 25);
+    data.put("children", new JSONArray().put("سارا").put("مینا"));
+    } catch (JSONException e) {
     e.printStackTrace();
-}
+    }
 AdpPushClient.get().track("customEvent", data);
 
 ```
