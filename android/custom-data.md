@@ -146,7 +146,7 @@ AdpPushClient.get().addToUserAttributeArray("action_movie", "movies_02");
 ```java
 AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "movies_02");
 ```
-قطعه کد بالا برای حذف کردن محصول از لیست علاقه‌مندی کاربران است.
+طبق مثال بالا برای حذف کردن محصول از لیست علاقه‌مندی کاربران باید از قطعه کد بالا استفاده نمایید.
 
 <br>
 
