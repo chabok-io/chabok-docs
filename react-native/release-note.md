@@ -10,7 +10,7 @@ prev: troubleshoot.html
 
 <Br>
 
-## [نسخه ۱.۵.۰ - ۱۳۹۸/۰۴/۲۹](https://github.com/chabokpush/chabok-client-rn-js/releases/tag/v1.5.0)
+## [نسخه ۱.۵.۰ - ۱۳۹۸/۰۴/۲۹](https://github.com/chabok-io/chabok-client-rn-js/releases/tag/v1.5.0)
 
 ### تغییرات
 
@@ -46,7 +46,7 @@ prev: troubleshoot.html
 
 - انتقال داده‌های سفارشی به data key در متدهای `publishEvent` و `track`
 
-## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۱/۲۷](https://github.com/chabokpush/chabok-client-rn-js/releases/tag/v1.4.0)
+## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۱/۲۷](https://github.com/chabok-io/chabok-client-rn-js/releases/tag/v1.4.0)
 
 ### تغییرات
 
@@ -60,7 +60,7 @@ prev: troubleshoot.html
 - افزودن متد `setDefaultTracker` برای [ترک کمپین‌های نصب (Pre-Install Campaigns)](/react-native/tracker.html#روش-آیدی-ترکر-pre-install-campaigns)
 - پشتیبانی از `INSTALL_REFERRER` intent برای [ترک استورهای غیر از گوگلی پلی](/android/tracker.html#استورهای-غیر-از-گوگل-پلی-third-party-app-stores)
 
-## [نسخه ۱.۳.۰ - ۱۳۹۷/۰۶/۱۷](https://github.com/chabokpush/chabok-client-rn-js/releases/tag/1.3.0)
+## [نسخه ۱.۳.۰ - ۱۳۹۷/۰۶/۱۷](https://github.com/chabok-io/chabok-client-rn-js/releases/tag/1.3.0)
 
 ### تغییرات
 - به روز رسانی به نسخه ۱.۰.۱ SDK جاوا‌ اسکریپت چابک

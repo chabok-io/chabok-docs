@@ -22,7 +22,7 @@ prev: troubleshoot.html
 
 -   بهبود رفتار متد  `track` و `trackPurchase`  (زمانی که پارامتر  **realtime**  در تنظیمات  **false**  است.)
 
-## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۴/۱۸](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.4.0)
+## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۴/۱۸](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.4.0)
 
 ### تغییرات
 
@@ -63,7 +63,7 @@ prev: troubleshoot.html
 - انتقال داده‌های سفارشی به data key در متدهای `publishEvent` و `track`
 
 
-## [نسخه ۱.۳.۰ - ۱۳۹۸/۰۳/۱۳](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.3.0)
+## [نسخه ۱.۳.۰ - ۱۳۹۸/۰۳/۱۳](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.3.0)
 
 ### تغییرات
 
@@ -89,7 +89,7 @@ const options = {
     };
 ```
 
-## [نسخه ۱.۲.۳ - ۱۳۹۸/۰۱/۲۱](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.2.3)
+## [نسخه ۱.۲.۳ - ۱۳۹۸/۰۱/۲۱](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.2.3)
 
 ### تغییرات
 
@@ -97,20 +97,20 @@ const options = {
 
 * بهبود مدیریت خطاها
 
-## [نسخه ۱.۲.۲ - ۱۳۹۷/۱۲/۱۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.2.2)
+## [نسخه ۱.۲.۲ - ۱۳۹۷/۱۲/۱۵](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.2.2)
 
 ### تغییرات
 
 * از این پس `userId` می‌تواند **۳ کاراکتر یا بیشتر** باشد
 
-## [نسخه ۱.۲.۱ - ۱۳۹۷/۱۱/۲۳](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.2.1)
+## [نسخه ۱.۲.۱ - ۱۳۹۷/۱۱/۲۳](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.2.1)
 
 ### تغییرات
 
 * افزودن متد `registerAsGuest` برای ثبت کاربر مهمان
 
 
-## [نسخه ۱.۲.۰ - ۱۳۹۷/۱۱/۱۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.2.0)
+## [نسخه ۱.۲.۰ - ۱۳۹۷/۱۱/۱۵](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.2.0)
 
 ### تغییرات
 
@@ -123,7 +123,7 @@ const options = {
 * حل مشکل متدهای `subscribe` ،`unsubscribe` و `publish` زمانی که کاربر ثبت نشده بود. 
 
 
-## [نسخه ۱.۱.۰ - ۱۳۹۷/۱۰/۰۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.1.0)
+## [نسخه ۱.۱.۰ - ۱۳۹۷/۱۰/۰۵](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.1.0)
 
 ### ارتقا 
 
@@ -153,20 +153,20 @@ const auth = {
 
 > `نکته ` : برای استفاده از شناسه `webKey` حتما باید **دامنه** وبسایت خود را در پنل بخش تنظیمات قسمت **دسترسی‌ و توکن‌ها** ثبت کرده‌ باشید. در صورتی هم که می‌خواهید روی سیستم محلی تست کنید کافیست فقط `localhost` (بدون پورت) را در بخش دامنه قرار دهید. 
 
-## [نسخه ۱.۰.۳ - ۱۳۹۷/۰۷/۲۸](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.0.3)
+## [نسخه ۱.۰.۳ - ۱۳۹۷/۰۷/۲۸](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.0.3)
 
 ### تغییرات 
 
 * ثبت **service worker** چابک فقط در روت پروژه به جای ثبت به صورت نسبی
 
-## [نسخه ۱.۰.۲ - ۱۳۹۷/۰۷/۲۳](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.0.2)
+## [نسخه ۱.۰.۲ - ۱۳۹۷/۰۷/۲۳](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.0.2)
 
 ### تغییرات 
 
 * افزودن متد‌ `getTags` 
 * افزودن قابلیت گروه‌بندی نوتیفیکشن‌ها با استفاده از کلید `groupId`
 
-## نسخه [۱.۰.۱ - ۱۳۹۷/۰۶/۱۳](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.0.1)
+## نسخه [۱.۰.۱ - ۱۳۹۷/۰۶/۱۳](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.0.1)
 
 ### تغییرات 
 
@@ -179,7 +179,7 @@ const auth = {
 
 * قابلیت **register مجدد کاربر** با متد `register` 
 
-## [نسخه ۱.۰.۰ - ۱۳۹۷/۰۶/۰۳](https://github.com/chabokpush/chabok-client-js/releases/tag/v1.0.0)
+## [نسخه ۱.۰.۰ - ۱۳۹۷/۰۶/۰۳](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.0.0)
 
 ### تغییرات 
 
@@ -204,24 +204,24 @@ if (chabok.isRegistered()) {
 }
 ```
 
-## [نسخه ۰.۴.۵](https://github.com/chabokpush/chabok-client-js/releases/tag/v0.4.5)
+## [نسخه ۰.۴.۵](https://github.com/chabok-io/chabok-client-js/releases/tag/v0.4.5)
 
 * بهبود عملکرد تنظیم آیکون **Notification**
 
-## [نسخه ۰.۴.۴](https://github.com/chabokpush/chabok-client-js/releases/tag/v0.4.4)
+## [نسخه ۰.۴.۴](https://github.com/chabok-io/chabok-client-js/releases/tag/v0.4.4)
 
 * افزودن قابلیت تنظیم title و آیکون **Notification**
 
-## [نسخه ۰.۴.۳](https://github.com/chabokpush/chabok-client-js/releases/tag/v0.4.3)
+## [نسخه ۰.۴.۳](https://github.com/chabok-io/chabok-client-js/releases/tag/v0.4.3)
 
 * رفع مشکل ارسال پیام توسط متد `publishEvent`
 
-## [نسخه ۰.۴.۲](https://github.com/chabokpush/chabok-client-js/releases/tag/v0.4.2)
+## [نسخه ۰.۴.۲](https://github.com/chabok-io/chabok-client-js/releases/tag/v0.4.2)
 
 * رفع مشکل عضویت بر روی کانال‌های عمومی توسط متد `subscribe`
 * بهبود عملکرد ارسال پیام به وسیله متد `publish`
 
-## [نسخه ۰.۴.۱](https://github.com/chabokpush/chabok-client-js/releases/tag/v0.4.1)
+## [نسخه ۰.۴.۱](https://github.com/chabok-io/chabok-client-js/releases/tag/v0.4.1)
 
 * حذف متد `enableEventDelivery`
 > در صورت استفاده از متد `enableEventDelivery` باید آن را با متد `subscribeEvent` جایگزین نمایید.
