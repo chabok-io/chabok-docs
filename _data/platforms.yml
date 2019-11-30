@@ -2,14 +2,14 @@
   image: android.svg
   document: /android/introducing.html
   demo: https://github.com/chabok-io/chabok-demo-android
-  starter: https://github.com/chabok-io/chabok-starter-android
+  starter:
   issue: https://github.com/chabok-io/chabok-client-android/issues
 
 - name: iOS
   image: apple.svg
   document: /ios/introducing.html
   demo: https://github.com/chabok-io/chabok-demo-ios
-  starter: https://github.com/chabok-io/chabok-starter-ios
+  starter:
   issue: https://github.com/chabok-io/chabok-client-ios/issues
 
 - name: Windows
@@ -24,12 +24,12 @@
   document: /react-native-bridge/introducing.html
   demo:
   issue: https://github.com/chabok-io/chabok-client-rn/issues
-  starter:
+  starter: https://github.com/chabok-io/chabok-starter-rn
 
 - name: JavaScript
   image: js.svg
   document: /javascript/introducing.html
-  demo: https://webpush.chabok.io/
+  demo:
   starter:
   issue: https://github.com/chabok-io/chabok-client-js/issues
 
@@ -50,7 +50,7 @@
 - name: REST API
   image: api.svg
   document: /rest-api/introducing.html
-  demo: http://api.doc.chabok.io
+  demo: http://apidoc.chabok.io
   starter:
   issue: https://github.com/chabok-io/chabok-php-demo/issues
 
@@ -63,7 +63,7 @@
 
 - name: PHP
   image: php.svg
-  document: http://api.doc.chabok.io
+  document: http://apidoc.chabok.io
   demo: https://github.com/chabok-io/chabok-php-demo
   issue: https://github.com/chabok-io/chabok-php-demo/issues
   starter:
