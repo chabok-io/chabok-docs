@@ -11,7 +11,7 @@ next: features.html
 
 ### فراخوانی وب سرویس به طور مستقیم
 
-ابتدا لازم است تا حساب چابک خود را ایجاد کرده باشید و اطلاعات مربوط به `api-key` را از حساب خود بخوانید. توضیحات مربوط به نحوه فراخوانی وب‌سرویس در [اینجا](https://apidoc.chabok.io/#/Verification) آمده است.
+ابتدا لازم است تا حساب چابک خود را ایجاد کرده باشید و اطلاعات مربوط به `api-key` را از حساب خود بخوانید. توضیحات مربوط به نحوه فراخوانی وب‌سرویس در [اینجا](https://api.doc.chabok.io/#/Verification) آمده است.
 
 
 ### مراحل اعتبارسنجی
@@ -24,10 +24,10 @@ next: features.html
 
 #### ارسال کد تایید
 
-  برای ارسال کد تایید کافیست تا `USER_ID` را به  [Verification Code Request](https://apidoc.chabok.io/#/Verification/Verification_requestVerificationCode) ارسال کنید. پس از آن چابک کد فعال سازی را برای کاربر ارسال می‌کند.
+  برای ارسال کد تایید کافیست تا `USER_ID` را به  [Verification Code Request](https://api.doc.chabok.io/#/Verification/Verification_requestVerificationCode) ارسال کنید. پس از آن چابک کد فعال سازی را برای کاربر ارسال می‌کند.
  
 #### اعتبارسنجی کد ارسالی 
 
- پس از ارسال کد تایید لازم است این کد برای چابک ارسال شود تا صحت آن بررسی گردد. جهت اعتبار سنجی می‌بایست کد تایید را به همراه `USER_ID` به [Verification VerifyCode Request](https://apidoc.chabok.io/#/Verification/Verification_verifyCode) ارسال کنید. 
+ پس از ارسال کد تایید لازم است این کد برای چابک ارسال شود تا صحت آن بررسی گردد. جهت اعتبار سنجی می‌بایست کد تایید را به همراه `USER_ID` به [Verification VerifyCode Request](https://api.doc.chabok.io/#/Verification/Verification_verifyCode) ارسال کنید. 
 
 >  `نکته`: مقدار `USER_ID`  دقیقا باید همان مقداری باشد که در مرحله قبل  برای درخواست کد استفاده شده است.
