@@ -18,7 +18,7 @@ next: chabok-messaging.html
 ### ۱. پیاده‌سازی (SDK Integration)
 ---
 
-برای ایجاد حساب کاربری کافیست در وبسایت چابک وارد صفحه [شروع کنید](https://chabokpush.com/register.html) شوید و حساب شخصی خود را بسازید. پس از ایجاد حساب و ثبت اپلیکیشن خود، با مراجعه به بخش [تنظیمات پنل](https://sandbox.push.adpdigital.com/front/setting/access) پارامترهای اتصال به چابک که در مرحله [مقداردهی](/react-native/tracker.html#ج--مقداردهی-initialize) مورد نیاز است، در دسترس خواهد بود.
+برای ایجاد حساب کاربری کافیست در وبسایت چابک وارد صفحه [شروع کنید](https://chabok.io/register.html) شوید و حساب شخصی خود را بسازید. پس از ایجاد حساب و ثبت اپلیکیشن خود، با مراجعه به بخش [تنظیمات پنل](https://sandbox.push.adpdigital.com/front/setting/access) پارامترهای اتصال به چابک که در مرحله [مقداردهی](/react-native/tracker.html#ج--مقداردهی-initialize) مورد نیاز است، در دسترس خواهد بود.
 
 
 #### ۱.۱. مراحل پیاده‌سازی 
@@ -258,7 +258,7 @@ this.chabok.track('add-to-card', data)
 حساب‌ رایگان:
 
 ```javascipt
-https://sand.chabokpush.com/JY@4sc
+https://sand.chabok.io/JY@4sc
 ```  
 حساب عملیاتی:
 
@@ -303,7 +303,7 @@ https://a.chabok.io/JY@4sc
 this.chabok.setDefaultTracker("YOUR_TRACKER_ID");
 ```
 
->`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
+>`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabok.io/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
 
 ![عکس مربوط](http://uupload.ir/files/bjbc_tracker-analytics-s.png)
 

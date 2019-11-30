@@ -14,7 +14,7 @@ Before you start, first you'll need a **Chabok account** and your notification *
 
 There are two kinds of accounts in Chabok. Our free account which is for **testing** and is based on sandbox environment. And our premium which is for launching your app and is based on production environment. Our sandbox account has a limited capacity for users and does not support more. Therefore if you want to release your app, we recommend on using our production account which has no limitations.
 
-For creating a Chabok account [go here](https://chabokpush.com/register.html).
+For creating a Chabok account [go here](https://chabok.io/register.html).
 
 > `Note:` After creating a new account, you will have your **SDK keys** in panel→settings→Access tokens. These keys are needed for [**initializing our library**](/android/chabok(en).html#23-initialize-library).
 

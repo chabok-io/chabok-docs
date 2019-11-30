@@ -210,8 +210,8 @@ AdpPushClient.get().track("abc123", data);
 
 <BR>
 
-برای اطلاعات بیشتر، بخش [بهینه‌سازی کمپین‌های نصب](/panel/usecase-optimize-pre-install-campaigns.html) را مطالعه کنید و اگر سوالی داشتید با ما [تماس](https://chabokpush.com/contact.html) بگیرید.
+برای اطلاعات بیشتر، بخش [بهینه‌سازی کمپین‌های نصب](/panel/usecase-optimize-pre-install-campaigns.html) را مطالعه کنید و اگر سوالی داشتید با ما [تماس](https://chabok.io/contact.html) بگیرید.
 
 <div align="center">   
-    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="https://chabokpush.com/register.html">ایجاد حساب رایگان و مهاجرت از ادجاست</a>
+    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="https://chabok.io/register.html">ایجاد حساب رایگان و مهاجرت از ادجاست</a>
 </div>
