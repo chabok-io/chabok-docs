@@ -32,7 +32,7 @@ permalink: guides/how-to-re-engage-dormant-users.html
 
 ۷ - در زمان ارسال، گزینه **خودکار** را انتخاب کنید. ابتدا رویداد فعال کننده پوش را تعیین کنید. (برای مثال: appLaunch)
 
-> ‍‍‍`نکته:` برای آشنایی بیشتر با تعیین و رصد رویدادها صفحه **رصد رفتار درون‌برنامه‌ای** را در مستندات ([اندروید](https://doc.chabokpush.com/android/event-tracking.html)، [آی‌اواس](https://doc.chabokpush.com/ios/event-tracking.html) و [وب](https://doc.chabokpush.com/javascript/event-tracking.html))  مطالعه نمایید.
+> ‍‍‍`نکته:` برای آشنایی بیشتر با تعیین و رصد رویدادها صفحه **رصد رفتار درون‌برنامه‌ای** را در مستندات ([اندروید](https://doc.chabok.io/android/event-tracking.html)، [آی‌اواس](https://doc.chabok.io/ios/event-tracking.html) و [وب](https://doc.chabok.io/javascript/event-tracking.html))  مطالعه نمایید.
 
 ۸- به طور دلخواه مدت غیر فعال بودن کاربر را مشخص کنید. در اینجا مطابق مثال بالا **۳ روز تاخیر** برای پوش بگذارید.
 

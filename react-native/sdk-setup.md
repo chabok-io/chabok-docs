@@ -191,7 +191,7 @@ this.chabok.getUserId().then(userId => {
 })
 ```
 
-پس از اتمام این مراحل شما می‌توانید با فراخوانی [این رویدادها](https://doc.chabokpush.com/react-native/features.html#اتصال-با-سرور) از اتصال دستگاه به چابک اطمینان یابید.
+پس از اتمام این مراحل شما می‌توانید با فراخوانی [این رویدادها](https://doc.chabok.io/react-native/features.html#اتصال-با-سرور) از اتصال دستگاه به چابک اطمینان یابید.
 
 <br>
 

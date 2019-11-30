@@ -38,8 +38,8 @@ pod update
 
 ### تغییرات
 
-- به روز رسانی کتابخانه اندروید به [نسخه ۲.۱۶.۰](https://doc.chabokpush.com/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B6%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B8%DB%B0%DB%B2%DB%B1%DB%B8)
-- به روز رسانی کتابخانه آی‌او‌اس به [نسخه ۱.۱۹.۰](https://doc.chabokpush.com/ios/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B1%DB%B1%DB%B9%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B8%DB%B0%DB%B2%DB%B1%DB%B8)
+- به روز رسانی کتابخانه اندروید به [نسخه ۲.۱۶.۰](https://doc.chabok.io/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B6%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B8%DB%B0%DB%B2%DB%B1%DB%B8)
+- به روز رسانی کتابخانه آی‌او‌اس به [نسخه ۱.۱۹.۰](https://doc.chabok.io/ios/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B1%DB%B1%DB%B9%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B8%DB%B0%DB%B2%DB%B1%DB%B8)
 - افزودن متد `setUserInfo` برای ارسال اطلاعات کاربر
 - افزودن متد `setDefaultTracker` برای [ترک کمپین‌های نصب](/react-native-bridge/tracker.html#روش-آیدی-ترکر-pre-install-campaigns)
 - افزودن متد `appWillOpenUrl` برای [ارسال اطلاعات اتریبیوشن دیپ لینک](/react-native-bridge/deeplink.html#دریافت-دیپ-لینک)
@@ -96,7 +96,7 @@ pod update
 
 - برای دریافت **advertisingId** باید **AdSupport.framework** را به `Linked Frameworks and Libraries` آن پروژه اضافه کنید
 - افزودن متد ‍‍‍‍‍`:notificationOpened` برای ارسال رویداد اکشن نوتیفیکیشن
-- افزودن متد `registerToUNUserNotificationCenter` برای دریافت اکشن نوتیفیکیشن با پیاده‌سازی کد زیر (برای نمایش نوتیفیکیشن چند رسانه‌‌ای) [این بخش](https://doc.chabokpush.com/ios/push-notification.html) از مستندات را مطالعه کنید):
+- افزودن متد `registerToUNUserNotificationCenter` برای دریافت اکشن نوتیفیکیشن با پیاده‌سازی کد زیر (برای نمایش نوتیفیکیشن چند رسانه‌‌ای) [این بخش](https://doc.chabok.io/ios/push-notification.html) از مستندات را مطالعه کنید):
 
 ```diff
 //Objective-C
@@ -167,15 +167,15 @@ initializeApp(options)
 ## [نسخه ۱.۱.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabokpush/chabok-client-rn/releases/tag/v1.1.0)
 
 ### تغییرات
-- به روز رسانی کتابخانه اندروید به نسخه [۲.۱۴.۰](https://doc.chabokpush.com/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B4%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B7%DB%B0%DB%B8%DB%B2%DB%B1)
-- به روز رسانی کتابخانه آی‌او‌اس به نسخه [۱.۱۸.۰](https://doc.chabokpush.com/ios/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B1%DB%B1%DB%B8%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B7%DB%B0%DB%B8%DB%B2%DB%B1)
+- به روز رسانی کتابخانه اندروید به نسخه [۲.۱۴.۰](https://doc.chabok.io/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B4%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B7%DB%B0%DB%B8%DB%B2%DB%B1)
+- به روز رسانی کتابخانه آی‌او‌اس به نسخه [۱.۱۸.۰](https://doc.chabok.io/ios/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B1%DB%B1%DB%B8%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B7%DB%B0%DB%B8%DB%B2%DB%B1)
 - حل مشکل رد کردن پرامیس در فراخوانی متدهای `getUserId` و `getInstallationId`
 
 
 ## [نسخه ۱.۰.۳ - ۱۳۹۷/۰۸/۱۹](https://github.com/chabokpush/chabok-client-rn/releases/tag/v1.0.3)
 
 ### تغییرات
-- به روز رسانی کتابخانه اندروید به نسخه [۲.۱۳.۳](https://doc.chabokpush.com/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B3%DB%B3---%DB%B1%DB%B3%DB%B9%DB%B7%DB%B0%DB%B8%DB%B1%DB%B9)
+- به روز رسانی کتابخانه اندروید به نسخه [۲.۱۳.۳](https://doc.chabok.io/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B3%DB%B3---%DB%B1%DB%B3%DB%B9%DB%B7%DB%B0%DB%B8%DB%B1%DB%B9)
 
 
 ## [نسخه ۱.۰.۲ - ۱۳۹۷/۰۸/۱۵](https://github.com/chabokpush/chabok-client-rn/releases/tag/v1.0.2)
