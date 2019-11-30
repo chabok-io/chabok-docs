@@ -6,7 +6,7 @@ permalink: android/tracker.html
 prev: sdk-setup.html
 next: chabok-messaging.html
 ---
-> `نکته` مستندات پیاده‌سازی زیر بر اساس نسخه‌های ۳ به بالا کتابخانه چابک نوشته شده است. در صورتی که از نسخه پایین‌تری استفاده می‌کنید به<a href="https://dev.doc.chabokpush.com/android/tracker-old.html" title="این یک لینک است"> این صفحه </a> مراجعه کنید.
+> `نکته` مستندات پیاده‌سازی زیر بر اساس نسخه‌های ۳ به بالا کتابخانه چابک نوشته شده است. در صورتی که از نسخه پایین‌تری استفاده می‌کنید به<a href="https://dev.doc.chabok.io/android/tracker-old.html" title="این یک لینک است"> این صفحه </a> مراجعه کنید.
 
 ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/android/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/android/tracker.html#۶-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
 
@@ -19,7 +19,7 @@ next: chabok-messaging.html
 ### ۱. پیاده‌سازی (SDK Integration)
 ---
 
-برای ایجاد حساب کاربری کافیست در وبسایت چابک وارد صفحه [شروع کنید](https://chabokpush.com/register.html) شوید و حساب شخصی خود را بسازید. پس از ایجاد حساب و ثبت اپلیکیشن خود، با مراجعه به بخش [تنظیمات پنل](https://sandbox.push.adpdigital.com/front/setting/access) پارامترهای اتصال به چابک که در مرحله [مقداردهی](/android/tracker.html#ب--مقداردهی-initialize) مورد نیاز است، در دسترس خواهد بود.
+برای ایجاد حساب کاربری کافیست در وبسایت چابک وارد صفحه [شروع کنید](https://chabok.io/register.html) شوید و حساب شخصی خود را بسازید. پس از ایجاد حساب و ثبت اپلیکیشن خود، با مراجعه به بخش [تنظیمات پنل](https://sandbox.push.adpdigital.com/front/setting/access) پارامترهای اتصال به چابک که در مرحله [مقداردهی](/android/tracker.html#ب--مقداردهی-initialize) مورد نیاز است، در دسترس خواهد بود.
 #### ۱.۱. مراحل پیاده‌سازی 
 
 برای راه‌اندازی SDK چابک **۴ مرحله** زیر را به ترتیب انجام ‌دهید:
@@ -234,7 +234,7 @@ public void login(String userId)
 public void login(String userId, HashMap<String, Object> attributes)
 ```
    
-  >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب](http://chabokpush.com) برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر، پیام چابک و پوش ‌نوتیفیکیشن بفرستید.
+  >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب](http://chabok.io) برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر، پیام چابک و پوش ‌نوتیفیکیشن بفرستید.
 
 - امضای سوم:
 <p>
@@ -352,7 +352,7 @@ AdpPushClient.get().trackPurchase("Purchase", event);
 حساب‌ رایگان:
 
 ```javascipt
-https://sand.chabokpush.com/JY@4sc
+https://sand.chabok.io/JY@4sc
 ```  
 حساب عملیاتی:
 
@@ -416,7 +416,7 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
 ```
 
->`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabokpush.com/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
+>`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabok.io/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
 
 ![عکس مربوط](http://uupload.ir/files/bjbc_tracker-analytics-s.png)
 

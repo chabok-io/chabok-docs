@@ -47,7 +47,7 @@ permalink: mobile-usecases/acquire-new-users.html
 
 همه موارد بالا باعث می‌شود تا در نهایت فرایند جذب شما قابل لمس شود و شما بتوانید برای بهینه‌سازی کارهای بیشتری انجام دهید. 
 
->`بیشتر بخوانید:` [چگونه بودجه تبلیغات اپلیکیشن را بهتر مدیریت کنیم؟](https://blog.chabokpush.com/adv-budget-optimization/)
+>`بیشتر بخوانید:` [چگونه بودجه تبلیغات اپلیکیشن را بهتر مدیریت کنیم؟](https://blog.chabok.io/adv-budget-optimization/)
 
 <br>
 

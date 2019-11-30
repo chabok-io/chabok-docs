@@ -336,11 +336,11 @@ class NotificationService: UNNotificationServiceExtension {
 	}
 }
 ```
-برای دریافت رویداد کلیک روی هر اکشن، لطفا بخش [مدیریت کلیک بر روی هر اکشن](https://dev.doc.chabokpush.com/ios/push-notification.html#%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%DA%A9%D9%84%DB%8C%DA%A9-%D8%A8%D8%B1-%D8%B1%D9%88%DB%8C-%D9%87%D8%B1-%D8%A7%DA%A9%D8%B4%D9%86) را مطالعه کنید.
+برای دریافت رویداد کلیک روی هر اکشن، لطفا بخش [مدیریت کلیک بر روی هر اکشن](https://dev.doc.chabok.io/ios/push-notification.html#%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%DA%A9%D9%84%DB%8C%DA%A9-%D8%A8%D8%B1-%D8%B1%D9%88%DB%8C-%D9%87%D8%B1-%D8%A7%DA%A9%D8%B4%D9%86) را مطالعه کنید.
 
 #### نمونه کد پوش‌نوتیفیکیشن چندرسانه‌ای
 
-بخش [تنظیم نوتیفیکیشن چندرسانه‌ای (Rich Push Notification)](https://dev.doc.chabokpush.com/ios/push-notification.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%86%D9%88%D8%AA%DB%8C%D9%81%DB%8C%DA%A9%DB%8C%D8%B4%D9%86-%DA%86%D9%86%D8%AF%D8%B1%D8%B3%D8%A7%D9%86%D9%87%D8%A7%DB%8C-rich-push-notification) را با دقت مطالعه کرده و سپس قطعه کد زیر را در کلاس `AppDelegate`  پیاده‌سازی کنید تا رویداد کلیک روی هر اکشن را دریافت کنید.
+بخش [تنظیم نوتیفیکیشن چندرسانه‌ای (Rich Push Notification)](https://dev.doc.chabok.io/ios/push-notification.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%86%D9%88%D8%AA%DB%8C%D9%81%DB%8C%DA%A9%DB%8C%D8%B4%D9%86-%DA%86%D9%86%D8%AF%D8%B1%D8%B3%D8%A7%D9%86%D9%87%D8%A7%DB%8C-rich-push-notification) را با دقت مطالعه کرده و سپس قطعه کد زیر را در کلاس `AppDelegate`  پیاده‌سازی کنید تا رویداد کلیک روی هر اکشن را دریافت کنید.
 ```objectivec
 //Objective-C
 

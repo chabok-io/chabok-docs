@@ -16,7 +16,7 @@ There are two kinds of accounts in Chabok. Our free account which is for **testi
 
  Our **sandbox** account has a **limited capacity for users** and does not support more. Therefore if you want to release your app in official stores, we recommend on using our production account which has no limitations. Also your **data** cannot be transferred between these two accounts, since they are completely separate and based on different environments.
 
-For creating a Chabok account [go here](https://chabokpush.com/register.html).
+For creating a Chabok account [go here](https://chabok.io/register.html).
 
 > `Note:` After creating a new account, you will have your **SDK keys** in panel→settings→Access tokens. These keys are needed for [**initializing our library**](/android/chabok(en).html#23-initialize-library).
 
@@ -337,7 +337,7 @@ For tracking third-party stores that don't support the referrer, you can **use C
 AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
 ```
 
-> `Note:` TrackerId is the six character id that is in your tracker URL. For example in `https://sand.chabokpush.com/JY@4sc` the trackerId is `JY@4sc`. You can get this Id from your panel>tracker>details as shown in the following picture:
+> `Note:` TrackerId is the six character id that is in your tracker URL. For example in `https://sand.chabok.io/JY@4sc` the trackerId is `JY@4sc`. You can get this Id from your panel>tracker>details as shown in the following picture:
 ![enter image description here](http://uupload.ir/files/75o8_bjbc_tracker-analytics-s.png)
 
 <br><br>

@@ -83,7 +83,7 @@ next: users.html
 به عنوان مثال می‌خواهید مخاطبانتان را براساس نام کمپین دسته‌بندی کنید. نام این کمپین،‌ کمپین شماره ۱ است. در این صورت لینک ترکر شما به صورت زیر خواهد بود:
 
 ```markup
-https://sand.chabokpush.com/637z3i?campaign=CAMPAIGN_1&adgroup=AD_GROUP&creative=CREATIVE
+https://sand.chabok.io/637z3i?campaign=CAMPAIGN_1&adgroup=AD_GROUP&creative=CREATIVE
 ```
 
 ##### هدایت کاربران (Redirect Users)
@@ -91,7 +91,7 @@ https://sand.chabokpush.com/637z3i?campaign=CAMPAIGN_1&adgroup=AD_GROUP&creative
 شما می‌توانید برای هدایت کاربران به جای دلخواه از پارامترهای `fallback` ،`redirect_ios` ،`redirect_android` در لینک ترکر خود استفاده کنید. لینک زیر مثالی از تمام پارامترهایی است که می‌توانید در لینک خود قرار دهید. 
 
 ```markup
-https://sand.chabokpush.com/637z3i?redirect_ios=https://itunes.apple.com/us/genre/ios/id36?mt=8&redirect_android=https://play.google.com/store&fallback=https://mylandingpage.com/&click_id=11111&android_id=ANDROID_ID&
+https://sand.chabok.io/637z3i?redirect_ios=https://itunes.apple.com/us/genre/ios/id36?mt=8&redirect_android=https://play.google.com/store&fallback=https://mylandingpage.com/&click_id=11111&android_id=ANDROID_ID&
 ```
 
 ##### کال‌بک داینامیک (Dynamic Callback)
@@ -100,7 +100,7 @@ https://sand.chabokpush.com/637z3i?redirect_ios=https://itunes.apple.com/us/genr
 
 
 ```markup
-https://sand.chabokpush.com/637z3i?callback=https://campaign.90tv.ir/?event={{activity_kind}}&tracker={{tracker_name}}&install_callback=https://campaign.90tv.ir/?event={{activity_kind}}&tracker={{tracker_name}}&os={{os_name}}&ip={{ip_address}}
+https://sand.chabok.io/637z3i?callback=https://campaign.90tv.ir/?event={{activity_kind}}&tracker={{tracker_name}}&install_callback=https://campaign.90tv.ir/?event={{activity_kind}}&tracker={{tracker_name}}&os={{os_name}}&ip={{ip_address}}
 ```
 
 <br>
