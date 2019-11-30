@@ -9,14 +9,14 @@ permalink: unity/release-note.html
 
 <Br>
 
-## [نسخه ۰.۳ - ۱۳۹۸/۰۵/۲۸](https://github.com/chabokpush/chabok-starter-unity/releases/tag/v0.3)
+## [نسخه ۰.۳ - ۱۳۹۸/۰۵/۲۸](https://github.com/chabok-io/chabok-starter-unity/releases/tag/v0.3)
 
 ### تغییرات
 
 -   به روز رسانی کتابخانه اندروید به  [نسخه ۲.۱۷.۲](https://doc.chabok.io/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B7%DB%B2---%DB%B1%DB%B3%DB%B9%DB%B8%DB%B0%DB%B5%DB%B1%DB%B4)
 - پشتیبانی از پوش‌نوتیفیکیشن روی دستگاه‌های اندروید
 
-## [نسخه ۰.۲ - ۱۳۹۸/۰۳/۲۶](https://github.com/chabokpush/chabok-starter-unity/releases/tag/v0.2)
+## [نسخه ۰.۲ - ۱۳۹۸/۰۳/۲۶](https://github.com/chabok-io/chabok-starter-unity/releases/tag/v0.2)
 
 ### تغییرات
 
@@ -25,7 +25,7 @@ permalink: unity/release-note.html
 - افزودن متد `removeTag` برای حذف تگ
 - افزودن متد `setDefaultTracker` برای ترک نصب از استورها
 
-## [نسخه ۰.۱ - ۱۳۹۸/۰۳/۲۱](https://github.com/chabokpush/chabok-starter-unity/releases/tag/v0.1)
+## [نسخه ۰.۱ - ۱۳۹۸/۰۳/۲۱](https://github.com/chabok-io/chabok-starter-unity/releases/tag/v0.1)
 
 ### تغییرات
 

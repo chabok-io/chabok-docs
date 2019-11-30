@@ -91,7 +91,7 @@ prev: troubleshoot.html
 - [PushClientManager.defaultManager appWillOpenUrl:];
 ```
 
-##  [نسخه ۱.۲۰.۲ - ۱۳۹۸/۰۵/۲۶](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.2)
+##  [نسخه ۱.۲۰.۲ - ۱۳۹۸/۰۵/۲۶](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.20.2)
 
 ### تغییرات
 
@@ -103,7 +103,7 @@ prev: troubleshoot.html
 
 - از این پس `trackName` در متد `trackPurchase` و `track` از white space پشتیبانی می‌کند.
 
-##  [نسخه ۱.۲۰.۱ - ۱۳۹۸/۰۴/۱۷](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.1)
+##  [نسخه ۱.۲۰.۱ - ۱۳۹۸/۰۴/۱۷](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.20.1)
 
 ### تغییرات
 
@@ -113,7 +113,7 @@ prev: troubleshoot.html
 
 - افزودن متد `incrementUserAttributeValues:value` برای [افزایش بیش‌ از یکی از اطلاعات کاربر (attribute) به مقدار دلخواه](/ios/custom-data.html#افزودن-مقدار-دلخواه-به-چند-attribute) (این متد از dictionary از اطلاعات کاربر پشتیبانی می‌کند)
 
-##  [نسخه ۱.۲۰.۰ - ۱۳۹۸/۰۴/۰۴](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.20.0)
+##  [نسخه ۱.۲۰.۰ - ۱۳۹۸/۰۴/۰۴](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.20.0)
 
 ### تغییرات
 
@@ -136,7 +136,7 @@ prev: troubleshoot.html
 - جایگزین شدن `userinfo` با `userAttributes`
 
  
-##  [نسخه ۱.۱۹.۰ - ۱۳۹۸/۰۲/۱۸](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.19.0)
+##  [نسخه ۱.۱۹.۰ - ۱۳۹۸/۰۲/۱۸](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.19.0)
 
 ### تغییرات
 
@@ -165,7 +165,7 @@ prev: troubleshoot.html
 - برای دریافت **advertisingId** باید `AdSupport.framework` را به **Linked Frameworks and Libraries** آن پروژه اضافه کنید
 
 
-## [نسخه ۱.۱۸.۱ - ۱۳۹۷/۱۲/۱۳](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.18.1) 
+## [نسخه ۱.۱۸.۱ - ۱۳۹۷/۱۲/۱۳](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.18.1) 
 
 ### تغییرات
 
@@ -179,7 +179,7 @@ prev: troubleshoot.html
 
 - حل مشکل اجرا روی simulator با معماری x86
 
-## [نسخه ۱.۱۸.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.18.0) 
+## [نسخه ۱.۱۸.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.18.0) 
 
 ### تغییرات
 
@@ -189,7 +189,7 @@ prev: troubleshoot.html
 
 - انتقال داده‌های کاستوم به کلید `data` در متدهای `publishEvent` و `track`
 
-## [نسخه ۱.۱۷.۱ - ۱۳۹۷/۰۶/۱۸](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.17.1) 
+## [نسخه ۱.۱۷.۱ - ۱۳۹۷/۰۶/۱۸](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.17.1) 
 
 ### تغییرات
 
@@ -197,7 +197,7 @@ prev: troubleshoot.html
 - بهبود Register مجدد کاربر با قابلیت تغییر `userId` از متد `register`
 - حل مشکل `LaunchCount` و `LaunchTime` برای زمانی که اپ از طریق ‌Location  در Background باز می‌شود
  
-## [نسخه ۱.۱۷.۰ - ۱۳۹۷/۰۵/۱۷](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.17.0)  
+## [نسخه ۱.۱۷.۰ - ۱۳۹۷/۰۵/۱۷](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.17.0)  
 
 ### تغییرات
 
@@ -213,7 +213,7 @@ prev: troubleshoot.html
 
 >`نکته :` کسانی که در نسخه‌های پایین‌تر از پیش‌فرض **default** متد `publishEvent` استفاده می‌کردند برای حفظ تنظیمات قبلی‌شان بهتر است اکنون از پیش‌فرض `publishEvent:data:live`  با  مقدار `NO` برای `live` استفاده کنند.
 
-## [نسخه ۱.۱۶.۲ - ۱۳۹۷/۰۴/۲۶](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.16.2)  
+## [نسخه ۱.۱۶.۲ - ۱۳۹۷/۰۴/۲۶](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.16.2)  
 
 ### تغییرات
 
@@ -222,14 +222,14 @@ prev: troubleshoot.html
 - حل مشکل قطع شدن اتصال در حالت باز شدن اپلیکیشن توسط موقعیت مکانی
 - حل مشکل تشخیص باز شدن برنامه به هنگام باز شدن اپلیکیشن توسط موقعیت مکانی
 
-## [نسخه ۱.۱۶.۱ - ۱۳۹۷/۰۳/۲۹](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.16.1) 
+## [نسخه ۱.۱۶.۱ - ۱۳۹۷/۰۳/۲۹](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.16.1) 
 
 
 ### تغییرات
 
 - حل مشکل عدم ارسال پوش نوتیفیکیشن برای کاربرانی که دسترسی `DENIED` داده‌اند.
 
-## [نسخه ۱.۱۶.۰ - ۱۳۹۷/۰۳/۲۱](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.16.0) 
+## [نسخه ۱.۱۶.۰ - ۱۳۹۷/۰۳/۲۱](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.16.0) 
 
 ### تغییرات
 
@@ -239,7 +239,7 @@ prev: troubleshoot.html
 - تشخیص زمان نصب اپلیکیشن
 - تشخیص شناسه اپلیکیشن `bundleIdentifier` 
 
-## [نسخه ۱.۱۵.۱ - ۱۳۹۶/۱۱/۰۳](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.15.1) 
+## [نسخه ۱.۱۵.۱ - ۱۳۹۶/۱۱/۰۳](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.15.1) 
 
 ### تغییرات
 
@@ -248,7 +248,7 @@ prev: troubleshoot.html
  - حل مشکل متد `deviceSubscriptions` به هنگام فراخوانی قبل از متد `registerUser:` 
  - اعلان خطا به هنگام فراخوانی متد `updateNotificationSettings:sound:alert:` قبل از رجیستر شدن کاربر
 
-## [نسخه ۱.۱۵.۰ - ۱۳۹۶/۱۰/۱۸](https://github.com/chabokpush/chabok-client-ios/releases/tag/v1.15.0) 
+## [نسخه ۱.۱۵.۰ - ۱۳۹۶/۱۰/۱۸](https://github.com/chabok-io/chabok-client-ios/releases/tag/v1.15.0) 
 
 ### ارتقا
 

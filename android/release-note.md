@@ -94,7 +94,7 @@ prev: troubleshoot.html
 - بهبود Proguard rules در استفاده از reflection
 - حل مشکل تغییر شبکه ریکت نیتیو (پیام خطا: `BroadcastReceiver components are not allowed to register to receive intents`)
 
-## [نسخه ۲.۱۷.۲ - ۱۳۹۸/۰۵/۱۴](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.17.2)
+## [نسخه ۲.۱۷.۲ - ۱۳۹۸/۰۵/۱۴](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.17.2)
 
 ### تغییرات
 
@@ -109,7 +109,7 @@ prev: troubleshoot.html
 - حل مشکل دریافت `advertisingId ` از دستگاه‌هایی که OEM buildهای مختلفی دارند
 - حل مشکل کرش کردن دستگاه‌هایی که `androidId` ندارند
 
-##  [نسخه ۲.۱۷.۱ - ۱۳۹۸/۰۴/۱۰](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.17.1)
+##  [نسخه ۲.۱۷.۱ - ۱۳۹۸/۰۴/۱۰](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.17.1)
 
 ### تغییرات
 
@@ -117,7 +117,7 @@ prev: troubleshoot.html
 
 - حل مشکل proguard در صورت `true` دادن `minifyEnabled`
 
-##  [نسخه ۲.۱۷.۰ - ۱۳۹۸/۰۴/۰۲](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.17.0)
+##  [نسخه ۲.۱۷.۰ - ۱۳۹۸/۰۴/۰۲](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.17.0)
 
 ### تغییرات
 
@@ -158,7 +158,7 @@ prev: troubleshoot.html
 - تغییر رفتار در متد `notificationOpened` در [دریافت دیتای نوتیفیکیشن](/android/push-notification.html#شخصیسازی-نمایش-و-کلیک-روی-اعلان) و باز کردن اپلیکیشن
 
 
-##  [نسخه ۲.۱۶.۰ - ۱۳۹۸/۰۲/۱۸](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.16.0)
+##  [نسخه ۲.۱۶.۰ - ۱۳۹۸/۰۲/۱۸](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.16.0)
 
 ### تغییرات
 
@@ -179,7 +179,7 @@ prev: troubleshoot.html
 - حل مشکل crash کردن `INSTALL_REFERRER` برای دستگاهایی که Google Play Services ندارند
 
 
-##  [نسخه ۲.۱۵.۰ - ۱۳۹۸/۰۱/۲۱](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.15.0)
+##  [نسخه ۲.۱۵.۰ - ۱۳۹۸/۰۱/۲۱](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.15.0)
 
 ### تغییرات
 
@@ -214,14 +214,14 @@ prev: troubleshoot.html
 implementation 'com.android.installreferrer:installreferrer:1.0'
 ```
 
-##  [نسخه ۲.۱۴.۲ - ۱۳۹۷/۱۲/۱۳](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.2)
+##  [نسخه ۲.۱۴.۲ - ۱۳۹۷/۱۲/۱۳](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.14.2)
 
 ### تغییرات
 
 - افزودن متد ‍‍‍‍‍`registerAsGuest` برای اپلیکیشن‌هایی که کاربر مهمان دارند یا می‌خواهند نصب با اولین بازدید شمرده شود (مانند سرویس ادجاست)
 
 
-##  [نسخه ۲.۱۴.۱ - ۱۳۹۷/۱۰/۱۷](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.1)
+##  [نسخه ۲.۱۴.۱ - ۱۳۹۷/۱۰/۱۷](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.14.1)
 
 ### تغییرات
 
@@ -229,20 +229,20 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 - حل مشکل `Apache HTTP legacy` برای **API level 28** (**اندروید ۹**)
 - افزودن قابلیت تشخیص **Build** اپلیکیشن (`Debug` یا `Release`)
 
-##  [نسخه ۲.۱۴.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.14.0)
+##  [نسخه ۲.۱۴.۰ - ۱۳۹۷/۰۸/۲۱](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.14.0)
 
 ### ارتقا
 
 - انتقال داده‌های کاستوم به کلید `data` در متدهای `publishEvent` و `track`
 
-##  [نسخه ۲.۱۳.۴ - ۱۳۹۷/۰۸/۲۰](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.4)
+##  [نسخه ۲.۱۳.۴ - ۱۳۹۷/۰۸/۲۰](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.13.4)
 
 ### تغییرات
 
 - حل مشکل پارس کردن `id` در متد `EventMessage`
 - برگرداندن پورت محیط آزمایشی (Sandbox) به نسخه قدیمی آن
 
-##  [نسخه ۲.۱۳.۳ - ۱۳۹۷/۰۸/۱۹](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.3)
+##  [نسخه ۲.۱۳.۳ - ۱۳۹۷/۰۸/۱۹](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.13.3)
 
 ### تغییرات
 
@@ -250,7 +250,7 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 - تغییر رفتار در اعمال **badge** روی آیکون لانچر
 - حل مشکل جابه‌جایی مقدار `id` با `id` چابک در دیتای متد `publishEvent`
 
-##  [نسخه ۲.۱۳.۲ - ۱۳۹۷/۰۷/۰۸](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.2)
+##  [نسخه ۲.۱۳.۲ - ۱۳۹۷/۰۷/۰۸](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.13.2)
 
 ### تغییرات
 
@@ -258,7 +258,7 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 - حل مشکل نمایش خطای ‍‍‍‍`play services not found`
 - حذف به کار بردن **bindService**
 
-##  [نسخه ۲.۱۳.۱ - ۱۳۹۷/۰۶/۱۴](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.1)
+##  [نسخه ۲.۱۳.۱ - ۱۳۹۷/۰۶/۱۴](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.13.1)
 
 ### تغییرات
 
@@ -266,7 +266,7 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 
 > ` نکته:` مقدار پیش‌فرض این متد `true` است، بنابراین اگر مقدار `false` را قرار دهید برای پاک کردن دستی **Badge** و نوتیفیکیشن [باید متد `resetBadge` را فراخوانی کنید.](https://doc.chabok.io/android/features.html#%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%86%D8%B4%D8%A7%D9%86%D9%87%D8%A7)
 
-##  [نسخه ۲.۱۳.۰ - ۱۳۹۷/۰۶/۱۳](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.13.0)
+##  [نسخه ۲.۱۳.۰ - ۱۳۹۷/۰۶/۱۳](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.13.0)
 
 ### تغییرات
 
@@ -280,13 +280,13 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 - تغییر پیش‌فرض متد `publishEvent` به `live`
 
 
-##  [نسخه ۲.۱۲.۱ - ۱۳۹۷/۰۵/۳۰](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.12.1)
+##  [نسخه ۲.۱۲.۱ - ۱۳۹۷/۰۵/۳۰](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.12.1)
 
 ### تغییرات
 
 - حل مشکل نمایش نوتیفیکیشن در اندروید 8.1 برای `buildToolsVersion>=26`
 
-##  [نسخه ۲.۱۲.۰ - ۱۳۹۷/۰۵/۲۹](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.12.0)
+##  [نسخه ۲.۱۲.۰ - ۱۳۹۷/۰۵/۲۹](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.12.0)
 
 ### تغییرات
 
@@ -297,7 +297,7 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 - چابک پوش‌نوتفیکیشن دریافتی از **FCM/GCM** را در حالت `foreground` نمایش می‌دهد.
 
 
-##  [نسخه ۲.۱۱.۳ - ۱۳۹۷/۰۵/۱۶](https://github.com/chabokpush/chabok-client-android/releases/tag/v2.11.3)
+##  [نسخه ۲.۱۱.۳ - ۱۳۹۷/۰۵/۱۶](https://github.com/chabok-io/chabok-client-android/releases/tag/v2.11.3)
 
 ### تغییرات
 
