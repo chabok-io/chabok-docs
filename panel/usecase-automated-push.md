@@ -30,7 +30,7 @@ permalink: panel/usecase-automated-push.html
 
 ۱- ابتدا رویدادهای مورد نیاز خود را برای رصد آن‌ها تعریف کنید. در این مثال ما به دو رویداد **افزودن به سبد خرید** به عنوان رویداد فعال‌کننده و رویداد **خرید** به عنوان رویداد متوقف کننده نیاز داریم. 
 
-> ‍‍‍`نکته:` برای آشنایی بیشتر با تعیین و رصد این رفتارها صفحه **رصد رفتار درون‌برنامه‌ای** را در مستندات ([اندروید](https://doc.chabokpush.com/android/event-tracking.html)، [آی‌اواس](https://doc.chabokpush.com/ios/event-tracking.html) و [وب](https://doc.chabokpush.com/javascript/event-tracking.html))  مطالعه نمایید.
+> ‍‍‍`نکته:` برای آشنایی بیشتر با تعیین و رصد این رفتارها صفحه **رصد رفتار درون‌برنامه‌ای** را در مستندات ([اندروید](https://doc.chabok.io/android/event-tracking.html)، [آی‌اواس](https://doc.chabok.io/ios/event-tracking.html) و [وب](https://doc.chabok.io/javascript/event-tracking.html))  مطالعه نمایید.
 
 ۲- به صفحه **ارسال پیام متنی** بروید و **نوع پیامتان** را تعیین کنید.
 

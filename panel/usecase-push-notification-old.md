@@ -12,9 +12,9 @@ permalink: panel/usecase-push-notification-old.html
 اگر به دنبال طراحی کمپین‌های خود و ارسال آن‌ها از تمامی کانال‌های موبایل و وب هستید، به بخش **ارسال پنل چابک** بروید. شما می‌توانید کمپین‌هایی مانند **پیشنهادات ویژه**، **خروج‌های سبد خرید**، **اعلام به روز رسانی نسخه جدید اپلیکیشنتان** و ... را به کاربرانتان ارسال نمایید. 
 
 
-برای شروع ارسال کمپین‌ پس از راه‌اندازی SDK چابک روی اپلیکیشنتان (مستندات راه‌اندازی روی [اندروید](https://doc.chabokpush.com/android/application-class.html)، [آی‌اواس](https://doc.chabokpush.com/ios/setup.html)، [ویندوز](https://doc.chabokpush.com/windows/setup.html) و [وب](https://doc.chabokpush.com/javascript/setup.html))، در بخش ورود وبسایت چابک اطلاعات حساب خود را وارد نمایید تا وارد **پنل** شوید. 
+برای شروع ارسال کمپین‌ پس از راه‌اندازی SDK چابک روی اپلیکیشنتان (مستندات راه‌اندازی روی [اندروید](https://doc.chabok.io/android/application-class.html)، [آی‌اواس](https://doc.chabok.io/ios/setup.html)، [ویندوز](https://doc.chabok.io/windows/setup.html) و [وب](https://doc.chabok.io/javascript/setup.html))، در بخش ورود وبسایت چابک اطلاعات حساب خود را وارد نمایید تا وارد **پنل** شوید. 
 
-> همچنین می‌توانید [توکن‌هایتان را از **وان‌سیگنال** به چابک ایمپورت کنید](https://doc.chabokpush.com/panel/settings.html). 
+> همچنین می‌توانید [توکن‌هایتان را از **وان‌سیگنال** به چابک ایمپورت کنید](https://doc.chabok.io/panel/settings.html). 
 
 برای ارسال کمپین به **گروه خاصی** از کاربرانتان، **با محتوای مناسب**  به بخش **ارسال پیام متنی** بروید و به طراحی کمپین خود بپردازید:
 

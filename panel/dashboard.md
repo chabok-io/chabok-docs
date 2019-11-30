@@ -56,7 +56,7 @@ next: tracker.html
 >
 >`Subscrption not found`: این خطا به معنای عضو نبودن کاربر مخاطب در کانالی که پیام را ارسال کرده‌اید است.
 >
->برای اطلاعات بیشتر در مورد این خطاها می‌توانید مستندات آن را در صفحه [پیام‌ها](https://doc.chabokpush.com/panel/inbox.html#%D8%AE%D8%B7%D8%A7%D9%87%D8%A7) مطالعه کنید.
+>برای اطلاعات بیشتر در مورد این خطاها می‌توانید مستندات آن را در صفحه [پیام‌ها](https://doc.chabok.io/panel/inbox.html#%D8%AE%D8%B7%D8%A7%D9%87%D8%A7) مطالعه کنید.
 
 ##### نوتیفیکیشن
 
@@ -123,7 +123,7 @@ next: tracker.html
 
 رخدادها در واقع رفتارهایی هستند که شما تعیین می‌کنید توسط چابک رصد شوند. این رخداد می‌تواند هر اتفاقی در اپ شما باشد، مانند کلیک کردن روی چیزی، اضافه به سبد، سفارش دادن، لایک کردن،‌ کامنت نوشتن و ... . تعداد این رخداد‌ها به صورت نگاه کلی در هفته و ماه جاری و همینطور در قالب نمودار در ۱۲ ساعت گذشته قابل مشاهده است.
 
-> ‍‍‍`نکته:` برای تعیین و رصد این رفتارها، صفحه **رصد رویدادها** را در مستندات ([اندروید](https://doc.chabokpush.com/android/event-tracking.html)، [آی‌اواس](https://doc.chabokpush.com/ios/event-tracking.html) و [وب](https://doc.chabokpush.com/javascript/event-tracking.html))  مطالعه نمایید.
+> ‍‍‍`نکته:` برای تعیین و رصد این رفتارها، صفحه **رصد رویدادها** را در مستندات ([اندروید](https://doc.chabok.io/android/event-tracking.html)، [آی‌اواس](https://doc.chabok.io/ios/event-tracking.html) و [وب](https://doc.chabok.io/javascript/event-tracking.html))  مطالعه نمایید.
 
 
 ##### رویداد

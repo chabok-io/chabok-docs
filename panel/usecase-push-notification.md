@@ -13,9 +13,9 @@ permalink: panel/usecase-push-notification.html
 
 
 - برای شروع ارسال کمپین‌ می‌توانید یک [حساب رایگان در چابک ایجاد کنید](https://chabokpush.com/register.html) و با در اختیار گرفتن پنل تمام امکانات آن را تجربه کنید. 
- پس از آن می‌توانید SDK چابک را روی اپلیکیشنتان (مستندات راه‌اندازی روی [اندروید](https://doc.chabokpush.com/android/application-class.html)، [آی‌اواس](https://doc.chabokpush.com/ios/setup.html) و [ویندوز](https://doc.chabokpush.com/windows/setup.html)) راه‌اندازی کنید و تعامل خود را با کاربرانتان آغاز نمایید.
+ پس از آن می‌توانید SDK چابک را روی اپلیکیشنتان (مستندات راه‌اندازی روی [اندروید](https://doc.chabok.io/android/application-class.html)، [آی‌اواس](https://doc.chabok.io/ios/setup.html) و [ویندوز](https://doc.chabok.io/windows/setup.html)) راه‌اندازی کنید و تعامل خود را با کاربرانتان آغاز نمایید.
 
-- همچنین می‌توانید [توکن‌هایتان را از وان‌سیگنال به چابک ایمپورت کنید](https://doc.chabokpush.com/panel/settings.html). 
+- همچنین می‌توانید [توکن‌هایتان را از وان‌سیگنال به چابک ایمپورت کنید](https://doc.chabok.io/panel/settings.html). 
 
 برای ارسال کمپین به **گروه خاصی** از کاربرانتان، **با محتوای مناسب**  به بخش **ارسال پیام متنی** بروید و به طراحی کمپین خود بپردازید:
 

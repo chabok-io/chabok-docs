@@ -13,14 +13,14 @@ permalink: unity/release-note.html
 
 ### تغییرات
 
--   به روز رسانی کتابخانه اندروید به  [نسخه ۲.۱۷.۲](https://doc.chabokpush.com/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B7%DB%B2---%DB%B1%DB%B3%DB%B9%DB%B8%DB%B0%DB%B5%DB%B1%DB%B4)
+-   به روز رسانی کتابخانه اندروید به  [نسخه ۲.۱۷.۲](https://doc.chabok.io/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B7%DB%B2---%DB%B1%DB%B3%DB%B9%DB%B8%DB%B0%DB%B5%DB%B1%DB%B4)
 - پشتیبانی از پوش‌نوتیفیکیشن روی دستگاه‌های اندروید
 
 ## [نسخه ۰.۲ - ۱۳۹۸/۰۳/۲۶](https://github.com/chabokpush/chabok-starter-unity/releases/tag/v0.2)
 
 ### تغییرات
 
--   به روز رسانی کتابخانه اندروید به  [نسخه ۲.۱۶.۰](https://doc.chabokpush.com/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B6%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B8%DB%B0%DB%B2%DB%B1%DB%B8)
+-   به روز رسانی کتابخانه اندروید به  [نسخه ۲.۱۶.۰](https://doc.chabok.io/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B6%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B8%DB%B0%DB%B2%DB%B1%DB%B8)
 - افزودن متد `setUserInfo` برای افزودن اطلاعات سفارشی کاربر
 - افزودن متد `removeTag` برای حذف تگ
 - افزودن متد `setDefaultTracker` برای ترک نصب از استورها
@@ -29,7 +29,7 @@ permalink: unity/release-note.html
 
 ### تغییرات
 
--   کتابخانه اندروید [نسخه ۲.۱۴.۲](https://doc.chabokpush.com/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B4%DB%B2---%DB%B1%DB%B3%DB%B9%DB%B7%DB%B1%DB%B2%DB%B1%DB%B3)
+-   کتابخانه اندروید [نسخه ۲.۱۴.۲](https://doc.chabok.io/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B1%DB%B4%DB%B2---%DB%B1%DB%B3%DB%B9%DB%B7%DB%B1%DB%B2%DB%B1%DB%B3)
 - افزودن متد `Track` برای رصد رفتار
 - افزودن متد `AddTag` برای اضافه کردن تگ
 - افزودن متدهای `register` و ‍‍ `registerAsGuest` برای ثبت کاربر و مهمان

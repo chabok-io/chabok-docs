@@ -61,7 +61,7 @@ yarn add react-native-push-notification
 react-native link react-native-push-notification
 ```
 
-> `نکته ` : دقت داشته باشید که چابک به طور پیش‌فرض **توکن پوش** نمی‌گیرد، بنابراین برای **تنظیم پوش‌نوتیفیکیشن** می‌توانید با استفاده از مستندات [اندروید](https://doc.chabokpush.com/react-native/push-notification.html#%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF) و [آی‌اواس](https://doc.chabokpush.com/react-native/push-notification.html#%D8%A2%DB%8C%D8%A7%D9%88%D8%A7%D8%B3)  آن را روی پروژه خود پیاده‌سازی کنید.
+> `نکته ` : دقت داشته باشید که چابک به طور پیش‌فرض **توکن پوش** نمی‌گیرد، بنابراین برای **تنظیم پوش‌نوتیفیکیشن** می‌توانید با استفاده از مستندات [اندروید](https://doc.chabok.io/react-native/push-notification.html#%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF) و [آی‌اواس](https://doc.chabok.io/react-native/push-notification.html#%D8%A2%DB%8C%D8%A7%D9%88%D8%A7%D8%B3)  آن را روی پروژه خود پیاده‌سازی کنید.
 
 > `نکته ` : در اندروید می‌بایست `AndroidManifest.xml` را به صورت دستی تغییر دهید. 
 

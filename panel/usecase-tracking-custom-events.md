@@ -14,7 +14,7 @@ permalink: panel/usecase-tracking-custom-events.html
 
 ### فعال‌سازی رصد رخداد
 
- برای شروع، رخدادی که مد نظرتان هست را برای رصد انتخاب و به چابک معرفی کنید. برای این کار می‌توانید صفحه رصد رویدادها را در مستندات [اندروید](https://doc.chabokpush.com/android/event-tracking.html)، [آی‌اواس](https://doc.chabokpush.com/ios/event-tracking.html) و [وب](https://doc.chabokpush.com/javascript/event-tracking.html) مطالعه کنید.
+ برای شروع، رخدادی که مد نظرتان هست را برای رصد انتخاب و به چابک معرفی کنید. برای این کار می‌توانید صفحه رصد رویدادها را در مستندات [اندروید](https://doc.chabok.io/android/event-tracking.html)، [آی‌اواس](https://doc.chabok.io/ios/event-tracking.html) و [وب](https://doc.chabok.io/javascript/event-tracking.html) مطالعه کنید.
 در این نمونه کد زیر را برای رصد رخداد **Purchase** در اندروید وارد می‌نماییم:
 
 ```java
