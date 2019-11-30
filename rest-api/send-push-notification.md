@@ -155,7 +155,7 @@ curl -X POST \
 
 ![عکس مربوطه](http://uupload.ir/files/2g53_apipush1.png)
 
-> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabok.io/#/push/push_notifyUsers) مراجعه کنید.
+> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://apidoc.chabok.io/#/push/push_notifyUsers) مراجعه کنید.
 
 <br><br><br>
 
@@ -267,7 +267,7 @@ curl -X POST \
 ![عکس مربوطه](http://uupload.ir/files/fk2s_apipush2.png)
 
 
-> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabok.io/#/push/push_notifyUser) مراجعه کنید.
+> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://apidoc.chabok.io/#/push/push_notifyUser) مراجعه کنید.
 
 <Br>
 

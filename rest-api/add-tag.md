@@ -39,7 +39,7 @@ curl -X GET \
 
 ![عکس مربوطه](http://uupload.ir/files/jdf5_tag.png)
 
-> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabok.io/#/installation/installation_addTag) مراجعه فرمایید.
+> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://apidoc.chabok.io/#/installation/installation_addTag) مراجعه فرمایید.
 
 <br>
 
@@ -67,7 +67,7 @@ curl -X POST/
 
 ![عکس مربوطه](http://uupload.ir/files/so9x_tag2.png)
 
-> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabok.io/#/installation/installation_addTags) مراجعه فرمایید.
+> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://apidoc.chabok.io/#/installation/installation_addTags) مراجعه فرمایید.
 
 <br>
 
@@ -118,7 +118,7 @@ curl -X GET \
 -H "accept: application/json"
 ```
 
-> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabok.io/#/installation/installation_removeTag) مراجعه فرمایید.
+> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://apidoc.chabok.io/#/installation/installation_removeTag) مراجعه فرمایید.
 
 <br>
 
@@ -141,7 +141,7 @@ curl -X POST/
  -d "{ \"userId\": \"starter\", \"tags\": [ \"golden\", \"teenage\" ]}"
 ```
 
-> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://api.doc.chabok.io/#/installation/installation_removeTags) مراجعه فرمایید.
+> `نکته :` برای تست کردن این عمل می‌توانید [به این لینک](https://apidoc.chabok.io/#/installation/installation_removeTags) مراجعه فرمایید.
 
 <br>
 
