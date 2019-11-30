@@ -1,15 +1,15 @@
 - name: Android
   image: android.svg
   document: /android/introducing.html
-  demo: https://github.com/chabok-io/chabok-demo-android
-  starter:
+  demo:
+  starter: https://github.com/chabok-io/chabok-starter-android
   issue: https://github.com/chabok-io/chabok-client-android/issues
 
 - name: iOS
   image: apple.svg
   document: /ios/introducing.html
-  demo: https://github.com/chabok-io/chabok-demo-ios
-  starter:
+  demo:
+  starter: https://github.com/chabok-io/chabok-starter-ios
   issue: https://github.com/chabok-io/chabok-client-ios/issues
 
 - name: Windows
