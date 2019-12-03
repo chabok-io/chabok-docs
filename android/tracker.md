@@ -84,13 +84,13 @@ dependencies {
 #### نصب کتابخانه با قابلیت مکان‌یابی چابک   
  
 درصورتی که در برنامه خود نیاز به استفاده از موقعیت مکانی کاربر دارید، لازم است در ابتدا کتابخانه `chabok-lib` را **حذف** و کتابخانه `chabok-lib-geo` را **جایگزین** کنید.    با توجه به این که در این کتابخانه از سرویس **فیوز گوگل** استفاده شده است، باید  تغییرات زیر نیز در قسمت ‌‌‌`dependencies` اعمال شود:
-```javascript
+```java
 dependencies {
     implementation 'com.adpdigital.push:chabok-lib-geo:3.0.0'
 
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
-    implementation'com.google.android.gms:play-services-location:10.2.6'
+    implementation 'com.google.android.gms:play-services-location:10.2.6'
     implementation 'com.android.installreferrer:installreferrer:1.0'
 }
 ```    
@@ -325,6 +325,34 @@ AdpPushClient.get().trackPurchase("Purchase", event);
 اگر عملیات ثبت‌ کاربر به درستی انجام شده باشد، اطلاعات کاربر در [پنل](https://sandbox.push.adpdigital.com/front/users/subscribers/list)  چابک قسمت **کاربران** قابل مشاهده خواهد بود.  
 
 البته محیط آزمایشی فقط برای تست و آشنایی با امکانات است و دارای محدودیت سقف کاربر می‌باشد. بنابراین برای اپلیکیشن‌های تجاری و اپ‌استور توصیه می‌کنیم از حساب عملیاتی که این سقف را ندارد، استفاده کنید.
+
+###قابلیت دعوت دوستان
+یکی از راههای موثر برای جذب کاربران به اپلیکیشن، ارسال لینک دعوت به آن‌هاست. برای انجام این کار کافیست به کاربرانی که عضو اپلیکیشن هستند، لینک دعوت ارسال کنید تا آنها، لینک را با دوستان خود به اشتراک بگذارند و با کلیک کاربران جدید بر روی لینک، به طور خودکار به صفحه نصب اپلیکیشن هدایت شوند و کاربران قدیمی نیز کد تخفیف را دریافت کنند.
+####ایجاد لینک دعوت به دوستان
+برای ایجاد لینک دعوت دوستان از طریق خوده اپلیکیشن کافیست در انتهای لینک ترکر پارامتر label=USER_ID را اضافه کنید.
+برای اینکه متوجه شوید نصب اپلیکیشن انجام شده و یا <a href="https://firebase.google.com/docs/dynamic-links/use-cases/rewarded-referral"> دعوت‌نامه</a>  به کاربر دیگر ارسال شده، نیاز به فراخوانی متد ` setDeferredDataListener `  و پیادهسازی متد ` onReferralReceived ` به کمک کد زیر دارید.
+
+```java
+AdpPushClient.get().setDeferredDataListener(new DeferredDataListener() {
+    @Override
+    public boolean launchReceivedDeeplink(Uri deeplink) {
+        return false;
+    }
+
+    @Override
+    public void onReferralReceived(String label) {
+        Log.d(TAG, "get referral id = " + label);
+    }
+});
+```
+>`نکته:`lable مقداری هست که در انتهای لینک ترکر گذاشته می‌شود و با کلیک کاربر بر روی لینک، کاربر به صفحه نصب اپلیکیشن هدایت می‌شود. این مقدار از طریق فراخوانی متد گفته شده قابل دریافت است.
+
+
+
+
+
+فرض کنید کاربری وارد اپلیکیشن شده و در رویدادی ثبتنام کرده است. برای جذب کاربر بیشتر نیازست در این لحظه لینک دعوتی به او ارسال کنید تا او لینک را با دوستان خود به اشتراک بگذارد و پس از آن کد تخفیفی برای شرکت در رویدادهای بعدی دریافت کند.
+
 
 #### ۴.۱. انتشار اپلیکیشن در استورها
 
