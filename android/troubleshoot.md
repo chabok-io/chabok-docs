@@ -35,6 +35,25 @@ next: release-note.html
 
 <Br>
 
+
+<h3>
+کرش شدن اپلیکیشن در هنگام دریافت پوش
+</h3>
+
+اگر هنگام دریافت پوش، اپلیکیشن کرش کرد و خطای زیر را دریافت کردید:
+
+```java
+Unable to instantiate service com.adpdigital.push.ChabokFirebaseMessaging
+```
+این خطا به دلیل اضافه نکردن کتابخانه `firebase-messaging` است.
+
+برای رفع این خطا باید قطعه کد زیر را در فایل `build.gradle` ماژول اصلی اپلیکیشن اضافه شود.
+
+```java
+implementation 'com.google.firebase:firebase-messaging:17.1.0'
+```
+>`نکته:` پس از رفع خطا بهتر است وارد بخش <a href="https://doc.chabok.io/android/sdk-setup.html">راه‌اندازی</a> شوید و مجددا مقادیر فایل  `build.gradle`را مرور کنید.
+
 ## یک پوش را چند بار می‌گیرم
 ---
 #### از قطعه کد زیر استفاده کنید
