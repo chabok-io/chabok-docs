@@ -104,6 +104,8 @@ android.useAndroidX=true
 android.enableJetifier=true
 ```
 
+>`نکته:`با راه‌اندازی کتابخانه چابک قادر به دریافت پوش نوتیفیکیشن خواهید بود و نیازی به پیاده‌سازی سرویس فایبربیس برای دریافت پوش نوتیفیکیشن نیست.
+
  - دقت داشته باشید که همیشه از جدیدترین نسخه **ShortcutBadger** استفاده کنید. برای اطلاع از آخرین نسخه می‌توانید به [این لینک](https://github.com/leolin310148/ShortcutBadger) مراجعه نمایید. هم‌چنین با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید.     
 - به علت محدودیت‌‌های **اندروید ۸ به بالا** دقت کنید حتما مطابق جدول زیر تنظیمات نسخه‌ها را به درستی انجام دهید. در صورت رعایت نکردن نسخه‌های ذکر شده در جدول زیر هنگامی که اپلیکیشنتان **kill** شده باشد به هنگام دریافت نوتیفیکیشن با خطا مواجه خواهد شد. 
 <table dir="ltr">  
@@ -184,7 +186,7 @@ public class MyAppClass extends Application {
           super.onCreate();  
           AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
           AdpPushClient.setLogLevel(LogLevel.‍VERBOSE); // اختیاری
-          AdpPushClient.setDefaultTracker(“Ym3gy7”); // اختیاری
+          AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
     }
 }
 ``` 
@@ -199,15 +201,19 @@ public class MyAppClass extends Application {
 
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. برای فعال کردن مقدار قابلیت آنی (realtime)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید. این قابلیت در[ پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) استفاده می‌شود.
 
->`نکته مهم :`اگر از کامپوننت‌های اندروید در <a href="https://developer.android.com/guide/components/processes-and-threads#Processes">پراسس دیگری</a> استفاده می‌کنید. حتما متد: 
+اگر از کامپوننت‌های اندروید در <a href="https://developer.android.com/guide/components/processes-and-threads#Processes">پراسس دیگری</a> استفاده می‌کنید. حتما متد: 
+
 ```java
 AdpPushClient.setApplicationContext(Context)
 ```
 را قبل از متد:
+
 ```java
 AdpPushClient.configureEnvironment(Environment)
 ```
+
 فراخوانی کنید. در نهایت کلاس اپلیکیشنتان به شکل زیر خواهد بود.
+
 ```java
 public class MyAppClass extends Application {  
       @Override  
