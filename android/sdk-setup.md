@@ -219,8 +219,8 @@ public class MyAppClass extends Application {
       @Override  
       public void onCreate() {
           super.onCreate();  
-AdpPushClient.setApplicationContext(this); // ضروری
-AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
+          AdpPushClient.setApplicationContext(this); // ضروری
+          AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
           AdpPushClient.setLogLevel(LogLevel.‍VERBOSE); // اختیاری
           AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
     }

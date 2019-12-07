@@ -110,6 +110,14 @@ dependencies {
  
  >`نکته:` فایل ذکر شده را پس از دانلود، در پوشه ماژول اصلی برنامه قرار دهید.
   
+   - اگر از <a href="https://developer.android.com/jetpack/androidx/">AndroidX</a> استفاده می‌کنید قطعه کد زیر را در فایل `gradle.properties` پروژه خود اضافه کنید:
+   ```javascript
+  android.useAndroidX=true
+  android.enableJetifier=true
+  ```
+  
+  >`نکته:`با راه‌اندازی کتابخانه چابک قادر به دریافت پوش نوتیفیکیشن خواهید بود و نیازی به پیاده‌سازی سرویس فایبربیس برای دریافت پوش نوتیفیکیشن نیست.
+  
  - دقت داشته باشید که همیشه از جدیدترین نسخه **ShortcutBadger** استفاده کنید. برای اطلاع از آخرین نسخه می‌توانید به [این لینک](https://github.com/leolin310148/ShortcutBadger) مراجعه نمایید. هم‌چنین با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید.     
 - به علت محدودیت‌‌های **اندروید ۸ به بالا** دقت کنید حتما مطابق جدول زیر تنظیمات نسخه‌ها را به درستی انجام دهید. در صورت رعایت نکردن نسخه‌های ذکر شده در جدول زیر هنگامی که اپلیکیشنتان **kill** شده باشد به هنگام دریافت نوتیفیکیشن با خطا مواجه خواهد شد. 
 <table dir="ltr">  
@@ -157,6 +165,7 @@ dependencies {
 >`نکته:` توصیه می‌کنیم برای دریافت آخرین نسخه **Bug Fix**ها از کاراکتر + (wildcard) استفاده نمایید تا gradle به صورت خودکار نسخه‌های patch را بیاورد.
 <br>
 >`نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](/android/features.html#%D8%A8%D8%B1%D8%AF%D8%A7%D8%B4%D8%AA%D9%86-%D9%85%D8%AC%D9%88%D8%B2%D9%87%D8%A7%DB%8C-%D8%BA%DB%8C%D8%B1-%D8%B6%D8%B1%D9%88%D8%B1%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%D9%86%D8%B4%D8%A7%D9%86-badge-%D8%B1%D9%88%DB%8C-%D8%A2%DB%8C%DA%A9%D9%88%D9%86) هر کدام از آن‌ها را با اختیار خودتان بردارید.   
+>`نکته:` اگر از نسخه‌های پایین‌تر از ۳ کتابخانه چابک استفاده می‌کنید توصیه می‌کنیم کتابخانه چابک را به نسخه ۳ <a href="/android/release-note.html#%D8%A7%D8%B1%D8%AA%D9%82%D8%A7">**ارتقا**</a> دهید.
 
 ##### ب- مقداردهی (Initialize)
 
@@ -199,6 +208,35 @@ public class MyAppClass extends Application {
 
 
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. برای فعال کردن مقدار قابلیت آنی (realtime)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید. این قابلیت در[ پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) استفاده می‌شود.
+
+
+
+اگر از کامپوننت‌های اندروید در <a href="https://developer.android.com/guide/components/processes-and-threads#Processes">پراسس دیگری</a> استفاده می‌کنید. حتما متد: 
+
+```java
+AdpPushClient.setApplicationContext(Context)
+```
+را قبل از متد:
+
+```java
+AdpPushClient.configureEnvironment(Environment)
+```
+
+فراخوانی کنید. در نهایت کلاس اپلیکیشنتان به شکل زیر خواهد بود.
+
+```java
+public class MyAppClass extends Application {  
+      @Override  
+      public void onCreate() {
+          super.onCreate();  
+          AdpPushClient.setApplicationContext(this); // ضروری
+          AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
+          AdpPushClient.setLogLevel(LogLevel.‍VERBOSE); // اختیاری
+          AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
+    }
+}
+```  
+
 
 ##### ج- ثبت کاربر (login Users)
 
@@ -305,7 +343,14 @@ AdpPushClient.get().track("add-to-card", data);
 
 ##### رصد درآمد (Tracking Revenue)
 
-شما می‌توانید در‌آمدی که کاربران با نشان دادن رفتاری از خود (مانند خرید) تولید می‌کنند را رصد و ذخیره کنید. این کار را باید با متد `trackPurchase` انجام دهید. به عنوان مثال کاربر خریدی را با ارزش ۵۰ هزار تومان انجام داده است.
+شما می‌توانید در‌آمدی که کاربران با نشان دادن رفتاری از خود (مانند خرید) تولید می‌کنند را رصد و ذخیره کنید.
+این کار باید با متد `trackRevenue` برای نسخه **اندروید بالای ۳** انجام دهید. به عنوان مثال کاربری خریدی با ارزش ۵۰ هزار تومان را انجام داده است در نتیجه باید قطعه کد زیر را اضافه کنید: 
+
+```java
+AdpPushClient.get().trackRevenue(500000);
+```
+
+و در صورتی که از نسخه **اندروید زیر ۳** استفاده می‌کنید، این کار را باید با متد `trackPurchase` انجام دهید. به عنوان مثال کاربر خریدی را با ارزش ۵۰ هزار تومان انجام داده است.
 
 نمونه:
 
@@ -315,7 +360,7 @@ event.setData(data);
                 
 AdpPushClient.get().trackPurchase("Purchase", event);
 ```
-
+        
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/android/behavior-tracking.html) را مطالعه کنید.
 
 <br>
@@ -413,7 +458,7 @@ implementation 'com.android.installreferrer:installreferrer:1.0'
 اگر هم استورها Referrer را کلا **پشتیبانی نکنند** شما همچنان می‌توانید منبع (Source) نصب را در کمپین خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید، **آی‌دی ترکر** را در متد زیر قرار دهید و پس از خروجی apk گرفتن آن را در استور مورد نظر بگذارید. 
 
 ```java
-AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
+AdpPushClient.setDefaultTracker("YOUR_TRACKER_ID");
 ```
 
 >`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabok.io/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
@@ -477,12 +522,11 @@ AdpPushClient.get().setDeferredDataListener(new DeferredDataListener() {
 ```java
 https://sand.chabok.io/GgKoAT?label=user_1001
 ```
-اگر در محیط عملیاتی خواستید لینک را به کاربران ارسال کنید از مدل زیر باید استفاده کنید.
+اگر در حساب عملیاتی خواستید لینک را به کاربران ارسال کنید از مدل زیر باید استفاده کنید.
 
 ```java
-https://Production.chabok.io/GgKoAT?label=user_1000
+https://a.chabok.io/GgKoAT?label=user_1001
 ```
-
 
 <br><br>
 
