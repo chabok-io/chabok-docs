@@ -14,7 +14,6 @@ next: tracker.html
  برای انجام این مراحل ابتدا نیاز است کتابخانه چابک را <a href="https://doc.chabok.io/android/sdk-setup.html#%DB%B1--%D9%86%D8%B5%D8%A8-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87">نصب</a> کنید. سپس [مقداردهی و راه‌اندازی](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و در آخر برای شناخت کاربر توسط چابک، مرحله[ ثبت کاربر](/android/sdk-setup.html#۳--ثبت-کاربر)   را حتما پشت سر بگذارید. 
   
   
-  
 [ ۱- نصب کتابخانه](/android/sdk-setup.html#۱--نصب-کتابخانه)  
   
 [۲- مقداردهی اولیه (Initialize)](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize)  
@@ -59,8 +58,7 @@ apply plugin: 'com.google.gms.google-services'
   
 ```javascript  
 dependencies {
-    implementation 'com.adpdigital.push:chabok-lib:3.0.0'
-
+    implementation 'com.adpdigital.push:chabok-lib:3.1.0'
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
     implementation 'com.android.installreferrer:installreferrer:1.0'
@@ -74,7 +72,7 @@ dependencies {
 درصورتی که در برنامه خود نیاز به استفاده از موقعیت مکانی کاربر دارید، لازم است در ابتدا کتابخانه `chabok-lib` را **حذف** و کتابخانه `chabok-lib-geo` را **جایگزین** کنید.    با توجه به این که در این کتابخانه از سرویس **فیوز گوگل** استفاده شده است، باید  تغییرات زیر نیز در قسمت ‌‌‌`dependencies` اعمال شود:
 ```javascript
 dependencies {
-   implementation 'com.adpdigital.push:chabok-lib-geo:3.0.0'
+   implementation 'com.adpdigital.push:chabok-lib-geo:3.1.0'
 
    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
    implementation 'com.google.firebase:firebase-messaging:17.1.0'
@@ -185,7 +183,7 @@ public class MyAppClass extends Application {
       public void onCreate() {
           super.onCreate();  
           AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
-          AdpPushClient.setLogLevel(LogLevel.‍VERBOSE); // اختیاری
+          AdpPushClient.setLogLevel(LogLevel.VERBOSE); // اختیاری
           AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
     }
 }
@@ -201,18 +199,12 @@ public class MyAppClass extends Application {
 
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. برای فعال کردن مقدار قابلیت آنی (realtime)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید. این قابلیت در[ پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) استفاده می‌شود.
 
-اگر از کامپوننت‌های اندروید در <a href="https://developer.android.com/guide/components/processes-and-threads#Processes">پراسس دیگری</a> استفاده می‌کنید. حتما متد: 
+اگر از کامپوننت‌های اندروید در <a href="https://developer.android.com/guide/components/processes-and-threads#Processes">پراسس دیگری</a> استفاده می‌کنید. حتما متد  
 
-```java
-AdpPushClient.setApplicationContext(Context)
-```
-را قبل از متد:
 
-```java
-AdpPushClient.configureEnvironment(Environment)
-```
 
-فراخوانی کنید. در نهایت کلاس اپلیکیشنتان به شکل زیر خواهد بود.
+
+اگر از کامپوننت‌های اندروید در <a href="https://developer.android.com/guide/components/processes-and-threads#Processes">پراسس دیگری</a> استفاده می‌کنید. حتما متد `setApplicationContext` را قبل از متد `configureEnvironment` فراخوانی کنید. در نهایت کلاس اپلیکیشنتان به شکل زیر خواهد بود: 
 
 ```java
 public class MyAppClass extends Application {  
@@ -221,9 +213,9 @@ public class MyAppClass extends Application {
           super.onCreate();  
           AdpPushClient.setApplicationContext(this); // ضروری
           AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
-          AdpPushClient.setLogLevel(LogLevel.‍VERBOSE); // اختیاری
+          AdpPushClient.setLogLevel(LogLevel.VERBOSE); // اختیاری
           AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
-    }
+      }
 }
 ```  
 
