@@ -40,13 +40,14 @@ next: release-note.html
 کرش کردن اپلیکیشن در هنگام دریافت پوش نوتیفیکیشن
 </h3>
 
-اگر هنگام دریافت پوش، اپلیکیشن کرش شد و یکی از دو خطای **Unable to instantiate service com.adpdigital.push.ChabokFirebaseMessaging**، یا **java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService** را در **logcat** دریافت کردید:
+اگر هنگام دریافت پوش، اپلیکیشن کرش کرد و یکی از دو خطای **Unable to instantiate service com.adpdigital.push.ChabokFirebaseMessaging**، یا **java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService** را در **logcat** دریافت کردید:
 
-برای رفع خطای اول باید قطعه کد ``
-     implementation 'com.google.firebase:firebase-messaging:17.1.0'
-  `` در فایل `build.gradle` ماژول اصلی اپلیکیشن اضافه شود و برای رفع خطای دوم باید در فایل ‍`gradle` کد ``"implementation "com.google.firebase:firebase-messaging:18.0.+`` را اضافه نمایید.
+برای رفع خطاهای بالا باید قطعه کد زیر را در فایل `build.gradle` ماژول اصلی اپلیکیشن اضافه کنید.
 
->`نکته:` پس از رفع خطا پیشنهاد می‌کنیم وارد بخش راه‌اندازی شوید و مقادیر  <a href="https://doc.chabok.io/android/sdk-setup.html">راه‌اندازی</a>  فایل  `build.gradle` را بررسی کنید.
+```java
+   implementation 'com.google.firebase:firebase-messaging:17.1.0'
+```
+
 
 ## یک پوش را چند بار می‌گیرم
 ---
