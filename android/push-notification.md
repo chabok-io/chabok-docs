@@ -24,7 +24,7 @@ next: deeplink.html
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onNewToken(String token) {
-        ChabokFirebaseMessaging.refreshToken(token);
+        ChabokFirebaseMessaging.refreshToken(token, getApplicationContext());
     }
 
     @Override

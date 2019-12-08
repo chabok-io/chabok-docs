@@ -35,6 +35,20 @@ next: release-note.html
 
 <Br>
 
+
+<h3>
+کرش کردن اپلیکیشن در هنگام دریافت پوش نوتیفیکیشن
+</h3>
+
+اگر هنگام دریافت پوش، اپلیکیشن کرش کرد و یکی از دو خطای **Unable to instantiate service com.adpdigital.push.ChabokFirebaseMessaging**، یا **java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService** را در **logcat** دریافت کردید:
+
+برای رفع خطاهای بالا باید قطعه کد زیر را در فایل `build.gradle` ماژول اصلی اپلیکیشن اضافه کنید.
+
+```java
+   implementation 'com.google.firebase:firebase-messaging:17.1.0'
+```
+
+
 ## یک پوش را چند بار می‌گیرم
 ---
 #### از قطعه کد زیر استفاده کنید
@@ -184,19 +198,6 @@ next: release-note.html
 ##### ۶- وجود کتابخانه‌های دیگر در کنار چابک
 
 در صورتی که شما از سرویس‌های دیگری هم استفاده می‌کنید و کتابخانه‌های آن‌ها را نصب کرده‌اید امکان عدم نمایش اعلان برای شما وجود خواهد داشت. به عنوان مثال اگر کتابخانه **پوشه** را علاوه بر چابک روی اپ خود داشته باشید، زمانی که اپ شما بسته است، پوش‌نوتیفیکیشن دریافت می‌شود اما اعلان آن در دستگاه کاربر **نمایش داده نمی‌شود**.
-
-##### ۷- خطای firebase
-
-در صورتی که برای نمایش نوتیفیکیشن با خطای زیر در logcat مواجه شدید:
-
-```bash
-java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService
-``` 
-باید در `gradle` کد زیر را اضافه کنید:
-
-```javascript
-implementation "com.google.firebase:firebase-messaging:18.0.+"
-```
 
 <Br>
  

@@ -30,7 +30,6 @@ public void track(final String trackName, JSONObject data)
 ```java
 JSONObject data = new JSONObject();
 data.put("value", 35000);
-
 AdpPushClient.get().track("add-to-card", data);
 ```
 
@@ -43,7 +42,6 @@ AdpPushClient.get().track("add-to-card", data);
 ```java
 JSONObject data = new JSONObject();
 data.put("status", true);
-
 AdpPushClient.get().track("add-to-card", data);
 ```
 
@@ -52,7 +50,35 @@ AdpPushClient.get().track("add-to-card", data);
 ```java
 JSONObject data = new JSONObject();
 data.put("status", 35000);
+AdpPushClient.get().track("add-to-card", data);
+```
 
+<h3>ارسال مقادیر آرایه‌ای و تاریخ</h3>
+
+شما می‌توانید رفتارهای هر کاربر را به کمک متد زیر، در نسخه **۳.۱.۰ یا بالاتر کتابخانه چابک** فراخوانی کنید.
+
+```java
+Bundle data = new Bundle();
+data.putStringArray("ProductSelection", new String[]{"Shirt", "Pants"});
+data.putString("firstName", "محمدرضا");
+data.putString("lastName", "اخوان");
+data.putBoolean("scarf", false);
+data.putInt("value", 35000);
+AdpPushClient.get().track("add-to-card");
+```
+در صورتی که از نسخه‌های پایین‌تر کتابخانه چابک استفاده می‌کنید، باید متد زیر را به کار ببرید.
+
+```java
+JSONObject data = new JSONObject();
+try {
+    data.put("firstName", "محمدرضا");
+    data.put("lastName", "اخوان");
+    data.put("value", 35000);
+    data.put("scarf", false);
+    data.put("ProductSelection", new JSONArray().put("Shirt").put("Pants"));
+}catch (JSONException e) {
+    e.printStackTrace();
+}
 AdpPushClient.get().track("add-to-card", data);
 ```
 
@@ -60,17 +86,23 @@ AdpPushClient.get().track("add-to-card", data);
 
 ### رصد درآمد (Tracking Revenue)
 
-شما می‌توانید در‌آمدی که کاربران با نشان دادن رفتاری از خود (مانند خرید) تولید می‌کنند را رصد و ذخیره کنید. این کار را باید با متد `trackPurchase` انجام دهید. به عنوان مثال کاربر خریدی را با ارزش ۵۰ هزار تومان انجام داده است.
+شما می‌توانید در‌آمدی که کاربران با نشان دادن رفتاری از خود (مانند خرید) تولید می‌کنند را رصد و ذخیره کنید.
+این کار باید با متد `trackRevenue` برای **نسخه‌های ۳ به بالا کتابخانه چابک** انجام دهید. به عنوان مثال کاربری خریدی با ارزش ۵۰ هزار تومان را انجام داده است.
+ 
+```java
+AdpPushClient.get().trackRevenue(500000);
+```
+
+و در صورتی که از **نسخه‌های ۳ به پایین کتابخانه چابک** استفاده می‌کنید، این کار را باید با متد `trackPurchase` انجام دهید. به عنوان مثال کاربر خریدی را با ارزش ۵۰ هزار تومان انجام داده است.
 
 نمونه:
 
 ```java
 ChabokEvent event = new ChabokEvent(500000, "RIAL");
-event.setData(data);
-                
+event.setData(data);               
 AdpPushClient.get().trackPurchase("Purchase", event);
 ```
-
+        
 <Br>
 
 ### ارسال پیام براساس رفتار
