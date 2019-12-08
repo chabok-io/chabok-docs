@@ -37,20 +37,16 @@ next: release-note.html
 
 
 <h3>
-کرش شدن اپلیکیشن در هنگام دریافت پوش
+کرش کردن اپلیکیشن در هنگام دریافت پوش نوتیفیکیشن
 </h3>
 
-اگر هنگام دریافت پوش، اپلیکیشن کرش کرد و خطای ``
-                                              Unable to instantiate service com.adpdigital.push.ChabokFirebaseMessaging
-                                              `` را دریافت کردید:
+اگر هنگام دریافت پوش، اپلیکیشن کرش شد و یکی از دو خطای **Unable to instantiate service com.adpdigital.push.ChabokFirebaseMessaging**، یا **java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService** را در **logcat** دریافت کردید:
 
-این خطا به دلیل اضافه نکردن کتابخانه `firebase-messaging` رخ داده است.
-
-برای رفع این خطا باید قطعه کد ```java
+برای رفع خطای اول باید قطعه کد ``
      implementation 'com.google.firebase:firebase-messaging:17.1.0'
-  ``` را در فایل `build.gradle` ماژول اصلی اپلیکیشن اضافه شود.
+  `` در فایل `build.gradle` ماژول اصلی اپلیکیشن اضافه شود و برای رفع خطای دوم باید در فایل ‍`gradle` کد ``"implementation "com.google.firebase:firebase-messaging:18.0.+`` را اضافه نمایید.
 
->`نکته:` پس از رفع خطا بهتر است وارد بخش <a href="https://doc.chabok.io/android/sdk-setup.html">راه‌اندازی</a> شوید و مجددا مقادیر فایل  `build.gradle`را مرور کنید.
+>`نکته:` پس از رفع خطا پیشنهاد می‌کنیم وارد بخش راه‌اندازی شوید و مقادیر  <a href="https://doc.chabok.io/android/sdk-setup.html">راه‌اندازی</a>  فایل  `build.gradle` را بررسی کنید.
 
 ## یک پوش را چند بار می‌گیرم
 ---
@@ -201,19 +197,6 @@ next: release-note.html
 ##### ۶- وجود کتابخانه‌های دیگر در کنار چابک
 
 در صورتی که شما از سرویس‌های دیگری هم استفاده می‌کنید و کتابخانه‌های آن‌ها را نصب کرده‌اید امکان عدم نمایش اعلان برای شما وجود خواهد داشت. به عنوان مثال اگر کتابخانه **پوشه** را علاوه بر چابک روی اپ خود داشته باشید، زمانی که اپ شما بسته است، پوش‌نوتیفیکیشن دریافت می‌شود اما اعلان آن در دستگاه کاربر **نمایش داده نمی‌شود**.
-
-##### ۷- خطای firebase
-
-در صورتی که برای نمایش نوتیفیکیشن با خطای زیر در logcat مواجه شدید:
-
-```bash
-java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService
-``` 
-باید در `gradle` کد زیر را اضافه کنید:
-
-```javascript
-implementation "com.google.firebase:firebase-messaging:18.0.+"
-```
 
 <Br>
  

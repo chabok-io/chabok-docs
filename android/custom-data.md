@@ -25,12 +25,10 @@ next: behavior-tracking.html
 
 ```java
 HashMap<String, Object> userAttribute = new HashMap<>();
-
 userAttribute.put("firstName", "محمدرضا");
 userAttribute.put("lastName", "اخوان");
-userAttribute.put("age", 25);
+userAttribute.put("age", 35);
 userAttribute.put("gender", "مرد");
-
 AdpPushClient.get().setUserAttributes(userAttribute);
 ```
 
@@ -48,10 +46,9 @@ AdpPushClient.get().setUserAttributes(userAttribute);
 
 ```java
 HashMap<String, Object> userAttribute = new HashMap<>();
-
 userAttribute.put("firstName", "محمدرضا");
 userAttribute.put("lastName", "اخوان");
-userAttribute.put("age", 25);
+userAttribute.put("age", 35);
 userAttribute.put("married", true);
 userAttribute.put("gender", "مرد");
 
@@ -65,9 +62,7 @@ AdpPushClient.get().setUserAttribute(userAttribute);
 
 ```java
 HashMap<String, Object> userAttribute = new HashMap<>();
-
 userAttribute.put("age", "نوزده");
-
 AdpPushClient.get().setUserAttributes(userAttribute);
 ```
 
@@ -75,9 +70,7 @@ AdpPushClient.get().setUserAttributes(userAttribute);
 
 ```java
 HashMap<String, Object> userAttribute = new HashMap<>();
-
 userAttribute.put("age", 19);
-
 AdpPushClient.get().setUserAttributes(userAttribute);
 ```
 <h4>ارسال داده‌های سفارشی کاربران</h4>
@@ -88,7 +81,7 @@ AdpPushClient.get().setUserAttributes(userAttribute);
 Bundle userAttribute = new Bundle();
 userAttribute.putString("firstName", "حمیدرضا");
 userAttribute.putString("lastName", "اخوان");
-userAttribute.putInt("age", 25);
+userAttribute.putInt("age", 35);
 userAttribute.putBoolean("married", true);
 userAttribute.putParcelable("birthday", new Datetime());
 userAttribute.putStringArray("children", new String[]{"مینا", "سارا"});
@@ -102,7 +95,7 @@ AdpPushClient.get().setuserAttribute(userAttribute);
 HashMap<String, Object> userAttribute = new HashMap<>();
 userAttribute.put("firstName", "حمیدرضا");
 userAttribute.put("lastName", "اخوان");
-userAttribute.put("age", 25);
+userAttribute.put("age", 35);
 userAttribute.put("married", true);
 AdpPushClient.get().setuserAttribute(userAttribute);
 ```
@@ -113,9 +106,9 @@ AdpPushClient.get().setuserAttribute(userAttribute);
 
 ```java
 Bundle userAttribute = new Bundle();
-userAttribute.putParcelable("birthday", new Datetime());
 userAttribute.putBoolean("married", true);
-userAttribute.putInt("age", 25);
+userAttribute.putInt("age", 35);
+userAttribute.putParcelable("birthday", new Datetime());
 userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movies_02", "movies_03", "movies_04"});
 AdpPushClient.get().setUserAttribute(userAttribute);
 ```
@@ -165,7 +158,6 @@ AdpPushClient.get().unsetUserAttribute("age");
 برای دریافت اطلاعات کاربر باید متد زیر را فراخوانی کنید:
 
 ```java
-AdpPushClient.get().getUserAttributes(userAttribute);
 HashMap<String, Object> attributes = AdpPushClient.get().getUserAttributes();
 Boolean married = (Boolean) attributes.get("married");
 String gender = (String) attributes.get("gender");
@@ -187,7 +179,6 @@ AdpPushClient.get().incrementUserAttribute("visit_comedy_shows", 5);
 
 ```java
 ArrayList<String> userAttribute = new ArrayList<>();
-
 userAttribute.add("comedy_movie");
 userAttribute.add("action_movie");
 userAttribute.add("view_movie_detail");
@@ -200,7 +191,6 @@ AdpPushClient.get().incrementUserAttribute(userAttribute);
 
 ```java
 HashMap<String, Double> userAttribute = new HashMap<>();
-                
 userAttribute.put("comedy_movie", 5d);
 userAttribute.put("action_movie", 2d);
 userAttribute.put("view_movie_detail", 1d);
@@ -222,7 +212,6 @@ AdpPushClient.get().incrementUserAttribute(userAttribute);
 ```java
 //Add a tag to current user.
 AdpPushClient.get().addTag("TAG_NAME", new Callback() {...});
-
 //Add array of tags to current user.
 AdpPushClient.get().addTag(new String[]{"TAG_NAME_1", "TAG_NAME_2"}, new Callback() {...});
 ```
@@ -234,7 +223,6 @@ AdpPushClient.get().addTag("Premium_User", new Callback() {
 	public void onSuccess(Object value) {  
 		Log.d(TAG, "Successfully added tag to current user devices");  
 	}  
-  
 	@Override  
 	public void onFailure(Throwable value) {  
 		Log.d(TAG, "Couldn't add tag to current user devices");  
