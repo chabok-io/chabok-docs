@@ -29,7 +29,7 @@
 - name: JavaScript
   image: js.svg
   document: /javascript/introducing.html
-  demo:
+  demo: https://webpush.chabok.io/
   starter:
   issue: https://github.com/chabok-io/chabok-client-js/issues
 
