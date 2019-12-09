@@ -10,6 +10,16 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۱.۶.۰ - ۱۳۹۸/۰۹/۱۸](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.6.0)
+
+### تغییرات
+
+- رفع خطای مربوط به فراخوانی متد `getUniqueId`
+
+- پشتیبانی از راه‌اندازی آسنکرون کتابخانه
+
+-  پشتیبانی از Server Side Rendering
+
 ## [نسخه ۱.۵.۰ - ۱۳۹۸/۰۶/۰۹](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.5.0)
 
 ### تغییرات
