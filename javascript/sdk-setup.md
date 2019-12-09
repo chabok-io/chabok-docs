@@ -38,7 +38,7 @@ yarn add chabokpush
 و یا با استفاده از [CDN](https://unpkg.com/chabokpush@1.5.0/dist/chabokpush.min.js)، چابک را به پروژه خود اضافه کنید.
 
 ```bash
-<script src="https://unpkg.com/chabokpush@1.5.0/dist/chabokpush.min.js"></script>
+<script src="https://unpkg.com/chabokpush@1.6.0/dist/chabokpush.min.js"></script>
 ```
 
 
