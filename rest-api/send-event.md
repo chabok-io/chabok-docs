@@ -10,8 +10,8 @@ permalink: rest-api/send-event.html
 <Br>
 
 ### لینک پایه (Path)
-**post**
-لینک پایه ارسال رویداد `https://{APP_ID}.push.adpdigital.com/api/installations/track`**post**
+
+**post** لینک پایه ارسال رویداد `https://{APP_ID}.push.adpdigital.com/api/installations/track`
   است. 
 
 
