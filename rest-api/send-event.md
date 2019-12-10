@@ -59,7 +59,7 @@ permalink: rest-api/send-event.html
   "eventData": {}
 }
 ```
-- ``userId``
+- ``userId`` (اجباری)
 
 شناسه کاربری که رویداد را انجام داده است.
 
