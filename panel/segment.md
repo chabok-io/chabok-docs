@@ -61,7 +61,7 @@ next: send.html
 
 ![عکس مربوطه](http://uupload.ir/files/7nyu_screenshot.png)
 
-![عکس مربوطه](http://uupload.ir/files/mvj1_screenshot-sandbox.push.adpdigital.com-2019.12.png)
+![عکس مربوطه](http://uupload.ir/files/thq7_geo-targeting.jpg)
 
 **موقعیت مکانی**: از این فیلتر برای دسته‌بندی براساس موقعیت جغرافیایی کاربران (**Geo Targeting**) استفاده می‌شود. (مختصات جغرافیایی)
 
