@@ -59,11 +59,11 @@ next: send.html
 
 ##### محلیت 
 
-![عکس مربوطه](http://uupload.ir/files/thq7_geo-targeting.jpg)
+![عکس مربوطه](http://uupload.ir/files/k0xs_geo-targeting.jpg)
 
 **موقعیت مکانی**: از این فیلتر برای دسته‌بندی براساس موقعیت جغرافیایی کاربران (**Geo Targeting**) استفاده می‌شود. (مختصات جغرافیایی)
 
-![عکس مربوطه](http://uupload.ir/files/3m2e_targeting-geo.png)
+![عکس مربوطه](http://uupload.ir/files/8kbj_geo-targeting-in-panel.png)
 
 <Br>  
                                                                                              
