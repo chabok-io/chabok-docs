@@ -59,7 +59,7 @@ next: send.html
 
 ##### محلیت 
 
-![عکس مربوطه](http://uupload.ir/files/7nyu_screenshot.png)
+![عکس مربوطه](http://uupload.ir/files/3m2e_targeting-geo.png)
 
 ![عکس مربوطه](http://uupload.ir/files/thq7_geo-targeting.jpg)
 
