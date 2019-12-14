@@ -10,6 +10,15 @@ prev: sdk-setup.html
 
 <Br>
 
+## [نسخه ۱.۵.۰ - ۱۳۹۸/۰۹/۲۳](https://github.com/chabok-io/chabok-client-rn/releases/tag/v1.5.0)
+
+### تغییرات
+
+- بروزرسانی اندروید 
+- بروزرسانی آی‌او‌اس 
+
+### ارتقا
+
 ## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۴/۰۵](https://github.com/chabok-io/chabok-client-rn/releases/tag/v1.4.0)
 
 ### تغییرات
