@@ -10,11 +10,9 @@ prev: sdk-setup.html
 
 <Br>
 
-## [نسخه ۱.۵.۰ - ۱۳۹۸/۰۹/۲۳](https://github.com/chabok-io/chabok-client-rn/releases/tag/v1.5.0)
+## [نسخه ۱.۰.۰ - ۱۳۹۸/۰۹/۲۳](https://github.com/chabok-io/chabok-client-rn/releases/tag/v1.0.0)
 
 ### تغییرات
 
 - بروزرسانی کلاینت اندروید چابک به نسخه ۳.۱.۰
 - بروزرسانی کلاینت آی‌او‌اس به نسخه ۲.۰.۱
-
-### ارتقا
