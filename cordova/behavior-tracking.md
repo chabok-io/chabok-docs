@@ -3,8 +3,8 @@ id: behavior-tracking
 title: رصد رفتار درون‌برنامه‌ای
 layout: cordova
 permalink: cordova/behavior-tracking.html
-prev: user-management.html
-next: features.html
+prev: custom-data.html
+next: release-note.html
 ---
 
 شما می‌توانید رفتارهای کاربر را در اپلیکیشن خود به طور لحظه‌ای [رصد کنید](/cordova/behavior-tracking.html#متد-رصد) و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را [دسته‌بندی کنید](/panel/dashboard.html#سگمنت) و برایشان [پیام بفرستید](/cordova/behavior-tracking.html#ارسال-پیام-براساس-رفتار). همچنین [آمار رفتار کاربران](/cordova/behavior-tracking.html#تحلیل-رفتار) را می‌توانید تحلیل کنید.
@@ -39,21 +39,6 @@ this.chabok.track('purchase-clothing', data)
 
 <Br>
 
-### رصد درآمد (Tracking Revenue)
-
-شما می‌توانید در‌آمدی که کاربران با نشان دادن رفتاری از خود (مانند خرید) تولید می‌کنند را رصد و ذخیره کنید. این کار را باید با متد `trackPurchase` انجام دهید. به عنوان مثال کاربر خریدی را با ارزش ۵۰ هزار تومان انجام داده است.
-
-نمونه:
-
-```javascript
-const eventData = {
-          revenue: 500000,
-          currency: 'RIAL'
-}
-chabok.trackPurchase('Purchase', eventData)
-```
-
-<Br>
 
 ### ارسال پیام براساس رفتار
 
