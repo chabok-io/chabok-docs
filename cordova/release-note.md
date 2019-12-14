@@ -2,7 +2,7 @@
 id: release-note
 title: لیست تغییرات کتابخانه
 layout: cordova
-permalink: react-native-bridge/release-note.html
+permalink: cordova/release-note.html
 prev: sdk-setup.html
 ---
 
