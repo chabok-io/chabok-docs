@@ -1,0 +1,24 @@
+- title: نصب و راه ‌اندازی
+  items:
+    - id: required
+      title: پیش‌نیازها
+      subitems:
+        - title: ایجاد حساب
+          href: ایجاد-حساب-چابک
+        - title: دریافت کلیدهای گوگل
+          href: دریافت-کلیدهای-گوگل
+        - title: گواهی اپل
+          href: ایجاد-گواهی-اپل
+
+    - id: sdk-setup
+      title: راه‌اندازی
+      subitems:
+        - title: نصب کتابخانه
+          href: ۱--نصب-کتابخانه
+        - title: مقداردهی اولیه
+          href: ۲--مقداردهی-اولیه-initialize
+        - title: ثبت کاربر
+          href: ۳--ثبت-کاربر-register
+   
+    - id: release-note
+      title: لیست تغییرات
