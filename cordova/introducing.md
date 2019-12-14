@@ -3,12 +3,11 @@ id: introducing
 title: معرفی چابک
 layout: cordova
 permalink: cordova/introducing.html
-next: required.html
 ---
 
 چابک یک **پلتفرم موبایل مارکتینگ** برای اجرای یکپارچه تمام فعالیت‌های بازاریابی اپلیکیشن‌های موبایل و وب است. چشم انداز ما توسعه یک زیرساخت بومی ارزشمند برای مرتفع کردن نیاز‌های امروز کسب و کار‌های آنلاین و اپلیکیشن‌هایشان می‌باشد. چابک به شما کمک می‌کند **کاربران با کیفیتی** جذب کنید، **ارتباط هدفمندی** با آن‌ها بسازید و **رفتار و بازخورد** آن‌ها را یاد بگیرید تا بهترین تصمیم‌ها را برای محصول خود بگیرید.
 
-پلتفرم چابک در حوزه‌های [اتریبیوشن](/windows/introducing.html#سرویس-اتریبیوشن-attribution)، [زیرساخت آنی](/windows/introducing.html#سرویس-بکند-آنی-realtime-backend-service)، [تعاملات درون‌برنامه‌ای](/windows/introducing.html#ارتباط-مستقل-از-کانال-omni-channel-communication)، [اتوماسیون بازاریابی موبایل](/windows/introducing.html#اتوماسیون-بازاریابی-موبایل-mobile-marketing-automation) و [آنالیتیکس](/windows/introducing.html#آنالیتیکس-موبایل-و-وب-mobile--web-analytics) می‌تواند برای شما مفید باشد.
+پلتفرم چابک در حوزه‌های [اتریبیوشن](/cordova/introducing.html#سرویس-اتریبیوشن-attribution)، [زیرساخت آنی](/cordova/introducing.html#سرویس-بکند-آنی-realtime-backend-service)، [تعاملات درون‌برنامه‌ای](/cordova/introducing.html#ارتباط-مستقل-از-کانال-omni-channel-communication)، [اتوماسیون بازاریابی موبایل](/cordova/introducing.html#اتوماسیون-بازاریابی-موبایل-mobile-marketing-automation) و [آنالیتیکس](/cordova/introducing.html#آنالیتیکس-موبایل-و-وب-mobile--web-analytics) می‌تواند برای شما مفید باشد.
 
 <br>
 
@@ -32,7 +31,7 @@ next: required.html
 
 - **آنالیتیکس (Analytics)**: تمام داده‌های کاربردی یکجا و به صورت آنی به نمایش گذاشته می‌شوند.
 
-<div style="text-align: center ;"><img src="https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/attribution-introducing.svg?sanitize=true" class="img-fluid" style="
+<div style="text-align: center ;"><img src="https://svgshare.com/i/Br6.svg" class="img-fluid" style="
     height: 260px;
 "></div> 
 
@@ -53,7 +52,7 @@ next: required.html
 - **خدمات مبتنی بر مکان** (رصد یابی مکانی، جستجوی کاربران نزدیک و …)
 
 
-<div style="text-align: center;"><img src="https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chabok-docs/realtime-backend-service.svg?sanitize=true" /></div> 
+<div style="text-align: center;"><img src="https://svgshare.com/i/7xC.svg" /></div> 
 
 <br>
 
