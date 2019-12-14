@@ -28,7 +28,7 @@ next: custom-data.html
 
 [ب- مقداردهی](/cordova/tracker.html#ب--مقداردهی-initialize)
 
-[ج- ثبت کاربر](/cordova/tracker.html#ج--ثبت-کاربر-register-users)
+[ج- ثبت کاربر](/cordova/tracker.html#ج--ثبت-کاربر)
 
 ### الف- افزودن کتابخانه
 
@@ -277,7 +277,7 @@ chabok.login("user_id");
 
 ```java
 chabok.logout();
-``
+```
 
 
 #### ۲.۱. رصد رویدادها (Tracking Events)
