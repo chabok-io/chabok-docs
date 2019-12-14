@@ -73,8 +73,6 @@ apply plugin: 'com.google.gms.google-services'
  این فایل عموما در مسیر زیر وجود دارد:
 **app/build.gradle**
 
-<br>
-
 #### نصب کتابخانه آی‌اواس
 
 >`نکته:` نصب کتابخانه آی‌او‌اس به صورت اتوماتیک انجام می‌شود و نیاز به نصب جداگانه‌ای ندارد.
@@ -203,7 +201,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 }
 ```
 
-> `نکته`: متد بالا برای محیط سندباکس است. در صورتی که حساب عملیاتی دارید کافیست فقط `Sandbox` را با ‍‍`Production` عوض کنید.
+> `نکته`: متد بالا برای محیط سندباکس است. در صورتی که حساب عملیاتی دارید فقط کافیست `Sandbox` را با ‍‍`Production` عوض کنید.
 
 
 
