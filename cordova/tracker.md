@@ -292,7 +292,7 @@ chabok.logout();
 
 
 ```javascript
-this.chabok.track('YOUR_TRACK_NAME', {"KEY":"VALUE", "KEY": "VALUE", "KEY": "VALUE"})
+this.chabok.track('YOUR_TRACK_NAME', {"KEY":"VALUE"})
 ```
 
 > نکته : مقدار `data` در متد `track` یک داده مربوط به رویداد‌ می‌تواند باشد. شما این مقدار را می‌توانید به عنوان `Object` همراه رویداد‌ در نظر بگیرید.
