@@ -33,111 +33,247 @@ next: chabok-messaging.html
 
 ##### الف- افزودن کتابخانه
 
-کتابخانه چابک را از [این لینک]() دانلود کنید و در پروژه خود قرار دهید.    
+### ۱- نصب کتابخانه 
 
+برای نصب از طریق `cordova-cli` :
 
-> `نکته:` توجه داشته باشید که برای اطلاع از آخرین نسخه کتابخانه [این صفحه](/cordova/release-note.html) را ببینید. همچنین توصیه می‌کنیم بخش [مدل نسخه‌گذاری در چابک](/android/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
+```bash
+cordova plugin add com.chabokpush.cordova
+```
+>`نکته:` دقت داشته باشید که [اندروید](/cordova/sdk-setup.html#نصب-کتابخانه-اندروید) و [آی‌اواس](/cordova/sdk-setup.html#نصب-کتابخانه-آیاواس) نیاز به نصب جداگانه دارند که در ادامه به هر دو پرداخته می‌شود:
 
-<br>
+####۱.۱- نصب کتابخانه اندروید 
 
-##### ب- مقداردهی (Initialize)
+برای دریافت کتابخانه چابک دستورات زیر را به فایل `build.gradle` اصلی پروژه اضافه کنید:
 
-چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. 
-
-```java
-public class MyAppClass extends Application {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
-        //AdpPushClient.init() should always be called in onCreate of Application class
-        AdpPushClient.init(
-                getApplicationContext(),
-                MY_ACTIVITY.class,
-                "APP_ID/SENDER_ID", //based on your environment
-                "API_KEY",          //based on your environment
-                "SDK_USERNAME",     //based on your environment
-                "SDK_PASSWORD"      //based on your environment
-        );
-
-        //true connects to Sandbox environment
-        //false connects to Production environment
-        AdpPushClient.get().setDevelopment(DEV_MODE);
-    }
-    
-    @Override
-    public void onTerminate() {
-        if (AdpPushClient.get() != null) {
-            AdpPushClient.get().dismiss();
+```javascript  
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/" 
         }
-
-        super.onTerminate();
+    }
+    
+    dependencies {    
+        classpath "io.chabok.plugin:chabok-services:1.0.0"
+        classpath 'com.google.gms:google-services:4.3.2'
     }
 }
 ```
 
-در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.
+دستور زیر را در انتهای فایل `build.gradle` ماژول اپلیکیشن خود اضافه کنید:
 
-
-مقدار `SENDER_ID` در پارامتر `APP_ID/SENDER_ID` همان **شناسه گوگل** برای *دریافت پوش‌نوتیفیکیشن* می‌باشد که در پنل در بخش [تنظیمات پلتفرم اندروید](/panel/settings.html#پلتفرمها) قرار داده‌اید و `APP_ID` همان `APP_ID‌`ای که در پنل در بخش [دسترسی و توکن‌ها](/panel/settings.html#دسترسیها-و-توکنها) قرار داده شده است، می‌باشد.
-
-متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد. مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
-
-
+```javascript  
+apply plugin: 'io.chabok.plugin.chabok-services'
+apply plugin: 'com.google.gms.google-services'
+```
+>`نکته:`
+ این فایل عموما در مسیر زیر وجود دارد:
+**app/build.gradle**
 
 <br>
 
-##### ج- ثبت کاربر (Register Users)
+####۱.۲ نصب کتابخانه آی‌اواس
 
-یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و [سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید](/panel/users.html#جزئیات-کاربر).
+>`نکته:` نصب کتابخانه آی‌او‌اس به صورت اتوماتیک انجام می‌شود و نیاز به نصب جداگانه‌ای ندارد.
 
+
+### ب- مقدار‌دهی اولیه (Initialize)
+
+مقداردهی اولیه در اندروید به صورت زیر انجام می‌شود.
+
+
+چابک برای راه اندازی نیاز به **مقداردهی اولیه** دارد.
+<br>
+۱. برای مقداردهی ابتدا از پنل خود وارد بخش **تنظیمات**> **دسترسی و توکن‌ها**> **کتابخانه موبایل**> **فعال‌سازی راه‌اندازی هوشمند**> شوید و فایل **Chabok.sandbox.json** یا **Chabok.production.json** را بسته به محیطتان دانلود کنید.
+<p class="text-center">
+<img  src="http://uupload.ir/files/9tlr_sandbox-android-chabok-doc.gif">
+</p>
+>`نکته:`
+برای غیرفعال کردن قابلیت **پوش نوتیفیکیشن**(pushNotification)، کافیست مقدار پیش ‌فرض آن را در فایل دانلود شده تغییر بدید.
+
+۲. فایل دانلود شده را در پوشه ماژول اصلی پروژه قرار دهید.
+<p class="text-center">
+<img width="90%" src="http://uupload.ir/files/pby6_download-file-in-main-module-of-project.gif">
+</p>
+
+<br>
+
+۳. در مرحله آخر نیاز است کد‌های زیر را در کلاس اپلیکیشن خود فراخوانی کنید.
 
 ```java
-@Override
-public void onCreate() {
-    super.onCreate();
-
-    ...
-    
-    String userId = AdpPushClient.get().getUserId();
-    
-    if (userId != null && !userId.isEmpty()) {
-        AdpPushClient.get().register(userId);
-    } else {
-
-        //If user is not registered verify the user and
-        //call AdpPushClient.get().register("USER_ID") method at login page
-        
-        //If you have guest users
-        // should be called here (If you want to track installs on user's first app launch (just like Adjust))
-        AdpPushClient.get().registerAsGuest();
-
+public class MyAppClass extends Application {  
+      @Override  
+      public void onCreate() {
+          super.onCreate();  
+          AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
+          AdpPushClient.setLogLevel(LogLevel.VERBOSE); // اختیاری
+          AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
     }
+}
+``` 
+<br>
+-**configureEnvironment**: متد `configureEnvironment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شده. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.  
+
+>`نکته:`متدی که در بالا قرار دادیم برای راه‌اندازی محیط سندباکس است. در صورتی که **حساب عملیاتی** دارید کافیست `Environment.SANDBOX` را با `Environment.PRODUCTION` عوض کنید.
+<br>
+
+> `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید و پس از تایید و ساخت حساب عملیاتی فایل **Chabok.production.json** را دانلود کنید و به جای فایل **Chabok.sandbox.json** در پوشه ماژول اصلی پروژه خود قراردهید. 
+
+
+> `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. برای فعال کردن مقدار قابلیت آنی (realtime)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید. این قابلیت در[ پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) استفاده می‌شود.
+
+اگر از کامپوننت‌های اندروید در <a href="https://developer.android.com/guide/components/processes-and-threads#Processes">پراسس دیگری</a> استفاده می‌کنید. حتما متد `setApplicationContext` را قبل از متد `configureEnvironment` فراخوانی کنید. در نهایت کلاس اپلیکیشنتان به شکل زیر خواهد بود: 
+
+```java
+public class MyAppClass extends Application {  
+      @Override  
+      public void onCreate() {
+          super.onCreate();  
+          AdpPushClient.setApplicationContext(this); // ضروری
+          AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
+          AdpPushClient.setLogLevel(LogLevel.VERBOSE); // اختیاری
+          AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
+      }
+}
+```  
+
+مقداردهی اولیه در نسخه آی‌او‌اس به صورت زیر انجام می‌شود.
+
+
+چابک برای راه‌اندازی نیاز به **مقداردهی اولیه** دارد.
+
+
+۱- برای مقداردهی ابتدا از پنل خود بخش **تنظیمات> دسترسی و توکن‌ها> کتابخانه موبایل> راه‌اندازی هوشمند** فایل **Chabok.sandbox.plist**  یا  **Chabok.production.plist**  (بسته به محیطتان) را دانلود کنید.
+
+![enter image description here](http://uupload.ir/files/hgt4_ios-configuration-file.png)
+
+> `نکته:` برای غیر فعال کردن دریافت توکن پوش‌نوتیفیکیشن، کافیست مقدار پیش‌فرض آن را در فایل دانلود شده تغییر دهید.
+
+<br>
+
+۲- فایل دانلود شده را در **روت پروژه** خود قرار دهید:
+
+![](http://uupload.ir/files/4818_root-of-project.png)
+<br>
+
+۳- در آخر متدهای زیر را فرخوانی کنید.
+
+> `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
+
+```objectivec
+//Objective-C
+
+#import "AppDelegate.h"
+#import <AdpPushClient/AdpPushClient.h>
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application
+            didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [PushClientManager  resetBadge]; //Optional
+    [PushClientManager.defaultManager addDelegate:self]; //Optional
+    
+    [PushClientManager.defaultManager configureEnvironment:Sandbox];
+ 
+    return YES;
 }
 ```
 
-متد `registerAsGuest` کاربر را به عنوان **کاربر مهمان** ثبت می‌کند. این متد به طور خودکار  یک تگ مهمان (CHABOK_GUEST) به کاربر اختصاص می‌دهد.
+```swift
+//Swift:
 
->` نکته:` دقت کنید که متد `registerAsGuest` را به درستی استفاده کرده‌ باشید. برای این کار پس از نصب کاربر به **پنل > کاربران** بروید و از اضافه شدن کارت آن کاربر مانند زیر مطمئن شوید:
+import UIKit
+import AdpPushClient
 
-![عکس مربوط](http://uupload.ir/files/sa5_regis-as-guest3.png)
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate {
 
- متد `register` علاوه بر ثبت کاربر، عمل **اتصال به سرور چابک** را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول اجرای اپلیکیشن (در کلاس application) فراخوانی شود: (برای اطلاعات بیشتر می‌توانید بخش [ثبت کاربر](/android/sdk-setup.html#۴--ثبت-کاربر-register) را مطالعه کنید.) 
-
->` نکته:` دقت کنید که متد `registerAsGuest` را تنها استفاده نکنید و مانند بالا عمل کنید. در صورت فراخوانی این متد به تنهایی کاربر با هر بازدید به عنوان یک مهمان جدید محاسبه خواهد شد.
-
-ترکرها به طور معمول نصب را **اولین بازدید** حساب می‌کنند (مانند سرویس ادجاست)، اما مزیت ترکر چابک در شمارش نصب این است که شما می‌توانید علاوه بر مدل ادجاست نصب را **پس از ورود کاربر و احراز هویت او** در اپلیکیشنتان تعریف کنید. با این کار شما یک اقدام دیگری برای جلوگیری از تقلب در شمارش نصب انجام می‌دهید، به این دلیل که امضاهای کاربر، قبل و بعد از ثبت او (register) مطابقت داده می‌شوند و در صورت تایید به عنوان یک نصب سالم در نظر گرفته می‌شوند. 
-
-به عنوان مثال اگر اپلیکیشن شما دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای (در کلاس `Application` متد `onCreate`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
-
-```java
-AdpPushClient.get().register("USER_ID");
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+    PushClientManager.resetBadge() //Optional
+    PushClientManager.default()?.addDelegate(self) //Optional
+    
+    PushClientManager.default()?.configureEnvironment(.Sandbox)
+    
+    return true
+}
 ```
 
-> `نکته`: مقدار `USER_ID` می‌تواند **بین ۳ تا ۳۲** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
+> `نکته`: متد بالا برای محیط سندباکس است. در صورتی که حساب عملیاتی دارید کافیست فقط `Sandbox` را با ‍‍`Production` عوض کنید.
+
+
+
+> `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید و پس از تایید و ساخت حساب عملیاتی فایل **Chabok.production.plist** را دنلود کنید و به جای فایل **Chabok.sandbox.plist** در روت پروژه خود قراردهید. 
+
+>`نکته` : توجه داشته باشید هنگامی که **گواهی sandbox اپل** را در پنل تستی قرار می‌دهید، فقط امکان دریافت `Push Notification` در حالت `debug` وجود خواهد داشت. اما اگر **گواهی production اپل** را در محیط عملیاتی قرار دهید، زمانی `Push Notification` را دریافت خواهید کرد که اقدام به ساخت **ipa** از پروژه خود کرده و از طریق TestFlight یا Enterprise اپلیکیشن خود را نصب کنید.
+
+جهت دسترسی به `delegate‌`های چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید:
+
+```objectivec
+//Objective-C:
+
+[PushClientManager.defaultManager addDelegate:self];
+```
+
+```swift
+//Swift :
+
+PushClientManager.default()?.addDelegate(self)
+```
+
+- متد `resetBadge`:
+
+چابک به طور **پیش‌فرض** برای هر پیام در اپلیکیشنتان نشان (**Badge**) اعمال می‌کند. متد `resetBadge` برای خالی کردن و ریست Badge به کار می‌رود. شما با توجه به نیاز خود می‌توانید این متد را در جای خاصی از اپلیکیشنتان (مانند صندوق پیام‌ها) یا در حین باز شدن (launch) اپ خود فراخوانی کنید.
+
+```objectivec
+//Objective-C:
+
+[PushClientManager  resetBadge];
+```
+```swift
+//Swift:
+
+PushClientManager.resetBadge()
+```
+
+> `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. این قابلیت در[ پیام چابک](/ios/chabok-messaging.html) و [پیام‌رسانی آنی](/ios/event-handling.html) استفاده می‌شود.
 
 <br>
+
+### ج- ثبت کاربر (Register)
+
+یکی از مزیت‌های چابک نسبت به درگاه‌های ارسال پوش‌نوتیفیکیشن، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید.       
+این شناسه می‌تواند برای **دستگاه‌های متعدد یک کاربر** استفاده شود. شناسه کاربر می‌تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. **شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی **شناسه دیتابیس‌تان** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود.      
+ 
+#### ورود به حساب کاربری (login)
+متد لاگین تنها زمانی فراخوانی شود که کاربر در اپلیکیشن لاگین یا ثبت‌نام می‌کند. نیازی به فراخوانی این متد در هر بار اجرای اپلیکیشن نیست.
+
+متد ثبت کاربر با چهار امضای متفاوت وجود دارد:
+
+- امضای اول
+
+<p>
+فقط شناسه کاربر را گرفته و کاربر را با آن شناسه بر روی سرور چابک ثبت‌ نام می‌کند.
+</p>
+
+```java
+public void login(String userId)
+```
+
+>`نکته:` مقدار `USER_ID` می‌تواند **بین ۳ تا ۶۴** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
+
+
+#### خروج از حساب کاربری (logout)
+
+در صورتی که کاربر از حساب کاربری خود خارج شد، با فراخوانی متد زیر می‌توانید کاربر را همچنان با یک تگ مهمان در سیستم خود داشته باشید و تعاملتان را با او ادامه دهید.
+
+```java
+public void logout()
+```
 
 #### ۲.۱. رصد رویدادها (Tracking Events)
 
