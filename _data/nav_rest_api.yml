@@ -33,3 +33,6 @@
 
     - id: receive-uninstall-data
       title: دریافت دیتای حذف
+
+    - id: attributes
+      title: ارسال اطلاعات کاربر
