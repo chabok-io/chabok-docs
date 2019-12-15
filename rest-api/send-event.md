@@ -80,5 +80,3 @@ permalink: rest-api/send-event.html
 - `eventData` (اختیاری)
 
 اطلاعات مربوط به ایونت را می‌توانید به عنوان مقدار **eventData** ارسال کنید.
-
-
