@@ -27,3 +27,6 @@
           href: افزودن-تگ
         - title: حذف تگ
           href: حذف-تگ
+
+    - id: send-event
+      title: ارسال رویداد
