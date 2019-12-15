@@ -49,16 +49,6 @@ buildscript {
 }
 ```
 
-دستور زیر را در انتهای فایل `build.gradle` ماژول اپلیکیشن خود اضافه کنید:
-
-```javascript  
-apply plugin: 'io.chabok.plugin.chabok-services'
-apply plugin: 'com.google.gms.google-services'
-```
->`نکته:`
- این فایل عموما در مسیر زیر وجود دارد:
-**app/build.gradle**
-
 #### ۱.۲- نصب کتابخانه آی‌او‌اس 
 
 >`نکته:` نصب کتابخانه آی‌او‌اس به صورت اتوماتیک انجام می‌شود و نیاز به نصب جداگانه‌ای ندارد.
