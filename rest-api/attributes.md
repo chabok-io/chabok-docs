@@ -12,7 +12,7 @@ permalink: rest-api/attributes.html
 ### لینک پایه (Path)
 
 لینک پایه ارسال رویداد**post** `https://{APP_ID}.push.adpdigital.com/api/installations/attributes`
-  است. 
+ است. شما می‌توانید به یکی از دو روش شناسه نصب و شناسه کاربری، رویداد را به سرور چابک ارسال کنید.
 
 
 <Br>
