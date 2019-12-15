@@ -24,11 +24,11 @@ next: send.html
 
 ##### بازدید 
 
-![عکس مربوطه](http://uupload.ir/files/wupo_session.png)
-
 - **اولین (نصب)، آخرین و تعداد بازدید**:
 
 با توجه به اینکه بازدید هم یک [رفتار](/panel/users.html#رفتار) است، حالات مختلف آن‌ را در قسمت پایین بررسی می‌کنیم.
+
+![عکس مربوطه](http://uupload.ir/files/wupo_session.png)
 
 <br>  
   
@@ -59,11 +59,11 @@ next: send.html
 
 ##### محلیت 
 
-![عکس مربوطه](http://uupload.ir/files/m3j_geo-target.jpg)
-
 **موقعیت مکانی**: از این فیلتر برای دسته‌بندی براساس موقعیت جغرافیایی کاربران (**Geo Targeting**) استفاده می‌شود. (مختصات جغرافیایی)
 
-![عکس مربوطه](http://uupload.ir/files/8kbj_geo-targeting-in-panel.png)
+![عکس مربوطه](http://uupload.ir/files/f809_موقعیت_مکانی.png)
+
+![عکس مربوطه](http://uupload.ir/files/6yxg_موقعیت_مکانی_۲.png)
 
 <Br>  
                                                                                              
