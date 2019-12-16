@@ -151,7 +151,7 @@ next: send.html
 ##### اطلاعات کاربر  
 اطلاعات کاربر (**User Attributes**) به شما امکان می‌دهد تا کاربران را براساس ویژگی‌ها و **اطلاعات سفارشی** خودتان دسته‌بندی کنید.
 
-![عکس مربوطه](http://uupload.ir/files/aenw_attribution-user.png)
+![عکس مربوطه](http://uupload.ir/files/r47s_user-segment.png)
 
 - **نام**: مثلا امیرحسین
 - **سن**:  مثلا  ۴۵ 
