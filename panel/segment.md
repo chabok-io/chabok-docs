@@ -242,7 +242,12 @@ next: send.html
 
 ![enter image description here](http://uupload.ir/files/kw7u_doing-something-in-the-past.png)
 
-
 <br>
+
+#### کاربرانی که در بازه زمانی ثابت، اولین و آخرین رفتار (مثلا خرید) را انجام دادند.
+
+![enter image description here](http://uupload.ir/files/ily2_segment.panel-sandbox.push.adpdigital.com-2019.12.png)
+
+برای این کار کافیست اولین و آخرین باری که رفتاری رخ داده است را انتخاب کنید (با فیلتر **قبل از تاریخ** و **بعد از تاریخ**)،
 
  >`نکته:` در صورتی که در ایجاد سگمنت مورد نظرتان به راهنمایی نیاز داشتید یا مایل هستید ما را در **بهبود این لیست کمک کنید**، آن را حتما با ما [به اشتراک بگذارید](https://github.com/chabok-io/chabok-docs/issues).
