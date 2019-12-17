@@ -30,7 +30,7 @@
   image: js.svg
   document: /javascript/introducing.html
   demo: https://webpush.chabok.io/
-  starter:
+  starter: https://github.com/chabok-io/chabok-client-js/tree/master/sample
   issue: https://github.com/chabok-io/chabok-client-js/issues
 
 - name: Unity
