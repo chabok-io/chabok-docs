@@ -24,7 +24,7 @@ permalink: rest-api/attributes.html
   "installationId": "ID",
   "attributes": {
     "company": "chabok",
-    "age": 3
+    "age": 3,
     "isVIP": true,
     "searches": ["T-Shirt", "TV", "mobile"]
   }
@@ -48,7 +48,7 @@ permalink: rest-api/attributes.html
   "userId": "USER_ID",
   "attributes": {
     "company": "chabok",
-    "age": 3
+    "age": 3,
     "isVIP": true,
     "searches": ["T-Shirt", "TV", "mobile"]
   }
