@@ -242,7 +242,12 @@ next: send.html
 
 ![enter image description here](http://uupload.ir/files/kw7u_doing-something-in-the-past.png)
 
-
 <br>
+
+#### کاربرانی که نسخه اپلیکیشن‌شان ۳.۳.۰ است.
+
+![enter image description here](http://uupload.ir/files/321y_windows-segment-panel.png)
+
+برای این کار کافیست فیلتر نسخه برنامه را بر روی ۳.۳.۰ قرار دهید. طبق تعریف پنجره زمانی ثابت، تنها کاربرانی قابل نمایش هستند که نسخه برنامه‌شان ۳.۳.۰ است و نه تمامی کاربران.
 
  >`نکته:` در صورتی که در ایجاد سگمنت مورد نظرتان به راهنمایی نیاز داشتید یا مایل هستید ما را در **بهبود این لیست کمک کنید**، آن را حتما با ما [به اشتراک بگذارید](https://github.com/chabok-io/chabok-docs/issues).
