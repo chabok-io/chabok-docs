@@ -10,6 +10,13 @@ next: introducing.html
 
 <Br>
 
+## [نسخه ۱.۵.۰ - ۱۳۹۸/۰۹/۳۰](https://github.com/chabok-io/chabok-client-rn/releases/tag/v1.5.0)
+
+### تغییرات
+
+- به روز رسانی کتابخانه اندروید به [نسخه ۳.۱.۰](/android/release-note.html#نسخه-۳.۱.۰---۱۳۹۸۰۴۰۲)
+- به روز رسانی کتابخانه آی‌او‌اس به [نسخه ۲.۰.۱](/ios/release-note.html#نسخه-۲.۰.۱---۱۳۹۸۰۴۰۴)
+
 ## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۴/۰۵](https://github.com/chabok-io/chabok-client-rn/releases/tag/v1.4.0)
 
 ### تغییرات
