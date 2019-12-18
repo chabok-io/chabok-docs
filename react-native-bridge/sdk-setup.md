@@ -224,7 +224,7 @@ public class MainApplication extends Application implements ReactApplication {
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. برای فعال کردن مقدار قابلیت آنی (realtime)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید. این قابلیت در[ پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) استفاده می‌شود.
  
 
-####  ۲.۲- مقدار‌دهی اولیه اندروید
+####  ۲.۲- مقدار‌دهی اولیه آی‌او‌اس
 
 چابک برای راه‌اندازی نیاز به **مقداردهی اولیه** دارد.
 
@@ -256,6 +256,8 @@ public class MainApplication extends Application implements ReactApplication {
 
 - (BOOL)application:(UIApplication *)application
             didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+            
+     [PushClientManager.defaultManager configureEnvironment:Sandbox];
     return YES;
 }
 ```
@@ -270,9 +272,6 @@ import AdpPushClient
 class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    
-    PushClientManager.resetBadge() //Optional
-    PushClientManager.default()?.addDelegate(self) //Optional
     
     PushClientManager.default()?.configureEnvironment(.Sandbox)
     
