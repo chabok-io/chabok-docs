@@ -256,3 +256,4 @@ chabok.login("user_id");
 ```java
 chabok.logout();
 ```
+> `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-cordova) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.
