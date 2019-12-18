@@ -16,30 +16,9 @@ next: deeplink.html
 
 #### اندروید
 
-برای دریافت پوش‌نوتیفیکیشن باید `GcmReceiver` را در بخش `application` به فایل `AndroidManifest.xml` اضافه نمایید تا بتوانید پوش‌نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
-```markup
-<application
-    android:name=".MY_APPLICATION_CLASS_NAME"
-    ... >
-	
-	...
-    <receiver
-        android:name="com.google.android.gms.gcm.GcmReceiver"
-        android:enabled="true"
-        android:exported="true"
-        android:permission="com.google.android.c2dm.permission.SEND">
-        <intent-filter>
-            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-            <category android:name="MY_APPLICATION_PACKAGE_ID" />
-        </intent-filter>
-    </receiver>
-	
-</application>
-```
+>`نکته:` تنظیم پوش نوتیفیکیشن در اندروید به صورت اتوماتیک انجام می‌شود و نیاز به تنظیم خاصی ندارد.
 
-<Br>
 
 #### آی‌اوس
 
