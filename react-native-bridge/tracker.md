@@ -33,25 +33,7 @@ next: chabok-messaging.html
 
 <Br>
 
-#### الف- نصب کتابخانه
-
-برای نصب از طریق `npm`:
-
-```bash
-npm install react-native-chabok --save
-```
- یا `yarn`:
-
-```bash
-yarn add react-native-chabok
-```
-بعد از اتمام نصب، دستور زیر را اجرا کنید تا ماژول به پروژه شما **لینک** شود:
-
-```bash
-react-native link react-native-chabok
-```
-
->`نکته:` دقت داشته باشید که [اندروید](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه-اندروید) و [آی‌اواس](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه-آی‌او‌اس) نیاز به نصب جداگانه دارند که در ادامه به هر دو پرداخته می‌شود:
+### الف- نصب کتابخانه 
 
 ### ۱- نصب کتابخانه 
 
@@ -74,6 +56,7 @@ react-native link react-native-chabok
 ```
 
 >`نکته:` دقت داشته باشید که [اندروید](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه-اندروید) و [آی‌اواس](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه-آی‌او‌اس) نیاز به نصب جداگانه دارند که در ادامه به هر دو پرداخته می‌شود:
+
 
 ####  ۱-۲ نصب کتابخانه اندروید
 
@@ -130,35 +113,41 @@ $ pod install
 ```bash
 $ pod update
 ```
-حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کنید، افزودن کتابخانه موفقیت آمیز بوده است.
-
-کتابخانه چابک از طریق CocoaPods در دسترس است، برای نصب خط زیر را به `Podfile` خود اضافه کنید:
+حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کردید، نصب کتابخانه آی‌او‌اس موفقیت آمیز بوده است.
 
 
-```bash
-target 'YourProject' do
-  use_frameworks!
+پس از آن پروژه آی‌اواس خود را در `xcworkspace.` با `xcode` و همینطور `node_modules/react-native-chabok/` را باز کنید. فایل‌های `ios/AdpPushClient.h` و `ios/AdpPushClient.m` را به پروژه خود اضافه کنید.
 
-  pod 'ChabokPush', '~> 2.0.1'
-  
-end
+اکنون داخل کلاس `AppDelegate`، ایمپورت را مانند زیر انجام دهید:
+
+
+```objectivec
+#import <AdpPushClient/AdpPushClient.h>
+
+....
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+  // Hook and handle failure of get Device token from Apple APNS Server
+  [PushClientManager.defaultManager application:application didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+  // Manager hook and handle receive Device Token From APNS Server
+  [PushClientManager.defaultManager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+  // Manager hook and Handle iOS 8 remote Notificaiton Settings
+  [PushClientManager.defaultManager application:application didRegisterUserNotificationSettings:notificationSettings];
+}
 ```
 
-سپس با روش زیر آن را نصب کنید:
-
-```bash
-$ pod install
-```
-پس از اجرای دستورات بالا اگر با خطایی رو به رو شدید، دستور زیر را وارد کنید، سپس `pod install` را دوباره اجرا کنید.
-
-```bash
-$ pod update
-```
-حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کنید، افزودن کتابخانه موفقیت آمیز بوده است.
 
 <Br>
 
-### ۲- مقدار‌دهی اولیه (Initialize)
+### ب- مقدار‌دهی اولیه (Initialize)
+
+#### ۲- مقدار‌دهی اولیه (Initialize)
 
 ####  ۲.۱- مقدار‌دهی اولیه اندروید
 
@@ -285,6 +274,8 @@ public class MainApplication extends Application implements ReactApplication {
 
 - (BOOL)application:(UIApplication *)application
             didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+            
+     [PushClientManager.defaultManager configureEnvironment:Sandbox];
     return YES;
 }
 ```
@@ -299,9 +290,6 @@ import AdpPushClient
 class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    
-    PushClientManager.resetBadge() //Optional
-    PushClientManager.default()?.addDelegate(self) //Optional
     
     PushClientManager.default()?.configureEnvironment(.Sandbox)
     
@@ -363,6 +351,8 @@ chabokEmitter.addListener('onRegister', (status)=>{
 	}  
 })
 ```
+
+
 #### ۲.۱. رصد رویدادها (Tracking Events)
 
 رویدادها در واقع همان تعامل کاربر با اپلیکیشنتان است. از این رو آن‌ها را **رفتار** کاربر می‌نامیم. شما می‌توانید رفتار کاربر را در اپلیکیشن خود به طور **لحظه‌ای** رصد کنید. این امر به شما امکان می‌دهد تا **CPA های پیشرفته** برای کمپین‌هایتان [تعریف کنید](/panel/tracker.html#افزودن-cpa) و نصب‌هایتان با تحقق اهدافی که برای کاربران تعیین کرده‌اید شمرده شوند. 
