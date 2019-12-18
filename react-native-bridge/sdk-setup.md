@@ -15,7 +15,7 @@ next: tracker.html
 
 [۲- مقداردهی اولیه (Initialize)](/react-native-bridge/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
 
-[۳- ثبت کاربر (Register)](/react-native-bridge/sdk-setup.html#۳--ثبت-کاربر-register)
+[۳- ثبت کاربر (Register)](/react-native-bridge/sdk-setup.html#۳--ثبت-کاربر)
 
 <Br>
 

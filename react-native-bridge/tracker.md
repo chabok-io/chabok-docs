@@ -29,7 +29,7 @@ next: chabok-messaging.html
 
 [ب- مقداردهی اولیه (Initialize)](/react-native-bridge/tracker.html#ب--مقداردهی-اولیه-initialize)
 
-[ج- ثبت کاربر (Register)](/react-native-bridge/tracker.html#ج--ثبت-کاربر-register-users)
+[ج- ثبت کاربر](/react-native-bridge/tracker.html#ج--ثبت-کاربر)
 
 <Br>
 
