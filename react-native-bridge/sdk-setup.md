@@ -97,31 +97,35 @@ $ pod install
 ```bash
 $ pod update
 ```
-حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کنید، افزودن کتابخانه موفقیت آمیز بوده است.
-
-کتابخانه چابک از طریق CocoaPods در دسترس است، برای نصب خط زیر را به `Podfile` خود اضافه کنید:
+حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کردید، نصب کتابخانه آی‌او‌اس موفقیت آمیز بوده است.
 
 
-```bash
-target 'YourProject' do
-  use_frameworks!
+پس از آن پروژه آی‌اواس خود را در `xcworkspace.` با `xcode` و همینطور `node_modules/react-native-chabok/` را باز کنید. فایل‌های `ios/AdpPushClient.h` و `ios/AdpPushClient.m` را به پروژه خود اضافه کنید.
 
-  pod 'ChabokPush', '~> 2.0.1'
-  
-end
+اکنون داخل کلاس `AppDelegate`، ایمپورت را مانند زیر انجام دهید:
+
+
+```objectivec
+#import <AdpPushClient/AdpPushClient.h>
+
+....
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+  // Hook and handle failure of get Device token from Apple APNS Server
+  [PushClientManager.defaultManager application:application didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+  // Manager hook and handle receive Device Token From APNS Server
+  [PushClientManager.defaultManager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+  // Manager hook and Handle iOS 8 remote Notificaiton Settings
+  [PushClientManager.defaultManager application:application didRegisterUserNotificationSettings:notificationSettings];
+}
 ```
 
-سپس با روش زیر آن را نصب کنید:
-
-```bash
-$ pod install
-```
-پس از اجرای دستورات بالا اگر با خطایی رو به رو شدید، دستور زیر را وارد کنید، سپس `pod install` را دوباره اجرا کنید.
-
-```bash
-$ pod update
-```
-حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کنید، افزودن کتابخانه موفقیت آمیز بوده است.
 
 <Br>
 
