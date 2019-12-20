@@ -340,9 +340,39 @@ function sideMenu() {
   })
 }
 
+function handleTabs() {
+  $('.tab_toggle').click(function(e){
+    e.preventDefault();
+    var $this = $(this);
+    var curtab = $this.attr('data-tab');
+
+    $('.tab_toggle_ul.ab-nav-tabs li').removeClass('active');
+    $('.tab_toggle_ul.ab-nav-tabs li.' + curtab).addClass('active');
+    $('div.tab_toggle_div div.ab-tab-pane').removeClass('active');
+    $('div.tab_toggle_div div.' + curtab + '_tab').addClass('active');
+
+  });
+  $('.tab_toggle_only').click(function(e){
+    e.preventDefault();
+
+    var $this = $(this);
+    var curtab = $this.attr('data-tab');
+    var partab = $this.attr('data-tab-target');
+
+    $('#' + partab + '_nav li').removeClass('active');
+    $('#' + partab + '_nav li.' + curtab).addClass('active');
+    $('#' + partab + ' div.ab-tab-pane').removeClass('active');
+
+    $('#' + partab + ' div.' + curtab + '_tab').addClass('active');
+
+  });
+  $('.ab-tab-content .ab-tab-pane:first-child').addClass('active');
+}
+
 $(document).ready(function () {
   khabarname();
   sideMenu();
+  handleTabs();
 
   FastClick.attach(document.body);
 
