@@ -83,9 +83,10 @@ $ pod update
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
-```objectivec
-//Objective-C
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 #import "AppDelegate.h"
 #import <AdpPushClient/AdpPushClient.h>
 
@@ -103,9 +104,10 @@ $ pod update
 }
 ```
 
-```swift
-//Swift:
+{% endtab %}
+{% tab SWIFT %}
 
+```swift
 import UIKit
 import AdpPushClient
 
@@ -123,6 +125,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 }
 ```
 
+{% endtab %}
+{% endtabs %}
+
 > `نکته`: متد بالا برای محیط سندباکس است. در صورتی که حساب عملیاتی دارید کافیست فقط `Sandbox` را با ‍‍`Production` عوض کنید.
 
 
@@ -133,32 +138,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
 جهت دسترسی به `delegate‌`های چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید:
 
-```objectivec
-//Objective-C:
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 [PushClientManager.defaultManager addDelegate:self];
 ```
 
-```swift
-//Swift :
+{% endtab %}
+{% tab SWIFT %}
 
+```swift
 PushClientManager.default()?.addDelegate(self)
 ```
+
+{% endtab %}
+{% endtabs %}
 
 - متد `resetBadge`:
 
 چابک به طور **پیش‌فرض** برای هر پیام در اپلیکیشنتان نشان (**Badge**) اعمال می‌کند. متد `resetBadge` برای خالی کردن و ریست Badge به کار می‌رود. شما با توجه به نیاز خود می‌توانید این متد را در جای خاصی از اپلیکیشنتان (مانند صندوق پیام‌ها) یا در حین باز شدن (launch) اپ خود فراخوانی کنید.
 
-```objectivec
-//Objective-C:
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 [PushClientManager  resetBadge];
 ```
-```swift
-//Swift:
 
+{% endtab %}
+{% tab SWIFT %}
+
+```swift
 PushClientManager.resetBadge()
 ```
+
+{% endtab %}
+{% endtabs %}
 
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. این قابلیت در[ پیام چابک](/ios/chabok-messaging.html) و [پیام‌رسانی آنی](/ios/event-handling.html) استفاده می‌شود.
 
@@ -178,17 +194,22 @@ PushClientManager.resetBadge()
 
 فقط شناسه کاربر را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام می‌کند.
 
-```objectivec
-//Objective-C:
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 [PushClientManager.defaultManager login:@"USER_ID"];
 ```
-```swift
-//Swift:
 
+{% endtab %}
+{% tab SWIFT %}
+
+```swift
 PushClientManager.default()?.login("USER_ID")
 ```
 
+{% endtab %}
+{% endtabs %}
 
 >` نکته:` در صورتی از نسخه‌های قبل چابک استفاده می‌کردید و کاربر از قبل ثبت شده بود، توصیه می‌کنیم خودتان بلافاصله پس از مقداردهی این را مدیریت کنید.
 
@@ -204,16 +225,22 @@ PushClientManager.default()?.login("USER_ID")
 
  علاوه بر شناسه کاربر، اطلاعات کاربر (Attributes) را دریافت می‌کند.
  
+ {% tabs %}
+ {% tab OBJECTIVE-C %}
+ 
 ```objectivec
-//Objective-C:
-
 [PushClientManager.defaultManager login:@"USER_ID" userAttributes:];
 ```
-```swift
-//Swift:
 
+{% endtab %}
+{% tab SWIFT %}
+
+```swift
 PushClientManager.default()?.login("USER_ID", userAttributes: [AnyHashable : Any])
 ```
+
+{% endtab %}
+{% endtabs %}
 
 >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب](http://chabok.io) برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر پیام چابک و پوش‌نوتیفیکیشن بفرستید.
 
@@ -221,32 +248,42 @@ PushClientManager.default()?.login("USER_ID", userAttributes: [AnyHashable : Any
 
 علاوه بر شناسه کاربر، رفتار مورد نظر کاربر را رصد می‌کند.
 
-```objectivec
-//Objective-C:
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 [PushClientManager.defaultManager login:@"USER_ID" event:@"EVENT_NAME" data:]
 ```
-```swift
-//Swift:
 
+{% endtab %}
+{% tab SWIFT %}
+
+```swift
 PushClientManager.default()?.login("USER_ID", event: "EVENT_NAME", data: [AnyHashable : Any])
 ```
+
+{% endtab %}
+{% endtabs %}
 
 #### خروج از حساب کاربری (Logout)
 
 در صورتی که کاربر از حساب کاربری خود خارج شد، با فراخوانی متد زیر می‌توانید کاربر را همچنان با یک تگ مهمان در سیستم خود داشته باشید و تعاملتان را با او ادامه دهید.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
 ```objectivec
-//Objective-C:
-
 [PushClientManager.defaultManager logout];
 ```
-```swift
-//Swift:
 
+{% endtab %}
+{% tab SWIFT %}
+
+```swift
 PushClientManager.default()?.logout()
 ```
 
+{% endtab %}
+{% endtabs %}
 
 > `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-ios) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده‌سازی متدهای چابک آشنا خواهید شد.
