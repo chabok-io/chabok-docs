@@ -234,7 +234,7 @@ next: settings.html
                         </tr>         
             <tr>
                   <td><b> MismatchSenderId </b></td>
-                  <td>عدم تطابق senderId اپ و پنل</td>
+                  <td>عدم تطابق <code> senderId </code> اپ و پنل</td>
                   <td>مخصوص اندروید</td>
                          </tr>    
             <tr>
