@@ -203,7 +203,7 @@ next: settings.html
 
 برای آشنایی و رفع خطاهای ارسال پیام، جدول زیر را مشاهده کنید:
 <div class='inbox-table'>
-<table style='text-align: right'>
+<table style='text-align: center'>
         <thead>
             <tr>
                 <th style='text-align: center' >خطا</th>
