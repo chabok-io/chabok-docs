@@ -1,8 +1,8 @@
 ---
-id: Send-smart-message
+id: send-smart-message
 title: وب سرویس ارسال پیام هوشمند از سمت سرور
 layout: rest-api
-permalink: rest-api/Send-smart-message.html
+permalink: rest-api/send-smart-message.html
 ---
 
 شما می‌توانید با فراخوانی این وب‌ سرویس، **پیام هوشمند** را به سرور چابک ارسال کنید.
