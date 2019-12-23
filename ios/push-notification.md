@@ -17,9 +17,9 @@ next: deeplink.html
 
 کلاینت چابک به طور پیش‌فرض برای پیام‌های دریافتی (پیام چابک و پوش‌نوتیفیکیشن)، اعلان (**نوتیفیکیشن**) نمایش می‌دهد. درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` استفاده کنید. به قطعه کد زیر دقت فرمایید: (در صورت استفاده از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` کتابخانه چابک دیگر اقدام به نمایش `LocalNotification` نمی‌کند.)
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 -(void)pushClientManagerUILocalNotificationDidReceivedMessage:(PushClientMessage *)message {
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     
@@ -33,9 +33,9 @@ next: deeplink.html
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClientMessage) {
     let localNotification = UILocalNotification()
         
@@ -49,42 +49,51 @@ func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClien
     UIApplication.shared.scheduleLocalNotification(localNotification)
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 #### حذف نوتیفیکیشن
 
 برای حذف یا پاک کردن یک نوتیفیکیشن خاص در `Notification Center` می‌توانید از متد زیر استفاده کنید:
 
-```objectivec
-//Objective-C:
+{% tabs %}
+{% tab OBJECTIVE-C %}```objectivec
 
 [[UIApplication sharedApplication] cancelLocalNotification:(nonnull UILocalNotification *)];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
 
 UIApplication.shared.cancelLocalNotification(UILocalNotification)
 ```
+{% endtab %}
+{% endtabs %}
 همچنین برای حذف یا پاک کردن تمام نوتیفیکیشن‌ها می‌توانید از متد زیر استفاده کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
 
 [[UIApplication sharedApplication] cancelAllLocalNotifications];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
 
 UIApplication.shared.cancelAllLocalNotifications()
 ```
+{% endtab %}
+{% endtabs %}
 
 <Br>
 
 ### کلیک و دریافت دیتای نوتیفیکیشن (آی‌اواس ۱۰ به بالا)
 
 برای مدیریت کلیک بر روی نوتیفیکیشن پیام‌های چابک متد `:userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` را فراخوانی نمایید. به نمونه زیر دقت کنید:
-
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
     //Get actionIdentifier.
@@ -103,9 +112,9 @@ UIApplication.shared.cancelAllLocalNotifications()
     completionHandler();
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 
 func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
@@ -128,6 +137,8 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 	completionHandler()
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ### کلیک و دریافت دیتای نوتیفیکیشن (آی‌اواس ۹ به پایین)
 
@@ -141,8 +152,9 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 > متد `didReceiveLocalNotification` فرخوانی خواهد شد که بر روی
 > Notification کلیک شده باشد.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
 	// Handle receive iOS (4.0 and later) local notification
@@ -150,9 +162,9 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 	//Do something (for example: Open MessageViewController)
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
 
 func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
 	// Handle receive iOS (4.0 and later) local notification
@@ -160,7 +172,8 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 	//Do something (for example: Open MessageViewController)
 }
 ```
-
+{% endtab %}
+{% endtabs %}
 همچنین  `delegate` متد `didReceiveLocalNotification` به شما کمک می‌کند که بعد از کلیک، کاربر بر روی نوتیفیکیشن به چه صفحه‌ای هدایت شود.
 
 #### ۲. ‌APNs Notification
@@ -169,27 +182,35 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 
 > `نکته` : اگر برنامه شما `Terminate` شده باشد، با کلیک بر روی Notification برنامه شما با کلید `UIApplicationLaunchOptionsRemoteNotificationKey` در `delegate` متد `didFinishLaunchingWithOptions` اجرا خواهد شد و پس از آن متد `didReceiveRemoteNotification` فرخوانی خواهد شد. پس پیشنهاد می‌کنیم، کد مربوط به `Navigate` به یک صفحه خاص را در متد `didReceiveRemoteNotification` استفاده کنید.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 	// Handle New Remote Notification, must be use for remote payloads
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
+
 ```swift
-//Swift:
 
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 	// Handle New Remote Notification, must be use for remote payloads
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ### مدیریت کلیک بر روی هر اکشن
 
 با قرار دادن متد `userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` در فایل `AppDelegate` همانند کد زیر می‌توانید عملیات متناسب بر روی هر دکمه را پیاده‌سازی کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 ``` objectivec
-//Objective-C
+
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center
 					didReceiveNotificationResponse:(UNNotificationResponse *)response
 						withCompletionHandler:(void (^)(void))completionHandler{
@@ -204,8 +225,9 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 	completionHandler();
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 func userNotificationCenter(_ center: UNUserNotificationCenter, 
 				didReceive response: UNNotificationResponse,
 				withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -218,6 +240,8 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
     completionHandler()
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 <Br>
 
@@ -279,8 +303,10 @@ $ pod install
  7) فایل `NotificationService.m` یا `NotificationService.swift` را
     باز کرده و کد زیر را در آن قرار دهید.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 ```objectivec
-//Objective-C
 #import "NotificationService.h"
 #import <AdpPushClient/AdpPushClient.h>
 
@@ -308,8 +334,11 @@ self.bestAttemptContent = [request.content mutableCopy];
 
 @end
 ```
+{% endtab %}
+{% tab SWIFT %}
+
 ```swift
-//Swift
+
 import AdpPushClient
 import UserNotifications
 
@@ -336,13 +365,17 @@ class NotificationService: UNNotificationServiceExtension {
 	}
 }
 ```
+{% endtab %}
+{% endtabs %}
+
 برای دریافت رویداد کلیک روی هر اکشن، لطفا بخش [مدیریت کلیک بر روی هر اکشن](https://dev.doc.chabok.io/ios/push-notification.html#%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%DA%A9%D9%84%DB%8C%DA%A9-%D8%A8%D8%B1-%D8%B1%D9%88%DB%8C-%D9%87%D8%B1-%D8%A7%DA%A9%D8%B4%D9%86) را مطالعه کنید.
 
 #### نمونه کد پوش‌نوتیفیکیشن چندرسانه‌ای
 
 بخش [تنظیم نوتیفیکیشن چندرسانه‌ای (Rich Push Notification)](https://dev.doc.chabok.io/ios/push-notification.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%86%D9%88%D8%AA%DB%8C%D9%81%DB%8C%DA%A9%DB%8C%D8%B4%D9%86-%DA%86%D9%86%D8%AF%D8%B1%D8%B3%D8%A7%D9%86%D9%87%D8%A7%DB%8C-rich-push-notification) را با دقت مطالعه کرده و سپس قطعه کد زیر را در کلاس `AppDelegate`  پیاده‌سازی کنید تا رویداد کلیک روی هر اکشن را دریافت کنید.
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center
                 didReceiveNotificationResponse:(UNNotificationResponse *)response
@@ -360,8 +393,10 @@ class NotificationService: UNNotificationServiceExtension {
     completionHandler();
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
+
 ```swift
-//Swift
 
 func userNotificationCenter(_ center: UNUserNotificationCenter,
                 didReceive response: UNNotificationResponse,
@@ -379,6 +414,9 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
     completionHandler()
 }
 ```
+{% endtab %}
+{% endtabs %}
+
 ##### نمونه Curl
 
 با اجرای دستور زیر در **Terminal** می‌توانید یک نوتیفیکیشن چندرسانه‌ای ارسال کنید. دقت کنید که در دستور زیر مقدار `<ACCESS_TOKEN>` حساب کاربری خود و مقدار `USER_ID` را شناسه‌ کاربری که می‌خواهید پیام به او تحویل داده شود، وارد نمایید. (این دستور برای ارسال به **یک کاربر به خصوص** است. برای ارسال به **گروهی از کاربران** به [این صفحه](https://doc.chabok.io/rest-api/send-chabok-message.html#ارسال-به-گروهی-از-کاربران-byquery) مراجعه کنید.)
