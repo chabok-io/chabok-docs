@@ -202,11 +202,11 @@ next: settings.html
 ##### جدول خطاها
 <div class='inbox-table'>
 برای آشنایی و رفع خطاهای ارسال پیام، جدول زیر را مشاهده کنید:
-<table>
+<table style='text-align: right'>
         <thead>
             <tr>
-                <td>1</td>
-                <td>2</td>
+                <th>1</th>
+                <th>2</th>
             </tr>
         </thead>
         <tbody>
