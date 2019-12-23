@@ -57,14 +57,13 @@ func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClien
 برای حذف یا پاک کردن یک نوتیفیکیشن خاص در `Notification Center` می‌توانید از متد زیر استفاده کنید:
 
 {% tabs %}
-{% tab OBJECTIVE-C %}```objectivec
-
+{% tab OBJECTIVE-C %}
+```objectivec
 [[UIApplication sharedApplication] cancelLocalNotification:(nonnull UILocalNotification *)];
 ```
 {% endtab %}
 {% tab SWIFT %}
 ```swift
-
 UIApplication.shared.cancelLocalNotification(UILocalNotification)
 ```
 {% endtab %}
@@ -74,13 +73,11 @@ UIApplication.shared.cancelLocalNotification(UILocalNotification)
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```objectivec
-
 [[UIApplication sharedApplication] cancelAllLocalNotifications];
 ```
 {% endtab %}
 {% tab SWIFT %}
 ```swift
-
 UIApplication.shared.cancelAllLocalNotifications()
 ```
 {% endtab %}
@@ -94,7 +91,6 @@ UIApplication.shared.cancelAllLocalNotifications()
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```objectivec
-
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
     //Get actionIdentifier.
     NSString *actionId = response.actionIdentifier;
@@ -115,7 +111,6 @@ UIApplication.shared.cancelAllLocalNotifications()
 {% endtab %}
 {% tab SWIFT %}
 ```swift
-
 func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -155,7 +150,6 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```objectivec
-
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
 	// Handle receive iOS (4.0 and later) local notification
 	
@@ -165,7 +159,6 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 {% endtab %}
 {% tab SWIFT %}
 ```swift
-
 func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
 	// Handle receive iOS (4.0 and later) local notification
 	
@@ -185,7 +178,6 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```objectivec
-
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 	// Handle New Remote Notification, must be use for remote payloads
 }
@@ -194,7 +186,6 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 {% tab SWIFT %}
 
 ```swift
-
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 	// Handle New Remote Notification, must be use for remote payloads
 }
@@ -208,9 +199,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ``` objectivec
-
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center
 					didReceiveNotificationResponse:(UNNotificationResponse *)response
 						withCompletionHandler:(void (^)(void))completionHandler{
@@ -338,7 +327,6 @@ self.bestAttemptContent = [request.content mutableCopy];
 {% tab SWIFT %}
 
 ```swift
-
 import AdpPushClient
 import UserNotifications
 
@@ -376,7 +364,6 @@ class NotificationService: UNNotificationServiceExtension {
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```objectivec
-
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center
                 didReceiveNotificationResponse:(UNNotificationResponse *)response
                 withCompletionHandler:(void (^)(void))completionHandler{
@@ -397,7 +384,6 @@ class NotificationService: UNNotificationServiceExtension {
 {% tab SWIFT %}
 
 ```swift
-
 func userNotificationCenter(_ center: UNUserNotificationCenter,
                 didReceive response: UNNotificationResponse,
                 withCompletionHandler completionHandler: @escaping () -> Void) {

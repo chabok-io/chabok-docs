@@ -124,7 +124,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
     return true
 }
 ```
-
 {% endtab %}
 {% endtabs %}
 
