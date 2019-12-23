@@ -220,7 +220,7 @@ next: settings.html
             <tr>
                 <td style="text-align: left"><b> Subscription not found </b></td>
                 <td>عدم عضویت کاربر در کانال</td>
-                <td>.از عضو بودن مخاطب پیام در کانال ارسالی اطمینان یابید</td>
+                <td>از عضو بودن مخاطب پیام در کانال ارسالی اطمینان یابید.</td>
             </tr>
             <tr>
                  <td style="text-align: left"><b> INVALIDSenderId </b></td>
