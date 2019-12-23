@@ -213,12 +213,12 @@ next: settings.html
         </thead>
         <tbody>
             <tr>
-                <td><b> Device not found</b></td>
+                <td style="text-align: left"><b> Device not found</b></td>
                 <td>عدم وجود دستگاه مورد نظر</td>
                 <td>از ثبت شدن کاربر در چابک و اضافه شدن او در مشترکین پنل اطمینان یابید. همینطور صحت شناسه کاربری <code>userId</code> مخاطب را در ارسال پیام بررسی کنید.</td>
             </tr>
             <tr>
-                <td><b> Subscription not found </b></td>
+                <td style="text-align: left"><b> Subscription not found </b></td>
                 <td>عدم عضویت کاربر در کانال</td>
                 <td>.از عضو بودن مخاطب پیام در کانال ارسالی اطمینان یابید</td>
             </tr>
