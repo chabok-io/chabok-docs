@@ -150,7 +150,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 ```swift
 PushClientManager.default()?.addDelegate(self)
 ```
-
 {% endtab %}
 {% endtabs %}
 
