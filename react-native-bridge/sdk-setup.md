@@ -100,33 +100,6 @@ $ pod update
 حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کردید، نصب کتابخانه آی‌او‌اس موفقیت آمیز بوده است.
 
 
-پس از آن پروژه آی‌اواس خود را در `xcworkspace.` با `xcode` و همینطور `node_modules/react-native-chabok/` را باز کنید. فایل‌های `ios/AdpPushClient.h` و `ios/AdpPushClient.m` را به پروژه خود اضافه کنید.
-
-اکنون داخل کلاس `AppDelegate`، ایمپورت را مانند زیر انجام دهید:
-
-
-```objectivec
-#import <AdpPushClient/AdpPushClient.h>
-
-....
-
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-  // Hook and handle failure of get Device token from Apple APNS Server
-  [PushClientManager.defaultManager application:application didFailToRegisterForRemoteNotificationsWithError:error];
-}
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-  // Manager hook and handle receive Device Token From APNS Server
-  [PushClientManager.defaultManager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
-}
-
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
-  // Manager hook and Handle iOS 8 remote Notificaiton Settings
-  [PushClientManager.defaultManager application:application didRegisterUserNotificationSettings:notificationSettings];
-}
-```
-
-
 <Br>
 
 ### ۲- مقدار‌دهی اولیه (Initialize)
