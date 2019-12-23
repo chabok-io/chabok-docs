@@ -19,9 +19,11 @@ next: push-notification.html
 
 برای دریافت پیام چابک می‌توانید از رویداد `pushClientManagerDidReceivedMessage` استفاده کنید. در زیر نمونه کدی جهت دریافت اطلاعات از پیام چابک آمده است:
 
-```objectivec
-//Objective-C:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
+```objectivec
 - (void)pushClientManagerDidReceivedMessage:(PushClientMessage *)message{
     // Called When PushClientManager has been received new message from server
     
@@ -36,8 +38,11 @@ next: push-notification.html
     NSLog(@"\n\n Got the Chabok message : \n \n %@", message.toDict);
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
+
 ```swift
-//Swift:
+
 
 func pushClientManagerDidReceivedMessage(_ message: PushClientMessage?) {
     // Called When PushClientManager has been received new message from server
@@ -55,7 +60,8 @@ func pushClientManagerDidReceivedMessage(_ message: PushClientMessage?) {
     }
 }
 ```
-
+{% endtab %}
+{% endtabs %}
 چابک به طور پیش‌فرض برای پیام‌های دریافتی (پیام چابک و پوش‌نوتیفیکیشن)، **اعلان** (نوتیفیکیشن) نمایش می‌دهد. برای **شخصی‌سازی و تنظیم کلیک** روی اعلان [این بخش](/ios/push-notification.html#شخصیسازی-نمایش-و-کلیک-روی-اعلان) را مطالعه نمایید.
 
 
@@ -65,19 +71,20 @@ func pushClientManagerDidReceivedMessage(_ message: PushClientMessage?) {
 متد `markAsRead` برای ارسال رویداد خوانده شدن پیام توسط کاربر به سرور می تواند مورد استفاده قرار بگیرد. 
 متد `messageDismissed` نیز می‌تواند برای هر عملی که معنی باز نکردن یا نادیده گرفته شدن پیام را داشته باشد به کار رود. به دو طریق می توان این متدها را فراخوانی نمود:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [PushClientManager.defaultManager markAsRead:@"MESSAGE_ID"];
 [PushClientManager.defaultManager messageDismissed:@"MESSAGE_ID"];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 PushClientManager.default().mark(asRead: @"MESSAGE_ID")
 PushClientManager.default().messageDismissed(@"MESSAGE_ID")
 ```
-
+{% endtab %}
+{% endtabs %}
 <Br>
 
 ### ارسال پیام
@@ -89,19 +96,23 @@ PushClientManager.default().messageDismissed(@"MESSAGE_ID")
 
 - با استفاده از متد `publish` می‌توانید به یک **کانال خاص** (خصوصی/عمومی) برای یک **کاربر خاص** پیام ارسال کنید.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
 
 [PushClientManager.defaultManager publish:@"USER_ID"
                     		toChannel:@"CHANNEL_NAME"
                     		 withText:@"Hello World!"];
 ```
+{% endtab %}
+{% tab SWIFT %}
 
 ```swift
-//Swift:
 
 PushClientManager.default().publish("USER_ID", toChannel: "CHANNEL_NAME", withText: "Hello World!")
 ```
+{% endtab %}
+{% endtabs %}
 > `نکته`: برای انتشار پیام در یک کانال عمومی به جای عبارت `USER_ID` باید کاراکتر `*` را وارد نمایید. همینطور برای ارسال پیام در کانال‌های خصوصی باید `USER_ID` کاربر را وارد کنید. در هر دو صورت کاربر برای دریافت پیام در کانالی که ارسال می‌نمایید باید حتما عضو شده باشد.
 
 روی اتصال موجود چابک می‌توانید تعداد زیادی پیام سمت سرور بفرستید. در واقع برای هر درخواست یک اتصال جدید ساخته نمی‌شود. این ویژگی تحویل اطلاعات را در سمت سرور حتی در شرایطی که کاربر اینترنت ضعیف و یا قطع شده‌ای دارد، تضمین می‌کند. به این ترتیب که کلاینت چابک با استفاده از منطق سعی مجدد خود می‌تواند پیام‌ شما را حتی در شرایط بحرانی یک و فقط یک بار بفرستد.
@@ -109,9 +120,10 @@ PushClientManager.default().publish("USER_ID", toChannel: "CHANNEL_NAME", withTe
 
 - برای ارسال پیام با جزئیات بیشتر می‌توانید از signature دیگر متد `publish` استفاده کنید، همانند نمونه کد زیر:
 
-```objectivec
-//Objective-C:
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 NSString *toUserId = @"USER_ID"; //Required. For public channel set * (wildcard)
 NSString *toChannel = @"CHANNEL"; //Required
 NSString *messageBody = @"MESSAGE_BODY"; //Required
@@ -129,9 +141,10 @@ PushClientMessage *message = [[PushClientMessage new] initWithMessage:messageBod
 
 [PushClientManager.defaultManager publish:message];
 ```
+{% endtab %}
+{% tab SWIFT %} 
 
 ```swift
-//Swift:
 
 let toUserId = "USER_ID" //Required. For public channel set * (wildcard)
 let toChannel = "CHANNEL" //Required
@@ -150,16 +163,21 @@ message.notification["subtitle"] = "SUBTITLE" //Optional
 
 PushClientManager.default().publish(message)
 ```
-
+{% endtab %}
+{% endtabs %}
 در صورت رخ دادن خطا به هنگام `publish` پیام، `delegate method` زیر فراخوانی خواهد شد:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 ```objectivec
-//Objective-C:
 
 -(void) pushClientManagerDidFailInPublish:(NSError *)error{
     NSLog(@"Error in publishing message %@",error);
 }
 ```
+{% endtab %}
+{% tab SWIFT %} 
 
 ``` swift
 //Swift:
@@ -168,26 +186,34 @@ func pushClientManagerDidFail(inPublish error: Error!) {
 	print("Error in publishing message \(error)")
 }
 ```
-
+{% endtab %}
+{% endtabs %}
 #### دریافت گزارش تحویل پیام (Delivery)
 
 برای فعال کردن دریافت گزارش تحویل یک پیام منتشر شده، باید ابتدا `deliveryChannelEnabeled` را مقداردهی کنید: 
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 ```objectivec
-//Objetive-C: 
 
 PushClientManager.defaultManager.deliveryChannelEnabeled = YES; 
 ```
+{% endtab %}
+{% tab SWIFT %} 
+
 ```swift
-//Swift: 
+Swift: 
 
 PushClientManager.default().deliveryChannelEnabeled = true 
 ```
-
+{% endtab %}
+{% endtabs %}
 پس از آن برای دریافت گزارش تحویل پیام‌های ارسالی، رویداد `pushClientManagerDidReceivedDelivery` فراخوانی خواهد شد:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
 
 - (void)pushClientManagerDidReceivedDelivery:(DeliveryMessage *)delivery{
     // Called When PushClientManager has received new delivery from server
@@ -199,8 +225,9 @@ PushClientManager.default().deliveryChannelEnabeled = true
     NSLog(@"\n\n Got message delivery %@, delivered to %@ at %@", messageId, deliveredToUser, deliverdAt);
 }
 ```
+{% endtab %}
+{% tab SWIFT %} 
 ```swift
-//Swift:
 
 func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage?) {
     // Called When PushClientManager has received new delivery from server
@@ -212,6 +239,8 @@ func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage?) {
     print("\n\n Got message delivery \(messageId ?? ""), delivered to \(deliveredToUser ?? "") at \(deliverdAt)")
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 <Br>
 
@@ -228,101 +257,119 @@ func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage?) {
 
 برای عضویت روی یک کانال می‌توانید از متد `subscribe` استفاده کنید که در زیر به آن اشاره شده است:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
 
 [self.manager subscribe:@"alert"]; // public channel
 [self.manager subscribe:@"private/league"]; // private (personal) channel
 ```
-
+{% endtab %}
+{% tab SWIFT %} 
 ```swift
-//Swift:
 
 manager.subscribe("alert") // public channel
 manager.subscribe("private/league") // private (personal) channel
 ```
+{% endtab %}
+{% endtabs %}
 در صورت موفق بودن عمل عضویت روی یک کانال، متد `delegate` زیر فراخوانی خواهد شد:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 ```objectivec
-//Objective-C:
 
 -(void) pushClientManagerDidSubscribed:(NSString *)channel{
     NSLog(@"Subscribed on '%@' channel",channel);
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %} 
 ``` swift
-//Swift:
 
 func pushClientManagerDidSubscribed(_ channel: String!) {
 	print("Subscribed on '\(channel)' channel")
 }
 ```
+{% endtab %}
+{% endtabs %}
  همچنین در صورت رخ دادن خطا به هنگام عضویت روی یک کانال، با استفاده از متد `delegate` زیر می‌توانید از خطای رخ داده شده با خبر شوید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
 
 -(void) pushClientManagerDidFailInSubscribe:(NSError *)error{
     NSLog(@"Error subscribing on channel %@",error);
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
+ 
 ``` swift
-//Swift:
 
 func pushClientManagerDidFail(inSubscribe error: Error!) {
 	print("Error subscribing on channel \(error)")
 }
 ```
+{% endtab %}
+{% endtabs %}
 #### لغو عضویت از کانال (Unsubscribe)
 
 برای لغو عضویت از یک کانال می‌توانید از متد `unsubscribe` استفاده کنید که در زیر به آن اشاره شده است:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
 
 [PushClientManager.defaultManager unsubscribe:@"alert"]; // public channel
 [PushClientManager.defaultManager unsubscribe:@"private/league"]; // private (personal) channel
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
 
 PushClientManager.default().unsubscribe("alert") // public channel
 PushClientManager.default().unsubscribe("private/league") // private (personal) channel
 ```
+{% endtab %}
+{% endtabs %}
 در صورت موفق بودن عمل لغو عضویت از یک کانال، متد `delegate` زیر فراخوانی خواهد شد:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 -(void) pushClientManagerDidUnsubscribed:(NSString *)channel{
     NSLog(@"Unsubscribed from '%@' channel",channel);
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 
 ```swift
-//Swift:
 
 func pushClientManagerDidUnsubscribed(_ channel: String!) {
 	print("Unsubscribed from '\(channel)' channel")
 }
 ```
+{% endtab %}
+{% endtabs %}
 در صورت رخ دادن خطا به هنگام لغو عضویت از یک کانال با استفاده از متد `delegate` زیر می‌توانید از خطا رخ داده شده با خبر شوید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 -(void) pushClientManagerDidFailInUnsubscribe:(NSError *)error{
     NSLog(@"Error in unsubscribe from channel %@",error);
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 func pushClientManagerDidFail(inUnsubscribe error: Error!) {
 	print("Error in unsubscribe from channel \(error)")
 }
 ```
+{% endtab %}
+{% endtabs %}
