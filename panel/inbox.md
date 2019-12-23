@@ -223,53 +223,53 @@ next: settings.html
                 <td>.از عضو بودن مخاطب پیام در کانال ارسالی اطمینان یابید</td>
             </tr>
             <tr>
-                 <td><b> INVALIDSenderId </b></td>
+                 <td style="text-align: left"><b> INVALIDSenderId </b></td>
                  <td>عدم تطابق تنظیمات پوش نوتیفیکیشن APN یا GCM/FCM با تنظیمات اپلیکیشن</td>
                  <td>برای اندروید و آی‌او‌اس</td>
                        </tr>
             <tr>
-                  <td><b> DeviceTokenNotForTopic </b></td>
+                  <td style="text-align: left"><b> DeviceTokenNotForTopic </b></td>
                   <td>عدم تطابق توکن با شناسه با اپ </td>
                   <td>مخصوص آی‌او‌اس</td>
                         </tr>         
             <tr>
-                  <td><b> MismatchSenderId </b></td>
+                  <td style="text-align: left"><b> MismatchSenderId </b></td>
                   <td>عدم تطابق <code> senderId </code> اپ و پنل</td>
                   <td>مخصوص اندروید</td>
                          </tr>    
             <tr>
-                  <td><b>GONE/Device_Unregistered/Not Registered</b></td>
+                  <td style="text-align: left"><b>GONE/Device_Unregistered/Not Registered</b></td>
                   <td>حذف اپلیکیشن توسط کاربر</td>
                   <td style='text-align: center'>-</td>
                                      </tr>  
             <tr>
-                  <td><b> BadDeviceToken </b></td>
+                  <td style="text-align: left"><b> BadDeviceToken </b></td>
                   <td> نامعتبر بودن توکن دستگاه مورد نظر یا استفاده از Simulator</td>
                   <td>از توکن مورد نظر و <a href="/ios/troubleshoot.html#%DB%B8--%D8%B3%D9%88%D8%A6%DB%8C%DA%86-%D8%B3%D8%B1%D9%88%D8%B1-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C-%D8%A7%D9%BE%D9%84-%D8%B1%D8%A7-%D8%AF%D8%B1-%D9%BE%D9%86%D9%84-%D8%A8%D9%87-%D8%AF%D8%B1%D8%B3%D8%AA%DB%8C-%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%DA%A9%D9%86%DB%8C%D8%AFl">تطابق آن با محیط (sandbox یا production اپل) اطمینان یابید.</a>
 . همچنین به طور کلی پوش روی Simulator  آی‌او‌اس دریافت نمی‌شود.</td>
                                                  </tr>                                           
             <tr>
-                  <td><b> BadTopic </b></td>
+                  <td style="text-align: left"><b> BadTopic </b></td>
                   <td>نامعتبر بودن شناسه اپ <code>(bundleId)</code></td>
                   <td>-</td>
                                      </tr>   
             <tr>
-                   <td><b> TopicDisallowed </b></td>
-                   <td>.امکان پوش روی شناسه اپلیکیشن مورد نظر مجاز نیست</td>
+                   <td style="text-align: left"><b> TopicDisallowed </b></td>
+                   <td>امکان پوش روی شناسه اپلیکیشن مورد نظر مجاز نیست.</td>
                    <td>-</td>
                                                  </tr> 
             <tr>
-                   <td><b> BadCertificate </b></td>
+                   <td style="text-align: left"><b> BadCertificate </b></td>
                    <td>نامعتبر بودن گواهی اپل</td>
                    <td> از گواهی که در تنظیمات ارسال نوتیفیکیشن سرور اپل (APNs) قرار دادید اطمینان یابید. </td>
                                                 </tr>  
             <tr>
-                   <td><b> BadCertificateEnvironment </b></td>
+                   <td style="text-align: left"><b> BadCertificateEnvironment </b></td>
                    <td>عدم تطابق گواهی اپل با محیط (sandbox یا production)</td>
                    <td></td>
                                                 </tr>      
             <tr>
-                    <td><b>ExpiredProviderToken </b></td>
+                    <td style="text-align: left"><b>ExpiredProviderToken </b></td>
                     <td>منقضی شدن توکن</td>
                     <td>در صورتی که از روش PEM استفاده کردید، توکن شما پس از یکسال منقضی می‌شود.</td>
                                                 </tr>                                                                                                                                                                                                                                              
