@@ -86,8 +86,9 @@ $ pod install
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
-{% endtab %}
-{% tab SWIFT %}
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 
 ```objectivec
 #import "AppDelegate.h"
@@ -108,6 +109,7 @@ $ pod install
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 import UIKit
 import AdpPushClient
