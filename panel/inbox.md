@@ -200,14 +200,15 @@ next: settings.html
 <Br>
 
 ##### جدول خطاها
-<div class='inbox-table'>
+
 برای آشنایی و رفع خطاهای ارسال پیام، جدول زیر را مشاهده کنید:
+<div class='inbox-table'>
 <table style='text-align: right'>
         <thead>
             <tr>
                 <th>خطا</th>
-                <th>موضوع</th>
-                <th>توضیح</th>
+                <th style='text-align: center'>موضوع</th>
+                <th style='text-align: center'>توضیح</th>
             </tr>
         </thead>
         <tbody>
@@ -237,41 +238,41 @@ next: settings.html
                                                    <td>مخصوص اندروید</td>
                          </tr>    
             <tr>
-                                                               <td>GONE/Device_Unregistered/Not Registered</td>
-                                                               <td>حذف اپلیکیشن توسط کاربر</td>
-                                                               <td style='text-align: center'>-</td>
+                                                    <td>GONE/Device_Unregistered/Not Registered</td>
+                                                    <td>حذف اپلیکیشن توسط کاربر</td>
+                                                    <td style='text-align: center'>-</td>
                                      </tr>  
             <tr>
-                                                                           <td>BadDeviceToken</td>
-                                                                           <td> نامعتبر بودن توکن دستگاه مورد نظر یا استفاده از Simulator</td>
-                                                                           <td>از توکن مورد نظر و <a href="/ios/troubleshoot.html#%DB%B8--%D8%B3%D9%88%D8%A6%DB%8C%DA%86-%D8%B3%D8%B1%D9%88%D8%B1-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C-%D8%A7%D9%BE%D9%84-%D8%B1%D8%A7-%D8%AF%D8%B1-%D9%BE%D9%86%D9%84-%D8%A8%D9%87-%D8%AF%D8%B1%D8%B3%D8%AA%DB%8C-%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%DA%A9%D9%86%DB%8C%D8%AFl">تطابق آن با محیط (sandbox یا production اپل) اطمینان یابید.</a>
+                                                    <td>BadDeviceToken</td>
+                                                    <td> نامعتبر بودن توکن دستگاه مورد نظر یا استفاده از Simulator</td>
+                                                    <td>از توکن مورد نظر و <a href="/ios/troubleshoot.html#%DB%B8--%D8%B3%D9%88%D8%A6%DB%8C%DA%86-%D8%B3%D8%B1%D9%88%D8%B1-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C-%D8%A7%D9%BE%D9%84-%D8%B1%D8%A7-%D8%AF%D8%B1-%D9%BE%D9%86%D9%84-%D8%A8%D9%87-%D8%AF%D8%B1%D8%B3%D8%AA%DB%8C-%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%DA%A9%D9%86%DB%8C%D8%AFl">تطابق آن با محیط (sandbox یا production اپل) اطمینان یابید.</a>
 . همچنین به طور کلی پوش روی Simulator  آی‌او‌اس دریافت نمی‌شود.</td>
                                                  </tr>                                           
             <tr>
-                                                               <td>BadTopic</td>
-                                                               <td>نامعتبر بودن شناسه اپ (`bundleId`)</td>
-                                                               <td>-</td>
+                                                    <td>BadTopic</td>
+                                                    <td>نامعتبر بودن شناسه اپ (bundleId)</td>
+                                                    <td>-</td>
                                      </tr>   
             <tr>
-                                                                           <td>TopicDisallowed</td>
-                                                                           <td>.امکان پوش روی شناسه اپلیکیشن مورد نظر مجاز نیست</td>
-                                                                           <td>-</td>
+                                                    <td>TopicDisallowed</td>
+                                                    <td>.امکان پوش روی شناسه اپلیکیشن مورد نظر مجاز نیست</td>
+                                                    <td>-</td>
                                                  </tr> 
             <tr>
-                                                                                       <td>BadCertificate</td>
-                                                                                       <td>نامعتبر بودن گواهی اپل</td>
-                                                                                       <td> از گواهی که در تنظیمات ارسال نوتیفیکیشن سرور اپل (APNs) قرار دادید اطمینان یابید. </td>
-                                                             </tr>   
+                                                     <td>BadCertificate</td>
+                                                     <td>نامعتبر بودن گواهی اپل</td>
+                                                     <td> از گواهی که در تنظیمات ارسال نوتیفیکیشن سرور اپل (APNs) قرار دادید اطمینان یابید. </td>
+                                                </tr>  
             <tr>
-                                                                                       <td>BadCertificateEnvironment</td>
-                                                                                       <td>عدم تطابق گواهی اپل با محیط (sandbox یا production)</td>
-                                                                                       <td></td>
-                                                             </tr>      
+                                                             <td>BadCertificateEnvironment</td>
+                                                             <td>عدم تطابق گواهی اپل با محیط (sandbox یا production)</td>
+                                                             <td></td>
+                                                </tr>      
             <tr>
-                                                                                                   <td>ExpiredProviderToken</td>
-                                                                                                   <td>منقضی شدن توکن</td>
-                                                                                                   <td>در صورتی که از روش PEM استفاده کردید، توکن شما پس از یکسال منقضی می‌شود.</td>
-                                                                         </tr>                                                                                                                                                                                                                                              
+                                                             <td>ExpiredProviderToken</td>
+                                                             <td>منقضی شدن توکن</td>
+                                                             <td>در صورتی که از روش PEM استفاده کردید، توکن شما پس از یکسال منقضی می‌شود.</td>
+                                                </tr>                                                                                                                                                                                                                                              
         </tbody>
 </table>
 </div>
