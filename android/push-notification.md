@@ -141,7 +141,8 @@ public boolean buildNotification(ChabokNotification chabokNotification, Notifica
 	return super.buildNotification(chabokNotification, builder);
 }
 ```
->`نکته`:
+
+>`نکته`: در صورت استفاده از نسخه ۲.۱۸.۰ به بالا، کد‌ها به طور خودکار توسط کتابخانه چابک اجرا می‌شوند، در غیر این صورت باید از قطعه کد بالا برای نمایش متن‌های بلند استفاده کرد.
 
 
 <Br>
