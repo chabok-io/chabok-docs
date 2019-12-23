@@ -228,7 +228,7 @@ next: settings.html
                  <td>برای اندروید و آی‌او‌اس</td>
                        </tr>
             <tr>
-                  <td></b> DeviceTokenNotForTopic </b></td>
+                  <td><b> DeviceTokenNotForTopic </b></td>
                   <td>عدم تطابق توکن با شناسه با اپ </td>
                   <td>مخصوص آی‌او‌اس</td>
                         </tr>         
