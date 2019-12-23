@@ -86,9 +86,10 @@ $ pod install
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
-```objectivec
-//Objective-C
+{% endtab %}
+{% tab SWIFT %}
 
+```objectivec
 #import "AppDelegate.h"
 #import <AdpPushClient/AdpPushClient.h>
 
@@ -105,10 +106,9 @@ $ pod install
     return YES;
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 import UIKit
 import AdpPushClient
 
@@ -125,7 +125,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
     return true
 }
 ```
-
+{% endtab %}
+{% endtabs %}
 > `نکته`: متد بالا برای محیط سندباکس است. در صورتی که حساب عملیاتی دارید کافیست فقط `Sandbox` را با ‍‍`Production` عوض کنید.
 
 
