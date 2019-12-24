@@ -139,11 +139,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [PushClientManager.defaultManager addDelegate:self];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 PushClientManager.default()?.addDelegate(self)
 ```
@@ -155,12 +157,14 @@ PushClientManager.default()?.addDelegate(self)
 چابک به طور **پیش‌فرض** برای هر پیام در اپلیکیشنتان نشان (**Badge**) اعمال می‌کند. متد `resetBadge` برای خالی کردن و ریست Badge به کار می‌رود. شما با توجه به نیاز خود می‌توانید این متد را در جای خاصی از اپلیکیشنتان (مانند صندوق پیام‌ها) یا در حین باز شدن (launch) اپ خود فراخوانی کنید.
 
 {% tabs %}
-{% tab OBJECTIVE-C %
+{% tab OBJECTIVE-C %}
+
 ```objectivec
 [PushClientManager  resetBadge];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 PushClientManager.resetBadge()
 ```
@@ -187,11 +191,13 @@ PushClientManager.resetBadge()
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [PushClientManager.defaultManager login:@"USER_ID"];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 PushClientManager.default()?.login("USER_ID")
 ```
@@ -214,11 +220,13 @@ PushClientManager.default()?.login("USER_ID")
  
  {% tabs %}
  {% tab OBJECTIVE-C %}
+ 
 ```objectivec
 [PushClientManager.defaultManager login:@"USER_ID" userAttributes:];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 PushClientManager.default()?.login("USER_ID", userAttributes: [AnyHashable : Any])
 ```
@@ -233,11 +241,13 @@ PushClientManager.default()?.login("USER_ID", userAttributes: [AnyHashable : Any
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [PushClientManager.defaultManager login:@"USER_ID" event:@"EVENT_NAME" data:]
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 PushClientManager.default()?.login("USER_ID", event: "EVENT_NAME", data: [AnyHashable : Any])
 ```
@@ -250,11 +260,13 @@ PushClientManager.default()?.login("USER_ID", event: "EVENT_NAME", data: [AnyHas
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [PushClientManager.defaultManager logout];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 PushClientManager.default()?.logout()
 ```
