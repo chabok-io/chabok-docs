@@ -17,11 +17,13 @@ next: troubleshoot.html
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 NSString *installationId = [self.manager getInstallationId];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 let installationId:NSString = manager?.getInstallationId() as! NSString
 ```
@@ -36,11 +38,13 @@ let installationId:NSString = manager?.getInstallationId() as! NSString
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [PushClientManager defaultManager].userId;
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 PushClientManager.default().userId
 ```
@@ -56,6 +60,7 @@ PushClientManager.default().userId
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (void)applicationDidEnterBackground:(UIApplication *)application { 
 	[PushClientManager resetBadge]; 
@@ -66,6 +71,7 @@ PushClientManager.default().userId
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func applicationDidEnterBackground(_ application: UIApplication) { 
 	PushClientManager.resetBadge() 
@@ -90,11 +96,13 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [self.manager.enableLocationOnLaunch = YES];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 self.manager?.enableLocationOnLaunch = true
 ```
@@ -111,6 +119,7 @@ self.manager?.enableLocationOnLaunch = true
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (void)pushClientManagerDidChangedServerConnectionState{
 	// Called When PushClientManager Connecting State has been Changed
@@ -122,6 +131,7 @@ self.manager?.enableLocationOnLaunch = true
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func pushClientManagerDidChangedServerConnectionState() {
 	// Called When PushClientManager Connecting State has been Changed
@@ -138,6 +148,7 @@ func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkTyp
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (void)pushClientManagerDidChangedServerConnectionState{
     PushClientServerConnectionState _connectionState = self.manager.connectionState;
@@ -165,6 +176,7 @@ func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkTyp
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func pushClientManagerDidChangedServerConnectionState (){
     let connectionState = self.manager?.connectionState as! PushClientServerConnectionState
@@ -197,6 +209,7 @@ func pushClientManagerDidChangedServerConnectionState (){
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (void)pushClientManagerDidRegisterUser:(BOOL)registration{
     NSLog(@"User sucessfully registered.");
@@ -207,6 +220,7 @@ func pushClientManagerDidChangedServerConnectionState (){
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 //Swift
 func pushClientManagerDidRegisterUser(_ registration: Bool) {
@@ -224,6 +238,7 @@ func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (BOOL) application:(UIApplication *) application
                 didFinishLaunchingWithOptions:(NSDictionary *) launchOptions{
@@ -243,6 +258,7 @@ func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 //Swift
 func application(_ application: UIApplication,
@@ -271,6 +287,7 @@ func application(_ application: UIApplication,
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (BOOL) application:(UIApplication *) application
                 didFinishLaunchingWithOptions:(NSDictionary *) launchOptions{
@@ -290,6 +307,7 @@ func application(_ application: UIApplication,
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func application(_ application: UIApplication,
                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -321,6 +339,7 @@ func application(_ application: UIApplication,
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 switch (UIApplication.sharedApplication.applicationState) {
 	case UIApplicationStateActive:
@@ -338,6 +357,7 @@ switch (UIApplication.sharedApplication.applicationState) {
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 switch UIApplication.shared.applicationState {
 	case .active:
@@ -359,6 +379,7 @@ switch UIApplication.shared.applicationState {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [PushClientManager.defaultManager setLogLevel:ChabokLogLevelVerbose];  // enable all logging
 [PushClientManager.defaultManager setLogLevel:ChabokLogLevelDebug];    // enable more logging
@@ -370,6 +391,7 @@ switch UIApplication.shared.applicationState {
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 PushClientManager.default().logLevel = ChabokLogLevelVerbose // enable all logging
 PushClientManager.default().logLevel = ChabokLogLevelDebug // enable more logging
@@ -388,11 +410,13 @@ PushClientManager.default().logLevel = ChabokLogLevelSuppress  // disable all lo
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 PushClientManager.defaultManager.enableLog = YES;
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 PushClientManager.default().enableLog = true
 ```

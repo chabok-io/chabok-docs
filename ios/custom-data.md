@@ -25,6 +25,7 @@ next: behavior-tracking.html
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 
 [PushClientManager.defaultManager.userAttributes = @{
@@ -62,6 +63,7 @@ PushClientManager.default().userAttributes = [
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 
 [PushClientManager.defaultManager.userInfo = @{
@@ -73,6 +75,7 @@ PushClientManager.default().userAttributes = [
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 
 PushClientManager.default().userInfo = [
@@ -89,6 +92,7 @@ PushClientManager.default().userInfo = [
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 
 [PushClientManager.defaultManager  registerUser:@"USER_ID"  registrationHandler:^(BOOL isRegistered, NSString *userId, NSError *error) {
@@ -104,6 +108,7 @@ PushClientManager.default().userInfo = [
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 //Swift
 
@@ -126,6 +131,7 @@ PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (reg
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 
 [PushClientManager.defaultManager.userAttributes = @{
@@ -134,6 +140,7 @@ PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (reg
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 //Swift
 
@@ -147,6 +154,7 @@ PushClientManager.default().userAttributes = [
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 
 [PushClientManager.defaultManager.userAttributes = @{
@@ -155,6 +163,7 @@ PushClientManager.default().userAttributes = [
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 //Swift
 
@@ -172,12 +181,14 @@ PushClientManager.default().userAttributes = [
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 
 [PushClientManager.defaultManager incrementUserAttribute:@"visit_comedy_shows"];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 
 PushClientManager.default().incrementUserAttribute("visit_comedy_shows")
@@ -193,6 +204,7 @@ PushClientManager.default().incrementUserAttribute("visit_comedy_shows")
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 NSArray<NSString *> *attributes = @[@"comedy_move", @"shoes_size"];
     
@@ -200,6 +212,7 @@ NSArray<NSString *> *attributes = @[@"comedy_move", @"shoes_size"];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 let attributes = ["comedy_move", "shoes_size"]
 
@@ -215,11 +228,13 @@ PushClientManager.default().incrementUserAttributes(attributes)
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [PushClientManager.defaultManager incrementUserAttributeValue:@"player_level" value:2];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 //Swift:
 
@@ -235,6 +250,7 @@ PushClientManager.default().incrementUserAttributeValue("player_level", value: 2
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 NSMutableDictionary<NSString *, NSNumber *> *attributesDic = [NSMutableDictionary new];
 [attributesDic setObject:[NSNumber numberWithDouble:5] forKey:@"visit"];
@@ -244,6 +260,7 @@ NSMutableDictionary<NSString *, NSNumber *> *attributesDic = [NSMutableDictionar
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 
 let attributesDic = ["visit":NSNumber(5),
@@ -267,11 +284,13 @@ PushClientManager.default().incrementUserAttributeValues(attributesDic)
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [self.manager addTag:@"Premium_User"];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 self.manager?.addTag("Premium_User")
 ```
@@ -282,6 +301,7 @@ self.manager?.addTag("Premium_User")
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [self.manager addTags:@[@"Premium_User",@"MALE",@"Teenage"] success:^(NSInteger count) {
             NSLog(@"Add tags to %zd devices", count);
@@ -291,6 +311,7 @@ self.manager?.addTag("Premium_User")
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 manager.addTags(["Premium_User", "MALE", "Teenage"], success: { count in
     print("Add tags to \(count) devices")
@@ -302,10 +323,12 @@ manager.addTags(["Premium_User", "MALE", "Teenage"], success: { count in
 ```
 {% endtab %}
 {% endtabs %}
+
 همچنین می‌توانید با استفاده از `overload` دیگر این متد، از افزودن و یا خطا در عملیات با خبر شوید:
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [self.manager addTag:@"Premium_User" success:^(NSInteger count) {
         NSLog(@"%@ tag was assign to '%@' user with [%zd] devices",@"Premium_User",self.manager.userId,count);
@@ -315,6 +338,7 @@ manager.addTags(["Premium_User", "MALE", "Teenage"], success: { count in
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 self.manager?.addTag("Premium_User",
         success: {(_ count: Int) -> Void in
@@ -338,6 +362,7 @@ self.manager?.addTag("Premium_User",
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [self.manager removeTag:@"Premium_User"];
 ```
@@ -361,8 +386,8 @@ self.manager?.removeTag("Premium_User")
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
-//Swift
 manager.removeTags("Premium_User", "MALE", "Teenage"], success: { count in
     print("Remove tags to \(count) devices")
 }, failure: { error in

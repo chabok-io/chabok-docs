@@ -20,6 +20,7 @@ next: deeplink.html
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(void)pushClientManagerUILocalNotificationDidReceivedMessage:(PushClientMessage *)message {
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
@@ -37,6 +38,7 @@ next: deeplink.html
 
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClientMessage) {
     let localNotification = UILocalNotification()
@@ -60,11 +62,13 @@ func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClien
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [[UIApplication sharedApplication] cancelLocalNotification:(nonnull UILocalNotification *)];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 UIApplication.shared.cancelLocalNotification(UILocalNotification)
 ```
@@ -75,11 +79,13 @@ UIApplication.shared.cancelLocalNotification(UILocalNotification)
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [[UIApplication sharedApplication] cancelAllLocalNotifications];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 UIApplication.shared.cancelAllLocalNotifications()
 ```
@@ -94,6 +100,7 @@ UIApplication.shared.cancelAllLocalNotifications()
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
     //Get actionIdentifier.
@@ -114,6 +121,7 @@ UIApplication.shared.cancelAllLocalNotifications()
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
@@ -153,6 +161,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
 	// Handle receive iOS (4.0 and later) local notification
@@ -161,6 +170,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
 	self.manager.application(application, didReceive: notification)
@@ -179,6 +189,7 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 	// Handle New Remote Notification, must be use for remote payloads
@@ -187,6 +198,7 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 	// Handle New Remote Notification, must be use for remote payloads
@@ -202,6 +214,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ``` objectivec
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center
 					didReceiveNotificationResponse:(UNNotificationResponse *)response
@@ -219,6 +232,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func userNotificationCenter(_ center: UNUserNotificationCenter, 
 				didReceive response: UNNotificationResponse,
@@ -292,6 +306,7 @@ $ pod install
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 #import "NotificationService.h"
 #import <AdpPushClient/AdpPushClient.h>
@@ -322,6 +337,7 @@ self.bestAttemptContent = [request.content mutableCopy];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 import AdpPushClient
 import UserNotifications
@@ -359,6 +375,7 @@ class NotificationService: UNNotificationServiceExtension {
 بخش [تنظیم نوتیفیکیشن چندرسانه‌ای (Rich Push Notification)](https://dev.doc.chabok.io/ios/push-notification.html#%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%D9%86%D9%88%D8%AA%DB%8C%D9%81%DB%8C%DA%A9%DB%8C%D8%B4%D9%86-%DA%86%D9%86%D8%AF%D8%B1%D8%B3%D8%A7%D9%86%D9%87%D8%A7%DB%8C-rich-push-notification) را با دقت مطالعه کرده و سپس قطعه کد زیر را در کلاس `AppDelegate`  پیاده‌سازی کنید تا رویداد کلیک روی هر اکشن را دریافت کنید.
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center
                 didReceiveNotificationResponse:(UNNotificationResponse *)response
@@ -378,6 +395,7 @@ class NotificationService: UNNotificationServiceExtension {
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func userNotificationCenter(_ center: UNUserNotificationCenter,
                 didReceive response: UNNotificationResponse,

@@ -428,11 +428,13 @@ https://a.chabok.io/JY@4sc
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [_manager setDefaultTracker:@"YOUR_TRACKER_ID"];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 _manager?.setDefaultTracker("YOUR_TRACKER_ID");
 ```

@@ -62,6 +62,7 @@ next: event-handling.html
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 #import "CoreGeoLocation.h"
 .
@@ -71,6 +72,7 @@ CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 import AdpPushClient
 .
@@ -90,6 +92,7 @@ let locationManager = CoreGeoLocation.sharedInstance()
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 
@@ -104,6 +107,7 @@ CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 let locationManager = CoreGeoLocation.sharedInstance()
             
@@ -125,6 +129,7 @@ locationManager.startUpdate()
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (void) receivedLocationUpdates:(NSArray<CLLocation *> *)locations{
     NSInteger length = locations.count;
@@ -146,6 +151,7 @@ locationManager.startUpdate()
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 func receivedLocationUpdates(_ locations: [CLLocation]) {
     let length: Int = locations.count
@@ -175,12 +181,14 @@ func receivedLocationUpdates(_ locations: [CLLocation]) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %} 
+
 ```objectivec
 CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 [locationManager trackMeUntil:3600 byMeter:100];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 let locationManager = CoreGeoLocation.sharedInstance()
 locationManager.trackMe(until: 3600, byMeter:100)
@@ -200,6 +208,7 @@ locationManager.trackMe(until: 3600, byMeter:100)
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 trackingStateEnumType trackingState = [locationManager trackingMeState];
 if (trackingState == kTracking) {
@@ -212,6 +221,7 @@ if (trackingState == kTracking) {
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 let trackingState: trackingStateEnumType = locationManager.trackingMeState()
 if trackingState == kTracking {
@@ -229,11 +239,13 @@ if trackingState == kTracking {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [locationManager stopTracking];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift 
 locationManager.stopTracking()
 ```
@@ -245,6 +257,7 @@ locationManager.stopTracking()
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [locationManager requestSingleLocation:^(CLLocation * _Nullable location, NSError * _Nullable error) {
     if (location != nil) {
@@ -254,6 +267,7 @@ locationManager.stopTracking()
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift 
 //Swift :
 
@@ -275,11 +289,13 @@ locationManager.requestSingleLocation({(_ location: CLLocation?, _ error: Error?
 امکان دریافت موقعیت مکان حتی در حالتی که اپلیکشن شما `Terminate` شده باشد نیز وجود دارد.
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [locationManager startMonitoringSignificantLocationChanges];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 locationManager.startMonitoringSignificantLocationChanges()
 ```
@@ -298,6 +314,7 @@ locationManager.startMonitoringSignificantLocationChanges()
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if ([launchOptions objectForKey:UIApplicationLaunchOptionsLocationKey]){
@@ -309,6 +326,7 @@ locationManager.startMonitoringSignificantLocationChanges()
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 //Swift :
 
@@ -330,6 +348,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(void) startMonitoringRegion:(CLRegion *_Nonnull) region;
 
@@ -343,6 +362,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 func startMonitoringRegion(_ region: CLRegion)
 func startMonitoringRegion(_ center: CLLocationCoordinate2D, radius: CLLocationDistance, identifier: String)
@@ -359,6 +379,7 @@ func startMonitoringRegion(_ region: CLRegion, expireCount count: Int, expireTs 
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 CLLocationCoordinate2D center = CLLocationCoordinate2DMake(35.759227, 51.401044);
     CLRegion *region = [[CLCircularRegion alloc] initWithCenter:center radius:150 identifier:@"adpDigitalCompany"];
@@ -366,6 +387,7 @@ CLLocationCoordinate2D center = CLLocationCoordinate2DMake(35.759227, 51.401044)
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 var center: CLLocationCoordinate2D = CLLocationCoordinate2DMake(35.759227, 51.401044)
 
@@ -383,6 +405,7 @@ locationManager.startMonitoringRegion(region)
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 NSInteger count = 20; // count for enter to region
 CLLocationDistance radius = 150; // per meter
@@ -400,6 +423,7 @@ CLRegion *region = [[CLCircularRegion alloc] initWithCenter:coordinate
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 //Swift :
 
@@ -423,6 +447,7 @@ locationManager.startMonitoringRegion(region!, expireCount: count, expireTs: exp
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(void) didEnterToRegion:(CLRegion *)region{
     NSLog(@"Hi dear user, You are close to AdpDigital company building.....");
@@ -438,6 +463,7 @@ locationManager.startMonitoringRegion(region!, expireCount: count, expireTs: exp
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 func didEnter(to region: CLRegion) {
     print("Hi dear user, You are close to AdpDigital company building.....")
@@ -458,12 +484,14 @@ func didStartMonitoringRegion(_ region: CLRegion) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [_locationManager stopMonitoringAllRegions];
 [_locationManager stopMonitoringRegion:region];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 locationManager.stopMonitoringAllRegions()
 locationManager.stopMonitoringRegion(region!)

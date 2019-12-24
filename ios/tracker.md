@@ -312,6 +312,7 @@ self.manager.track("add-to-card", data: ["value":35000])
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 ChabokEvent *chabokEvent = [[ChabokEvent alloc]
                                 initWithRevenue:20000
@@ -322,6 +323,7 @@ ChabokEvent *chabokEvent = [[ChabokEvent alloc]
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 let chabokEvent = ChabokEvent(revenue: 20000, currency: "RIAL")
 
@@ -387,11 +389,13 @@ https://a.chabok.io/JY@4sc
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [_manager setDefaultTracker:@"YOUR_TRACKER_ID"];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 _manager?.setDefaultTracker("YOUR_TRACKER_ID");
 ```

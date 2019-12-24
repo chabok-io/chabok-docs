@@ -31,6 +31,7 @@ next: user-management.html
 
 برای اینکه آی‌او‌اس لینک شما را بشناسد باید شکل آن را مانند url کنید (به این صورت scheme ://resource). به عنوان مثال APP_NAME://PAGE_NAME را وارد می‌کنیم. 
 در صورتی هم که می‌خواهید کاربر را به اخل یک اپلیکیشن هدایت کنید؛ باید متد زیر را در **AppDelegate** پیاده‌سازی کنید.
+
 ```swift
 func application(_ app: UIApplication, open url: URL,
                  options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -98,6 +99,7 @@ curl -X POST \
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
                         options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
@@ -109,6 +111,7 @@ curl -X POST \
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func application(_ app: UIApplication, 
                 open url: URL, 
@@ -127,6 +130,7 @@ func application(_ app: UIApplication,
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
                         options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
@@ -138,6 +142,7 @@ func application(_ app: UIApplication,
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 //Swift
 func application(_ app: UIApplication, 
@@ -161,6 +166,7 @@ func application(_ app: UIApplication,
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
                 restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
@@ -174,6 +180,7 @@ func application(_ app: UIApplication,
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 //Swift
 func application(_ application: UIApplication, 
@@ -192,6 +199,7 @@ func application(_ application: UIApplication,
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
                 restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
@@ -205,6 +213,7 @@ func application(_ application: UIApplication,
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func application(_ application: UIApplication, 
                 continue userActivity: NSUserActivity, 
@@ -226,6 +235,7 @@ func application(_ application: UIApplication,
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (BOOL)chabokDeeplinkResponse:(NSURL *)deeplink {
     // deeplink object contains information about deferred deep link content
@@ -238,6 +248,7 @@ func application(_ application: UIApplication,
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func chabokDeeplinkResponse(_ deeplink: URL?) -> Bool {
     // deeplink object contains information about deferred deep link content
