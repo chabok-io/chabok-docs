@@ -24,9 +24,9 @@ next: publishingMessages.html
 #### ۱- مقداردهی اولیه
 برای دریافت یا ارسال پیام از/به سرور چابک، لازم است یک نمونه از کلاس AdpPushClient بسازید و آن را مقداردهی نمایید. یکی از بهترین روش‌ها برای ساختن کلاینت چابک استفاده از کلاس اپلیکیشن پروژه شماست،‌‌ زیرا فراخوانی این متد فقط یکبار کافی ست. به قطعه کد زیر دقت کنید :
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 #import <AdpPushClient/AdpPushClient.h>
 
 @interface AppDelegate () <PushClientManagerDelegate, PushClientManagerDelegate>
@@ -43,10 +43,9 @@ next: publishingMessages.html
 ...
 @end
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 import AdpPushClient
 
 @UIApplicationMain
@@ -63,6 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 ...
 }
 ```
+{% endtab %}
+{% endtabs %}
+
 متد `setDevelopment` مشخص می‌کند که برنامه به محیط [آزمایشی](https://sandbox.push.adpdigital.com) چابک متصل شود یا به محیط [عملیاتی](https://panel.push.adpdigital.com). این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
 
 
@@ -71,64 +73,76 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
 > `نکته` : به طور کلی چابک شامل ۲ محیط تست (سندباکس) و عملیاتی می‌باشد. حساب‌های رایگان چابک (تا ۳۰ هزار کاربر) بر روی محیط سندباکس و حساب‌های پریمیوم روی عملیاتی قرار می‌گیرند. کلاینت چابک به صورت پیش‌فرض بر روی حالت **تست (sandbox)** می‌باشد. برای تغییر به محیط عملیاتی (`setDevelopment:NO`) باید از [**پنل بخش تنظیمات**](https://doc.chabok.io/panel/settings.html#%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA-%D8%AD%D8%B3%D8%A7%D8%A8-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C) درخواست خود را ثبت نمایید تا پس از تایید، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد. 
 
-
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [PushClientManager setDevelopment:YES];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 PushClientManager.setDevelopment(true)
 ```
+{% endtab %}
+{% endtabs %}
+
 به منظور استفاده از پلتفرم چابک، ابتدا باید متد `registerApplication` را فراخوانی کرده و مقادیر مورد نیاز جهت فعال سازی کتابخانه چابک را وارد نمایید. در این متد بجای پارامتر‌های `YOUR_APP_ID`, `YOUR_API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را که در بخش تنظیمات پنل است، وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/ios/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](https://doc.chabok.io/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
 
 همانند کد زیر، متد `registerApplication` را در کلاس `AppDelegate` و در متد `didFinishLaunchingWithOptions` فراخوانی کنید :
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-  
 [_manager registerApplication:@"APP_ID"
                            apiKey:@"API_KEY(SDK_KEY)"
                          userName:@"SDK_USERNAME"
                          password:@"SDK_PASSWORD"];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 manager?.registerApplication("APP_ID", apiKey: "API_KEY(SDK_KEY)", userName: "SDK_USERNAME", password: "SDK_PASSWORD")
 ```
+{% endtab %}
+{% endtabs %}
 
 جهت دسترسی به `delegate‌های` چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید :
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [_manager addDelegate:self];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift :
-
 manager?.addDelegate(self)
 ```
+{% endtab %}
+{% endtabs %}
+
 چابک برای فهمیدن نحوه باز شدن برنامه نیاز به قطعه کد زیر دارد، بنابراین فراخوانی این کد **ضروری** می‌باشد:
+
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
 //Check app was launch by clicking on Notification.
 if ([_manager application:application didFinishLaunchingWithOptions:launchOptions]) {
 	NSLog(@"Application was launch by clicking on Notification...");
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 //Check app was launch by clicking on Notification.
 let launchByNotification = (manager?.application(application, didFinishLaunchingWithOptions: launchOptions))!
 if launchByNotification{
     print("Application was launch by clicking on Notification...")
 }
 ```
+{% endtab %}
+{% endtabs %}
+
 #### ۲- ثبت کاربر
 با استفاده از متد `registerUser` می‌توانید یک نام کاربری به هر کاربر اختصاص دهید. این متد با دو امضای متفاوت وجود دارد: امضای اول که تنها `شناسه کاربر` را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام میکند.
 
@@ -136,16 +150,18 @@ if launchByNotification{
 
 >   `نکته امنیتی` : مقدار `USER_ID` را هرگز به صورت خام در `NSUserDefaults` ذخیره نکنید، چون این مقدار شناسه معنادار می‌باشد و می‌توان با آن  کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `PushClientManager.default().userId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [self.manager registerUser:@"USER_ID"];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 self.manager?.registerUser("USER_ID")
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته` : متغیر `USER_ID` شناسه کاربر برای ثبت نام در چابک می‌باشد و ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود شناسه کاربری می تواند هر فیلد باارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. `شماره موبایل، کدملی، شماره حساب و یا ایمیل` مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند.
 >
@@ -155,16 +171,18 @@ self.manager?.registerUser("USER_ID")
 
 امضای دوم که علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی که کاربر باید روی آن‌ها عضو شود را نیز دریافت می کند. با ثبت نام در این کانال‌ها کاربر پیام‌های ارسالی روی آن‌ها را دریافت خواهد نمود.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [self.manager registerUser:@"USER_ID" channels:@[@"YOUR_CHANNEL" ]];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
 ```
+{% endtab %}
+{% endtabs %}
 
 #### ۳- متدهای ضروری
 در مرحله آخر شما باید قطعه کد زیر را در کلاس `AppDelegate` قرار دهید تا کتابخانه چابک بتواند راه‌اندازی شود، سه متد فوق برای دریافت token از سرویس `APNs` اپل می‌باشد که چابک برای ارسال پوش نوتیفیکشن به آن نیازمند است.
@@ -174,9 +192,9 @@ self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
 > برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به
 > کاربر `مسیج` و `پوش ` بفرستید.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 #pragma mark - Notification AppDelegation
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
@@ -195,9 +213,9 @@ self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
     [self.manager application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift :
-
 //MARK : Notification AppDelegation
     
 func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -213,6 +231,8 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 	self.manager?.application(application, didRegister: notificationSettings)
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 > نحوه صحیح پیاده سازی متدها در قالب پروژه [Starter](https://github.com/chabok-io/chabok-starter-ios) پیاده سازی شده است.
 
@@ -220,23 +240,25 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 برای حذف دستگاه کاربر از سرور چابک می‌توانید از متدهای زیر استفاده کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [PushClientManager.defaultManager unregisterUser];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 PushClientManager.default().unregisterUser()
 ```
+{% endtab %}
+{% endtabs %}
 
 ### رویداد ها:
 با استفاده از دو رویداد `pushClientManagerDidRegisterUser` و `pushClientManagerDidFailRegisterUser` می توانید از ثبت نام و یا مشکل به وجود آماده در عملیات ثبت نام اطلاعات لازم را دریافت کنید :
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 - (void)pushClientManagerDidRegisterUser:(BOOL)registration{
 // called when PushClientManager Registered user Successfully
 }
@@ -249,12 +271,14 @@ NSLog(@"%@ %@",@(__PRETTY_FUNCTION__),error);
 NSLog(@"%@ %@",@(__PRETTY_FUNCTION__),self.manager.failureError);
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 func pushClientManagerDidRegisterUser(_ registration: Bool) {
 }
 
 func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 }
 ```
+{% endtab %}
+{% endtabs %}

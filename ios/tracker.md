@@ -88,8 +88,6 @@ $ pod install
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
-
 ```objectivec
 #import "AppDelegate.h"
 #import <AdpPushClient/AdpPushClient.h>
@@ -109,7 +107,6 @@ $ pod install
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 import UIKit
 import AdpPushClient
@@ -139,32 +136,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
 جهت دسترسی به `delegate‌`های چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [PushClientManager.defaultManager addDelegate:self];
 ```
+{% endtab %}
+{% tab SWIFT %}
 
 ```swift
-//Swift :
-
 PushClientManager.default()?.addDelegate(self)
 ```
+{% endtab %}
+{% endtabs %}
 
 - متد `resetBadge`:
 
 چابک به طور **پیش‌فرض** برای هر پیام در اپلیکیشنتان نشان (**Badge**) اعمال می‌کند. متد `resetBadge` برای خالی کردن و ریست Badge به کار می‌رود. شما با توجه به نیاز خود می‌توانید این متد را در جای خاصی از اپلیکیشنتان (مانند صندوق پیام‌ها) یا در حین باز شدن (launch) اپ خود فراخوانی کنید.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [PushClientManager  resetBadge];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 PushClientManager.resetBadge()
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. این قابلیت در[ پیام چابک](/ios/chabok-messaging.html) و [پیام‌رسانی آنی](/ios/event-handling.html) استفاده می‌شود.
 
@@ -184,17 +185,18 @@ PushClientManager.resetBadge()
 
 فقط شناسه کاربر را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام می‌کند.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [PushClientManager.defaultManager login:@"USER_ID"];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 PushClientManager.default()?.login("USER_ID")
 ```
-
+{% endtab %}
+{% endtabs %}
 
 >` نکته:` در صورتی از نسخه‌های قبل چابک استفاده می‌کردید و کاربر از قبل ثبت شده بود، توصیه می‌کنیم خودتان بلافاصله پس از مقداردهی این را مدیریت کنید.
 
@@ -210,16 +212,18 @@ PushClientManager.default()?.login("USER_ID")
 
  علاوه بر شناسه کاربر، اطلاعات کاربر (Attributes) را دریافت می‌کند.
  
+ {% tabs %}
+ {% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [PushClientManager.defaultManager login:@"USER_ID" userAttributes:];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 PushClientManager.default()?.login("USER_ID", userAttributes: [AnyHashable : Any])
 ```
+{% endtab %}
+{% endtabs %}
 
 >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب](http://chabok.io) برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر پیام چابک و پوش‌نوتیفیکیشن بفرستید.
 
@@ -227,16 +231,18 @@ PushClientManager.default()?.login("USER_ID", userAttributes: [AnyHashable : Any
 
 علاوه بر شناسه کاربر، رفتار مورد نظر کاربر را رصد می‌کند.
 
+ {% tabs %}
+ {% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [PushClientManager.defaultManager login:@"USER_ID" event:@"EVENT_NAME" data:]
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 PushClientManager.default()?.login("USER_ID", event: "EVENT_NAME", data: [AnyHashable : Any])
 ```
+{% endtab %}
+{% endtabs %}
 
 <br>
 
@@ -244,9 +250,9 @@ PushClientManager.default()?.login("USER_ID", event: "EVENT_NAME", data: [AnyHas
 
 شما می‌توانید اطلاعاتی که از کاربر دارید (مانند نام، نام خانوادگی، جنسیت، سن و ...) را به طور دلخواه با استفاده از property زیر، در پروفایل او ثبت کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 [PushClientManager.defaultManager.userAttributes = @{
 		@"firstName": @"نسیم",
 		@"lastName" : @"پرتوی",
@@ -254,15 +260,17 @@ PushClientManager.default()?.login("USER_ID", event: "EVENT_NAME", data: [AnyHas
 		@"gender" : @"زن"
 }];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
-//Swift
-
 PushClientManager.default().userAttributes = [
                        "firstName": "نسیم",
                        "lastName": "پرتوی",
                        "age": 36,
                        "gender": "زن"]
 ```
+{% endtab %}
+{% endtabs %}
 
 پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
 
@@ -279,14 +287,19 @@ PushClientManager.default().userAttributes = [
 
 نمونه:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 [self.manager track:@"add-to-card" data:@{@"value":@(35000)}];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 self.manager.track("add-to-card", data: ["value":35000])
 ```
+{% endtab %}
+{% endtabs %}
+
 >‍‍‍`نکته:` در متد `track` در صورتی که به `value` مقدار عددی بدهید، آن رفتار در سگمنت با پیشوند **آخرین و مجموع** اضافه می‌شود. اما در صورتی که مقدار غیر عددی (string) بدهید، آن رفتار فقط با پیشوند **آخرین** به سگمنت اضافه می‌شود.
 
 <Br>
@@ -297,8 +310,9 @@ self.manager.track("add-to-card", data: ["value":35000])
 
 نمونه:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 ChabokEvent *chabokEvent = [[ChabokEvent alloc]
                                 initWithRevenue:20000
                                 currency:@"RIAL"];
@@ -306,12 +320,16 @@ ChabokEvent *chabokEvent = [[ChabokEvent alloc]
 [PushClientManager.defaultManager trackPurchase:@"Purchase"
                                         chabokEvent:chabokEvent];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 let chabokEvent = ChabokEvent(revenue: 20000, currency: "RIAL")
 
 PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 ```
+{% endtab %}
+{% endtabs %}
+
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/ios/behavior-tracking.html) را مطالعه کنید.
 
 <br>
@@ -347,14 +365,20 @@ PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 
 حساب‌ رایگان:
 
+{% tabs %}
+{% tab sandbox %}
 ```javascipt
 https://sand.chabok.io/JY@4sc
 ```  
 حساب عملیاتی:
 
+{% endtab %}
+{% tab production %}
 ```javascipt
 https://a.chabok.io/JY@4sc
 ```  
+{% endtab %}
+{% endtabs %}
 
 #### ۲.۲. انتشار لینک ترکر 
 
@@ -368,17 +392,18 @@ https://a.chabok.io/JY@4sc
 
 شما می‌توانید منبع (Source) نصب را در کمپین‌های خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید، **آی‌دی ترکر** را در متد زیر قرار دهید و پس از گرفتن خروجی ipa گرفتن آن را در استور مورد نظر بگذارید. 
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 [_manager setDefaultTracker:@"YOUR_TRACKER_ID"];
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
-
 _manager?.setDefaultTracker("YOUR_TRACKER_ID");
 ```
+{% endtab %}
+{% endtabs %}
 
 >`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabok.io/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
 
