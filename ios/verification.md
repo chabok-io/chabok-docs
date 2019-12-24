@@ -20,9 +20,9 @@ next: features.html
 
 برای این منظور لازم است تا متد `requestVerificationCode` فراخوانی شود:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
  ```objectivec
-//Objective-C
-
 [self.manager requestVerificationCode:@"USER_ID" completionBlock:^(BOOL sent, NSError *error) {
          if (error) {
              NSLog(@"ERROR");
@@ -35,9 +35,9 @@ next: features.html
         }
     }];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 manager?.requestVerificationCode("USER_ID", completionBlock: {(_ sent: Bool, _ error: Error?) -> Void in
          if error != nil {
              print("ERROR")
@@ -50,6 +50,9 @@ manager?.requestVerificationCode("USER_ID", completionBlock: {(_ sent: Bool, _ e
          }
     })
 ```
+{% endtab %}
+{% endtabs %}
+
 >`نکته` مقدار `USER_ID` می‌تواند شماره‌ همراه کاربر و یا آدرس `پست الکترونیکی`
 > وی باشد. در این صورت بر اساس مقدار وارد شده، کد تایید برای کاربر پیامک
 > می‌شود و یا برای او ایمیل خواهد شد.
@@ -59,9 +62,9 @@ manager?.requestVerificationCode("USER_ID", completionBlock: {(_ sent: Bool, _ e
 
 پس از ارسال کد تایید لازم است این کد برای چابک ارسال شود تا صحت آن بررسی گردد. برای این منظور باید متد `verifyUserCode` فراخوانی شود.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 [self.manager verifyUserCode:@"USER_ID" userCode:@"Verfication_Code" completionBlock:^(BOOL isVerify, NSError *error) {
          if (error) {
              NSLog(@"ERROR");
@@ -75,7 +78,8 @@ manager?.requestVerificationCode("USER_ID", completionBlock: {(_ sent: Bool, _ e
          }
     }];
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
 //Swift:
 
@@ -91,5 +95,7 @@ manager?.verifyUserCode("USER_ID", userCode: "Verfication_Code", completionBlock
          }
     })
 ```
+{% endtab %}
+{% endtabs %}
 >  `نکته`: مقدار `USER_ID`  دقیقا باید همان مقداری باشد که در مرحله قبل  برای درخواست کد استفاده شده است.
 
