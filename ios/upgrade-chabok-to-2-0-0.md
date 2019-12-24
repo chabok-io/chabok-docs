@@ -53,6 +53,7 @@ $ pod update
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```diff
+//Objective-C
 ‌-(BOOL)application:(UIApplication  *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {     
 
 -    [PushClientManager setDevelopment:YES];
@@ -87,7 +88,7 @@ $ pod update
 {% tab SWIFT %}
 
 ```diff
-
+//Swift:
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
 -	PushClientManager.setDevelopment(true)
@@ -126,7 +127,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```diff
-
+//Objective-C
 ‌-(BOOL)application:(UIApplication  *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {     
 
     [PushClientManager  resetBadge];
@@ -142,6 +143,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% tab SWIFT %}
 ```diff
+//Swift:
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -166,7 +168,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```diff
-
+//Objective-C
 ‌-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
     // Handle failure of get Device token from Apple APNS Server
 -  [_manager application:application didFailToRegisterForRemoteNotificationsWithError:error];
@@ -185,7 +187,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% endtab %}
 {% tab SWIFT %}
 ```diff
-
+//Swift:
 func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
 	// Handle failure of get Device token from Apple APNS Server
 - 	_manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
@@ -213,6 +215,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```diff
+//Objective-C
 - [PushClientManager.defaultManager registerUser:@"USER_ID"];
 
 + [PushClientManager.defaultManager login:@"USER_ID"];
@@ -220,7 +223,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 {% endtab %}
 {% tab SWIFT %}
 ```diff
-
+//Swift:
 - PushClientManager.default()?.registerUser("USER_ID")
 
 + PushClientManager.default()?.login("USER_ID")
@@ -235,6 +238,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```diff
+//Objective-C
 - [PushClientManager.defaultManager unregisterUser];
 
 + [PushClientManager.defaultManager logout];
@@ -242,7 +246,7 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 {% endtab %}
 {% tab SWIFT %}
 ```diff
-
+//Swift:
 - PushClientManager.default()?.unregisterUser()
 
 + PushClientManager.default()?.logout()
@@ -259,13 +263,13 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```diff
-
+//Objective-C
 -	[PushClientManager.defaultManager appWillOpenUrl:]; 
 ```
 {% endtab %}
 {% tab SWIFT %}
 ```diff
-
+//Swift:
 -	PushClientManager.default()?.appWillOpen(url)
 ```
 {% endtab %}
