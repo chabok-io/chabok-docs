@@ -71,9 +71,9 @@ $ pod install
 
 کد زیر **تمام متدهایی** که باید مقداردهی شوند را در بر دارد:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 #import "AppDelegate.h"
 #import <AdpPushClient/AdpPushClient.h>
 
@@ -133,10 +133,9 @@ $ pod install
 }
 @end
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 import UIKit
 import AdpPushClient
 
@@ -194,6 +193,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
     }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 در این متد به جای پارامتر‌های `APP_ID/SENDER_ID`, `API_KEY(SDK_KEY)`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/android/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.
 
@@ -207,9 +208,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
 یکی از مزیت‌های چابک امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و [سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید](/panel/users.html#جزئیات-کاربر).
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 - (BOOL)application:(UIApplication *)application
             didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -229,7 +230,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
     return YES;
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
 //Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -250,6 +252,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return true
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 متد `registerAsGuest` در بالا، کاربر را به عنوان **کاربر مهمان** ثبت می‌کند. این متد به طور خودکار  یک تگ مهمان (CHABOK_GUEST) به کاربر اختصاص می‌دهد. 
 
@@ -265,16 +269,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 به عنوان مثال اگر اپلیکیشن شما دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای (در کلاس `Application` متد `onCreate`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [_manager registerUser:@"USER_ID"];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 _manager?.registerUser("USER_ID")
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته`: مقدار `USER_ID` می‌تواند **بین ۳ تا ۶۴** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
 
@@ -285,9 +291,9 @@ _manager?.registerUser("USER_ID")
 
 شما می‌توانید اطلاعاتی که از کاربر دارید (مانند نام، نام خانوادگی، جنسیت، سن و ...) را به طور دلخواه با استفاده از property زیر، در پروفایل او ثبت کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 [PushClientManager.defaultManager.userAttributes = @{
 		@"firstName": @"نسیم",
 		@"lastName" : @"پرتوی",
@@ -295,15 +301,17 @@ _manager?.registerUser("USER_ID")
 		@"gender" : @"زن"
 }];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
-//Swift
-
 PushClientManager.default().userAttributes = [
                        "firstName": "نسیم",
                        "lastName": "پرتوی",
                        "age": 36,
                        "gender": "زن"]
 ```
+{% endtab %}
+{% endtabs %}
 
 پس از فراخوانی این متد و ثبت اطلاعات می‌توانید آن را در **پنل>جزئیات دستگاه>کارت اطلاعات کاربر** مانند زیر مشاهده کنید:
 
@@ -319,13 +327,18 @@ PushClientManager.default().userAttributes = [
  به عنوان مثال می‌خواهید رفتار **افزودن به سبد خرید** از فروشگاه اینترنتی خودتان را رصد کنید. برای ثبت این رفتار کد زیر را با الگوی بالا وارد می‌نماییم.
 
 نمونه:
+
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 [self.manager track:@"add-to-card" data:@{@"value":@(35000)}];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 self.manager.track("add-to-card", data: ["value":35000])
+{% endtab %}
+{% endtabs %}
 ```
 >‍‍‍`نکته:` در متد `track` در صورتی که به `value` مقدار عددی بدهید، آن رفتار در سگمنت با پیشوند **آخرین و مجموع** اضافه می‌شود. اما در صورتی که مقدار غیر عددی (string) بدهید، آن رفتار فقط با پیشوند **آخرین** به سگمنت اضافه می‌شود.
 
@@ -337,8 +350,9 @@ self.manager.track("add-to-card", data: ["value":35000])
 
 نمونه:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 ChabokEvent *chabokEvent = [[ChabokEvent alloc]
                                 initWithRevenue:20000
                                 currency:@"RIAL"];
@@ -346,12 +360,16 @@ ChabokEvent *chabokEvent = [[ChabokEvent alloc]
 [PushClientManager.defaultManager trackPurchase:@"Purchase"
                                         chabokEvent:chabokEvent];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 let chabokEvent = ChabokEvent(revenue: 20000, currency: "RIAL")
 
 PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 ```
+{% endtab %}
+{% endtabs %}
+
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/ios/behavior-tracking.html) را مطالعه کنید.
 
 <br>
@@ -408,17 +426,18 @@ https://a.chabok.io/JY@4sc
 
 شما می‌توانید منبع (Source) نصب را در کمپین‌های خود بفهمید. برای انجام این کار باید در ابتدا ترکر خود را در پنل ایجاد کنید، **آی‌دی ترکر** را در متد زیر قرار دهید و پس از گرفتن خروجی ipa گرفتن آن را در استور مورد نظر بگذارید. 
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 [_manager setDefaultTracker:@"YOUR_TRACKER_ID"];
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
-
 _manager?.setDefaultTracker("YOUR_TRACKER_ID");
 ```
+{% endtab %}
+{% endtabs %}
 
 >`نکته:` دقت داشته باشید که `TRACKER_ID` شناسه ۶ کاراکتری است که در لینک ترکر شما وجود دارد. به عنوان مثال در لینک `https://sand.chabok.io/JY@4sc` آی‌دی ترکر `JY@4sc` می‌باشد. این آی‌دی را می‌توانید از پنل>ترکر>جزئیات ترکر مانند تصویر زیر کپی کنید:
 

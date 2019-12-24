@@ -59,24 +59,27 @@ next: event-handling.html
 
 ### کلاس CoreGeoLocation 
 در ابزار جدید چابک، امکان دریافت موقعیت مکانی کاربر فراهم شده است. برای استفاده از کلاس `CoreGeoLocation` می توانید کلاس فوق را به کلاس خود import کنید:
-```objectivec
-//Objective-C :
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
 #import "CoreGeoLocation.h"
 .
 .
 .
 CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
-//Swift :
-
 import AdpPushClient
 .
 .
 .
 let locationManager = CoreGeoLocation.sharedInstance()
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته :`  برای استفاده از قابلیت مکان یابی، پیکربندی های لازم که در
 > بخش [پیش نیازهای مکان‌یابی](/ios/location-config.html) بیان شده را
@@ -84,9 +87,10 @@ let locationManager = CoreGeoLocation.sharedInstance()
 
 ### دریافت موقعیت مکانی
 ابتدا پیکربندی متناسب برای دریافت موقعیت مکانی را تعیین کرده و با استفاده از متد `startLocationUpdate` شروع به دریافت موقعیت مکانی کاربر کنید. به قطعه کد زیر دقت کنید‌:
-```objectivec
-//Objective-C :
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
 CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 
 [locationManager addDelegate:self];
@@ -98,9 +102,9 @@ CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 
 [locationManager startLocationUpdate];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
-//Swift :
-
 let locationManager = CoreGeoLocation.sharedInstance()
             
 locationManager.add(self)
@@ -112,12 +116,16 @@ locationManager.desiredAccuracy = kCLLocationAccuracyBest
             
 locationManager.startUpdate()
 ```
+{% endtab %}
+{% endtabs %}
+
 ### رویداد دریافت موقعیت مکانی
 
 جهت دریافت موقعیت های مکانی باید `CoreGeoLocationDelegate`  را به `@interface`  کلاس خود اضافه کنید و متد زیر را پیاده سازی کنید :
-```objectivec
-//Objective-C :
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
 - (void) receivedLocationUpdates:(NSArray<CLLocation *> *)locations{
     NSInteger length = locations.count;
     CLLocation *lastLocation = [locations lastObject];
@@ -136,9 +144,9 @@ locationManager.startUpdate()
     };
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
-//Swift :
-
 func receivedLocationUpdates(_ locations: [CLLocation]) {
     let length: Int = locations.count
     let lastLocation: CLLocation? = locations.last
@@ -154,6 +162,8 @@ func receivedLocationUpdates(_ locations: [CLLocation]) {
     }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته`: چابک بصورت خودکار اقدام به publish موقعیت مکانی می‌کند، برای افزودن داده مورد نیاز همراه با موقعیت مکانی، باید Closures `customizeGeoData` را پیاده سازی کنید.
 >
@@ -161,19 +171,22 @@ func receivedLocationUpdates(_ locations: [CLLocation]) {
 
 ### مکان یابی بر اساس مدت زمان و فاصله
 
-با استفاده از متد `trackMeUntil:byMeter` می توانید موقعیت کاربر را بر اساس فاصله و بازه زمانی (**برحسب ثانیه**) تعیین شده دنبال کنید : 
-```objectivec
-//Objective-C :
+با استفاده از متد `trackMeUntil:byMeter` می توانید موقعیت کاربر را بر اساس فاصله و بازه زمانی (**برحسب ثانیه**) تعیین شده دنبال کنید :
 
+{% tabs %}
+{% tab OBJECTIVE-C %} 
+```objectivec
 CoreGeoLocation *locationManager =  [CoreGeoLocation sharedInstance];
 [locationManager trackMeUntil:3600 byMeter:100];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
-//Swift :
-
 let locationManager = CoreGeoLocation.sharedInstance()
 locationManager.trackMe(until: 3600, byMeter:100)
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته :` دقت داشته باشید که مدت زمان در متد `trackMeUntil` برحسب ثانیه است. به عنوان مثال در کد بالا مدت زمان ۳۶۰۰ ثانیه تعیین شده است.
 
@@ -184,9 +197,10 @@ locationManager.trackMe(until: 3600, byMeter:100)
 > خواهد شد.
 
 برای بررسی وضعیت مکان یابی کاربر می توانید از متد زیر استفاده کنید :
-```objectivec
-//Objective-C :
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
 trackingStateEnumType trackingState = [locationManager trackingMeState];
 if (trackingState == kTracking) {
     NSLog(@"We are tracking user...");
@@ -196,9 +210,9 @@ if (trackingState == kTracking) {
     NSLog(@"Tracking user interval was expired...");
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
-//Swift :
-
 let trackingState: trackingStateEnumType = locationManager.trackingMeState()
 if trackingState == kTracking {
     print("We are tracking user...")
@@ -208,29 +222,38 @@ if trackingState == kTracking {
     print("Tracking user interval was expired...")
 }
 ```
-جهت متوقف سازی عملیات مکان یابی کار کاربر متد فوق را فراخوانی کنید :
-```objectivec
-//Objective-C :
+{% endtab %}
+{% endtabs %}
 
+جهت متوقف سازی عملیات مکان یابی کار کاربر متد فوق را فراخوانی کنید :
+
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
 [locationManager stopTracking];
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ``` swift 
-//Swift :
-
 locationManager.stopTracking()
 ```
+{% endtab %}
+{% endtabs %}
+
 ### دریافت یک موقعیت مکانی
 به کمک متد `requestSingleLocation` می توانید تنها یک موقعیت مکانی دریافت کنید.
-```objectivec
-//Objective-C :
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
 [locationManager requestSingleLocation:^(CLLocation * _Nullable location, NSError * _Nullable error) {
     if (location != nil) {
         NSLog(@"Single location was received");
     }
 }];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ``` swift 
 //Swift :
 
@@ -240,6 +263,8 @@ locationManager.requestSingleLocation({(_ location: CLLocation?, _ error: Error?
     }
 })
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته :` با فراخوانی متد فوق ممکن است به عملکرد متدهای 
 > `trackMeUntil:byMeter` و `startLocationUpdate‍` اختلال ایجاد کند.
@@ -248,16 +273,18 @@ locationManager.requestSingleLocation({(_ location: CLLocation?, _ error: Error?
 
 ### دریافت موقعیت مکانی در حالت Terminated
 امکان دریافت موقعیت مکان حتی در حالتی که اپلیکشن شما `Terminate` شده باشد نیز وجود دارد.
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C :
-
 [locationManager startMonitoringSignificantLocationChanges];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
-//Swift :
-
 locationManager.startMonitoringSignificantLocationChanges()
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته :‍` برای فعال شدن این قابلیت باید حتما `authorization` مربوط به 
 > location روی حالت `kAlways` باشد.
@@ -269,9 +296,9 @@ locationManager.startMonitoringSignificantLocationChanges()
 > `startLocationUpdate‍` را فراخوانی کنید. قطعه کد زیر بیانگر این نکته
 > می باشد.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C :
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     if ([launchOptions objectForKey:UIApplicationLaunchOptionsLocationKey]){
         //App was launch by location update
@@ -280,6 +307,8 @@ locationManager.startMonitoringSignificantLocationChanges()
     }
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
 //Swift :
 
@@ -292,14 +321,16 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return true
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ### محدوده جغرافیایی
 
 جهت استفاده از قابلیت `Geofence` باید متد `startMonitoringRegion` را فراخوانی کنید. متد فوق دارای سه overload می باشد :
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C :
-
 -(void) startMonitoringRegion:(CLRegion *_Nonnull) region;
 
 -(void) startMonitoringRegion:(CLLocationCoordinate2D) center radius:(CLLocationDistance) radius identifier:(NSString *_Nonnull) identifier;
@@ -310,14 +341,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
                  enterMessage:(NSString *_Nullable) enter
                   exitMessage:(NSString *_Nullable) exit;
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
-//Swift : 
-
 func startMonitoringRegion(_ region: CLRegion)
 func startMonitoringRegion(_ center: CLLocationCoordinate2D, radius: CLLocationDistance, identifier: String)
 func startMonitoringRegion(_ region: CLRegion, expireCount count: Int, expireTs ts: TimeInterval, enterMessage enter: String?, exitMessage exit: String?)
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته ` : برای استفاده قابلیت Geofence شما نیاز به استفاده از
 > `startLocationUpdate` و یا `startMonitoringSignificantLocationChanges`
@@ -325,31 +357,33 @@ func startMonitoringRegion(_ region: CLRegion, expireCount count: Int, expireTs 
 
 نمونه کد فوق استفاده از قابلیت geofence را به شما نشان می دهد : 
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C :
-
 CLLocationCoordinate2D center = CLLocationCoordinate2DMake(35.759227, 51.401044);
     CLRegion *region = [[CLCircularRegion alloc] initWithCenter:center radius:150 identifier:@"adpDigitalCompany"];
 [_locationManager startMonitoringRegion:region];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
-//Swift :
-
 var center: CLLocationCoordinate2D = CLLocationCoordinate2DMake(35.759227, 51.401044)
 
 var region: CLRegion? = CLCircularRegion(center: center, radius: 150, identifier: "adpDigitalCompany")
 
 locationManager.startMonitoringRegion(region)
 ```
+{% endtab %}
+{% endtabs %}
 
 چنانچه می خواهید یک geofence را start کنید که بتوانید بصورت بسیار ساده آن را مدیریت کنید، می توانید از قطعه کد زیر استفاده کنید :
 
 > `نکته` : زمان انقضای تاریخ geofence به صورت `unix millisecond` می
 > باشد.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C :
-
 NSInteger count = 20; // count for enter to region
 CLLocationDistance radius = 150; // per meter
 CLLocationDegrees lat = 35.759227;
@@ -364,7 +398,8 @@ CLRegion *region = [[CLCircularRegion alloc] initWithCenter:coordinate
     
 [_locationManager startMonitoringRegion:region expireCount:count expireTs:expireTs enterMessage:enter exitMessage:exit];
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
 //Swift :
 
@@ -380,13 +415,15 @@ let region: CLRegion? = CLCircularRegion(center: coordinate, radius: radius, ide
 
 locationManager.startMonitoringRegion(region!, expireCount: count, expireTs: expireTs, enterMessage: enterMessage, exitMessage: exitMessage)
 ```
+{% endtab %}
+{% endtabs %}
 #### رویدادهای محدوده جغرافیایی
 
 پس از فراخوانی متد `startMonitoringRegion` رویدادهای زیر فرخوانی خواهند شد :
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C :
-
 -(void) didEnterToRegion:(CLRegion *)region{
     NSLog(@"Hi dear user, You are close to AdpDigital company building.....");
 }
@@ -399,9 +436,9 @@ locationManager.startMonitoringRegion(region!, expireCount: count, expireTs: exp
     NSLog(@"Start monitoring %@ region",region.identifier);
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
-//Swift :
-
 func didEnter(to region: CLRegion) {
     print("Hi dear user, You are close to AdpDigital company building.....")
 }
@@ -414,18 +451,22 @@ func didStartMonitoringRegion(_ region: CLRegion) {
     print("Start monitoring \(region.identifier) region")
 }
 ```
+{% endtab %}
+{% endtabs %}
+
 برای متوقف سازی geofence می توانید از متد های زیر استفاده کنید :
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C :
-
 [_locationManager stopMonitoringAllRegions];
 [_locationManager stopMonitoringRegion:region];
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ``` swift
-//Swift : 
-
 locationManager.stopMonitoringAllRegions()
 locationManager.stopMonitoringRegion(region!)
 ```
+{% endtab %}
+{% endtabs %}

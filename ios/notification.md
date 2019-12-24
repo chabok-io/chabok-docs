@@ -10,9 +10,9 @@ next: events.html
 ### رویداد کلیک بر روی اعلان (آی‌اواس ۱۰ به بالا)
 برای مدیریت کلیک بر روی اعلان پیام‌های چابک متد `:userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler` را فراخوانی نمایید. به نمونه زیر دقت کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
     //Get actionIdentifier.
     NSString *actionId = response.actionIdentifier;
@@ -32,10 +32,9 @@ next: events.html
     completionHandler();
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
-
 func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -57,6 +56,8 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 	completionHandler()
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ### رویداد کلیک بر روی اعلان (آی‌اواس ۹ به پایین)
 پلتفرم چابک دارای `Messageing` و `Push Notification`  می‌باشد،‌ به همین جهت برای فهمیدن رویداد کلیک بر روی اعلان، باید نوع پیام دریافتی را تشخیص دهید. اگر پیام دریافتی از سرویس APNs اپل باشد با کلیک بر روی اعلان، delegate متد `didReceiveRemoteNotification` فراخوانی خواهد شد و اگر Local Notification‌ باشد، از delegate متد `didReceiveLocalNotification` استفاده کنید.
@@ -72,16 +73,17 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 > متد `didReceiveLocalNotification` فرخوانی خواهد شد که بر روی
 > Notification کلیک شده باشد.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
 
 // Manager Hook and handle receive iOS (4.0 and later) local notification
 [self.manager application:application didReceiveLocalNotification:notification];
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
 //Swift:
 
@@ -89,7 +91,8 @@ func application(_ application: UIApplication, didReceive notification: UILocalN
 self.manager.application(application, didReceive: notification)
 }
 ```
-
+{% endtab %}
+{% endtabs %}
 همچنین  delegate متد `didReceiveLocalNotification` به شما کمک می کند که، بعد از کلیک بر روی Notification به چه صفحه‌ای هدایت شود.
 
 #### ۲. ‌APNs Notification
@@ -104,9 +107,9 @@ delegate متد `didReceiveRemoteNotification` توسط سیستم عامل به
 > کد مربوط به `Navigate` به یک صفحه خاص را در متد
 > `didReceiveRemoteNotification` استفاده کنید.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 
 // Hook and Handle New Remote Notification, must be use for remote payloads
@@ -114,9 +117,9 @@ delegate متد `didReceiveRemoteNotification` توسط سیستم عامل به
 
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 
 // Hook and Handle New Remote Notification, must be use for remote payloads
@@ -124,6 +127,8 @@ manager.application(application, didReceiveRemoteNotification: userInfo, fetchCo
 
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ### تنظیمات نمایش اعلان
 
@@ -132,9 +137,9 @@ manager.application(application, didReceiveRemoteNotification: userInfo, fetchCo
 > `نکته` : درصورت تمایل به شخصی‌سازی نوتیفیکیشن‌ها، از `delegate` متد
 > `pushClientManagerUILocalNotificationDidReceivedMessage` استفاده کنید، به قطعه کد زیر دقت فرمایید. در صورت استفاده از `delegate` متد `pushClientManagerUILocalNotificationDidReceivedMessage` کتابخانه چابک دیگر اقدام به نمایش `LocalNotification` نمی کند.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 -(void)pushClientManagerUILocalNotificationDidReceivedMessage:(PushClientMessage *)message
 {
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
@@ -149,9 +154,9 @@ manager.application(application, didReceiveRemoteNotification: userInfo, fetchCo
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClientMessage) {
     let localNotification = UILocalNotification()
         
@@ -165,41 +170,48 @@ func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClien
     UIApplication.shared.scheduleLocalNotification(localNotification)
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ### حذف اعلان
 
 برای حذف یا پاک کردن یک اعلان خاص در `Notification Center` می‌توانید از متد زیر استفاده کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [[UIApplication sharedApplication] cancelLocalNotification:(nonnull UILocalNotification *)];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 UIApplication.shared.cancelLocalNotification(UILocalNotification)
 ```
+{% endtab %}
+{% endtabs %}
+
 همچنین برای حذف یا پاک کردن تمام اعلان ها می‌توانید از متد زیر استفاده کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [[UIApplication sharedApplication] cancelAllLocalNotifications];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 UIApplication.shared.cancelAllLocalNotifications()
 ```
+{% endtab %}
+{% endtabs %}
 
 ### NSNotificationCenter
 
 به عنوان یک جایگزین، می توانید از روش مشاهدات `NSNotificationCenter` برای دریافت رویدادها استفاده کنید. برای دریافت رویدادها به این روش، می توانید هر کدام از این ها را اضافه کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushClientFailureHandler:) name:kPushClientDidFailRegisterUserNotification object:nil];
 
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushClientNewMessageHandler:) name:kPushClientDidReceivedMessageNotification object:nil];
@@ -210,9 +222,9 @@ UIApplication.shared.cancelAllLocalNotifications()
 
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushClientServerReachabilityHandler:) name:kPushClientDidChangeServerReachabilityNotification object:nil];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 NotificationCenter.default.addObserver(self, selector: #selector(self.pushClientFailureHandler), name: kPushClientDidFailRegisterUserNotification, object: nil)
 
 NotificationCenter.default.addObserver(self, selector: #selector(self.pushClientNewMessageHandler), name: kPushClientDidReceivedMessageNotification, object: nil)
@@ -223,3 +235,5 @@ NotificationCenter.default.addObserver(self, selector: #selector(self.pushClient
 
 NotificationCenter.default.addObserver(self, selector: #selector(self.pushClientServerReachabilityHandler), name: kPushClientDidChangeServerReachabilityNotification, object: nil)
 ```
+{% endtab %}
+{% endtabs %}
