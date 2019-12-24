@@ -228,6 +228,8 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 + PushClientManager.default()?.login("USER_ID")
 ```
+{% endtab %}
+{% endtabs %}
 
 <br>
 
