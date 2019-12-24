@@ -26,6 +26,7 @@ next: publishingMessages.html
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 #import <AdpPushClient/AdpPushClient.h>
 
@@ -45,6 +46,7 @@ next: publishingMessages.html
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 import AdpPushClient
 
@@ -75,11 +77,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [PushClientManager setDevelopment:YES];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 PushClientManager.setDevelopment(true)
 ```
@@ -92,6 +96,7 @@ PushClientManager.setDevelopment(true)
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [_manager registerApplication:@"APP_ID"
                            apiKey:@"API_KEY(SDK_KEY)"
@@ -100,6 +105,7 @@ PushClientManager.setDevelopment(true)
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 manager?.registerApplication("APP_ID", apiKey: "API_KEY(SDK_KEY)", userName: "SDK_USERNAME", password: "SDK_PASSWORD")
 ```
@@ -110,11 +116,13 @@ manager?.registerApplication("APP_ID", apiKey: "API_KEY(SDK_KEY)", userName: "SD
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [_manager addDelegate:self];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 manager?.addDelegate(self)
 ```
@@ -152,11 +160,13 @@ if launchByNotification{
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [self.manager registerUser:@"USER_ID"];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 self.manager?.registerUser("USER_ID")
 ```
@@ -173,11 +183,13 @@ self.manager?.registerUser("USER_ID")
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [self.manager registerUser:@"USER_ID" channels:@[@"YOUR_CHANNEL" ]];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
 ```
@@ -194,6 +206,7 @@ self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 #pragma mark - Notification AppDelegation
 
@@ -242,11 +255,13 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [PushClientManager.defaultManager unregisterUser];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 PushClientManager.default().unregisterUser()
 ```
@@ -258,6 +273,7 @@ PushClientManager.default().unregisterUser()
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (void)pushClientManagerDidRegisterUser:(BOOL)registration{
 // called when PushClientManager Registered user Successfully
@@ -273,6 +289,7 @@ NSLog(@"%@ %@",@(__PRETTY_FUNCTION__),self.manager.failureError);
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func pushClientManagerDidRegisterUser(_ registration: Bool) {
 }

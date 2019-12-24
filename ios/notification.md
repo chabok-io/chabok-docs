@@ -12,6 +12,7 @@ next: events.html
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
     //Get actionIdentifier.
@@ -34,6 +35,7 @@ next: events.html
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
@@ -75,6 +77,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
 
@@ -84,6 +87,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 //Swift:
 
@@ -109,6 +113,7 @@ delegate متد `didReceiveRemoteNotification` توسط سیستم عامل به
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 
@@ -119,6 +124,7 @@ delegate متد `didReceiveRemoteNotification` توسط سیستم عامل به
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 
@@ -139,6 +145,7 @@ manager.application(application, didReceiveRemoteNotification: userInfo, fetchCo
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(void)pushClientManagerUILocalNotificationDidReceivedMessage:(PushClientMessage *)message
 {
@@ -156,6 +163,7 @@ manager.application(application, didReceiveRemoteNotification: userInfo, fetchCo
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClientMessage) {
     let localNotification = UILocalNotification()
@@ -179,11 +187,13 @@ func pushClientManagerUILocalNotificationDidReceivedMessage(_ message: PushClien
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [[UIApplication sharedApplication] cancelLocalNotification:(nonnull UILocalNotification *)];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 UIApplication.shared.cancelLocalNotification(UILocalNotification)
 ```
@@ -211,6 +221,7 @@ UIApplication.shared.cancelAllLocalNotifications()
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushClientFailureHandler:) name:kPushClientDidFailRegisterUserNotification object:nil];
 
@@ -224,6 +235,7 @@ UIApplication.shared.cancelAllLocalNotifications()
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 NotificationCenter.default.addObserver(self, selector: #selector(self.pushClientFailureHandler), name: kPushClientDidFailRegisterUserNotification, object: nil)
 

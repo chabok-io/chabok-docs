@@ -538,11 +538,13 @@ _manager?.registerAsGuest()
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [_manager registerWithGuestId:@"MY_GUEST_ID"];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 _manager.default()?.register(withGuestId: "MY_GUEST_ID")
 ```
@@ -556,11 +558,13 @@ _manager.default()?.register(withGuestId: "MY_GUEST_ID")
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [_manager unregisterUser];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 _manager?.unregisterUser()
 ```

@@ -26,6 +26,7 @@ next: verification.html
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec 
 //Subscribe on a global event from any device.  
 [PushClientManager.defaultManager subscribeEvent:@"EVENT_NAME"];
@@ -35,6 +36,7 @@ next: verification.html
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 //Subscribe on a global event from any device.  
 PushClientManager.default().subscribeEvent("EVENT_NAME")
@@ -55,6 +57,7 @@ PushClientManager.default().subscribeEvent("EVENT_NAME",
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec 
 //Get a unique device id by calling [PushClientManager.defaultManager getInstallationId];
 //get user installationId with publish method or your rest api.
@@ -65,6 +68,7 @@ NSString *installationId = @"USER_INSTALLATION_ID";
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 //Get a unique device id by calling PushClientManager.default().getInstallationId();
 //get user installationId with publish method or your rest api.
@@ -84,6 +88,7 @@ PushClientManager.default().subscribeEvent("shareTrip",
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(void) pushClientManagerDidSubscribed:(NSString *)name {
     NSLog(@"Subscribe on %@", name);
@@ -91,6 +96,7 @@ PushClientManager.default().subscribeEvent("shareTrip",
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func pushClientManagerDidSubscribed(_ name: String?) {
     print("Subscribe on \(name)")
@@ -105,6 +111,7 @@ func pushClientManagerDidSubscribed(_ name: String?) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(void) pushClientManagerDidFailInSubscribe:(NSError *)error {
     NSLog(@"Fail to subscribe. \n ~~ Error: %@", error);
@@ -112,6 +119,7 @@ func pushClientManagerDidSubscribed(_ name: String?) {
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func pushClientManagerDidFail(inSubscribe error: Error!) {
     print("Fail to subscribe. \n ~~ Error: \(error)")
@@ -126,6 +134,7 @@ func pushClientManagerDidFail(inSubscribe error: Error!) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec 
 [self.manager unsubscribeEvent:@"EVENT_NAME"];
 [self.manager unsubscribeEvent:@"EVENT_NAME"
@@ -133,6 +142,7 @@ func pushClientManagerDidFail(inSubscribe error: Error!) {
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 manager?.unsubscribeEvent("EVENT_NAME")
 manager?.unsubscribeEvent("EVENT_NAME",
@@ -147,6 +157,7 @@ manager?.unsubscribeEvent("EVENT_NAME",
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(void) pushClientManagerDidUnsubscribed:(NSString *)name {
     NSLog(@"Unsubscribe in %@", name);
@@ -154,6 +165,7 @@ manager?.unsubscribeEvent("EVENT_NAME",
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 //Swift
 
@@ -170,6 +182,7 @@ func pushClientManagerDidUnsubscribed(_ name: String?) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(void) pushClientManagerDidFailInUnsubscribe:(NSError *)error {
     NSLog(@"Fail to unsubscribe. \n ~~ Error: %@", error);
@@ -177,6 +190,7 @@ func pushClientManagerDidUnsubscribed(_ name: String?) {
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 func pushClientManagerDidFail(inUnsubscribe error: Error!) {
     print("Fail to unsubscribe. \n ~~ Error: \(error)")
@@ -191,6 +205,7 @@ func pushClientManagerDidFail(inUnsubscribe error: Error!) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 -(void) pushClientManagerDidReceivedEventMessage:(EventMessage *)eventMessage{
     NSDictionary *data = eventMessage.data;
@@ -203,6 +218,7 @@ func pushClientManagerDidFail(inUnsubscribe error: Error!) {
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ``` swift
 func pushClientManagerDidReceivedEventMessage(_ eventMessage: EventMessage!) {
     let data = eventMessage?.data
@@ -223,12 +239,14 @@ func pushClientManagerDidReceivedEventMessage(_ eventMessage: EventMessage!) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [PushClientManager.defaultManager publishEvent:@"EVENT_NAME"
                                   data:@{@"KEY":@"VALUE"}];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 PushClientManager.default().publishEvent("EVENT_NAME", 
                                 data: ["KEY": "VALUE"])
@@ -240,6 +258,7 @@ PushClientManager.default().publishEvent("EVENT_NAME",
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 NSDictionary *data = @{@"lat": @35.7583719,
                        @"lng": @51.4082228,
@@ -250,6 +269,7 @@ NSDictionary *data = @{@"lat": @35.7583719,
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 var data = ["lat": 35.7583719,
             "lng": 51.4082228,
