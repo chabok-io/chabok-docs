@@ -22,6 +22,7 @@ next: features.html
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
  ```objectivec
 [self.manager requestVerificationCode:@"USER_ID" completionBlock:^(BOOL sent, NSError *error) {
          if (error) {
@@ -37,6 +38,7 @@ next: features.html
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 manager?.requestVerificationCode("USER_ID", completionBlock: {(_ sent: Bool, _ error: Error?) -> Void in
          if error != nil {
@@ -64,6 +66,7 @@ manager?.requestVerificationCode("USER_ID", completionBlock: {(_ sent: Bool, _ e
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [self.manager verifyUserCode:@"USER_ID" userCode:@"Verfication_Code" completionBlock:^(BOOL isVerify, NSError *error) {
          if (error) {
@@ -80,9 +83,8 @@ manager?.requestVerificationCode("USER_ID", completionBlock: {(_ sent: Bool, _ e
 ```
 {% endtab %}
 {% tab SWIFT %}
-```swift
-//Swift:
 
+```swift
 manager?.verifyUserCode("USER_ID", userCode: "Verfication_Code", completionBlock: {(_ isVerify: Bool, _ error: Error?) -> Void in
          if error != nil {
              print("ERROR")

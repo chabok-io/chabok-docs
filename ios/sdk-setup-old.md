@@ -521,11 +521,13 @@ func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 [_manager registerAsGuest];
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 _manager?.registerAsGuest()
 ```

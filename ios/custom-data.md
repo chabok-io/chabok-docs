@@ -110,7 +110,6 @@ PushClientManager.default().userInfo = [
 {% tab SWIFT %}
 
 ```swift
-//Swift
 
 PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (register, userId, error) in
 	if register {
@@ -142,7 +141,6 @@ PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (reg
 {% tab SWIFT %}
 
 ``` swift
-//Swift
 
 PushClientManager.default().userAttributes = [
                        "age": "نوزده"]
@@ -165,7 +163,6 @@ PushClientManager.default().userAttributes = [
 {% tab SWIFT %}
 
 ``` swift
-//Swift
 
 PushClientManager.default().userAttributes = [
                        "age": 19]
@@ -236,7 +233,6 @@ PushClientManager.default().incrementUserAttributes(attributes)
 {% tab SWIFT %}
 
 ``` swift
-//Swift:
 
 PushClientManager.default().incrementUserAttributeValue("player_level", value: 2)
 ```

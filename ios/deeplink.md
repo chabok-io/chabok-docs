@@ -132,6 +132,7 @@ func application(_ app: UIApplication,
 {% tab OBJECTIVE-C %}
 
 ```objectivec
+
 -(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
                         options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
                         
@@ -144,7 +145,7 @@ func application(_ app: UIApplication,
 {% tab SWIFT %}
 
 ```swift
-//Swift
+
 func application(_ app: UIApplication, 
                 open url: URL, 
                 options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -182,7 +183,7 @@ func application(_ app: UIApplication,
 {% tab SWIFT %}
 
 ```swift
-//Swift
+
 func application(_ application: UIApplication, 
                 continue userActivity: NSUserActivity, 
                 restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
