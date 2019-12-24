@@ -133,6 +133,7 @@ manager?.addDelegate(self)
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
+
 ```objectivec
 //Check app was launch by clicking on Notification.
 if ([_manager application:application didFinishLaunchingWithOptions:launchOptions]) {
@@ -141,6 +142,7 @@ if ([_manager application:application didFinishLaunchingWithOptions:launchOption
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 //Check app was launch by clicking on Notification.
 let launchByNotification = (manager?.application(application, didFinishLaunchingWithOptions: launchOptions))!
@@ -228,6 +230,7 @@ self.manager.registerUser("USER_ID", channels: ["YOUR_CHANNEL"])
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 //MARK : Notification AppDelegation
     
