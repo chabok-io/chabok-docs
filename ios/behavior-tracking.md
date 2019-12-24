@@ -74,6 +74,7 @@ self.manager.track("add-to-card", data: ["status":true])
 ```
 {% endtab %}
 {% endtabs %}
+
 دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
 
 {% tabs %}
@@ -119,6 +120,7 @@ PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 ```
 {% endtab %}
 {% endtabs %}
+
 <Br>
 
 ### ارسال پیام براساس رفتار
