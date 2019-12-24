@@ -155,6 +155,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 <br>
 
+
 ### ۳- حذف متدهای دریافت توکن 
 
 کدهای زیر را در کلاس `AppDelegate` زیر **حذف کنید**:
