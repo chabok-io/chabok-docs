@@ -13,7 +13,7 @@ next: inbox.html
 
 >`نکته:` شما از طریق **عدد** روی تب کاربران در منو، می‌توانید تعداد **کاربران فعال آن روز** خود را مشاهده کنید. همچنین در بالا سمت چپ هر کارت کاربر، **شناسه کاربری** او نمایش داده شده است:
 
-<img src="http://uupload.ir/files/gnii_users.jpg" alt="user" width="90px"/>
+<img src="http://uupload.ir/files/gnii_users.jpg" alt="user" width="450"/>
 
 
 <Br><Br>
