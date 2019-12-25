@@ -4,7 +4,7 @@ gem 'rake'
 
 # jekyll, which builds it all
 # 3.0 includes sass processing
-gem 'jekyll', '~>3.1'
+gem 'jekyll', '~>3.7'
 
 # Jekyll extensions
 gem 'jekyll-redirect-from'
