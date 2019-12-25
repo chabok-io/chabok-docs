@@ -86,7 +86,6 @@ $ pod update
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```diff
 //Swift:
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -144,7 +143,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 {% tab SWIFT %}
 ```diff
 //Swift:
-
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         PushClientManager.resetBadge()

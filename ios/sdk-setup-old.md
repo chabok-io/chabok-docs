@@ -278,8 +278,6 @@ if ([_manager application:application didFinishLaunchingWithOptions:launchOption
 {% endtab %}
 {% tab SWIFT %}
 ```swift
-//Swift:
-
 if _manager?.application(application, didFinishLaunchingWithOptions: launchOptions) == true {
 	print("Launched by tapping on notification")
 }
@@ -299,8 +297,6 @@ if _manager?.application(application, didFinishLaunchingWithOptions: launchOptio
 {% endtab %}
 {% tab SWIFT %}
 ```swift
-//Swift:
-
 PushClientManager.resetBadge()
 ```
 {% endtab %}
@@ -481,8 +477,6 @@ _manager.isRegistered
 {% endtab %}
 {% tab SWIFT %}
 ```swift
-//Swift
-
 func pushClientManagerDidRegisterUser(_ registration: Bool) {
 	print("Successfully registered")
 }
@@ -502,8 +496,6 @@ func pushClientManagerDidRegisterUser(_ registration: Bool) {
 {% endtab %}
 {% tab SWIFT %}
 ```swift
-//Swift
-
 func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 	print("Fail to register user \n ~~ error: \(error)")
 }

@@ -269,8 +269,6 @@ locationManager.stopTracking()
 {% tab SWIFT %}
 
 ``` swift 
-//Swift :
-
 locationManager.requestSingleLocation({(_ location: CLLocation?, _ error: Error?) -> Void in
     if location != nil {
         print("Single location was received")
@@ -328,8 +326,6 @@ locationManager.startMonitoringSignificantLocationChanges()
 {% tab SWIFT %}
 
 ``` swift
-//Swift :
-
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     if launchOptions?[.location] != nil {
         //App was launch by location update
@@ -425,8 +421,6 @@ CLRegion *region = [[CLCircularRegion alloc] initWithCenter:coordinate
 {% tab SWIFT %}
 
 ``` swift
-//Swift :
-
 let count: Int = 20 // count for enter to region
 let radius: CLLocationDistance = 150 // per meter
 let lat: CLLocationDegrees = 35.759227

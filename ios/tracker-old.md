@@ -233,7 +233,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 {% endtab %}
 {% tab SWIFT %}
 ```swift
-//Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
     ...

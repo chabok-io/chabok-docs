@@ -40,8 +40,6 @@ next: push-notification.html
 {% endtab %}
 {% tab SWIFT %}
 ```swift
-
-
 func pushClientManagerDidReceivedMessage(_ message: PushClientMessage?) {
     // Called When PushClientManager has been received new message from server
 
@@ -140,7 +138,6 @@ PushClientMessage *message = [[PushClientMessage new] initWithMessage:messageBod
 {% endtab %}
 {% tab SWIFT %} 
 ```swift
-
 let toUserId = "USER_ID" //Required. For public channel set * (wildcard)
 let toChannel = "CHANNEL" //Required
 let messageBody = "MESSAGE_BODY" //Required
@@ -166,7 +163,6 @@ PushClientManager.default().publish(message)
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```objectivec
-
 -(void) pushClientManagerDidFailInPublish:(NSError *)error{
     NSLog(@"Error in publishing message %@",error);
 }
