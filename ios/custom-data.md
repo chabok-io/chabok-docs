@@ -25,9 +25,7 @@ next: behavior-tracking.html
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
-
 [PushClientManager.defaultManager.userAttributes = @{
 		@"firstName": @"نسیم",
 		@"lastName" : @"پرتوی",
@@ -37,9 +35,7 @@ next: behavior-tracking.html
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ``` swift
-
 PushClientManager.default().userAttributes = [
                        "firstName": "نسیم",
                        "lastName": "پرتوی",
@@ -63,9 +59,7 @@ PushClientManager.default().userAttributes = [
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
-
 [PushClientManager.defaultManager.userInfo = @{
 		@"firstName": @"نسیم",
 		@"lastName" : @"پرتوی",
@@ -75,9 +69,7 @@ PushClientManager.default().userAttributes = [
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ``` swift
-
 PushClientManager.default().userInfo = [
                        "firstName": "نسیم",
                        "lastName": "پرتوی",
@@ -92,9 +84,7 @@ PushClientManager.default().userInfo = [
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
-
 [PushClientManager.defaultManager  registerUser:@"USER_ID"  registrationHandler:^(BOOL isRegistered, NSString *userId, NSError *error) {
 	if (isRegistered) {
 		[PushClientManager.defaultManager  setUserInfo:@{
@@ -108,9 +98,7 @@ PushClientManager.default().userInfo = [
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
-
 PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (register, userId, error) in
 	if register {
 		PushClientManager.default()?.userInfo = [
@@ -130,18 +118,14 @@ PushClientManager.default()?.registerUser("USER_ID", registrationHandler: { (reg
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
-
 [PushClientManager.defaultManager.userAttributes = @{
 		@"age": @"نوزده"
 }];
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ``` swift
-
 PushClientManager.default().userAttributes = [
                        "age": "نوزده"]
 ```
@@ -152,18 +136,14 @@ PushClientManager.default().userAttributes = [
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
-
 [PushClientManager.defaultManager.userAttributes = @{
 		@"age": @19
 }];
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ``` swift
-
 PushClientManager.default().userAttributes = [
                        "age": 19]
 ```
@@ -178,14 +158,11 @@ PushClientManager.default().userAttributes = [
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
-
 [PushClientManager.defaultManager incrementUserAttribute:@"visit_comedy_shows"];
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ``` swift
 
 PushClientManager.default().incrementUserAttribute("visit_comedy_shows")
@@ -201,15 +178,13 @@ PushClientManager.default().incrementUserAttribute("visit_comedy_shows")
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 NSArray<NSString *> *attributes = @[@"comedy_move", @"shoes_size"];
-    
+
 [PushClientManager.defaultManager incrementUserAttributes:attributes];
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ``` swift
 let attributes = ["comedy_move", "shoes_size"]
 
@@ -225,15 +200,12 @@ PushClientManager.default().incrementUserAttributes(attributes)
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 [PushClientManager.defaultManager incrementUserAttributeValue:@"player_level" value:2];
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ``` swift
-
 PushClientManager.default().incrementUserAttributeValue("player_level", value: 2)
 ```
 {% endtab %}
@@ -246,7 +218,6 @@ PushClientManager.default().incrementUserAttributeValue("player_level", value: 2
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 NSMutableDictionary<NSString *, NSNumber *> *attributesDic = [NSMutableDictionary new];
 [attributesDic setObject:[NSNumber numberWithDouble:5] forKey:@"visit"];
@@ -256,9 +227,7 @@ NSMutableDictionary<NSString *, NSNumber *> *attributesDic = [NSMutableDictionar
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ``` swift
-
 let attributesDic = ["visit":NSNumber(5),
 		             "workout":NSNumber(100)]
 
@@ -280,13 +249,11 @@ PushClientManager.default().incrementUserAttributeValues(attributesDic)
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 [self.manager addTag:@"Premium_User"];
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 self.manager?.addTag("Premium_User")
 ```
@@ -297,7 +264,6 @@ self.manager?.addTag("Premium_User")
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 [self.manager addTags:@[@"Premium_User",@"MALE",@"Teenage"] success:^(NSInteger count) {
             NSLog(@"Add tags to %zd devices", count);
@@ -307,7 +273,6 @@ self.manager?.addTag("Premium_User")
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 manager.addTags(["Premium_User", "MALE", "Teenage"], success: { count in
     print("Add tags to \(count) devices")
@@ -324,7 +289,6 @@ manager.addTags(["Premium_User", "MALE", "Teenage"], success: { count in
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 [self.manager addTag:@"Premium_User" success:^(NSInteger count) {
         NSLog(@"%@ tag was assign to '%@' user with [%zd] devices",@"Premium_User",self.manager.userId,count);
@@ -334,7 +298,6 @@ manager.addTags(["Premium_User", "MALE", "Teenage"], success: { count in
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 self.manager?.addTag("Premium_User",
         success: {(_ count: Int) -> Void in
@@ -358,7 +321,6 @@ self.manager?.addTag("Premium_User",
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 [self.manager removeTag:@"Premium_User"];
 ```
@@ -382,7 +344,6 @@ self.manager?.removeTag("Premium_User")
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 manager.removeTags("Premium_User", "MALE", "Teenage"], success: { count in
     print("Remove tags to \(count) devices")
