@@ -142,6 +142,9 @@ public boolean buildNotification(ChabokNotification chabokNotification, Notifica
 }
 ```
 
+>`نکته`:اگر از نسخه‌ پایین‌تر از ۲.۱۸.۰ کتابخانه چابک استفاده می‌کنید نیاز هست قطعه کد بالا را فراخوانی کنید. در غیر این‌صورت نیازی به فراخوانی این قطعه کد نیست.
+
+
 <Br>
 
 #### پشتیبانی چینش راست به چپ (RTL Support)

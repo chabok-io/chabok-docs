@@ -15,15 +15,20 @@ next: location-tracking.html
 
 برای رصد رفتارها باید از متد `track` استفاده کنید. این متد دارای ورودی **نام** و **داده** رفتار (`YOUR_TRACK_NAME`,`data`) می‌باشد.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
 ```objectivec
-//Objective-C
 [self.manager track:@"YOUR_TRACK_NAME" data:@{@"KEY":@"VALUE"}];
 ```
+{% endtab %}
+{% tab SWIFT %}
+
 ```swift
-//Swift
 self.manager.track("YOUR_TRACK_NAME", data: ["KEY":"VALUE"])
 ```
+{% endtab %}
+{% endtabs %}
 
 > نکته : مقدار `data` در متد `track` یک داده مربوط به رفتار می‌تواند باشد. شما این مقدار را می‌توانید به عنوان `NSDictionary` همراه رفتار در نظر بگیرید.
 
@@ -34,14 +39,18 @@ self.manager.track("YOUR_TRACK_NAME", data: ["KEY":"VALUE"])
 
 نمونه:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 [self.manager track:@"add-to-card" data:@{@"value":@(35000)}];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 self.manager.track("add-to-card", data: ["value":35000])
 ```
+{% endtab %}
+{% endtabs %}
 
 >‍‍‍`نکته:` در متد `track` در صورتی که به `value` مقدار عددی بدهید، آن رفتار در سگمنت با پیشوند **آخرین و مجموع** اضافه می‌شود. اما در صورتی که مقدار غیر عددی (string) بدهید، آن رفتار فقط با پیشوند **آخرین** به سگمنت اضافه می‌شود.
 
@@ -49,25 +58,35 @@ self.manager.track("add-to-card", data: ["value":35000])
 
 به عنوان مثال اگر مقدار `status` را مانند زیر `boolean` قرار داده باشید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 [self.manager track:@"add-to-card" data:@{@"status":@(true)}];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 self.manager.track("add-to-card", data: ["status":true])
 ```
+{% endtab %}
+{% endtabs %}
 
 دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 ```objectivec
-//Objective-C
 [self.manager track:@"add-to-card" data:@{@"status":@(35000)}];
 ```
+{% endtab %}
+{% tab SWIFT %}
+
 ```swift
-//Swift
 self.manager.track("add-to-card", data: ["status":35000])
 ```
+{% endtab %}
+{% endtabs %}
 
 <Br>
 
@@ -76,9 +95,9 @@ self.manager.track("add-to-card", data: ["status":35000])
 شما می‌توانید در‌آمدی که کاربران با نشان دادن رفتاری از خود (مانند خرید) تولید می‌کنند را رصد و ذخیره کنید. این کار را باید با متد `trackPurchase` انجام دهید. به عنوان مثال کاربر خریدی را با ارزش ۵۰ هزار تومان انجام داده است.
 
 نمونه:
-
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 ChabokEvent *chabokEvent = [[ChabokEvent alloc]
                                 initWithRevenue:20000
                                 currency:@"RIAL"];
@@ -86,16 +105,20 @@ ChabokEvent *chabokEvent = [[ChabokEvent alloc]
 [PushClientManager.defaultManager trackPurchase:@"Purchase"
                                         chabokEvent:chabokEvent];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 let chabokEvent = ChabokEvent(revenue: 20000, currency: "RIAL")
 
 PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 ```
+{% endtab %}
+{% endtabs %}
 
 <Br>
 
 ### ارسال پیام براساس رفتار
+
 
 رفتارهایی که شما برای رصد تعیین می‌کنید **به صورت خودکار** در بخش **ارسال پیام متنی پنل در قسمت سگمنت** با سه پارامتر **اولین**، **آخرین** و **تعداد** اضافه خواهند شد. در نتیجه از این راه می‌توانید براساس آن رفتارها **کاربرانتان را دسته‌بندی کنید** و **برایشان پیام ارسال کنید**. 
 

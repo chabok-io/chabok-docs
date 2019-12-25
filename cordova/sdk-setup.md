@@ -53,7 +53,6 @@ buildscript {
 
 >`نکته:` نصب کتابخانه آی‌او‌اس به صورت اتوماتیک انجام می‌شود و نیاز به نصب جداگانه‌ای ندارد.
 
-
 ### ۲- مقدار‌دهی اولیه (Initialize)
 
 ####   ۲.۱- مقداردهی اولیه جاوااسکریپ 
@@ -149,9 +148,9 @@ public class MyAppClass extends Application {
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 #import "AppDelegate.h"
 #import <AdpPushClient/AdpPushClient.h>
 
@@ -168,10 +167,10 @@ public class MyAppClass extends Application {
     return YES;
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 
 ```swift
-//Swift:
-
 import UIKit
 import AdpPushClient
 
@@ -188,6 +187,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
     return true
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته`: متد بالا برای محیط سندباکس است. در صورتی که حساب عملیاتی دارید کافیست فقط `Sandbox` را با ‍‍`Production` عوض کنید.
 
@@ -199,32 +200,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
 جهت دسترسی به `delegate‌`های چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [PushClientManager.defaultManager addDelegate:self];
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift :
-
 PushClientManager.default()?.addDelegate(self)
 ```
+{% endtab %}
+{% endtabs %}
 
 - متد `resetBadge`:
 
 چابک به طور **پیش‌فرض** برای هر پیام در اپلیکیشنتان نشان (**Badge**) اعمال می‌کند. متد `resetBadge` برای خالی کردن و ریست Badge به کار می‌رود. شما با توجه به نیاز خود می‌توانید این متد را در جای خاصی از اپلیکیشنتان (مانند صندوق پیام‌ها) یا در حین باز شدن (launch) اپ خود فراخوانی کنید.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [PushClientManager  resetBadge];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 PushClientManager.resetBadge()
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. این قابلیت در[ پیام چابک](/ios/chabok-messaging.html) و [پیام‌رسانی آنی](/ios/event-handling.html) استفاده می‌شود.
 
@@ -256,3 +260,4 @@ chabok.login("user_id");
 ```java
 chabok.logout();
 ```
+> `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-cordova) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.

@@ -10,6 +10,21 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۲.۱.۰ - ۱۳۹۸/۰۷/۱۷](https://github.com/chabok-io/chabok-client-ios/releases/tag/v2.1.0)
+
+### تغییرات
+
+- دریافت پارامتر **label** با استفاده از پیاده‌سازی متد `chabokReferralResponse:(NSString *)referralId`، که این پارامتر در لینک ترکر قرار می‌گیرد و جهت پیاده‌سازی فرایند دعوت از دوستان در اپلیکیشن‌تان کاربرد دارد.
+
+- پشتیبانی از افزودن به مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `addToUserAttributeArray:(NSString *)attributeKey attributeValue:(NSString *)attributeValue`.
+ 
+- پشتیبانی از حذف مقادیر آرایه‌ای برای داده‌های سفارشی کاربر با فراخوانی متد `removeFromUserAttributeArray:(NSString *)attributeKey attributeValue:(NSString *)attributeValue`.
+
+- پشتیبانی از حذف داده‌های سفارشی کاربر با فراخوانی متد `unsetUserAttribute:(NSString *) attributeKey`.
+
+- پشتیبانی از تاریخ و ساعت برای مقادیری که در رویدادها و داده‌های سفارشی کاربر ارسال می‌کنید با استفاده از `Datetime` که در کتابخانه چابک موجود هست.
+
+
 ##  [نسخه ۲.۰.۱ - ۱۳۹۸/۰۷/۳۰](https://github.com/chabok-io/chabok-client-ios/releases/tag/2.0.1)
 
 ### تغییرات

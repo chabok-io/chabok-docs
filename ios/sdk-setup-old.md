@@ -70,9 +70,9 @@ $ pod update
 
 کد زیر **تمام متدهایی** که باید مقداردهی شوند را در بر دارد:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 #import "AppDelegate.h"
 #import <AdpPushClient/AdpPushClient.h>
 
@@ -132,10 +132,9 @@ $ pod update
 }
 @end
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 import UIKit
 import AdpPushClient
 
@@ -193,22 +192,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
     }
 }
 ```
+{% endtab %}
+{% endtabs %}
+
 #### نکات ضروری مقداردهی متدها
 
 - متد `setDevelopment`:
 
 متد `setDevelopment` مشخص می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (production)](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد. مقدار `true` یا `YES` به محیط آزمایشی و مقدار`false` یا `NO` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (`appId`, `apiKey`, `username` و `password`) خودش در متد `registerApplication` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [PushClientManager setDevelopment:YES];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
 //Swift:
 
 PushClientManager.setDevelopment(true)
 ```
+{% endtab %}
+{% endtabs %}
 
 - متد `registerApplication`:
 
@@ -216,22 +222,24 @@ PushClientManager.setDevelopment(true)
 
 همانند کد زیر، متد `registerApplication` را در کلاس `AppDelegate` و در متد `didFinishLaunchingWithOptions` فراخوانی کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-  
 [_manager registerApplication:@"APP_ID"             //based on your environment    
                            apiKey:@"API_KEY"    	//based on your environment
                          userName:@"SDK_USERNAME"   //based on your environment
                          password:@"SDK_PASSWORD"]; //based on your environment
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 _manager?.registerApplication("APP_ID", 	 //based on your environment
 					apiKey: "API_KEY",		 //based on your environment
 					userName: "SDK_USERNAME",//based on your environment
 					password: "SDK_PASSWORD")//based on your environment
 ```
+{% endtab %}
+{% endtabs %}
 
 در این متد بجای پارامتر‌های `APP_ID`, `API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را که در بخش تنظیمات پنل است، وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](https://doc.chabok.io/ios/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از پنل بخش تنظیمات قسمت [**دسترسی‌ و توکن‌ها**](https://doc.chabok.io/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) بردارید.
 
@@ -243,57 +251,64 @@ _manager?.registerApplication("APP_ID", 	 //based on your environment
 
 جهت دسترسی به `delegate‌`های چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [_manager addDelegate:self];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift :
-
 manager?.addDelegate(self)
 ```
+{% endtab %}
+{% endtabs %}
+
 - متد `didFinishLaunchingWithOptions`:
 
 چابک برای فهمیدن نحوه باز شدن اپلیکیشن نیاز به قطعه کد زیر دارد، بنابراین فراخوانی این کد **ضروری** می‌باشد:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 if ([_manager application:application didFinishLaunchingWithOptions:launchOptions]) {
 	NSLog(@"Launched by tapping on notification");
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 if _manager?.application(application, didFinishLaunchingWithOptions: launchOptions) == true {
 	print("Launched by tapping on notification")
 }
 ```
+{% endtab %}
+{% endtabs %}
+
 - متد `resetBadge`:
 
 چابک به طور **پیش‌فرض** برای هر پیام در اپلیکیشنتان نشان (**Badge**) اعمال می‌کند. متد `resetBadge` برای خالی کردن و ریست Badge به کار می‌رود. شما با توجه به نیاز خود می‌توانید این متد را در جای خاصی از اپلیکیشنتان (مانند صندوق پیام‌ها) یا در حین باز شدن (launch) اپ خود فراخوانی کنید.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [PushClientManager  resetBadge];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 PushClientManager.resetBadge()
 ```
-
+{% endtab %}
+{% endtabs %}
 
 #### متدهای ضروری
 
 در مرحله آخر شما باید قطعه کد زیر را در کلاس `AppDelegate` قرار دهید تا کتابخانه چابک بتواند راه‌اندازی شود:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 #pragma mark - Notification AppDelegation
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
@@ -311,9 +326,9 @@ PushClientManager.resetBadge()
     [_manager application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift :
-
 //MARK : Notification AppDelegation
     
 func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -332,6 +347,8 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 	_manager?.application(application, didRegister: notificationSettings)
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 <Br>
 
@@ -348,16 +365,18 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 - امضای اول فقط شناسه کاربر را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام می‌کند.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [_manager registerUser:@"USER_ID"];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 _manager?.registerUser("USER_ID")
 ```
+{% endtab %}
+{% endtabs %}
 
 <br>
 
@@ -365,9 +384,9 @@ _manager?.registerUser("USER_ID")
 
 به عنوان مثال اگر اپلیکیشن شما دارای صفحه **ورود** و **ثبت‌نام** می‌باشد، متد `registerUser` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای (در کلاس `AppDelegate` متد `didFinishLaunchingWithOptions`) اپلیکیشن فراخوانی کنید تا کاربر به سرور چابک متصل شود.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 - (BOOL)application:(UIApplication *)application
             didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -384,9 +403,9 @@ _manager?.registerUser("USER_ID")
     return YES;
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
     ...
@@ -402,6 +421,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return true
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته`: مقدار `USER_ID` می‌تواند **بین ۳ تا ۶۴** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
 
@@ -412,16 +433,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
  علاوه بر شناسه کاربر، لیستی از نام‌ کانال‌هایی (برای آشنایی با مفهوم کانال و کاربرد آن [این قسمت](/ios/chabok-messaging.html#کانال) را مطالعه نمایید) که کاربر باید روی آن‌ها عضو شود را نیز دریافت می‌کند. با عضویت روی کانال‌های داده شده، کاربر قادر به دریافت پیام‌های ارسالی روی آن‌ کانال‌ها خواهد بود.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C:
-
 [_manager registerUser:@"USER_ID" channels:@[@"CHANNEL_NAME1", @"CHANNEL_NAME2"]];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 _manager.registerUser("USER_ID", channels: ["CHANNEL_NAME1", CHANNEL_NAME2])
 ```
+{% endtab %}
+{% endtabs %}
 
 >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب](http://chabok.io) برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر پیام چابک و پوش‌نوتیفیکیشن بفرستید.
 
@@ -429,50 +452,56 @@ _manager.registerUser("USER_ID", channels: ["CHANNEL_NAME1", CHANNEL_NAME2])
 
 برای اطمینان از ثبت شدن کاربر در چابک، می‌توانید از متد `isRegistered` یا رویداد `pushClientManagerDidRegisterUser` و `pushClientManagerDidFailRegisterUser` استفاده کنید. 
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 _manager.isRegistered
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
-
 _manager.isRegistered
 ```
+{% endtab %}
+{% endtabs %}
 
 با رویداد `pushClientManagerDidRegisterUser` می‌توانید از ثبت شدن کاربر در چابک باخبر شوید.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 -(void) pushClientManagerDidRegisterUser:(BOOL)registration{
 	NSLog(@"Successfully registered");
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
-
 func pushClientManagerDidRegisterUser(_ registration: Bool) {
 	print("Successfully registered")
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 با رویداد `pushClientManagerDidFailRegisterUser` می‌توانید در صورت رخ دادن خطا در ثبت کاربر از خطای آن باخبر شوید.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 -(void) pushClientManagerDidFailRegisterUser:(BOOL)registration{
 	NSLog(@"Fail to register user \n ~~ error: %@", error);
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
-
 func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 	print("Fail to register user \n ~~ error: \(error)")
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 ##### کاربر مهمان
 
@@ -482,48 +511,58 @@ func pushClientManagerDidFailRegisterUser(_ error: Error!) {
 
 متد زیر کاربر را به عنوان کاربر مهمان ثبت می‌کند و به طور خودکار یک تگ مهمان (CHABOK_GUEST) به او اختصاص می‌دهد:
 
-```objectivec
-//Objective-C:
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 [_manager registerAsGuest];
 ```
-```swift
-//Swift:
+{% endtab %}
+{% tab SWIFT %}
 
+```swift
 _manager?.registerAsGuest()
 ```
+{% endtab %}
+{% endtabs %}
 
 ##### کاربر مهمان با شناسه سفارشی 
 
 همچنین می‌توانید کاربر مهمان را با **شناسه دلخواهتان** ثبت کنید: 
 
-```objectivec
-//Objective-C
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 [_manager registerWithGuestId:@"MY_GUEST_ID"];
 ```
+{% endtab %}
+{% tab SWIFT %}
 
 ```swift
-//Swift:
-
 _manager.default()?.register(withGuestId: "MY_GUEST_ID")
 ```
-
+{% endtab %}
+{% endtabs %}
 
 #### حذف کاربر (Unregister)
 
 برای حذف دستگاه کاربر از سرور چابک می‌توانید از متد `unRegisterUser` استفاده کنید. پس از حذف کاربر، چابک دیگر به دستگاه‌های آن `userId` پوش ارسال نخواهد کرد. توصیه می‌شود این متد را زمانی که کاربر در اپلیکیشنتان از حساب خود خارج می‌شود (**Logout**) فراخوانی کنید. این امر باعث می‌شود تا کاربر از حفظ شدن حریم شخصی خود پس از خروج از حساب کاربری اطمینان یابد. پس از آن هم کاربر را به عنوان یک کاربر مهمان ثبت کنید تا همچنان با او تعامل داشته باشید.
 برای حذف دستگاه کاربر از سرور چابک می‌توانید از متد زیر استفاده کنید:
 
-```objectivec
-//Objective-C:
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 [_manager unregisterUser];
 ```
-```swift
-//Swift:
+{% endtab %}
+{% tab SWIFT %}
 
+```swift
 _manager?.unregisterUser()
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-ios) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده‌سازی متدهای چابک آشنا خواهید شد.

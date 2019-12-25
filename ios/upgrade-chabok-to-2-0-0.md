@@ -50,9 +50,10 @@ $ pod update
 
 کد زیر را از  `didFinishLaunchWithOptions` در کلاس `AppDelegate` **حذف کنید**:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```diff
 //Objective-C
-
 ‌-(BOOL)application:(UIApplication  *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {     
 
 -    [PushClientManager setDevelopment:YES];
@@ -83,10 +84,10 @@ $ pod update
      return YES
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```diff
 //Swift:
-
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
 -	PushClientManager.setDevelopment(true)
@@ -117,12 +118,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 
 ```
+{% endtab %}
+{% endtabs %}
 
 سپس کد زیر را به  `didFinishLaunchWithOptions` در کلاس `AppDelegate` **اضافه کنید**: 
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```diff
 //Objective-C
-
 ‌-(BOOL)application:(UIApplication  *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {     
 
     [PushClientManager  resetBadge];
@@ -135,10 +139,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     return YES;
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```diff
 //Swift:
-
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         PushClientManager.resetBadge()
@@ -150,6 +154,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 
 ```
+{% endtab %}
+{% endtabs %}
 
 <br>
 
@@ -157,9 +163,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 کدهای زیر را در کلاس `AppDelegate` زیر **حذف کنید**:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```diff
-//Objective-C:
-
+//Objective-C
 ‌-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
     // Handle failure of get Device token from Apple APNS Server
 -  [_manager application:application didFailToRegisterForRemoteNotificationsWithError:error];
@@ -175,10 +182,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 -  [_manager application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```diff
-//Swift :
-
+//Swift:
 func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
 	// Handle failure of get Device token from Apple APNS Server
 - 	_manager?.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
@@ -195,24 +202,32 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 - 	_manager?.application(application, didRegister: notificationSettings)
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 <br>
 
 ### ۴- تغییرات ثبت و ورود کاربر (Login)
 در صورتی که در اپلیکیشن‌تان، پس از احراز هویت، کاربر را با یک نام کاربری (User ID) در چابک ثبت می‌کنید، تغییرات زیر را در کدتان اعمال کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```diff
 //Objective-C
 - [PushClientManager.defaultManager registerUser:@"USER_ID"];
 
 + [PushClientManager.defaultManager login:@"USER_ID"];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```diff
-//Swift
+//Swift:
 - PushClientManager.default()?.registerUser("USER_ID")
 
 + PushClientManager.default()?.login("USER_ID")
 ```
+{% endtab %}
+{% endtabs %}
 
 <br>
 
@@ -220,18 +235,24 @@ func application(_ application: UIApplication, didRegister notificationSettings:
  
  چنانچه به هنگام خروج کاربر از حساب کاربری  از متد `unregisterUser` استفاده می‌کنید، تغییرات زیر را در کد خود اعمال کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```diff
 //Objective-C
 - [PushClientManager.defaultManager unregisterUser];
 
 + [PushClientManager.defaultManager logout];
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```diff
-//Swift
+//Swift:
 - PushClientManager.default()?.unregisterUser()
 
 + PushClientManager.default()?.logout()
 ```
+{% endtab %}
+{% endtabs %}
 
 <br>
 
@@ -239,17 +260,20 @@ func application(_ application: UIApplication, didRegister notificationSettings:
 
 **حذف** متد `appWillOpenUrl` را مانند زیر انجام دهید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```diff
-//Objective-C:
-
+//Objective-C
 -	[PushClientManager.defaultManager appWillOpenUrl:]; 
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```diff
-//Swift :
-
+//Swift:
 -	PushClientManager.default()?.appWillOpen(url)
 ```
+{% endtab %}
+{% endtabs %}
 
 <br><br>
 
