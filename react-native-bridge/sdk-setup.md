@@ -82,7 +82,7 @@ apply plugin: 'com.google.gms.google-services'
 target 'YourProject' do
   use_frameworks!
 
-  pod 'ChabokPush', '~> 2.0.1'
+  pod 'ChabokPush', '~> 2.1.0'
   
 end
 ```
@@ -219,9 +219,9 @@ public class MainApplication extends Application implements ReactApplication {
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
-
 #import "AppDelegate.h"
 #import <AdpPushClient/AdpPushClient.h>
 
@@ -234,10 +234,9 @@ public class MainApplication extends Application implements ReactApplication {
     return YES;
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift:
-
 import UIKit
 import AdpPushClient
 
@@ -251,6 +250,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
     return true
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته`: متد بالا برای محیط سندباکس است. در صورتی که حساب عملیاتی دارید کافیست فقط `Sandbox` را با ‍‍`Production` عوض کنید.
 

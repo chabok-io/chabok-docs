@@ -365,15 +365,20 @@ PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 
 **نمونه لینک ترکر چابک**:
 
+{% tabs %}
+{% tab sandbox %}
 حساب‌ رایگان:
 ```javascipt
 https://sand.chabok.io/JY@4sc
 ``` 
-
+{% endtab %}
+{% tab production %} 
 حساب عملیاتی:
 ```javascipt
 https://a.chabok.io/JY@4sc
 ```  
+{% endtab %}
+{% endtabs %}
 
 #### ۲.۲. انتشار لینک ترکر 
 
