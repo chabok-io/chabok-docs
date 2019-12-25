@@ -41,13 +41,11 @@ self.manager.track("YOUR_TRACK_NAME", data: ["KEY":"VALUE"])
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 [self.manager track:@"add-to-card" data:@{@"value":@(35000)}];
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 self.manager.track("add-to-card", data: ["value":35000])
 ```
@@ -62,13 +60,11 @@ self.manager.track("add-to-card", data: ["value":35000])
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 [self.manager track:@"add-to-card" data:@{@"status":@(true)}];
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 self.manager.track("add-to-card", data: ["status":true])
 ```
@@ -101,7 +97,6 @@ self.manager.track("add-to-card", data: ["status":35000])
 نمونه:
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 ChabokEvent *chabokEvent = [[ChabokEvent alloc]
                                 initWithRevenue:20000
@@ -112,7 +107,6 @@ ChabokEvent *chabokEvent = [[ChabokEvent alloc]
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 let chabokEvent = ChabokEvent(revenue: 20000, currency: "RIAL")
 

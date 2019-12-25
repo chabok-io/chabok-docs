@@ -22,7 +22,6 @@ next: push-notification.html
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 - (void)pushClientManagerDidReceivedMessage:(PushClientMessage *)message{
     // Called When PushClientManager has been received new message from server
@@ -40,7 +39,6 @@ next: push-notification.html
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 
 
@@ -73,20 +71,19 @@ func pushClientManagerDidReceivedMessage(_ message: PushClientMessage?) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 [PushClientManager.defaultManager markAsRead:@"MESSAGE_ID"];
 [PushClientManager.defaultManager messageDismissed:@"MESSAGE_ID"];
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 PushClientManager.default().mark(asRead: @"MESSAGE_ID")
 PushClientManager.default().messageDismissed(@"MESSAGE_ID")
 ```
 {% endtab %}
 {% endtabs %}
+
 <Br>
 
 ### ارسال پیام
@@ -101,14 +98,12 @@ PushClientManager.default().messageDismissed(@"MESSAGE_ID")
 {% tabs %}
 {% tab OBJECTIVE-C %}
 ```objectivec
-
 [PushClientManager.defaultManager publish:@"USER_ID"
                     		toChannel:@"CHANNEL_NAME"
                     		 withText:@"Hello World!"];
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 
 PushClientManager.default().publish("USER_ID", toChannel: "CHANNEL_NAME", withText: "Hello World!")
@@ -124,7 +119,6 @@ PushClientManager.default().publish("USER_ID", toChannel: "CHANNEL_NAME", withTe
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 NSString *toUserId = @"USER_ID"; //Required. For public channel set * (wildcard)
 NSString *toChannel = @"CHANNEL"; //Required
@@ -145,7 +139,6 @@ PushClientMessage *message = [[PushClientMessage new] initWithMessage:messageBod
 ```
 {% endtab %}
 {% tab SWIFT %} 
-
 ```swift
 
 let toUserId = "USER_ID" //Required. For public channel set * (wildcard)
@@ -167,11 +160,11 @@ PushClientManager.default().publish(message)
 ```
 {% endtab %}
 {% endtabs %}
+
 در صورت رخ دادن خطا به هنگام `publish` پیام، `delegate method` زیر فراخوانی خواهد شد:
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 
 -(void) pushClientManagerDidFailInPublish:(NSError *)error{
@@ -180,7 +173,6 @@ PushClientManager.default().publish(message)
 ```
 {% endtab %}
 {% tab SWIFT %} 
-
 ``` swift
 
 func pushClientManagerDidFail(inPublish error: Error!) {
@@ -195,13 +187,11 @@ func pushClientManagerDidFail(inPublish error: Error!) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 PushClientManager.defaultManager.deliveryChannelEnabeled = YES; 
 ```
 {% endtab %}
 {% tab SWIFT %} 
-
 ```swift
 Swift: 
 PushClientManager.default().deliveryChannelEnabeled = true 
@@ -212,9 +202,7 @@ PushClientManager.default().deliveryChannelEnabeled = true
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
-
 - (void)pushClientManagerDidReceivedDelivery:(DeliveryMessage *)delivery{
     // Called When PushClientManager has received new delivery from server
     
@@ -227,9 +215,7 @@ PushClientManager.default().deliveryChannelEnabeled = true
 ```
 {% endtab %}
 {% tab SWIFT %} 
-
 ```swift
-
 func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage?) {
     // Called When PushClientManager has received new delivery from server
 
@@ -260,14 +246,12 @@ func pushClientManagerDidReceivedDelivery(_ delivery: DeliveryMessage?) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 [self.manager subscribe:@"alert"]; // public channel
 [self.manager subscribe:@"private/league"]; // private (personal) channel
 ```
 {% endtab %}
 {% tab SWIFT %} 
-
 ```swift
 manager.subscribe("alert") // public channel
 manager.subscribe("private/league") // private (personal) channel
@@ -278,7 +262,6 @@ manager.subscribe("private/league") // private (personal) channel
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 -(void) pushClientManagerDidSubscribed:(NSString *)channel{
     NSLog(@"Subscribed on '%@' channel",channel);
@@ -286,7 +269,6 @@ manager.subscribe("private/league") // private (personal) channel
 ```
 {% endtab %}
 {% tab SWIFT %} 
-
 ``` swift
 func pushClientManagerDidSubscribed(_ channel: String!) {
 	print("Subscribed on '\(channel)' channel")
@@ -294,11 +276,11 @@ func pushClientManagerDidSubscribed(_ channel: String!) {
 ```
 {% endtab %}
 {% endtabs %}
+
  همچنین در صورت رخ دادن خطا به هنگام عضویت روی یک کانال، با استفاده از متد `delegate` زیر می‌توانید از خطای رخ داده شده با خبر شوید:
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 -(void) pushClientManagerDidFailInSubscribe:(NSError *)error{
     NSLog(@"Error subscribing on channel %@",error);
@@ -306,7 +288,6 @@ func pushClientManagerDidSubscribed(_ channel: String!) {
 ```
 {% endtab %}
 {% tab SWIFT %}
- 
 ``` swift
 func pushClientManagerDidFail(inSubscribe error: Error!) {
 	print("Error subscribing on channel \(error)")
@@ -314,23 +295,20 @@ func pushClientManagerDidFail(inSubscribe error: Error!) {
 ```
 {% endtab %}
 {% endtabs %}
+
 #### لغو عضویت از کانال (Unsubscribe)
 
 برای لغو عضویت از یک کانال می‌توانید از متد `unsubscribe` استفاده کنید که در زیر به آن اشاره شده است:
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
-
 [PushClientManager.defaultManager unsubscribe:@"alert"]; // public channel
 [PushClientManager.defaultManager unsubscribe:@"private/league"]; // private (personal) channel
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
-
 PushClientManager.default().unsubscribe("alert") // public channel
 PushClientManager.default().unsubscribe("private/league") // private (personal) channel
 ```
@@ -340,7 +318,6 @@ PushClientManager.default().unsubscribe("private/league") // private (personal) 
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 -(void) pushClientManagerDidUnsubscribed:(NSString *)channel{
     NSLog(@"Unsubscribed from '%@' channel",channel);
@@ -348,7 +325,6 @@ PushClientManager.default().unsubscribe("private/league") // private (personal) 
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 func pushClientManagerDidUnsubscribed(_ channel: String!) {
 	print("Unsubscribed from '\(channel)' channel")
@@ -361,7 +337,6 @@ func pushClientManagerDidUnsubscribed(_ channel: String!) {
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 -(void) pushClientManagerDidFailInUnsubscribe:(NSError *)error{
     NSLog(@"Error in unsubscribe from channel %@",error);
@@ -369,7 +344,6 @@ func pushClientManagerDidUnsubscribed(_ channel: String!) {
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 func pushClientManagerDidFail(inUnsubscribe error: Error!) {
 	print("Error in unsubscribe from channel \(error)")

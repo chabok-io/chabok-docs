@@ -99,7 +99,6 @@ curl -X POST \
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 -(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
                         options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
@@ -111,7 +110,6 @@ curl -X POST \
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 func application(_ app: UIApplication, 
                 open url: URL, 
@@ -130,7 +128,6 @@ func application(_ app: UIApplication,
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 
 -(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
@@ -143,9 +140,7 @@ func application(_ app: UIApplication,
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
-
 func application(_ app: UIApplication, 
                 open url: URL, 
                 options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -167,7 +162,6 @@ func application(_ app: UIApplication,
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 -(BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
                 restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
@@ -181,9 +175,7 @@ func application(_ app: UIApplication,
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
-
 func application(_ application: UIApplication, 
                 continue userActivity: NSUserActivity, 
                 restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
@@ -200,7 +192,6 @@ func application(_ application: UIApplication,
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 -(BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
                 restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
@@ -214,7 +205,6 @@ func application(_ application: UIApplication,
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 func application(_ application: UIApplication, 
                 continue userActivity: NSUserActivity, 
@@ -236,7 +226,6 @@ func application(_ application: UIApplication,
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
-
 ```objectivec
 - (BOOL)chabokDeeplinkResponse:(NSURL *)deeplink {
     // deeplink object contains information about deferred deep link content
@@ -249,7 +238,6 @@ func application(_ application: UIApplication,
 ```
 {% endtab %}
 {% tab SWIFT %}
-
 ```swift
 func chabokDeeplinkResponse(_ deeplink: URL?) -> Bool {
     // deeplink object contains information about deferred deep link content
