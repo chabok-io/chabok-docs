@@ -14,7 +14,7 @@ prev: troubleshoot.html
 
 ### تغییرات
 
-- دریافت پارامتر `label`  با استفاده از فراخوانی متد `chabokReferralResponse:(NSString *)referralId` و پیاده‌سازی متد `PushClientManagerDelegate`است که این پارامتر در لینک ترکر قرار می‌گیرد و جهت پیاده‌سازی فرایند دعوت از دوستان در اپلیکیشن‌تان کاربرد دارد.
+- دریافت پارامتر `label` با استفاده از فراخوانی متد `chabokReferralResponse:(NSString *)referralId` و پیاده‌سازی متد `PushClientManagerDelegate`، که این پارامتر در لینک ترکر قرار می‌گیرد و جهت پیاده‌سازی فرایند دعوت از دوستان در اپلیکیشن‌تان کاربرد دارد.
 
 - پشتیبانی از افزودن به مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `addToUserAttributeArray:(NSString *)attributeKey attributeValue:(NSString *)attributeValue`.
  
