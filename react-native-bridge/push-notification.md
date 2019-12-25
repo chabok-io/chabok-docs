@@ -51,7 +51,6 @@ next: deeplink.html
 
 ```java
 //Java
-
 @Override
 public void onCreate() {
 	super.onCreate();
@@ -81,7 +80,6 @@ public void onCreate() {
 
 ```objectivec
 //Objective-C
-
 @interface AppDelegate ()<PushClientManagerDelegate>
 
 @end

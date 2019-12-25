@@ -89,8 +89,6 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 {% tab SWIFT %}
 
 ```swift
-//Swift:
-
 func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
 self.manager.application(application, didReceive: notification)
 }
