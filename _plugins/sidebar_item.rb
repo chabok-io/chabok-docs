@@ -20,6 +20,9 @@ module Jekyll
         return sidebar_helper(item, 'flutter')
     end
 
+    def cordova_sidebar_link(item)
+        return sidebar_helper(item, 'cordova')
+    end
 
     def faq_sidebar_link(item)
         return sidebar_helper(item, 'faq')

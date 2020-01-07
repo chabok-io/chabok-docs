@@ -109,10 +109,18 @@ next: settings.html
 
 <Br><Br>
 
+####  ارسال تستی 
+
+فرض کنید قصد دارید کمپینی با تخفیف ویژه ۵۰٪ را به تمام کاربران اپلیکیشن‌تان ارسال کنید، قبل از اجرای کمپین، باید پیام را به [کاربران تستی](/panel/users.html#کاربران-تستی) ارسال کنید تا از درستی محتوای آن اطمینان حاصل کنید.
+
+![عکس مربوطه](http://uupload.ir/files/3v22_sendtest.png)
+
+>`نکته`: دقت داشته باشید ارسال تستی کمپین در تمامی حالت‌های سیاست ارسال برقرار است به جز ارسال خصوصی پیام. 
+
 ### پیام‌ها
 ---
 
-در ابتدا می‌توانید با کلیک روی **کمپین جدید** وارد صفحه طراحی کمپین شوید و از آن‌ جا کمپین ارسال کنید. 
+در ابتدا می‌توانید با کلیک روی **کمپین جدید** وارد صفحه طراحی کمپین شوید و از آن‌ جا کمپین را ارسال کنید. 
 
 پس از آن، این قسمت پیام‌های ارسالی شما را به **هر کاربر** به صورت جدا نمایش می‌دهد. از طریق لیست پیام‌ها می‌توانید **وضعیت پیام و نوتیفیکیشن، زمان ارسال و تحویل، کاربر (شناسه کاربر) و متن پیام** را مشاهده کنید.
 
@@ -202,20 +210,77 @@ next: settings.html
 ##### جدول خطاها
 
 برای آشنایی و رفع خطاهای ارسال پیام، جدول زیر را مشاهده کنید:
-
-|              خطا              |                                                               موضوع|                                                                                                                                          توضیح |
-| :----------------------------------------------------------------: | -----------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------: |
-|     **Device not found**      |                                           عدم وجود دستگاه مورد نظر | از ثبت شدن کاربر در چابک و اضافه شدن او در مشترکین پنل اطمینان یابید. همینطور صحت شناسه کاربری (`userId`) مخاطب را در ارسال پیام بررسی کنید. |
-|  **Subscription not found**   |                                           عدم عضویت کاربر در کانال |                                                                                          از عضو بودن مخاطب پیام در کانال ارسالی اطمینان یابید. |
-|          **INVALID**          | عدم تطابق تنظیمات پوش‌نوتفیکیشن APN یا GCM/FCM با تنظیمات اپلیکیشن |                                                                                                                         برای اندروید و آی‌اواس |
-|  **DeviceTokenNotForTopic**   |                                         عدم تطابق توکن با شناسه اپ |                                                                                                                                  مخصوص آی‌اواس |
-|     **MismatchSenderId**      |                                      عدم تطابق `senderId` اپ و پنل   |                                                                                                                                  مخصوص اندروید |
-|           **GONE**            |                                            حذف اپلیکیشن توسط کاربر |                                                                                                                                             \- |
-|   **Device_Unregistered**    |                                            حذف اپلیکیشن توسط کاربر |                                                                                                                                             \- |
-|   **Not Registered**    |                                            حذف اپلیکیشن توسط کاربر |                                                                                                                                             \- |
-|      **BadDeviceToken**       |          نامعتبر بودن توکن دستگاه مورد نظر یا استفاده از Simulator |       از توکن مورد نظر و [تطابق آن با محیط (sandbox یا production **اپل**) اطمینان یابید](/ios/troubleshoot.html#%DB%B8--%D8%B3%D9%88%D8%A6%DB%8C%DA%86-%D8%B3%D8%B1%D9%88%D8%B1-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C-%D8%A7%D9%BE%D9%84-%D8%B1%D8%A7-%D8%AF%D8%B1-%D9%BE%D9%86%D9%84-%D8%A8%D9%87-%D8%AF%D8%B1%D8%B3%D8%AA%DB%8C-%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%DA%A9%D9%86%DB%8C%D8%AF). همچنین به طور کلی پوش‌ روی Simulator آی‌او‌اس دریافت نمی‌شود. |
-|         **BadTopic**          |                               نامعتبر بودن شناسه اپ (`bundleId`) |                                                                                                                                             \- |
-|      **TopicDisallowed**      |                    امکان پوش روی شناسه اپلیکیشن مورد نظر مجاز نیست |                                                                                                                                             \- |
-|      **BadCertificate**       |                                             نامعتبر بودن گواهی اپل |                                                              از گواهی که در تنظیمات ارسال نوتیفیکیشن سرور اپل (APNs) قرار دادید اطمینان یابید. |
-| **BadCertificateEnvironment** |                عدم تطابق گواهی اپل با محیط (sandbox یا production) |                                                                                                                                             \- |
-|   **ExpiredProviderToken**    |                                                     منقضی شدن توکن |                                                                       در صورتی که از روش PEM استفاده کردید، توکن شما پس از یکسال منقضی می‌شود. 
+<div class='inbox-table'>
+<table style='text-align: center'>
+        <thead>
+            <tr>
+                <th style='text-align: center' >خطا</th>
+                <th style='text-align: center'>موضوع</th>
+                <th style='text-align: center'>توضیح</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align: left"><b> Device not found</b></td>
+                <td>عدم وجود دستگاه مورد نظر</td>
+                <td>از ثبت شدن کاربر در چابک و اضافه شدن او در مشترکین پنل اطمینان یابید. همینطور صحت شناسه کاربری <code>userId</code> مخاطب را در ارسال پیام بررسی کنید.</td>
+            </tr>
+            <tr>
+                <td style="text-align: left"><b> Subscription not found </b></td>
+                <td>عدم عضویت کاربر در کانال</td>
+                <td>از عضو بودن مخاطب پیام در کانال ارسالی اطمینان یابید.</td>
+            </tr>
+            <tr>
+                 <td style="text-align: left"><b> INVALIDSenderId </b></td>
+                 <td>عدم تطابق تنظیمات پوش نوتیفیکیشن APN یا GCM/FCM با تنظیمات اپلیکیشن</td>
+                 <td>برای اندروید و آی‌او‌اس</td>
+                       </tr>
+            <tr>
+                  <td style="text-align: left"><b> DeviceTokenNotForTopic </b></td>
+                  <td>عدم تطابق توکن با شناسه با اپ </td>
+                  <td>مخصوص آی‌او‌اس</td>
+                        </tr>         
+            <tr>
+                  <td style="text-align: left"><b> MismatchSenderId </b></td>
+                  <td>عدم تطابق <code> senderId </code> اپ و پنل</td>
+                  <td>مخصوص اندروید</td>
+                         </tr>    
+            <tr>
+                  <td style="text-align: left"><b>GONE/Device_Unregistered/Not Registered</b></td>
+                  <td>حذف اپلیکیشن توسط کاربر</td>
+                  <td style='text-align: center'>-</td>
+                                     </tr>  
+            <tr>
+                  <td style="text-align: left"><b> BadDeviceToken </b></td>
+                  <td> نامعتبر بودن توکن دستگاه مورد نظر یا استفاده از Simulator</td>
+                  <td>از توکن مورد نظر و <a href="/ios/troubleshoot.html#%DB%B8--%D8%B3%D9%88%D8%A6%DB%8C%DA%86-%D8%B3%D8%B1%D9%88%D8%B1-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C-%D8%A7%D9%BE%D9%84-%D8%B1%D8%A7-%D8%AF%D8%B1-%D9%BE%D9%86%D9%84-%D8%A8%D9%87-%D8%AF%D8%B1%D8%B3%D8%AA%DB%8C-%D8%AA%D9%86%D8%B8%DB%8C%D9%85-%DA%A9%D9%86%DB%8C%D8%AFl">تطابق آن با محیط (sandbox یا production اپل) اطمینان یابید.</a>
+. همچنین به طور کلی پوش روی Simulator  آی‌او‌اس دریافت نمی‌شود.</td>
+                                                 </tr>                                           
+            <tr>
+                  <td style="text-align: left"><b> BadTopic </b></td>
+                  <td>نامعتبر بودن شناسه اپ <code>(bundleId)</code></td>
+                  <td>-</td>
+                                     </tr>   
+            <tr>
+                   <td style="text-align: left"><b> TopicDisallowed </b></td>
+                   <td>امکان پوش روی شناسه اپلیکیشن مورد نظر مجاز نیست.</td>
+                   <td>-</td>
+                                                 </tr> 
+            <tr>
+                   <td style="text-align: left"><b> BadCertificate </b></td>
+                   <td>نامعتبر بودن گواهی اپل</td>
+                   <td> از گواهی که در تنظیمات ارسال نوتیفیکیشن سرور اپل (APNs) قرار دادید اطمینان یابید. </td>
+                                                </tr>  
+            <tr>
+                   <td style="text-align: left"><b> BadCertificateEnvironment </b></td>
+                   <td>عدم تطابق گواهی اپل با محیط (sandbox یا production)</td>
+                   <td></td>
+                                                </tr>      
+            <tr>
+                    <td style="text-align: left"><b>ExpiredProviderToken </b></td>
+                    <td>منقضی شدن توکن</td>
+                    <td>در صورتی که از روش PEM استفاده کردید، توکن شما پس از یکسال منقضی می‌شود.</td>
+                                                </tr>                                                                                                                                                                                                                                              
+        </tbody>
+</table>
+</div>

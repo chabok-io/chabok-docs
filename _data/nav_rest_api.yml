@@ -27,3 +27,15 @@
           href: افزودن-تگ
         - title: حذف تگ
           href: حذف-تگ
+
+
+    - id: send-event
+      title: ارسال رویداد
+
+
+    - id: receive-uninstall-data
+      title: دریافت دیتای حذف
+
+
+    - id: attributes
+      title: ارسال اطلاعات کاربر

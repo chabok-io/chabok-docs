@@ -16,30 +16,9 @@ next: deeplink.html
 
 #### اندروید
 
-برای دریافت پوش‌نوتیفیکیشن باید `GcmReceiver` را در بخش `application` به فایل `AndroidManifest.xml` اضافه نمایید تا بتوانید پوش‌نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.
 
-```markup
-<application
-    android:name=".MY_APPLICATION_CLASS_NAME"
-    ... >
-	
-	...
-    <receiver
-        android:name="com.google.android.gms.gcm.GcmReceiver"
-        android:enabled="true"
-        android:exported="true"
-        android:permission="com.google.android.c2dm.permission.SEND">
-        <intent-filter>
-            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-            <category android:name="MY_APPLICATION_PACKAGE_ID" />
-        </intent-filter>
-    </receiver>
-	
-</application>
-```
+>`نکته:` تنظیم پوش نوتیفیکیشن در اندروید به صورت اتوماتیک انجام می‌شود و نیاز به تنظیم خاصی ندارد.
 
-<Br>
 
 #### آی‌اوس
 
@@ -72,38 +51,28 @@ next: deeplink.html
 
 ```java
 //Java
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        SoLoader.init(this, /* native exopackage */ false);
-        
-        if (chabok == null) {
-            chabok = AdpPushClient.init(
-                    getApplicationContext(),
-                    MainActivity.class,
-                    "APP_ID/SENDER_ID",
-                    "API_KEY",
-                    "USERNAME",
-                    "PASSWORD"
-            );
-
-+               //true connects to Sandbox environment  
-+               //false connects to Production environment  
-+             AdpPushClient.get().setDevelopment(DEV_MODE);
-
-+            chabok.addNotificationHandler(new NotificationHandler(){
-+                @Override
-+                public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
-+                    ChabokReactPackage.notificationOpened(message, notificationAction);
-+                   return super.notificationOpened(message, notificationAction);
-+                }
-+            });
-        }
-    }
+@Override
+public void onCreate() {
+	super.onCreate();
+	SoLoader.init(this, /* native exopackage */ false);
+	
+	AdpPushClient.configureEnvironment(Environment.SANDBOX);
+	
+	chabok.addNotificationHandler(new NotificationHandler(){
+		@Override
+		public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
+			ChabokReactPackage.notificationOpened(message, notificationAction);
+		return super.notificationOpened(message, notificationAction);
+	 }
+	});
+}
 ```
 
 >‍‍`نکته:` دقت داشته باشید که در صورت تغییر محیط چابک (سندباکس و عملیاتی)، حتما مقدار ‍‍`setDevelopment` و کلیدهای مربوط به همان محیط را قرار دهید.
+
+> `نکته`: متد بالا برای محیط سندباکس است. در صورتی که حساب عملیاتی دارید کافیست فقط `Sandbox` را با ‍‍`Production` عوض کنید.
+
+
 
 #### آی‌اواس
 
@@ -111,39 +80,35 @@ next: deeplink.html
 
 ```objectivec
 //Objective-C
+@interface AppDelegate ()<PushClientManagerDelegate>
 
-+ @interface AppDelegate ()<PushClientManagerDelegate>
-
-+ @end
+@end
 
 @implementation AppDelegate
 
- - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-  {
-    
-+    [PushClientManager.defaultManager addDelegate:self];
-+    [AdpPushClient registerToUNUserNotificationCenter];
-  
-    ...
-    
-    return true;
-  }
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	
+	[PushClientManager.defaultManager configureEnvironment:Sandbox];
+	[PushClientManager.defaultManager addDelegate:self];
 
-+ -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
-+     [AdpPushClient notificationOpened:response.notification.request.content.userInfo actionId:response.actionIdentifier];
-+ }
-  
-+ -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-+     [AdpPushClient notificationOpened:userInfo];
-+ }
-  
-+ -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-+    [AdpPushClient notificationOpened:userInfo];
-+ }
-  
-+ -(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler{
-+     [AdpPushClient notificationOpened:userInfo actionId:identifier];
-+ }
+    return true;
+}
+
+-(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
+	[AdpPushClient notificationOpened:response.notification.request.content.userInfo actionId:response.actionIdentifier];
+}
+
+-(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+	[AdpPushClient notificationOpened:userInfo];
+}
+
+-(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+	[AdpPushClient notificationOpened:userInfo];
+}
+
+-(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler{
+	[AdpPushClient notificationOpened:userInfo actionId:identifier];
+}
 ```
 
 <br>

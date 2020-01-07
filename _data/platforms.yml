@@ -29,8 +29,8 @@
 - name: JavaScript
   image: js.svg
   document: /javascript/introducing.html
-  demo:
-  starter:
+  demo: https://webpush.chabok.io/
+  starter: https://github.com/chabok-io/chabok-client-js/tree/master/sample
   issue: https://github.com/chabok-io/chabok-client-js/issues
 
 - name: Unity
@@ -67,3 +67,10 @@
   demo: https://github.com/chabok-io/chabok-php-demo
   issue: https://github.com/chabok-io/chabok-php-demo/issues
   starter:
+  
+- name: Cordova
+  image: cordova.svg
+  document: /cordova/introducing.html
+  demo:
+  issue: https://github.com/chabok-io/chabok-starter-cordova/issues
+  starter: https://github.com/chabok-io/chabok-starter-cordova

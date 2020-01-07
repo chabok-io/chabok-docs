@@ -7,7 +7,7 @@ prev: deeplink.html
 next: behavior-tracking.html
 ---
 
- در این صفحه می‌توانید برای کاربرانتان **اطلاعات، ویژگی‌ها (attributes) و تگ** اضافه کنید. ثبت اطلاعات هر کاربر به تعامل شما با او کمک می‌کند طوری که می‌توانید **پیام‌های شخصی‌سازی شده** برایشان ارسال کنید.
+در این صفحه می‌توانید برای کاربرانتان **اطلاعات، ویژگی‌ها (attributes) و تگ** اضافه کنید. ثبت اطلاعات هر کاربر به تعامل شما با او کمک می‌کند طوری که می‌توانید **پیام‌های شخصی‌سازی شده** برایشان ارسال کنید.
 
 <Br><Br>
 
@@ -24,13 +24,11 @@ next: behavior-tracking.html
 با فراخوانی متد زیر می‌توانید اطلاعات و سوابق کاربر را جمع‌آوری و ذخیره کنید:
 
 ```java
-HashMap<String, Object> userInfo = new HashMap<>();
-
+HashMap<String, Object> userAttribute = new HashMap<>();
 userAttribute.put("firstName", "محمدرضا");
 userAttribute.put("lastName", "اخوان");
 userAttribute.put("age", 35);
 userAttribute.put("gender", "مرد");
-
 AdpPushClient.get().setUserAttributes(userAttribute);
 ```
 
@@ -40,21 +38,21 @@ AdpPushClient.get().setUserAttributes(userAttribute);
 
 <br>
 
-> `نکته` : در صورتی که از ویژگی  (**phone** (Attribute استفاده کنید، می‌توانید با smart API چابک اقدام به ارسال  پیامک کنید. فقط دقت داشته باشید که شماره همراه کاربر با کد کشور او شروع شود؛ به عنوان مثال ***۹۸۹۱۲۰۴۹۸.
+> `نکته` : در صورتی که از ویژگی  (**phone** (Attribute استفاده کنید، می‌توانید با smart API چابک اقدام به ارسال  پیامک کنید. فقط دقت داشته باشید که شماره همراه کاربر با کد کشور او شروع شود؛ به عنوان مثال **۹۸۹۱۲۰۴۹۸**.
 
 <br>
 
->`نکته:` در صورتی که از نسخه ۲.۱۶.۰ یا پایین‌‌تر چابک استفاده می‌کنید، باید متد زیر را به کار ببرید.
+>`نکته:` در صورتی که از نسخه ۲.۱۶.۰ یا پایین‌‌تر کتابخانه چابک استفاده می‌کنید، باید متد زیر را به کار ببرید.
 
 ```java
-HashMap<String, Object> userInfo = new HashMap<>();
+HashMap<String, Object> userAttribute = new HashMap<>();
+userAttribute.put("firstName", "محمدرضا");
+userAttribute.put("lastName", "اخوان");
+userAttribute.put("age", 35);
+userAttribute.put("married", true);
+userAttribute.put("gender", "مرد");
 
-userInfo.put("firstName", "محمدرضا");
-userInfo.put("lastName", "اخوان");
-userInfo.put("age", 35);
-userInfo.put("gender", "مرد");
-
-AdpPushClient.get().setUserInfo(userInfo);
+AdpPushClient.get().setUserAttribute(userAttribute);
 ```
 
 > `نکته` : دقت داشته باشید  **type** مقداری که به `value` در متد `setUserAttributes` داده‌اید، را نمی‌توانید تغییر دهید . به این معنی که اگر `boolean` ذخیره کرده‌اید، دیگر **نمی‌توانید** عدد یا `string` دهید یا برعکس. به مثال زیر توجه کنید. 
@@ -63,31 +61,108 @@ AdpPushClient.get().setUserInfo(userInfo);
 
 
 ```java
-HashMap<String, Object> userInfo = new HashMap<>();
-
+HashMap<String, Object> userAttribute = new HashMap<>();
 userAttribute.put("age", "نوزده");
-
 AdpPushClient.get().setUserAttributes(userAttribute);
 ```
 
 دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
 
 ```java
-HashMap<String, Object> userInfo = new HashMap<>();
-
+HashMap<String, Object> userAttribute = new HashMap<>();
 userAttribute.put("age", 19);
-
 AdpPushClient.get().setUserAttributes(userAttribute);
+```
+<h4>ارسال داده‌های سفارشی کاربران</h4>
+
+در صورتی که از **نسخه ۳.۱.۰  یا بالاتر کتابخانه چابک** استفاده می‌کنید، باید برای ارسال اطلاعات کاربران متد زیر را فراخوانی کنید.
+
+```java
+Bundle userAttribute = new Bundle();
+userAttribute.putString("firstName", "حمیدرضا");
+userAttribute.putString("lastName", "اخوان");
+userAttribute.putInt("age", 35);
+userAttribute.putBoolean("married", true);
+userAttribute.putParcelable("birthday", new Datetime());
+userAttribute.putStringArray("children", new String[]{"مینا", "سارا"});
+userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movies_02", "movies_03", "movies_04"});
+AdpPushClient.get().setuserAttribute(userAttribute);
+```
+
+>`نکته:` در صورتی که از نسخه ۳.۱.۰ یا بالاتر کتابخانه چابک استفاده می‌کنید، باید متد زیر را به کار ببرید.
+
+```java
+HashMap<String, Object> userAttribute = new HashMap<>();
+userAttribute.put("firstName", "حمیدرضا");
+userAttribute.put("lastName", "اخوان");
+userAttribute.put("age", 35);
+userAttribute.put("married", true);
+AdpPushClient.get().setuserAttribute(userAttribute);
+```
+
+<h4>ارسال مقادیر آرایه‌ای و تاریخ در داده‌های سفارشی کاربر</h4>
+
+در صورت استفاده از **نسخه ۳.۱.۰ یا بالاتر کتابخانه چابک**، باید متد زیر را فراخوانی کنید.
+
+```java
+Bundle userAttribute = new Bundle();
+userAttribute.putBoolean("married", true);
+userAttribute.putInt("age", 35);
+userAttribute.putParcelable("birthday", new Datetime());
+userAttribute.putStringArray("favorite_movies", new String[]{"movies_01", "movies_02", "movies_03", "movies_04"});
+AdpPushClient.get().setUserAttribute(userAttribute);
+```
+
+>`نکته:`
+از کلاس`Datetime` و `putStringArray‍ `تنها در نسخه **۳.۱.۰ یا بالاتر کتابخانه چابک** استفاده می‌شود.
+
+<br>
+
+<h4>افزودن به مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
+
+برای اضافه کردن اطلاعات آرایه‌ای در داده‌های سفارشی کاربران کافیست متد زیر را فراخوانی نمایید:
+
+```java
+AdpPushClient.get().addToUserAttributeArray("favorite_movies", "movies_05");
+```
+کاربران وقتی به محصولی علاقه نشان می‌دهند، آن را به لیست علاقه‌مندی خود اضافه می‌کنند که برای افزودن محصول، باید شبه کد زیر را به متد اصلی اضافه ‌کنید.
+
+```java
+AdpPushClient.get().addToUserAttributeArray("action_movie", "movies_02");
+```
+
+<h4>حذف از مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
+
+متد زیر **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
+
+```java
+AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "movies_02");
+```
+طبق مثال بالا برای حذف کردن محصول از لیست علاقه‌مندی کاربران باید از قطعه کد بالا استفاده نمایید.
+
+<br>
+
+<h4> حذف داده‌های سفارشی کاربران</h4>
+
+برای حذف اطلاعات کاربران (attribute)، متد زیر را فراخوانی کنید.
+
+```java
+AdpPushClient.get().unsetUserAttribute("firstName");
+AdpPushClient.get().unsetUserAttribute("age");
 ```
 
 <br>
 
 #### دریافت اطلاعات کاربر
 
-برای دریافت اطلاعات کاربر متد زیر را فراخوانی کنید:
+برای دریافت اطلاعات کاربر باید متد زیر را فراخوانی کنید:
 
 ```java
-AdpPushClient.get().getUserAttributes(userAttribute);
+HashMap<String, Object> attributes = AdpPushClient.get().getUserAttributes();
+Boolean married = (Boolean) attributes.get("married");
+String gender = (String) attributes.get("gender");
+String lastName = (String) attributes.get("lastName");
+ArrayList<String> children = (ArrayList<String>) attributes.get("favorite_movies");
 ```
 
 <br>
@@ -103,28 +178,24 @@ AdpPushClient.get().incrementUserAttribute("visit_comedy_shows", 5);
  همچنین این متد از **آرایه‌ای** از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. به نمونه زیر دقت کنید: 
 
 ```java
-ArrayList<String> attributes = new ArrayList<>();
+ArrayList<String> userAttribute = new ArrayList<>();
+userAttribute.add("comedy_movie");
+userAttribute.add("action_movie");
+userAttribute.add("view_movie_detail");
 
-attributes.add("comedy_movie");
-attributes.add("action_movie");
-attributes.add("view_movie_detail");
-
-AdpPushClient.get()
-                .incrementUserAttribute(attributes);
+AdpPushClient.get().incrementUserAttribute(userAttribute);
 ```
 کد بالا به هر کدام از attributeها **یک عدد** اضافه می‌کند.
 
 برای اضافه کردن **تعداد دلخواه** می‌توانید از کد زیر استفاده کنید:
 
 ```java
-HashMap<String, Double> attributes = new HashMap<>();
+HashMap<String, Double> userAttribute = new HashMap<>();
+userAttribute.put("comedy_movie", 5d);
+userAttribute.put("action_movie", 2d);
+userAttribute.put("view_movie_detail", 1d);
                 
-attributes.put("comedy_movie", 5d);
-attributes.put("action_movie", 2d);
-attributes.put("view_movie_detail", 1d);
-                
-AdpPushClient.get()
-                .incrementUserAttribute(attributes);
+AdpPushClient.get().incrementUserAttribute(userAttribute);
 ```
 
 <br><br>
@@ -141,7 +212,6 @@ AdpPushClient.get()
 ```java
 //Add a tag to current user.
 AdpPushClient.get().addTag("TAG_NAME", new Callback() {...});
-
 //Add array of tags to current user.
 AdpPushClient.get().addTag(new String[]{"TAG_NAME_1", "TAG_NAME_2"}, new Callback() {...});
 ```
@@ -153,7 +223,6 @@ AdpPushClient.get().addTag("Premium_User", new Callback() {
 	public void onSuccess(Object value) {  
 		Log.d(TAG, "Successfully added tag to current user devices");  
 	}  
-  
 	@Override  
 	public void onFailure(Throwable value) {  
 		Log.d(TAG, "Couldn't add tag to current user devices");  

@@ -334,7 +334,7 @@ For tracking third-party stores that support the referrer, **add** the following
 For tracking third-party stores that don't support the referrer, you can **use Chabok's tracker ID to figure out the install source**. To do that first you have to create a tracker then put the ID in your apk file.
 
 ```java
-AdpPushClient.get().setDefaultTracker("YOUR_TRACKER_ID");
+AdpPushClient.setDefaultTracker("YOUR_TRACKER_ID");
 ```
 
 > `Note:` TrackerId is the six character id that is in your tracker URL. For example in `https://sand.chabok.io/JY@4sc` the trackerId is `JY@4sc`. You can get this Id from your panel>tracker>details as shown in the following picture:

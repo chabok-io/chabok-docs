@@ -1,50 +1,34 @@
----
-id: sdk-setup
-title: راه‌اندازی
-layout: react-native-bridge
-permalink: react-native-bridge/sdk-setup.html
-prev: required.html
-next: tracker.html
----
+---  
+id: sdk-setup  
+title: راه‌اندازی  
+layout: cordova  
+permalink: cordova/sdk-setup.html  
+prev: required.html  
+next: tracker.html  
+---  
 
-> `نکته:` مستندات پیاده‌سازی زیر براساس **نسخه‌های ۱.۵.۰ به بالا** کتابخانه چابک نوشته شده است. در صورتی که از نسخه‌ پایین‌تری استفاده می‌کنید به [ این صفحه](/react-native-bridge/sdk-setup-old.html) مراجعه کنید.
-
-پس از طی کردن مراحل صفحه [پیش‌نیازها](/react-native-bridge/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه). در انتها، [مقداردهی و راه‌اندازی](/react-native-bridge/sdk-setup.html#۲--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/react-native-bridge/sdk-setup.html#۳--ثبت-کاربر-register) را حتما پشت سر بگذارید.
+پس از طی کردن مراحل صفحه [پیش‌نیازها](/cordova/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/cordova/sdk-setup.html#۱--نصب-کتابخانه). در انتها، [مقداردهی و راه‌اندازی](/cordova/sdk-setup.html#۲--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/cordova/sdk-setup.html#۳--ثبت-کاربر-register) را حتما پشت سر بگذارید.
 
 برای انجام موفق این کارها باید تمام مراحل زیر را به ترتیب انجام دهید:
 
-[ ۱- نصب کتابخانه](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه)
+[ ۱- نصب کتابخانه](/cordova/sdk-setup.html#۱--نصب-کتابخانه)
 
-[۲- مقداردهی اولیه (Initialize)](/react-native-bridge/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
+[۲- مقداردهی اولیه (Initialize)](/cordova/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
 
-[۳- ثبت کاربر (Register)](/react-native-bridge/sdk-setup.html#۳--ثبت-کاربر)
+[۳- ثبت کاربر](/cordova/sdk-setup.html#۳--ثبت-کاربر)
 
 <Br>
 
 ### ۱- نصب کتابخانه 
 
-#### ۱-۱- نصب کتابخانه جاوااسکریپ
-
-برای نصب از طریق `npm`:
+برای نصب از طریق `cordova-cli` :
 
 ```bash
-npm install react-native-chabok --save
+cordova plugin add com.chabokpush.cordova
 ```
- یا `yarn`:
+>`نکته:` دقت داشته باشید که [اندروید](/cordova/sdk-setup.html#نصب-کتابخانه-اندروید) و [آی‌اواس](/cordova/sdk-setup.html#نصب-کتابخانه-آیاواس) نیاز به نصب جداگانه دارند که در ادامه به هر دو پرداخته می‌شود:
 
-```bash
-yarn add react-native-chabok
-```
-بعد از اتمام نصب، دستور زیر را اجرا کنید تا ماژول به پروژه شما **لینک** شود:
-
-```bash
-react-native link react-native-chabok
-```
-
->`نکته:` دقت داشته باشید که [اندروید](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه-اندروید) و [آی‌اواس](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه-آی‌او‌اس) نیاز به نصب جداگانه دارند که در ادامه به هر دو پرداخته می‌شود:
-
-
-####  ۱-۲ نصب کتابخانه اندروید
+#### ۱.۱- نصب کتابخانه اندروید 
 
 برای دریافت کتابخانه چابک دستورات زیر را به فایل `build.gradle` اصلی پروژه اضافه کنید:
 
@@ -65,48 +49,24 @@ buildscript {
 }
 ```
 
-دستور زیر را در انتهای فایل `build.gradle` ماژول اپلیکیشن خود اضافه کنید:
+#### ۱.۲- نصب کتابخانه آی‌او‌اس 
 
-```javascript  
-apply plugin: 'io.chabok.plugin.chabok-services'
-apply plugin: 'com.google.gms.google-services'
-```
->`نکته:`
- این فایل عموما در مسیر زیر وجود دارد:
-**app/build.gradle**
-
-####  ۱-۳ نصب کتابخانه آی‌او‌اس
-
-کتابخانه چابک از طریق CocoaPods در دسترس است، برای نصب خط زیر را به `Podfile` خود اضافه کنید:
-
-
-```bash
-target 'YourProject' do
-  use_frameworks!
-
-  pod 'ChabokPush', '~> 2.1.0'
-  
-end
-```
-
-سپس با روش زیر آن را نصب کنید:
-
-```bash
-$ pod install
-```
-پس از اجرای دستورات بالا اگر با خطایی رو به رو شدید، دستور زیر را وارد کنید، سپس `pod install` را دوباره اجرا کنید.
-
-```bash
-$ pod update
-```
-حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کردید، نصب کتابخانه آی‌او‌اس موفقیت آمیز بوده است.
-
-
-<Br>
+>`نکته:` نصب کتابخانه آی‌او‌اس به صورت اتوماتیک انجام می‌شود و نیاز به نصب جداگانه‌ای ندارد.
 
 ### ۲- مقدار‌دهی اولیه (Initialize)
 
-####  ۲.۱- مقدار‌دهی اولیه اندروید
+####   ۲.۱- مقداردهی اولیه جاوااسکریپ 
+
+ مقداردهی اولیه در جاوا اسکریپ به صورت زیر انجام می‌شود.
+ 
+ ```javascript
+ chabok = new ChabokPush();
+ ```
+
+
+####   ۲.۲- مقداردهی اولیه اندروید 
+
+ مقداردهی اولیه اندروید به صورت زیر انجام می‌شود.
 
 چابک برای راه اندازی نیاز به **مقداردهی اولیه** دارد.
 <br>
@@ -114,7 +74,6 @@ $ pod update
 <p class="text-center">
 <img  src="http://uupload.ir/files/9tlr_sandbox-android-chabok-doc.gif">
 </p>
-
 >`نکته:`
 برای غیرفعال کردن قابلیت **پوش نوتیفیکیشن**(pushNotification)، کافیست مقدار پیش ‌فرض آن را در فایل دانلود شده تغییر بدید.
 
@@ -128,65 +87,16 @@ $ pod update
 ۳. در مرحله آخر نیاز است کد‌های زیر را در کلاس اپلیکیشن خود فراخوانی کنید.
 
 ```java
-import android.app.Application;
-
-//React-Native
-import com.facebook.react.ReactPackage;
-import com.facebook.react.ReactNativeHost;
-import com.facebook.react.ReactApplication;
-import com.adpdigital.push.rn.ChabokReactPackage;
-import com.facebook.react.shell.MainReactPackage;
-
-//Chabok
-import com.adpdigital.push.AdpPushClient;
-import com.adpdigital.push.ChabokNotification;
-import com.adpdigital.push.NotificationHandler;
-import com.adpdigital.push.ChabokNotificationAction;
-
-//Java
-import java.util.List;
-import java.util.Arrays;
-
-public class MainApplication extends Application implements ReactApplication {
-
-  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
-    @Override
-    public boolean getUseDeveloperSupport() {
-      return BuildConfig.DEBUG;
+public class MyAppClass extends Application {  
+      @Override  
+      public void onCreate() {
+          super.onCreate();  
+          AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
+          AdpPushClient.setLogLevel(LogLevel.VERBOSE); // اختیاری
+          AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
     }
-
-    @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-              new MainReactPackage(),
-              new ChabokReactPackage()
-      );
-    }
-
-    @Override
-    protected String getJSMainModuleName() {
-      return "index";
-    }
-  };
-
-  @Override
-  public void onCreate() {
-      AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
-  }
-
-  @Override
-  public void onTerminate() {
-    AdpPushClient.get().dismiss();
-
-    super.onTerminate();
-  }
-
-  @Override
-  public ReactNativeHost getReactNativeHost() {
-    return mReactNativeHost;
-  }
 }
-```
+``` 
 <br>
 -**configureEnvironment**: متد `configureEnvironment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شده. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.  
 
@@ -197,9 +107,26 @@ public class MainApplication extends Application implements ReactApplication {
 
 
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. برای فعال کردن مقدار قابلیت آنی (realtime)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید. این قابلیت در[ پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) استفاده می‌شود.
- 
 
-####  ۲.۲- مقدار‌دهی اولیه آی‌او‌اس
+اگر از کامپوننت‌های اندروید در <a href="https://developer.android.com/guide/components/processes-and-threads#Processes">پراسس دیگری</a> استفاده می‌کنید. حتما متد `setApplicationContext` را قبل از متد `configureEnvironment` فراخوانی کنید. در نهایت کلاس اپلیکیشنتان به شکل زیر خواهد بود: 
+
+```java
+public class MyAppClass extends Application {  
+      @Override  
+      public void onCreate() {
+          super.onCreate();  
+          AdpPushClient.setApplicationContext(this); // ضروری
+          AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
+          AdpPushClient.setLogLevel(LogLevel.VERBOSE); // اختیاری
+          AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
+      }
+}
+```  
+
+
+####   ۲.۳- مقداردهی اولیه آی‌او‌اس 
+
+ مقداردهی اولیه در آی‌او‌اس به صورت زیر انجام می‌شود.
 
 چابک برای راه‌اندازی نیاز به **مقداردهی اولیه** دارد.
 
@@ -231,13 +158,18 @@ public class MainApplication extends Application implements ReactApplication {
 
 - (BOOL)application:(UIApplication *)application
             didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-            
-     [PushClientManager.defaultManager configureEnvironment:Sandbox];
+    
+    [PushClientManager  resetBadge]; //Optional
+    [PushClientManager.defaultManager addDelegate:self]; //Optional
+    
+    [PushClientManager.defaultManager configureEnvironment:Sandbox];
+ 
     return YES;
 }
 ```
 {% endtab %}
 {% tab SWIFT %}
+
 ```swift
 import UIKit
 import AdpPushClient
@@ -246,6 +178,9 @@ import AdpPushClient
 class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+    PushClientManager.resetBadge() //Optional
+    PushClientManager.default()?.addDelegate(self) //Optional
     
     PushClientManager.default()?.configureEnvironment(.Sandbox)
     
@@ -258,14 +193,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 > `نکته`: متد بالا برای محیط سندباکس است. در صورتی که حساب عملیاتی دارید کافیست فقط `Sandbox` را با ‍‍`Production` عوض کنید.
 
 
+
 > `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید و پس از تایید و ساخت حساب عملیاتی فایل **Chabok.production.plist** را دنلود کنید و به جای فایل **Chabok.sandbox.plist** در روت پروژه خود قراردهید. 
 
 >`نکته` : توجه داشته باشید هنگامی که **گواهی sandbox اپل** را در پنل تستی قرار می‌دهید، فقط امکان دریافت `Push Notification` در حالت `debug` وجود خواهد داشت. اما اگر **گواهی production اپل** را در محیط عملیاتی قرار دهید، زمانی `Push Notification` را دریافت خواهید کرد که اقدام به ساخت **ipa** از پروژه خود کرده و از طریق TestFlight یا Enterprise اپلیکیشن خود را نصب کنید.
 
+جهت دسترسی به `delegate‌`های چابک باید متد `addDelegate` را همانند کد زیر فراخوانی کنید:
+
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
+[PushClientManager.defaultManager addDelegate:self];
+```
+{% endtab %}
+{% tab SWIFT %}
+```swift
+PushClientManager.default()?.addDelegate(self)
+```
+{% endtab %}
+{% endtabs %}
+
+- متد `resetBadge`:
+
+چابک به طور **پیش‌فرض** برای هر پیام در اپلیکیشنتان نشان (**Badge**) اعمال می‌کند. متد `resetBadge` برای خالی کردن و ریست Badge به کار می‌رود. شما با توجه به نیاز خود می‌توانید این متد را در جای خاصی از اپلیکیشنتان (مانند صندوق پیام‌ها) یا در حین باز شدن (launch) اپ خود فراخوانی کنید.
+
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
+[PushClientManager  resetBadge];
+```
+{% endtab %}
+{% tab SWIFT %}
+```swift
+PushClientManager.resetBadge()
+```
+{% endtab %}
+{% endtabs %}
+
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. این قابلیت در[ پیام چابک](/ios/chabok-messaging.html) و [پیام‌رسانی آنی](/ios/event-handling.html) استفاده می‌شود.
 
 <br>
- 
 
 ### ۳- ثبت کاربر
 
@@ -293,21 +260,4 @@ chabok.login("user_id");
 ```java
 chabok.logout();
 ```
-
-#### رویداد تایید ثبت کاربر
-
-رویداد `onRegister` به شما این امکان را می‌دهد که بررسی کنید آیا عملیات ثبت‌ کاربر انجام شده است یا خیر.
-
-```javascript
-const chabokEmitter = new NativeEventEmitter(NativeModules.AdpPushClient);
-
-chabokEmitter.addListener('onRegister', (status)=>{  
-    if (status.isRegister) {  
-        console.log('User registered ', status);  
-	} else {  
-        console.log('Not registered error:', error);  
-	}  
-})
-```
-
-> `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-rn) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.
+> `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-cordova) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.

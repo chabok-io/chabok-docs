@@ -15,30 +15,42 @@ next: troubleshoot.html
 
 هر **دستگاه** در پلتفرم چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
 
-```objectivec
-//Objective-C:
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 NSString *installationId = [self.manager getInstallationId];
 ```
-``` swift
-//Swift:
+{% endtab %}
+{% tab SWIFT %}
 
+``` swift
 let installationId:NSString = manager?.getInstallationId() as! NSString
 ```
+{% endtab %}
+{% endtabs %}
+
 <br><br>
 
 ### دریافت شناسه کاربر
 
 هر **کاربر** در پلتفرم چابک دارای یک شناسه منحصر به فرد می‌باشد، برای دسترسی به این شناسه می‌توانید متد زیر را فراخوانی کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 ```objectivec
-//Objective-C
 [PushClientManager defaultManager].userId;
 ```
+{% endtab %}
+{% tab SWIFT %}
+
 ```swift
-//Swift
 PushClientManager.default().userId
 ```
+{% endtab %}
+{% endtabs %}
+
 <br><br>
 
 ### مدیریت نشان‌ها (Badge)
@@ -46,9 +58,10 @@ PushClientManager.default().userId
 بسته به نوع اپلیکیشنی که دارید، بازنشانی badge معنای متفاوتی پیدا می‌کند. به عنوان مثال اگر اپلیکیشن پیام‌رسانی و چت دارید آن موقع، بازنشانی **پس از خواندن پیام** معنا دارد. در غیر این صورت معمولا بازنشانی پس از فقط باز کردن اپلیکیشن انجام می‌شود. 
 در صورت تمایل می‌توانید شماره badge اپلیکیشنتان را با متد زیر بازنشانی (reset) کنید:
 
-```objectivec
-//Objetive-C: 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 - (void)applicationDidEnterBackground:(UIApplication *)application { 
 	[PushClientManager resetBadge]; 
 } 
@@ -56,9 +69,10 @@ PushClientManager.default().userId
 	[PushClientManager resetBadge]; 
 }
 ```
-```swift
-//Swift: 
+{% endtab %}
+{% tab SWIFT %}
 
+```swift
 func applicationDidEnterBackground(_ application: UIApplication) { 
 	PushClientManager.resetBadge() 
 } 
@@ -67,6 +81,9 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 	PushClientManager.resetBadge() 
 } 
 ``` 
+{% endtab %}
+{% endtabs %}
+
 <br><br>
 
 ### ارسال موقعیت مکانی در هنگام باز شدن اپلیکیشن
@@ -77,16 +94,20 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 > داده خود را property به `locationOnLaunchWithDictionary` داده تا همراه
 > با انتشار رویداد ارسال شود.
 
-```objectivec
-//Objetive-C: 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 [self.manager.enableLocationOnLaunch = YES];
 ```
-```swift
-//Swift:
+{% endtab %}
+{% tab SWIFT %}
 
+```swift
 self.manager?.enableLocationOnLaunch = true
 ```
+{% endtab %}
+{% endtabs %}
 
 <br><br>
 
@@ -96,9 +117,10 @@ self.manager?.enableLocationOnLaunch = true
 
 برای اطلاع از وضعیت آنلاین یا آفلاین بودن، می‌توانید از متد زیر استفاده کنید:
 
-```objectivec
-//Objetive-C: 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 - (void)pushClientManagerDidChangedServerConnectionState{
 	// Called When PushClientManager Connecting State has been Changed
 }
@@ -107,9 +129,10 @@ self.manager?.enableLocationOnLaunch = true
 	// Called When PushClientManager Server Reachability has been Changed
 }
 ```
-```swift
-//Swift:
+{% endtab %}
+{% tab SWIFT %}
 
+```swift
 func pushClientManagerDidChangedServerConnectionState() {
 	// Called When PushClientManager Connecting State has been Changed
 }
@@ -118,11 +141,15 @@ func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkTyp
 	// Called When PushClientManager Server Reachability has been Changed
 }
 ```
+{% endtab %}
+{% endtabs %}
+
 برای مثال می‌توانید به نمونه کد زیر توجه کنید:
 
-```objectivec
-//Objective-C:
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 - (void)pushClientManagerDidChangedServerConnectionState{
     PushClientServerConnectionState _connectionState = self.manager.connectionState;
     switch (_connectionState) {
@@ -147,9 +174,10 @@ func pushClientManagerDidChangeServerReachiability(_ reachable: Bool, networkTyp
     };
 }
 ```
-```swift
-//Swift:
+{% endtab %}
+{% tab SWIFT %}
 
+```swift
 func pushClientManagerDidChangedServerConnectionState (){
     let connectionState = self.manager?.connectionState as! PushClientServerConnectionState
     switch connectionState {
@@ -168,6 +196,8 @@ func pushClientManagerDidChangedServerConnectionState (){
     }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 <br><br>
 
@@ -177,8 +207,10 @@ func pushClientManagerDidChangedServerConnectionState (){
 
 - ثبت کاربر: 
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 ```objectivec
-//Objective-C
 - (void)pushClientManagerDidRegisterUser:(BOOL)registration{
     NSLog(@"User sucessfully registered.");
 }
@@ -186,6 +218,9 @@ func pushClientManagerDidChangedServerConnectionState (){
     NSLog(@"User not registered because of '%@' error", error);
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
+
 ```swift
 //Swift
 func pushClientManagerDidRegisterUser(_ registration: Bool) {
@@ -196,11 +231,15 @@ func pushClientManagerDidFailRegisterUser(_ error: Error!) {
     print("User not registered because of '\(String(describing: error))' error")
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 - نصب:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 ```objectivec
-//Objective-C
 - (BOOL) application:(UIApplication *) application
                 didFinishLaunchingWithOptions:(NSDictionary *) launchOptions{
     ...
@@ -217,8 +256,10 @@ func pushClientManagerDidFailRegisterUser(_ error: Error!) {
     NSLog(@"New Install :  ----------------- %@ ---------------",notification.userInfo);
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
+
 ```swift
-//Swift
 func application(_ application: UIApplication,
                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -238,11 +279,15 @@ func application(_ application: UIApplication,
     }
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 - بازدید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 ```objectivec
-//Objective-C
 - (BOOL) application:(UIApplication *) application
                 didFinishLaunchingWithOptions:(NSDictionary *) launchOptions{
     ....
@@ -259,8 +304,10 @@ func application(_ application: UIApplication,
     NSLog(@"App launched",notification.userInfo);
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
+
 ```swift
-//Swift
 func application(_ application: UIApplication,
                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -280,15 +327,19 @@ func application(_ application: UIApplication,
     }
 }
 ``` 
+{% endtab %}
+{% endtabs %}
+
 <br><br>
 
 ### دریافت وضعیت اپلیکیشن
 
 جهت بررسی وضعیت اپلیکیشن خود در حال اجرا (**Background** یا **Foreground**) می‌توانید متد‌های زیر را فراخوانی کنید:
 
-```objectivec
-//Objective-C
+{% tabs %}
+{% tab OBJECTIVE-C %}
 
+```objectivec
 switch (UIApplication.sharedApplication.applicationState) {
 	case UIApplicationStateActive:
 		NSLog(@"App is active in foreground");
@@ -303,10 +354,10 @@ switch (UIApplication.sharedApplication.applicationState) {
 		break;
     }
 ```
+{% endtab %}
+{% tab SWIFT %}
 
 ```swift
-//Swift
-
 switch UIApplication.shared.applicationState {
 	case .active:
 		print("App is active in foreground")
@@ -316,6 +367,8 @@ switch UIApplication.shared.applicationState {
 		print("App is in background")
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 <br><br>
 
@@ -323,8 +376,10 @@ switch UIApplication.shared.applicationState {
 
 با استفاده از  `logLevel`  می‌توانید گزارش‌های چابک را در بخش `Debugger Output` مشاهده کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 ```objectivec
-//Objective-C
 [PushClientManager.defaultManager setLogLevel:ChabokLogLevelVerbose];  // enable all logging
 [PushClientManager.defaultManager setLogLevel:ChabokLogLevelDebug];    // enable more logging
 [PushClientManager.defaultManager setLogLevel:ChabokLogLevelInfo];     // the default
@@ -333,8 +388,10 @@ switch UIApplication.shared.applicationState {
 [PushClientManager.defaultManager setLogLevel:ChabokLogLevelAssert];   // disable errors as well
 [PushClientManager.defaultManager setLogLevel:ChabokLogLevelSuppress]; // disable all logging
 ```
+{% endtab %}
+{% tab SWIFT %}
+
 ```swift
-//Swift
 PushClientManager.default().logLevel = ChabokLogLevelVerbose // enable all logging
 PushClientManager.default().logLevel = ChabokLogLevelDebug // enable more logging
 PushClientManager.default().logLevel = ChabokLogLevelInfo // the default
@@ -343,16 +400,24 @@ PushClientManager.default().logLevel = ChabokLogLevelError // disable warnings a
 PushClientManager.default().logLevel = ChabokLogLevelAssert // disable errors as well
 PushClientManager.default().logLevel = ChabokLogLevelSuppress  // disable all logging
 ```
+{% endtab %}
+{% endtabs %}
 
 <br>
 
 > `نکته:`  دقت داشته باشید  **در نسخه‌های پایین ۲ کتابخانه چابک**، باید مانند زیر عمل کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
 ```objectivec
-//Objective-C
 PushClientManager.defaultManager.enableLog = YES;
 ```
+{% endtab %}
+{% tab SWIFT %}
+
 ```swift
-//Swift
 PushClientManager.default().enableLog = true
 ```
+{% endtab %}
+{% endtabs %}

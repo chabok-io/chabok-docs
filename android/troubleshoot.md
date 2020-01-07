@@ -6,7 +6,7 @@ permalink: android/troubleshoot.html
 prev: features.html
 next: release-note.html
 ---
-> `نکته:`  عیب‌یابی مشکلات متداول زیر بر اساس نسخه‌های ۳ به بالا کتابخانه چابک نوشته شده است. در صورتی که از نسخه پایین‌تری استفاده می‌کنید به<a href="https://dev.doc.chabok.io/android/troubleshoot-old.html" title="این یک لینک است"> این صفحه </a> مراجعه کنید.
+> `نکته:`  عیب‌یابی مشکلات متداول زیر بر اساس نسخه‌های ۳ به بالا کتابخانه چابک نوشته شده است. در صورتی که از نسخه پایین‌تری استفاده می‌کنید به [این صفحه](/android/troubleshoot-old.html) مراجعه کنید.
 
 
 در این صفحه به عیب‌یابی مشکلات متداول توسعه‌دهندگان در پیاده‌سازی چابک و ارائه راه‌‌حل‌های مربوط به آن می‌پردازیم. برخی از این مشکلات عبارتند از [کرش کردن اپلیکیشن](/android/troubleshoot.html#اپلیکیشنم-کرش-میکند)، [عدم دریافت پوش‌نوتیفیکیشن](/android/troubleshoot.html#پوش-نمیگیرم)، [نمایش نوتیفیکیشن](/android/troubleshoot.html#اعلانها-نمایش-داده-نمیشوند) و [نمایش تصویر نوتیفیکیشن](#تصویر-نوتیفیکیشن-نمایش-داده-نمیشود) است.
@@ -16,14 +16,14 @@ next: release-note.html
 ## اپلیکیشنم کرش می‌کند.
 ---
 
-#### چابک را حتما intialize کنید.
+#### چابک را حتما initialize کنید.
 
- اگر چابک را intialize نکنید، ممکن است با یکی از خطاهای زیر مواجه شوید:
+ اگر چابک را initialize نکنید، ممکن است با یکی از خطاهای زیر مواجه شوید:
  
-۱. در صورتی که با ارور **AdpPushClient not initialized, Make sure to call AdpPushClient.configureEnvironment(Environment) in onCreate() method of your Application class** مواجه شدید، اطمینان یابید چابک را intialize کرده باشید. معمولا این ارور به دلیل صدا نزدن متد `configureEnvironment` اتفاق می‌افتد و برای رفع مشکل، تنها باید [متد](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) را بسته به محیط صدا بزنید.
+۱. در صورتی که با خطای **AdpPushClient not initialized, Make sure to call AdpPushClient.configureEnvironment(Environment) in onCreate() method of your Application class** مواجه شدید، اطمینان یابید چابک را initialize کرده باشید. معمولا این خطا به دلیل صدا نزدن متد `configureEnvironment` اتفاق می‌افتد و برای رفع مشکل، تنها باید [متد](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) را بسته به محیط صدا بزنید.
 
 <br>
-۲. اگر با یکی از ارورهای **AdpPushClient not initialized, Make sure to configure correct environment** و یا **AdpPushClient not initialized, Make sure to put the json files in root of your project** مواجه شدید، یعنی فایل **Chabok.sandbox.json** یا **Chabok.production.json** در جای مناسبی قرار نگرفته و یا اگر در جای درستی هست، محتویاتش کامل نیست.
+۲. اگر با یکی از خطاهای **AdpPushClient not initialized, Make sure to configure correct environment** و یا **AdpPushClient not initialized, Make sure to put the json files in root of your project** مواجه شدید، یعنی فایل **Chabok.sandbox.json** یا **Chabok.production.json** در جای مناسبی قرار نگرفته و یا اگر در جای درستی هست، محتویاتش کامل نیست.
 برای اطلاعات بیشتر می‌توانید مستندات [راه‌اندازی](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) را مطالعه کنید.
 
 <br>
@@ -31,9 +31,23 @@ next: release-note.html
 #### نسخه‌ سرویس‌های گوگل پلی را بررسی کنید
 ---
 
-در صورتی با ارورهای **;java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/iid/InstanceID** و یا **Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.android.gms.iid.InstanceID** مواجه شدید، دقت کنید که نسخه‌ سرویس‌های گوگل پلی شما با هم، همخوانی و تطابق داشته باشند.
+در صورتی که با خطاهای **;java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/iid/InstanceID** و یا **Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.android.gms.iid.InstanceID** مواجه شدید، دقت کنید که نسخه‌ سرویس‌های گوگل پلی شما با هم، همخوانی و تطابق داشته باشند.
 
 <Br>
+
+
+<h3>
+کرش کردن اپلیکیشن در هنگام دریافت پوش نوتیفیکیشن
+</h3>
+
+اگر هنگام دریافت پوش، اپلیکیشن کرش کرد و یکی از دو خطای **Unable to instantiate service com.adpdigital.push.ChabokFirebaseMessaging**، یا **java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService** را در **logcat** دریافت کردید:
+
+برای رفع خطاهای بالا باید قطعه کد زیر را در فایل `build.gradle` ماژول اصلی اپلیکیشن اضافه کنید:
+
+```java
+implementation 'com.google.firebase:firebase-messaging:17.1.0'
+```
+
 
 ## یک پوش را چند بار می‌گیرم
 ---
@@ -184,19 +198,6 @@ next: release-note.html
 ##### ۶- وجود کتابخانه‌های دیگر در کنار چابک
 
 در صورتی که شما از سرویس‌های دیگری هم استفاده می‌کنید و کتابخانه‌های آن‌ها را نصب کرده‌اید امکان عدم نمایش اعلان برای شما وجود خواهد داشت. به عنوان مثال اگر کتابخانه **پوشه** را علاوه بر چابک روی اپ خود داشته باشید، زمانی که اپ شما بسته است، پوش‌نوتیفیکیشن دریافت می‌شود اما اعلان آن در دستگاه کاربر **نمایش داده نمی‌شود**.
-
-##### ۷- خطای firebase
-
-در صورتی که برای نمایش نوتیفیکیشن با خطای زیر در logcat مواجه شدید:
-
-```bash
-java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService
-``` 
-باید در `gradle` کد زیر را اضافه کنید:
-
-```javascript
-implementation "com.google.firebase:firebase-messaging:18.0.+"
-```
 
 <Br>
  

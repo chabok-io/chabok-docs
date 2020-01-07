@@ -14,7 +14,6 @@ next: tracker.html
  برای انجام این مراحل ابتدا نیاز است کتابخانه چابک را <a href="https://doc.chabok.io/android/sdk-setup.html#%DB%B1--%D9%86%D8%B5%D8%A8-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87">نصب</a> کنید. سپس [مقداردهی و راه‌اندازی](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و در آخر برای شناخت کاربر توسط چابک، مرحله[ ثبت کاربر](/android/sdk-setup.html#۳--ثبت-کاربر)   را حتما پشت سر بگذارید. 
   
   
-  
 [ ۱- نصب کتابخانه](/android/sdk-setup.html#۱--نصب-کتابخانه)  
   
 [۲- مقداردهی اولیه (Initialize)](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize)  
@@ -74,7 +73,7 @@ dependencies {
 درصورتی که در برنامه خود نیاز به استفاده از موقعیت مکانی کاربر دارید، لازم است در ابتدا کتابخانه `chabok-lib` را **حذف** و کتابخانه `chabok-lib-geo` را **جایگزین** کنید.    با توجه به این که در این کتابخانه از سرویس **فیوز گوگل** استفاده شده است، باید  تغییرات زیر نیز در قسمت ‌‌‌`dependencies` اعمال شود:
 ```javascript
 dependencies {
-   implementation 'com.adpdigital.push:chabok-lib-geo:3.1.1'
+    implementation 'com.adpdigital.push:chabok-lib-geo:3.1.1'
    
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
@@ -98,11 +97,16 @@ dependencies {
  
  >`نکته:` فایل ذکر شده را پس از دانلود، در پوشه ماژول اصلی برنامه قرار دهید.
  
+ > `نکته`: حداقلل نسخه برای استفاده از سرویس فایربیس در نصب کتابخانه چابک **17.1.0** است.
+ 
+ 
  - اگر از <a href="https://developer.android.com/jetpack/androidx/">AndroidX</a> استفاده می‌کنید قطعه کد زیر را در فایل `gradle.properties` پروژه خود اضافه کنید:
  ```javascript
 android.useAndroidX=true
 android.enableJetifier=true
 ```
+
+>`نکته:`با راه‌اندازی کتابخانه چابک قادر به دریافت پوش نوتیفیکیشن خواهید بود و نیازی به پیاده‌سازی سرویس فایبربیس برای دریافت پوش نوتیفیکیشن نیست.
 
  - دقت داشته باشید که همیشه از جدیدترین نسخه **ShortcutBadger** استفاده کنید. برای اطلاع از آخرین نسخه می‌توانید به [این لینک](https://github.com/leolin310148/ShortcutBadger) مراجعه نمایید. هم‌چنین با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](/android/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید.     
 - به علت محدودیت‌‌های **اندروید ۸ به بالا** دقت کنید حتما مطابق جدول زیر تنظیمات نسخه‌ها را به درستی انجام دهید. در صورت رعایت نکردن نسخه‌های ذکر شده در جدول زیر هنگامی که اپلیکیشنتان **kill** شده باشد به هنگام دریافت نوتیفیکیشن با خطا مواجه خواهد شد. 
@@ -175,7 +179,7 @@ android.enableJetifier=true
 
 <br>
 
-۳. در مرحله آخر نیاز است کد‌های زیر را فراخوانی کنید.
+۳. در مرحله آخر نیاز است کد‌های زیر را در کلاس اپلیکیشن خود فراخوانی کنید.
 
 ```java
 public class MyAppClass extends Application {  
@@ -183,8 +187,8 @@ public class MyAppClass extends Application {
       public void onCreate() {
           super.onCreate();  
           AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
-          AdpPushClient.setLogLevel(LogLevel.‍VERBOSE); // اختیاری
-          AdpPushClient.setDefaultTracker(“Ym3gy7”); // اختیاری
+          AdpPushClient.setLogLevel(LogLevel.VERBOSE); // اختیاری
+          AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
     }
 }
 ``` 
@@ -194,20 +198,34 @@ public class MyAppClass extends Application {
 >`نکته:`متدی که در بالا قرار دادیم برای راه‌اندازی محیط سندباکس است. در صورتی که **حساب عملیاتی** دارید کافیست `Environment.SANDBOX` را با `Environment.PRODUCTION` عوض کنید.
 <br>
 
-> `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید و پس از تایید و ساخت حساب عملیاتی فایل **Chabok.production.json** را دنلود کنید و به جای فایل **Chabok.sandbox.json** در پوشه ماژول اصلی پروژه خود قراردهید. 
+> `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید و پس از تایید و ساخت حساب عملیاتی فایل **Chabok.production.json** را دانلود کنید و به جای فایل **Chabok.sandbox.json** در پوشه ماژول اصلی پروژه خود قراردهید. 
 
 
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. برای فعال کردن مقدار قابلیت آنی (realtime)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید. این قابلیت در[ پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) استفاده می‌شود.
 
-   
+اگر از کامپوننت‌های اندروید در <a href="https://developer.android.com/guide/components/processes-and-threads#Processes">پراسس دیگری</a> استفاده می‌کنید. حتما متد `setApplicationContext` را قبل از متد `configureEnvironment` فراخوانی کنید. در نهایت کلاس اپلیکیشنتان به شکل زیر خواهد بود: 
+
+```java
+public class MyAppClass extends Application {  
+      @Override  
+      public void onCreate() {
+          super.onCreate();  
+          AdpPushClient.setApplicationContext(this); // ضروری
+          AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
+          AdpPushClient.setLogLevel(LogLevel.VERBOSE); // اختیاری
+          AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
+      }
+}
+```  
+
 ### ۳- ثبت کاربر   
 یکی از مزیت‌های چابک نسبت به درگاه‌های ارسال پوش‌نوتیفیکیشن، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید.       
 این شناسه می‌تواند برای **دستگاه‌های متعدد یک کاربر** استفاده شود. شناسه کاربر می‌تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. **شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی **شناسه دیتابیس‌تان** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود.      
  
 #### ورود به حساب کاربری (login)
+متد لاگین تنها زمانی فراخوانی شود که کاربر در اپلیکیشن لاگین یا ثبت‌نام می‌کند. نیازی به فراخوانی این متد در هر بار اجرای اپلیکیشن نیست.
 
 متد ثبت کاربر با چهار امضای متفاوت وجود دارد:
-
 
 - امضای اول:
 
@@ -233,7 +251,7 @@ public void login(String userId)
 public void login(String userId, HashMap<String, Object> attributes)
 ```
    
-  >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب](http://chabokpush.com) برنامه، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر، پیام چابک و پوش ‌نوتیفیکیشن بفرستید.
+  >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب برنامه](/android/custom-data.html#ثبت-اطلاعات-کاربر)، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر، پیام چابک و پوش ‌نوتیفیکیشن بفرستید.
 
 - امضای سوم:
 <p>

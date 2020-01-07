@@ -1,0 +1,19 @@
+- title: شروع سریع cordova
+  items:
+    - id: required
+      title: پیش‌نیازها
+    
+    - id: sdk-setup
+      title: راه‌اندازی
+    
+    - id: tracker
+      title: ترکر نصب
+
+    - id: custom-data
+      title: داده‌های سفارشی کاربر
+
+    - id: behavior-tracking
+      title: رصد رفتار درون‌برنامه‌ای
+
+    - id: release-note
+      title: لیست تغییرات

@@ -24,7 +24,7 @@ next: deeplink.html
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onNewToken(String token) {
-        ChabokFirebaseMessaging.refreshToken(token);
+        ChabokFirebaseMessaging.refreshToken(token, getApplicationContext());
     }
 
     @Override
@@ -141,6 +141,9 @@ public boolean buildNotification(ChabokNotification chabokNotification, Notifica
 	return super.buildNotification(chabokNotification, builder);
 }
 ```
+
+>`نکته`:اگر از نسخه‌ پایین‌تر از ۲.۱۸.۰ کتابخانه چابک استفاده می‌کنید نیاز هست قطعه کد بالا را فراخوانی کنید. در غیر این‌صورت نیازی به فراخوانی این قطعه کد نیست.
+
 
 <Br>
 

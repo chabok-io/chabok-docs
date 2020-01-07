@@ -33,6 +33,12 @@ defaults:
     layout: windows
     sectionid: windows
 - scope:
+    path: cordova
+    type: cordova
+  values:
+    layout: cordova
+    sectionid: cordova
+- scope:
     path: javascript
     type: javascript
   values:

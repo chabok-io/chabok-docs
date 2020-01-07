@@ -31,6 +31,7 @@ next: user-management.html
 
 برای اینکه آی‌او‌اس لینک شما را بشناسد باید شکل آن را مانند url کنید (به این صورت scheme ://resource). به عنوان مثال APP_NAME://PAGE_NAME را وارد می‌کنیم. 
 در صورتی هم که می‌خواهید کاربر را به اخل یک اپلیکیشن هدایت کنید؛ باید متد زیر را در **AppDelegate** پیاده‌سازی کنید.
+
 ```swift
 func application(_ app: UIApplication, open url: URL,
                  options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -96,9 +97,9 @@ curl -X POST \
 
 آمار دیپ لینک از طریق متدهای `onCreate` و یا `onNewIntent` انتقال داده می‌شود. زمانی که اپ را باز کنید و یکی از این متدها فراخوانی شوند، می‌توانید اطلاعات دیپ لینک را دریافت کنید. 
 
-
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 -(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
                         options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
                         
@@ -107,8 +108,9 @@ curl -X POST \
     return YES;
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 func application(_ app: UIApplication, 
                 open url: URL, 
                 options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -117,12 +119,17 @@ func application(_ app: UIApplication,
     return true
 }
 ```
+{% endtab %}
+{% endtabs %}
+
 > `نکته:` دقت داشته باشید **در نسخه‌های پایین ۲ کتابخانه چابک**، باید
 پس از اینکه اطلاعات دیپ لینک را در اپلیکیشن خود دریافت کردید، متد  `appWillOpenUrl` را فراخوانی کنید. این متد اطلاعات را **از اپلیکیشن به سرور چابک** ارسال می‌کند تا بررسی کند که اتریبیوشن جدید رخ داده است یا خیر.
 به نمونه زیر دقت کنید:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
+
 -(BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
                         options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
                         
@@ -131,8 +138,9 @@ func application(_ app: UIApplication,
     return YES;
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 func application(_ app: UIApplication, 
                 open url: URL, 
                 options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -141,6 +149,8 @@ func application(_ app: UIApplication,
     return true
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 <br>
 
@@ -150,8 +160,9 @@ func application(_ app: UIApplication,
 
 زمانی که کاربر با Universal Link وارد وبسایت شما شود، متد زیر فرخوانی می‌شود:
 
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 -(BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
                 restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
                         
@@ -162,8 +173,9 @@ func application(_ app: UIApplication,
     return YES;
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 func application(_ application: UIApplication, 
                 continue userActivity: NSUserActivity, 
                 restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
@@ -173,12 +185,14 @@ func application(_ application: UIApplication,
     return true
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 > `نکته:` دقت داشته باشید **در نسخه‌های پایین ۲ کتابخانه چابک**، باید مانند زیر عمل کنید:
 
-
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 -(BOOL) application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity
                 restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
                         
@@ -189,8 +203,9 @@ func application(_ application: UIApplication,
     return YES;
 }
 ```
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 func application(_ application: UIApplication, 
                 continue userActivity: NSUserActivity, 
                 restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
@@ -200,6 +215,8 @@ func application(_ application: UIApplication,
     return true
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 <br>
 
@@ -207,9 +224,9 @@ func application(_ application: UIApplication,
 
 این حالت زمانی اتفاق می‌افتد که شما از پارامترها `deep_link` استفاده کرده باشید، اما کاربر در زمان کلیک اپلیکیشن را هنوز روی گوشی خود نداشته باشد. در این حالت می‌توانید یک delegate کالبک را بگذارید تا قبل از باز شدن دیپ لینک، تصمیم بگیرید چابک آن را باز کند یا خودتان مدیریت کنید.
 
-
+{% tabs %}
+{% tab OBJECTIVE-C %}
 ```objectivec
-//Objective-C
 - (BOOL)chabokDeeplinkResponse:(NSURL *)deeplink {
     // deeplink object contains information about deferred deep link content
 
@@ -219,9 +236,9 @@ func application(_ application: UIApplication,
     // return NO;
 }
 ```
-
+{% endtab %}
+{% tab SWIFT %}
 ```swift
-//Swift
 func chabokDeeplinkResponse(_ deeplink: URL?) -> Bool {
     // deeplink object contains information about deferred deep link content
 
@@ -231,4 +248,6 @@ func chabokDeeplinkResponse(_ deeplink: URL?) -> Bool {
     // return false;
 }
 ```
+{% endtab %}
+{% endtabs %}
 این کالبک پس از دریافت دیپ لینک فراخوانی می‌شود. مقدار `true` یا `false` بودن تعیین می‌کند که چابک آن را باز کند یا خیر.
