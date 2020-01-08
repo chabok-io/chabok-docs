@@ -10,6 +10,19 @@ next: introducing.html
 
 <Br>
 
+
+## [نسخه ۲.۰.۰ - ۱۳۹۸/۱۰/۱۸](https://github.com/chabok-io/chabok-client-rn/releases/tag/v2.0.0)
+
+### تغییرات
+
+- به روز رسانی کتابخانه اندروید به [نسخه ۳.۱.۲](/android/release-note.html#نسخه-۳.۱.۲---۱۳۹۸۰۴۰۲)
+- به روز رسانی کتابخانه آی‌او‌اس به [نسخه ۲.۱.۰](/ios/release-note.html#نسخه-۲.۱.۰---۱۳۹۸۰۴۰۴)
+- پشتیبانی از دریافت **Referral** با استفاده از فراخوانی متد `setReferralCallbackListener`.
+- پشتیبانی از افزودن به مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `addToUserAttributeArray(attributeKey, attributeValue)`.
+- پشتیبانی از حذف مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `removeFromUserAttributeArray(attributeKey, attributeValue)`.
+- پشتیبانی از حذف داده‌های سفارشی کاربر با فراخوانی متد `unsetUserAttribute(attributeKey)`.
+- پشتیبانی از تاریخ و ساعت برای مقادیری که در رویدادها و داده‌های سفارشی کاربر ارسال می‌کنید با استفاده از شی `Date` که در جاوااسکریپت موجود هست.
+
 ## [نسخه ۱.۵.۰ - ۱۳۹۸/۰۹/۳۰](https://github.com/chabok-io/chabok-client-rn/releases/tag/v1.5.0)
 
 ### تغییرات
