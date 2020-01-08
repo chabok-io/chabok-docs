@@ -350,6 +350,7 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 
 
 در این صفحه علاوه بر تعیین رویداد (یا اکشن) می‌توانید **هدف** نیز مشخص کنید.
+
 ![عکس مربوطه](http://uupload.ir/files/e0gi_add-goal-in-tracker.png)
 
 <Br>
