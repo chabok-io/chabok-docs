@@ -10,7 +10,7 @@ prev: behavior-tracking.html
 
 <Br>
 
-## [نسخه ۱.۱.۰ - ۱۳۹۸/۱۰/۱۸](https://github.com/chabok-io/chabok-starter-cordova/releases/tag/v1.0.0) 
+## [نسخه ۱.۱.۰ - ۱۳۹۸/۱۰/۱۸](https://github.com/chabok-io/chabok-starter-cordova/releases/tag/v1.1.0) 
 
 - بروزرسانی کتابخانه آی‌او‌اس ([۲.۱.۰](https://github.com/chabok-io/chabok-client-ios/releases/tag/v2.1.0))  
 - بروزرسانی کتابخانه اندروید ([۳.۱.۲](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.1.2))  
