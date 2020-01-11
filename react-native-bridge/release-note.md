@@ -27,6 +27,7 @@ next: introducing.html
 **اندروید**:
 
 - استفاده از سرویس FCM به جای GCM
+
 ```diff
 // app-level build.gradle
 - implementation 'com.google.android.gms:play-services-gcm:10.2.6'
@@ -34,6 +35,7 @@ next: introducing.html
 ```
 
 - نیازی به فراخوانی متدهای زیر در کلاس اپلیکیشن نیست:
+
 ```diff
 public class MainApplication extends Application implements ReactApplication {
     @Override
@@ -67,6 +69,7 @@ public class MainApplication extends Application implements ReactApplication {
 **آی‌اواس**:
 
 - نیازی به فراخوانی متدهای زیر در کلاس `AppDelegate` نیست:
+
 ```diff
 - [PushClientManager.defaultManager application:application didFailToRegisterForRemoteNotificationsWithError:error];
 
@@ -78,6 +81,7 @@ public class MainApplication extends Application implements ReactApplication {
 **جاوااسکریپت**:
 
 - نیازی به فراخوانی متدهای زیر در `componentDidMount` نیست
+
 ```diff
 componentDidMount() {
 -   const options = {
