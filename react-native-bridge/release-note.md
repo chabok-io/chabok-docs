@@ -10,7 +10,6 @@ next: introducing.html
 
 <Br>
 
-
 ## [نسخه ۲.۰.۰ - ۱۳۹۸/۱۰/۱۸](https://github.com/chabok-io/chabok-client-rn/releases/tag/v2.0.0)
 
 ### تغییرات
@@ -23,12 +22,81 @@ next: introducing.html
 - پشتیبانی از حذف داده‌های سفارشی کاربر با فراخوانی متد `unsetUserAttribute(attributeKey)`.
 - پشتیبانی از تاریخ و ساعت برای مقادیری که در رویدادها و داده‌های سفارشی کاربر ارسال می‌کنید با استفاده از شی `Date` که در جاوااسکریپت موجود هست.
 
-## [نسخه ۱.۵.۰ - ۱۳۹۸/۰۹/۳۰](https://github.com/chabok-io/chabok-client-rn/releases/tag/v1.5.0)
+### ارتقا
 
-### تغییرات
+**اندروید**:
 
-- به روز رسانی کتابخانه اندروید به [نسخه ۳.۱.۰](/android/release-note.html#نسخه-۳.۱.۰---۱۳۹۸۰۴۰۲)
-- به روز رسانی کتابخانه آی‌او‌اس به [نسخه ۲.۰.۱](/ios/release-note.html#نسخه-۲.۰.۱---۱۳۹۸۰۴۰۴)
+- استفاده از سرویس FCM به جای GCM
+```diff
+// app-level build.gradle
+- implementation 'com.google.android.gms:play-services-gcm:10.2.6'
++ implementation 'com.google.firebase:firebase-messaging:17.1.0'
+```
+
+- نیازی به فراخوانی متدهای زیر در کلاس اپلیکیشن نیست:
+```diff
+public class MainApplication extends Application implements ReactApplication {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+-       AdpPushClient.init(getApplicationContext(),
+-                          MainActivity.class,
+-                          "APP_ID/SENDER_ID",
+-                          "API_KEY",
+-                          "USERNAME",
+-                          "PASSWORD");
+-       AdpPushClient.get().addNotificationHandler(new NotificationHandler() {
+-           @Override
+-           public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
+-               ChabokReactPackage.notificationOpened(message, notificationAction);
+-               return super.notificationOpened(message, notificationAction);
+-           }
+-       });
+-   }
+
+    @Override
+    public void onTerminate() {
+-       AdpPushClient.get().dismiss();
+
+        super.onTerminate();
+    }
+}
+```
+
+**آی‌اواس**:
+
+- نیازی به فراخوانی متدهای زیر در کلاس `AppDelegate` نیست:
+```diff
+- [PushClientManager.defaultManager application:application didFailToRegisterForRemoteNotificationsWithError:error];
+
+- [PushClientManager.defaultManager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+
+- [PushClientManager.defaultManager application:application didRegisterUserNotificationSettings:notificationSettings];
+```
+
+**جاوااسکریپت**:
+
+- نیازی به فراخوانی متدهای زیر در `componentDidMount` نیست
+```diff
+componentDidMount() {
+-   const options = {
+-       appId: "APP_ID/SENDER_ID",
+-       apiKey: "API_KEY",
+-       username: "SDK_USERNAME",
+-       password: "SDK_PASSWORD",
+-       devMode: true
+-   };
+
+    this.chabok = new chabok.AdpPushClient();
+
+-   this.chabok.init(options.appId,
+-                    options.apiKey,
+-                    options.username,
+-                    options.password,
+-                    options.devMode);
+}
+```
 
 ## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۴/۰۵](https://github.com/chabok-io/chabok-client-rn/releases/tag/v1.4.0)
 
@@ -75,41 +143,41 @@ pod update
  کد زیر را به gradle اضافه کنید:
 
 ```groovy
-    implementation 'com.android.installreferrer:installreferrer:1.0'
+implementation 'com.android.installreferrer:installreferrer:1.0'
 ```
 - برای دریافت اکشن نوتیفیکیشن، کد زیر را در کلاس `MainApplication` متد `onCreate` قرار دهید:
 
 ```diff
 //Java
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        SoLoader.init(this, /* native exopackage */ false);
-        
-        if (chabok == null) {
-            chabok = AdpPushClient.init(
-                    getApplicationContext(),
-                    MainActivity.class,
-                    "APP_ID/SENDER_ID",
-                    "API_KEY",
-                    "USERNAME",
-                    "PASSWORD"
-            );
+@Override
+public void onCreate() {
+    super.onCreate();
+    SoLoader.init(this, /* native exopackage */ false);
+    
+    if (chabok == null) {
+        chabok = AdpPushClient.init(
+                getApplicationContext(),
+                MainActivity.class,
+                "APP_ID/SENDER_ID",
+                "API_KEY",
+                "USERNAME",
+                "PASSWORD"
+        );
 
-+               //true connects to Sandbox environment  
-+               //false connects to Production environment  
-+             AdpPushClient.get().setDevelopment(DEV_MODE);
++       //true connects to Sandbox environment  
++       //false connects to Production environment  
++       AdpPushClient.get().setDevelopment(DEV_MODE);
 
-+            chabok.addNotificationHandler(new NotificationHandler(){
-+                @Override
-+                public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
-+                    ChabokReactPackage.notificationOpened(message, notificationAction);
-+                   return super.notificationOpened(message, notificationAction);
-+                }
-+            });
-        }
++       chabok.addNotificationHandler(new NotificationHandler() {
++           @Override
++           public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
++               ChabokReactPackage.notificationOpened(message, notificationAction);
++               return super.notificationOpened(message, notificationAction);
++           }
++       });
     }
+}
 ```
 
 **آی‌اواس**:
@@ -127,9 +195,8 @@ pod update
 
 @implementation AppDelegate
 
- - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-  {
-    
+ - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
 +    [PushClientManager.defaultManager addDelegate:self];
 +    [AdpPushClient registerToUNUserNotificationCenter];
   
@@ -138,19 +205,19 @@ pod update
     return true;
   }
 
-+ -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
++ -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
 +     [AdpPushClient notificationOpened:response.notification.request.content.userInfo actionId:response.actionIdentifier];
 + }
-  
-+ -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+
++ -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 +     [AdpPushClient notificationOpened:userInfo];
 + }
-  
+
 + -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
 +    [AdpPushClient notificationOpened:userInfo];
 + }
-  
-+ -(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler{
+
++ -(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
 +     [AdpPushClient notificationOpened:userInfo actionId:identifier];
 + }
 ```
