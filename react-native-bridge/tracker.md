@@ -35,9 +35,7 @@ next: chabok-messaging.html
 
 ### الف- نصب کتابخانه 
 
-### ۱- نصب کتابخانه 
-
-#### ۱-۱- نصب کتابخانه جاوااسکریپ
+####نصب کتابخانه جاوااسکریپ
 
 برای نصب از طریق `npm`:
 
@@ -58,7 +56,7 @@ react-native link react-native-chabok
 >`نکته:` دقت داشته باشید که [اندروید](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه-اندروید) و [آی‌اواس](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه-آی‌او‌اس) نیاز به نصب جداگانه دارند که در ادامه به هر دو پرداخته می‌شود:
 
 
-####  ۱-۲ نصب کتابخانه اندروید
+####نصب کتابخانه اندروید
 
 برای دریافت کتابخانه چابک دستورات زیر را به فایل `build.gradle` اصلی پروژه اضافه کنید:
 
@@ -73,7 +71,7 @@ buildscript {
     }
     
     dependencies {    
-        classpath "io.chabok.plugin:chabok-services:1.0.0"
+        classpath 'io.chabok.plugin:chabok-services:1.0.0'
         classpath 'com.google.gms:google-services:4.3.2'
     }
 }
@@ -89,10 +87,9 @@ apply plugin: 'com.google.gms.google-services'
  این فایل عموما در مسیر زیر وجود دارد:
 **app/build.gradle**
 
-####  ۱-۳ نصب کتابخانه آی‌او‌اس
+####نصب کتابخانه آی‌او‌اس
 
 کتابخانه چابک از طریق CocoaPods در دسترس است، برای نصب خط زیر را به `Podfile` خود اضافه کنید:
-
 
 ```bash
 target 'YourProject' do
@@ -106,7 +103,7 @@ end
 سپس با روش زیر آن را نصب کنید:
 
 ```bash
-$ pod install
+$ pod install --repo-update
 ```
 پس از اجرای دستورات بالا اگر با خطایی رو به رو شدید، دستور زیر را وارد کنید، سپس `pod install` را دوباره اجرا کنید.
 
@@ -115,41 +112,11 @@ $ pod update
 ```
 حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کردید، نصب کتابخانه آی‌او‌اس موفقیت آمیز بوده است.
 
-
-پس از آن پروژه آی‌اواس خود را در `xcworkspace.` با `xcode` و همینطور `node_modules/react-native-chabok/` را باز کنید. فایل‌های `ios/AdpPushClient.h` و `ios/AdpPushClient.m` را به پروژه خود اضافه کنید.
-
-اکنون داخل کلاس `AppDelegate`، ایمپورت را مانند زیر انجام دهید:
-
-
-```objectivec
-#import <AdpPushClient/AdpPushClient.h>
-
-....
-
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-  // Hook and handle failure of get Device token from Apple APNS Server
-  [PushClientManager.defaultManager application:application didFailToRegisterForRemoteNotificationsWithError:error];
-}
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-  // Manager hook and handle receive Device Token From APNS Server
-  [PushClientManager.defaultManager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
-}
-
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
-  // Manager hook and Handle iOS 8 remote Notificaiton Settings
-  [PushClientManager.defaultManager application:application didRegisterUserNotificationSettings:notificationSettings];
-}
-```
-
-
 <Br>
 
 ### ب- مقدار‌دهی اولیه (Initialize)
 
-#### ۲- مقدار‌دهی اولیه (Initialize)
-
-####  ۲.۱- مقدار‌دهی اولیه اندروید
+####مقدار‌دهی اولیه اندروید
 
 چابک برای راه اندازی نیاز به **مقداردهی اولیه** دارد.
 <br>
@@ -218,13 +185,6 @@ public class MainApplication extends Application implements ReactApplication {
   }
 
   @Override
-  public void onTerminate() {
-    AdpPushClient.get().dismiss();
-
-    super.onTerminate();
-  }
-
-  @Override
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
   }
@@ -242,7 +202,7 @@ public class MainApplication extends Application implements ReactApplication {
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. برای فعال کردن مقدار قابلیت آنی (realtime)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید. این قابلیت در[ پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) استفاده می‌شود.
  
 
-####  ۲.۲- مقدار‌دهی اولیه آی‌او‌اس
+####مقدار‌دهی اولیه آی‌او‌اس
 
 چابک برای راه‌اندازی نیاز به **مقداردهی اولیه** دارد.
 

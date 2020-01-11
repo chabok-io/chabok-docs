@@ -20,7 +20,7 @@ next: push-notification.html
 ```javascript
 const chabokEmitter = new NativeEventEmitter(NativeModules.AdpPushClient);
 
-chabokEmitter.addListener( 'ChabokMessageReceived',
+chabokEmitter.addListener('ChabokMessageReceived',
     (msg) => {
         const messageJson = this.getMessages() + JSON.stringify(msg);
         alert(messageJson);
