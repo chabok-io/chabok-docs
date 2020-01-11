@@ -14,8 +14,8 @@ next: introducing.html
 
 ### تغییرات
 
-- به روز رسانی کتابخانه اندروید به [نسخه ۳.۱.۲](/android/release-note.html#نسخه-۳.۱.۲---۱۳۹۸۰۴۰۲)
-- به روز رسانی کتابخانه آی‌او‌اس به [نسخه ۲.۱.۰](/ios/release-note.html#نسخه-۲.۱.۰---۱۳۹۸۰۴۰۴)
+- به روز رسانی کتابخانه اندروید به [نسخه ۳.۱.۲](/android/release-note.html#نسخه-۳۱۲---۱۳۹۸۱۰۱۸)
+- به روز رسانی کتابخانه آی‌او‌اس به [نسخه ۲.۱.۰](/ios/release-note.html#نسخه-۲۱۰---۱۳۹۸۰۷۱۷)
 - پشتیبانی از دریافت **Referral** با استفاده از فراخوانی متد `setReferralCallbackListener`.
 - پشتیبانی از افزودن به مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `addToUserAttributeArray(attributeKey, attributeValue)`.
 - پشتیبانی از حذف مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `removeFromUserAttributeArray(attributeKey, attributeValue)`.
