@@ -124,7 +124,6 @@ import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
-import com.facebook.soloader.SoLoader;
 
 //Chabok
 import com.adpdigital.push.AdpPushClient;
@@ -151,7 +150,7 @@ public class MainApplication extends Application implements ReactApplication {
         
         @Override
         protected String getJSMainModuleName() {
-        return "index";
+            return "index";
         }
     };
 
@@ -163,7 +162,6 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        SoLoader.init(this, /* native exopackage */ false);
 
         AdpPushClient.configureEnvironment(Environment.SANDBOX); // or PEODUCTION
     }
