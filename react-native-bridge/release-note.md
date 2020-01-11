@@ -34,7 +34,7 @@ next: introducing.html
 + implementation 'com.google.firebase:firebase-messaging:17.1.0'
 ```
 
-- نیازی به فراخوانی متدهای زیر در کلاس اپلیکیشن نیست:
+- نیازی به فراخوانی متدهای زیر در کلاس `MainApplication` نیست:
 
 ```diff
 public class MainApplication extends Application implements ReactApplication {
@@ -80,7 +80,7 @@ public class MainApplication extends Application implements ReactApplication {
 
 **جاوااسکریپت**:
 
-- نیازی به فراخوانی متدهای زیر در `componentDidMount` نیست
+- نیازی به فراخوانی متدهای زیر در `componentDidMount` نیست:
 
 ```diff
 componentDidMount() {
