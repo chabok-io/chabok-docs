@@ -24,12 +24,6 @@ next: chabok-messaging.html
 
 ### ۱- نصب کتابخانه
 
-  نصب کتابخانه چابک به یک از دو روش زیر امکان‌پذیر است:
- 
-<h4> 
-۱-۱: نصب کتابخانه چابک از طریق <bold>سنکرون</bold>  
-</h4>
-
 برای نصب از طریق `npm`:
 
 ```bash
@@ -52,65 +46,28 @@ yarn add chabokpush
 
 > `نکته`: دقت داشته باشید که **به هیچ عنوان** برای دریافت کتابخانه چابک از لینک بالا **بدون مشخص کردن نسخه آن** استفاده **نکنید** زیرا آن لینک به طور خودکار آخرین نسخه کتابخانه را در اختیارتان می‌گذارد که در صورت نخواندن تغییرات لیست کتابخانه و هماهنگ شدن با آن، **با مشکل مواجه خواهید شد**.
 
-<h4> 
-۲-۱: مقداردهی اولیه در روش <bold>آسنکرون</bold>  
-</h4>
-برای ارتباط با سرور چابک لازم است **initChabok** را بسازید و مقداردهی کنید.
+#### نصب کتابخانه بصورت آسنکرون
 
-برای مقداردهی اولیه باید در ابتدا اطلاعات حساب چابک را وارد کنید که کافیست در این متد به جای پارامترهای `appId`و `webKey` مقادیر مربوط به حساب خود را وارد کنید.
+شما می‌توانید کتابخانه چابک را بصورت آسنکرون نیز راه‌اندازی کنید. برای این منظور قطعه کد زیر را داخل تگ اسکریپت قرار دهید:
 
-قطعه کد زیر به شما کمک می‌کند تا یک‌بار تابع را فراخوانی کنید:
+```html
+<body>
+    <!-- your source code -->
 
-```bash
-function initChabok() {
-    const authConfig = {
-      appId: 'chabok-starter',
-      webKey: '1b98c60220b7e07c76142ea0635f69fb0dba5d7d',
-      devMode: true
-    };
-    const options = {
-      webpush: {
-        enabled: true,
-        publicKey: 'BLbNRYGZ39Qx-qYrlenpoWArW4zNR6A5XG9ch0VrA8YbJDWMJeWV0hK25Qt75NMrjgP_GG07TBnJ8gNPnVPGkyg'
-      },
-      silent: false,
-    };
-    const chabok = new chabokpush.Chabok(authConfig, options);
-    if (chabok.isRegistered() && chabok.getUserId()) {
-      chabok.register(chabok.getUserId())
-    } else {
-      chabok.registerAsGuest().then(_=>{
-        chabok.subscribe("wall")
-        chabok.subscribe("private/sport")
-      }).catch(e =>{
-        console.error(e)
-      })
-    }
+    <script>
+        // load the Chabok javascript SDK Asynchronously
+        (function(d){
+            var js, id = 'chabok-jssdk', ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement('script'); js.id = id; js.async = true;
+            js.src = "https://unpkg.com/chabokpush@1.6.0/dist/chabokpush.min.js"; // Chabok javascript SDK path
+            ref.parentNode.insertBefore(js, ref);
+        }(document));
+    </script>
+</body>
 ```
- متد زیر معادل قطعه کد بالاست و انگار به جای قطعه کد بالا، دستور زیر را اجرا کردید.
- 
-```bash
-<script id="chabok-jssdk" async="" src="chabokpush.min.js"></script>
- ```
- 
-در این روش به جای اجرای تک تک تگ‌های اسکریپت، تمامی تگ‌ها به طور همزمان و موازی دانلود و بارگیری می‌شوند و بعد از اتمام دانلود، شروع به اجرا می‌کنند که این روش نسبت به روش بالا مزایای زیادی دارد که در ادامه خواهیم گفت. 
 
-استفاده از روش **async** برای نصب کتابخانه مزایای زیادی دارد، از جمله:
-
-- دانلود شدن همزمان فایل‌های اسکریپت تاثیر زیادی در افزایش سرعت لود صفحه دارند.
-- فایل‌های اسکریپت نصفه اجرا نمی‌شوند.
-- در صورت نداشتن **async**، صفحه اینقدر سفید می‌مونه تا همه فایل‌ها دانلود شن و در نتیجه لود صفحه کاهش پیدا می‌کند.
-- تاثیر مثبت در تجربه کاربر و سئو دارد.
-- افزایش سرعت بارگذاری صفحه 
-- در نسخه‌های قبلی اگر یک فایل اسکریپت در حال بارگذاری بود کلیه فایل‌ها دانلودشان متوقف می‌شوند تا فایل اسکریپت به طور کامل دانلود شود اما در این روش، چند فایل اسکریپت همزمان دانلود و بارگیری می‌شوند.
-- در مرورگرهای قدیمی دو فایل ui و js به طور همزمان دانلود نمی شدند اما در این روش امکان دانلود همزمان چندین فایل وجود دارد.
-- تمام مرورگرها از این ویژگی پشتیبانی می‌کنند.
-
-
-
-
-
-
+> `نکته`: کتابخانه چابک از قابلیت Server Side Rendering پشتیبانی می‌کند. برای بهره‌گیری از این قابلیت کتابخانه چابک را بصورت آسنکرون راه‌اندازی و مقداردهی کنید.
 
 #### مدل نسخه‌گذاری در چابک (Semantic Versioning)
 
@@ -238,23 +195,23 @@ function initChabok() {
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود.  
 
- به قطعه کد زیر دقت کنید:
+ به قطعه کد زیر توجه کنید:
 
 ```javascript
 const auth = {
-  appId: 'APP_ID',
-  webKey: 'WEB_KEY',
-  devMode: true
-}
+    appId: 'APP_ID',
+    webKey: 'WEB_KEY',
+    devMode: true
+};
 const options = {
-      webpush: {
+    webpush: {
         enabled: true,
         publicKey: 'VAPID_Public_Key'
-      },
-        silent: false,
-        realtime: false
-    };
-const chabok = new chabokpush.Chabok(auth, options)
+    },
+    silent: false,
+    realtime: false
+};
+const chabok = new chabokpush.Chabok(auth, options);
 ```
 
 مقدار `devMode` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
@@ -276,6 +233,30 @@ const chabok = new chabokpush.Chabok(auth, options)
 > `نکته ` : برای استفاده از چابک در محیط عملیاتی مقدار `devMode` را `false` کنید. برای تغییر به محیط عملیاتی باید از [**پنل بخش تنظیمات**](https://doc.chabok.io/panel/settings.html#%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA-%D8%AD%D8%B3%D8%A7%D8%A8-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA%DB%8C) درخواست خود را ثبت نمایید تا پس از تایید، اطلاعات جدید حسابتان (`appId`, `webKey`) تعیین گردد. 
 
 > `نکته ` : زمانی که پارامتر `realtime` را false بگذارید، شنونده‌ (Listener) رویدادهای چابک مانند `connected` و ... فراخوانی **نخواهند شد**.
+
+#### مقداردهی اولیه در روش آسنکرون
+
+اگر کتابخانه چابک را بصورت آسنکرون نصب کرده‌اید، مقداردهی اولیه خود را مانند قطعه کد زیر در متد `chkAsynInit` انجام دهید. این متد پس از نصب کتابخانه چابک بصورت خودکار فراخوانی می‌شود:
+
+```javascript
+// this method automatically called when Chabok javascript SDK loaded
+window.chkAsynInit = function() {
+    const auth = {
+        appId: 'APP_ID',
+        webKey: 'WEB_KEY',
+        devMode: true
+    };
+    const options = {
+        webpush: {
+            enabled: true,
+            publicKey: 'VAPID_Public_Key'
+        },
+        silent: false,
+        realtime: false
+    };
+    const chabok = new chabokpush.Chabok(auth, options);
+};
+```
 
 <Br>
 
@@ -317,7 +298,7 @@ const options = {
 با استفاده از متد `register` می‌توانید یک نام کاربری به هر کاربر اختصاص دهید. این متد شناسه کاربر را گرفته و کاربر را با آن شناسه روی سرور چابک ثبت نام می‌کند.
 
 ```javascript
-    chabok.register('<USER_ID>')
+chabok.register('<USER_ID>')
 ```
 
 > `نکته` : متد `register` باید فقط **یک بار** در طول بازدید وبسایت فراخوانی شود.
