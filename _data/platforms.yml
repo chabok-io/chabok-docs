@@ -24,7 +24,7 @@
   document: /react-native-bridge/introducing.html
   demo:
   issue: https://github.com/chabok-io/chabok-client-rn/issues
-  starter:
+  starter: https://github.com/chabok-io/chabok-client-rn
 
 - name: JavaScript
   image: js.svg
