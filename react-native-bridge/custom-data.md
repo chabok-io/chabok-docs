@@ -28,7 +28,8 @@ this.chabok.setUserAttributes({
                 firstName: 'مهدی',
                 lastName: 'یعقوبی',
                 age: 19,
-                gender: 'مرد'
+                gender: 'مرد',
+                birthday: new Date(947808000)
             });
 ```
 
