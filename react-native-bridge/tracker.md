@@ -83,24 +83,14 @@ buildscript {
 apply plugin: 'io.chabok.plugin.chabok-services'
 apply plugin: 'com.google.gms.google-services'
 ```
+
 >`نکته:`
  این فایل عموما در مسیر زیر وجود دارد:
 **app/build.gradle**
 
 #### نصب کتابخانه آی‌او‌اس
 
-کتابخانه چابک از طریق CocoaPods در دسترس است، برای نصب خط زیر را به `Podfile` خود اضافه کنید:
-
-```bash
-target 'YourProject' do
-  use_frameworks!
-
-  pod 'ChabokPush', '~> 2.0.1'
-  
-end
-```
-
-سپس با روش زیر آن را نصب کنید:
+کتابخانه چابک پس از لینک کردن ماژول چابک در دسترس است، با روش زیر آن را نصب کنید:
 
 ```bash
 $ pod install --repo-update
@@ -122,7 +112,7 @@ $ pod update
 <br>
 ۱. برای مقداردهی ابتدا از پنل خود وارد بخش **تنظیمات**> **دسترسی و توکن‌ها**> **کتابخانه موبایل**> **فعال‌سازی راه‌اندازی هوشمند**> شوید و فایل **Chabok.sandbox.json** یا **Chabok.production.json** را بسته به محیطتان دانلود کنید.
 <p class="text-center">
-<img  src="http://uupload.ir/files/9tlr_sandbox-android-chabok-doc.gif">
+<img src="http://uupload.ir/files/9tlr_sandbox-android-chabok-doc.gif">
 </p>
 
 >`نکته:`
@@ -139,58 +129,61 @@ $ pod update
 
 ```java
 import android.app.Application;
+import android.content.Context;
 
 //React-Native
-import com.facebook.react.ReactPackage;
-import com.facebook.react.ReactNativeHost;
+import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
-import com.adpdigital.push.rn.ChabokReactPackage;
-import com.facebook.react.shell.MainReactPackage;
+import com.facebook.react.ReactNativeHost;
+import com.facebook.react.ReactPackage;
+import com.facebook.soloader.SoLoader;
 
 //Chabok
 import com.adpdigital.push.AdpPushClient;
-import com.adpdigital.push.ChabokNotification;
-import com.adpdigital.push.NotificationHandler;
-import com.adpdigital.push.ChabokNotificationAction;
+import com.adpdigital.push.config.Environment;
 
 //Java
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import java.util.Arrays;
 
 public class MainApplication extends Application implements ReactApplication {
 
-  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+    private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+        @Override
+        public boolean getUseDeveloperSupport() {
+            return BuildConfig.DEBUG;
+        }
+        
+        @Override
+        protected List<ReactPackage> getPackages() {
+            @SuppressWarnings("UnnecessaryLocalVariable")
+            List<ReactPackage> packages = new PackageList(this).getPackages();
+            return packages;
+        }
+        
+        @Override
+        protected String getJSMainModuleName() {
+        return "index";
+        }
+    };
+
     @Override
-    public boolean getUseDeveloperSupport() {
-      return BuildConfig.DEBUG;
+    public ReactNativeHost getReactNativeHost() {
+        return mReactNativeHost;
     }
 
     @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-              new MainReactPackage(),
-              new ChabokReactPackage()
-      );
+    public void onCreate() {
+        super.onCreate();
+        SoLoader.init(this, /* native exopackage */ false);
+
+        AdpPushClient.configureEnvironment(Environment.SANDBOX); // or PEODUCTION
     }
-
-    @Override
-    protected String getJSMainModuleName() {
-      return "index";
-    }
-  };
-
-  @Override
-  public void onCreate() {
-      AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
-  }
-
-  @Override
-  public ReactNativeHost getReactNativeHost() {
-    return mReactNativeHost;
-  }
 }
 ```
+
 <br>
+
 -**configureEnvironment**: متد `configureEnvironment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شده. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.  
 
 >`نکته:`متدی که در بالا قرار دادیم برای راه‌اندازی محیط سندباکس است. در صورتی که **حساب عملیاتی** دارید کافیست `Environment.SANDBOX` را با `Environment.PRODUCTION` عوض کنید.
@@ -218,11 +211,10 @@ public class MainApplication extends Application implements ReactApplication {
 ۲- فایل دانلود شده را در **روت پروژه** خود قرار دهید:
 
 ![](http://uupload.ir/files/4818_root-of-project.png)
+
 <br>
 
-۳- در آخر متدهای زیر را فرخوانی کنید.
-
-> `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید به کلاس `AppDelegate` اضافه شده و متدهای چابک باید در `delegate` متد `didFinishLaunchingWithOptions` فراخوانی شوند.
+۳- در آخر متد چابک را در کلاس `AppDelegate` و متد `didFinishLaunchingWithOptions` فراخوانی کنید.
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
@@ -235,7 +227,7 @@ public class MainApplication extends Application implements ReactApplication {
 - (BOOL)application:(UIApplication *)application
             didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
             
-     [PushClientManager.defaultManager configureEnvironment:Sandbox];
+     [PushClientManager.defaultManager configureEnvironment:Sandbox]; // or PEODUCTION
     return YES;
 }
 ```
@@ -250,7 +242,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
-    PushClientManager.default()?.configureEnvironment(.Sandbox)
+    PushClientManager.default()?.configureEnvironment(.Sandbox) // or PEODUCTION
     
     return true
 }
