@@ -11,7 +11,7 @@ permalink: react-native-bridge/upgrade-chabok-to-2-0-0.html
 
 [۱- حذف نسخه قدیمی کتابخانه](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۱--حذف-نسخه-قدیمی-کتابخانه)
 
-[۲- دریافت نسخه ۲.۰.۰ کتابخانه](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۲--دریافت-نسخه-۲.۰.۰-کتابخانه)
+[۲- دریافت نسخه ۲.۰.۰ کتابخانه](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۲--دریافت-نسخه-۲۰۰-کتابخانه)
 
 [۳- بروزرسانی پروژه اندروید](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۳--بروزرسانی-پروژه-اندروید)
 
@@ -19,11 +19,11 @@ permalink: react-native-bridge/upgrade-chabok-to-2-0-0.html
 
 [۵- بروزرسانی پروژه جاوااسکریپت](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۵--بروزرسانی-پروژه-جاوااسکریپت)
 
-[۶- تغییرات ورود کاربر (Login)](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۶--تغییرات-ورود-کاربر-(Login))
+[۶- تغییرات ورود کاربر (Login)](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۶--تغییرات-ورود-کاربر-Login)
 
-[۷- تغییرات خروج کاربر (Logout)](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۷--تغییرات-خروج-کاربر-(Logout))
+[۷- تغییرات خروج کاربر (Logout)](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۷--تغییرات-خروج-کاربر-Logout)
 
-[۸- تغییرات پوش‌نوتیفیکیشن](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۸--تغییرات-پوش‌نوتیفیکیشن)
+[۸- تغییرات پوش‌نوتیفیکیشن](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۸--تغییرات-پوشنوتیفیکیشن)
 
 <br><br>
 
