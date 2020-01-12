@@ -6,6 +6,7 @@ permalink: android/tracker.html
 prev: sdk-setup.html
 next: chabok-messaging.html
 ---
+
 > `نکته:` مستندات پیاده‌سازی زیر بر اساس نسخه‌های ۳ به بالا کتابخانه چابک نوشته شده است. در صورتی که از نسخه پایین‌تری استفاده می‌کنید به<a href="android/tracker-old.html" title="این یک لینک است"> این صفحه </a> مراجعه کنید.
 
 ترکر چابک کلیک و نصب  کمپین‌ها را شمارش می‌کند. همینطور با توجه به قابلیت [رصد رویدادها](/android/tracker.html#۲۱-رصد-رویدادها-tracking-events) می‌توانید مدل‌های بازاریابی CPI و CPA را برای تبلیغات خود اجرا کنید. مزیت دیگر ترکر چابک [حذف و جلوگیری تقلب](/android/tracker.html#۶-مکانیزم-ضد-تقلب-fraud-prevention) در کمپین‌های تبلیغاتی است.
@@ -15,7 +16,7 @@ next: chabok-messaging.html
 <br>
 
 >‍‍`نکته:` در صورتی که از قبل **SDK** چابک را نصب کرده‌‌اید، از [**رصد رویدادها**](/android/tracker.html#۲۱-رصد-رویدادها-tracking-events) شروع کنید.
- 
+
 ### ۱. پیاده‌سازی (SDK Integration)
 ---
 
@@ -31,11 +32,11 @@ next: chabok-messaging.html
 [ج- ثبت کاربر](/android/tracker.html#ج--ثبت-کاربر-login-users)
 
 [د- ثبت اطلاعات کاربر (اختیاری)](/android/tracker.html#د--ثبت-اطلاعات-کاربر-user-attributes)
- 
+
 ### الف- افزودن کتابخانه 
 برای دریافت کتابخانه چابک دستورات زیر را به فایل `build.gradle` اصلی پروژه اضافه کنید:
 
-```javascript  
+```groovy  
 buildscript {
     repositories {
         google()
@@ -46,7 +47,7 @@ buildscript {
     }
     
     dependencies {    
-        classpath "io.chabok.plugin:chabok-services:1.0.0"
+        classpath 'io.chabok.plugin:chabok-services:1.0.0'
         classpath 'com.google.gms:google-services:4.3.2'
     }
 }
@@ -54,10 +55,11 @@ buildscript {
 
 دستور زیر را در انتهای فایل `build.gradle` ماژول اپلیکیشن خود اضافه کنید:
 
-```javascript  
+```groovy  
 apply plugin: 'io.chabok.plugin.chabok-services'
 apply plugin: 'com.google.gms.google-services'
 ```
+
 >`نکته:`
  این فایل عموما در مسیر زیر وجود دارد:
 **app/build.gradle**
@@ -67,32 +69,35 @@ apply plugin: 'com.google.gms.google-services'
 #### نصب کتابخانه استاندارد چابک
 برای استفاده از کتابخانه استاندارد چابک (بدون قابلیت مکان‌یابی) از کتابخانه `chabok-lib` که در زیر به آن اشاره‌ شده است، استفاده کنید.   
 فایل `build.gradle` در ماژول اپلیکیشن را باز کرده و در بخش `dependencies` خطوط زیر را اضافه نمایید:  
-  
-```javascript  
+
+```groovy  
 dependencies {
-    implementation 'com.adpdigital.push:chabok-lib:3.1.1'
-    
+    implementation 'com.adpdigital.push:chabok-lib:3.1.2'
+
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
     implementation 'com.android.installreferrer:installreferrer:1.0'
 } 
-``` 
+```
+
 >`نکته:` 
  چابک در حال حاضر از **FCM** بهره می‌برد؛ در عین حال به خاطر قابلیت **backward compatibility** خود از کاربرانی که از نسخه‌های پایین‌تر اندروید استفاده می‌کنند یا از **GCM** به **FCM** مهاجرت نکرده‌اند، **پشتیبانی** می‌کند. توجه داشته باشید که موضوع بسته شدن **GCM** برای سرورهای خودش است و در کلاینت‌های اندروید چابک، دریافت توکن پوش همچنان امکان‌پذیر است.
 
 #### نصب کتابخانه با قابلیت مکان‌یابی چابک   
  
 درصورتی که در برنامه خود نیاز به استفاده از موقعیت مکانی کاربر دارید، لازم است در ابتدا کتابخانه `chabok-lib` را **حذف** و کتابخانه `chabok-lib-geo` را **جایگزین** کنید.    با توجه به این که در این کتابخانه از سرویس **فیوز گوگل** استفاده شده است، باید  تغییرات زیر نیز در قسمت ‌‌‌`dependencies` اعمال شود:
-```javascript
+
+```groovy
 dependencies {
-    implementation 'com.adpdigital.push:chabok-lib-geo:3.1.1'
-   
+    implementation 'com.adpdigital.push:chabok-lib-geo:3.1.2'
+
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
     implementation 'com.google.android.gms:play-services-location:10.2.6'
     implementation 'com.android.installreferrer:installreferrer:1.0'
 }
-```    
+```
+
 #### نکات ضروری نصب کتابخانه   
  - تمامی گوشی‌های با **اندروید ۴ یا بالاتر** قابلیت استفاده از کتابخانه چابک را دارند.    
  > `نکته`: برای گوشی‌هایی مانند شیاومی و هواوی که گزینه تنظیمات مربوط به برنامه‌های حفاظت شده دارند (ProtectedApps)، کاربر باید برنامه شما را در لیست برنامه‌های حفاظت شده، فعال کند تا دریافت پوش‌نوتیفیکیشن در همه حالت‌ها امکان‌پذیر شود. برای اطلاعات بیشتر می‌توانید بخش [عیب‌یابی](/android/troubleshoot.html) را مطالعه نمایید.  
@@ -110,7 +115,8 @@ dependencies {
  >`نکته:` فایل ذکر شده را پس از دانلود، در پوشه ماژول اصلی برنامه قرار دهید.
  
  - اگر از <a href="https://developer.android.com/jetpack/androidx/">AndroidX</a> استفاده می‌کنید قطعه کد زیر را در فایل `gradle.properties` پروژه خود اضافه کنید:
- ```javascript
+ 
+```groovy
 android.useAndroidX=true
 android.enableJetifier=true
 ```
@@ -149,11 +155,11 @@ android.enableJetifier=true
     </tbody>  
 </table>  
  - توجه داشته باشید که برای `VERSION` آخرین نسخه کتابخانه را از [این صفحه](/android/release-note.html) مشاهده کنید و سپس آن را وارد نمایید، همچنین توصیه می‌شود بخش [مدل نسخه‌گذاری در چابک](/android/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید. 
- 
+
 #### نصب دستی کتابخانه  
-   
+
   آخرین نسخه فایل کتابخانه چابک از [اینجا](https://bintray.com/bintray/jcenter?filterByPkgName=com.adpdigital.push) قابل دسترس می‌باشد. در انتها گزینه سینک را بزنید. برای نصب کتابخانه استفاده از این روش را **توصیه نمی‌کنیم.** زیرا شما از به روز رسانی‌ نسخه‌های چابک مطلع نمی‌شوید.    
-  
+
 #### مدل نسخه‌گذاری در چابک (Semantic Versioning)   
  چابک از مدل نسخه‌گذاری `MAJOR`.`MINOR`.`PATCH` استفاده می‌کند. همه تغییرات نسخه‌ها بلافاصله پس از انتشارشان به صورت موردی در صفحه **لیست  تغییرات** برای اطلاع شما اضافه می‌شوند. برای همین توصیه می‌کنیم [این صفحه](/android/release-note.html) را حتما مطالعه نمایید. این موارد برای هر نسخه در دو بخش [**ارتقا** (در صورت وجود ارتقا)](/android/release-note.html#ارتقا) و [**تغییرات**](/android/release-note.html#تغییرات) برای شما نمایش داده شده‌ است.  
    - `Patch:` تغییرات در این سطح شامل **Bug Fix** و **قابلیت‌های بسیار کوچک** می‌باشد. به روز رسانی به این نسخه‌ها نیاز به تغییری در کد ندارد. برای آگاهی از آن‌ها، باید بخش [**تغییرات**](/android/release-note.html#تغییرات) را مطالعه کنید. به عنوان مثال به‌ روز رسانی کتابخانه چابک از نسخه `2.14.0` به نسخه `2.14.1` مربوط به این سطح می‌شود.  
@@ -200,7 +206,8 @@ public class MyAppClass extends Application {
           AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
     }
 }
-``` 
+```
+
 <br>
 -**configureEnvironment**: متد `configureEnvironment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شده. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.  
 
@@ -226,7 +233,8 @@ public class MyAppClass extends Application {
           AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
       }
 }
-```  
+```
+
 <h3>
 ج- ثبت کاربر 
 </h3>
@@ -257,11 +265,11 @@ public void login(String userId)
   
   علاوه بر شناسه کاربر، اطلاعات کاربر (Attributes) را نیز دریافت می‌کند.
  </p>
-  
+
 ```java
 public void login(String userId, HashMap<String, Object> attributes)
 ```
-   
+
   >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب برنامه](/android/custom-data.html#ثبت-اطلاعات-کاربر)، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر، پیام چابک و پوش ‌نوتیفیکیشن بفرستید.
 
 - امضای سوم:
@@ -272,7 +280,7 @@ public void login(String userId, HashMap<String, Object> attributes)
 ```java
 public void login(String userId, String eventName, @Nullable JSONObject data)
 ```
-   
+
 - امضای چهارم:
 
 <p>
@@ -319,7 +327,7 @@ AdpPushClient.get().setUserAttributes(userInfo);
 
 
 با کد زیر می‌توانید رفتار کاربر (رویداد) را در چابک رصد کنید:  
-  
+
 ```java
 JSONObject data = new JSONObject();
 data.put("value", 35000);
@@ -350,7 +358,7 @@ event.setData(data);
                 
 AdpPushClient.get().trackPurchase("Purchase", event);
 ```
-        
+   
 برای اطلاعات بیشتر مربوط به رصد رویدادها [اینجا](/android/behavior-tracking.html) را مطالعه کنید.
 
 <br>
