@@ -9,23 +9,47 @@ permalink: react-native-bridge/upgrade-chabok-to-2-0-0.html
 
 مراحل ارتقا را باید به ترتیب زیر انجام دهید:
 
-[۱- دریافت نسخه ۲.۰.۰ کتابخانه](/upgrade-chabok-to-2-0-0.html#۱--دریافت-نسخه-۲.۰.۰-کتابخانه)
+[۱- حذف نسخه قدیمی کتابخانه](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۱--حذف-نسخه-قدیمی-کتابخانه)
 
-[۲- بروزرسانی پروژه اندروید](/upgrade-chabok-to-2-0-0.html#۲--بروزرسانی-پروژه-اندروید)
+[۲- دریافت نسخه ۲.۰.۰ کتابخانه](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۲--دریافت-نسخه-۲.۰.۰-کتابخانه)
 
-[۳- بروزرسانی پروژه آی‌او‌اس](/upgrade-chabok-to-2-0-0.html#۳--بروزرسانی-پروژه-آی‌او‌اس)
+[۳- بروزرسانی پروژه اندروید](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۳--بروزرسانی-پروژه-اندروید)
 
-[۴- بروزرسانی پروژه جاوااسکریپت](/upgrade-chabok-to-2-0-0.html#۴--بروزرسانی-پروژه-جاوااسکریپت)
+[۴- بروزرسانی پروژه آی‌او‌اس](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۴--بروزرسانی-پروژه-آی‌او‌اس)
 
-[۵- تغییرات ورود کاربر (Login)](/upgrade-chabok-to-2-0-0.html#۵--تغییرات-ورود-کاربر-(Login))
+[۵- بروزرسانی پروژه جاوااسکریپت](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۵--بروزرسانی-پروژه-جاوااسکریپت)
 
-[۶- تغییرات خروج کاربر (Logout)](/upgrade-chabok-to-2-0-0.html#۶--تغییرات-خروج-کاربر-(Logout))
+[۶- تغییرات ورود کاربر (Login)](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۶--تغییرات-ورود-کاربر-(Login))
 
-[۷- تغییرات پوش‌نوتیفیکیشن](/upgrade-chabok-to-2-0-0.html#۷--تغییرات-پوش‌نوتیفیکیشن)
+[۷- تغییرات خروج کاربر (Logout)](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۷--تغییرات-خروج-کاربر-(Logout))
+
+[۸- تغییرات پوش‌نوتیفیکیشن](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۸--تغییرات-پوش‌نوتیفیکیشن)
 
 <br><br>
 
-### ۱- دریافت نسخه ۲.۰.۰ کتابخانه
+### ۱- حذف نسخه قدیمی کتابخانه
+
+برای حذف از طریق `npm`:
+
+```bash
+npm uninstall react-native-chabok --save
+```
+
+یا `yarn`:
+
+```bash
+yarn remove react-native-chabok
+```
+
+بعد از اتمام حذف، دستور زیر را اجرا کنید تا ماژول از پروژه شما حذف شود:
+
+```bash
+react-native unlink react-native-chabok
+```
+
+<br><br>
+
+### ۲- دریافت نسخه ۲.۰.۰ کتابخانه
 
 برای نصب از طریق `npm`:
 
@@ -47,7 +71,7 @@ react-native link react-native-chabok
 
 <br><br>
 
-### ۲- بروزرسانی پروژه اندروید
+### ۳- بروزرسانی پروژه اندروید
 
 برای دریافت کتابخانه چابک تغییرات زیر را در فایل `build.gradle` اصلی پروژه اعمال کنید:
 ```diff
@@ -186,7 +210,7 @@ public class MainApplication extends Application implements ReactApplication {
 
 <br><br>
 
-### ۳- بروزرسانی پروژه آی‌او‌اس
+### ۴- بروزرسانی پروژه آی‌او‌اس
 
 در فایل `Podfile` دیگر نیازی به افزودن `ChabokPush` نیست.
 
@@ -275,7 +299,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 
 <br><br>
 
-### ۴- بروزرسانی پروژه جاوااسکریپت
+### ۵- بروزرسانی پروژه جاوااسکریپت
 
 حذف متد `chabok.init` در جاوااسکریپت. دیگر نیازی به فراخوانی این متد نیست.
 
@@ -307,7 +331,7 @@ componentDidMount() {
 
 <br><br>
 
-### ۵- تغییرات ورود کاربر (Login)
+### ۶- تغییرات ورود کاربر (Login)
 
 در صورتی که در اپلیکیشن‌تان، پس از احراز هویت، کاربر را با یک نام کاربری (USER_ID) در چابک ثبت می‌کنید، تغییرات زیر را در کدتان اعمال کنید:
 
@@ -323,7 +347,7 @@ componentDidMount() {
 
 <br><br>
 
-### ۶- تغییرات خروج کاربر (Logout)
+### ۷- تغییرات خروج کاربر (Logout)
 
 چنانچه به هنگام خروج کاربر از حساب کاربری از متدهای `unregister` و یا `registerAsGuest` استفاده می‌کنید، تغییرات زیر را در کد خود اعمال کنید:
 
@@ -340,7 +364,7 @@ componentDidMount() {
 
 <br><br>
 
-### ۷- تغییرات پوش‌نوتیفیکیشن
+### ۸- تغییرات پوش‌نوتیفیکیشن
 
 **اندروید**
 
