@@ -78,7 +78,7 @@ apply plugin: 'com.google.gms.google-services'
  این فایل عموما در مسیر زیر وجود دارد:
 **app/build.gradle**
 
-> نکته: بصورت پیش‌فرض چند پرمیشن به خروجی نهایی اپلیکیشن شما در اندروید توسط ماژول چابک اضافه می‌شود که یکی از آن‌ها برای دیباگ اپلیکیشن کاربرد دارد، در صورت عدم نیاز می‌توانید این پرمیشن را از فایل مانیفست پروژه خود در مسیر `android/app/src/main/AndroidManifest.xml` با دستور زیر حذف کنید:
+> `نکته:` بصورت پیش‌فرض چند پرمیشن به خروجی نهایی اپلیکیشن شما در اندروید توسط ماژول چابک اضافه می‌شود که یکی از آن‌ها برای دیباگ اپلیکیشن کاربرد دارد، در صورت عدم نیاز می‌توانید این پرمیشن را از فایل مانیفست پروژه خود در مسیر `android/app/src/main/AndroidManifest.xml` با دستور زیر حذف کنید:
 > ```xml
 > <!-- android.permission.SYSTEM_ALERT_WINDOW - required for debug mode -->
 > <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" tools:node="remove"/>
