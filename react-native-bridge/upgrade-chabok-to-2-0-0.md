@@ -9,19 +9,19 @@ permalink: react-native-bridge/upgrade-chabok-to-2-0-0.html
 
 مراحل ارتقا را باید به ترتیب زیر انجام دهید:
 
-- [۱- دریافت نسخه ۲.۰.۰ کتابخانه](#)
+[۱- دریافت نسخه ۲.۰.۰ کتابخانه](۱--دریافت-نسخه-۲.۰.۰-کتابخانه#)
 
-- [۲- بروزرسانی پروژه اندروید](#)
+[۲- بروزرسانی پروژه اندروید](۲--بروزرسانی-پروژه-اندروید#)
 
-- [۳- بروزرسانی پروژه آی‌او‌اس](#)
+[۳- بروزرسانی پروژه آی‌او‌اس](۳--بروزرسانی-پروژه-آی‌او‌اس#)
 
-- [۴- بروزرسانی پروژه جاوااسکریپت](#)
+[۴- بروزرسانی پروژه جاوااسکریپت](۴--بروزرسانی-پروژه-جاوااسکریپت#)
 
-- [۵- تغییرات ورود کاربر (Login)](#)
+[۵- تغییرات ورود کاربر (Login)](۵--تغییرات-ورود-کاربر-(Login)#)
 
-- [۶- تغییرات خروج کاربر (Logout)](#)
+[۶- تغییرات خروج کاربر (Logout)](۶--تغییرات-خروج-کاربر-(Logout)#)
 
-- [۶- تغییرات پوش‌نوتیفیکیشن](#)
+[۷- تغییرات پوش‌نوتیفیکیشن](۷--تغییرات-پوش‌نوتیفیکیشن#)
 
 <br><br>
 
@@ -45,7 +45,9 @@ yarn add react-native-chabok
 react-native link react-native-chabok
 ```
 
-### ۲. بروزرسانی پروژه اندروید
+<br><br>
+
+### ۲- بروزرسانی پروژه اندروید
 
 برای دریافت کتابخانه چابک تغییرات زیر را در فایل `build.gradle` اصلی پروژه اعمال کنید:
 ```diff
@@ -84,7 +86,7 @@ dependencies {
 
 در انتها گزینه سینک گریدل را بزنید.
 
-> `نکته`: وقتی ماژول چابک را به پروژه **لینک** می‌کنید وابستگی‌های مورد نیاز بصورت خودکار به پروژه اندروید اضافه خواهند شد.
+> `نکته:` وقتی ماژول چابک را به پروژه **لینک** می‌کنید وابستگی‌های مورد نیاز بصورت خودکار به پروژه اندروید اضافه خواهند شد.
 
 اگر قطعه کد زیر را به فایل مانیفست پروژه اضافه کردید دیگر نیازی به آن نیست و می‌توانید آن را حذف کنید:
 
@@ -182,7 +184,9 @@ public class MainApplication extends Application implements ReactApplication {
 }
 ```
 
-### ۳. بروزرسانی پروژه آی‌او‌اس
+<br><br>
+
+### ۳- بروزرسانی پروژه آی‌او‌اس
 
 در فایل `Podfile` دیگر نیازی به افزودن `ChabokPush` نیست.
 
@@ -204,7 +208,7 @@ pod update
 
 حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر هدر فایل چابک را مشاهده کردید، نصب کتابخانه آی‌او‌اس موفقیت آمیز بوده است.
 
-> `نکته`: اگر فایل‌های `AdpPushClient.h` و `AdpPushClient.m` را به صورت دستی از مسیر `node_modules/react-native-chabok/ios` در پروژه آی‌او‌اس خود کپی کردید دیگر نیازی به این کار نیست و می‌توانید آن‌ها را حذف کنید. با **لینک** کردن ماژول چابک این فایل‌ها بصورت خودکار به پروژه شما اضافه خواهند شد.
+> `نکته:` اگر فایل‌های `AdpPushClient.h` و `AdpPushClient.m` را به صورت دستی از مسیر `node_modules/react-native-chabok/ios` در پروژه آی‌او‌اس خود کپی کردید دیگر نیازی به این کار نیست و می‌توانید آن‌ها را حذف کنید. با **لینک** کردن ماژول چابک این فایل‌ها بصورت خودکار به پروژه شما اضافه خواهند شد.
 
 متد `configureEnvironment` چابک را در کلاس `AppDelegate` و متد `didFinishLaunchingWithOptions` فراخوانی کنید:
 
@@ -252,29 +256,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 -           didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
 -   [PushClientManager.defaultManager application:application
 -           didFailToRegisterForRemoteNotificationsWithError:error];
-}
+- }
 
 - -(void)application:(UIApplication *)application
 -           didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 -   // Manager hook and handle receive Device Token From APNS Server
 -   [PushClientManager.defaultManager application:application
 -           didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
-}
+- }
 
 - (void)application:(UIApplication *)application
 -           didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
 -   // Manager hook and Handle iOS 8 remote Notificaiton Settings
 -   [PushClientManager.defaultManager application:application
 -           didRegisterUserNotificationSettings:notificationSettings];
-}
+- }
 ```
 
-- ۴- بروزرسانی پروژه جاوااسکریپت
+<br><br>
 
-حذف متد chabok.init در پروژه جاوااسکریپت. دیگر نیازی به فراخوانی این متد نیست.
+### ۴- بروزرسانی پروژه جاوااسکریپت
+
+حذف متد `chabok.init` در جاوااسکریپت. دیگر نیازی به فراخوانی این متد نیست.
 
 ```diff
-componentDidMount(){
+componentDidMount() {
 -   const options = {
 -       appId: "APP_ID/SENDER_ID", 		//based on your environment
 -       apiKey: "API_KEY",			//based on your environment
@@ -299,7 +305,9 @@ componentDidMount(){
 }
 ```
 
-- ۵- تغییرات ورود کاربر (Login)
+<br><br>
+
+### ۵- تغییرات ورود کاربر (Login)
 
 در صورتی که در اپلیکیشن‌تان، پس از احراز هویت، کاربر را با یک نام کاربری (USER_ID) در چابک ثبت می‌کنید، تغییرات زیر را در کدتان اعمال کنید:
 
@@ -311,9 +319,11 @@ componentDidMount(){
 + this.chabok.login("USER_ID");
 ```
 
-> `نکته`: اگر متد `register` را در هر بار اجرای اپلیکیشن در فایل `App.js` متد `componentDidMount` فراخوانی می‌کنید نیازی به این کار نیست و آن دستورات را حذف کنید.
+> `نکته:` اگر متد `register` را در هر بار اجرای اپلیکیشن در فایل `App.js` متد `componentDidMount` فراخوانی می‌کنید نیازی به این کار نیست و آن دستورات را حذف کنید.
 
-- ۶- تغییرات خروج کاربر (Logout)
+<br><br>
+
+### ۶- تغییرات خروج کاربر (Logout)
 
 چنانچه به هنگام خروج کاربر از حساب کاربری از متدهای `unregister` و یا `registerAsGuest` استفاده می‌کنید، تغییرات زیر را در کد خود اعمال کنید:
 
@@ -326,26 +336,31 @@ componentDidMount(){
 + this.chabok.logout();
 ```
 
-> `نکته`: اگر متد `unregister` و یا `registerAsGuest` را در هر بار اجرای اپلیکیشن در فایل `App.js` متد `componentDidMount` فراخوانی می‌کنید نیازی به این کار نیست و آن دستورات را حذف کنید.
+> `نکته:` اگر متد `unregister` و یا `registerAsGuest` را در هر بار اجرای اپلیکیشن در فایل `App.js` متد `componentDidMount` فراخوانی می‌کنید نیازی به این کار نیست و آن دستورات را حذف کنید.
 
-- ۶- تغییرات پوش‌نوتیفیکیشن
+<br><br>
+
+### ۷- تغییرات پوش‌نوتیفیکیشن
 
 **اندروید**
 
-برای دریافت اکشن‌های نوتیفیکیشن نیازی به فراخوانی متد `addNotificationHandler` در کلاس `Application` نیست:
+برای دریافت اکشن‌های نوتیفیکیشن نیازی به فراخوانی متد `addNotificationHandler` در کلاس `MainApplication` نیست:
 
 ```diff
-@Override
-public void onCreate() {
-    super.onCreate();
+public class MainApplication extends Application implements ReactApplication {
 
--   AdpPushClient.get().addNotificationHandler(new NotificationHandler() {
--       @Override
--       public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
--           ChabokReactPackage.notificationOpened(message, notificationAction);
--           return super.notificationOpened(message, notificationAction);
--       }
--   });
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+-       AdpPushClient.get().addNotificationHandler(new NotificationHandler() {
+-           @Override
+-           public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
+-               ChabokReactPackage.notificationOpened(message, notificationAction);
+-               return super.notificationOpened(message, notificationAction);
+-           }
+-       });
+    }
 }
 ```
 
