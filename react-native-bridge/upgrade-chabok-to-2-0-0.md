@@ -19,9 +19,9 @@ permalink: react-native-bridge/upgrade-chabok-to-2-0-0.html
 
 [۵- بروزرسانی پروژه جاوااسکریپت](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۵--بروزرسانی-پروژه-جاوااسکریپت)
 
-[۶- تغییرات ورود کاربر (Login)](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۶--تغییرات-ورود-کاربر-Login)
+[۶- تغییرات ورود کاربر (Login)](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۶--تغییرات-ورود-کاربر-login)
 
-[۷- تغییرات خروج کاربر (Logout)](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۷--تغییرات-خروج-کاربر-Logout)
+[۷- تغییرات خروج کاربر (Logout)](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۷--تغییرات-خروج-کاربر-logout)
 
 [۸- تغییرات پوش‌نوتیفیکیشن](/react-native-bridge/upgrade-chabok-to-2-0-0.html#۸--تغییرات-پوشنوتیفیکیشن)
 
