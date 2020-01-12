@@ -41,7 +41,7 @@ next: account-management.html
 
 اگر کاربر دامنه `webpush.chabok.io` را دارد کافیست دامنه اصلی را بر روی  `chabok.io` قرار دهد تا به طور خودکار از ساب دامیین‌ها پشتیبانی کند. 
 
-![عکس مربوطه](http://uupload.ir/files/5op2_tokenaccess.png)
+![عکس مربوطه](http://uupload.ir/files/ah5c_settings-in-panel.png)
 
 <Br>
 
