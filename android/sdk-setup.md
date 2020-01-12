@@ -34,7 +34,7 @@ buildscript {
     }
     
     dependencies {    
-        classpath "io.chabok.plugin:chabok-services:1.0.0"
+        classpath 'io.chabok.plugin:chabok-services:1.0.0'
         classpath 'com.google.gms:google-services:4.3.2'
     }
 }
@@ -56,31 +56,34 @@ apply plugin: 'com.google.gms.google-services'
 برای استفاده از کتابخانه استاندارد چابک (بدون قابلیت مکان‌یابی) از کتابخانه `chabok-lib` که در زیر به آن اشاره‌ شده است، استفاده کنید.   
 فایل `build.gradle` در ماژول اپلیکیشن را باز کرده و در بخش `dependencies` خطوط زیر را اضافه نمایید:  
   
-```javascript  
+```groovy
 dependencies {
-    implementation 'com.adpdigital.push:chabok-lib:3.1.1'
-    
+    implementation 'com.adpdigital.push:chabok-lib:3.1.2'
+
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
     implementation 'com.android.installreferrer:installreferrer:1.0'
 } 
-``` 
+```
+
 >`نکته:` 
  چابک در حال حاضر از **FCM** بهره می‌برد؛ در عین حال به خاطر قابلیت **backward compatibility** خود از کاربرانی که از نسخه‌های پایین‌تر اندروید استفاده می‌کنند یا از **GCM** به **FCM** مهاجرت نکرده‌اند، **پشتیبانی** می‌کند. توجه داشته باشید که موضوع بسته شدن **GCM** برای سرورهای خودش است و در کلاینت‌های اندروید چابک، دریافت توکن پوش همچنان امکان‌پذیر است.
 
 #### نصب کتابخانه با قابلیت مکان‌یابی چابک   
- 
+
 درصورتی که در برنامه خود نیاز به استفاده از موقعیت مکانی کاربر دارید، لازم است در ابتدا کتابخانه `chabok-lib` را **حذف** و کتابخانه `chabok-lib-geo` را **جایگزین** کنید.    با توجه به این که در این کتابخانه از سرویس **فیوز گوگل** استفاده شده است، باید  تغییرات زیر نیز در قسمت ‌‌‌`dependencies` اعمال شود:
-```javascript
+
+```groovy
 dependencies {
-    implementation 'com.adpdigital.push:chabok-lib-geo:3.1.1'
-   
+    implementation 'com.adpdigital.push:chabok-lib-geo:3.1.2'
+
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
     implementation'com.google.android.gms:play-services-location:10.2.6'
     implementation 'com.android.installreferrer:installreferrer:1.0'
 }
-```    
+```
+
 #### نکات ضروری نصب کتابخانه   
  - تمامی گوشی‌های با **اندروید ۴ یا بالاتر** قابلیت استفاده از کتابخانه چابک را دارند.    
  > `نکته`: برای گوشی‌هایی مانند شیاومی و هواوی که گزینه تنظیمات مربوط به برنامه‌های حفاظت شده دارند (ProtectedApps)، کاربر باید برنامه شما را در لیست برنامه‌های حفاظت شده، فعال کند تا دریافت پوش‌نوتیفیکیشن در همه حالت‌ها امکان‌پذیر شود. برای اطلاعات بیشتر می‌توانید بخش [عیب‌یابی](/android/troubleshoot.html) را مطالعه نمایید.  
@@ -101,10 +104,13 @@ dependencies {
  
  
  - اگر از <a href="https://developer.android.com/jetpack/androidx/">AndroidX</a> استفاده می‌کنید قطعه کد زیر را در فایل `gradle.properties` پروژه خود اضافه کنید:
- ```javascript
+
+```groovy
 android.useAndroidX=true
 android.enableJetifier=true
 ```
+
+- کتابخانه چابک از فایربیس نسخه **۱۷.۱.۰** و بالاتر پشتیبانی می‌کند. بنابراین اگر از فایربیس استفاده می‌کنید نسخه آن را به حداقل نسخه‌ی ذکر شده(۱۷.۱.۰) ارتقاع دهید. 
 
 >`نکته:`با راه‌اندازی کتابخانه چابک قادر به دریافت پوش نوتیفیکیشن خواهید بود و نیازی به پیاده‌سازی سرویس فایبربیس برای دریافت پوش نوتیفیکیشن نیست.
 
@@ -191,7 +197,8 @@ public class MyAppClass extends Application {
           AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
     }
 }
-``` 
+```
+
 <br>
 -**configureEnvironment**: متد `configureEnvironment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شده. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.  
 
@@ -246,11 +253,11 @@ public void login(String userId)
   
   علاوه بر شناسه کاربر، اطلاعات کاربر (Attributes) را نیز دریافت می‌کند.
  </p>
-  
+
 ```java
 public void login(String userId, HashMap<String, Object> attributes)
 ```
-   
+
   >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب برنامه](/android/custom-data.html#ثبت-اطلاعات-کاربر)، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر، پیام چابک و پوش ‌نوتیفیکیشن بفرستید.
 
 - امضای سوم:
@@ -261,7 +268,7 @@ public void login(String userId, HashMap<String, Object> attributes)
 ```java
 public void login(String userId, String eventName, @Nullable JSONObject data)
 ```
-   
+
 - امضای چهارم:
 
 <p>
