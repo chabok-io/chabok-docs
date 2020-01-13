@@ -8,15 +8,13 @@ next: tracker.html
 ---  
 
 > `نکته:` مستندات پیاده‌سازی زیر براساس **نسخه‌های ۳ به بالا** کتابخانه چابک نوشته شده است. در صورتی که از نسخه‌ پایین‌تری استفاده می‌کنید به [این صفحه](/android/sdk-setup-old.html) مراجعه کنید.
-
->`نکته:` اگر از نسخه‌های پایین‌تر از ۳ کتابخانه چابک استفاده می‌کنید توصیه می‌کنیم کتابخانه چابک را به نسخه ۳ <a href="/android/release-note.html#%D8%A7%D8%B1%D8%AA%D9%82%D8%A7">**ارتقا**</a> دهید.
-
+>
+> اگر از نسخه‌های پایین‌تر از ۳ کتابخانه چابک استفاده می‌کنید توصیه می‌کنیم کتابخانه چابک را به نسخه ۳ **ارتقا** دهید.
+>
 > در صورتی که می‌خواهید نسخه خود را ارتقا دهید، حتما [مستندات مهاجرت](/android/upgrade-chabok-to-3-0-0.html) به نسخه ۳ چابک را مطالعه کنید. 
-
 
 پس از طی کردن مراحل صفحه [پیش‌نیاز‌ها](/android/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید.
  برای انجام این مراحل ابتدا نیاز است کتابخانه چابک را <a href="https://doc.chabok.io/android/sdk-setup.html#%DB%B1--%D9%86%D8%B5%D8%A8-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87">نصب</a> کنید. سپس [مقداردهی و راه‌اندازی](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و در آخر برای شناخت کاربر توسط چابک، مرحله[ ثبت کاربر](/android/sdk-setup.html#۳--ثبت-کاربر)   را حتما پشت سر بگذارید. 
-  
   
 [ ۱- نصب کتابخانه](/android/sdk-setup.html#۱--نصب-کتابخانه)  
   
@@ -25,7 +23,7 @@ next: tracker.html
 [ ۳- ثبت کاربر](/android/sdk-setup.html#۳--ثبت-کاربر)  
   
 ### ۱- نصب کتابخانه 
-برای دریافت کتابخانه چابک دستورات زیر را به فایل `build.gradle` اصلی پروژه اضافه کنید:
+برای دریافت کتابخانه چابک دستورات زیر را به فایل `build.gradle` اصلی پروژه اضافه کنید (این فایل عموما در مسیر **app/build.gradle** وجود دارد):
 
 ```groovy  
 buildscript {
@@ -50,9 +48,6 @@ buildscript {
 apply plugin: 'io.chabok.plugin.chabok-services'
 apply plugin: 'com.google.gms.google-services'
 ```
->`نکته:`
- این فایل عموما در مسیر زیر وجود دارد:
-**app/build.gradle**
 
 در این قسمت شما باید *کتابخانه استاندارد* **یا** *کتابخانه با قابلیت مکان‌یابی* را نصب نمایید. برای استفاده از **سرویس پیام‌رسانی** و **قابلیت‌های آنی چابک** می‌توانید از [کتابخانه استاندارد](/android/sdk-setup.html#نصب-کتابخانه-استاندارد-چابک) بهره ببرید. در صورتی هم که می‌خواهید این‌ امکانات را همراه با قابلیت مکان‌یابی داشته باشید باید از [کتابخانه با قابلیت مکان‌یابی](/android/sdk-setup.html#نصب-کتابخانه-با-قابلیت-مکانیابی-چابک) استفاده کنید. دقت نمایید که هر دو کتابخانه **همزمان نمی‌توانند کار کنند** و شما باید فقط از **یکی** از آن‌ها متناسب با نیاز خود استفاده کنید.
 <br>
@@ -101,8 +96,6 @@ dependencies {
    ۳. از لیست اپلیکیشن‌ها، اپلیکیشن مورد نظر خود را انتخاب کنید.
    
    ۴. بر روی `google-services.json` کلیک کنید و آن را دانلود کنید.
- 
- >`نکته:` فایل ذکر شده را پس از دانلود، در پوشه ماژول اصلی برنامه قرار دهید.
 
  - اگر از <a href="https://developer.android.com/jetpack/androidx/">AndroidX</a> استفاده می‌کنید قطعه کد زیر را در فایل `gradle.properties` پروژه خود اضافه کنید:
 
@@ -152,8 +145,6 @@ android.enableJetifier=true
    
   آخرین نسخه فایل کتابخانه چابک از [اینجا](https://bintray.com/bintray/jcenter?filterByPkgName=com.adpdigital.push) قابل دسترس می‌باشد. در انتها گزینه سینک را بزنید. برای نصب کتابخانه استفاده از این روش را **توصیه نمی‌کنیم.** زیرا شما از به روز رسانی‌ نسخه‌های چابک مطلع نمی‌شوید.    
 
->`نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](/android/features.html#%D8%A8%D8%B1%D8%AF%D8%A7%D8%B4%D8%AA%D9%86-%D9%85%D8%AC%D9%88%D8%B2%D9%87%D8%A7%DB%8C-%D8%BA%DB%8C%D8%B1-%D8%B6%D8%B1%D9%88%D8%B1%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%D9%85%D8%A7%DB%8C%D8%B4-%D9%86%D8%B4%D8%A7%D9%86-badge-%D8%B1%D9%88%DB%8C-%D8%A2%DB%8C%DA%A9%D9%88%D9%86) هر کدام از آن‌ها را با اختیار خودتان بردارید.   
-
 ### ۲- مقداردهی اولیه (Initialize) 
 
 چابک برای راه اندازی نیاز به **مقداردهی اولیه** دارد.
@@ -163,7 +154,7 @@ android.enableJetifier=true
 <img  src="http://uupload.ir/files/9tlr_sandbox-android-chabok-doc.gif">
 </p>
 >`نکته:`
-برای غیرفعال کردن قابلیت **پوش نوتیفیکیشن**(pushNotification)، کافیست مقدار پیش ‌فرض آن را در فایل دانلود شده تغییر بدید.
+برای غیرفعال کردن قابلیت **پوش نوتیفیکیشن** (pushNotification)، کافیست مقدار پیش ‌فرض آن را در فایل دانلود شده تغییر بدید.
 
 ۲. فایل دانلود شده را در پوشه ماژول اصلی پروژه قرار دهید.
 <p class="text-center">
@@ -175,39 +166,35 @@ android.enableJetifier=true
 ۳. در مرحله آخر نیاز است کد‌های زیر را در کلاس اپلیکیشن خود فراخوانی کنید.
 
 ```java
-public class MyAppClass extends Application {  
-      @Override  
+public class MyAppClass extends Application {
+      @Override
       public void onCreate() {
-          super.onCreate();  
-          AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
-          AdpPushClient.setLogLevel(LogLevel.VERBOSE); // اختیاری
-          AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
+          super.onCreate();
+
+          AdpPushClient.configureEnvironment(Environment.SANDBOX);
     }
 }
 ```
 
 <br>
--**configureEnvironment**: متد `configureEnvironment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شده. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.  
-
->`نکته:`متدی که در بالا قرار دادیم برای راه‌اندازی محیط سندباکس است. در صورتی که **حساب عملیاتی** دارید کافیست `Environment.SANDBOX` را با `Environment.PRODUCTION` عوض کنید.
+**configureEnvironment**: متد `configureEnvironment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شده. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.  
 <br>
+در صورتی که **حساب عملیاتی** دارید کافیست `Environment.SANDBOX` را با `Environment.PRODUCTION` عوض کنید.
 
-> `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید و پس از تایید و ساخت حساب عملیاتی فایل **Chabok.production.json** را دانلود کنید و به جای فایل **Chabok.sandbox.json** در پوشه ماژول اصلی پروژه خود قراردهید. 
-
+ `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید و پس از تایید و ساخت حساب عملیاتی فایل **Chabok.production.json** را دانلود کنید و به جای فایل **Chabok.sandbox.json** در پوشه ماژول اصلی پروژه خود قراردهید. 
 
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. برای فعال کردن مقدار قابلیت آنی (realtime)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید. این قابلیت در[ پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) استفاده می‌شود.
 
 اگر از کامپوننت‌های اندروید در <a href="https://developer.android.com/guide/components/processes-and-threads#Processes">پراسس دیگری</a> استفاده می‌کنید. حتما متد `setApplicationContext` را قبل از متد `configureEnvironment` فراخوانی کنید. در نهایت کلاس اپلیکیشنتان به شکل زیر خواهد بود: 
 
 ```java
-public class MyAppClass extends Application {  
-      @Override  
+public class MyAppClass extends Application {
+      @Override
       public void onCreate() {
-          super.onCreate();  
-          AdpPushClient.setApplicationContext(this); // ضروری
-          AdpPushClient.configureEnvironment(Environment.SANDBOX); // ضروری  
-          AdpPushClient.setLogLevel(LogLevel.VERBOSE); // اختیاری
-          AdpPushClient.setDefaultTracker("Ym3gy7"); // اختیاری
+          super.onCreate();
+
+          AdpPushClient.setApplicationContext(this);
+          AdpPushClient.configureEnvironment(Environment.SANDBOX);
       }
 }
 ```  
@@ -245,7 +232,7 @@ public void login(String userId)
 public void login(String userId, HashMap<String, Object> attributes)
 ```
 
-  >`نکته`:پس از انجام مراحل فوق در پنل چابک مربوط به [حساب برنامه](/android/custom-data.html#ثبت-اطلاعات-کاربر)، در قسمت مشترکین، قابل مشاهده خواهد بود و شما می‌توانید از پنل به کاربر، پیام چابک و پوش ‌نوتیفیکیشن بفرستید.
+`نکته:` برای ثبت اطلاعات کاربران مستندات [داده‌های سفارشی کاربر](/android/custom-data.html#ثبت-اطلاعات-کاربر)، را مطالعه کنید.
 
 - امضای سوم:
 <p>
@@ -256,14 +243,16 @@ public void login(String userId, HashMap<String, Object> attributes)
 public void login(String userId, String eventName, @Nullable JSONObject data)
 ```
 
+`نکته:` برای ارسال رویداد مستندات [رصد رفتار درون‌برنامه‌ای](/android/behavior-tracking.html#متد-رصد)، را مطالعه کنید.
+
 - امضای چهارم:
 
 <p>
 به غیر از شناسه کاربر، لیست تگ‌ها را دریافت می‌کند.
 </p>
 
->`نکته:` به کمک لیست تگ‌ها در چابک می‌توانید کاربرانتان را بر اساس ویژگی‌های مورد نظرتان، دسته‌بندی و برچسب‌گذاری کنید و با آن‌ها ارتباط برقرار کنید.
-برای کسب اطلاعات بیشتر به <a href="https://doc.chabok.io/panel/dashboard.html#%D8%AA%DA%AF">این صفحه</a> مراجعه کنید.
+`نکته:` به کمک لیست تگ‌ها در چابک می‌توانید کاربرانتان را بر اساس ویژگی‌های مورد نظرتان، دسته‌بندی و برچسب‌گذاری کنید و با آن‌ها ارتباط برقرار کنید.
+برای کسب اطلاعات بیشتر به <a href="https://doc.chabok.io/panel/dashboard.html#رفتار">این صفحه</a> مراجعه کنید.
 
 ```java
 public void login(String userId, String[] tagsName)
