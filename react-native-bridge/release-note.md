@@ -6,9 +6,9 @@ permalink: react-native-bridge/release-note.html
 next: introducing.html
 ---
 
-شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](/react-native-bridge/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
+شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 
-<Br>
+<br>
 
 ## [نسخه ۲.۰.۰ - ۱۳۹۸/۱۰/۱۸](https://github.com/chabok-io/chabok-client-rn/releases/tag/v2.0.0)
 
@@ -21,87 +21,24 @@ next: introducing.html
 - پشتیبانی از حذف مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `removeFromUserAttributeArray(attributeKey, attributeValue)`.
 - پشتیبانی از حذف داده‌های سفارشی کاربر با فراخوانی متد `unsetUserAttribute(attributeKey)`.
 - پشتیبانی از تاریخ و ساعت برای مقادیری که در رویدادها و داده‌های سفارشی کاربر ارسال می‌کنید با استفاده از شی `Date` که در جاوااسکریپت موجود هست.
-- منسوخ شدن متد `init` به جای آن از متد `configureEnvironment` استفاده کنید.
+- منسوخ شدن متد `init` و جایگزینی آن با متد `configureEnvironment` برای راه‌اندازی اولیه کتابخانه چابک.
+- منسوخ شدن متد‌ `register`  و جایگزینی آن با متد `login` برای ثبت ورود کاربر.
+- منسوخ شدن متدهای `unregister` و `registerAsGuest` و جایگزینی آن‌ها با متد `logout` برای ثبت خروج کاربر.
+- دریافت خودکار پوش‌نوتیفیکیشن و پیام چابک
 
 ### ارتقا
 
-**اندروید**:
+> در صورتی که می‌خواهید نسخه خود را ارتقا دهید، حتما [مستندات مهاجرت](/react-native-bridge/upgrade-chabok-to-2-0-0.html) به نسخه ۲ چابک را مطالعه کنید. 
 
-- استفاده از سرویس FCM به جای GCM
-
-```diff
-// app-level build.gradle
-- implementation 'com.google.android.gms:play-services-gcm:10.2.6'
-+ implementation 'com.google.firebase:firebase-messaging:17.1.0'
-```
-
-- نیازی به فراخوانی متدهای زیر در کلاس `MainApplication` نیست:
-
-```diff
-public class MainApplication extends Application implements ReactApplication {
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
--       AdpPushClient.init(getApplicationContext(),
--                          MainActivity.class,
--                          "APP_ID/SENDER_ID",
--                          "API_KEY",
--                          "USERNAME",
--                          "PASSWORD");
--       AdpPushClient.get().addNotificationHandler(new NotificationHandler() {
--           @Override
--           public boolean notificationOpened(ChabokNotification message, ChabokNotificationAction notificationAction) {
--               ChabokReactPackage.notificationOpened(message, notificationAction);
--               return super.notificationOpened(message, notificationAction);
--           }
--       });
--   }
-
-    @Override
-    public void onTerminate() {
--       AdpPushClient.get().dismiss();
-
-        super.onTerminate();
-    }
-}
-```
-
-**آی‌اواس**:
-
-- نیازی به فراخوانی متدهای زیر در کلاس `AppDelegate` نیست:
-
-```diff
-- [PushClientManager.defaultManager application:application didFailToRegisterForRemoteNotificationsWithError:error];
-
-- [PushClientManager.defaultManager application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
-
-- [PushClientManager.defaultManager application:application didRegisterUserNotificationSettings:notificationSettings];
-```
-
-**جاوااسکریپت**:
-
-- نیازی به فراخوانی متدهای زیر در `componentDidMount` نیست:
-
-```diff
-componentDidMount() {
--   const options = {
--       appId: "APP_ID/SENDER_ID",
--       apiKey: "API_KEY",
--       username: "SDK_USERNAME",
--       password: "SDK_PASSWORD",
--       devMode: true
--   };
-
-    this.chabok = new chabok.AdpPushClient();
-
--   this.chabok.init(options.appId,
--                    options.apiKey,
--                    options.username,
--                    options.password,
--                    options.devMode);
-}
-```
+- برای نصب کتابخانه چابک نیازی به افزودن وابستگی در فایل پاد پروژه آی‌او‌اس نیست.
+- برای نصب کتابخانه چابک نیازی به افزودن وابستگی در فایل گریدل پروژه اندروید نیست.
+- برای نصب کتابخانه چابک باید پلاگین چابک و گوگل را در فایل گریدل پروژه اندروید اضافه کنید.
+- برای راه‌اندازی اولیه نیازی به فراخوانی متد `init` در جاوااسکریپت نیست.
+- برای راه‌اندازی اولیه به جای متد `init` از متد `configureEnvironment` در پروژه‌های اندروید و آی‌‌او‌اس استفاده کنید.
+- برای راه‌اندازی اولیه نیاز هست تا فایل تنظیمات چابک برای پلتفرم‌های اندروید و آی‌او‌اس را جداگانه از پنل چابک خود دانلود کنید و هر کدام را در پروژه مربوطه قرار دهید.
+- مهاجرت از سرویس گوگل (GCM) به سرویس فایربیس (FCM) برای دریافت توکن پوش‌نوتیفیکیشن
+- برای راه‌اندازی اولیه پروژه اندروید نیاز هست تا فایل تنظیمات فایربیس را از پنل فایربیس خود دانلود کنید و در پروژه اندروید قرار دهید.
+- برای دریافت پوش‌نوتیفیکیشن و پیام چابک دیگر نیازی به فراخوانی هیچ متدی در پروژه‌های اندروید و آی‌او‌اس نیست.
 
 ## [نسخه ۱.۴.۰ - ۱۳۹۸/۰۴/۰۵](https://github.com/chabok-io/chabok-client-rn/releases/tag/v1.4.0)
 
@@ -299,3 +236,13 @@ initializeApp(options)
 ### ارتقا
 - تغییر امضای `unsubscribe` به `unSubscribe`
 - تغییر امضای متد `publish` به گرفتن object با {'content','userId','channel','data'}.
+
+<br><br>
+
+#### مدل نسخه‌گذاری در چابک (Semantic Versioning)
+
+چابک از مدل نسخه‌گذاری `MAJOR`.`MINOR`.`PATCH` استفاده می‌کند. همه تغییرات نسخه‌ها بلافاصله پس از انتشارشان به صورت موردی در صفحه **لیست  تغییرات** برای اطلاع شما اضافه می‌شوند. برای همین توصیه می‌کنیم [این صفحه](/react-native-bridge/release-note.html) را حتما مطالعه نمایید. این موارد برای هر نسخه در دو بخش [**ارتقا** (در صورت وجود ارتقا)](/react-native-bridge/release-note.html#ارتقا) و [**تغییرات**](/react-native-bridge/release-note.html#تغییرات) برای شما نمایش داده شده‌ است.
+
+- `Patch:` تغییرات در این سطح شامل **Bug Fix** و **قابلیت‌های بسیار کوچک** می‌باشد. به روز رسانی به این نسخه‌ها نیاز به تغییری در کد ندارد. برای آگاهی از آن‌ها، باید بخش [**تغییرات**](/react-native-bridge/release-note.html#تغییرات) را مطالعه کنید. به عنوان مثال به‌ روز رسانی کتابخانه چابک از نسخه `2.13.0` به نسخه `2.13.2` مربوط به این سطح می‌شود.
+- `Minor:` تغییرات در این سطح شامل **قابلیت‌های بزرگتر** و **تغییر در کارکرد (Functionality) کتابخانه** می‌شود. در به روز رسانی به این نسخه‌ها حتما باید بخش [**ارتقا**](/react-native-bridge/release-note.html#ارتقا) و [تغییرات](/react-native-bridge/release-note.html#تغییرات) صفحه لیست تغییرات را با دقت مطالعه کنید. در صورت بروز هر گونه مشکل در نتیجه رعایت نکردن نکات بخش **ارتقا** و **تغییرات** در به روز رسانی به نسخه‌های **Minor**، تیم چابک مسئولیتی را نمی‌پذیرد. توصیه می‌کنیم که هر سه تا شش ماه اقدام به بررسی نسخه‌های **Minor** نمایید. به عنوان مثال به‌ روز رسانی کتابخانه چابک از نسخه `2.12.1` به نسخه `2.13.2` مربوط به این سطح می‌شود.
+- `Major:` این سطح از تغییرات مخصوص **بازنویسی** و یا **تغییرات اساسی** در کتابخانه چابک است. در به روز رسانی به این نسخه‌ها حتما باید بخش [**ارتقا**](/react-native-bridge/release-note.html#ارتقا) و [**تغییرات**](/react-native-bridge/release-note.html#تغییرات) تغییرات صفحه لیست تغییرات را با دقت مطالعه کنید. در صورت بروز هر گونه مشکل در نتیجه رعایت نکردن نکات بخش **ارتقا** و **تغییرات** در به روز رسانی به نسخه‌های **Major**، تیم چابک مسئولیتی را نمی‌پذیرد. بنابراین توصیه می‌کنیم که هر یک سال اقدام به بررسی نسخه‌های **Major** نمایید. به عنوان مثال به‌روزرسانی کتابخانه چابک از نسخه `1.0.1` به نسخه `2.13.2` مربوط به این سطح می‌شود.
