@@ -7,7 +7,6 @@ prev: required.html
 next: tracker.html  
 ---  
 
-
    > `نکته:` مستندات پیاده‌سازی زیر براساس **نسخه‌های ۳ به بالا** کتابخانه چابک نوشته شده است. در صورتی که از نسخه‌ پایین‌تری استفاده می‌کنید به [این صفحه](/android/sdk-setup-old.html) مراجعه کنید.
 
 پس از طی کردن مراحل صفحه [پیش‌نیاز‌ها](/android/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید.
@@ -23,7 +22,7 @@ next: tracker.html
 ### ۱- نصب کتابخانه 
 برای دریافت کتابخانه چابک دستورات زیر را به فایل `build.gradle` اصلی پروژه اضافه کنید:
 
-```javascript  
+```groovy  
 buildscript {
     repositories {
         google()
@@ -42,7 +41,7 @@ buildscript {
 
 دستور زیر را در انتهای فایل `build.gradle` ماژول اپلیکیشن خود اضافه کنید:
 
-```javascript  
+```groovy  
 apply plugin: 'io.chabok.plugin.chabok-services'
 apply plugin: 'com.google.gms.google-services'
 ```
