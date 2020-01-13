@@ -41,7 +41,7 @@ npm uninstall react-native-chabok --save
 yarn remove react-native-chabok
 ```
 
-بعد از اتمام حذف، دستور زیر را اجرا کنید تا ماژول از پروژه شما حذف شود:
+بعد از اتمام حذف، دستور زیر را اجرا کنید تا ماژول بصورت کامل از پروژه شما حذف شود:
 
 ```bash
 react-native unlink react-native-chabok
@@ -100,7 +100,7 @@ buildscript {
 dependencies {
 -   implementation 'com.google.android.gms:play-services-gcm:10.2.6'
 -   implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
--   implementation 'com.adpdigital.push:chabok-lib:2.16.0'
+-   implementation 'com.adpdigital.push:chabok-lib:2.+'
 -   implementation 'com.android.installreferrer:installreferrer:1.0'
 }
 
@@ -209,8 +209,7 @@ public class MainApplication extends Application implements ReactApplication {
 ```
 
 برای مقداردهی ابتدا از پنل خود وارد بخش **تنظیمات**> **دسترسی و توکن‌ها**> **کتابخانه موبایل**> **فعال‌سازی راه‌اندازی هوشمند**> شوید و فایل **Chabok.sandbox.json** یا **Chabok.production.json** را بسته به محیطتان دانلود کنید. 
-فایل دانلود شده را در پوشه ماژول اصلی پروژه قرار دهید.
-<br>
+فایل دانلود شده را در پوشه ماژول اصلی پروژه قرار دهید. 
 برای توضیحات بیشتر به بخش [مقداردهی اولیه](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) در مستندات اندروید مراجعه کنید.
 <br>
 فایل **google-services.json** را از پنل فایربیس خود دانلود کنید و در پوشه ماژول اصلی اپلیکیشن خود قرار دهید. 
@@ -298,7 +297,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 -           didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 - }
 
-- (void)application:(UIApplication *)application
+- -(void)application:(UIApplication *)application
 -           didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
 -   // Manager hook and Handle iOS 8 remote Notificaiton Settings
 -   [PushClientManager.defaultManager application:application
@@ -307,8 +306,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 ```
 
 برای مقداردهی ابتدا از پنل خود بخش **تنظیمات> دسترسی و توکن‌ها> کتابخانه موبایل> راه‌اندازی هوشمند** فایل **Chabok.sandbox.plist**  یا  **Chabok.production.plist**  (بسته به محیطتان) را دانلود کنید. 
-فایل دانلود شده را در **روت پروژه** خود قرار دهید.
-<br>
+فایل دانلود شده را در **روت پروژه** خود قرار دهید. 
 برای توضیحات بیشتر به بخش [مقداردهی اولیه](/ios/sdk-setup.html#۲--مقداردهی-اولیه-initialize) در مستندات آی‌او‌اس مراجعه کنید.
 <br>
 
@@ -321,10 +319,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushClientManagerDelegate
 ```diff
 componentDidMount() {
 -   const options = {
--       appId: "APP_ID/SENDER_ID", 		//based on your environment
--       apiKey: "API_KEY",			//based on your environment
--       username: "SDK_USERNAME",		//based on your environment
--       password: "SDK_PASSWORD", 		//based on your environment
+-       appId: "APP_ID/SENDER_ID",
+-       apiKey: "API_KEY",
+-       username: "SDK_USERNAME",
+-       password: "SDK_PASSWORD",
 -       devMode: true
 -   };
 
@@ -417,8 +415,8 @@ public class MainApplication extends Application implements ReactApplication {
 @implementation AppDelegate
 
 -(BOOL)application:(UIApplication *)application
--           didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
--
+            didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
 -   [PushClientManager.defaultManager addDelegate:self];
 
     return true;

@@ -206,9 +206,9 @@ public class MainApplication extends Application implements ReactApplication {
 
 <br>
 
-۲- فایل دانلود شده را در **روت پروژه** خود قرار دهید:
+۲- فایل دانلود شده را در `Bundle Resources` پروژه خود مطابق تصویر اضافه کنید:
 
-![](http://uupload.ir/files/4818_root-of-project.png)
+![](https://github.com/chabok-io/chabok-assets/raw/master/chabok-docs/ios/chabok-plist.png)
 
 <br>
 
