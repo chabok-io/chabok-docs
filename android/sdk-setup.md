@@ -181,7 +181,7 @@ public class MyAppClass extends Application {
 <br>
 در صورتی که **حساب عملیاتی** دارید کافیست `Environment.SANDBOX` را با `Environment.PRODUCTION` عوض کنید.
 
- `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید و پس از تایید و ساخت حساب عملیاتی فایل **Chabok.production.json** را دانلود کنید و به جای فایل **Chabok.sandbox.json** در پوشه ماژول اصلی پروژه خود قراردهید. 
+  برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید و پس از تایید و ساخت حساب عملیاتی فایل **Chabok.production.json** را دانلود کنید و به جای فایل **Chabok.sandbox.json** در پوشه ماژول اصلی پروژه خود قراردهید. 
 
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. برای فعال کردن مقدار قابلیت آنی (realtime)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید. این قابلیت در[ پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) استفاده می‌شود.
 
@@ -232,7 +232,7 @@ public void login(String userId)
 public void login(String userId, HashMap<String, Object> attributes)
 ```
 
-`نکته:` برای ثبت اطلاعات کاربران مستندات [داده‌های سفارشی کاربر](/android/custom-data.html#ثبت-اطلاعات-کاربر)، را مطالعه کنید.
+برای ثبت اطلاعات کاربران مستندات [داده‌های سفارشی کاربر](/android/custom-data.html#ثبت-اطلاعات-کاربر)، را مطالعه کنید.
 
 - امضای سوم:
 <p>
@@ -243,7 +243,7 @@ public void login(String userId, HashMap<String, Object> attributes)
 public void login(String userId, String eventName, @Nullable JSONObject data)
 ```
 
-`نکته:` برای ارسال رویداد مستندات [رصد رفتار درون‌برنامه‌ای](/android/behavior-tracking.html#متد-رصد)، را مطالعه کنید.
+برای ارسال رویداد مستندات [رصد رفتار درون‌برنامه‌ای](/android/behavior-tracking.html#متد-رصد)، را مطالعه کنید.
 
 - امضای چهارم:
 
@@ -251,7 +251,7 @@ public void login(String userId, String eventName, @Nullable JSONObject data)
 به غیر از شناسه کاربر، لیست تگ‌ها را دریافت می‌کند.
 </p>
 
-`نکته:` به کمک لیست تگ‌ها در چابک می‌توانید کاربرانتان را بر اساس ویژگی‌های مورد نظرتان، دسته‌بندی و برچسب‌گذاری کنید و با آن‌ها ارتباط برقرار کنید.
+به کمک لیست تگ‌ها در چابک می‌توانید کاربرانتان را بر اساس ویژگی‌های مورد نظرتان، دسته‌بندی و برچسب‌گذاری کنید و با آن‌ها ارتباط برقرار کنید.
 برای کسب اطلاعات بیشتر به <a href="https://doc.chabok.io/panel/dashboard.html#رفتار">این صفحه</a> مراجعه کنید.
 
 ```java
