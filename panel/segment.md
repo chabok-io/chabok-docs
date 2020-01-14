@@ -204,7 +204,7 @@ next: send.html
 #### همه کاربران اپلیکیشن
 برای این کار کافیست فقط فیلتر **نوع دستگاه** را انتخاب کنید و تمام پلتفرم‌ها را انتخاب کنید.
 
-![enter image description here](http://uupload.ir/files/6qtb_all-users-segment.png)
+![enter image description here](http://uupload.ir/files/8v2o_ezgif.com-optimize.gif)
 
 <br>
 
@@ -212,7 +212,7 @@ next: send.html
 فیلتر **آخرین بازدید** را انتخاب کنید و بعد از ۱۶۸ ساعت (یک هفته) را وارد کنید. پس از آن فیلتر **تعداد بازدید** را انتخاب کنید و روی بزرگتر از ۴ بار قرار دهید.
 
 
-![enter image description here](http://uupload.ir/files/crm9_active-users.png)
+![enter image description here](http://uupload.ir/view/tag5_active-user-in-segment.mp4/)
 
 <br>
 
