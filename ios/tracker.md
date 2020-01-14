@@ -49,7 +49,7 @@ prev: sdk-setup.html
 target 'YourProject' do
   use_frameworks!
 
-  pod 'ChabokPush', '~> 2.0.1'
+  pod 'ChabokPush', '~> 2.1.0'
   
 end
 ```
@@ -57,7 +57,7 @@ end
 سپس با روش زیر آن را نصب کنید:
 
 ```bash
-$ pod install
+$ pod install --repo-update
 ```
 
 > `نکته:` توجه داشته باشید که برای اطلاع از آخرین نسخه کتابخانه [این صفحه](/ios/release-note.html) را ببینید. همچنین توصیه می‌کنیم بخش [مدل نسخه‌گذاری در چابک](/ios/sdk-setup.html#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
@@ -77,9 +77,9 @@ $ pod install
 
 <br>
 
-۲- فایل دانلود شده را در **روت پروژه** خود قرار دهید:
+۲- فایل دانلود شده را در `Bundle Resources` پروژه خود مطابق تصویر اضافه کنید:
 
-![](http://uupload.ir/files/4818_root-of-project.png)
+![](https://github.com/chabok-io/chabok-assets/raw/master/chabok-docs/ios/chabok-plist.png)
 <br>
 
 ۳- در آخر متدهای زیر را فرخوانی کنید.

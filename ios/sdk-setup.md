@@ -28,7 +28,7 @@ next: tracker.html
 target 'YourProject' do
   use_frameworks!
 
-  pod 'ChabokPush', '~> 2.0.1'
+  pod 'ChabokPush', '~> 2.1.0'
   
 end
 ```
@@ -36,7 +36,7 @@ end
 سپس با روش زیر آن را نصب کنید:
 
 ```bash
-$ pod install
+$ pod install --repo-update
 ```
 پس از اجرای دستورات بالا اگر با خطایی رو به رو شدید، دستور زیر را وارد کنید، سپس `pod install` را دوباره اجرا کنید.
 
