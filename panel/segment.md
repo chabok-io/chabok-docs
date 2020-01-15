@@ -204,7 +204,7 @@ next: send.html
 #### همه کاربران اپلیکیشن
 برای این کار کافیست فقط فیلتر **نوع دستگاه** را انتخاب کنید و تمام پلتفرم‌ها را انتخاب کنید.
 
-![enter image description here](http://uupload.ir/files/8v2o_ezgif.com-optimize.gif)
+![enter image description here](http://uupload.ir/files/06s1_all-user.gif)
 
 <br>
 
@@ -212,14 +212,14 @@ next: send.html
 فیلتر **آخرین بازدید** را انتخاب کنید و بعد از ۱۶۸ ساعت (یک هفته) را وارد کنید. پس از آن فیلتر **تعداد بازدید** را انتخاب کنید و روی بزرگتر از ۴ بار قرار دهید.
 
 
-![enter image description here](http://uupload.ir/view/tag5_active-user-in-segment.mp4/)
+![enter image description here](http://uupload.ir/files/ukiz_active-user.gif)
 
 <br>
 
 #### کاربران غیرفعال
 فیلتر **آخرین بازدید** را انتخاب کنید و قبل از ۱۶۸ ساعت (یک هفته) را وارد کنید. 
 
-![enter image description here](http://uupload.ir/files/lh9r_inactive-users.png)
+![enter image description here](http://uupload.ir/files/uk6p_re-active-user.gif)
 
 <br>
 
@@ -234,7 +234,7 @@ next: send.html
 #### کاربرانی که در هفته گذشته رفتاری (مثلا سفارش) را انجام داده‌اند
 برای این کار کافیست آخرین باری که رفتار رخ داده است را انتخاب کنید (با فیلتر **بعد از**) و سپس مدت مد نظرتان را وارد کنید.
 
-![enter image description here](http://uupload.ir/files/f663_last-week-buyers.png)
+![enter image description here](http://uupload.ir/files/76jj_re-active-user-after-3-days.gif)
 
 <br>
 
@@ -247,7 +247,7 @@ next: send.html
 
 #### کاربرانی که در بازه زمانی ثابت، اولین و آخرین رفتار (مثلا خرید) را انجام دادند.
 
-![enter image description here](http://uupload.ir/files/ily2_segment.panel-sandbox.push.adpdigital.com-2019.12.png)
+![enter image description here](http://uupload.ir/files/6nch_purchase_in_windows-fixed_(1).gif)
 
 برای این کار کافیست اولین و آخرین باری که رفتاری رخ داده است را انتخاب کنید (با فیلتر **قبل از تاریخ** و **بعد از تاریخ**)،
 
