@@ -204,7 +204,7 @@ next: send.html
 #### همه کاربران اپلیکیشن
 برای این کار کافیست فقط فیلتر **نوع دستگاه** را انتخاب کنید و تمام پلتفرم‌ها را انتخاب کنید.
 
-![enter image description here](http://uupload.ir/files/06s1_all-user.gif)
+![enter image description here](http://uupload.ir/files/2u91_ezgif.com-video-to-gif_(7).gif)
 
 <br>
 
