@@ -247,7 +247,7 @@ next: send.html
 
 #### کاربرانی که در بازه زمانی ثابت، اولین و آخرین رفتار (مثلا خرید) را انجام دادند.
 
-![enter image description here](http://uupload.ir/files/ily2_segment.panel-sandbox.push.adpdigital.com-2019.12.png)
+![enter image description here](http://uupload.ir/view/j5ph_fixed-windows-for-user.mp4/)
 
 برای این کار کافیست اولین و آخرین باری که رفتاری رخ داده است را انتخاب کنید (با فیلتر **قبل از تاریخ** و **بعد از تاریخ**)،
 
