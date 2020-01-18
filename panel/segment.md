@@ -247,7 +247,9 @@ next: send.html
 
 #### کاربرانی که در بازه زمانی ثابت، اولین و آخرین رفتار (مثلا خرید) را انجام دادند.
 
-![enter image description here](https://yekupload.ir/0dbf9d0cf7bd3c26/fixed-windows-for-user.mp4)
+![enter image description here](http://uupload.ir/files/ily2_segment.panel-sandbox.push.adpdigital.com-2019.12.png)
+
+<a href="http://yekupload.ir/0dbf9d0cf7bd3c26~i?3d94834063c435668fbfd4056655737b" target="_blank" title="دانلود از یک آپلود">دانلود fixed-windows-for-user.mp4 از یک آپلود</a>
 
 برای این کار کافیست اولین و آخرین باری که رفتاری رخ داده است را انتخاب کنید (با فیلتر **قبل از تاریخ** و **بعد از تاریخ**)،
 
