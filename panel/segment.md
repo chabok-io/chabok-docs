@@ -204,7 +204,7 @@ next: send.html
 #### همه کاربران اپلیکیشن
 برای این کار کافیست فقط فیلتر **نوع دستگاه** را انتخاب کنید و تمام پلتفرم‌ها را انتخاب کنید.
 
-![enter image description here](http://uupload.ir/files/6qtb_all-users-segment.png)
+![enter image description here](http://uupload.ir/files/t122_ezgif-6-d4ce5191e632.gif)
 
 <br>
 
