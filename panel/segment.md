@@ -283,7 +283,7 @@ next: send.html
 برای این کار کافیست آخرین باری که رفتار رخ داده است را انتخاب کنید (با فیلتر **قبل از**) و سپس مدت مد نظرتان را وارد کنید.
 
 
-![enter image description here](http://uupload.ir/files/566z_ezgif.com-video-to-gif_(11).gif)
+![enter image description here](http://uupload.ir/files/dkr_ezgif-6-cccf5a313b19.gif)
 
 <br>
 
