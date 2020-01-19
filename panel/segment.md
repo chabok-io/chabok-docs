@@ -260,7 +260,7 @@ next: send.html
 #### همه کاربران اپلیکیشن
 برای این کار کافیست فقط فیلتر **نوع دستگاه** را انتخاب کنید و تمام پلتفرم‌ها را انتخاب کنید.
 
-![enter image description here](http://uupload.ir/files/t122_ezgif-6-d4ce5191e632.gif)
+![enter image description here](http://uupload.ir/files/rpo_ezgif-6-5831f607e668.gif)
 
 <br>
 
@@ -268,14 +268,14 @@ next: send.html
 فیلتر **آخرین بازدید** را انتخاب کنید و بعد از ۱۶۸ ساعت (یک هفته) را وارد کنید. پس از آن فیلتر **تعداد بازدید** را انتخاب کنید و روی بزرگتر از ۴ بار قرار دهید.
 
 
-![enter image description here](http://uupload.ir/files/crm9_active-users.png)
+![enter image description here](http://uupload.ir/files/lgj2_ezgif.com-video-to-gif_(15).gif)
 
 <br>
 
 #### کاربران غیرفعال
 فیلتر **آخرین بازدید** را انتخاب کنید و قبل از ۱۶۸ ساعت (یک هفته) را وارد کنید. 
 
-![enter image description here](http://uupload.ir/files/lh9r_inactive-users.png)
+![enter image description here](http://uupload.ir/files/vfy0_ezgif.com-video-to-gif_(16).gif)
 
 <br>
 
@@ -283,21 +283,21 @@ next: send.html
 برای این کار کافیست آخرین باری که رفتار رخ داده است را انتخاب کنید (با فیلتر **قبل از**) و سپس مدت مد نظرتان را وارد کنید.
 
 
-![enter image description here](http://uupload.ir/files/5qhe_not-doing-something-segment.png)
+![enter image description here](http://uupload.ir/files/566z_ezgif.com-video-to-gif_(11).gif)
 
 <br>
 
 #### کاربرانی که در هفته گذشته رفتاری (مثلا سفارش) را انجام داده‌اند
 برای این کار کافیست آخرین باری که رفتار رخ داده است را انتخاب کنید (با فیلتر **بعد از**) و سپس مدت مد نظرتان را وارد کنید.
 
-![enter image description here](http://uupload.ir/files/f663_last-week-buyers.png)
+![enter image description here](http://uupload.ir/files/w81u_ezgif.com-video-to-gif_(12).gif)
 
 <br>
 
 #### کاربرانی که از ۳ روز پیش تا روز پیش رفتاری (مثلا سفارش) را انجام داده‌اند
 برای این کار کافیست ۲ بار آخرین رفتار را با بازه زمانی مشخص کنید.
 
-![enter image description here](http://uupload.ir/files/kw7u_doing-something-in-the-past.png)
+![enter image description here](http://uupload.ir/files/3c9b_ezgif.com-video-to-gif_(13).gif)
 
 <br>
 
@@ -305,6 +305,6 @@ next: send.html
 
 برای این کار کافیست اولین و آخرین باری که رفتاری رخ داده است را انتخاب کنید (با فیلتر **قبل از تاریخ** و **بعد از تاریخ**) و سپس مدت مد نظرتان را وارد کنید،
 
-![enter image description here](http://uupload.ir/files/ily2_segment.panel-sandbox.push.adpdigital.com-2019.12.png)
+![enter image description here](http://uupload.ir/files/rumh_ezgif.com-video-to-gif_(10).gif)
 
  >`نکته:` در صورتی که در ایجاد سگمنت مورد نظرتان به راهنمایی نیاز داشتید یا مایل هستید ما را در **بهبود این لیست کمک کنید**، آن را حتما با ما [به اشتراک بگذارید](https://github.com/chabok-io/chabok-docs/issues).
