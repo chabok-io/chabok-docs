@@ -12,6 +12,8 @@ next: send.html
  در این بخش می‌توانید سگمنت‌های خود را **ایجاد** و **مدیریت** کنید؛ هر کدام را برای مشاهده در داشبورد **سنجاق** و یا حتی **حذف** کنید، با کلیک بر روی هر کدام از سگمنت‌ها وارد **صفحه جزئیات** آن خواهید شد.
   
 <Br>
+<p>dddd</p>
+<i class='fa fa-credit-card' ></i>
  
  ![عکس مربوطه](http://uupload.ir/files/z961_segment.png)
  ![عکس مربوطه](http://uupload.ir/files/2q1c_screenshot-sandbox.push.adpdigital.com-2020.01.png)
