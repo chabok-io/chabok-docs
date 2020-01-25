@@ -51,7 +51,7 @@ permalink: how-to-run-referral-campaign.html
 
 
 <a href="https://doc.chabok.io/panel/tracker.html#%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%AA%D8%B1%DA%A9%D8%B1">
-         <img alt="tracker" src="http://uupload.ir/files/jgpg_lable-link-tracker.png">
+         <img alt="tracker" src="http://uupload.ir/files/qz9t_link-tracker-by-lable.png">
       </a>
   
 
