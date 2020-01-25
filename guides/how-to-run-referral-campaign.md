@@ -49,13 +49,11 @@ permalink: how-to-run-referral-campaign.html
 
 لینک ترکر دعوت دوستان در مرحله نهایی به شکل زیر است:
 
-<div = text-align = "center">
 
 <a href="https://doc.chabok.io/panel/tracker.html#%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%AA%D8%B1%DA%A9%D8%B1">
          <img alt="tracker" src="http://uupload.ir/files/jgpg_lable-link-tracker.png">
       </a>
-      
-</div>
+  
 
 در نهایت تمامی مراحل را می‌توانید از طریق گیف زیر مشاهده و اجرا کنید:
 
