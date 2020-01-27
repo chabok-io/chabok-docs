@@ -89,7 +89,7 @@ permalink: mobile-usecases/introducing.html
                              <div class="summary">
                                   <p class="summary-text">٪۸۱  از کاربران تحت تاثیر پیشنهاد آشنایان و دوستان، یک محصول را به طور آنلاین خریداری می‌کنند.</p>
                              </div>
-                             <p class="text-left"><a class="read-more" href="https://doc.chabok.io/mobile-usecases/shopping-cart-abandonment.html">ادامه مطلب ← </a></p>
+                             <p class="text-left"><a class="read-more" href="https://doc.chabok.io/mobile-usecases/invite-new-user.html">ادامه مطلب ← </a></p>
                          </div>
              </article>         
     
