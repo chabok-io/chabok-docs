@@ -29,6 +29,10 @@ prev: troubleshoot.html
 - حذف متدهای `setUserInfo` و `getUserInfo`
 - تغییر مقدار پیش‌فرض **realtime** به `false` 
 
+> در صورتی که می‌خواهید نسخه خود را ارتقا دهید، حتما [مستندات مهاجرت](/javascript/upgrade-chabok-to-2-0-0.html) به نسخه ۲ چابک را مطالعه کنید. 
+
+<Br>
+
 ## [نسخه ۱.۶.۰ - ۱۳۹۸/۰۹/۱۸](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.6.0)
 
 ### تغییرات
