@@ -192,7 +192,7 @@ yarn add chabokpush
 > `نکته ` : برای استفاده از شناسه `webKey` حتما باید **دامنه** وبسایت خود را در پنل بخش تنظیمات قسمت **دسترسی‌ و توکن‌ها** ثبت کرده‌ باشید. در صورتی هم که می‌خواهید روی سیستم محلی تست کنید کافیست فقط `localhost` (بدون پورت) را در بخش دامنه قرار دهید.
 > برای ثبت چند دامنه در لیست سفید از `,` استفاده کنید. مثلا  `localhost, chabok.io` .
 
-![عکس مربوطه](http://uupload.ir/files/9ksa_localhost-domain.png)
+![عکس مربوطه](https://github.com/chabok-io/chabok-assets/raw/master/chabok-docs/javascript/Website_domain.png)
 
 > `نکته` :‌ تمامی متدهایی که در این بخش بیان می‌شود باید تنها یک بار فراخوانی شود.  
 
