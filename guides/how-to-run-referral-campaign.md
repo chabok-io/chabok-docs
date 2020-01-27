@@ -44,7 +44,7 @@ permalink: guides/how-to-run-referral-campaign.html
   تمامی مراحل ساخت ترکر را می‌توانید از طریق گیف زیر مشاهده و اجرا کنید:
 
 
- ![عکس مربوطه](http://uupload.ir/files/xphg_ezgif.com-video-to-gif_(18).gif)
+ ![عکس مربوطه](http://uupload.ir/files/hcjr_ezgif.com-video-to-gif_(19).gif)
 
 
 ۶. بعد از اتمام این مراحل، لینک ترکر ساخته می‌شود که کافیست لینک ترکر را در اختیار برنامه‌نویسان اپلیکیشن خود قرار دهید تا به کمک لینک ترکر، امکان دعوت دوستان را در اپلیکیشن ایجاد کنند.
