@@ -41,14 +41,13 @@ permalink: guides/how-to-run-referral-campaign.html
 ۵. در غیر این صورت بر روی "ایجاد" کلیک کنید.
 
 
- ترکر تمامی مراحل را می‌توانید از طریق گیف زیر مشاهده و اجرا کنید:
+  تمامی مراحل ساخت ترکر را می‌توانید از طریق گیف زیر مشاهده و اجرا کنید:
 
 
  ![عکس مربوطه](http://uupload.ir/files/ood_referral-campaign.gif)
 
 
 ۶. بعد از ایجاد، لینک ترکر را کپی کنید و در اختیار برنامه‌ نویسان قرار دهید.
-
 
 
 <img alt="tracker" src="http://uupload.ir/files/qdbf_tracker.png">
