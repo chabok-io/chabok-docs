@@ -73,7 +73,7 @@ HashMap<String, Object> userAttribute = new HashMap<>();
 userAttribute.put("age", 19);
 AdpPushClient.get().setUserAttributes(userAttribute);
 ```
-<h4>ارسال داده‌های سفارشی کاربران</h4>
+### ارسال داده‌های سفارشی کاربران
 
 در صورتی که از **نسخه ۳.۱.۰  یا بالاتر کتابخانه چابک** استفاده می‌کنید، باید برای ارسال اطلاعات کاربران متد زیر را فراخوانی کنید.
 
@@ -100,7 +100,7 @@ userAttribute.put("married", true);
 AdpPushClient.get().setuserAttribute(userAttribute);
 ```
 
-<h4>ارسال مقادیر آرایه‌ای و تاریخ در داده‌های سفارشی کاربر</h4>
+#### ارسال مقادیر آرایه‌ای و تاریخ در داده‌های سفارشی کاربر
 
 در صورت استفاده از **نسخه ۳.۱.۰ یا بالاتر کتابخانه چابک**، باید متد زیر را فراخوانی کنید.
 
@@ -118,7 +118,7 @@ AdpPushClient.get().setUserAttribute(userAttribute);
 
 <br>
 
-<h4>افزودن به مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
+#### افزودن به مقادیر آرایه‌ای در داده‌های سفارشی کاربر
 
 برای اضافه کردن اطلاعات آرایه‌ای در داده‌های سفارشی کاربران کافیست متد زیر را فراخوانی نمایید:
 
@@ -131,7 +131,7 @@ AdpPushClient.get().addToUserAttributeArray("favorite_movies", "movies_05");
 AdpPushClient.get().addToUserAttributeArray("action_movie", "movies_02");
 ```
 
-<h4>حذف از مقادیر آرایه‌ای در داده‌های سفارشی کاربر</h4>
+#### حذف از مقادیر آرایه‌ای در داده‌های سفارشی کاربر
 
 متد زیر **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
 
@@ -142,7 +142,7 @@ AdpPushClient.get().removeFromUserAttributeArray("favorite_movies", "movies_02")
 
 <br>
 
-<h4> حذف داده‌های سفارشی کاربران</h4>
+####  حذف داده‌های سفارشی کاربران
 
 برای حذف اطلاعات کاربران (attribute)، متد زیر را فراخوانی کنید.
 
