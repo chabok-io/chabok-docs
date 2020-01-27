@@ -84,7 +84,7 @@ permalink: mobile-usecases/introducing.html
                          <div class="col-md-12 article">
                              <div class="row" style="height: 150px;background-image: url(http://uupload.ir/files/o5c6_how-attract-new-users-with-referral-campaigns-blog.chabok.io.png);background-size: cover;"></div>
                              <header class="list-header">
-                                  <h4 class="list-title"><a href="https://doc.chabok.io/mobile-usecases/shopping-cart-abandonment.html">دعوت کاربر جدید</a></h4>
+                                  <h4 class="list-title"><a href="https://doc.chabok.io/mobile-usecases/invite-new-user.html">دعوت کاربر جدید</a></h4>
                              </header>
                              <div class="summary">
                                   <p class="summary-text">٪۸۱  از کاربران تحت تاثیر پیشنهاد آشنایان و دوستان، یک محصول را به طور آنلاین خریداری می‌کنند.</p>
