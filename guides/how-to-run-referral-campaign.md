@@ -1,8 +1,8 @@
 ---
-id: how-to-run-referral-campaign.html
+id: how-to-run-referral-campaign
 title: چطور به کمک کمپین های ریفرال، کاربران جدید را جذب اپلیکیشن کنیم؟
 layout: guides
-permalink: how-to-run-referral-campaign.html
+permalink: guides/how-to-run-referral-campaign.html
 ---
 
 با چابک می‌توانید کاربران فعال را شناسایی کنید و برای افزایش تعامل با آنان و دعوت کاربران جدید اقدام کنید. برای این کار ابتدا لینک ترکر را ایجاد کنید و در اختیار توسعه‌دهندگان اپلیکیشن یا سایت خود قرار دهید تا در انتهای لینک ترکر، پارامتر label را قرار دهند و در نهایت لینک، در اختیار کاربران فعال سرویس قرار گیرد تا آن را در شبکه‌های اجتماعی خود با کاربران به اشتراک بگذارند.
@@ -22,7 +22,7 @@ permalink: how-to-run-referral-campaign.html
 <br>
 
 <a href="https://doc.chabok.io/panel/tracker.html#%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%AA%D8%B1%DA%A9%D8%B1">
-         <img alt="tracker" src="http://uupload.ir/files/za0b_information-tracker.png">
+         <img alt="tracker" src="http://uupload.ir/files/55gi_add-name-in-tracker.png">
       </a>
 
 > `نکته`: در برنامه ریفرال از شبکه تبلیغاتی خاصی استفاده نمی‌شود، چرا که کمپین ریفرال درون برنامه اجرا می‌شود و نام شبکه تبلیغاتی، دعوت دوستان است.
@@ -33,16 +33,24 @@ permalink: how-to-run-referral-campaign.html
 
 
 <a href="https://doc.chabok.io/panel/tracker.html#%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%AA%D8%B1%DA%A9%D8%B1">
-         <img alt="tracker" src="http://uupload.ir/files/i4nl_destination.png">
+         <img alt="tracker" src="http://uupload.ir/files/eeqn_final-link-in-doc.chabok.io.png">
       </a>
-
 
 ۴. در صورت استفاده از کال‌بک نیاز به تکمیل تنظیمات پیشرفته دارند.
 
 ۵. در غیر این صورت بر روی "ایجاد" کلیک کنید.
 
+
+ ترکر تمامی مراحل را می‌توانید از طریق گیف زیر مشاهده و اجرا کنید:
+
+
+ ![عکس مربوطه](http://uupload.ir/files/ood_referral-campaign.gif)
+
+
 ۶. بعد از ایجاد، لینک ترکر را کپی کنید و در اختیار برنامه‌ نویسان قرار دهید.
 
+<img alt="tracker" src="http://uupload.ir/files/qdbf_tracker.png">
+<img alt="tracker" src="http://uupload.ir/files/pdld_link-tracker-chabok.io.png">
 
 
 بعد از اتمام این مراحل، لینک ترکر ساخته می‌شود که کافیست لینک ترکر را در اختیار برنامه‌نویسان اپلیکیشن خود قرار دهید تا به کمک لینک ترکر، امکان دعوت دوستان را در اپلیکیشن ایجاد کنند.
@@ -51,12 +59,9 @@ permalink: how-to-run-referral-campaign.html
 
 
 <a href="https://doc.chabok.io/panel/tracker.html#%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%AA%D8%B1%DA%A9%D8%B1">
-         <img alt="tracker" src="http://uupload.ir/files/qz9t_link-tracker-by-lable.png">
+         <img alt="tracker" src="http://uupload.ir/files/eq7p_link-invite-new-user-by-referral-program.png">
       </a>
   
 
-در نهایت تمامی مراحل را می‌توانید از طریق گیف زیر مشاهده و اجرا کنید:
 
-
- ![عکس مربوطه](http://uupload.ir/files/cd3a_referral-chabok.io.gif)
 

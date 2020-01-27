@@ -1,6 +1,6 @@
 ---
 id: invite-new-user
-title: جذب کاربر جدید
+title: دعوت کاربر جدید
 layout: mobile-usecases
 permalink: mobile-usecases/invite-new-user.html
 ---
