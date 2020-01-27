@@ -68,7 +68,7 @@ permalink: guides/how-to-run-referral-campaign.html
 
 
 <div align="center">   
-    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="https://sandbox.push.adpdigital.com/front/tracker?from=1579897800000&time=currentWeek">همین حالا کمپین را اجرا کنید!</a>
+    <a style="display: inline-block; text-align: center; border-radius: 40px; background: #4285f4; color: white !important; padding: 7px 25px; margin-right: 15px; cursor: pointer; transition: all 0.25s ease;" href="https://sandbox.push.adpdigital.com/front/tracker?from=1579897800000&time=currentWeek">همین حالا لینک ترکر خود را ایجاد کنید!</a>
 </div>
 
   
