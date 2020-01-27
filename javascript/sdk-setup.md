@@ -60,7 +60,7 @@ yarn add chabokpush
             var js, id = 'chabok-jssdk', ref = d.getElementsByTagName('script')[0];
             if (d.getElementById(id)) {return;}
             js = d.createElement('script'); js.id = id; js.async = true;
-            js.src = "https://unpkg.com/chabokpush@1.6.0/dist/chabokpush.min.js"; // Chabok javascript SDK path
+            js.src = "https://unpkg.com/chabokpush@2.0.0/dist/chabokpush.min.js"; // Chabok javascript SDK path
             ref.parentNode.insertBefore(js, ref);
         }(document));
     </script>
