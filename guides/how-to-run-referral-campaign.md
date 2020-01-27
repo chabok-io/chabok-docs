@@ -50,6 +50,21 @@ permalink: guides/how-to-run-referral-campaign.html
 ۶. بعد از اتمام این مراحل، لینک ترکر ساخته می‌شود که کافیست لینک ترکر را در اختیار برنامه‌نویسان اپلیکیشن خود قرار دهید تا به کمک لینک ترکر، امکان دعوت دوستان را در اپلیکیشن ایجاد کنند.
 
 
+در نهایت لینک ترکر دعوت دوستان به شکل زیر است:
+
+<div style="text-align:center">
+<a href="https://doc.chabok.io/panel/tracker.html#%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%AA%D8%B1%DA%A9%D8%B1">
+         <img alt="tracker"  src="http://uupload.ir/files/jyb5_tracker-by-label.png">
+      </a></div>
+
+
+
+لینک ترکر دعوت دوستان در مرحله نهایی به شکل زیر است:
+
+<div style="text-align:center">
+<a href="https://doc.chabok.io/panel/tracker.html#%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%AA%D8%B1%DA%A9%D8%B1">
+         <img alt="tracker"  src="http://uupload.ir/files/jyb5_tracker-by-label.png">
+      </a></div>
 
 
 <div align="center">   
