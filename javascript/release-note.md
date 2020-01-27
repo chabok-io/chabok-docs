@@ -25,7 +25,7 @@ prev: troubleshoot.html
 
 ### ارتقا 
 
-- حذف متدهای `register` و `unregister`، به جای این دو از متدهای `login` و `logout` استفاده کنید.
+- حذف متدهای `registerAsGuest`، `register` و `unregister`، به جای این دو از متدهای `login` و `logout` استفاده کنید.
 - حذف متدهای `setUserInfo` و `getUserInfo`
 - تغییر مقدار پیش‌فرض **realtime** به `false` 
 
