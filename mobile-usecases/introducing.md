@@ -80,8 +80,18 @@ permalink: mobile-usecases/introducing.html
                              <p class="text-left"><a class="read-more" href="https://doc.chabok.io/mobile-usecases/acquire-new-users.html">ادامه مطلب ← </a></p>
                          </div>
               </article>
-                     
-   </div>
+              <article class="col-xl-4 col-md-6 col-lg-6">
+                         <div class="col-md-12 article">
+                             <div class="row" style="height: 150px;background-image: url(http://uupload.ir/files/k05l_p0kg_cio-cart-abandonment.png);background-size: cover;"></div>
+                             <header class="list-header">
+                                  <h4 class="list-title"><a href="https://doc.chabok.io/mobile-usecases/shopping-cart-abandonment.html">دعوت کاربر جدید</a></h4>
+                             </header>
+                             <div class="summary">
+                                  <p class="summary-text">٪۸۱  از کاربران تحت تاثیر پیشنهاد آشنایان و دوستان، یک محصول را به طور آنلاین خریداری می‌کنند.</p>
+                             </div>
+                             <p class="text-left"><a class="read-more" href="https://doc.chabok.io/mobile-usecases/shopping-cart-abandonment.html">ادامه مطلب ← </a></p>
+                         </div>
+             </article>         
     
 
 </div>
