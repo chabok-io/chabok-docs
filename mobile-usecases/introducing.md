@@ -87,7 +87,7 @@ permalink: mobile-usecases/introducing.html
                                   <h4 class="list-title"><a href="/mobile-usecases/invite-new-user.html">دعوت کاربر جدید</a></h4>
                              </header>
                              <div class="summary">
-                                  <p class="summary-text">٪۸۱  از کاربران تحت تاثیر پیشنهاد آشنایان و دوستان، یک محصول را به طور آنلاین خریداری می‌کنند.</p>
+                                  <p class="summary-text">٪۸۱  از کاربران تحت تاثیر پیشنهاد آشنایان، یک محصول را به طور آنلاین خریداری می‌کنند.</p>
                              </div>
                              <p class="text-left"><a class="read-more" href="/mobile-usecases/invite-new-user.html">ادامه مطلب ← </a></p>
                          </div>
