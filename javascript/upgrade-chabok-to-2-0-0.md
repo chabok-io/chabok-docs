@@ -10,9 +10,9 @@ permalink: javascript/upgrade-chabok-to-2-0-0.html
 
 مراحل ارتقا را باید به ترتیب زیر انجام دهید:
 
-[۱- تغییرات ورود کاربر (Login)](/javascript/upgrade-chabok-to-2-0-0.html#۱--تغییرات-ورود-کاربر-Login)
+[۱- تغییرات ورود کاربر (login)](/javascript/upgrade-chabok-to-2-0-0.html#۱--تغییرات-ورود-کاربر-Login)
 
-[۲- تغییرات خروج کاربر (Logout)](/javascript/upgrade-chabok-to-2-0-0.html#۲--تغییرات-خروج-کاربر-Logout)
+[۲- تغییرات خروج کاربر (logout)](/javascript/upgrade-chabok-to-2-0-0.html#۲--تغییرات-خروج-کاربر-Logout)
 
 
 ### ۱- تغییرات ورود کاربر (Login)
