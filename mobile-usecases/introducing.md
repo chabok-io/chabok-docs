@@ -82,7 +82,7 @@ permalink: mobile-usecases/introducing.html
               </article>
               <article class="col-xl-4 col-md-6 col-lg-6">
                          <div class="col-md-12 article">
-                             <div class="row" style="height: 150px;background-image: url(http://uupload.ir/files/4p2a_picture-referral.png);background-size: cover;"></div>
+                             <div class="row" style="height: 150px;background-image: url(http://uupload.ir/files/yhqy_picture.png);background-size: cover;"></div>
                              <header class="list-header">
                                   <h4 class="list-title"><a href="/mobile-usecases/invite-new-user.html">دعوت کاربر جدید</a></h4>
                              </header>
