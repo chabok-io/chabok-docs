@@ -10,6 +10,29 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۲.۰.۰ - ۱۳۹۸/۱۱/۰۷](https://github.com/chabok-io/chabok-client-js/releases/tag/v2.0.0)
+
+### تغییرات
+
+- افزودن متد `trackRevenue`
+- افزودن متد `login` برای ثبت کاربر
+- افزودن متد `logout` برای تبدیل کاربر به مهمان
+- افزودن متد `login(userId, userHash)` به منظور احراز هویت سرور به سرور
+- پشتیبانی از افزودن به مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `addToUserAttributeArray(attributeKey, attributeValue)`.
+- پشتیبانی از حذف مقادیر آرایه‌ای که برای داده‌های سفارشی کاربر استفاده کرده‌اید با فراخوانی متد `removeFromUserAttributeArray(attributeKey, attributeValue)`.
+- پشتیبانی از حذف داده‌های سفارشی کاربر با فراخوانی متد `unsetUserAttribute(attributeKey)`.
+- پشتیبانی از تاریخ و ساعت برای مقادیری که در رویدادها و داده‌های سفارشی کاربر ارسال می‌کنید با استفاده از کلاس `Date` که در کتابخانه چابک موجود هست.
+
+### ارتقا 
+
+- حذف متدهای `registerAsGuest`، `register` و `unregister`، به جای این دو از متدهای `login` و `logout` استفاده کنید.
+- حذف متدهای `setUserInfo` و `getUserInfo`
+- تغییر مقدار پیش‌فرض **realtime** به `false` 
+
+> در صورتی که می‌خواهید نسخه خود را ارتقا دهید، حتما [مستندات مهاجرت](/javascript/upgrade-chabok-to-2-0-0.html) به نسخه ۲ چابک را مطالعه کنید. 
+
+<Br>
+
 ## [نسخه ۱.۶.۰ - ۱۳۹۸/۰۹/۱۸](https://github.com/chabok-io/chabok-client-js/releases/tag/v1.6.0)
 
 ### تغییرات

@@ -63,20 +63,45 @@ const data = {
 chabok.track('add-to-card', data)
 ```
 
+### ارسال مقادیر آرایه‌ای و تاریخ
+
+شما می‌توانید رفتارهای هر کاربر را به کمک متد زیر، در نسخه **۲.۰.۰ یا بالاتر کتابخانه چابک** فراخوانی کنید.
+
+```javascript
+chabok.track('add-to-card', {
+          firstname: 'Farbod',
+          lastname: 'Ahmadi',
+          age: 28,
+          scarf: true,
+          graduatedAt: new Date()
+        })
+```
+
 <Br>
+
 
 ### رصد درآمد (Tracking Revenue)
 
-شما می‌توانید در‌آمدی که کاربران با نشان دادن رفتاری از خود (مانند خرید) تولید می‌کنند را رصد و ذخیره کنید. این کار را باید با متد `trackPurchase` انجام دهید. به عنوان مثال کاربر خریدی را با ارزش ۵۰ هزار تومان انجام داده است.
+شما می‌توانید در‌آمدی که کاربران با نشان دادن رفتاری از خود (مانند خرید) تولید می‌کنند را رصد و ذخیره کنید.
+این کار باید با متد `trackPurchase` برای **نسخه‌های ۲ به بالا کتابخانه چابک** انجام دهید. به عنوان مثال کاربری خریدی با ارزش ۵۰ هزار تومان را انجام داده است.
+
+```javascript
+const eventData = {
+    revenue: 10000,
+    currency: 'RIAL',
+    data: {
+        purchaseDate: new Date()
+    }
+}
+chabok.trackPurchase('Purchase', eventData)
+```
+
+و در صورتی که از **نسخه‌های ۲ به بالاتر کتابخانه چابک** استفاده می‌کنید، توسط متد `trackRevenue` می‌توانید به آسانی خریدی خریدی با ارزش ۵۰ هزار تومان را انجام داده است. 
 
 نمونه:
 
 ```javascript
-const eventData = {
-          revenue: 500000,
-          currency: 'RIAL'
-}
-chabok.trackPurchase('Purchase', eventData)
+chabok.trackRevenue(500000);
 ```
 
 <Br>

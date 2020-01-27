@@ -83,7 +83,7 @@ cordova plugin add com.chabokpush.cordova --variable CHABOK_ENVIRONMENT=PRODUCTI
 فقط شناسه کاربر را گرفته و کاربر را با آن شناسه بر روی سرور چابک ثبت‌ نام می‌کند.  
 </p>  
   
-```java  
+```javascript  
 chabok.login("user_id");  
 ```  
   
@@ -94,7 +94,7 @@ chabok.login("user_id");
   
 در صورتی که کاربر از حساب کاربری خود خارج شد، با فراخوانی متد زیر می‌توانید کاربر را همچنان با یک تگ مهمان در سیستم خود داشته باشید و تعاملتان را با او ادامه دهید.  
   
-```java  
+```javascript  
 chabok.logout();  
 ```  
 > `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-starter-cordova) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.

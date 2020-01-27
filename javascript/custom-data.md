@@ -28,6 +28,7 @@ const attributes = {
           firstName: 'مهدی',
           lastName: 'یعقوبی',
           age: 19,
+          married: true,
           gender: 'مرد'
         }
 chabok.setUserAttributes(attributes)
@@ -45,12 +46,15 @@ chabok.setUserAttributes(attributes)
 >`نکته:` دقت داشته باشید که برای ثبت اطلاعات کاربر در **نسخه‌های ۱.۴.۰ به پایین** باید از متد زیر استفاده کنید:
 
 ```javascript
-this.chabok.setUserInfo({
-                firstName: 'مهدی',
-                lastName: 'یعقوبی',
-                age: 19,
-                gender: 'مرد'
-            });
+const attributes = {
+    firstName: 'مهدی',
+    lastName: 'یعقوبی',
+    age: 19,
+    married: true,
+    gender: 'مرد'
+}
+
+this.chabok.setUserInfo(attributes);
 ```
 
 > `نکته` : دقت داشته باشید  **type** مقداری که به `value` در متد `setUserAttributes` داده‌اید، را نمی‌توانید تغییر دهید . به این معنی که اگر `boolean` ذخیره کرده‌اید، دیگر **نمی‌توانید** عدد یا `string` دهید یا برعکس. به مثال زیر توجه کنید. 
@@ -75,6 +79,63 @@ chabok.setUserAttributes(attributes)
 
 <br>
 
+
+#### ارسال مقادیر آرایه‌ای و تاریخ در داده‌های سفارشی کاربر
+
+در صورت استفاده از **نسخه ۲.۰.۰ یا بالاتر کتابخانه چابک**، باید متد زیر را فراخوانی کنید.
+
+```javascript
+const attributes = {
+    firstname: 'Farbod',
+    lastname: 'Ahmadi',
+    age: 28,
+    married: true,
+    birthday: new Date(),
+}
+
+chabok.setUserAttributes(attributes)
+```
+
+>`نکته:`
+از شی `Date` تنها در نسخه **۲.۰.۰ یا بالاتر کتابخانه چابک** استفاده می‌شود.
+
+<br>
+
+#### افزودن به مقادیر آرایه‌ای در داده‌های سفارشی کاربر
+
+برای اضافه کردن اطلاعات آرایه‌ای در داده‌های سفارشی کاربران کافیست متد زیر را فراخوانی نمایید:
+
+```javascript
+chabok.addToUserAttributeArray('favorite_movies', 'movies_05');
+```
+کاربران وقتی به محصولی علاقه نشان می‌دهند، آن را به لیست علاقه‌مندی خود اضافه می‌کنند که برای افزودن محصول، باید شبه کد زیر را به متد اصلی اضافه ‌کنید.
+
+```javascript
+chabok.addToUserAttributeArray('action_movie', 'movies_02');
+```
+
+#### حذف از مقادیر آرایه‌ای در داده‌های سفارشی کاربر
+
+متد زیر **آرایه‌ای** از اطلاعات کاربران (attribute) را حذف می‌کند.
+
+```javascript
+chabok.removeFromUserAttributeArray('favorite_movies', 'movies_02');
+```
+طبق مثال بالا برای حذف کردن محصول از لیست علاقه‌مندی کاربران باید از قطعه کد بالا استفاده نمایید.
+
+<br>
+
+####  حذف داده‌های سفارشی کاربران
+
+برای حذف اطلاعات کاربران (attribute)، متد زیر را فراخوانی کنید.
+
+```javascript
+chabok.unsetUserAttribute('firstName');
+chabok.unsetUserAttribute('age');
+```
+
+<br>
+
 #### افزایش داده‌های کمیتی کاربر
 
 شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی** و .. را به تعداد دلخواهتان **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
@@ -94,6 +155,16 @@ chabok.incrementUserAttribute(['comedy_movie', 'workout'])
 
 ```javascript
 chabok.incrementUserAttribute({workout: 10, size: 40})
+```
+
+<br>
+
+#### دریافت اطلاعات کاربر
+
+برای دریافت اطلاعات کاربر باید متد زیر را فراخوانی کنید:
+
+```javascript
+const attributes = chabok.getUserAttributes();
 ```
 
 <br><br>
