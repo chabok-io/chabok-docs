@@ -14,7 +14,7 @@ permalink: mobile-usecases/invite-new-user.html
 هزینه **جذب کاربران جدید** در اپلیکیشن به شدت بالاست و علاوه بر این تضمینی وجود ندارد که کاربران در یک اپلیکیشن باقی بمانند و به **کاربران وفادار** تبدیل شوند. اما به کمک چابک می‌توانید از **کاربران قدیمی و فعال** در اپلیکیشن‌تان استفاده کنید و **کاربران جدید** را جذب سرویس کنید و آن‌ها را به **مشتریان بالفعل** تبدیل کنید و در نهایت **تعامل** خوبی با کاربران دعوت شونده  و کاربران دعوت کننده برقرار کنید.
 
 
-<div style="text-align: center;"><img src="http://uupload.ir/files/o5c6_how-attract-new-users-with-referral-campaigns-blog.chabok.io.png" class="img-fluid" style="
+<div style="text-align: center;"><img src="http://uupload.ir/files/i9hq_use-case-referral-campaign.png" class="img-fluid" style="
     width: 500px;
 "></div> 
 
