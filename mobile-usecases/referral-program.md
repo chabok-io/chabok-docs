@@ -1,6 +1,6 @@
 ---
 id: invite-new-user
-title: دعوت کاربر جدید
+title: کمپین ریفرال
 layout: mobile-usecases
 permalink: mobile-usecases/invite-new-user.html
 ---

@@ -1,6 +1,6 @@
 ---
 id: how-to-run-referral-campaign
-title: چطور به کمک کمپین های ریفرال، کاربران جدید را به اپلیکیشن دعوت کنیم؟
+title: چطور به کمک کمپین ریفرال، کاربر جدید را دعوت کنیم؟
 layout: guides
 permalink: guides/how-to-run-referral-campaign.html
 ---
