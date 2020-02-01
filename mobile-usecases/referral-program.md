@@ -62,7 +62,7 @@ permalink: mobile-usecases/invite-new-user.html
 
 <br>
 
->`بیشتر بخوانید:` [کمپین‌ ریفرال چیست؟](https://bit.ly/2uA8net/)
+>`بیشتر بخوانید:` [کمپین‌ ریفرال چیست؟](https://bit.ly/37IjPnb)
 
 
 <br>
