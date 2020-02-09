@@ -10,6 +10,13 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۲.۰.۱ - ۱۳۹۸/۱۱/۲۰](https://github.com/chabok-io/chabok-client-js/releases/tag/v2.0.1)
+
+### تغییرات
+
+- بهبود ثبت ورود کاربر
+
+
 ## [نسخه ۲.۰.۰ - ۱۳۹۸/۱۱/۰۷](https://github.com/chabok-io/chabok-client-js/releases/tag/v2.0.0)
 
 ### تغییرات
