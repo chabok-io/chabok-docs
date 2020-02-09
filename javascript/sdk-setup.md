@@ -42,10 +42,10 @@ npm install chabokpush --save
 yarn add chabokpush
 ```
 
-و یا با استفاده از [CDN](https://unpkg.com/chabokpush@2.0.0/dist/chabokpush.min.js)، چابک را به پروژه خود اضافه کنید.
+و یا با استفاده از [CDN](https://unpkg.com/chabokpush@2.0.1/dist/chabokpush.min.js)، چابک را به پروژه خود اضافه کنید.
 
 ```bash
-<script src="https://unpkg.com/chabokpush@2.0.0/dist/chabokpush.min.js"></script>
+<script src="https://unpkg.com/chabokpush@2.0.1/dist/chabokpush.min.js"></script>
 ```
 
 
@@ -67,7 +67,7 @@ yarn add chabokpush
             var js, id = 'chabok-jssdk', ref = d.getElementsByTagName('script')[0];
             if (d.getElementById(id)) {return;}
             js = d.createElement('script'); js.id = id; js.async = true;
-            js.src = "https://unpkg.com/chabokpush@2.0.0/dist/chabokpush.min.js"; // Chabok javascript SDK path
+            js.src = "https://unpkg.com/chabokpush@2.0.1/dist/chabokpush.min.js"; // Chabok javascript SDK path
             ref.parentNode.insertBefore(js, ref);
         }(document));
     </script>
