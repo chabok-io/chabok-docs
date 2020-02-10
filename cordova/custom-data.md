@@ -46,6 +46,78 @@ chabok.setUserAttributes(attributes)
 >`نکته`:  در صورتی که از آدرس ایمیل (پارامتر email) در اطلاعات کاربران (Attribute) استفاده می‌کنید، می‌توانید با smart API چابک به کاربران ایمیل بزنید. 
 
 
+> `نکته` : دقت داشته باشید  **type** مقداری که به `value` در متد `setUserAttributes` داده‌اید، را نمی‌توانید تغییر دهید . به این معنی که اگر `boolean` ذخیره کرده‌اید، دیگر **نمی‌توانید** عدد یا `string` دهید یا برعکس. به مثال زیر توجه کنید. 
+
+به عنوان مثال اگر مقدار `age` را مانند زیر `string` قرار داده باشید:
+
+```javascript
+const attributes = {
+          age: 'نوزده'
+        }
+chabok.setUserAttributes(attributes)
+```
+
+دیگر عدد قرار دادن آن مانند زیر **کار نخواهد کرد:**
+
+```javascript
+const attributes = {
+          age: 19
+        }
+chabok.setUserAttributes(attributes)
+```
+
+<br>
+
+#### ارسال مقادیر آرایه‌ای و تاریخ در داده‌های سفارشی کاربر
+
+```javascript
+const attributes = {
+    firstname: 'Farbod',
+    lastname: 'Ahmadi',
+    age: 28,
+    married: true,
+    birthday: new Date(),
+}
+
+chabok.setUserAttributes(attributes)
+```
+
+>`نکته:`
+از شی `Date` تنها در نسخه **۱.۲.۰ یا بالاتر کتابخانه چابک** استفاده می‌شود.
+
+<br>
+
+####  حذف داده‌های سفارشی کاربران
+
+برای حذف اطلاعات کاربران (attribute)، متد زیر را فراخوانی کنید.
+
+```javascript
+chabok.unsetUserAttribute('firstName');
+chabok.unsetUserAttribute('age');
+```
+
+<br>
+
+#### افزایش داده‌های کمیتی کاربر
+
+شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی** و .. را به تعداد دلخواهتان **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
+
+```javascript
+chabok.incrementUserAttribute('comedy_movie')
+chabok.incrementUserAttribute('comedy_movie', 3)
+```
+
+<br>
+
+#### کاهش داده‌های کمیتی کاربر
+
+شما می‌توانید داده‌های کمیتی کاربر را مانند **سایز** به تعداد دلخواهتان **کاهش** دهید. برای این کار متد زیر را فراخوانی کنید: 
+
+```javascript
+chabok.decrementUserAttribute('waist_size')
+chabok.decrementUserAttribute('waist_size', 3)
+```
+
 <br>
 
 ### مدیریت تگ‌ها

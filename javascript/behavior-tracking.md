@@ -87,7 +87,7 @@ chabok.track('add-to-card', {
 
 ```javascript
 const eventData = {
-    revenue: 10000,
+    revenue: 500000,
     currency: 'RIAL',
     data: {
         purchaseDate: new Date()
