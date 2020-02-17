@@ -10,7 +10,10 @@ permalink: glossary/glossary-farsi.html
 <table style='text-align: center'>
         <tbody>
          <thead>
-          <th style='text-align: center' >الف</th>
+           <tr>
+                           <td style="text-align: right"><b>  </b></td>
+                           <td style="text-align: right"><b> الف  </b></td>
+          </tr>
             <tr>
                 <td style="text-align: right"><b> آپت این (Opt-In) /آپت اوت (Oot-Out) </b></td>
                 <td style="text-align: left"><b> آدرس آی پی (IP Address)  </b></td>
