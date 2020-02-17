@@ -2,7 +2,7 @@
 id: glossary
 title: واژه نامه
 layout: panel
-permalink: panel/glossary-farsi.html
+permalink: panel/glossary.html
 ---
 در این تب می‌توانید تمام واژه‌هایی که در وب‌سایت از آن‌ها استفاده شده، را به ترتیب حروف الفبا مشاهده کنید.
 
