@@ -7,7 +7,7 @@ permalink: panel/glossary.html
 در این تب می‌توانید تمام واژه‌هایی که در وب‌سایت از آن‌ها استفاده شده، را به ترتیب حروف الفبا مشاهده کنید.
 
 <div class='glossary-table'>
-<body>
+
 <h2>الف</h2>
 <table style="text-align: center">
             <tr>
@@ -39,8 +39,7 @@ permalink: panel/glossary.html
                    <td style="text-align: center"><b>(Chrome Intent) اینتنت کروم</b></td>
             </tr>                                                                                                                                                                                                                                                                                                                              
 </table>
-</body>
-<body>
+
 <h2>ب</h2>
 <table style='text-align: center'>
             <tr>
@@ -52,9 +51,9 @@ permalink: panel/glossary.html
                  <td style="text-align: left"><b>(Return Of Investment‌) بازگشت سرمایه</b></td>
              </tr>                                                                                                                                                                                                                                                                                                                               
 </table>
-</body>
 
-<body>
+
+
 <h2>پ</h2>
 <table style="text-align: center">
             <tr>
@@ -82,9 +81,9 @@ permalink: panel/glossary.html
                    <td style="text-align: left"><b>(In App Message) پیام درون‌برنامه‌ای </b></td>
             </tr>                                                                                                                                                                                                                                                                                                                                   
 </table>
-</body>
 
-<body>
+
+
 <h2>ت</h2>
 <table style="text-align: center">
             <tr>
@@ -100,9 +99,9 @@ permalink: panel/glossary.html
                   <td style="text-align: left"><b>(Engagement) تعامل‌</b></td>
             </tr>    
 </table>
-</body>
 
-<body>
+
+
 <h2>ج</h2>
 <table style="text-align: center">
             <tr>
@@ -118,19 +117,18 @@ permalink: panel/glossary.html
                   <td style="text-align: left"><b>(Geofence) جئوفنس‌</b></td>
             </tr>                                                                                                                                                                                                                                                                                                                         
 </table>
-</body>
 
-<body>
+
+
 <h2>ح</h2>
+
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(Sandbox Account) حساب آزمایشی </b></td>
                 <td style="text-align: left"><b>(Production Account) حساب عملیاتی </b></td>
             </tr>                                                                                                                                                                                                                                                                                                                         
 </table>
-</body>
 
-<body>
 <h2>د</h2>
 <table style="text-align: center">
             <tr>
@@ -146,9 +144,9 @@ permalink: panel/glossary.html
                   <td style="text-align: left"><b>(Default Tracker) دیفالت ترکر‌</b></td>
             </tr>                                                                                                                                                                                                                                                                                                                                   
 </table>
-</body>
 
-<body>
+
+
 <h2>ر</h2>
 <table style="text-align: center">
           <tr>
@@ -156,9 +154,7 @@ permalink: panel/glossary.html
                 <td style="text-align: left"><b>(Event) رویداد</b></td>
           </tr>                                                                                                                                                                                                                                                                                                                             
 </table>
-</body>
 
-<body>
 <h2>ز</h2>
 <table style="text-align: center">
             <tr>
@@ -166,9 +162,7 @@ permalink: panel/glossary.html
                 <td style="text-align: left"><b>(‌CTIT) زمان بین کلیک تا نصب</b></td>
             </tr>                                                                                                                                                                                                                                                                                                                     
 </table>
-</body>
 
-<body>
 <h2>س</h2>
 <table style="text-align: center">
             <tr>
@@ -184,9 +178,6 @@ permalink: panel/glossary.html
                   <td style="text-align: left"><b>سیستم مدیریت ارتباط با شتری (Customer Relationship Management) ‌</b></td>
             </tr>                                                                                                                                                                                                                                                                                                                            
 </table>
-</body>
-
-<body>
 <h2>ش</h2>
 <table style="text-align: center">
             <tr>
@@ -202,10 +193,6 @@ permalink: panel/glossary.html
                   <td style="text-align: left"><b>شناسه تبلیغات‌دهنده (Identifier For Advertisers)‌</b></td>
             </tr>                                                                                                                                                                                                                                                                                                                                 
 </table>
-</body>
-
-
-<body>
 <h2>ف</h2>
 <table style="text-align: center">
             <tr>
@@ -213,18 +200,12 @@ permalink: panel/glossary.html
                 <td style="text-align: left"><b>(Fingerprinting) فینگر پرینت</b></td>
             </tr>
 </table>
-</body>
-
-<body>
 <h2>ق</h2>
 <table style="text-align: center">
             <tr>
                 <td style="text-align: left"><b>(Marketing Funnel) قیف بازاریابی</b></td>
             </tr>                                                                                                                                                                                                                                                                                                                        
 </table>
-</body>
-
-<body>
 <h2>ک</h2>
 <table style='text-align: center'>
            <tr>
@@ -240,19 +221,14 @@ permalink: panel/glossary.html
                   <td style="text-align: left"><b>(Cookie) کوکی مرورگر‌</b></td>
            </tr>                                                                                                                                                                                                                                                                                                                                                                            
 </table>
-</body>
 
-<body>
 <h2>ل</h2>
 <table style='text-align: center'>
             <tr>
                 <td style="text-align: right"><b>(Universal Linking) لینک یونیورسال</b></td>
             </tr>
 </table>
-</body>
 
-
-<body>
 <h2>م</h2>
 <table style='text-align: center'>
             <tr>
@@ -260,9 +236,7 @@ permalink: panel/glossary.html
                 <td style="text-align: left"><b>(Phone farm)مزرعه تلفن</b></td>
             </tr>
 </table>
-</body>
 
-<body>
 <h2>ن</h2>
 <table style='text-align: center'>
             <tr>
@@ -282,9 +256,7 @@ permalink: panel/glossary.html
                   <td style="text-align: left"><b>(Non-Organic Install) نصب غیر ارگانیک</b></td>
             </tr>                                           
 </table>
-</body>
 
-<body>
 <h2>و</h2>
 <table style='text-align: center'>
            <tr>
@@ -292,7 +264,7 @@ permalink: panel/glossary.html
                 <td style="text-align: left"><b>(Webhook) وب‌هوک</b></td>
            </tr>                                                                                                                                                                                                                                                                                                                            
 </table>
-</body>
+
 
 </div>
 
