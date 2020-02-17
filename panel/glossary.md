@@ -11,20 +11,20 @@ permalink: panel/glossary.html
 
 <table style="text-align: center">  
             <tr>  
-                 <td style="text-align: right"><b><a href="http://dev.doc.chabokpush.com/panel/tracker.html">پت این (Opt-In) /آپت اوت (Oot-Out) </a></b></td>  
-                 <td style="text-align: right"><b> (IP Address) آدرس آی پی</b></td>  
+                 <td style="text-align: right"><b><a href="http://dev.doc.chabokpush.com/panel/tracker.html"> پت این (Opt-In) /آپت اوت (Oot-Out) </a></b></td>  
+                 <td style="text-align: right"><b> آدرس آی پی (IP Address) </b></td>  
             </tr>  
             <tr>  
-                 <td style="text-align: right"><b>(Analytics) آنالیتیکس</b></td>  
-                 <td style="text-align: right"><b>(User Attribute) اتریبیوت کاربر</b></td>  
+                 <td style="text-align: right"><b> آنالیتیکس (Analytics) </b></td>  
+                 <td style="text-align: right"><b> اتریبیوت کاربر (User Attribute) </b></td>  
             </tr>          
             <tr>  
-                  <td style="text-align: right"><b>(Attribution) اتریبیوشن</b></td>  
-                  <td style="text-align: right"><b>اتریبیوشن کاربر محور(User Based Attribution)‌</b></td>  
+                  <td style="text-align: right"><b> اتریبیوشن (Attribution) </b></td>  
+                  <td style="text-align: right"><b> اتریبیوشن کاربر محور (User Based Attribution)‌</b></td>  
              </tr>      
             <tr>  
-                  <td style="text-align: right"><b>اتریبیشون فارغ از پلتفرم(Cross Platform Attribution)</b></td>  
-                  <td style="text-align: right"><b>(Re-attribution)اتریبیوشن مجدد</b></td>  
+                  <td style="text-align: right"><b> اتریبیشون فارغ از پلتفرم (Cross Platform Attribution) </b></td>  
+                  <td style="text-align: right"><b> (Re-attribution) اتریبیوشن مجدد </b></td>  
             </tr>                                             
             <tr>  
                    <td style="text-align: right"><b>اتومیشن(Automation)</b></td>  
@@ -35,7 +35,7 @@ permalink: panel/glossary.html
                    <td style="text-align: right"><b>(API) ‌ای پی آی</b></td>  
             </tr>        
             <tr>  
-                   <td style="text-align: right"> <b>(Chrome Intent) اینتنت کروم</b> </td>  
+                   <td style="text-align: right"> <b> اینتنت کروم (Chrome Intent)</b> </td>  
                    <td style="text-align: right"></td>  
             </tr>                                                                                                                                                                                                                                                                                                                                
 </table>  
@@ -45,11 +45,11 @@ permalink: panel/glossary.html
   
 <table style="text-align: center">  
             <tr>  
-                <td style="text-align: right"><b>(Bot) بات </b></td>  
-                <td style="text-align: right"><b>(Lifecycle Marketing) بازاریابی چرخه حیات کاربران</b></td>  
+                <td style="text-align: right"><b> بات (Bot)  </b></td>  
+                <td style="text-align: right"><b> بازاریابی چرخه حیات کاربران (Lifecycle Marketing) </b></td>  
             </tr>  
             <tr>  
-                 <td style="text-align: right"><b> (Return Of Investment‌) بازگشت سرمایه </b></td>  
+                 <td style="text-align: right"><b> بازگشت سرمایه (Return Of Investment‌)  </b></td>  
                  <td style="text-align: right"><b></b></td>  
              </tr>                                                                                                                                                                                                                                                                                                                                 
 </table>  
@@ -60,27 +60,27 @@ permalink: panel/glossary.html
   
 <table style="text-align: center">  
             <tr>  
-                <td style="text-align: right"><b>(Query Parameter) پارامتر درخواست </b></td>  
-                <td style="text-align: right"><b>(Post Back) پست بک</b></td>  
+                <td style="text-align: right"><b> پارامتر درخواست (Query Parameter) </b></td>  
+                <td style="text-align: right"><b> پست بک (Post Back) </b></td>  
             </tr>  
             <tr>  
-                 <td style="text-align: right"><b>(Cost Per Action) پرداخت به ازای فعالیت </b></td>  
-                 <td style="text-align: right"><b>(Cost Per Click) پرداخت به ازای کلیک </b></td>  
+                 <td style="text-align: right"><b> پرداخت به ازای فعالیت (Cost Per Action) </b></td>  
+                 <td style="text-align: right"><b> پرداخت به ازای کلیک (Cost Per Click) </b></td>  
             </tr>          
             <tr>  
-                  <td style="text-align: right"><b>(Cost Per Install) پرداخت به ازای نصب</b></td>  
-                  <td style="text-align: right"><b>(Cost Per Goal) پرداخت به ازای هدف ‌</b></td>  
+                  <td style="text-align: right"><b> پرداخت به ازای نصب (Cost Per Install)</b></td>  
+                  <td style="text-align: right"><b>پرداخت به ازای هدف (Cost Per Goal)‌</b></td>  
             </tr>      
             <tr>  
-                  <td style="text-align: right"><b>(User Profile) پروفایل کاربر </b></td>  
+                  <td style="text-align: right"><b>پروفایل کاربر (User Profile) </b></td>  
                   <td style="text-align: right"><b>پنجره زمانی اتریبیوشن (Attribution Window) </b></td>  
             </tr>                                             
             <tr>  
-                   <td style="text-align: right"><b>(Push Notification) پوش نوتیفیکیشن‌</b></td>  
+                   <td style="text-align: right"><b> پوش نوتیفیکیشن (Push Notification)‌</b></td>  
                    <td style="text-align: right"><b>پوش‌نوتیفیکیشن چند‌رسانه‌ای (Rich Push Notification)</b></td>  
             </tr>   
             <tr>  
-                   <td style="text-align: right"><b> (In App Message) پیام درون‌برنامه‌ای</b></td>  
+                   <td style="text-align: right"><b> پیام درون‌برنامه‌ای (In App Message)</b></td>  
                    <td style="text-align: right"><b> </b></td>  
             </tr>                                                                                                                                                                                                                                                                                                                                     
 </table>  
@@ -90,16 +90,16 @@ permalink: panel/glossary.html
   
 <table style="text-align: center">  
             <tr>  
-                <td style="text-align: right"><b>(Mobile Advertisement) تبلیغات موبایلی‌</b></td>  
-                <td style="text-align: right"><b> A/B تست</b></td>  
+                <td style="text-align: right"><b> تبلیغات موبایلی (Mobile Advertisement)‌</b></td>  
+                <td style="text-align: right"><b> تست A/B </b></td>  
             </tr>  
             <tr>  
                  <td style="text-align: right"><b>تقلب در تبلیغات موبایلی (Mobile Ad Fraud) </b></td>  
-                 <td style="text-align: right"><b>(tracker) ترکر</b></td>  
+                 <td style="text-align: right"><b>ترکر (tracker) </b></td>  
             </tr>          
             <tr>  
-                  <td style="text-align: right"><b>(Click Injection) تزریق کلیک</b></td>  
-                  <td style="text-align: right"><b>(Engagement) تعامل‌</b></td>  
+                  <td style="text-align: right"><b> تزریق کلیک (Click Injection)</b></td>  
+                  <td style="text-align: right"><b> تعامل (Engagement)‌</b></td>  
             </tr>      
 </table>  
   
@@ -108,15 +108,15 @@ permalink: panel/glossary.html
   
 <table style="text-align: center">  
             <tr>  
-                <td style="text-align: right"><b>(User Acquisition) جذب کاربر</b></td>  
-                <td style="text-align: right"><b>(SDK Spoofing) جعل اس دی کی</b></td>  
+                <td style="text-align: right"><b> جذب کاربر (User Acquisition)</b></td>  
+                <td style="text-align: right"><b> جعل اس دی کی (SDK Spoofing)</b></td>  
             </tr>  
             <tr>  
-                 <td style="text-align: right"><b>(Geopush) جئوپوش</b></td>  
-                 <td style="text-align: right"><b>(Geotarget) جئوتارگت</b></td>  
+                 <td style="text-align: right"><b> جئوپوش (Geopush)</b></td>  
+                 <td style="text-align: right"><b> جئوتارگت (Geotarget) </b></td>  
             </tr>          
             <tr>  
-                  <td style="text-align: right"><b> (Geofence) جئوفنس </b></td>  
+                  <td style="text-align: right"><b> جئوفنس (Geofence) </b></td>  
                   <td style="text-align: right"><b>‌</b></td>  
             </tr>                                                                                                                                                                                                                                                                                                                           
 </table>  
@@ -126,24 +126,24 @@ permalink: panel/glossary.html
   
 <table style="text-align: center">  
             <tr>  
-                <td style="text-align: right"><b>(Sandbox Account) حساب آزمایشی </b></td>  
-                <td style="text-align: right"><b>(Production Account) حساب عملیاتی </b></td>  
+                <td style="text-align: right"><b> حساب آزمایشی (Sandbox Account) </b></td>  
+                <td style="text-align: right"><b>حساب عملیاتی (Production Account)  </b></td>  
             </tr>                                                                                                                                                                                                                                                                                                                           
 </table>  
   
 ## د   
 <table style="text-align: center">  
             <tr>  
-                <td style="text-align: right"><b>(Dashboard) داشبورد</b></td>  
-                <td style="text-align: right"><b> (IP Address) آدرس آی پی</b></td>  
+                <td style="text-align: right"><b> داشبورد (Dashboard) </b></td>  
+                <td style="text-align: right"><b>آدرس آی پی (IP Address) </b></td>  
             </tr>  
             <tr>  
-                 <td style="text-align: right"><b>(Emulated Device) دستگاه شبیه‌سازی</b></td>  
-                 <td style="text-align: right"><b>(Deep Link) دیپ ‌لینک</b></td>  
+                 <td style="text-align: right"><b>دستگاه شبیه‌سازی (Emulated Device) </b></td>  
+                 <td style="text-align: right"><b> دیپ ‌لینک (Deep Link)</b></td>  
             </tr>          
             <tr>  
-                  <td style="text-align: right"><b>(Dynamic Deep Link) دیپ‌ لینک پویا</b></td>  
-                  <td style="text-align: right"><b>(Default Tracker) دیفالت ترکر‌</b></td>  
+                  <td style="text-align: right"><b> دیپ‌ لینک پویا (Dynamic Deep Link)</b></td>  
+                  <td style="text-align: right"><b> دیفالت ترکر (Default Tracker) ‌</b></td>  
             </tr>                                                                                                                                                                                                                                                                                                                                     
 </table>  
   
@@ -151,27 +151,27 @@ permalink: panel/glossary.html
 ## ر   
 <table style="text-align: center">  
           <tr>  
-                <td style="text-align: right"><b>(Install Referrer) رفرر نصب</b></td>  
-                <td style="text-align: right"><b>(Event) رویداد</b></td>  
+                <td style="text-align: right"><b> رفرر نصب (Install Referrer)</b></td>  
+                <td style="text-align: right"><b>رویداد (Event) </b></td>  
           </tr>                                                                                                                                                                                                                                                                                                                               
 </table>  
   
 ## ز   
 <table style="text-align: center">  
             <tr>  
-                <td style="text-align: right"><b>(‌CTIT) زمان بین کلیک تا نصب</b> </td>  
+                <td style="text-align: right"><b> زمان بین کلیک تا نصب (‌CTIT)</b> </td>  
             </tr>                                                                                                                                                                                                                                                                                                                       
 </table>  
   
 ## س   
 <table style="text-align: center">  
             <tr>  
-                <td style="text-align: right"><b>(Click Hijack) سرقت کلیک</b></td>  
-                <td style="text-align: right"><b>(Lead) سر نخ</b></td>  
+                <td style="text-align: right"><b>سرقت کلیک (Click Hijack) </b></td>  
+                <td style="text-align: right"><b>سر نخ (Lead) </b></td>  
             </tr>  
             <tr>  
-                 <td style="text-align: right"><b>(Segmentation) سگمنتیشن</b></td>  
-                 <td style="text-align: right"><b>(Customer Journey) سفر مشتری</b></td>  
+                 <td style="text-align: right"><b>سگمنتیشن (Segmentation) </b></td>  
+                 <td style="text-align: right"><b> سفر مشتری (Customer Journey)</b></td>  
             </tr>          
             <tr>  
                   <td style="text-align: right"><b> سیستم مدیریت ارتباط با شتری (Customer Relationship Management) </b></td>  
@@ -183,11 +183,11 @@ permalink: panel/glossary.html
 <table style="text-align: center">  
             <tr>  
                 <td style="text-align: right"><b>شاخص عملکرد کلیدی (Key Performance Indicator) </b></td>  
-                <td style="text-align: right"><b>(Personalization) شخصی‌سازی</b></td>  
+                <td style="text-align: right"><b> شخصی‌سازی (Personalization)</b></td>  
             </tr>  
             <tr>  
-                 <td style="text-align: right"><b>(‌User ID) شناسه کاربر</b></td>  
-                 <td style="text-align: right"><b>(Ad Network) شبکه تبلیغاتی</b></td>  
+                 <td style="text-align: right"><b> شناسه کاربر (‌User ID)</b></td>  
+                 <td style="text-align: right"><b>شبکه تبلیغاتی (Ad Network) </b></td>  
             </tr>          
             <tr>  
                   <td style="text-align: right"><b>شناسه تبلیغات‌دهنده (Identifier For Advertisers)</b></td>  
@@ -198,38 +198,38 @@ permalink: panel/glossary.html
 ## ف   
 <table style="text-align: center">  
             <tr>  
-                <td style="text-align: right"><b>(‌IP Filter) فیلتر آی پی</b></td>  
-                <td style="text-align: right"><b>(Fingerprinting) فینگر پرینت</b></td>  
+                <td style="text-align: right"><b> فیلتر آی پی (‌IP Filter)</b></td>  
+                <td style="text-align: right"><b> فینگر پرینت (Fingerprinting)</b></td>  
             </tr>  
 </table>  
   
 ## ق   
 <table style="text-align: center">  
             <tr>  
-                <td style="text-align: right"><b>(Marketing Funnel) قیف بازاریابی</b></td>  
+                <td style="text-align: right"><b> قیف بازاریابی (Marketing Funnel)</b></td>  
             </tr>                                                                                                                                                                                                                                                                                                                          
 </table>  
   
 ## ک   
 <table style="text-align: center">  
            <tr>  
-                <td style="text-align: right"><b>(User) کاربر</b></td>  
-                <td style="text-align: right"><b>(Active Users) کاربر فعال</b></td>  
+                <td style="text-align: right"><b> کاربر (User)</b></td>  
+                <td style="text-align: right"><b>کاربر فعال (Active Users) </b></td>  
            </tr>  
            <tr>  
-                 <td style="text-align: right"><b>(Call Back) کال بک</b></td>  
-                 <td style="text-align: right"><b>(Dynamic Call Back) کال بک پویا</b></td>  
+                 <td style="text-align: right"><b>کال بک (Call Back) </b></td>  
+                 <td style="text-align: right"><b> کال بک پویا (Dynamic Call Back)</b></td>  
            </tr>          
            <tr>  
-                  <td style="text-align: right"><b>(Click Spam) کلیک اسپم</b></td>  
-                  <td style="text-align: right"><b>(Cookie) کوکی مرورگر‌</b></td>  
+                  <td style="text-align: right"><b>کلیک اسپم (Click Spam) </b></td>  
+                  <td style="text-align: right"><b> کوکی مرورگر (Cookie)‌</b></td>  
            </tr>                                                                                                                                                                                                                                                                                                                                                                              
 </table>  
   
 ## ل   
 <table style="text-align: center">  
             <tr>  
-                <td style="text-align: right"><b>(Universal Linking) لینک یونیورسال</b></td>  
+                <td style="text-align: right"><b>لینک یونیورسال (Universal Linking) </b></td>  
             </tr>  
 </table>  
   
@@ -238,26 +238,26 @@ permalink: panel/glossary.html
 <table style="text-align: center">  
             <tr>  
                 <td style="text-align: right"><b>مذاکره توافق نامه سطح خدمات (Service  Level Agreement)</b></td>  
-                <td style="text-align: right"><b>(Phone farm)مزرعه تلفن</b></td>  
+                <td style="text-align: right"><b>مزرعه تلفن (Phone farm)</b></td>  
             </tr>  
 </table>  
   
 ## ن   
 <table style="text-align: center">  
             <tr>  
-                <td style="text-align: right"><b>(Retention Rate) نرخ بازگشت</b></td>  
-                <td style="text-align: right"><b>(Conversion Rate) نرخ تبدیل</b></td>  
+                <td style="text-align: right"><b>نرخ بازگشت (Retention Rate)</b></td>  
+                <td style="text-align: right"><b>نرخ تبدیل (Conversion Rate)</b></td>  
             </tr>  
             <tr>  
-                 <td style="text-align: right"><b>(Churn Rate) نرخ ریزش</b></td>  
+                 <td style="text-align: right"><b>نرخ ریزش (Churn Rate) </b></td>  
                  <td style="text-align: right"><b>نرم‌افزار به عنوان سرویس (Software As A Service) </b></td>  
             </tr>          
             <tr>  
-                  <td style="text-align: right"><b>(Install) نصب</b></td>  
-                  <td style="text-align: right"><b>(Organic Install) نصب ارگانیک‌</b></td>  
+                  <td style="text-align: right"><b> نصب (Install)</b></td>  
+                  <td style="text-align: right"><b> نصب ارگانیک (Organic Install)‌</b></td>  
             </tr>      
             <tr>  
-                  <td style="text-align: right"><b> (Non-Organic Install) نصب غیر ارگانیک </b></td>  
+                  <td style="text-align: right"><b>  نصب غیر ارگانیک (Non-Organic Install) </b></td>  
                   <td style="text-align: right"><b></b></td>  
             </tr>                                             
 </table>  
@@ -265,7 +265,7 @@ permalink: panel/glossary.html
 ## و 
 <table style="text-align: center">  
            <tr>  
-                <td style="text-align: right"><b>(Webpush) وب‌پوش</b></td>  
-                <td style="text-align: right"><b>(Webhook) وب‌هوک</b></td>  
+                <td style="text-align: right"><b>وب‌پوش (Webpush)</b></td>  
+                <td style="text-align: right"><b> وب‌هوک (Webhook)</b></td>  
            </tr>                                                                                                                                                                                                                                                                                                                              
 </table>
