@@ -6,8 +6,6 @@ permalink: panel/glossary.html
 ---
 در این تب می‌توانید تمام واژه‌هایی که در وب‌سایت از آن‌ها استفاده شده، را به ترتیب حروف الفبا مشاهده کنید.
 
-<div class='glossary-table'>
-
 <h2>الف</h2>
 <table style="text-align: center">
             <tr>
@@ -41,7 +39,7 @@ permalink: panel/glossary.html
 </table>
 
 <h2>ب</h2>
-<table style='text-align: center'>
+<table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(Bot) بات </b></td>
                 <td style="text-align: left"><b>(Lifecycle Marketing) بازاریابی چرخه حیات کاربران</b></td>
@@ -207,7 +205,7 @@ permalink: panel/glossary.html
             </tr>                                                                                                                                                                                                                                                                                                                        
 </table>
 <h2>ک</h2>
-<table style='text-align: center'>
+<table style="text-align: center">
            <tr>
                 <td style="text-align: right"><b>(User) کاربر</b></td>
                 <td style="text-align: left"><b>(Active Users) کاربر فعال</b></td>
@@ -223,14 +221,14 @@ permalink: panel/glossary.html
 </table>
 
 <h2>ل</h2>
-<table style='text-align: center'>
+<table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(Universal Linking) لینک یونیورسال</b></td>
             </tr>
 </table>
 
 <h2>م</h2>
-<table style='text-align: center'>
+<table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>مذاکره توافق نامه سطح خدمات (Service  Level Agreement)</b></td>
                 <td style="text-align: left"><b>(Phone farm)مزرعه تلفن</b></td>
@@ -238,7 +236,7 @@ permalink: panel/glossary.html
 </table>
 
 <h2>ن</h2>
-<table style='text-align: center'>
+<table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(Retention Rate) نرخ بازگشت</b></td>
                 <td style="text-align: left"><b>(Conversion Rate) نرخ تبدیل</b></td>
@@ -258,13 +256,9 @@ permalink: panel/glossary.html
 </table>
 
 <h2>و</h2>
-<table style='text-align: center'>
+<table style="text-align: center">
            <tr>
                 <td style="text-align: right"><b>(Webpush) وب‌پوش</b></td>
                 <td style="text-align: left"><b>(Webhook) وب‌هوک</b></td>
            </tr>                                                                                                                                                                                                                                                                                                                            
 </table>
-
-
-</div>
-
