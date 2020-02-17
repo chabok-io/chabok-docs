@@ -1,13 +1,14 @@
-
 ---  
 id: glossary  
 title: واژه نامه  
 layout: panel  
 permalink: panel/glossary.html  
 ---  
+
 در این تب می‌توانید تمام واژه‌هایی که در وب‌سایت از آن‌ها استفاده شده، را به ترتیب حروف الفبا مشاهده کنید.  
   
-## الف   
+## الف  
+
 <table style="text-align: center">  
             <tr>  
                  <td style="text-align: right"><b>سلام  </b></td>  
