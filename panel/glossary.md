@@ -6,7 +6,8 @@ permalink: panel/glossary.html
 ---
 در این تب می‌توانید تمام واژه‌هایی که در وب‌سایت از آن‌ها استفاده شده، را به ترتیب حروف الفبا مشاهده کنید.
 
-<h2>الف</h2>
+## الف
+
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right><b>(Opt-In) آپت این / (Oot-Out) آپت اوت</b></td>
@@ -38,7 +39,8 @@ permalink: panel/glossary.html
             </tr>                                                                                                                                                                                                                                                                                                                              
 </table>
 
-<h2>ب</h2>
+## ب
+
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(Bot) بات </b></td>
@@ -51,8 +53,8 @@ permalink: panel/glossary.html
 </table>
 
 
+##پ
 
-<h2>پ</h2>
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(Query Parameter) پارامتر درخواست </b></td>
@@ -81,8 +83,8 @@ permalink: panel/glossary.html
 </table>
 
 
+##ت
 
-<h2>ت</h2>
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(Mobile Advertisement) تبلیغات موبایلی‌</b></td>
@@ -99,8 +101,8 @@ permalink: panel/glossary.html
 </table>
 
 
+##ج
 
-<h2>ج</h2>
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(User Acquisition) جذب کاربر</b></td>
@@ -117,8 +119,8 @@ permalink: panel/glossary.html
 </table>
 
 
+##ح 
 
-<h2>ح</h2>
 
 <table style="text-align: center">
             <tr>
@@ -127,7 +129,8 @@ permalink: panel/glossary.html
             </tr>                                                                                                                                                                                                                                                                                                                         
 </table>
 
-<h2>د</h2>
+##د 
+
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(Dashboard) داشبورد</b></td>
@@ -144,8 +147,8 @@ permalink: panel/glossary.html
 </table>
 
 
+##ر 
 
-<h2>ر</h2>
 <table style="text-align: center">
           <tr>
                 <td style="text-align: right"><b>(Install Referrer) رفرر نصب</b></td>
@@ -153,7 +156,8 @@ permalink: panel/glossary.html
           </tr>                                                                                                                                                                                                                                                                                                                             
 </table>
 
-<h2>ز</h2>
+##ز 
+
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"></td>
@@ -161,7 +165,8 @@ permalink: panel/glossary.html
             </tr>                                                                                                                                                                                                                                                                                                                     
 </table>
 
-<h2>س</h2>
+##س 
+
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(Click Hijack) سرقت کلیک</b></td>
@@ -176,7 +181,9 @@ permalink: panel/glossary.html
                   <td style="text-align: left"><b>سیستم مدیریت ارتباط با شتری (Customer Relationship Management) ‌</b></td>
             </tr>                                                                                                                                                                                                                                                                                                                            
 </table>
-<h2>ش</h2>
+
+##ش 
+
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>شاخص عملکرد کلیدی (Key Performance Indicator) </b></td>
@@ -191,20 +198,26 @@ permalink: panel/glossary.html
                   <td style="text-align: left"><b>شناسه تبلیغات‌دهنده (Identifier For Advertisers)‌</b></td>
             </tr>                                                                                                                                                                                                                                                                                                                                 
 </table>
-<h2>ف</h2>
+
+##ف 
+
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(‌IP Filter) فیلتر آی پی</b></td>
                 <td style="text-align: left"><b>(Fingerprinting) فینگر پرینت</b></td>
             </tr>
 </table>
-<h2>ق</h2>
+
+##ق 
+
 <table style="text-align: center">
             <tr>
                 <td style="text-align: left"><b>(Marketing Funnel) قیف بازاریابی</b></td>
             </tr>                                                                                                                                                                                                                                                                                                                        
 </table>
-<h2>ک</h2>
+
+##ک 
+
 <table style="text-align: center">
            <tr>
                 <td style="text-align: right"><b>(User) کاربر</b></td>
@@ -220,14 +233,17 @@ permalink: panel/glossary.html
            </tr>                                                                                                                                                                                                                                                                                                                                                                            
 </table>
 
-<h2>ل</h2>
+##ل 
+
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(Universal Linking) لینک یونیورسال</b></td>
             </tr>
 </table>
 
-<h2>م</h2>
+
+##م 
+
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>مذاکره توافق نامه سطح خدمات (Service  Level Agreement)</b></td>
@@ -235,7 +251,8 @@ permalink: panel/glossary.html
             </tr>
 </table>
 
-<h2>ن</h2>
+##ن 
+
 <table style="text-align: center">
             <tr>
                 <td style="text-align: right"><b>(Retention Rate) نرخ بازگشت</b></td>
@@ -255,7 +272,8 @@ permalink: panel/glossary.html
             </tr>                                           
 </table>
 
-<h2>و</h2>
+##و 
+
 <table style="text-align: center">
            <tr>
                 <td style="text-align: right"><b>(Webpush) وب‌پوش</b></td>
