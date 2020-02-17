@@ -6,10 +6,10 @@ permalink: glossary/glossary-farsi.html
 ---
 در این تب می‌توانید تمام واژه‌هایی که در وب‌سایت از آن‌ها استفاده شده، را به ترتیب حروف الفبا مشاهده کنید.
 
-<div class='glossary-table-hover'>
+<div class='glossary-table'>
 <body>
 <h2>الف</h2>
-<table style="text-align: center">
+<table style="text-align: center>
             <tr>
                 <td style="text-align: right><b>(Opt-In) آپت این / (Oot-Out) آپت اوت</b></td>
                 <td style="text-align: left"><b> (IP Address) آدرس آی پی</b></td>

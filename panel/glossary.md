@@ -2,11 +2,11 @@
 id: glossary-farsi
 title: واژه نامه
 layout: glossary
-permalink: glossary/glossary-farsi.html
+permalink: panel/glossary-farsi.html
 ---
 در این تب می‌توانید تمام واژه‌هایی که در وب‌سایت از آن‌ها استفاده شده، را به ترتیب حروف الفبا مشاهده کنید.
 
-<div class='glossary-table-hover'>
+<div class='glossary-table'>
 <body>
 <h2>الف</h2>
 <table style="text-align: center">
