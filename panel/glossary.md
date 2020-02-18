@@ -5,11 +5,11 @@ layout: panel
 permalink: panel/glossary.html  
 ---  
 
-در این تب می‌توانید تمام واژه‌هایی که در وب‌سایت از آن‌ها استفاده شده، را به ترتیب حروف الفبا مشاهده کنید.  
+در این تب می‌توانید تمام واژه‌هایی که در وب‌سایت از آن‌ها استفاده شده، را به ترتیب حروف الفبا مشاهده کنید. 
   
 ## الف  
 
-<table style="text-align: center">  
+<table style="text-align: center; border: 0">  
             <tr>  
                  <td style="text-align: right"><b><a href="http://dev.doc.chabokpush.com/panel/tracker.html"> پت این (Opt-In) /آپت اوت (Oot-Out) </a></b></td>  
                  <td style="text-align: right"><b> آدرس آی پی (IP Address) </b></td>  
