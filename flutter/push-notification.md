@@ -39,8 +39,6 @@ print('User intract with notification = ' + notifObject['actionType'].toString()
 
 برای تنظیم پوش‌نوتیفیکیشن چندرسانه‌‌ای در **اندروید** [این قسمت](/android/push-notification.html#تنظیم-پوشنوتیفیکیشن-چندرسانهای-rich-push-notification) را مطالعه کنید.
 
-<br>
-
 برای تنظیم پوش‌نوتیفیکیشن چندرسانه‌‌ای در **آی‌او‌اس** [این قسمت](/ios/push-notification.html#تنظیم-پوشنوتیفیکیشن-چندرسانهای-rich-push-notification) را مطالعه کنید.
 
 ##### نمونه Curl
