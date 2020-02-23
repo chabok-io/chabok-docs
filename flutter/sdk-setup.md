@@ -1,178 +1,243 @@
----  
-id: sdk-setup  
-title: راه‌اندازی  
-layout: flutter  
-permalink: flutter/sdk-setup.html  
-prev: required.html  
-next: tracker.html  
----  
-  
-پس از طی کردن مراحل صفحه [پیش‌نیازها](/flutter/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/flutter/sdk-setup.html#۱--نصب-کتابخانه) و سپس برای فعالسازی پوش‌نوتیفیکیشن چابک بخش‌ [افزودن `GcmReceiver` به فایل `Manifest`](/flutter/sdk-setup.html#۲--افزودن-کلاس--gcmreceiver-به-فایل-manifest) را مطالعه کرده و همانند مستندات بیان شده پیش بروید. در انتها، [مقداردهی و راه‌اندازی](/flutter/sdk-setup.html#۳--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/flutter/sdk-setup.html#۴--ثبت-کاربر-register) را حتما پشت سر بگذارید.  
-  
-برای انجام موفق این کار باید **تمام مراحل زیر را به ترتیب انجام دهید**:  
-  
-[ ۱- نصب کتابخانه](/flutter/sdk-setup.html#۱--نصب-کتابخانه)  
-  
-[۲- افزودن `GcmReceiver` به فایل `Manifest`](/flutter/sdk-setup.html#۲--افزودن-کلاس-gcmreceiver-به-فایل-manifest)  
-  
-[۳- مقداردهی اولیه (Initialize)](/flutter/sdk-setup.html#۳--مقداردهی-اولیه-initialize)  
-  
-[ ۴- ثبت کاربر (Register)](/flutter/sdk-setup.html#۴--ثبت-کاربر-register)  
-  
-<Br>  
-  
-### ۱- نصب کتابخانه  
-  
-برای نصب کتابخانه کافی است در بخش **dependencies** فایل `pubspec.yaml‍` ، چابک را مانند زیر اضافه کنید:
+---
+id: sdk-setup
+title: راه‌اندازی
+layout: flutter
+permalink: flutter/sdk-setup.html
+prev: required.html
+next: tracker.html
+---
 
-```bash
+پس از طی کردن مراحل صفحه [پیش‌نیازها](/flutter/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/flutter/sdk-setup.html#۱--نصب-کتابخانه). در انتها، [مقداردهی و راه‌اندازی](/flutter/sdk-setup.html#۲--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/flutter/sdk-setup.html#۳--ثبت-کاربر) را حتما پشت سر بگذارید.
+
+برای انجام موفق این کارها باید تمام مراحل زیر را به ترتیب انجام دهید:
+
+[ ۱- نصب کتابخانه](/flutter/sdk-setup.html#۱--نصب-کتابخانه)
+
+[۲- مقداردهی اولیه (Initialize)](/flutter/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
+
+[۳- ثبت کاربر (Register)](/flutter/sdk-setup.html#۳--ثبت-کاربر)
+
+<br>
+
+### ۱- نصب کتابخانه  
+
+#### نصب کتابخانه فلاتر 
+
+برای نصب کتابخانه کافی است در بخش **dependencies** فایل `pubspec.yaml‍`، چابک را مانند زیر اضافه کنید:
+
+```yaml
 dependencies:
-		chabokpush: ^0.0.5 
-``` 
-  و پس از آن دستور زیر را در ترمینال مسیر پروژه خود اجرا کنید:
-  
+    chabokpush: ^1.0.0 
+```
+
+و پس از آن دستور زیر را در ترمینال در مسیر پروژه خود اجرا کنید:
+
 ```bash
 flutter pub get
 ```
+
 حالا باید در پروژه خود کد زیر را ایمپورت کنید:
 
 ```bash
 import 'package:chabokpush/chabokpush.dart';
 ```
 
-  <Br>  
+>`نکته:` دقت داشته باشید که [اندروید](/sdk-setup.html#۱-۲-نصب-کتابخانه-اندروید) و [آی‌اواس](/sdk-setup.html#۱-۳-نصب-کتابخانه-آیاواس) نیاز به نصب جداگانه دارند که در ادامه به هر دو پرداخته می‌شود:
 
-#### مدل نسخه‌گذاری در چابک (Semantic Versioning)  
-  
-چابک از مدل نسخه‌گذاری `MAJOR`.`MINOR`.`PATCH` استفاده می‌کند. همه تغییرات نسخه‌ها بلافاصله پس از انتشارشان به صورت موردی در صفحه **لیست  تغییرات** برای اطلاع شما اضافه می‌شوند. برای همین توصیه می‌کنیم این صفحه را حتما مطالعه نمایید. این موارد برای هر نسخه در دو بخش **ارتقا** و **تغییرات** برای شما نمایش داده شده‌ است.  
-  
-- `Patch:` تغییرات در این سطح شامل **Bug Fix** و **قابلیت‌های بسیار کوچک** می‌باشد. به روز رسانی به این نسخه‌ها نیاز به تغییری در کد ندارد. برای آگاهی از آن‌ها، باید بخش **تغییرات** را مطالعه کنید. به عنوان مثال به‌ روز رسانی کتابخانه چابک از نسخه `2.14.0` به نسخه `2.14.1` مربوط به این سطح می‌شود.  
-- `Minor:` تغییرات در این سطح شامل **قابلیت‌های بزرگتر** و **تغییر در کارکرد (Functionality) کتابخانه** می‌شود. در به روز رسانی به این نسخه‌ها حتما باید بخش **ارتقا**  و تغییرات صفحه لیست تغییرات را با دقت مطالعه کنید. در صورت بروز هر گونه مشکل در نتیجه رعایت نکردن نکات بخش **ارتقا** و **تغییرات** در به روز رسانی به نسخه‌های **Minor**، تیم چابک مسئولیتی را نمی‌پذیرد. توصیه می‌کنیم که هر سه تا شش ماه اقدام به بررسی نسخه‌های **Minor** نمایید. به عنوان مثال به‌ روز رسانی کتابخانه چابک از نسخه `2.12.1` به نسخه `2.14.1` مربوط به این سطح می‌شود.  
-- `Major:` این سطح از تغییرات مخصوص **بازنویسی** و یا **تغییرات اساسی** در کتابخانه چابک است. در به روز رسانی به این نسخه‌ها حتما باید بخش **ارتقا** تغییرات صفحه لیست تغییرات را با دقت مطالعه کنید. در صورت بروز هر گونه مشکل در نتیجه رعایت نکردن نکات بخش **ارتقا** و **تغییرات** در به روز رسانی به نسخه‌های **Major**، تیم چابک مسئولیتی را نمی‌پذیرد. بنابراین توصیه می‌کنیم که هر یک سال اقدام به بررسی نسخه‌های **Major** نمایید. به عنوان مثال به‌روزرسانی کتابخانه چابک از نسخه `1.0.1` به نسخه `2.14.1` مربوط به این سطح می‌شود.  
-  
-<Br>  
-  
-### ۲- افزودن کلاس `GcmReceiver` به فایل `Manifest`  
-  
-برای دریافت پوش‌نوتیفیکیشن باید `GcmReceiver` را در بخش `application` به فایل `AndroidManifest.xml` اضافه نمایید تا بتوانید پوش‌نوتیفیکیشن‌هایی که از طریق سرور‌های گوگل ارسال می شوند را نیز دریافت کنید.  
-  
-```markup  
-<application  
-    android:name=".MY_APPLICATION_CLASS_NAME"  
-    ... >  
-     
-   ...  
-    <receiver  
-        android:name="com.google.android.gms.gcm.GcmReceiver"  
-        android:enabled="true"  
-        android:exported="true"  
-        android:permission="com.google.android.c2dm.permission.SEND">  
-        <intent-filter>  
-            <action android:name="com.google.android.c2dm.intent.RECEIVE" />  
-            <action android:name="com.google.android.c2dm.intent.REGISTRATION" />  
-            <category android:name="MY_APPLICATION_PACKAGE_ID" />  
-        </intent-filter>  
-    </receiver>  
-     
-</application>  
-```  
-  دقت کنید که افزودن `receiver` **ضروری** است.
+#### نصب کتابخانه اندروید 
 
- اگر از سرویس‌های پوش دیگری (مانند FCM) در کنار چابک استفاده می‌کنید می‌توانید با کد زیر از **نمایش دوباره آن جلوگیری کنید.**
-این کد باعث می‌شود تا فقط پوش‌نوتیفیکشن‌های چابک نمایش داده شوند؛ برای این کار کد زیر در فایل `AndroidManifest.xml` قرار دهید:
+برای دریافت کتابخانه چابک دستورات زیر را به فایل `build.gradle` اصلی پروژه اضافه کنید:
+
+```javascript  
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/" 
+        }
+    }
+    
+    dependencies {    
+        classpath 'io.chabok.plugin:chabok-services:1.0.0'
+        classpath 'com.google.gms:google-services:4.3.2'
+    }
+}
+```
+
+دستور زیر را در انتهای فایل `build.gradle` ماژول اپلیکیشن خود اضافه کنید:
+
+```javascript  
+apply plugin: 'io.chabok.plugin.chabok-services'
+apply plugin: 'com.google.gms.google-services'
+```
+
+>`نکته:`
+ این فایل عموما در مسیر زیر وجود دارد:
+**app/build.gradle**
+
+#### نصب کتابخانه آی‌او‌اس 
+
+به پوشه پروژه ios بروید و دستور زیر را در ترمینال اجرا کنید:
+
+```bash
+$ pod install --repo-update
+```
+
+حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کردید، نصب کتابخانه آی‌او‌اس موفقیت آمیز بوده است.
+
+<br>
+
+### ۳- مقداردهی اولیه (Initialize)  
+
+#### مقدار‌دهی اولیه اندروید 
+
+چابک برای راه اندازی نیاز به **مقداردهی اولیه** دارد.
+<br>
+۱. برای مقداردهی ابتدا از پنل خود وارد بخش **تنظیمات**> **دسترسی و توکن‌ها**> **کتابخانه موبایل**> **فعال‌سازی راه‌اندازی هوشمند**> شوید و فایل **Chabok.sandbox.json** یا **Chabok.production.json** را بسته به محیطتان دانلود کنید.
+<p class="text-center">
+<img src="http://uupload.ir/files/9tlr_sandbox-android-chabok-doc.gif">
+</p>
+
+>`نکته:`
+برای غیرفعال کردن قابلیت **پوش نوتیفیکیشن**(pushNotification)، کافیست مقدار پیش ‌فرض آن را در فایل دانلود شده تغییر بدید.
+
+۲. فایل دانلود شده را در پوشه ماژول اصلی پروژه قرار دهید.
+<p class="text-center">
+<img width="90%" src="http://uupload.ir/files/pby6_download-file-in-main-module-of-project.gif">
+</p>
+
+<br>
+
+۳. در مرحله آخر نیاز است کد‌های زیر را در کلاس اپلیکیشن خود فراخوانی کنید.
+
+```java
+import com.adpdigital.push.AdpPushClient;
+import com.adpdigital.push.config.Environment;
+
+import io.flutter.app.FlutterApplication;
+
+public class MyAppClass extends FlutterApplication {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        AdpPushClient.configureEnvironment(Environment.SANDBOX); // or PRODUCTION
+    }
+}
+```
+
+قطعه کد زیر را در فایل `AndroidManifest.xml` پروژه خود قرار دهید:
 
 ```xml
-<meta-data android:name="com.adpdigital.push.client.SHOW_ONLY_CHABOK_NOTIFICATIONS" android:value="ENABLE" />
+<application
+    android:name=".MyAppClass">
+</application>
 ```
-در صورتی که برنامه شما کلاس `Application` ندارد با استفاده از راهنمای ارائه شده در این [پست](https://www.mobomo.com/2011/05/how-to-use-application-object-of-android/)، آن را ایجاد کنید.  
-  
-> `نکته`: با توجه به حجم زیاد مجوزهای نمایش نشان (**Badge**) روی آیکون اپ،‌ می‌توانید از [این قسمت](/flutter/features.html#برداشتن-مجوزهای-غیر-ضروری-برای-نمایش-نشان-badge-روی-آیکون) هر کدام از آن‌ها را با اختیار خودتان بردارید.   
 
-<Br>  
-  
-### ۳- مقداردهی اولیه (Initialize)  
-  
-چابک برای راه‌اندازی نیاز به مقداردهی اولیه دارد. متد `init` چابک **باید** در کلاس `Application` در متد `onCreate` تحت هر شرایطی فراخوانی شود.  
+<br>
 
-```dart
-@override
-void initState() {
-	super.initState();
+-**configureEnvironment**: متد `configureEnvironment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شده. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.  
 
-	ChabokPush.init('APP_ID',       //based on your environment
-					'API_KEY',      //based on your environment
-					'SDK_USERNAME', //based on your environment
-					'SDK_PASSWORD', //based on your environment
-					'SENDER_ID',    //Google Sender ID
-					devMode);      //based on your environment
-}		
+>`نکته:`متدی که در بالا قرار دادیم برای راه‌اندازی محیط سندباکس است. در صورتی که **حساب عملیاتی** دارید کافیست `Environment.SANDBOX` را با `Environment.PRODUCTION` عوض کنید.
+<br>
+
+> `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید و پس از تایید و ساخت حساب عملیاتی فایل **Chabok.production.json** را دانلود کنید و به جای فایل **Chabok.sandbox.json** در پوشه ماژول اصلی پروژه خود قراردهید. 
+
+> `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. برای فعال کردن مقدار قابلیت آنی (realtime)، کافی است مقدار پیش‌فرض آن را در فایل دانلود شده تغییر بدید. این قابلیت در[ پیام چابک](/android/chabok-messaging.html) و [پیام‌رسانی آنی](/android/event-handling.html) استفاده می‌شود.
+
+####  مقدار‌دهی اولیه آی‌او‌اس 
+
+چابک برای راه‌اندازی نیاز به **مقداردهی اولیه** دارد.
+
+۱- برای مقداردهی ابتدا از پنل خود بخش **تنظیمات> دسترسی و توکن‌ها> کتابخانه موبایل> راه‌اندازی هوشمند** فایل **Chabok.sandbox.plist**  یا  **Chabok.production.plist**  (بسته به محیطتان) را دانلود کنید.
+
+![enter image description here](http://uupload.ir/files/hgt4_ios-configuration-file.png)
+
+> `نکته:` برای غیر فعال کردن دریافت توکن پوش‌نوتیفیکیشن، کافیست مقدار پیش‌فرض آن را در فایل دانلود شده تغییر دهید.
+
+<br>
+
+۲- فایل دانلود شده را در `Bundle Resources` پروژه خود مطابق تصویر اضافه کنید:
+
+![](https://github.com/chabok-io/chabok-assets/raw/master/chabok-docs/ios/chabok-plist.png)
+
+<br>
+
+۳- در آخر متد چابک را در کلاس `AppDelegate` و متد `didFinishLaunchingWithOptions` فراخوانی کنید.
+
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
+#import "AppDelegate.h"
+#import "GeneratedPluginRegistrant.h"
+#import <AdpPushClient/AdpPushClient.h>
+
+@implementation AppDelegate
+- (BOOL)application:(UIApplication *)application
+            didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+            
+    [PushClientManager.defaultManager configureEnvironment:Sandbox]; // or PEODUCTION
+    
+    [GeneratedPluginRegistrant registerWithRegistry:self];
+    // Override point for customization after application launch.
+    return [super application:application didFinishLaunchingWithOptions:launchOptions];
+}
+@end
 ```
+{% endtab %}
+{% tab SWIFT %}
+```swift
+import UIKit
+import AdpPushClient
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication,
+            didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    PushClientManager.default()?.configureEnvironment(.Sandbox) // or PEODUCTION
+    
+    GeneratedPluginRegistrant.register(with: self)
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+}
+```
+{% endtab %}
+{% endtabs %}
+
+> `نکته`: متد بالا برای محیط سندباکس است. در صورتی که حساب عملیاتی دارید کافیست فقط `Sandbox` را با ‍‍`Production` عوض کنید.
+
+> `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید و پس از تایید و ساخت حساب عملیاتی فایل **Chabok.production.plist** را دنلود کنید و به جای فایل **Chabok.sandbox.plist** در روت پروژه خود قراردهید. 
+
+>`نکته` : توجه داشته باشید هنگامی که **گواهی sandbox اپل** را در پنل تستی قرار می‌دهید، فقط امکان دریافت `Push Notification` در حالت `debug` وجود خواهد داشت. اما اگر **گواهی production اپل** را در محیط عملیاتی قرار دهید، زمانی `Push Notification` را دریافت خواهید کرد که اقدام به ساخت **ipa** از پروژه خود کرده و از طریق TestFlight یا Enterprise اپلیکیشن خود را نصب کنید.
+
+> `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. این قابلیت در[ پیام چابک](/ios/chabok-messaging.html) و [پیام‌رسانی آنی](/ios/event-handling.html) استفاده می‌شود.
+
+<br>
+
+### ۳- ثبت کاربر 
+
+یکی از مزیت‌های چابک نسبت به درگاه‌های ارسال پوش‌نوتیفیکیشن، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید.       
+این شناسه می‌تواند برای **دستگاه‌های متعدد یک کاربر** استفاده شود. شناسه کاربر می‌تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. **شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی **شناسه دیتابیس‌تان** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود.      
  
-  
-  > `نکته`: در این متد به جای پارامتر‌های `APP_ID`, `API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/flutter/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.  
-   
-- **APP_ID**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
+#### ورود به حساب کاربری (login)
+متد لاگین تنها زمانی فراخوانی شود که کاربر در اپلیکیشن لاگین یا ثبت‌نام می‌کند. نیازی به فراخوانی این متد در هر بار اجرای اپلیکیشن نیست.
 
-- **API_KEY**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
+<p>
+فقط شناسه کاربر را گرفته و کاربر را با آن شناسه بر روی سرور چابک ثبت‌ نام می‌کند.
+</p>
 
-- **SDK_USERNAME**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
-
-- **SDK_PASSWORD**: این مقدار را باید از پنل > تنظیمات > دسترسی و توکن‌ها بردارید.
-
-- **SENDER_ID**: برای این مقدار کافی است بخش [شناسه‌ گوگل برای پوش‌نوتیفیکیشن](/flutter/required.html#%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%DA%A9%D9%84%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%DA%AF%D9%88%DA%AF%D9%84) را مطالعه کنید.
-
-> `نکته:` در صورت عدم استفاده از پوش‌نوتیفیکیشن مقدار **SENDER_ID** را `null` قرار دهید. (شمارش حذف و دریافت نوتیفیکیشن در اپلیکیشن‌تان غیرفعال خواهد شد.)
-    
-- ‍‍‍‍‍‍‍‍**devMode**:  تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
-    
-مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `devMode` کلید‌های دسترسی آن هم باید تغییر داده شود.  
-  
-    
-> `نکته`: برای درخواست حساب محیط **عملیاتی**، در بخش تنظیمات پنل، وارد بخش [**درخواست حساب عملیاتی**](https://sandbox.push.adpdigital.com/front/setting/accountRequest) شوید و درخواست خود را ثبت نمایید تا پس از تایید و ساخت حساب عملیاتی شما، اطلاعات جدید حسابتان (AppId, APIKey, Username و Password) تعیین گردد.  
-  
-<Br>  
-  
-### ۴- ثبت کاربر (Register)  
-  
-یکی از مزیت‌های چابک نسبت به درگاه‌های ارسال پوش‌نوتیفیکیشن، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید.   
-  
-این شناسه می‌تواند برای **دستگاه‌های متعدد یک کاربر** استفاده شود. شناسه کاربر می‌تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. **شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی **شناسه دیتابیس‌تان** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود.  
-  
-  
- علاوه بر ثبت کاربر،‌ متد `register` عمل **اتصال** به سرور چابک را انجام می‌دهد، بنابراین باید **فقط یک بار** در طول  فراخوانی شود.   
-
-  
->` نکته:` ترکرها به طور معمول نصب را **اولین بازدید** حساب می‌کنند (مانند سرویس ادجاست)، اما مزیت ترکر چابک در شمارش نصب این است که شما می‌توانید علاوه بر مدل ادجاست، نصب را **ایجاد حساب و احراز هویت او** در اپلیکیشنتان تعریف کنید. با این کار شما یک اقدام دیگری برای جلوگیری از تقلب در شمارش نصب انجام می‌دهید، به این دلیل که امضاهای کاربر، قبل و بعد از ثبت او (register) مطابقت داده می‌شوند و در صورت تایید به عنوان یک نصب سالم در نظر گرفته می‌شوند.   
-  
-  
-به عنوان مثال اگر اپلیکیشن شما صفحه **ورود** و **ثبت‌نام** دارد، متد `register` را در صفحه **ورود** یا **ثبت‌نام** پس از **احراز هویت کاربر** و همچنین، پس از هر بار اجرای فراخوانی کنید تا کاربر به سرور چابک متصل شود. در غیر این صورت کاربر به صورت مهمان ثبت خواهد شد:
-  
 ```dart
-ChabokPush.shared.getUserId()
-	.then((userId) =>
-		ChabokPush.shared.register(userId)
-	,onError: (e) =>  
-		//If user is not registered verify the user and  
-        	//call ChabokPush.shared.register(USER_ID) method at login page 
-		ChabokPush.shared.registerAsGuest());
-```  
-  
-> `نکته`: مقدار `USER_ID` می‌تواند **بین ۳ تا ۶۴** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
-  
-> `نکته امنیتی`: مقدار `USER_ID` را هرگز به صورت خام در `SharedPreferences` ذخیره نکنید، چون مقدار این شناسه معنادار است و می‌توان با آن، کاربر را روی چابک ثبت‌نام کرد. برای این منظور می‌توانید از متد `getUserId` چابک استفاده کنید که شناسه کاربر را به صورت رمزنگاری شده نگه‌می‌دارد.   
-    
-اگر عملیات ثبت‌ کاربر به درستی انجام شده باشد، اطلاعات کاربر در **پنل** چابک مربوط به [حساب](https://sandbox.push.adpdigital.com/front/users/subscribers/list) برنامه، در قسمت **مشترکین** قابل مشاهده خواهد بود و شما می‌توانید از پنل برای کاربر **پیام** ارسال کنید.  
+ChabokPush.shared.login("user_id");
+```
 
-#### کاربر مهمان  
-  
-اگر اپلیکیشن شما قابلیت **ایجاد حساب کاربری** دارد، می‌توانید کاربر را تا زمانی که حساب ایجاد نکرده است به عنوان **کاربر مهمان** در سیستم خود ثبت کنید و سپس به محض ایجاد حساب و دریافت اطلاعات او، آن کاربر را به عنوان **کاربر دائم** خود مانند بالا ثبت کنید.   
-  
-> `نکته:` در صورتی که می‌خواهید از ترکر استفاده کنید و نصب‌ها را به محض اولین بازدید کاربر محاسبه کنید (مانند سرویس ادجاست) باید از این متد استفاده کنید.   
-  
-متد زیر کاربر را به عنوان کاربر مهمان ثبت می‌کند و به طور خودکار یک تگ مهمان (CHABOK_GUEST) به او اختصاص می‌دهد. دقت داشته باشید که **این متد را به تنهایی به کار نبرید** زیرا هر بازدید کاربر را مهمان جدید محاسبه می‌کند. برای اطلاعات بیشتر مستندات [ترکر نصب](/android/tracker.html) را مطالعه کنید.  
-  
+>`نکته:` مقدار `USER_ID` می‌تواند **بین ۳ تا ۶۴** کاراکتر باشد. زبان فاسی، کاراکترهای `#,+,*,\,/` و فاصله هم در آن **مجاز نیستند**.
+
+#### خروج از حساب کاربری (logout)
+
+در صورتی که کاربر از حساب کاربری خود خارج شد، با فراخوانی متد زیر می‌توانید کاربر را همچنان با یک تگ مهمان در سیستم خود داشته باشید و تعاملتان را با او ادامه دهید.
+
 ```dart
-ChabokPush.shared.registerAsGuest();
-```  
-  
+ChabokPush.shared.logout();
+```
+
 > `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-client-flutter/tree/master/example) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.

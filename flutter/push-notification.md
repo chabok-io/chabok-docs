@@ -29,7 +29,7 @@ print('Notification show to user' + notif);
 ChabokPush.shared.setOnNotificationOpenedHandler((notif) {
 var notifObject = json.decode(notif);
 
-print('User intract with notification = ' + notifObject['action'].toString() +
+print('User intract with notification = ' + notifObject['actionType'].toString() +
 ', \n notification payload = ' + notifObject['message'].toString());
 });
 ```
@@ -38,6 +38,10 @@ print('User intract with notification = ' + notifObject['action'].toString() +
 ### تنظیم پوش‌نوتیفیکیشن چندرسانه‌ای (Rich Push Notification)
 
 برای تنظیم پوش‌نوتیفیکیشن چندرسانه‌‌ای در **اندروید** [این قسمت](/android/push-notification.html#تنظیم-پوشنوتیفیکیشن-چندرسانهای-rich-push-notification) را مطالعه کنید.
+
+<br>
+
+برای تنظیم پوش‌نوتیفیکیشن چندرسانه‌‌ای در **آی‌او‌اس** [این قسمت](/ios/push-notification.html#تنظیم-پوشنوتیفیکیشن-چندرسانهای-rich-push-notification) را مطالعه کنید.
 
 ##### نمونه Curl
 
