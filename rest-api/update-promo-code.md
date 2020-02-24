@@ -5,7 +5,7 @@ layout: rest-api
 permalink: rest-api/update-promo-code.html
 ---
 
-##  بروز‌رسانی  کد  تخفیف‌های  یک  کمپین <span class='web-service-http-method-post'>POST<span> 
+## <span class='web-service-http-method-post'>POST<span>  بروز‌رسانی  کد  تخفیف‌های  یک  کمپین 
 
 
 
@@ -17,7 +17,7 @@ https://{APP_ID}.push.adpdigital.com/api/containers/updatePromoCodes/{PUSH_TRACK
 
 محتوای فایل CSV باید به شکل زیر باشد:
 
-``` 
+``` json
 ABC123
 EFG456
 first-ticket
@@ -46,7 +46,7 @@ curl --location --request POST \
 
 ​
 
-##  کد  تخفیف‌های  عمومی <span class='web-service-http-method-post'>POST<span> 
+## <span class='web-service-http-method-post'>POST<span>   کد  تخفیف‌های  عمومی 
 
 
 
@@ -63,7 +63,7 @@ https://{APP_ID}.push.adpdigital.com/api/containers/updateGlobalPromoCodes
 
 محتوای فایل CSV باید به شکل زیر باشد:
 
-```
+``` json
 ABC123
 EFG456
 first-ticket
