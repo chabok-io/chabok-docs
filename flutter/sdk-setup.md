@@ -135,6 +135,14 @@ public class MyAppClass extends FlutterApplication {
 </application>
 ```
 
+ با قرار دادن کد زیر در فایل `AndroidManifest.xml` در تگ `Application` می‌توانید آیکون پیش‌فرض نوتیفیکیشن را به چابک معرفی کنید:
+ 
+ ```xml
+<meta-data
+            android:name="com.adpdigital.push.client.default_notification_icon"
+            android:resource="@drawable/ic_notification_icon" />
+```
+
 <br>
 
 -**configureEnvironment**: متد `configureEnvironment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شده. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.  
