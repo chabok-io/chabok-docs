@@ -17,17 +17,16 @@ https://{APP_ID}.push.adpdigital.com/api/containers/updatePromoCodes/{PUSH_TRACK
 
 محتوای فایل CSV باید به شکل زیر باشد:
 
-```
+``` 
 ABC123
 EFG456
 first-ticket
 new-user
 ```
 
-<p align="center"> 
+<p class="text-center"> 
     <img src="https://raw.githubusercontent.com/chabok-io/chabok-assets/master/chabok-docs/rest-api/promo_code_csv.png"
-     width="300px" 
-     height="235px">
+     width="70%">
 </p>
 
 فرمت درخواست باید `multipart/form-data` باشد و فایل CSV کد تخفیف‌های جدید با کلید file باید ارسال شوند. در ادامه، نمونه یک درخواست cURL آورده شده است:
