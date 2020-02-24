@@ -10,7 +10,7 @@ permalink: rest-api/update-promo-code.html
 
 با فراخوانی API زیر می‌توانید کد تخفیف‌های یک کمپین را بروز کنید تا پیام‌های بعدی از کد تخفیف‌های جدید استفاده کنند:
 
-```curl
+```bash
 https://{APP_ID}.push.adpdigital.com/api/containers/updatePromoCodes/{PUSH_TRACK_ID}
 ```
 
@@ -30,7 +30,7 @@ new-user
 
 فرمت درخواست باید `multipart/form-data` باشد و فایل CSV کد تخفیف‌های جدید با کلید file باید ارسال شوند. در ادامه، نمونه یک درخواست cURL آورده شده است:
 
-```curl
+```bash
 curl --location --request POST \
 'https://{APP_ID}.push.adpdigital.com/api/containers/updatePromoCodes/{PUSH_TRACK_ID}' \
 --header 'X-Access-Token: {ACCESS_TOKEN}' \
@@ -56,7 +56,7 @@ curl --location --request POST \
 
 با فراخوانی API زیر می‌توانید کد تخفیف‌های عمومی اپلیکیشن خود را بروز کنید:
 
-```curl
+```bash
 https://{APP_ID}.push.adpdigital.com/api/containers/updateGlobalPromoCodes
 ```
 
@@ -76,7 +76,7 @@ new-user
 
 فرمت درخواست باید `multipart/form-data` باشد و فایل CSV کد تخفیف‌های جدید با کلید file باید ارسال شوند. در ادامه، نمونه یک درخواست cURL آورده شده است:
 
-```curl
+```bash
 curl --location --request POST \
 'https://{APP_ID}.push.adpdigital.com/api/containers/updateGlobalPromoCodes' \
 --header 'X-Access-Token: {ACCESS_TOKEN}' \
