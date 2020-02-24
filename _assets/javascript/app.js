@@ -200,7 +200,7 @@
       const headerText = innerText.split('|')
 
       if (headerText.length > 1) {
-        return `<span class='web-service-http-method-${headerText[0].toLowerCase()}'>${headerText[0]}</span>` +
+        return `<span class='web-service-http-method-${headerText[0].toLowerCase()}-small'>${headerText[0]}</span>` +
             "<a href='#" + fixedEncodeURIComponent(header.id) + "'>" + headerText[1] + "</a>"
       }
 

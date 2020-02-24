@@ -102,12 +102,30 @@ div > p > code {
   margin: 5px 5px;
 }
 
+.web-service-http-method-post-small {
+  background: #248fb2;
+  color: white;
+  font-size: 8px;
+  border-radius: 2px;
+  padding: 2px 4px 0px 4px;
+  margin: 5px 5px;
+}
+
 .web-service-http-method-delete {
   font-size: 14px;
   border-radius: 6px;
   background: #e27a7a;
   color: white;
   padding: 6px 8px 4px 8px;
+  margin: 5px 5px;
+}
+
+.web-service-http-method-delete-small {
+  background: #e27a7a;
+  color: white;
+  font-size: 8px;
+  border-radius: 2px;
+  padding: 2px 4px 0px 4px;
   margin: 5px 5px;
 }
 
@@ -120,12 +138,31 @@ div > p > code {
   margin: 5px 5px;
 }
 
+.web-service-http-method-get-small {
+  background: #6bbd5b;
+  color: white;
+  font-size: 8px;
+  border-radius: 2px;
+  padding: 2px 4px 0px 4px;
+  margin: 5px 5px;
+}
+
 .web-service-http-method-put {
   font-size: 14px;
   border-radius: 6px;
   background: #9b708b;
   color: white;
   padding: 6px 8px 4px 8px;
+  margin: 5px 5px;
+}
+
+.web-service-http-method-put-small {
+  background: #9b708b;
+  color: white;
+
+  font-size: 8px;
+  border-radius: 2px;
+  padding: 2px 4px 0px 4px;
   margin: 5px 5px;
 }
 
