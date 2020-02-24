@@ -196,18 +196,15 @@
     }
 
     function createLink(header) {
-      var innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
-      return "<a href='#" + fixedEncodeURIComponent(header.id) + "'>" + innerText + "</a>";
-      /*
-      *       const innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
+      const innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
       const headerText = innerText.split('|')
 
       if (headerText.length > 1) {
-        return "<a href='#" + fixedEncodeURIComponent(header.id) + "'>" + headerText[0] + "</a>" +
-            headerText[1];
+        return `<span class='web-service-http-method-${headerText[0].toLowerCase()}'>${headerText[0]}</span>` +
+            "<a href='#" + fixedEncodeURIComponent(header.id) + "'>" + headerText[1] + "</a>"
       }
 
-      return "<a href='#" + fixedEncodeURIComponent(header.id) + "'>" + headerText[0] + "</a>";*/
+      return "<a href='#" + fixedEncodeURIComponent(header.id) + "'>" + headerText[0] + "</a>";
     }
 
     var headers = $(settings.headers).filter(function () {
