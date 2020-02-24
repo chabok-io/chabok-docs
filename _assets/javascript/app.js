@@ -386,16 +386,8 @@ $(document).ready(function () {
   var elem = window.location.hash ? $('#' + decodeURIComponent(window.location.hash.replace('#', ''))) : ''
   var HEADER_HEIGHT = 75;
 
-  $('h1,h2,h3,h4,h5,h6').filter('[id]').each(function () {
-    const innerText = $(this).text();
-    const headerText = innerText.split('|')
-
-    if (headerText.length > 1) {
-      return `<div class="row"><span class='web-service-http-method-${headerText[0].toLowerCase().trim()}-small'>${headerText[0].toUpperCase().trim()}</span>` +
-          "<a href='#" + $(this).attr('id') + "'>" + headerText[1] + "</a></div>"
-    }
-
-    return "<a href='#" + $(this).attr('id') + "'>" + headerText[0] + "</a>";
+  $('.h2,h3,h4,h5,h6').filter('[id]').each(function () {
+    $(this).html('<a href="#' + $(this).attr('id') + '">' + $(this).text() + '</a>');
   });
 
   if (elem.length) {
