@@ -7,12 +7,28 @@ permalink: rest-api/update-promo-code.html
 
 ##  بروز‌رسانی  کد  تخفیف‌های  یک  کمپین <span class='web-service-http-method-post'>POST<span> 
 
-​
+
+
 با فراخوانی API زیر می‌توانید کد تخفیف‌های یک کمپین را بروز کنید تا پیام‌های بعدی از کد تخفیف‌های جدید استفاده کنند:
 
 ```curl
 https://{APP_ID}.push.adpdigital.com/api/containers/updatePromoCodes/{PUSH_TRACK_ID}
 ```
+
+محتوای فایل CSV باید به شکل زیر باشد:
+
+```
+ABC123
+EFG456
+first-ticket
+new-user
+```
+
+<p align="center"> 
+    <img src="https://raw.githubusercontent.com/chabok-io/chabok-assets/master/chabok-docs/rest-api/promo_code_csv.png"
+     width="300px" 
+     height="235px">
+</p>
 
 فرمت درخواست باید `multipart/form-data` باشد و فایل CSV کد تخفیف‌های جدید با کلید file باید ارسال شوند. در ادامه، نمونه یک درخواست cURL آورده شده است:
 
@@ -45,6 +61,21 @@ curl --location --request POST \
 ```curl
 https://{APP_ID}.push.adpdigital.com/api/containers/updateGlobalPromoCodes
 ```
+
+محتوای فایل CSV باید به شکل زیر باشد:
+
+```
+ABC123
+EFG456
+first-ticket
+new-user
+```
+
+<p align="center"> 
+    <img src="https://raw.githubusercontent.com/chabok-io/chabok-assets/master/chabok-docs/rest-api/promo_code_csv.png"
+     width="300px" 
+     height="235px">
+</p>
 
 فرمت درخواست باید `multipart/form-data` باشد و فایل CSV کد تخفیف‌های جدید با کلید file باید ارسال شوند. در ادامه، نمونه یک درخواست cURL آورده شده است:
 
