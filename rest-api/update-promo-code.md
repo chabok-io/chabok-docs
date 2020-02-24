@@ -5,8 +5,8 @@ layout: rest-api
 permalink: rest-api/update-promo-code.html
 ---
 
-###  بروز‌رسانی  کد  تخفیف‌های  یک  کمپین <span class='web-service-http-method-post'>POST<span>
- 
+###  بروز‌رسانی  کد  تخفیف‌های  یک  کمپین 
+<span class='web-service-http-method-post'>POST</span>
 
 با فراخوانی API زیر می‌توانید کد تخفیف‌های یک کمپین را بروز کنید تا پیام‌های بعدی از کد تخفیف‌های جدید استفاده کنند:
 
@@ -72,7 +72,8 @@ curl --location --request POST \
 
 <Br>
 
-### کد  تخفیف‌های  عمومی <span class='web-service-http-method-post'>POST<span> 
+### کد  تخفیف‌های  عمومی 
+<span class='web-service-http-method-post'>POST<span>
 
 کد تخفیف‌های عمومی در مواقعی به کار می‌روند که برای یک کمپین دارای کد تخفیف، فایلی بارگذاری نشده باشد یا در هنگام اجرای کمپین، تمام کدهای بارگذاری‌شده‌ی اختصاصی مصرف و تمام شده باشند.
 
