@@ -10,7 +10,7 @@ prev: send-chabok-message.html
 
 <Br>
 
-### ارسال به گروهی از کاربران (notifyUsers)
+### ارسال به گروهی از کاربران (notifyUsers) <span class='web-service-http-method-post'>POST<span>
 
 در این متد (**notifyUsers**) می‌توانید برای گروهی از کاربران (سگمنت) یا همه کاربران پوش‌نوتیفیکیشن از طریق API ارسال کنید. 
 
@@ -160,7 +160,7 @@ curl -X POST \
 <br><br><br>
 
 
-### ارسال به یک کاربر به خصوص (notifyUser)
+### ارسال به یک کاربر به خصوص (notifyUser) <span class='web-service-http-method-post'>POST<span>
 
 در این متد (**notifyUser**) شما می‌توانید پوش‌نوتیفیکیشن به **یک کاربر** (userId) ارسال کنید.
 

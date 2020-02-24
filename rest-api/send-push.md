@@ -20,7 +20,7 @@ next: add-tag.html
 
 این قسمت مخصوص ارسال تراکنشی یا تعامل یک به یک با کاربر است. پیام شخصی به شما امکان می‌دهد به یک یا چند شناسه کاربری (`userId`) پوش بفرستید:
 
-#### ارسال شخصی پیام چابک
+#### ارسال شخصی پیام چابک <span class='web-service-http-method-post'>POST<span>
 
 برای ارسال شخصی پیام چابک می‌توانید از لینک `https://sandbox.push.adpdigital.com/api/push/toUsers` استفاده کنید. 
 
@@ -390,7 +390,7 @@ curl -X POST "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=
 ```
 <br>
 
-#### ارسال شخصی نوتیفیکیشن 
+#### ارسال شخصی نوتیفیکیشن <span class='web-service-http-method-post'>POST<span>
 
 برای ارسال شخصی نوتیفیکیش می‌توانید از لینک `https://sandbox.push.adpdigital.com/api/push/notifyUsers` استفاده کنید. 
 
@@ -407,13 +407,13 @@ curl -X POST \
 
 <br><br><br>
 
-### ارسال گروهی
+### ارسال گروهی 
 
 این قسمت مخصوص ارسال گروهی یا اجرای کمپین است. پیام گروهی به شما امکان می‌دهد به یک سگمنتی (سگمنت‌ آی‌دی یا فیلترهای سگمنت) پوش بفرستید: 
 
 برای مشاهده نحوه استفاده از [سگمنت](/rest-api/send-push.html#نحوه-استفاده-از-سگمنتها-در-api) اینجا را مطالعه کنید.
 
-#### ارسال گروهی پیام چابک
+#### ارسال گروهی پیام چابک <span class='web-service-http-method-post'>POST<span>
 
 برای ارسال شخصی پیام چابک می‌توانید از لینک `https://sandbox.push.adpdigital.com/api/push/byQuery` استفاده کنید. 
 
@@ -703,7 +703,7 @@ curl -X POST \
 ```
 <br>
 
-#### ارسال گروهی نوتیفیکیشن
+#### ارسال گروهی نوتیفیکیشن <span class='web-service-http-method-post'>POST<span>
 
 برای ارسال گروهی نوتیفیکیش می‌توانید از لینک `https://sandbox.push.adpdigital.com/api/push/notifyUsers` استفاده کنید. 
 

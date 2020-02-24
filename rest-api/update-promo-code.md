@@ -5,8 +5,7 @@ layout: rest-api
 permalink: rest-api/update-promo-code.html
 ---
 
-## <span class='web-service-http-method-post'>POST<span>  بروز‌رسانی  کد  تخفیف‌های  یک  کمپین 
-
+##  بروز‌رسانی  کد  تخفیف‌های  یک  کمپین <span class='web-service-http-method-post'>POST<span> 
 
 
 با فراخوانی API زیر می‌توانید کد تخفیف‌های یک کمپین را بروز کنید تا پیام‌های بعدی از کد تخفیف‌های جدید استفاده کنند:
@@ -46,7 +45,7 @@ curl --location --request POST \
 
 ​
 
-## <span class='web-service-http-method-post'>POST<span>   کد  تخفیف‌های  عمومی 
+## کد  تخفیف‌های  عمومی <span class='web-service-http-method-post'>POST<span> 
 
 
 
