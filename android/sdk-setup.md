@@ -57,7 +57,7 @@ apply plugin: 'com.google.gms.google-services'
   
 ```groovy
 dependencies {
-    implementation 'com.adpdigital.push:chabok-lib:3.1.3'
+    implementation 'com.adpdigital.push:chabok-lib:3.2.0'
 
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
@@ -74,7 +74,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    implementation 'com.adpdigital.push:chabok-lib-geo:3.1.3'
+    implementation 'com.adpdigital.push:chabok-lib-geo:3.2.0'
 
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'  
     implementation 'com.google.firebase:firebase-messaging:17.1.0'
@@ -204,6 +204,14 @@ public class MyAppClass extends Application {
       }
 }
 ```  
+
+ با قرار دادن کد زیر در فایل `AndroidManifest.xml` در تگ `Application` می‌توانید آیکون پیش‌فرض نوتیفیکیشن را به چابک معرفی کنید:
+ 
+ ```xml
+<meta-data
+            android:name="com.adpdigital.push.client.default_notification_icon"
+            android:resource="@drawable/ic_notification_icon" />
+```
 
 ### ۳- ثبت کاربر   
 یکی از مزیت‌های چابک نسبت به درگاه‌های ارسال پوش‌نوتیفیکیشن، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید.       

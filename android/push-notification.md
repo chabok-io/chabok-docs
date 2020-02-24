@@ -105,6 +105,25 @@ if (chabokNotification.getExtras() != null) {
 
 <Br>
 
+#### آیکون کوچک پیش‌فرض نوتیفیکیشن
+ با قرار دادن کد زیر در فایل `AndroidManifest.xml` در تگ `Application` می‌توانید آیکون پیش‌فرض نوتیفیکیشن را به چابک معرفی کنید:
+ 
+ ```xml
+<meta-data
+            android:name="com.adpdigital.push.client.default_notification_icon"
+            android:resource="@drawable/ic_notification_icon" />
+```
+
+و یا با فراخوانی متد زیر، آیکون کوچک پیش‌فرض برای نوتیفیکیشن را به کتابخانه چابک معرفی کنید:
+
+```java
+AdpPushClient
+        .get()
+        .setNotificationIconSilhouette(R.drawable.ic_notification_icon);
+```
+
+<Br>
+
 #### نمایش کامل متن‌های بلند در نوتیفیکیشن
 
 چابک به صورت پیش‌فرض متن پیام و پوش‌نوتیفیکیشن را به صورت `bigText` نمایش **نمی‌دهد**. در این حالت می‌توانید برای نمایش متن پیام و پوش‌نوتیفیکیشن با استفاده از متد `buildNotification` اقدام به نمایش نوتیفیکیشن شخصی‌سازی شده خود کنید و از قطعه کد زیر در متد فوق استفاده کنید:
