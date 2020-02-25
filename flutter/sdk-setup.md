@@ -27,7 +27,7 @@ next: tracker.html
 
 ```yaml
 dependencies:
-    chabokpush: ^1.0.0 
+    chabokpush: ^1.0.2 
 ```
 
 و پس از آن دستور زیر را در ترمینال در مسیر پروژه خود اجرا کنید:
