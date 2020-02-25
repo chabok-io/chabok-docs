@@ -4,6 +4,7 @@ title: امکانات‌ دیگر
 layout: flutter
 permalink: flutter/features.html
 prev: behavior-tracking.html
+next: release-note.html
 ---
 
 چابک متناسب با نیاز شما امکانات دیگری را هم در اختیار شما می گذارد. در این صفحه می‌توانید از [وضعیت اتصال سرور و کلاینت](/flutter/features.html#وضعیت-اتصال-به-چابک) مطلع شوید. شناسه‌های [دستگاه](/flutter/features.html#دریافت-شناسه-دستگاه) و [کاربر](/flutter/features.html#دریافت-شناسه-کاربر) خود را از چابک دریافت نمایید.
