@@ -388,6 +388,16 @@ $(document).ready(function () {
 
   $('h2,h3,h4,h5,h6').filter('[id]').each(function () {
     $(this).html('<a href="#' + $(this).attr('id') + '">' + $(this).text() + '</a>');
+
+    const innerText = $(this).text() || ''
+    const headerText = innerText.split('|')
+
+    if (headerText.length > 1) {
+      $(this).html(`<div class="row"><span class='web-service-http-method-${headerText[0].toLowerCase().trim()}-small'>${headerText[0].toUpperCase().trim()}</span>` +
+          "<a href='#" + $(this).attr('id') + "'>" + headerText[1] + "</a></div>");
+    }
+
+    $(this).html('<a href="#' + $(this).attr('id') + '">' + $(this).text() + '</a>');
   });
 
   if (elem.length) {
