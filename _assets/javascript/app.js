@@ -387,15 +387,16 @@ $(document).ready(function () {
   var HEADER_HEIGHT = 75;
 
   $('h2,h3,h4,h5,h6').filter('[id]').each(function () {
+    const headerId = $(this).attr('id')
     const innerText = $(this).text() || ''
     const headerText = innerText.split('|')
 
     if (headerText.length > 1) {
       $(this).html(`<div class="row"><span class='web-service-http-method-${headerText[0].toLowerCase().trim()}-small'>${headerText[0].toUpperCase().trim()}</span>` +
-          "<a href='#" + $(this).attr('id') + "'>" + headerText[1] + "</a></div>");
+          "<a class=\"none-alaki\" href='#" + headerId + "'>" + headerText[1] + "</a></div>");
     }
 
-    $(this).html('<a href="#' + $(this).attr('id') + '">' + $(this).text() + '</a>');
+    $(this).html('<a class="alaki" href="#' + headerId + '">' + innerText + '</a>');
   });
 
   if (elem.length) {
