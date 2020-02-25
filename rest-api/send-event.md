@@ -12,7 +12,7 @@ permalink: rest-api/send-event.html
 ### ارسال رویداد (Track) 
 ---
 
-#### لینک پایه (Path) <span class='web-service-http-method-post'>POST<span>
+#### POST | لینک پایه (Path) 
 
 لینک پایه ارسال رویداد**post** `https://{APP_ID}.push.adpdigital.com/api/installations/track`
 است. شما می‌توانید به یکی از دو روش شناسه نصب یا شناسه کاربری، رویداد را به سرور چابک ارسال کنید.
@@ -125,7 +125,7 @@ permalink: rest-api/send-event.html
 ---
 
 
-#### لینک پایه (Path) <span class='web-service-http-method-post'>POST<span>
+### POST | لینک پایه (Path) 
 
 لینک پایه ارسال رویداد**post**
 `https://{APP_ID}.push.adpdigital.com/api/installations/trackPurchase`
