@@ -392,7 +392,7 @@ $(document).ready(function () {
     const headerText = innerText.split('|')
 
     if (headerText.length > 1) {
-      $(this).html(`<div class="row"><span class='web-service-http-method-${headerText[0].toLowerCase().trim()}-small'>${headerText[0].toUpperCase().trim()}</span>` +
+      $(this).html(`<div class="row"><span class='web-service-http-method-${headerText[0].toLowerCase().trim()}'>${headerText[0].toUpperCase().trim()}</span>` +
           "<a class=\"none-alaki\" href='#" + headerId + "'>" + headerText[1] + "</a></div>");
     } else {
       $(this).html('<a class="alaki" href="#' + headerId + '">' + innerText + '</a>');
