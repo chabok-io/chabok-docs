@@ -125,7 +125,7 @@ permalink: rest-api/send-event.html
 ---
 
 
-### POST | لینک پایه (Path) 
+#### POST | لینک پایه (Path) 
 
 لینک پایه ارسال رویداد**post**
 `https://{APP_ID}.push.adpdigital.com/api/installations/trackPurchase`
