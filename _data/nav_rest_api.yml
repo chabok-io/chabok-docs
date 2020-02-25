@@ -20,8 +20,9 @@
         - title: نحوه استفاده از سگمنت
           href: نحوه-استفاده-از-سگمنتها-در-api
 
+
     - id: update-promo-code
-        title: بروزرسانی کد تخفیف
+      title: بروزرسانی کد تخفیف
 
     - id: add-tag
       title: مدیریت تگ
