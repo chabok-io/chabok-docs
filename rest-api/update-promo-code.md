@@ -1,6 +1,6 @@
 ---
 id: update-promo-code
-title: وب سرویس بروزرسانی کد تخفیف
+title: بروزرسانی کد تخفیف
 layout: rest-api
 permalink: rest-api/update-promo-code.html
 ---
