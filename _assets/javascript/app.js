@@ -390,16 +390,13 @@ $(document).ready(function () {
     const headerId = $(this).attr('id')
     const innerText = $(this).text() || ''
     const headerText = innerText.split('|')
-    console.log('headerText = ' + headerText)
-    console.log('innerText = ' + innerText)
-    console.log('headerText.length = ' + headerText.length)
 
     if (headerText.length > 1) {
       $(this).html(`<div class="row"><span class='web-service-http-method-${headerText[0].toLowerCase().trim()}-small'>${headerText[0].toUpperCase().trim()}</span>` +
           "<a class=\"none-alaki\" href='#" + headerId + "'>" + headerText[1] + "</a></div>");
+    } else {
+      $(this).html('<a class="alaki" href="#' + headerId + '">' + innerText + '</a>');
     }
-
-    $(this).html('<a class="alaki" href="#' + headerId + '">' + innerText + '</a>');
   });
 
   if (elem.length) {
