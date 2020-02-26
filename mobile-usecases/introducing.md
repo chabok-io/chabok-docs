@@ -92,6 +92,16 @@ permalink: mobile-usecases/introducing.html
                              <p class="text-left"><a class="read-more" href="/mobile-usecases/invite-new-user.html">ادامه مطلب ← </a></p>
                          </div>
              </article>         
-    
-
+              <article class="col-xl-4 col-md-6 col-lg-6">
+                                       <div class="col-md-12 article">
+                                           <div class="row" style="height: 150px;background-image: url(http://uupload.ir/files/oc41_celebration.png);background-size: cover;"></div>
+                                           <header class="list-header">
+                                                <h4 class="list-title"><a href="/mobile-usecases/invite-new-user.html">جشن گرفتن با کاربران</a></h4>
+                                           </header>
+                                           <div class="summary">
+                                                <p class="summary-text">برای رسیدن به موفقیت درون یک اپلیکیشن باید کاربران، ۱۰٪ زمان بیشتری را در آن بگذرانند.</p>
+                                           </div>
+                                           <p class="text-left"><a class="read-more" href="/mobile-usecases/celebration-with-user.html">ادامه مطلب ← </a></p>
+                                       </div>
+                           </article>         
 </div>
