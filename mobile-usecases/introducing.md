@@ -96,7 +96,7 @@ permalink: mobile-usecases/introducing.html
                                        <div class="col-md-12 article">
                                            <div class="row" style="height: 150px;background-image: url(http://uupload.ir/files/iumc_celebration-with-user-for-usecase.png);background-size: cover;"></div>
                                            <header class="list-header">
-                                                <h4 class="list-title"><a href="/mobile-usecases/invite-new-user.html">جشن گرفتن با کاربران</a></h4>
+                                                <h4 class="list-title"><a href="/mobile-usecases/celebration-with-user.html">جشن گرفتن با کاربران</a></h4>
                                            </header>
                                            <div class="summary">
                                                 <p class="summary-text">برای رسیدن به موفقیت درون یک اپلیکیشن باید کاربران، ۱۰٪ زمان بیشتری را در آن بگذرانند.</p>
