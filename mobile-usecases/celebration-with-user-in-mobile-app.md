@@ -13,7 +13,7 @@ permalink: mobile-usecases/celebration-with-user.html
 
 برای ایجاد  **احساس خوشایندی** و **ارزشمندی** در کاربران درون اپلیکیشن می‌توانید در لحظه **پیام‌‌های درون‌برنامه‌‌ای** ارسال کنید و آن‌ها را **تشویق** به استفاده از اپ کنید، همچنین اگر تعامل کاربران را با اپلیکیشن افزایش دهید، می‌توانید به نتیجه دلخواه خود یعنی خرید کاربران درون اپلیکیشن برسید.
 
-<div style="text-align: center;"><img src="http://uupload.ir/files/oc41_celebration.png" class="img-fluid" style="
+<div style="text-align: center;"><img src="http://uupload.ir/files/j1h2_celebration-with-user.png" class="img-fluid" style="
     width: 500px;
 "></div> 
 
