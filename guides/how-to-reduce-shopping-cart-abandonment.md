@@ -32,7 +32,7 @@ permalink: guides/how-to-reduce-shopping-cart-abandonment.html
 
 ۷ - در زمان ارسال، گزینه **خودکار** را انتخاب کنید. ابتدا رویداد فعال کننده پوش را تعیین کنید. (برای مثال: AddToCart)
 
-> ‍‍‍`نکته:` برای آشنایی بیشتر با تعیین و رصد رویدادها صفحه **رصد رفتار درون‌برنامه‌ای** را در مستندات ([اندروید](https://doc.chabok.io/android/event-tracking.html)، [آی‌اواس](https://doc.chabok.io/ios/event-tracking.html) و [وب](https://doc.chabok.io/javascript/event-tracking.html))  مطالعه نمایید.
+> ‍‍‍`نکته:` برای آشنایی بیشتر با تعیین و رصد رویدادها صفحه **رصد رفتار درون‌برنامه‌ای** را در مستندات ([اندروید](https://doc.chabok.io/android/behavior-tracking.html)، [آی‌اواس](https://doc.chabok.io/ios/behavior-tracking.html) و [وب](https://doc.chabok.io/javascript/behavior-tracking.html))  مطالعه نمایید.
 
 ۸- با توجه به اینکه باید **مدت کوتاهی** از افزودن به سبد خرید بگذرد، **۱ روز تاخیر** برای پوش قرار دهید. 
 
