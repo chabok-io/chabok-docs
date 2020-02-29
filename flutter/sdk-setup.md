@@ -27,7 +27,7 @@ next: tracker.html
 
 ```yaml
 dependencies:
-    chabokpush: ^1.0.0 
+    chabokpush: ^1.0.2 
 ```
 
 و پس از آن دستور زیر را در ترمینال در مسیر پروژه خود اجرا کنید:
@@ -133,6 +133,14 @@ public class MyAppClass extends FlutterApplication {
 <application
     android:name=".MyAppClass">
 </application>
+```
+
+ با قرار دادن کد زیر در فایل `AndroidManifest.xml` در تگ `Application` می‌توانید آیکون پیش‌فرض نوتیفیکیشن را به چابک معرفی کنید:
+ 
+ ```xml
+<meta-data
+            android:name="com.adpdigital.push.client.default_notification_icon"
+            android:resource="@drawable/ic_notification_icon" />
 ```
 
 <br>

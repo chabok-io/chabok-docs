@@ -14,7 +14,7 @@ prev: send-push-notification.html
 
 <br>
 
-### یک تگ به کاربر
+### GET | یک تگ به کاربر 
 
 برای افزودن **یک تگ به همه دستگاه‌های کاربر** می‌توانید از `https://sandbox.push.adpdigital.com/api/installations/addTag` استفاده کنید.
 
@@ -43,7 +43,7 @@ curl -X GET \
 
 <br>
 
-### چند تگ به کاربر
+### POST | چند تگ به کاربر
 
 برای افزودن **چند تگ به همه دستگاه‌های کاربر** می‌توانید از `https://sandbox.push.adpdigital.com/api/installations/addTags` استفاده کنید.
 
@@ -71,7 +71,7 @@ curl -X POST/
 
 <br>
 
-### تگ از نوع کلید/مقدار
+### POST | تگ از نوع کلید/مقدار 
 
 برای افزودن یا **ویرایش** **یک تگ از نوع کلید/مقدار به همه دستگاه‌های کاربر** می‌توانید از `https://sandbox.push.adpdigital.com/api/installations/addValueTag` استفاده کنید.
 
@@ -100,7 +100,7 @@ curl -X POST "https://sandbox.push.adpdigital.com/api/installations/addValueTag?
 
 <br>
 
-### یک تگ از کاربر
+### GET | یک تگ از کاربر 
 
 برای حذف **یک تگ از همه دستگاه‌های کاربر** می‌توانید از `https://sandbox.push.adpdigital.com/api/installations/removeTag` استفاده کنید.
 
@@ -122,7 +122,7 @@ curl -X GET \
 
 <br>
 
-### چند تگ از کاربر
+### POST | چند تگ از کاربر 
 
 برای حذف **چند تگ از همه دستگاه‌های کاربر** می‌توانید از `https://sandbox.push.adpdigital.com/api/installations/removeTags` استفاده کنید.
 
@@ -145,7 +145,7 @@ curl -X POST/
 
 <br>
 
-### تگ از نوع کلید/مقدار
+### POST | تگ از نوع کلید/مقدار 
 
 برای حذف یک تگ از نوع کلید/مقدار از همه دستگاه‌های کاربر می‌توانید از `https://sandbox.push.adpdigital.com/api/installations/addValueTag` استفاده کنید.
 

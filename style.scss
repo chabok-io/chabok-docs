@@ -93,6 +93,79 @@ div > p > code {
   color: $gray;
 }
 
+.web-service-http-method-post {
+  font-size: 14px;
+  border-radius: 6px;
+  background: #248fb2;
+  color: white;
+  padding: 6px 8px 4px 8px;
+  margin: 5px 5px;
+}
+
+.web-service-http-method-post-small {
+  background: #248fb2;
+  color: white;
+  font-size: 8px;
+  border-radius: 2px;
+  padding: 2px 4px 0px 4px;
+  margin: 5px 5px;
+}
+
+.web-service-http-method-delete {
+  font-size: 14px;
+  border-radius: 6px;
+  background: #e27a7a;
+  color: white;
+  padding: 6px 8px 4px 8px;
+  margin: 5px 5px;
+}
+
+.web-service-http-method-delete-small {
+  background: #e27a7a;
+  color: white;
+  font-size: 8px;
+  border-radius: 2px;
+  padding: 2px 4px 0px 4px;
+  margin: 5px 5px;
+}
+
+.web-service-http-method-get {
+  font-size: 14px;
+  border-radius: 6px;
+  background: #6bbd5b;
+  color: white;
+  padding: 6px 8px 4px 8px;
+  margin: 5px 5px;
+}
+
+.web-service-http-method-get-small {
+  background: #6bbd5b;
+  color: white;
+  font-size: 8px;
+  border-radius: 2px;
+  padding: 2px 4px 0px 4px;
+  margin: 5px 5px;
+}
+
+.web-service-http-method-put {
+  font-size: 14px;
+  border-radius: 6px;
+  background: #9b708b;
+  color: white;
+  padding: 6px 8px 4px 8px;
+  margin: 5px 5px;
+}
+
+.web-service-http-method-put-small {
+  background: #9b708b;
+  color: white;
+
+  font-size: 8px;
+  border-radius: 2px;
+  padding: 2px 4px 0px 4px;
+  margin: 5px 5px;
+}
+
 // Specify the color of the selection
 ::-moz-selection {
   color: $black;
@@ -769,7 +842,6 @@ footer {
     margin-right: 15px !important;
     li {
       border: none;
-      padding-right: 0 !important;
     }
   }
 

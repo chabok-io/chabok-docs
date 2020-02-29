@@ -2,27 +2,31 @@
   items:
     - id: guide
       title: راهنمای استفاده
-      subitems: 
+      subitems:
         - title: ایجاد دسترسی
           href: ایجاد-دسترسی
         - title: فراخوانی متدها
           href: فراخوانی-متدها
         - title: تفاوت صندوق پیام چابک و پوشنوتیفیکیشن
           href: تفاوت-صندوق-پیام-چابک-و-پوشنوتیفیکیشن-در-api
-   
+
     - id: send-push
       title: ارسال پوش
-      subitems: 
+      subitems:
         - title: ارسال شخصی
           href: ارسال-شخصی
         - title: ارسال گروهی
           href: ارسال-گروهی
         - title: نحوه استفاده از سگمنت
           href: نحوه-استفاده-از-سگمنتها-در-api
-      
+
+
+    - id: update-promo-code
+      title: بروزرسانی کد تخفیف
+
     - id: add-tag
       title: مدیریت تگ
-      subitems: 
+      subitems:
         - title: افزودن تگ
           href: افزودن-تگ
         - title: حذف تگ

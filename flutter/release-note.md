@@ -10,7 +10,19 @@ prev: features.html
 
 <br>
 
-## [نسخه ۱.۰.۰ - ۱۳۹۸/۱۲/۳](https://github.com/chabok-io/chabok-client-flutter/releases/tag/v1.0.0)
+## [نسخه ۱.۰.۲ - ۱۳۹۸/۱۲/۶](https://github.com/chabok-io/chabok-client-flutter/releases/tag/v1.0.2)
+
+### تغییرات
+
+- حذف پیام‌های هشدار در فایل bridge کتابخانه
+
+## [نسخه ۱.۰.۱ - ۱۳۹۸/۱۲/۶](https://github.com/chabok-io/chabok-client-flutter/releases/tag/v1.0.1)
+
+### تغییرات
+
+- حذف پیام‌های هشدار در کتابخانه
+
+## [نسخه ۱.۰.۰ - ۱۳۹۸/۱۲/۶](https://github.com/chabok-io/chabok-client-flutter/releases/tag/v1.0.0)
 
 ### تغییرات
 

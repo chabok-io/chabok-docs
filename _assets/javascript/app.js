@@ -196,8 +196,15 @@
     }
 
     function createLink(header) {
-      var innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
-      return "<a href='#" + fixedEncodeURIComponent(header.id) + "'>" + innerText + "</a>";
+      const innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
+      const headerText = innerText.split('|')
+
+      if (headerText.length > 1) {
+        return `<div class="row"><span class='web-service-http-method-${headerText[0].toLowerCase().trim()}-small'>${headerText[0].toUpperCase().trim()}</span>` +
+            "<a href='#" + fixedEncodeURIComponent(header.id) + "'>" + headerText[1] + "</a></div>"
+      }
+
+      return "<a href='#" + fixedEncodeURIComponent(header.id) + "'>" + headerText[0] + "</a>";
     }
 
     var headers = $(settings.headers).filter(function () {
@@ -379,8 +386,17 @@ $(document).ready(function () {
   var elem = window.location.hash ? $('#' + decodeURIComponent(window.location.hash.replace('#', ''))) : ''
   var HEADER_HEIGHT = 75;
 
-  $('.h2,h3,h4,h5,h6').filter('[id]').each(function () {
-    $(this).html('<a href="#' + $(this).attr('id') + '">' + $(this).text() + '</a>');
+  $('h2,h3,h4,h5,h6').filter('[id]').each(function () {
+    const headerId = $(this).attr('id')
+    const innerText = $(this).text() || ''
+    const headerText = innerText.split('|')
+
+    if (headerText.length > 1) {
+      $(this).html(`<div class="row"><span class='web-service-http-method-${headerText[0].toLowerCase().trim()}'>${headerText[0].toUpperCase().trim()}</span>` +
+          "<a class=\"none-alaki\" href='#" + headerId + "'>" + headerText[1] + "</a></div>");
+    } else {
+      $(this).html('<a class="alaki" href="#' + headerId + '">' + innerText + '</a>');
+    }
   });
 
   if (elem.length) {

@@ -9,7 +9,7 @@ permalink: rest-api/receive-uninstall-data.html
 
 <Br>
 
-### لینک پایه (Path)
+### GET | لینک پایه (Path) 
 
  لینک پایه دریافت دیتا `https://{APP_ID}.push.adpdigital.com/api/installations/v1/uninstall/report/:from/:to` است.
 
