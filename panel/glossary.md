@@ -9,6 +9,7 @@ permalink: panel/glossary.html
   
 ## الف  
 
+
 <table style="text-align: center; border: 0">  
             <tr>  
                  <td style="text-align: right"><b><a href="http://dev.doc.chabokpush.com/panel/tracker.html"> پت این (Opt-In) /آپت اوت (Oot-Out) </a></b></td>  
