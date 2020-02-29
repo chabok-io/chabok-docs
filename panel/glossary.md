@@ -12,7 +12,7 @@ permalink: panel/glossary.html
 
 <table style="text-align: center; border: 0">  
             <tr>  
-                 <td style="text-align: right"><b><a href="http://dev.doc.chabokpush.com/panel/tracker.html"> پت این (Opt-In) /آپت اوت (Oot-Out) </a></b></td>  
+                 <td style="text-align: right"><b>پت این (Opt-In) /آپت اوت (Oot-Out) </b></td>  
                  <td style="text-align: right"><b> آدرس آی پی (IP Address) </b></td>  
             </tr>  
             <tr>  
@@ -25,15 +25,15 @@ permalink: panel/glossary.html
              </tr>      
             <tr>  
                   <td style="text-align: right"><b> اتریبیشون فارغ از پلتفرم (Cross Platform Attribution) </b></td>  
-                  <td style="text-align: right"><b> (Re-attribution) اتریبیوشن مجدد </b></td>  
+                  <td style="text-align: right"><b> اتریبیوشن مجدد (Re-attribution) </b></td>  
             </tr>                                             
             <tr>  
                    <td style="text-align: right"><b>اتومیشن(Automation)</b></td>  
-                   <td style="text-align: right"><b>(SDK) اس دی کی</b></td>  
+                   <td style="text-align: right"><b>اس دی کی (SDK)</b></td>  
             </tr>   
             <tr>    
                    <td style="text-align: right"><b>ارزش طول عمر مشتری (Life Time Value) </b></td>  
-                   <td style="text-align: right"><b>(API) ‌ای پی آی</b></td>  
+                   <td style="text-align: right"><b>ای پی آی (API)‌</b></td>  
             </tr>        
             <tr>  
                    <td style="text-align: right"> <b> اینتنت کروم (Chrome Intent)</b> </td>  
