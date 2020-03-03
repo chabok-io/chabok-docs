@@ -15,5 +15,8 @@
     - id: behavior-tracking
       title: رصد رفتار درون‌برنامه‌ای
 
+    - id: features
+      title: امکانات دیگر
+
     - id: release-note
       title: لیست تغییرات
