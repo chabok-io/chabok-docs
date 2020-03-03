@@ -3,7 +3,7 @@ id: release-note
 title: لیست تغییرات کتابخانه
 layout: cordova
 permalink: cordova/release-note.html
-prev: behavior-tracking.html
+prev: features.html
 ---
 
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید.
