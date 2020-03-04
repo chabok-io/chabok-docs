@@ -1,8 +1,8 @@
 ---  
 id: Analytics  
 title: آنالیتیکس  
-layout: panel/glossary   
-permalink: panel/glossary/Analytics.html  
+layout: panel/Analytics   
+permalink: panel/Analytics.html  
 ---  
 
 # آنالیتیکس (Analytics) 

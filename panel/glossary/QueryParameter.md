@@ -1,8 +1,8 @@
 ---  
 id: QueryParameter  
 title:پارامتر درخواست 
-layout: panel/glossary  
-permalink: panel/glossary/QueryParameter.html  
+layout: panel/QueryParameter  
+permalink: panel/QueryParameter.html  
 ---  
 
 <br>

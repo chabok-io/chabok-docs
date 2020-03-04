@@ -1,8 +1,8 @@
 ---  
 id: gettingstart  
 title:شروع کار با چابک  
-layout: panel/userguide  
-permalink: panel/userguide/gettingstart.html  
+layout: panel/gettingstart  
+permalink: panel/gettingstart.html  
 ---  
 
 <br>

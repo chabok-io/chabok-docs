@@ -1,8 +1,8 @@
 ---  
 id: OrganicInstall  
 title:نصب ارگانیک  
-layout: panel/glossary  
-permalink: panel/glossary/OrganicInstall.html  
+layout: panel/OrganicInstall  
+permalink: panel/OrganicInstall.html  
 ---  
 
 <br>

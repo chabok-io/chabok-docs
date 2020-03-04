@@ -1,8 +1,8 @@
 ---  
 id: Install  
 title:نصب   
-layout: panel/glossary  
-permalink: panel/glossary/Install.html  
+layout: panel/Install  
+permalink: panel/Install.html  
 ---  
 
 <br>

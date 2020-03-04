@@ -1,8 +1,8 @@
 ---  
 id: IpaAddress  
 title: آدرس آی پی 
-layout: panel/glossary  
-permalink: panel/glossary/IpAddress.html  
+layout: panel/IpAddress  
+permalink: panel/IpAddress.html  
 ---  
 
 # آدرس آی پی (IP Address) 

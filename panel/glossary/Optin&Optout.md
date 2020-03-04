@@ -1,8 +1,8 @@
 ---  
 id: Optin&Optout  
 title: آپت این و آپت اوت 
-layout: panel/glossary  
-permalink: panel/glossary/Optin&Optout.html  
+layout: panel/Optin&Optout  
+permalink: panel/Optin&Optout.html  
 ---  
 
 # آپت این و آپت اوت  ( Opt in & Opt out) 

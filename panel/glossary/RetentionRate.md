@@ -1,8 +1,8 @@
 ---  
 id: RetentionRate  
 title:نصب ارگانیک  
-layout: panel/glossary  
-permalink: panel/glossary/RetentionRate.html  
+layout: panel/RetentionRate  
+permalink: panel/RetentionRate.html  
 ---  
 
 <br>

@@ -1,8 +1,8 @@
 ---  
 id: API  
 title:ای پی آی   
-layout: panel/glossary  
-permalink: panel/glossary/API.html  
+layout: panel/API  
+permalink: panel/API.html  
 ---  
 
 <br>
