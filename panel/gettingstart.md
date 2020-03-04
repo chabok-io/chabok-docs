@@ -1,7 +1,7 @@
 ---  
 id: gettingstart  
 title:شروع کار با چابک  
-layout: panel/gettingstart  
+layout: panel 
 permalink: panel/gettingstart.html  
 ---  
 

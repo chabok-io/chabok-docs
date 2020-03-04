@@ -1,7 +1,7 @@
 ---  
 id: glossary  
 title: واژه نامه  
-layout: panel/glossary   
+layout: panel 
 permalink: panel/glossary.html  
 ---  
 
