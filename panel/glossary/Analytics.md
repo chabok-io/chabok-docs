@@ -1,7 +1,7 @@
 ---  
 id: Analytics  
 title: آنالیتیکس  
-layout: panel/Analytics   
+layout: panel/glossary   
 permalink: panel/Analytics.html  
 ---  
 
