@@ -1,8 +1,8 @@
 ---  
 id: ChurnRat  
 title:نصب ارگانیک  
-layout: panel/glossary  
-permalink: panel/glossary/ChurnRat.html  
+layout: panel/ChurnRat
+permalink: panel/ChurnRat.html  
 ---  
 
 <br>

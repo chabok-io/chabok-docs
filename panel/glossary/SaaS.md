@@ -1,8 +1,8 @@
 ---  
 id: SaaS  
 title:نرم افزار به عنوان سرویس  
-layout: panel/glossary  
-permalink: panel/glossary/SaaS.html  
+layout: panel/SaaS  
+permalink: panel/SaaS.html  
 ---  
 
 <br>

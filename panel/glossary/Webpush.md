@@ -1,8 +1,8 @@
 ---  
 id: webpush  
 title:وب پوش  
-layout: panel/glossary  
-permalink: panel/glossary/webpush.html  
+layout: panel/webpush  
+permalink: panel/webpush.html  
 --- 
 
 <br>

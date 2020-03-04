@@ -1,8 +1,8 @@
 ---  
 id: trackerintroduction  
 title:آشنایی با ترکر  
-layout: panel/userguide  
-permalink: panel/userguide/trackerintroduction.html  
+layout: panel/trackerintroduction  
+permalink: panel/trackerintroduction.html  
 ---  
 
 <br>

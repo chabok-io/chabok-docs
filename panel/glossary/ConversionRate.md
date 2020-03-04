@@ -1,8 +1,8 @@
 ---  
 id: ConversionRate  
 title:نرخ تبدیل  
-layout: panel/glossary  
-permalink: panel/glossary/ConversionRate.html  
+layout: panel/ConversionRate  
+permalink: panel/ConversionRate.html  
 ---  
 
 <br>

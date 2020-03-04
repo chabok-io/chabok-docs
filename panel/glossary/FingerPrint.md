@@ -1,8 +1,8 @@
 ---  
 id: FingerPrint  
 title:فینگر پرینت  
-layout: panel/glossary  
-permalink: panel/glossary/FingerPrint.html  
+layout: panel/FingerPrint  
+permalink: panel/FingerPrint.html  
 ---  
 
 <br>

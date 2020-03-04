@@ -1,8 +1,8 @@
 ---  
 id: Webhook  
 title:وب هوک  
-layout: panel/glossary  
-permalink: panel/glossary/Webhook.html  
+layout: panel/Webhook  
+permalink: panel/Webhook.html  
 ---  
 
 <br>

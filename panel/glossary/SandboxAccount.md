@@ -1,8 +1,8 @@
 ---  
 id: SandboxAccount  
 title:حساب آزمایشی  
-layout: panel/glossary  
-permalink: panel/glossary/SandboxAccount.html  
+layout: panel/SandboxAccount  
+permalink: panel/SandboxAccount.html  
 ---  
 
 <br>

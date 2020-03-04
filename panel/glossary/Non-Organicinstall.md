@@ -1,8 +1,8 @@
 ---  
 id: Non-Organicinstall  
 title:نصب غیرارگانیک  
-layout: panel/glossary  
-permalink: panel/glossary/Non-Organicinstall.html  
+layout: panel/Non-Organicinstall  
+permalink: panel/Non-Organicinstall.html  
 ---  
 
 <br>

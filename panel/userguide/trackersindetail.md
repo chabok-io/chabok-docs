@@ -1,8 +1,8 @@
 ---  
 id: trackersindetail  
 title:امکانات پیشرفته ترکر  
-layout: panel/userguide  
-permalink: panel/userguide/trackersindetail.html  
+layout: panel/trackersindetail  
+permalink: panel/trackersindetail.html  
 ---  
 
 <br>
