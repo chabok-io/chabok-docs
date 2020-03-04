@@ -1,7 +1,7 @@
 ---  
 id: trackerintroduction  
 title:آشنایی با ترکر  
-layout: panel/trackerintroduction  
+layout: panel  
 permalink: panel/trackerintroduction.html  
 ---  
 
