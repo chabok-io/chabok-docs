@@ -1,6 +1,6 @@
 ---  
 id: ChurnRat  
-title:نصب ارگانیک  
+title: نصب ارگانیک  
 layout: panel
 permalink: panel/ChurnRat.html  
 ---  

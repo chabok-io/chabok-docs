@@ -1,6 +1,6 @@
 ---  
 id: API  
-title:ای پی آی   
+title: ای پی آی     
 layout: panel
 permalink: panel/API.html  
 ---  

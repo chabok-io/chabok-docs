@@ -1,6 +1,6 @@
 ---  
 id: QueryParameter  
-title:پارامتر درخواست 
+title: پارامتر درخواست 
 layout: panel
 permalink: panel/QueryParameter.html  
 ---  

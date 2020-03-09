@@ -1,6 +1,6 @@
 ---  
 id: OrganicInstall  
-title:نصب ارگانیک  
+title: نصب ارگانیک  
 layout: panel
 permalink: panel/OrganicInstall.html  
 ---  

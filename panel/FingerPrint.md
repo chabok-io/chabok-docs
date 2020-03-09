@@ -1,6 +1,6 @@
 ---  
 id: FingerPrint  
-title:فینگر پرینت  
+title: فینگر پرینت  
 layout: panel  
 permalink: panel/FingerPrint.html  
 ---  
