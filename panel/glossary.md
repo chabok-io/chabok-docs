@@ -1,7 +1,7 @@
 ---  
 id: glossary  
 title: واژه نامه  
-layout: panel  
+layout: panel 
 permalink: panel/glossary.html  
 ---  
 
@@ -12,7 +12,7 @@ permalink: panel/glossary.html
 
 <table style="text-align: center; border: 0">  
             <tr>  
-                 <td style="text-align: right"><b>آپت این (Opt-In) /آپت اوت (Oot-Out) </b></td>  
+                 <td style="text-align: right"><b>پت این (Opt-In) /آپت اوت (Oot-Out) </b></td>  
                  <td style="text-align: right"><b> آدرس آی پی (IP Address) </b></td>  
             </tr>  
             <tr>  
@@ -175,7 +175,7 @@ permalink: panel/glossary.html
                  <td style="text-align: right"><b> سفر مشتری (Customer Journey)</b></td>  
             </tr>          
             <tr>  
-                  <td style="text-align: right"><b> سیستم مدیریت ارتباط با مشتری (Customer Relationship Management) </b></td>  
+                  <td style="text-align: right"><b> سیستم مدیریت ارتباط با شتری (Customer Relationship Management) </b></td>  
                   <td style="text-align: right"></td>  
             </tr>                                                                                                                                                                                                                                                                                                                              
 </table>  
