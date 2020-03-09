@@ -1,6 +1,6 @@
 ---  
 id: ConversionRate  
-title:نرخ تبدیل  
+title: نرخ تبدیل  
 layout: panel
 permalink: panel/ConversionRate.html  
 ---  

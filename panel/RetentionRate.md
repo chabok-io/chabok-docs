@@ -1,6 +1,6 @@
 ---  
 id: RetentionRate  
-title:نصب ارگانیک  
+title: نرخ بازگشت  
 layout: panel
 permalink: panel/RetentionRate.html  
 ---  

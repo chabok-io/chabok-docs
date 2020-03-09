@@ -1,6 +1,6 @@
 ---  
 id: SandboxAccount  
-title:حساب آزمایشی  
+title: حساب آزمایشی  
 layout: panel
 permalink: panel/SandboxAccount.html  
 ---  

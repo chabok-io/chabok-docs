@@ -1,6 +1,6 @@
 ---  
 id: gettingstart  
-title:شروع کار با چابک  
+title: شروع کار با چابک  
 layout: panel 
 permalink: panel/gettingstart.html  
 ---  

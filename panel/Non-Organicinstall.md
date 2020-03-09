@@ -1,6 +1,6 @@
 ---  
 id: Non-Organicinstall  
-title:نصب غیرارگانیک  
+title: نصب غیرارگانیک  
 layout: panel/
 permalink: panel/Non-Organicinstall.html  
 ---  

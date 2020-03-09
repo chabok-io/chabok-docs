@@ -1,6 +1,6 @@
 ---  
 id: webpush  
-title:وب پوش  
+title: وب پوش  
 layout: panel  
 permalink: panel/webpush.html  
 --- 
