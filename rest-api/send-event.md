@@ -20,52 +20,6 @@ permalink: rest-api/send-event.html
 
 <Br>
 
-##### مثال ارسال رویداد به سرور چابک از طریق شناسه نصب در چابک
-
-
-```javascript
-{
-  "installationId": "INSTALLATION_ID",
-  "eventName": "EVENT_NAME",
-  "eventTime": 1575965125110,
-  "eventData": {}
-}
-```
-
--  `installationId` (اجباری)
-
-این شناسه نصب توسط چابک گزارش می‌شود. برای ارسال رویداد انجام شده توسط یک کاربر باید شناسه نصب آن را به سرور چابک ارسال کنید که می‌توانید شناسه نصب (شناسه دستگاه) را در زمان ارسال رویداد از **SDK چابک** دریافت کنید.
-
-- `eventName` (اجباری)
-
-نام رویدادی که می‌خواهید برای کاربر ثبت کنید را به عنوان مقدار **eventName** ارسال کنید.
-
-- `eventTime` (اختیاری)
-
-زمان وقوع رویداد را به عنوان مقدار **eventTime** ارسال کنید.
-
->`نکته:`در صورت ارسال نکردن زمان رویداد، چابک زمان دریافت رویداد را به عنوان زمان وقوع رویداد برای شما ذخیره می‌کند.
-
-- `eventData` (اختیاری)
-
-اطلاعات و داده مربوط به ایونت را می‌توانید به عنوان مقدار **eventData** ارسال کنید.
-
-نمونه‌ای از typeهای متفاوت در `eventData`:
-
-```javascript
-{
-    "eventData" : {
-        "orderDate": "2020-02-06T12:12:25.408Z",
-        "isNew": true,
-        "avgOrder": 2.4,
-        "categories": ["comedy", "action"]
-    }
-}
-```
-
-> `نکته`: مقادیر تاریخ (date) حتما باید با formatهای ISO و یا UTC ارسال
-> شوند.
-
 
 ##### مثال ارسال رویداد به سرور چابک از طریق شناسه کاربری
 
@@ -117,33 +71,34 @@ permalink: rest-api/send-event.html
 > `نکته`: مقادیر تاریخ (date) حتما باید با formatهای ISO و یا UTC ارسال
 > شوند.
 
+##### نمونه CURL
+
+نمونه CURL زیر رویداد `addToCart` را برای کاربر `09331952921` ارسال می‌کند:
+
+```curl
+curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/track' \
+--header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "userId": "09331952921",
+  "eventName": "addToCart",
+  "eventData": {
+  	"productId": 12345,
+  	"productName": "milk"
+  }
+}'
+```
 
 <Br>
 
+##### مثال ارسال رویداد به سرور چابک از طریق شناسه نصب در چابک
 
-### ارسال رویداد درآمد (Tracking Revenue)
----
-
-
-#### POST | لینک پایه (Path) 
-
-لینک پایه ارسال رویداد**post**
-`https://{APP_ID}.push.adpdigital.com/api/installations/trackPurchase`
-است. شما می‌توانید به یکی از دو روش شناسه نصب یا شناسه کاربری، رویداد را
-به سرور چابک ارسال کنید.
-
-
-<Br>
-
-##### مثال ارسال رویداد درآمد به سرور چابک از طریق شناسه نصب در چابک
 
 ```javascript
 {
   "installationId": "INSTALLATION_ID",
   "eventName": "EVENT_NAME",
   "eventTime": 1575965125110,
-  "revenue": 25000,
-  "currency": "RIAL",
   "eventData": {}
 }
 ```
@@ -156,15 +111,6 @@ permalink: rest-api/send-event.html
 
 نام رویدادی که می‌خواهید برای کاربر ثبت کنید را به عنوان مقدار **eventName** ارسال کنید.
 
-- `revenue` (اجباری)
-
-مبلغ خرید کاربر را به عنوان مقدار **revenue** ارسال کنید.
-
-- `currency` (اختیاری)
-
-واحد پولی که کاربر خرید را انجام داده است را به عنوان مقدار **currency**
-ارسال کنید.
-
 - `eventTime` (اختیاری)
 
 زمان وقوع رویداد را به عنوان مقدار **eventTime** ارسال کنید.
@@ -174,7 +120,6 @@ permalink: rest-api/send-event.html
 - `eventData` (اختیاری)
 
 اطلاعات و داده مربوط به ایونت را می‌توانید به عنوان مقدار **eventData** ارسال کنید.
-
 
 نمونه‌ای از typeهای متفاوت در `eventData`:
 
@@ -192,6 +137,38 @@ permalink: rest-api/send-event.html
 > `نکته`: مقادیر تاریخ (date) حتما باید با formatهای ISO و یا UTC ارسال
 > شوند.
 
+##### نمونه CURL
+
+نمونه CURL زیر رویداد `addToCart` را برای دستگاه `123456789` ارسال می‌کند:
+
+```curl
+curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/track' \
+--header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "installationId": "123456789",
+  "eventName": "addToCart",
+  "eventData": {
+  	"productId": 12345,
+  	"productName": "milk"
+  }
+}'
+```
+
+### ارسال رویداد درآمد (Tracking Revenue)
+---
+
+
+#### POST | لینک پایه (Path) 
+
+لینک پایه ارسال رویداد**post**
+`https://{APP_ID}.push.adpdigital.com/api/installations/trackPurchase`
+است. شما می‌توانید به یکی از دو روش شناسه نصب یا شناسه کاربری، رویداد را
+به سرور چابک ارسال کنید.
+
+
+<Br>
+  
 
 ##### مثال ارسال رویداد درآمد به سرور چابک از طریق شناسه کاربری
 
@@ -253,3 +230,104 @@ permalink: rest-api/send-event.html
 
 > `نکته`: مقادیر تاریخ (date) حتما باید با formatهای ISO و یا UTC ارسال
 > شوند.
+
+
+
+##### مثال ارسال رویداد درآمد به سرور چابک از طریق شناسه نصب در چابک
+
+```javascript
+{
+  "installationId": "INSTALLATION_ID",
+  "eventName": "EVENT_NAME",
+  "eventTime": 1575965125110,
+  "revenue": 25000,
+  "currency": "RIAL",
+  "eventData": {}
+}
+```
+
+-  `installationId` (اجباری)
+
+این شناسه نصب توسط چابک گزارش می‌شود. برای ارسال رویداد انجام شده توسط یک کاربر باید شناسه نصب آن را به سرور چابک ارسال کنید که می‌توانید شناسه نصب (شناسه دستگاه) را در زمان ارسال رویداد از **SDK چابک** دریافت کنید.
+
+- `eventName` (اجباری)
+
+نام رویدادی که می‌خواهید برای کاربر ثبت کنید را به عنوان مقدار **eventName** ارسال کنید.
+
+- `revenue` (اجباری)
+
+مبلغ خرید کاربر را به عنوان مقدار **revenue** ارسال کنید.
+
+- `currency` (اختیاری)
+
+واحد پولی که کاربر خرید را انجام داده است را به عنوان مقدار **currency**
+ارسال کنید.
+
+- `eventTime` (اختیاری)
+
+زمان وقوع رویداد را به عنوان مقدار **eventTime** ارسال کنید.
+
+>`نکته:`در صورت ارسال نکردن زمان رویداد، چابک زمان دریافت رویداد را به عنوان زمان وقوع رویداد برای شما ذخیره می‌کند.
+
+- `eventData` (اختیاری)
+
+اطلاعات و داده مربوط به ایونت را می‌توانید به عنوان مقدار **eventData** ارسال کنید.
+
+
+نمونه‌ای از typeهای متفاوت در `eventData`:
+
+```javascript
+{
+    "eventData" : {
+        "orderDate": "2020-02-06T12:12:25.408Z",
+        "isNew": true,
+        "avgOrder": 2.4,
+        "categories": ["comedy", "action"]
+    }
+}
+```
+
+> `نکته`: مقادیر تاریخ (date) حتما باید با formatهای ISO و یا UTC ارسال
+> شوند.
+
+
+##### نمونه CURL
+
+نمونه CURL زیر رویداد درآمد `addToCart` را برای دستگاه `123456789` ارسال می‌کند:
+
+```curl
+curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/trackRevenue' \
+--header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "installationId": "123456789",
+  "eventName": "purchase",
+  "revenue": 200000,
+  "currency": "rial",
+  "eventData": {
+  	"productId": 12345,
+  	"productName": "milk"
+  }
+}'
+```
+
+
+##### نمونه CURL
+
+نمونه CURL زیر رویداد درآمد `purchase` را برای کاربر `09331952921` ارسال می‌کند:
+
+```curl
+curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/trackRevenue' \
+--header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "userId": "09331952921",
+  "eventName": "purchase",
+  "revenue": 200000,
+  "currency": "rial",
+  "eventData": {
+  	"productId": 12345,
+  	"productName": "milk"
+  }
+}'
+```
