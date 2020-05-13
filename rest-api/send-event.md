@@ -71,11 +71,12 @@ permalink: rest-api/send-event.html
 > `نکته`: مقادیر تاریخ (date) حتما باید با formatهای ISO و یا UTC ارسال
 > شوند.
 
+
 ##### نمونه CURL
 
 نمونه CURL زیر رویداد `addToCart` را برای کاربر `09331952921` ارسال می‌کند:
 
-```curl
+```bash
 curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/track' \
 --header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
 --header 'Content-Type: application/json' \
@@ -141,7 +142,7 @@ curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installa
 
 نمونه CURL زیر رویداد `addToCart` را برای دستگاه `123456789` ارسال می‌کند:
 
-```curl
+```bash
 curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/track' \
 --header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
 --header 'Content-Type: application/json' \
@@ -232,6 +233,26 @@ curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installa
 > شوند.
 
 
+##### نمونه CURL
+
+نمونه CURL زیر رویداد درآمد `addToCart` را برای دستگاه `123456789` ارسال می‌کند:
+
+```bash
+curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/trackRevenue' \
+--header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "installationId": "123456789",
+  "eventName": "purchase",
+  "revenue": 200000,
+  "currency": "rial",
+  "eventData": {
+  	"productId": 12345,
+  	"productName": "milk"
+  }
+}'
+```
+
 
 ##### مثال ارسال رویداد درآمد به سرور چابک از طریق شناسه نصب در چابک
 
@@ -293,30 +314,9 @@ curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installa
 
 ##### نمونه CURL
 
-نمونه CURL زیر رویداد درآمد `addToCart` را برای دستگاه `123456789` ارسال می‌کند:
-
-```curl
-curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/trackRevenue' \
---header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "installationId": "123456789",
-  "eventName": "purchase",
-  "revenue": 200000,
-  "currency": "rial",
-  "eventData": {
-  	"productId": 12345,
-  	"productName": "milk"
-  }
-}'
-```
-
-
-##### نمونه CURL
-
 نمونه CURL زیر رویداد درآمد `purchase` را برای کاربر `09331952921` ارسال می‌کند:
 
-```curl
+```bash
 curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/trackRevenue' \
 --header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
 --header 'Content-Type: application/json' \
