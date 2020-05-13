@@ -48,6 +48,29 @@ permalink: rest-api/attributes.html
 > `نکته`: مقادیر تاریخ (date) حتما باید با formatهای ISO و یا UTC ارسال شوند.
 
 
+
+#### نمونه CURL
+
+نمونه CURL زیر اتریبیوت‌ها با نوع‌های مختلف برای کاربر اعمال می‌کند:
+
+```bash
+curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/attributes' \
+--header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "userId": "09331952921",
+  "attributes": {
+    "fistName": "Ali",
+    "lastName": "Ahmadi",
+    "isVIP": true,
+    "score": 2.4,
+    "birthday": "2020-02-06T12:12:25.408Z",
+    "favoriteCategories": ["comedy", "action"]
+  }
+}'
+```
+
+
 #### مثال ارسال اطلاعات کاربر به سرور چابک از طریق شناسه نصب در چابک 
 
 ```json
@@ -75,3 +98,25 @@ permalink: rest-api/attributes.html
 >`نکته`: اطلاعات کاربر می‌تواند از نوع **عدد**، **رشته**، **منطقی**، **آرایه‌ای از رشته** و **تاریخ** باشد. 
 
 > `نکته`: مقادیر تاریخ (date) حتما باید با formatهای ISO و یا UTC ارسال شوند.
+
+
+#### نمونه CURL
+
+نمونه CURL زیر اتریبیوت‌ها با نوع‌های مختلف بر روی دستگاه کاربر اعمال می‌کند:
+
+```bash
+curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/attributes' \
+--header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "installationId": "INSTALLATION_ID",
+  "attributes": {
+    "fistName": "Ali",
+    "lastName": "Ahmadi",
+    "isVIP": true,
+    "score": 2.4,
+    "birthday": "2020-02-06T12:12:25.408Z",
+    "favoriteCategories": ["comedy", "action"]
+  }
+}'
+```
