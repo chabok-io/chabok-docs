@@ -332,13 +332,13 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 
 شما می‌توانید پشت لینک ترکر پارامترهایی را برای دریافت ایونت‌های مورد نظر در وب‌سرویس خود قرار دهید. برای این کار فقط کافیست از پارامتر `event_callback` برای **همه ایونت‌ها** و `event_callback_eventname` برای **ایونت مورد نظر** مانند زیر استفاده کنید:
 
-```
+```markup
 https://a.chabok.io/abc123?event_callback=https%3A%2F%2Fyourdomain.com%2Fevents
 
 urldecode : https://a.chabok.io/abc123?event_callback=https://yourdomain.com/events
 ```
 
-```
+```markup
 https://a.chabok.io/abc123?event_callback_purchase=https%3A%2F%2Fyourdomain.com%2Fevent_purchase
 
 urldecode : https://a.chabok.io/abc123?event_callback=https://yourdomain.com/event_purchase
