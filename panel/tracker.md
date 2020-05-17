@@ -328,6 +328,24 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 
 <Br>
 
+##### کال‌بک دینامیک
+
+شما می‌توانید پشت لینک ترکر پارامترهایی را برای دریافت ایونت‌های مورد نظر در وب‌سرویس خود قرار دهید. برای این کار فقط کافیست از پارامتر `event_callback` برای **همه ایونت‌ها** و `event_callback_eventname` برای **ایونت مورد نظر** مانند زیر استفاده کنید:
+
+```
+https://a.chabok.io/abc123?event_callback=https%3A%2F%2Fyourdomain.com%2Fevents
+
+urldecode : https://a.chabok.io/abc123?event_callback=https://yourdomain.com/events
+```
+
+```
+https://a.chabok.io/abc123?event_callback_purchase=https%3A%2F%2Fyourdomain.com%2Fevent_purchase
+
+urldecode : https://a.chabok.io/abc123?event_callback=https://yourdomain.com/event_purchase
+```
+
+> `نکته:` توکن ایونت‌ها در چابک (مغایر با ادجاست) همان نام ایونت‌ها است.
+
 > `نکته:` شما می‌توانید از `click_id` هم به عنوان پارامتر کال‌بک استفاده کنید. این شناسه را خودتان (یا آژانس تبلیغاتی‌تان) تعیین می‌کنید و به لینک ترکر چابک اضافه می‌کنید و در کال‌بک آن را می‌توانید دریافت کنید.
 
 برای مثال به کال‌بک زیر توجه کنید:
@@ -347,8 +365,6 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 ![عکس مربوطه](http://uupload.ir/files/gdsu_add-event-in-tracker.png)
 
 <br>
-
-
 
 در این صفحه علاوه بر تعیین رویداد (یا اکشن) می‌توانید **هدف** نیز مشخص کنید.
 سربرگ هدف علاوه بر مشخص کردن نام هدف، به شما این امکان را می‌دهد تا برای رسیدن به یک یا چند رویداد، سگمنت‌های متفاوتی همراه با چندین ویژگی (attribute) را تعریف کنید.
