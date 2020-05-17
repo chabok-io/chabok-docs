@@ -99,7 +99,7 @@ https://sand.chabok.io/637z3i?redirect_ios=https://itunes.apple.com/us/genre/ios
 علاوه بر کال‌بک جداگانه می‌توانید در لینک خود از پارامترهای `callback` و `install_callback` استفاده کنید. برای این کار می‌توانید [جدول پارامتر‌های کال‌بک](/panel/tracker.html#کالبک) در پایین صفحه را مشاهده کنید. لینک زیر مثالی برای این مورد نشان می‌دهد:
 
 
-```markup
+```xml
 https://sand.chabok.io/637z3i?callback=https://campaign.90tv.ir/?event={{activity_kind}}&tracker={{tracker_name}}&install_callback=https://campaign.90tv.ir/?event={{activity_kind}}&tracker={{tracker_name}}&os={{os_name}}&ip={{ip_address}}
 ```
 
@@ -328,9 +328,9 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 
 <Br>
 
-##### کال‌بک دینامیک
+##### کال‌بک داینامیک برای دریافت رفتار کاربر
 
-شما می‌توانید پشت لینک ترکر پارامترهایی را برای دریافت ایونت‌های مورد نظر در وب‌سرویس خود قرار دهید. برای این کار فقط کافیست از پارامتر `event_callback` برای **همه ایونت‌ها** و `event_callback_eventname` برای **ایونت مورد نظر** مانند زیر استفاده کنید:
+شما می‌توانید پشت لینک ترکر پارامترهایی را برای دریافت **ایونت‌های رفتاری** مورد نظر در وب‌سرویس خود قرار دهید. برای این کار فقط کافیست از پارامتر `event_callback` برای **همه ایونت‌ها** و `event_callback_eventname` برای **ایونت مورد نظر** مانند زیر استفاده کنید:
 
 ```markup
 https://a.chabok.io/abc123?event_callback=https%3A%2F%2Fyourdomain.com%2Fevents
