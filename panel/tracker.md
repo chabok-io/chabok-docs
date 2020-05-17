@@ -99,8 +99,8 @@ https://sand.chabok.io/637z3i?redirect_ios=https://itunes.apple.com/us/genre/ios
 علاوه بر کال‌بک جداگانه می‌توانید در لینک خود از پارامترهای `callback` و `install_callback` استفاده کنید. برای این کار می‌توانید [جدول پارامتر‌های کال‌بک](/panel/tracker.html#کالبک) در پایین صفحه را مشاهده کنید. لینک زیر مثالی برای این مورد نشان می‌دهد:
 
 
-```html
-https://sand.chabok.io/637z3i?callback=https://campaign.90tv.ir/?event={{activity_kind}}&tracker={{tracker_name}}&install_callback=https://campaign.90tv.ir/?event={{activity_kind}}&tracker={{tracker_name}}&os={{os_name}}&ip={{ip_address}}
+```markup
+https://sand.chabok.io/637z3i?callback=https://campaign.90tv.ir/?event=activity_kind&tracker=tracker_name&install_callback=https://campaign.90tv.ir/?event=activity_kind&tracker=tracker_name&os=os_name&ip=ip_address
 ```
 
 <br>
