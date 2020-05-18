@@ -1,8 +1,8 @@
 ---
-id: test-integration
+id: integration-test
 title: تست راه‌اندازی
 layout: android
-permalink: android/tracker.html
+permalink: android/integration-test.html
 prev: features.html
 next: troubleshoot.html
 ---
