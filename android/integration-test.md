@@ -1,6 +1,6 @@
 ---
 id: integration-test
-title: تست راه‌اندازی
+title: تست پیاده‌سازی
 layout: android
 permalink: android/integration-test.html
 prev: features.html
