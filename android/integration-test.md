@@ -54,6 +54,7 @@ next: troubleshoot.html
 <br>
 
 ![enter image description here](http://uupload.ir/files/6go0_push-successful.png)
+
 <br>
 
 ##### ۲- در صورتی که از پوش‌نوتیفیکیشن هم استفاده نمی‌کنید بعد از حذف اپلیکیشن یک پوش به اپ کاربران ارسال کنید تا از شمارش حذف دستگاه کاربران اطمینان حاصل کنید. 
