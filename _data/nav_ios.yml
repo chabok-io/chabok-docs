@@ -116,8 +116,10 @@
           href: وضعیت-اتصال-به-چابک
         - title: فعال‌سازی گزارش‌ها
           href: فعالسازی-گزارشهای-چابک
-    
-      
+
+    - id: integration-test
+      title: تست پیاده‌سازی
+
     - id: troubleshoot
       title: عیب‌ یابی
       subitems:

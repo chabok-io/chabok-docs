@@ -45,6 +45,9 @@
           href: متد-رصد
         - title: ارسال پیام براساس رفتار
           href: ارسال-پیام-براساس-رفتار
+
+    - id: integration-test
+      title: تست پیاده‌سازی
           
     - id: release-note
       title: لیست تغییرات

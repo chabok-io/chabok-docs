@@ -111,6 +111,9 @@
           href: دریافت-شناسه-کاربر
         - title: وضعیت اتصال به سرور
           href: وضعیت-اتصال-به-سرور
+
+    - id: integration-test
+      title: تست پیاده‌سازی
       
     - id: troubleshoot
       title: عیب‌ یابی

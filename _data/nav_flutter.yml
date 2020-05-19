@@ -80,5 +80,8 @@
         - title: وضعیت اتصال به چابک
           href: وضعیت-اتصال-به-چابک
 
+    - id: integration-test
+      title: تست پیاده‌سازی
+
     - id: release-note
       title: لیست تغییرات
