@@ -13,13 +13,13 @@
       subitems:
         - title: نصب کتابخانه
           href: ۱--نصب-کتابخانه
-        - title: افزودن GcmReceiver
-          href: ۲--افزودن-کلاس-gcmreceiver-به-فایل-manifest
         - title: مقداردهی اولیه
-          href: ۳--مقداردهی-اولیه-initialize
+          href: ۲--مقداردهی-اولیه-initialize
         - title: ثبت کاربر
-          href: ۳--ثبت-کاربر    
-           
+          href: ۳--ثبت-کاربر
+        - title: تست پیاده‌سازی
+          href: ۴--تست-پیادهسازی
+
     - id: tracker
       title: ترکر نصب
       subitems:

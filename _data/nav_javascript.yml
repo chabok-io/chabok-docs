@@ -14,7 +14,9 @@
         - title: مقداردهی اولیه
           href: ۲--مقداردهی-اولیه-initialize
         - title: ثبت کاربر
-          href: ۳--ثبت-کاربر   
+          href: ۳--ثبت-کاربر
+        - title: تست پیاده‌سازی
+          href: ۴--تست-پیادهسازی
              
     - id: chabok-messaging
       title: پیام چابک
