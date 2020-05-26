@@ -23,16 +23,20 @@
     - id: tracker
       title: ترکر نصب
       subitems:
-        - title: پیاده‌سازی
-          href: ۱-پیادهسازی-sdk-integration
-        - title: ترک نصب‌ها
-          href: ۲-ترک-نصبها-tracking-installs
-        - title: ترک نصب‌ها از استورها
-          href: ۳-ترک-کمپینهای-نصب-از-استورها
+        - title: معرفی
+          href: مفاهیم-اولیه
+        - title: شروع به کار
+          href: شروع-به-کار
+        - title: رصد ایونت‌ها
+          href: رصد-ایونتها-رفتار-یا-اهداف-تبلیغ
+        - title: نحوه شمارش و کارکرد چابک
+          href: نحوه-شمارش-و-کارکرد-چابک
+        - title: کال‌بک
+          href: کالبکهای-ترکر-callback
+        - title: قابلیت دعوت دوستان
+          href: قابلیت-دعوت-دوستان
         - title: مکانیزم ضد تقلب
-          href: ۶-مکانیزم-ضد-تقلب-fraud-prevention
-        - title: مفاهیم ترکر
-          href: ۷-آشنایی-با-برخی-مفاهیم-ترکر
+          href: مکانیزم-ضد-تقلب-fraud-prevention
     
     
     - id: chabok-messaging
