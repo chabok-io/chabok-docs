@@ -75,6 +75,8 @@ this.chabok.track('add-to-card', data)
 this.chabok.trackPurchase('Purchase', {revenue: 50000, currency: "RIAL"});
 ```
 
+> نکته : با پیاده‌سازی متدهای بالا می‌توانید **مجموع درآمد** را در [پروفایل کاربر](/panel/users.html#%D9%BE%D8%B1%D9%88%D9%81%D8%A7%DB%8C%D9%84-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1)، [دستگاه](/panel/users.html#%D8%AC%D8%B2%D8%A6%DB%8C%D8%A7%D8%AA-%D8%AF%D8%B3%D8%AA%DA%AF%D8%A7%D9%87) و [سگمنت](/panel/segment.html#%D8%AF%D8%B1%D8%A2%D9%85%D8%AF) پنل مشاهده کنید.
+
 <Br>
 
 ### ارسال پیام براساس رفتار
