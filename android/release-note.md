@@ -9,6 +9,16 @@ prev: troubleshoot.html
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 <br>
 
+
+## [نسخه ۳.۲.۱ - ۱۳۹۹/۰۲/۳۱](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.2.1)
+
+###  تغییرات 
+  
+- حل مشکل کرش هنگام آپدیت توکن پوش
+- حل مشکل کال‌بک متد لاگین
+- حل مشکل کرش هنگام ارسال داده Install Referrer در DexGuard
+
+
 ## [نسخه ۳.۲.۰ - ۱۳۹۸/۱۲/۰۴](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.2.0)
 
 ###  تغییرات 
