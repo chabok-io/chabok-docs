@@ -17,18 +17,20 @@
           href: ۳--ثبت-کاربر-register 
                    
     - id: tracker
-      title: ترکر نصب
-      subitems:
-        - title: پیاده‌سازی
-          href: ۱-پیادهسازی-sdk-integration
-        - title: ترک نصب‌ها
-          href: ۲-ترک-نصبها-tracking-installs
-        - title: ترک نصب از استورها
-          href: ۳-ترک-کمپینهای-نصب-از-استورها-pre-install-campaigns
-        - title: مکانیزم ضد تقلب
-          href: ۵-مکانیزم-ضد-تقلب-fraud-prevention
-        - title: مفاهیم ترکر
-          href: ۶-آشنایی-با-برخی-مفاهیم-ترکر
+        title: ترکر نصب
+        subitems:
+          - title: معرفی
+            href: مفاهیم-اولیه
+          - title: شروع به کار
+            href: شروع-به-کار
+          - title: رصد ایونت‌ها
+            href: رصد-ایونتها-رفتار-یا-اهداف-تبلیغ
+          - title: نحوه شمارش و کارکرد چابک
+            href: نحوه-شمارش-و-کارکرد-چابک
+          - title: کال‌بک
+            href: کالبکهای-ترکر-callback
+          - title: مکانیزم ضد تقلب
+            href: مکانیزم-ضد-تقلب-fraud-prevention
 
     - id: user-management
       title: گروه‌بندی کاربران
