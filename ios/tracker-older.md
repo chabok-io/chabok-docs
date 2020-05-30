@@ -2,7 +2,7 @@
 id: tracker
 title: ترکر نصب
 layout: ios
-permalink: ios/tracker.html
+permalink: ios/tracker-older.html
 next: push-notification.html
 prev: sdk-setup.html
 ---

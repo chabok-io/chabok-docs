@@ -2,7 +2,7 @@
 id: tracker
 title: ترکر نصب
 layout: react-native-bridge
-permalink: react-native-bridge/tracker.html
+permalink: react-native-bridge/tracker-old.html
 prev: sdk-setup.html
 next: chabok-messaging.html
 ---

@@ -2,7 +2,7 @@
 id: tracker
 title: ترکر نصب
 layout: unity
-permalink: unity/tracker.html
+permalink: unity/tracker-old.html
 prev: sdk-setup.html
 next: user-management.html
 ---
