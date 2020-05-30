@@ -2,7 +2,7 @@
 id: tracker  
 title: ترکر نصب  
 layout: cordova  
-permalink: cordova/tracker.html  
+permalink: cordova/tracker-old.html  
 prev: sdk-setup.html  
 next: custom-data.html  
 ---

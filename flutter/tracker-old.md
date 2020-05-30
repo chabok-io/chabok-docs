@@ -2,7 +2,7 @@
 id: tracker
 title: ترکر نصب
 layout: flutter
-permalink: flutter/tracker.html
+permalink: flutter/tracker-old.html
 prev: sdk-setup.html
 next: chabok-messaging.html
 ---
