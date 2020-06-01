@@ -238,7 +238,7 @@ curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installa
 نمونه CURL زیر رویداد درآمد `addToCart` را برای دستگاه `123456789` ارسال می‌کند:
 
 ```bash
-curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/trackRevenue' \
+curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/trackPurchase' \
 --header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -317,7 +317,7 @@ curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installa
 نمونه CURL زیر رویداد درآمد `purchase` را برای کاربر `09331952921` ارسال می‌کند:
 
 ```bash
-curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/trackRevenue' \
+curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installations/trackPurchase' \
 --header 'X-Access-Token: bbb64330870b02fd081f9bb5babb04d5c5d02aac' \
 --header 'Content-Type: application/json' \
 --data-raw '{
