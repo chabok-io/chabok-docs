@@ -446,7 +446,7 @@ urldecode : https://a.chabok.io/abc123?event_callback=https://yourdomain.com/eve
 
 برای مثال به کال‌بک زیر توجه کنید:
 
-![عکس مربوطه](http://uupload.ir/files/cqan_callback-parameters.png)
+![عکس مربوطه](http://uupload.ir/files/l83h_callback-parameters.png)
 
 <Br>
 
