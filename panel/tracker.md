@@ -330,7 +330,7 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 
 ##### جدول پارامترهای کال‌بک رویداد
 
- <p>
+<p>
 <table>
 <thead>
 <tr>
