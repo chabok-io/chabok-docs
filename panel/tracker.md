@@ -91,7 +91,7 @@ https://sand.chabok.io/637z3i?campaign=CAMPAIGN_1&adgroup=AD_GROUP&creative=CREA
 شما می‌توانید برای هدایت کاربران به جای دلخواه از پارامترهای `fallback` ،`redirect_ios` ،`redirect_android` در لینک ترکر خود استفاده کنید. لینک زیر مثالی از تمام پارامترهایی است که می‌توانید در لینک خود قرار دهید. 
 
 ```markup
-https://sand.chabok.io/637z3i?redirect_ios=https://itunes.apple.com/us/genre/ios/id36?mt=8&redirect_android=https://play.google.com/store&fallback=https://mylandingpage.com/&click_id=11111&android_id=ANDROID_ID&
+https://sand.chabok.io/637z3i?redirect_ios=https%3A%2F%2Fitunes.apple.com%2Fus%2Fgenre%2Fios%2Fid36%3Fmt%3D8&redirect_android=https%3A%2F%2Fplay.google.com%2Fstore&fallback=https%3A%2F%2Fmylandingpage.com%2F&click_id=11111&android_id=ANDROID_ID&
 ```
 
 ##### کال‌بک داینامیک (Dynamic Callback)
@@ -100,7 +100,7 @@ https://sand.chabok.io/637z3i?redirect_ios=https://itunes.apple.com/us/genre/ios
 
 
 ```markup
-https://sand.chabok.io/637z3i?callback=https://campaign.90tv.ir/?event=activity_kind&tracker=tracker_name&install_callback=https://campaign.90tv.ir/?event=activity_kind&tracker=tracker_name&os=os_name&ip=ip_address
+https://sand.chabok.io/637z3i?callback=https%3A%2F%2Fcampaign.90tv.ir%2F%3Factivity%3D%7B%7Bactivity_kind%7D%7D%26tracker%3D%7B%7Btracker_name%7D%7D&install_callback=https%3A%2F%2Fcampaign.90tv.ir%2F123%3Ftracker%3D%7B%7Btracker_name%7D%7D%26os%3D%7B%7Bos_name%7D%7D%26ip%3D%7B%7Bip_address%7D%7D
 ```
 
 <br>
@@ -121,7 +121,7 @@ https://sand.chabok.io/637z3i?callback=https://campaign.90tv.ir/?event=activity_
 <Br>
 
 ![عکس مربوطه](http://uupload.ir/files/046x_new-tracker-1.png)
-![عکس مربوطه](http://uupload.ir/files/xmzo_new-tracker-2.png)
+![عکس مربوطه](http://uupload.ir/files/rx36_new-tracker-2.png)
 
 
 <Br>
@@ -182,7 +182,7 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 </thead>
 <tbody><tr>
 <td align="center">activity_kind</td>
-<td align="right">نوع فعالیت (کلیک، نصب و...)</td>
+<td align="right">نوع فعالیت (کلیک، نصب و رویداد)</td>
 </tr>
 <tr>
 <td align="center">tracker</td>
@@ -249,7 +249,7 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 </thead>
 <tbody><tr>
 <td align="center">activity_kind</td>
-<td align="right">نوع فعالیت (کلیک، نصب و...)</td>
+<td align="right">نوع فعالیت (کلیک، نصب و رویداد)</td>
 </tr>
 <tr>
 <td align="center">tracker</td>
@@ -328,9 +328,105 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 
 <Br>
 
+##### جدول پارامترهای کال‌بک رویداد
+
+ <p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">پارامترها</th>
+<th style="text-align: right">توضیح</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">event_name</td>
+<td align="right">نام رویداد</td>
+</tr>
+<tr>
+<td align="center">revenue</td>
+<td align="right">درآمد</td>
+</tr>
+<tr>
+<td align="center">tracker</td>
+<td align="right">شناسه ترکر</td>
+</tr>
+<tr>
+<td align="center">tracker_name</td>
+<td align="right">نام ترکر</td>
+</tr>
+<tr>
+<td align="center">label</td>
+<td align="right">لیبل (دعوت دوستان)</td>
+</tr>
+<tr>
+<td align="center">conversion_duration</td>
+<td align="right">زمان بین کلیک و نصب</td>
+</tr>
+<tr>
+<td align="center">network_name</td>
+<td align="right">نام شبکه تبلیغاتی</td>
+</tr>
+<tr>
+<td align="center">campaign_name</td>
+<td align="right">نام کمپین</td>
+</tr>
+<tr>
+<td align="center">app_id</td>
+<td align="right">شناسه اپلیکیشن</td>
+</tr>
+<tr>
+<td align="center">app_version</td>
+<td align="right">نسخه اپلیکیشن</td>
+</tr>
+<tr>
+<td align="center">connection_type</td>
+<td align="right">نوع اتصال</td>
+</tr>
+<tr>
+<td align="center">ip_address</td>
+<td align="right">آی‌پی کاربر</td>
+</tr>
+<tr>
+<td align="center">os_name</td>
+<td align="right">سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">os_version</td>
+<td align="right">نسخه سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">device_manufacturer</td>
+<td align="right">برند دستگاه</td>
+</tr>
+<tr>
+<td align="center">device_name</td>
+<td align="right">مدل دستگاه</td>
+</tr>
+<tr>
+<td align="center">click_id</td>
+<td align="right">شناسه کلیک</td>
+</tr>
+<tr>
+<td align="center">click_time</td>
+<td align="right">زمان کلیک</td>
+</tr>
+<tr>
+<td align="center">installed_at</td>
+<td align="right">زمان نصب</td>
+</tr>
+<tr>
+<td align="center">adid</td>
+<td align="right">شناسه تبلیغ</td>
+</tr>
+</tbody></table>
+</p>
+
+<Br>
+
 ##### کال‌بک داینامیک برای دریافت رفتار کاربر
 
-شما می‌توانید پشت لینک ترکر پارامترهایی را برای دریافت **ایونت‌های رفتاری** مورد نظر در وب‌سرویس خود قرار دهید. برای این کار فقط کافیست از پارامتر `event_callback` برای **همه ایونت‌ها** و `event_callback_eventname` برای **ایونت مورد نظر** مانند زیر استفاده کنید:
+شما می‌توانید پشت لینک ترکر پارامترهایی را برای دریافت **رویداد‌های رفتاری** مورد نظر در وب‌سرویس خود قرار دهید. برای این کار فقط کافیست از پارامتر `event_callback` برای **همه رویداد‌ها** و `event_callback_eventname` برای **رویداد مورد نظر** مانند زیر استفاده کنید:
 
 ```markup
 https://a.chabok.io/abc123?event_callback=https%3A%2F%2Fyourdomain.com%2Fevents
@@ -344,13 +440,13 @@ https://a.chabok.io/abc123?event_callback_purchase=https%3A%2F%2Fyourdomain.com%
 urldecode : https://a.chabok.io/abc123?event_callback=https://yourdomain.com/event_purchase
 ```
 
-> `نکته:` توکن ایونت‌ها در چابک (مغایر با ادجاست) همان نام ایونت‌ها است.
+> `نکته:` توکن رویداد‌ها در چابک (مغایر با ادجاست) همان نام رویداد‌ها است.
 
 > `نکته:` شما می‌توانید از `click_id` هم به عنوان پارامتر کال‌بک استفاده کنید. این شناسه را خودتان (یا آژانس تبلیغاتی‌تان) تعیین می‌کنید و به لینک ترکر چابک اضافه می‌کنید و در کال‌بک آن را می‌توانید دریافت کنید.
 
 برای مثال به کال‌بک زیر توجه کنید:
 
-![عکس مربوطه](http://uupload.ir/files/ut47_callback-example.png)
+![عکس مربوطه](http://uupload.ir/files/cqan_callback-parameters.png)
 
 <Br>
 
