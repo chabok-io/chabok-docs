@@ -438,7 +438,7 @@ urldecode : https://a.chabok.io/abc123?event_callback=https://yourdomain.com/eve
 ```markup
 https://a.chabok.io/abc123?event_callback_purchase=https%3A%2F%2Fyourdomain.com%2Fevent_purchase
 
-urldecode : https://a.chabok.io/abc123?event_callback=https://yourdomain.com/event_purchase
+urldecode : https://a.chabok.io/abc123?event_callback_purchase=https://yourdomain.com/event_purchase
 ```
 
 > `نکته:` توکن رویداد‌ها در چابک (مغایر با ادجاست) همان نام رویداد‌ها است.
