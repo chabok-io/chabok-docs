@@ -9,6 +9,18 @@ prev: troubleshoot.html
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 <br>
 
+## [نسخه ۳.۳.۰ - ۱۳۹۹/۰۳/۱۹](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.3.0)
+
+###  تغییرات 
+  
+- افزودن تمپلت جدید و بهبود یافته نوتیفیکیشن برای اندروید‌ به بالا (پشتیبانی راست‌چین RTL، بهبود عنوان و نمایش کامل متن حین استفاده از تصویر نوتیفیکیشن)
+- برای استفاده از رنگ پیش‌فرض نوتیفیکیشن، کد زیر را در فایل `AndroidManifest.xml` داخل تگ `<Application>` قرار دهید:
+
+```java
+<meta-data
+			  android:name="com.adpdigital.push.client.default_notification_color"
+			  android:resource="@color/green_color" />
+```              
 
 ## [نسخه ۳.۲.۱ - ۱۳۹۹/۰۲/۳۱](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.2.1)
 
