@@ -13,13 +13,13 @@ prev: troubleshoot.html
 
 ###  تغییرات 
   
-- افزودن تمپلت جدید و بهبود یافته نوتیفیکیشن برای اندروید‌ به بالا (پشتیبانی راست‌چین RTL، بهبود عنوان و نمایش کامل متن حین استفاده از تصویر نوتیفیکیشن)
+- افزودن تمپلت جدید و بهبود یافته نوتیفیکیشن برای اندروید ۷‌ به بالا (پشتیبانی از راست‌چین RTL، بهبود عنوان و نمایش کامل متن حین استفاده از تصویر نوتیفیکیشن)
 - برای استفاده از رنگ پیش‌فرض نوتیفیکیشن، کد زیر را در فایل `AndroidManifest.xml` داخل تگ `<Application>` قرار دهید:
 
 ```java
 <meta-data
-			  android:name="com.adpdigital.push.client.default_notification_color"
-			  android:resource="@color/green_color" />
+		android:name="com.adpdigital.push.client.default_notification_color"
+		android:resource="@color/green_color" />
 ```              
 
 ## [نسخه ۳.۲.۱ - ۱۳۹۹/۰۲/۳۱](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.2.1)
