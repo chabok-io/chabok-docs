@@ -18,8 +18,8 @@ prev: troubleshoot.html
 
 ```xml
 <meta-data
-	    android:name="com.adpdigital.push.client.default_notification_color"
-	    android:resource="@color/green_color" />
+	        android:name="com.adpdigital.push.client.default_notification_color"
+	        android:resource="@color/green_color" />
 ```              
 
 ## [نسخه ۳.۲.۱ - ۱۳۹۹/۰۲/۳۱](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.2.1)
