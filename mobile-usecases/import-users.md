@@ -1,6 +1,6 @@
 ---
 id: import-users
-title: ایمپورت اختصاصی کاربران
+title: ایمپورت کاربران
 layout: mobile-usecases
 permalink: mobile-usecases/import-users.html
 ---
