@@ -41,7 +41,6 @@ permalink: mobile-usecases/import-users.html
 
 برای ایمپورت به چابک کافیست درخواست خود را از طریق ایمیل ما ([info@chabok.io](mailto:info@chabok.io)) ثبت کنید و همراه آن **فایل CSV** مورد نظر را پیوست کنید.
 
-
 > `نکته ` : در ایمپورت دقت داشته باشید که فیلد‌های `id` ، `identifier` ، `device_type` ، `device_model` و `session_count` **اجباری** و  فیلد‌های `game_version` ، `created_at` ، `last_active` ، `device_os` و `tags`  **اختیاری** می‌باشند.
 
 > `نکته ` : از آن جایی که **تگ‌ها** در برخی پلتفرم‌ دیگر به صورت `key/value` می‌باشند اما در چابک به صورت `key`، در صورت ایمپورت، تگ‌ها به صورت `key_value` ذخیره می‌شوند.
