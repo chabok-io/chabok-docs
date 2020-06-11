@@ -15,7 +15,13 @@ next: send-push.html
 
 ### ایجاد دسترسی
 
-قبل از شروع باید ابتدا **(API Key (Access Token** را از تنظیمات پنل بخش [**دسترسی‌ و توکن‌ها**](https://doc.chabok.io/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) کپی کنید و آن را در بخش **Authorize** در [بخش دمو](https://apidoc.chabok.io) قرار دهید.
+قبل از شروع باید ابتدا **(API Key (Access Token** را از تنظیمات [پنل بخش دسترسی‌ و توکن‌ها](https://doc.chabok.io/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7) کپی کنید،
+
+![enter image description here](http://uupload.ir/files/17k5_api-access-token.png)
+
+<br>
+
+و آن را در بخش **Authorize** در [بخش دمو](https://apidoc.chabok.io) قرار دهید.
 
 ![عکس مربوطه](http://uupload.ir/files/q4fa_authorize.png)
 
