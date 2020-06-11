@@ -5,6 +5,10 @@ layout: rest-api
 permalink: rest-api/update-promo-code.html
 ---
 
+>`نکته:` برای ایجاد دسترسی (Access Token) [راهنمای استفاده](https://doc.chabok.io/rest-api/guide.html#%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C) را مطالعه کنید.
+
+<Br>
+
 ### POST |  بروز‌رسانی  کد  تخفیف‌های  یک  کمپین 
 
 با فراخوانی API زیر می‌توانید کد تخفیف‌های یک کمپین را بروز کنید تا پیام‌های بعدی از کد تخفیف‌های جدید استفاده کنند:
