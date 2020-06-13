@@ -174,7 +174,7 @@ public class MainApplication extends Application implements ReactApplication {
     public void onCreate() {
         super.onCreate();
 
-        AdpPushClient.configureEnvironment(Environment.SANDBOX); // or PEODUCTION
+        AdpPushClient.configureEnvironment(Environment.SANDBOX); // or PRODUCTION
     }
 }
 ```
@@ -224,7 +224,7 @@ public class MainApplication extends Application implements ReactApplication {
 - (BOOL)application:(UIApplication *)application
             didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
             
-    [PushClientManager.defaultManager configureEnvironment:Sandbox]; // or PEODUCTION
+    [PushClientManager.defaultManager configureEnvironment:Sandbox]; // or PRODUCTION
     return YES;
 }
 ```
@@ -239,7 +239,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
-    PushClientManager.default()?.configureEnvironment(.Sandbox) // or PEODUCTION
+    PushClientManager.default()?.configureEnvironment(.Sandbox) // or PRODUCTION
     
     return true
 }
