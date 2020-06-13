@@ -189,7 +189,7 @@ public class MyAppClass extends FlutterApplication {
 - (BOOL)application:(UIApplication *)application
             didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
             
-    [PushClientManager.defaultManager configureEnvironment:Sandbox]; // or PEODUCTION
+    [PushClientManager.defaultManager configureEnvironment:Sandbox]; // or PRODUCTION
     
     [GeneratedPluginRegistrant registerWithRegistry:self];
     // Override point for customization after application launch.
@@ -207,7 +207,7 @@ import AdpPushClient
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
             didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    PushClientManager.default()?.configureEnvironment(.Sandbox) // or PEODUCTION
+    PushClientManager.default()?.configureEnvironment(.Sandbox) // or PRODUCTION
     
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
