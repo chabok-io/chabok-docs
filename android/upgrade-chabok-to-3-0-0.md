@@ -103,7 +103,7 @@ public class MyAppClass extends Application {
 -       ); 
 -       AdpPushClient.get().setDevelopment(DEV_MODE);
 
-+       AdpPushClient.configureEnvironment(Environment.SANDBOX); // or PEODUCTION
++       AdpPushClient.configureEnvironment(Environment.SANDBOX); // or PRODUCTION
     }
  
 -   @Override
