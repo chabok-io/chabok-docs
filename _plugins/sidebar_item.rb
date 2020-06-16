@@ -12,6 +12,10 @@ module Jekyll
       return sidebar_helper(item, 'android')
     end
 
+    def glossary_sidebar_link(item)
+      return sidebar_helper(item, 'glossary')
+    end
+
     def unity_sidebar_link(item)
         return sidebar_helper(item, 'unity')
     end
