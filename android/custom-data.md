@@ -202,6 +202,39 @@ userAttribute.put("view_movie_detail", 1d);
 AdpPushClient.get().incrementUserAttribute(userAttribute);
 ```
 
+<br>
+
+#### کاهش داده‌های کمیتی کاربر
+
+شما همچنین می‌توانید داده‌های کمیتی کاربر را **کاهش** دهید. برای این کار متد زیر را فراخوانی کنید: 
+
+```java
+AdpPushClient.get().decrementUserAttribute("visit_comedy_shows");
+AdpPushClient.get().decrementUserAttribute("visit_comedy_shows", 5);
+```
+ همچنین این متد از **آرایه‌ای** از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. به نمونه زیر دقت کنید: 
+
+```java
+ArrayList<String> userAttribute = new ArrayList<>();
+userAttribute.add("comedy_movie");
+userAttribute.add("action_movie");
+userAttribute.add("view_movie_detail");
+
+AdpPushClient.get().decrementUserAttribute(userAttribute);
+```
+کد بالا به هر کدام از attributeها **یک عدد** کم می‌کند.
+
+برای کم کردن به **تعداد دلخواه** می‌توانید از کد زیر استفاده کنید:
+
+```java
+HashMap<String, Double> userAttribute = new HashMap<>();
+userAttribute.put("comedy_movie", 5d);
+userAttribute.put("action_movie", 2d);
+userAttribute.put("view_movie_detail", 1d);
+                
+AdpPushClient.get().decrementUserAttribute(userAttribute);
+```
+
 <br><br>
 
 ### مدیریت تگ‌ها
