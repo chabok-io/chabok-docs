@@ -117,7 +117,8 @@ $ pod update
 >`نکته:`
 برای غیرفعال کردن قابلیت **پوش نوتیفیکیشن**(pushNotification)، کافیست مقدار پیش ‌فرض آن را در فایل دانلود شده تغییر بدید.
 
-۲. فایل دانلود شده را در پوشه ماژول اصلی پروژه قرار دهید.
+۲. فایل دانلود شده (از پنل چابک) را به همراه فایل ‍‍`google-services.json` که از فایربیس دانلود کردید،  در پوشه ماژول اصلی پروژه قرار دهید.
+
 <p class="text-center">
 <img width="90%" src="http://uupload.ir/files/pby6_download-file-in-main-module-of-project.gif">
 </p>
