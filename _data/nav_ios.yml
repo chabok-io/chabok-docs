@@ -25,14 +25,12 @@
     - id: tracker
       title: ترکر نصب
       subitems:
-        - title: معرفی
-          href: مفاهیم-اولیه
         - title: شروع به کار
           href: شروع-به-کار
         - title: رصد ایونت‌ها
           href: رصد-ایونتها-رفتار-یا-اهداف-تبلیغ
-        - title: نحوه شمارش و کارکرد چابک
-          href: نحوه-شمارش-و-کارکرد-چابک
+        - title: استورها
+          href: روش-آیدی-یا-دیفالت-ترکر-pre-install-campaigns
         - title: کال‌بک
           href: کالبکهای-ترکر-callback
         - title: قابلیت دعوت دوستان
