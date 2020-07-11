@@ -17,7 +17,8 @@ next: tracker.html
  دلیل قیفی شکل بودن این آنالیز هم این است که طبیعتا همه کاربران مسیر را کامل طی نمی‌کنند و از یک جایی ریزش می‌کنند. مهم‌ترین کار فانل هم همین است که **جای ریزش را شناسایی کند**. 
 
 
-![enter image description here](http://uupload.ir/files/8cnu_funnel.png)
+
+<img src="http://uupload.ir/files/8cnu_funnel.png" alt="enter image description here" style="width: 850px">
 
 <br>
 
@@ -29,7 +30,8 @@ next: tracker.html
 #### فانل جذب
 در فانل جذب، هدف مشخص شده **آوردن کاربران جدید** است. در نتیجه مسیر حرکت باید به نصب یا ثبت‌نام کاربر ختم شود.
 
-![enter image description here](http://uupload.ir/files/vssq_aquisition-funnel.png)
+
+<img src="http://uupload.ir/files/vssq_aquisition-funnel.png" alt="enter image description here" style="width: 850px">
 
 <br>
 
@@ -37,7 +39,8 @@ next: tracker.html
 
 در فانل وفاداری، هدف مشخص شده **مشتری شدن کاربران است**. یعنی کاربران جذب شده سرویس یا محصول شما را خریداری کنند.
 
-![enter image description here](http://uupload.ir/files/r1t7_activation-funnel.png)
+
+<img src="http://uupload.ir/files/r1t7_activation-funnel.png" alt="enter image description here" style="width: 850px">
 
 <br>
 
@@ -45,7 +48,8 @@ next: tracker.html
 
 در فانل درآمدزایی، هدف تکرار خرید است. یعنی کاربر **به طور پیوسته از شما خرید کند**.
 
-![enter image description here](http://uupload.ir/files/4fxj_loyalty-funnel.png)
+
+<img src="http://uupload.ir/files/4fxj_loyalty-funnel.png" alt="enter image description here" style="width: 850px">
 
 <br>
 
