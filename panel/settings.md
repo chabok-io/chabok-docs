@@ -35,7 +35,7 @@ next: account-management.html
   
 > `نکته :` برای استفاده از شناسه `webKey` حتما باید **دامنه** وبسایت خود را در پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها ثبت کرده‌ باشید.  
   
-![عکس مربوطه](http://uupload.ir/files/ah5c_settings-in-panel.png)  
+![عکس مربوطه](http://uupload.ir/files/o5t7_access-tokens.png)  
   
   
 <Br>  
@@ -101,7 +101,7 @@ next: account-management.html
   
 در این قسمت می‌توانید **توکن‌هایتان** را از سرویس‌های **وان سیگنال** و **پوش ووش** به چابک ایمپورت کنید. البته در نظر داشته باشید که قابلیت ایمپورت فقط مخصوص دستگاه‌های **android** و **ios** می‌باشد. برای ایمپورت شما باید در ابتدا توکن‌های خود را در یک فایل CSV از سرویسی که استفاده می‌کردید اکسپورت کنید و پس از آن در این قسمت پنل، فایل را بارگذاری کنید.  
   
-![عکس مربوطه](http://uupload.ir/files/8vi1_import.png)  
+![عکس مربوطه](http://uupload.ir/files/om5v_import-token.png)  
   
 > `نکته ` : برای ایمپورت موفقیت‌آمیز از **وان‌سیگنال** به چابک، حتما [مستندات آن را با دقت مطالعه فرمایید](https://documentation.onesignal.com/reference#csv-export).  
   
@@ -115,5 +115,4 @@ next: account-management.html
   
 به طور کلی چابک شامل دو محیط **رایگان** و **عملیاتی** است. برای انتقال به محیط عملیاتی باید پس از انتخاب **تعرفه**، درخواست خود را در همین قسمت ثبت کنید تا چابک پس از تایید درخواست، اطلاعات جدید حسابتان را برای شما تعیین کند.  
   
-![عکس مربوطه](http://uupload.ir/files/maxq_production-request.png)  
-![عکس مربوطه](http://uupload.ir/files/j4gq_production-request2.png)
+![عکس مربوطه](http://uupload.ir/files/b0ts_order-production-account.png)  
