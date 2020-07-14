@@ -501,7 +501,7 @@ urldecode : https://a.chabok.io/abc123?event_callback_purchase=https://yourdomai
 ![عکس مربوطه](http://uupload.ir/files/vz0u_tracker-detail.png)
 
 
-:وارد **جزئیات** شوید
+وارد **جزئیات** شوید:
 
 ![عکس مربوطه](http://uupload.ir/files/3ad_lqtz_53ep_tracker-detail-1.png)
 ![عکس مربوطه](http://uupload.ir/files/xymw_tracker-detail-2.png)
