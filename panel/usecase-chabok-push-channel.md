@@ -18,7 +18,7 @@ permalink: panel/usecase-chabok-push-channel.html
 
 - #### ایجاد حساب چابک
 
-اولین اقدام شما [ایجاد یک حساب چابک](https://chabok.io/register.html) مخصوص خودتان است.
+اولین اقدام شما [ایجاد یک حساب چابک](https://chabok.io/demo.html) مخصوص خودتان است.
 
 - #### نصب SDK چابک
 
