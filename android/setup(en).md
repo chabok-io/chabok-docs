@@ -16,7 +16,7 @@ There are two kinds of accounts in Chabok. Our free account which is for **testi
 
  Our **sandbox** account has a **limited capacity for users** and does not support more. Therefore if you want to release your app in official stores, we recommend on using our production account which has no limitations. Also your **data** cannot be transferred between these two accounts, since they are completely separate and based on different environments.
 
-For creating a Chabok account [go here](https://chabok.io/register.html).
+For creating a Chabok account [go here](https://chabok.io/demo.html).
 
 > `Note:` After creating a new account, you will have your **SDK keys** in panel→settings→Access tokens. These keys are needed for [**initializing our library**](/android/chabok(en).html#23-initialize-library).
 
