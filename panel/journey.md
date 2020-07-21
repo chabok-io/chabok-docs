@@ -116,12 +116,21 @@ next: tracker.html
 
 ### شروع براساس
 
+![enter image description here](http://uupload.ir/files/mk2d_1.png)
+
 ### ارسال
+
+![enter image description here](http://uupload.ir/files/3vho_2.png)
 
 ### اعمال
 
+![enter image description here](http://uupload.ir/files/wjmu_3.png)
+
 ### بررسی
 
+![enter image description here](http://uupload.ir/files/9o6x_4.png)
 ### کنترل مسیر
+
+![enter image description here](http://uupload.ir/files/vbib_5.png)
 
 ## مقصد: آنالیز سفر مشتری به چه صورت است؟
