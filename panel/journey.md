@@ -113,8 +113,7 @@ next: tracker.html
 
 با این دستور هم هر موقع احساس کردید که دیگر به یک سفر نیاز ندارید، می‌توانید آن را حذف کنید.
 
-![
-](http://uupload.ir/files/l4da_journey-commands.png)
+![](http://uupload.ir/files/l4da_journey-commands.png)
 
 ## ایستگاه سوم: چگونه سفر بسازیم؟
 
