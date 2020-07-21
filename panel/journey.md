@@ -105,6 +105,9 @@ next: tracker.html
 
 #### حذف
 
+![
+](http://uupload.ir/files/l4da_journey-commands.png)
+
 ## ایستگاه سوم: چگونه سفر بسازیم؟
 
 ### پایه و هدف
