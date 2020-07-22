@@ -17,11 +17,11 @@ next: release-note.html
 ## اپلیکیشنم کرش می‌کند
 ---
 
-#### چابک را حتما initialize کنید
+##### ۱- چابک را حتما initialize کنید
 
  اگر چابک را initialize نکنید، ممکن است با یکی از خطاهای زیر مواجه شوید:
  
-۱. در صورتی که با خطای:
+ در صورتی که با خطای:
 
 ```java
 AdpPushClient not initialized, Make sure to call AdpPushClient.configureEnvironment(Environment) in onCreate() method of your Application class
@@ -30,7 +30,7 @@ AdpPushClient not initialized, Make sure to call AdpPushClient.configureEnvironm
 
 <br>
 
-۲. اگر با یکی از خطاهای:
+ اگر با یکی از خطاهای:
 
 ```java
 AdpPushClient not initialized, Make sure to configure correct environment
@@ -46,7 +46,7 @@ AdpPushClient not initialized, Make sure to put the json files in root of your p
 
 <br>
 
-#### نسخه‌ سرویس‌های گوگل پلی را بررسی کنید
+##### ۲- نسخه‌ سرویس‌های گوگل پلی را بررسی کنید
 ---
 
 در صورتی که با خطاهای:
@@ -87,7 +87,7 @@ implementation 'com.google.firebase:firebase-messaging:17.1.0'
 
 ## یک پوش را چند بار می‌گیرم
 ---
-#### از قطعه کد زیر استفاده کنید
+##### ۱- از قطعه کد زیر استفاده کنید
 
 در صورتی که از سرویس‌های دیگر پوش استفاده کنید (3rd parties)، حتما از کد زیر استفاده کنید. 
 این کد باعث می‌شود تا فقط پوش‌نوتیفیکشن‌های چابک نمایش داده شوند؛ برای این کار کد زیر در فایل `AndroidManifest.xml` قرار دهید:
@@ -97,7 +97,7 @@ implementation 'com.google.firebase:firebase-messaging:17.1.0'
 ```
 <Br>
 
-#### از AutoNotify فایربیس استفاده نکنید
+##### ۲- از AutoNotify فایربیس استفاده نکنید
 
 در صورتی که از Auto Notify سرویس فایربیس استفاده می‌کنید (در این مدل نمایش نوتیفیکیشن را سیستم‌عامل برعهده دارد)، در زمان‌هایی که اپلیکیشن در بک‌گراند یا بسته است، کد رسیور چابک و شما فراخوانی نخواهد شد در نتیجه نوتیفیکیشن ۲بار نمایش داده خواهد شد.
 
@@ -110,7 +110,7 @@ implementation 'com.google.firebase:firebase-messaging:17.1.0'
 
 یکی از مشکلات متداولی که توسعه‌دهندگان پس از نصب چابک با آن مواجه می‌شوند،‌ **عدم دریافت پیام** (هم پیام چابک و هم پوش‌نوتیفیکیشن) است. این مشکل معمولا به راه‌اندازی ناقص یا غیر صحیح چابک بر می‌گردد.
 
-- #### اپ باز است (Background یا Foreground) و پوش نمی‌گیرم:  
+#### حالت اول: اپ باز است (Background یا Foreground) و پوش نمی‌گیرم:  
 
 ##### ۱- از ثبت موفق دستگاه کاربر اطمینان یابید
 
@@ -139,7 +139,7 @@ implementation 'com.google.firebase:firebase-messaging:17.1.0'
 
 <Br>
 
-### اپ بسته است (Terminated) و پوش نمی‌گیرم:
+### حالت دوم: اپ بسته است (Terminated) و پوش نمی‌گیرم:
 
 ##### ۳- از مراحل ثبت موفق دستگاه و عضویت در کانال ارسال مانند بالا اطمینان یابید
 
@@ -241,13 +241,13 @@ implementation 'com.google.firebase:firebase-messaging:17.1.0'
 ## تصویر نوتیفیکیشن نمایش داده نمی‌شود
 ---
 
-#### پوش را با پنل ارسال کرده‌ام
+##### حالت اول:  پوش را با پنل ارسال کرده‌ام
 
 دقت داشته باشید پس از انتخاب تصویر، دکمه **بارگذاری** را حتما بزنید و پیام موفقیت را مشاهده کنید.
 
 <br>
 
-#### پوش را با API ارسال کرده‌ام
+#### حالت دوم: پوش را با API ارسال کرده‌ام
 
 در این حالت باید به پارامترهای `mediaType`و `mediaUrl` مقادیر درست دهید.
 
