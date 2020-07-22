@@ -6,6 +6,7 @@ permalink: android/troubleshoot.html
 prev: features.html
 next: release-note.html
 ---
+
 > `نکته:`  عیب‌یابی مشکلات متداول زیر بر اساس نسخه‌های ۳ به بالا کتابخانه چابک نوشته شده است. در صورتی که از نسخه پایین‌تری استفاده می‌کنید به [این صفحه](/android/troubleshoot-old.html) مراجعه کنید.
 
 
@@ -22,19 +23,23 @@ next: release-note.html
  
 ۱. در صورتی که با خطای:
 
-    ‍‍AdpPushClient not initialized, Make sure to call AdpPushClient.configureEnvironment(Environment) in onCreate() method of your Application class
-
+```java
+AdpPushClient not initialized, Make sure to call AdpPushClient.configureEnvironment(Environment) in onCreate() method of your Application class
+```
  مواجه شدید، اطمینان یابید چابک را initialize کرده باشید. معمولا این خطا به دلیل صدا نزدن متد `configureEnvironment` اتفاق می‌افتد و برای رفع مشکل، تنها باید [متد](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) را بسته به محیط صدا بزنید.
 
 <br>
 
 ۲. اگر با یکی از خطاهای:
 
-    AdpPushClient not initialized, Make sure to configure correct environment
-
+```java
+AdpPushClient not initialized, Make sure to configure correct environment
+```
   و یا
 
-    AdpPushClient not initialized, Make sure to put the json files in root of your project 
+```java
+AdpPushClient not initialized, Make sure to put the json files in root of your project 
+```
 
 مواجه شدید، یعنی فایل **Chabok.sandbox.json** یا **Chabok.production.json** در جای مناسبی قرار نگرفته و یا اگر در جای درستی هست، محتویاتش کامل نیست.
 برای اطلاعات بیشتر می‌توانید مستندات [راه‌اندازی](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) را مطالعه کنید.
@@ -46,12 +51,14 @@ next: release-note.html
 
 در صورتی که با خطاهای:
 
-    ;java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/iid/InstanceID**
-
+```java
+;java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/iid/InstanceID
+```
  و یا
 
-    Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.android.gms.iid.InstanceID
-
+```java
+Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.android.gms.iid.InstanceID
+```
  مواجه شدید، دقت کنید که نسخه‌ سرویس‌های گوگل پلی شما با هم، همخوانی و تطابق داشته باشند.
 
 <Br>
@@ -61,12 +68,14 @@ next: release-note.html
 
 اگر هنگام دریافت پوش، اپلیکیشن کرش کرد و یکی از دو خطای:
 
-    Unable to instantiate service com.adpdigital.push.ChabokFirebaseMessaging
-
+```java
+Unable to instantiate service com.adpdigital.push.ChabokFirebaseMessaging
+```
  یا
 
-    java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService
-
+```java
+java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService
+```
  را در **logcat** دریافت کردید:
 
 برای رفع خطاهای بالا باید قطعه کد زیر را در فایل `build.gradle` ماژول اصلی اپلیکیشن اضافه کنید:
