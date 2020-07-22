@@ -14,7 +14,7 @@ next: release-note.html
 ## اپلیکیشنم کرش می‌کند
 ---
 
-#### چابک را حتما intialize کنید
+##### ۱- چابک را حتما intialize کنید
 
 در صورتی که با خطای:
 
@@ -26,7 +26,7 @@ AdpPushClient not initialized, Make sure to call AdpPushClient.init in your Appl
 
 <Br>
 
-#### به مقدار `APP_ID/SENDER_ID` دقت کنید
+##### ۲- به مقدار `APP_ID/SENDER_ID` دقت کنید
 
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
@@ -39,7 +39,7 @@ AdpPushClient not initialized, Make sure to call AdpPushClient.init in your Appl
 
 <Br>
 
-#### نسخه‌ سرویس‌های گوگل پلی را بررسی کنید
+##### ۳- نسخه‌ سرویس‌های گوگل پلی را بررسی کنید
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
 در صورتی با خطاهای:
@@ -60,7 +60,7 @@ Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.andr
 ## یک پوش را چند بار می‌گیرم
 ---
 
-#### از قطعه کد زیر استفاده کنید
+##### ۱- از قطعه کد زیر استفاده کنید
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
 در صورتی که از سرویس‌های دیگر پوش استفاده کنید (3rd parties)، حتما از کد زیر استفاده کنید. 
@@ -71,7 +71,7 @@ Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.andr
 ```
 <Br>
 
-#### از AutoNotify فایربیس استفاده نکنید
+##### ۲- از AutoNotify فایربیس استفاده نکنید
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
 در صورتی که از Auto Notify سرویس فایربیس استفاده می‌کنید (در این مدل نمایش نوتیفیکیشن را سیستم‌عامل برعهده دارد)، در زمان‌هایی که اپلیکیشن در بک‌گراند یا بسته است، کد رسیور چابک و شما فراخوانی نخواهد شد در نتیجه نوتیفیکیشن ۲بار نمایش داده خواهد شد.
@@ -84,7 +84,7 @@ Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.andr
 
 یکی از مشکلات متداولی که توسعه‌دهندگان پس از نصب چابک با آن مواجه می‌شوند،‌ **عدم دریافت پیام** (هم پیام چابک و هم پوش‌نوتیفیشکن) است. این مشکل معمولا به راه‌اندازی ناقص یا غیر صحیح چابک بر می‌گردد. عیب‌یابی این مشکل را در دو حالت باز و بسته بودن اپلیکیشن بررسی خواهیم کرد.
 
-- #### اپ باز است (Background یا Foreground) و پوش نمی‌گیرم:
+#### حالت اول: اپ باز است (Background یا Foreground) و پوش نمی‌گیرم:
 
 ##### ۱- از ثبت موفق دستگاه کاربر اطمینان یابید
 
@@ -113,7 +113,7 @@ Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.andr
 
 <Br>
 
-- #### اپ بسته است (Terminated) و پوش نمی‌گیرم:
+#### حالت دوم: اپ بسته است (Terminated) و پوش نمی‌گیرم:
 
 ##### ۱- از مراحل ثبت موفق دستگاه و عضویت در کانال ارسال مانند بالا اطمینان یابید
 
@@ -278,13 +278,13 @@ RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNo
 ## تصویر نوتیفیکیشن نمایش داده نمی‌شود
 ---
 
-#### پوش را با پنل ارسال کرده‌ام
+##### ۱- پوش را با پنل ارسال کرده‌ام
 
 دقت داشته باشید پس از انتخاب تصویر، دکمه **بارگذاری** را حتما بزنید و پیام موفقیت را مشاهده کنید.
 
 <br>
 
-#### پوش را با API ارسال کرده‌ام
+##### ۲- پوش را با API ارسال کرده‌ام
 
 در این حالت باید به پارامترهای `mediaType`، `mediaUrl` و `mutableContent` (در آی‌اواس) مقادیر درست دهید.
 
