@@ -259,7 +259,7 @@ next: tracker.html
 <thead>
 <tr>
 <th style="text-align: center;">دسته بررسی</th>
-<th>توضیح</th>
+<th style="text-align: center;">توضیح</th>
 </tr>
 </thead>
 <tbody>
