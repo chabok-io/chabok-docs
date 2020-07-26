@@ -217,33 +217,33 @@ next: tracker.html
 
 ### اعمال
 
-<table>
+<table>	
 <thead>
 <tr>
-<th>دسته اعمال</th>
-<th>توضیح</th>
+<th style="text-align: center;">دسته اعمال</th>
+<th style="text-align: center;">توضیح</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>به‌روزرسانی پروفایل</td>
-<td>امکان تغییر مقدار یک خصوصیت (اتریبیوت)</td>
+<td style="text-align: center;">به&zwnj;روزرسانی پروفایل</td>
+<td style="text-align: right;">امکان تغییر مقدار یک خصوصیت (اتریبیوت)</td>
 </tr>
 <tr>
-<td>امتیاز</td>
-<td>امکان تغییر مقدار یک خصوصیت کمیتی</td>
+<td style="text-align: center;">امتیاز</td>
+<td style="text-align: right;">امکان تغییر مقدار یک خصوصیت کمیتی</td>
 </tr>
 <tr>
-<td>وب‌ سرویس</td>
-<td>امکان فرخوانی وب سرویس خودتان برای کارهای خارج از اپلیکیشن</td>
+<td style="text-align: center;">وب&zwnj; سرویس</td>
+<td style="text-align: right;">امکان فرخوانی وب سرویس خودتان برای کارهای خارج از اپلیکیشن</td>
 </tr>
 <tr>
-<td>تعریف سگمنت</td>
-<td>امکان ایجاد سگمنت جدید</td>
+<td style="text-align: center;">تعریف سگمنت</td>
+<td style="text-align: right;">امکان ایجاد سگمنت جدید</td>
 </tr>
 <tr>
-<td>تگ</td>
-<td>امکان افزودن تگ</td>
+<td style="text-align: center;">تگ</td>
+<td style="text-align: right;">امکان افزودن تگ</td>
 </tr>
 </tbody>
 </table>
@@ -255,15 +255,40 @@ next: tracker.html
 
 همانطور که از نام این دسته معلوم است، برای ادامه سفر یک چیزی را از کاربر بررسی می‌کند و بعد ادامه می‌دهد.
 
-| دسته بررسی | توضیح |
-|--|--|
-| سگمنت | ادامه در صورت وجود کاربر در سگمنت (از پیش وجود داشته یا سگمنت جدید) |
-| رفتار گذشته | ادامه در صورت وجود رفتاری از کاربر در گذشته |
-| پروفایل | ادامه در صورت وجود مقداری مشخصی از یک خصوصیت (اتریبیوت) در پروفایل کاربر |
-| دسترسی به کاربر | ادامه در صورت وجود دسترسی مشخصی به کاربر از کانال‌های مختلف |
-| محدوده زمانی | ادامه در زمان‌های خاص |
-| انجام رویداد | ادامه در صورت انجام کاری در آینده (انتظار برای رفتاری) |
-
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">دسته بررسی</th>
+<th>توضیح</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">سگمنت</td>
+<td style="text-align: right;">ادامه در صورت وجود کاربر در سگمنت (از پیش وجود داشته یا سگمنت جدید)</td>
+</tr>
+<tr>
+<td style="text-align: center;">رفتار گذشته</td>
+<td style="text-align: right;">ادامه در صورت وجود رفتاری از کاربر در گذشته</td>
+</tr>
+<tr>
+<td style="text-align: center;">پروفایل</td>
+<td style="text-align: right;">ادامه در صورت وجود مقداری مشخصی از یک خصوصیت (اتریبیوت) در پروفایل کاربر</td>
+</tr>
+<tr>
+<td style="text-align: center;">دسترسی به کاربر</td>
+<td style="text-align: right;">ادامه در صورت وجود دسترسی مشخصی به کاربر از کانال&zwnj;های مختلف</td>
+</tr>
+<tr>
+<td style="text-align: center;">محدوده زمانی</td>
+<td style="text-align: right;">ادامه در زمان&zwnj;های خاص</td>
+</tr>
+<tr>
+<td style="text-align: center;">انجام رویداد</td>
+<td style="text-align: right;">ادامه در صورت انجام کاری در آینده (انتظار برای رفتاری)</td>
+</tr>
+</tbody>
+</table>
 
 
 ### کنترل مسیر
