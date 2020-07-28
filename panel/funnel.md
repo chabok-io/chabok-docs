@@ -105,6 +105,7 @@ next: tracker.html
 
 از این رو، شما می‌توانید حداکثر یا حداقل زمان قابل قبول بین مراحل فانل را تعیین کنید. 
 
+![enter image description here](http://uupload.ir/files/xn6y_create-funnel.png)
 
 ## آنالیز فانل
 
