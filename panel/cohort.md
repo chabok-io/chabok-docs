@@ -65,6 +65,8 @@ next: tracker.html
 
 از رویداد اول تا چه مدتی کوهورت نمایش داده شود. 
 
+![enter image description here](http://uupload.ir/files/iwv8_create-cohort.png)
+
 ## تحلیل کوهورت
 
 تحلیل کوهورت روی **فعالیت** گروه‌ها تمرکز می‌کند و به شما امکان می‌دهد تا گروه‌ها را **مقایسه کنید**.
