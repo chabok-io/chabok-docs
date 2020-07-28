@@ -115,6 +115,7 @@ next: tracker.html
 
 - **صفحه ایجاد فانل با دکمه نمایش**
 
+![enter image description here](http://uupload.ir/files/q2fp_funnel-analytics.png)
 
 ### قابلیت تعیین بازه زمانی فانل
 
