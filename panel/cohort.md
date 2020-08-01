@@ -17,7 +17,7 @@ next: tracker.html
 
 - چه درصدی از کاربرانی که صفحه محصول خاصی را بازدید کردند، بعد از آن برگشتند و آن را خریداری کردند؟
 
-<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://uupload.ir/files/xu91_cohort-analysis.png" alt="" width="730" height="365" /></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://uupload.ir/files/z5ik_cohort-analysis-.png" alt="" width="730" height="365" /></p>
 
 
 ### هشدار: کوهورت همان سگمنت نیست!
