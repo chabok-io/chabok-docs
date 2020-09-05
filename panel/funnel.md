@@ -125,6 +125,7 @@ next: tracker.html
 
 پس از انتخاب مراحل و شروط فانل، دکمه **نمایش** را بزنید.
 
+![enter image description here](http://uupload.ir/files/ru7k_funnel-stats_-_1.png)
 
 ### نمودار
 
