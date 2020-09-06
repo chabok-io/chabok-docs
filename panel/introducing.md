@@ -35,7 +35,7 @@ permalink: panel/introducing.html
                      <div class="col-md-12 article">
                          <div class="row" style="height: 167px;background-image: url(http://uupload.ir/files/39qc_tracker.png);background-size: cover;"></div>
                          <header class="list-header">
-                             <h4 class="list-title"><a href="https://doc.chabok.io/panel/tracker.html">ترکر</a></h4>
+                             <h4 class="list-title"><a href="https://doc.chabok.io/panel/tracker.html">منابع جذب</a></h4>
                          </header>
                          <div class="summary">
                              <p class="summary-text">ترکرها (یا شمارنده‌ها) ابزاری برای اندازه‌گیری نتایج کمپین‌های تبلیغاتی هستند تا کمپین‌های جذب کاربر خود را بهینه‌سازی کنید.</p>
