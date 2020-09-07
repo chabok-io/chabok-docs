@@ -46,7 +46,7 @@ permalink: panel/introducing.html
                 </span>  
                 <span class="cont">  
                     <span class="tit">تحلیل رفتاری</span>  
-                    <span style=" direction: rtl; " class="sub">(فانل و کوهورت) آمار رفتارهای کاربر</span>  
+                    <span style=" direction: ltr; " class="sub">(فانل و کوهورت) آمار رفتارهای کاربر</span>  
                 </span>  
             </a>  
         </li>
