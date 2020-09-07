@@ -20,7 +20,7 @@ permalink: panel/introducing.html
         <li style=" list-style: none; "> 		  
             <a href="https://doc.chabok.io/panel/dashboard.html" title="" class="select-block">  
                 <span class="icon">  
-                    <img src="/images/dashboard.svg" alt="">  
+                    <img style="filter: opacity(0.2) drop-shadow(0 0 0 cyan); " src="/images/dashboard.svg" alt="">  
                 </span>  
                 <span class="cont">  
                     <span class="tit">داشبورد</span>  
@@ -31,7 +31,7 @@ permalink: panel/introducing.html
         <li style=" list-style: none; ">  
             <a href="https://doc.chabok.io/panel/tracker.html" title="" class="select-block">  
                 <span class="icon">  
-                    <img src="/images/tracker.svg" alt="">  
+                    <img style="filter: opacity(0.2) drop-shadow(0 0 0 cyan); " src="/images/tracker.svg" alt="">  
                 </span>  
                 <span class="cont">  
                     <span class="tit">منابع جذب</span>  
@@ -42,11 +42,11 @@ permalink: panel/introducing.html
         <li style=" list-style: none; ">  
             <a href="https://doc.chabok.io/panel/funnel.html" title="" class="select-block">  
                 <span class="icon">  
-                    <img src="/images/behavioral-analytics.svg" alt="">  
+                    <img style="filter: opacity(0.2) drop-shadow(0 0 0 cyan); " src="/images/behavioral-analytics.svg" alt="">  
                 </span>  
                 <span class="cont">  
                     <span class="tit">تحلیل رفتاری</span>  
-                    <span class="sub">(فانل و کوهورت) آمار رفتارهای کاربر</span>  
+                    <span style=" direction: rtl; " class="sub">(فانل و کوهورت) آمار رفتارهای کاربر</span>  
                 </span>  
             </a>  
         </li>
@@ -56,7 +56,7 @@ permalink: panel/introducing.html
             <li style=" list-style: none; ">		  
             <a href="https://doc.chabok.io/panel/segment.html" title="" class="select-block">  
                 <span class="icon">  
-                    <img src="/images/segment.svg" alt="">  
+                    <img style="filter: opacity(0.2) drop-shadow(0 0 0 cyan); " src="/images/segment.svg" alt="">  
                 </span>  
                 <span class="cont">  
                     <span class="tit">سگمنت</span>  
@@ -67,7 +67,7 @@ permalink: panel/introducing.html
         <li style=" list-style: none; ">  
             <a href="https://doc.chabok.io/panel/send.html" title="" class="select-block">  
                 <span class="icon">  
-                    <img src="/images/campaign.svg" alt="">  
+                    <img style="filter: opacity(0.2) drop-shadow(0 0 0 cyan); " src="/images/campaign.svg" alt="">  
                 </span>  
                 <span class="cont">  
                     <span class="tit">کمپین</span>  
@@ -78,7 +78,7 @@ permalink: panel/introducing.html
         <li style=" list-style: none; ">  
             <a href="https://doc.chabok.io/panel/journey.html" title="" class="select-block">  
                 <span class="icon">  
-                    <img src="/images/journey.svg" alt="">  
+                    <img style="filter: opacity(0.2) drop-shadow(0 0 0 cyan); " src="/images/journey.svg" alt="">  
                 </span>  
                 <span class="cont">  
                     <span class="tit">سفر مشتری</span>  
@@ -92,7 +92,7 @@ permalink: panel/introducing.html
             <li style=" list-style: none; ">		  
             <a href="https://doc.chabok.io/panel/users.html" title="" class="select-block">  
                 <span class="icon">  
-                    <img src="/images/profile.svg" alt="">  
+                    <img style="filter: opacity(0.2) drop-shadow(0 0 0 cyan); " src="/images/profile.svg" alt="">  
                 </span>  
                 <span class="cont">  
                     <span class="tit">پروفایل</span>  
@@ -103,7 +103,7 @@ permalink: panel/introducing.html
         <li style=" list-style: none; ">  
             <a href="https://doc.chabok.io/panel/settings.html#%D9%88%D8%B1%D9%88%D8%AF-%D8%AA%D9%88%DA%A9%D9%86-%D8%A7%D8%B2-%D9%81%D8%A7%DB%8C%D9%84" title="" class="select-block">  
                 <span class="icon">  
-                    <img src="/images/import.svg" alt="">  
+                    <img style="filter: opacity(0.2) drop-shadow(0 0 0 cyan); " src="/images/import.svg" alt="">  
                 </span>  
                 <span class="cont">  
                     <span class="tit">ورود از فایل</span>  
@@ -117,7 +117,7 @@ permalink: panel/introducing.html
             <li style=" list-style: none; ">		  
             <a href="https://doc.chabok.io/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7" title="" class="select-block">  
                 <span class="icon">  
-                    <img src="/images/setup.svg" alt="">  
+                    <img style="filter: opacity(0.2) drop-shadow(0 0 0 cyan); " src="/images/setup.svg" alt="">  
                 </span>  
                 <span class="cont">  
                     <span class="tit">راه‌اندازی</span>  
@@ -128,7 +128,7 @@ permalink: panel/introducing.html
         <li style=" list-style: none; ">  
             <a href="https://doc.chabok.io/panel/settings.html#%D8%B1%D9%81%D8%AA%D8%A7%D8%B1-%D9%88-%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1" title="" class="select-block">  
                 <span class="icon">  
-                    <img src="/images/events.svg" alt="">  
+                    <img style="filter: opacity(0.2) drop-shadow(0 0 0 cyan); " src="/images/events.svg" alt="">  
                 </span>  
                 <span class="cont">  
                     <span class="tit">رویدادها</span>  
@@ -139,7 +139,7 @@ permalink: panel/introducing.html
         <li style=" list-style: none; ">  
             <a href="https://doc.chabok.io/panel/settings.html#%D9%BE%DB%8C%D8%A7%D9%85-%D8%AE%D9%88%D8%B4-%D8%A2%D9%85%D8%AF%DB%8C%D8%AF" title="" class="select-block">  
                 <span class="icon">  
-                    <img src="/images/settings.svg" alt="">  
+                    <img style="filter: opacity(0.2) drop-shadow(0 0 0 cyan); " src="/images/settings.svg" alt="">  
                 </span>  
                 <span class="cont">  
                     <span class="tit">تنظیمات</span>  
