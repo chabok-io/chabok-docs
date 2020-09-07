@@ -17,7 +17,6 @@ permalink: panel/introducing.html
 
 
 <h2>آنالیز</h2>
-
 <ul class="doc-index-list">  
         <li>		  
             <a href="https://doc.chabok.io/panel/dashboard.html" title="" class="select-block">  
@@ -52,8 +51,9 @@ permalink: panel/introducing.html
                 </span>  
             </a>  
         </li>
-
+</ul>
 <h2>تعامل</h2> 
+<ul class="doc-index-list">  
             <li>		  
             <a href="https://doc.chabok.io/panel/segment.html" title="" class="select-block">  
                 <span class="icon">  
@@ -87,8 +87,9 @@ permalink: panel/introducing.html
                 </span>  
             </a>  
         </li>
-    
+</ul>
 <h2>کاربران</h2> 
+<ul class="doc-index-list">  
             <li>		  
             <a href="https://doc.chabok.io/panel/users.html" title="" class="select-block">  
                 <span class="icon">  
@@ -111,8 +112,9 @@ permalink: panel/introducing.html
                 </span>  
             </a>  
         </li>
-      
-<h2>پیاده‌سازی</h2> 
+</ul>  
+<h2>پیاده‌سازی</h2>
+<ul class="doc-index-list">  
             <li>		  
             <a href="https://doc.chabok.io/panel/settings.html#%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%D9%87%D8%A7-%D9%88-%D8%AA%D9%88%DA%A9%D9%86%D9%87%D8%A7" title="" class="select-block">  
                 <span class="icon">  
@@ -146,3 +148,4 @@ permalink: panel/introducing.html
                 </span>  
             </a>  
         </li>
+</ul>  
