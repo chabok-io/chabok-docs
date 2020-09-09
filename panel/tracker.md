@@ -1,10 +1,10 @@
 ---
 id: tracker
-title: ترکر
+title: منابع جذب
 layout: panel
 permalink: panel/tracker.html
 prev: dashboard.html
-next: users.html
+next: funnel.html
 ---
 
 **ترکرها** (یا شمارنده‌ها) ابزاری برای اندازه‌گیری نتایج کمپین‌های تبلیغاتی هستند؛ با این مکانیزم که داده‌های آماری کمپین (مانند تعداد کلیک، نصب، منابع هر کدام و ...) را در اختیار شما می‌گذارند تا با تحلیل آن‌ها بتوانید کمپین‌های جذب کاربر خود را بهینه‌سازی کنید.
@@ -117,13 +117,15 @@ https://sand.chabok.io/637z3i?callback=https%3A%2F%2Fcampaign.90tv.ir%2F%3Factiv
 
 ### ایجاد ترکر 
 
+![enter image description here](http://uupload.ir/files/pfr_new-tracker.png)
+
 شما می‌توانید علاوه بر **نام** و **لینک مقصد** به ترکر خود پارامترهای دیگری هم مانند **نام کمپین، شبکه، گروه تبلیغاتی و خلاقانه**، **پارامتر لینک مقصد و دیپ لینک (Deeplink)**، **کال‌بک** و **محدوده اتریبیوشن** اضافه کنید: 
 
 <Br>
 
-![عکس مربوطه](http://uupload.ir/files/046x_new-tracker-1.png)
-![عکس مربوطه](http://uupload.ir/files/rx36_new-tracker-2.png)
-
+![عکس مربوطه](http://uupload.ir/files/dqeb_tracker-form-1.png)
+![عکس مربوطه](http://uupload.ir/files/nisn_tracker-form-2.png)
+![enter image description here](http://uupload.ir/files/qqgk_tracker-form-3.png)
 
 <Br>
 
@@ -159,7 +161,7 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 
 در لینک مقصد می‌توانید پارامترهایی را مانند منبع، فرم یا مدل کمپین، نام کمپین و ... قرار دهید و بازخوردش را در پنل گوگل آنالییکس خود نگاه کنید:
 
-![عکس مربوطه](http://uupload.ir/files/kihu_parameters.png)
+![عکس مربوطه](http://uupload.ir/files/dgec_tracker-parameters.png)
 
 ##### دیپ لینک (Deeplink)
 
@@ -447,7 +449,7 @@ urldecode : https://a.chabok.io/abc123?event_callback_purchase=https://yourdomai
 
 برای مثال به کال‌بک زیر توجه کنید:
 
-![عکس مربوطه](http://uupload.ir/files/l83h_callback-parameters.png)
+![عکس مربوطه](http://uupload.ir/files/8tr9_tracker-callback.png)
 
 <Br>
 
@@ -459,14 +461,14 @@ urldecode : https://a.chabok.io/abc123?event_callback_purchase=https://yourdomai
 
 شما می‌توانید کمپین‌های نصب خود را با مدل CPA یا همان هزینه براساس اکشن (رفتار) اجرا کنید. دکمه افزودن CPA **بلافاصله بعد از کلیک روی ایجاد** در صفحه ترکر جدید ظاهر می‌شود. همینطور می‌توانید پس از ایجاد، وارد صفحه جزئیات ترکر شوید و **افزودن رویداد** را بزنید.
 
-![عکس مربوطه](http://uupload.ir/files/gdsu_add-event-in-tracker.png)
+![عکس مربوطه](http://uupload.ir/files/0ebk_cpa.png)
 
 <br>
 
 در این صفحه علاوه بر تعیین رویداد (یا اکشن) می‌توانید **هدف** نیز مشخص کنید.
 سربرگ هدف علاوه بر مشخص کردن نام هدف، به شما این امکان را می‌دهد تا برای رسیدن به یک یا چند رویداد، سگمنت‌های متفاوتی همراه با چندین ویژگی (attribute) را تعریف کنید.
 
-![عکس مربوطه](http://uupload.ir/files/uxwy_goal_in_panel.png)
+![عکس مربوطه](http://uupload.ir/files/ix4q_cpg.png)
 
 <Br>
 
@@ -488,8 +490,6 @@ urldecode : https://a.chabok.io/abc123?event_callback_purchase=https://yourdomai
 
 **ارگانیک**: کاربرانی که خودشان، جدا از کمپین‌های تبلیغاتی به اپلیکیشن شما پیوسته‌اند.  
 
-![عکس مربوطه](http://uupload.ir/files/fy72_all-trackers.png)
-
 <Br>
 
 با کلیک روی هر ترکر، **وارد سطح‌ کوچکتر آن ترکر می‌شوید**. به عنوان مثال کلیک روی ترکر وارد شبکه‌های آن می‌شود سپس کلیک روی شبکه وارد کمپین‌های آن شبکه می‌شود و به همین ترتیب ادامه پیدا می‌کند. 
@@ -498,13 +498,13 @@ urldecode : https://a.chabok.io/abc123?event_callback_purchase=https://yourdomai
 
 برای مشاهده آمار دقیق هر ترکر کافی است در لیست ترکرهای فعال خود از بخش دستورات، 
 
-![عکس مربوطه](http://uupload.ir/files/vz0u_tracker-detail.png)
+![عکس مربوطه](http://uupload.ir/files/phjc_tracker-details.png)
 
 
 وارد **جزئیات** شوید:
 
-![عکس مربوطه](http://uupload.ir/files/3ad_lqtz_53ep_tracker-detail-1.png)
-![عکس مربوطه](http://uupload.ir/files/xymw_tracker-detail-2.png)
+![عکس مربوطه](http://uupload.ir/files/5j44_tracker-details-1.png)
+![عکس مربوطه](http://uupload.ir/files/ezxn_tracker-details-2.png)
 
 <br>
 
@@ -515,6 +515,8 @@ urldecode : https://a.chabok.io/abc123?event_callback_purchase=https://yourdomai
 ##### افزودن دسترسی
 
 شما می‌توانید آمار ترکر خود را با آژانس‌های مورد نظر **به اشتراک بگذارید**. فقط کافی است نام ایمیل آن‌ها را در **افزودن دسترسی** وارد کنید. درصورتی که آژانس از قبل حساب داشته باشد به لیست ترکرهایش اضافه خواهد شد، در غیر این صورت به صفحه **ثبت نام** هدایت خواهد شد.
+
+![enter image description here](http://uupload.ir/files/vq0z_tracker-access.png)
 
 ##### جدول آمار
 
