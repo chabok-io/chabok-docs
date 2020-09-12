@@ -142,8 +142,8 @@ next: tracker.html
 
 ![enter image description here](http://uupload.ir/files/ezx5_tech-0.png)
 
-![enter image description here](http://uupload.ir/files/5iwt_tech-2.png)
-![enter image description here](http://uupload.ir/files/c00_tech3.png)
+![enter image description here](http://uupload.ir/files/oe8h_5iwt_tech-2.png)
+![enter image description here](http://uupload.ir/files/4g3h_c00_tech3.png)
 
 
 <Br>
