@@ -51,20 +51,6 @@
           href: تحلیل-کوهورت
                 
           
-    - id: users
-      title: کاربران
-      subitems: 
-        - title: ارسال پیام
-          href: ارسال-پیام
-        - title: پروفایل کاربر
-          href: پروفایل-کاربر
-        - title: جزئیات دستگاه
-          href: جزئیات-دستگاه
-        - title: تست نوتیفیکیشن
-          href: تست-نوتیفیکیشن
-        - title: حذف
-          href: حذف
-      
     - id: segment
       title: سگمنت
       subitems: 
@@ -120,8 +106,24 @@
         - title: خطاها
           href: خطاها
   
+    - id: users
+      title: کاربران
+      subitems: 
+        - title: ارسال پیام
+          href: ارسال-پیام
+        - title: پروفایل کاربر
+          href: پروفایل-کاربر
+        - title: جزئیات دستگاه
+          href: جزئیات-دستگاه
+        - title: تست نوتیفیکیشن
+          href: تست-نوتیفیکیشن
+        - title: حذف
+          href: حذف
+      
+  
+  
     - id: settings
-      title: تنظیمات
+      title: پیاده‌سازی
       subitems: 
         - title: پلتفرم‌ها
           href: پلتفرمها
