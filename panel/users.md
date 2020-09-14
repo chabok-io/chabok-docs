@@ -9,15 +9,14 @@ next: inbox.html
 
 در این صفحه شما می‌توانید تمام **دستگاه‌هایی** که اپلیکیشن‌تان را **نصب** کرده‌اند مشاهده نمایید. ویژگی منحصر به فرد چابک این است که هر **کاربر** را به **تفکیک دستگاه‌های** او نمایش می‌دهد. در بخش دیگر این صفحه می‌توانید با گروه‌بندی پیشرفته چابک یا همان **سگمنت**، کاربران خود را خود دسته‌بندی کنید.
 
+![enter image description here](http://uupload.ir/files/2nr2_users.png)
+
 <Br>
 
 >`نکته:` شما از طریق **عدد** روی تب کاربران در منو، می‌توانید تعداد **کاربران فعال آن روز** خود را مشاهده کنید. همچنین در بالا سمت چپ هر کارت کاربر، **شناسه کاربری** او نمایش داده شده است:
 
-<div style="text-align:center">
+![enter image description here](http://uupload.ir/files/rolc_single-profile.png)
 
-<img src="http://uupload.ir/files/umi8_untitled-1.jpg"  alt="user" width="450"/> 
-
-</div>
 
 
 <Br><Br>
@@ -27,7 +26,7 @@ next: inbox.html
 
 >`نکته`: در بخش کاربران، گزینه جستجو وجود دارد که به کمک آن می‌توانید کاربران خود را بر اساس شروط **شناسه کاربر**، **تاریخ نصب**، **آخرین بازدید**، **دفعات بازدید**، **وضعیت توکن**، **تگ**، **نام ترکر**، **شناسه دستگاه**، **شناسه تبلیغاتی**، **پلتفرم‌ها** و ... جستجو کنید و آن‌ها را پیدا کنید. 
 
-![عکس مربوطه](http://uupload.ir/files/x06n_search-user.png)
+![عکس مربوطه](http://uupload.ir/files/zbz2_search-users.png)
 
 <Br>
 
@@ -62,8 +61,8 @@ next: inbox.html
 - **۵- پیام‌ها**: شامل پیام‌هایی که توسط شما به کاربر ارسال شده است.
 
 
-![عکس مربوطه](http://uupload.ir/files/ec5d_pojs_wmcp_userinfo1.png)
-![عکس مربوطه](http://uupload.ir/files/8iuh_2nb5_userinfo.png)
+![عکس مربوطه](http://uupload.ir/files/azmy_user-profile-details.png)
+
 
 <Br>
 
@@ -95,7 +94,7 @@ next: inbox.html
 - **۸- رفتارها**: شامل رفتارهای درون‌برنامه‌ای کاربر، تاریخ و فرکانس آن‌ها
 
 
-![عکس مربوطه](http://uupload.ir/files/pwfj_019n_devicesinfo.png)
+![عکس مربوطه](http://uupload.ir/files/jx4_device-details.png)
 
 <Br>
 
@@ -112,7 +111,7 @@ next: inbox.html
 
 در این قسمت تمام رویداد‌های ثبت شده در زمان‌های معین به صورت تاریخچه به ترتیب آمده است. 
 
-![عکس مربوطه](http://uupload.ir/files/j2dk_activity.png)
+![عکس مربوطه](http://uupload.ir/files/ib92_device-activities.png)
 
 <Br>
 
