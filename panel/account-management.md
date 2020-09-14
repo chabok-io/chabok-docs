@@ -11,7 +11,7 @@ prev: settings.html
 
 <Br>
 
-![عکس مربوطه](http://uupload.ir/files/4cju_account-management.png)
+![عکس مربوطه](http://uupload.ir/files/6pv_manage-team.png)
 
 <Br>
 
@@ -64,7 +64,10 @@ prev: settings.html
 
 برای ایجاد عضو جدید در پنل در بخش مدیریت حساب، **مدیریت تیم** را انتخاب کنید سپس وارد صفحه **عضو جدید** شوید. پس از آن با وارد کردن ایمیل عضو مورد نظرتان را با همراه با سطح دسترسیشان تعریف کنید.
 
-![عکس مربوطه](http://uupload.ir/files/et2o_new-member.png)
+![عکس مربوطه](http://uupload.ir/files/4iqg_add-member.png)
+
+![
+](http://uupload.ir/files/m0o8_memeber-detail.png)
 
 پس از ایجاد عضو، چابک **ایمیلی** را برای دعوت به پنل به او ارسال می‌کند. این ایمیل شامل یک لینک است که عضو جدید با پر کردن اطلاعات وارد پنل می‌شود. 
 
@@ -72,21 +75,21 @@ prev: settings.html
 
 در آخر می‌توانید **لیست** اعضای تیم خود را مشاهده کنید:
 
-![عکس مربوطه](http://uupload.ir/files/upbq_new-member.png)
+![عکس مربوطه](http://uupload.ir/files/ydw2_team-member-added.png)
 
 #### تغییر سطح دسترسی عضو
 
 پس از ایجاد عضو جدید، شما می‌توانید سطح دسترسی عضو را تغییر دهید:
 
-![عکس مربوطه](http://uupload.ir/files/xl31_edit-membership.png)
+![عکس مربوطه](http://uupload.ir/files/t3c6_change-access-1.png)
 
 در اینجا به عنوان مثال دسترسی را از بازاریاب به تحلیل‌گر تغییر می‌دهیم:
 
-![عکس مربوطه](http://uupload.ir/files/kthz_edit-membership-access.png)
+![عکس مربوطه](http://uupload.ir/files/1wqk_change-access-details.png)
 
 همانطور که در تصویر زیر مشاهده می‌کنید تغییر سطح دسترسی عضو با موفقیت انجام شد:
 
-![عکس مربوطه](http://uupload.ir/files/elxz_edit-membership-done.png)
+![عکس مربوطه](http://uupload.ir/files/q5jf_access-changed.png)
 
 <Br>
 
@@ -100,4 +103,4 @@ prev: settings.html
 
 در این قسمت می‌توانید **پسورد حساب پنل** خود را تغییر دهید. چابک توصیه می‌کند در صورت تغییری در تیم خود برای حفظ امنیت این کار را حتما انجام دهید.
 
-![عکس مربوطه](http://uupload.ir/files/oorl_new-password.png)
+![عکس مربوطه](http://uupload.ir/files/2zpu_change-account-password.png)
