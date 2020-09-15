@@ -210,7 +210,7 @@ next: send.html
 #### همه کاربران اپلیکیشن
 برای این کار کافیست فقط فیلتر **نوع دستگاه** را انتخاب کنید و تمام پلتفرم‌ها را انتخاب کنید.
 
-![enter image description here](http://uupload.ir/files/rpo_ezgif-6-5831f607e668.gif)
+![enter image description here](http://uupload.ir/files/6nu2_segment-all-users-gif.gif)
 
 <br>
 
@@ -218,14 +218,14 @@ next: send.html
 فیلتر **آخرین بازدید** را انتخاب کنید و بعد از ۱۶۸ ساعت (یک هفته) را وارد کنید. پس از آن فیلتر **تعداد بازدید** را انتخاب کنید و روی بزرگتر از ۴ بار قرار دهید.
 
 
-![enter image description here](http://uupload.ir/files/lgj2_ezgif.com-video-to-gif_(15).gif)
+![enter image description here](http://uupload.ir/files/06ud_segment-active-users-gif.gif)
 
 <br>
 
 #### کاربران غیرفعال
 فیلتر **آخرین بازدید** را انتخاب کنید و قبل از ۱۶۸ ساعت (یک هفته) را وارد کنید. 
 
-![enter image description here](http://uupload.ir/files/vfy0_ezgif.com-video-to-gif_(16).gif)
+![enter image description here](http://uupload.ir/files/ere2_segment-inactive-users-gif.gif)
 
 <br>
 
@@ -233,28 +233,22 @@ next: send.html
 برای این کار کافیست آخرین باری که رفتار رخ داده است را انتخاب کنید (با فیلتر **قبل از**) و سپس مدت مد نظرتان را وارد کنید.
 
 
-![enter image description here](http://uupload.ir/files/dkr_ezgif-6-cccf5a313b19.gif)
+![enter image description here](http://uupload.ir/files/apa4_segment-3-days-no-orders-gif.gif)
 
 <br>
 
 #### کاربرانی که در هفته گذشته رفتاری (مثلا سفارش) را انجام داده‌اند
 برای این کار کافیست آخرین باری که رفتار رخ داده است را انتخاب کنید (با فیلتر **بعد از**) و سپس مدت مد نظرتان را وارد کنید.
 
-![enter image description here](http://uupload.ir/files/w81u_ezgif.com-video-to-gif_(12).gif)
+![enter image description here](http://uupload.ir/files/ohf0_segment-this-week-buyers-gif.gif)
 
 <br>
 
 #### کاربرانی که از ۳ روز پیش تا روز پیش رفتاری (مثلا سفارش) را انجام داده‌اند
 برای این کار کافیست ۲ بار آخرین رفتار را با بازه زمانی مشخص کنید.
 
-![enter image description here](http://uupload.ir/files/3c9b_ezgif.com-video-to-gif_(13).gif)
+![enter image description here](http://uupload.ir/files/2ocy_segment-last-days-buyer-gif.gif)
 
 <br>
-
-#### کاربرانی که در بازه زمانی ثابت، اولین و آخرین رفتار (مثلا خرید) را انجام دادند.
-
-برای این کار کافیست اولین و آخرین باری که رفتاری رخ داده است را انتخاب کنید (با فیلتر **قبل از تاریخ** و **بعد از تاریخ**) و سپس مدت مد نظرتان را وارد کنید،
-
-![enter image description here](http://uupload.ir/files/rumh_ezgif.com-video-to-gif_(10).gif)
 
  >`نکته:` در صورتی که در ایجاد سگمنت مورد نظرتان به راهنمایی نیاز داشتید یا مایل هستید ما را در **بهبود این لیست کمک کنید**، آن را حتما با ما [به اشتراک بگذارید](https://github.com/chabok-io/chabok-docs/issues).
