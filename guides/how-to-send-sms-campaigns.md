@@ -43,26 +43,26 @@ permalink: guides/how-to-send-sms-campaigns.html
 
 <br><br>
 
+### انتخاب گیرندگان
+پس از نام‌گذاری ‌می‌توانید با استفاده از **سگمنت** و یا **ورود فایل** مخاطبان کمپین‌تان را انتخاب کنید تا فقط آن‌ها پیامتان را دریافت کنند.
+
+<br>
+
+### تعیین زمان ارسال
+
+در این بخش تعیین کنید که کمپینتان چه **زمانی** ارسال شود.
+
+<br>
+
 ### تعیین پیامک به عنوان سیاست ارسال
 
 به محض اینکه ایمیل موفقیت‌آمیز بودن فرایند را از چابک دریافت کردید می‌توانید با ورود به پنل خود پیامک ارسال کنید. فقط کافیست در صفحه **ایجاد کمپین**، **سیاست ارسال را روی پیامک یا هوشمند** (در صورت آنلاین نبودن کاربر، پیامک ارسال می‌شود) قرار دهید.
 
-
 <br>
 
-![enter image description here](http://uupload.ir/files/r6h_sms-campaign.png)
-
-<br><br>
-
-
-### انتخاب گیرندگان
-در ادامه ‌می‌توانید با استفاده از **سگمنت** و یا **ورود فایل** مخاطبان کمپین‌تان را انتخاب کنید تا فقط آن‌ها پیامتان را دریافت کنند.
+![enter image description here](http://uupload.ir/files/n4b4_sms-policy.png)
 
 <br>
-
-![enter image description here](http://uupload.ir/files/xmsa_sms-segment.png)
-
-<br><br>
 
 ### نوشتن متن پیام
 
@@ -70,21 +70,8 @@ permalink: guides/how-to-send-sms-campaigns.html
 
 <br>
 
-![enter image description here](http://uupload.ir/files/0jsx_sms-content.png)
-
-<br><br>
-
-### تعیین زمان ارسال
-
-در آخر تعیین کنید که کمپینتان چه **زمانی** ارسال شود.
-
-<br>
-
-![enter image description here](http://uupload.ir/files/zufs_sms-schedule.png)
-
-<br><br>
-
 ### ارسال کمپین
+
 حالا می‌توانید کمپین خود را **ارسال کنید.**
 
 <br>
