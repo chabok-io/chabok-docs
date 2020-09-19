@@ -146,3 +146,24 @@ PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 - تاریخچه رویداد‌ها در جزئیات دستگاه
 
 ![عکس مربوطه](http://uupload.ir/files/xurb_activity.png)
+
+<br><br>
+
+### تست رصد رفتار (ایونت)
+---
+##### ۱- آیا ایونت‌ها به درستی رصد و در پروفایل پروفایل کاربر و جزئیات دستگاه در پنل نمایش داده می‌شوند؟
+
+پس از [پیاده‌سازی](/android/behavior-tracking.html) ایونت‌ها، می‌توانید آن را در **پروفایل کاربران** بلافاصله **بعد وقوع ایونت** بررسی کنید.
+
+<br>
+
+![enter image description here](http://uupload.ir/files/u9ki_event-test-in-user-profile.png)
+
+<br>
+
+#####  ۲- آیا در سگمنت نام و نوع داده ایونت (تحت عنوان رفتار کاربر) قابل نمایش است و کاربران به درستی فیلتر می‌شوند؟
+به کمک سگمنت می‌توانید  کاربران  را به همراه تمامی رویدادهایی که در اپلیکیشن اتفاق افتاده است را (مثل خرید) مشاهده و دسته‌بندی کنید.
+
+<br>
+
+![enter image description here](http://uupload.ir/files/m57a_event-test-in-segment.png)
