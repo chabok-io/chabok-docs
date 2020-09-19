@@ -36,9 +36,9 @@ next: sdk-setup.html
 ![عکس مربوطه](http://uupload.ir/files/r6kv_server-key.png)
 
 
-۴- کلیدهای **Server Key** و **Sender ID** را به ترتیب در فیلدهای مربوطه در بخش **تنظیمات**->**پلتفرم‌ها** در پنل چابک وارد نمایید.
+۴- کلیدهای **Server Key** و **Sender ID** را به ترتیب در فیلدهای مربوطه در بخش **پیاده‌سازی**->**راه‌اندازی**->**پلتفرم‌ها**->**تنظیمات کارت اندروید** در پنل چابک وارد نمایید.
 
-![عکس مربوطه](http://uupload.ir/files/aeau_platform-settings-android.png)
+![عکس مربوطه](http://uupload.ir/files/fzm8_android-setup-keys.png)
 
 > `نکته`: مقدار **Sender ID** علاوه بر این قسمت، به عنوان یکی از پارامترهای مقداردهی اولیه در [راه‌اندازی](/android/sdk-setup.html) چابک نیز مورد استفاده قرار خواهد گرفت.
 
