@@ -6,12 +6,11 @@ permalink: panel/account-management.html
 prev: settings.html
 ---
 
-
 در بخش مدیریت حساب می‌توانید **نوع کاربر، حساب و تعرفه** خودتان را مشاهده کنید. علاوه بر آن می‌توانید اعضای تیم خود را [مدیریت کنید](/panel/account-management.html#مدیریت-تیم)، اطلاعات حسابتان را [ببینید](/panel/account-management.html#اطلاعات-حساب) و پسورد آن را [تغییر دهید](/panel/account-management.html#تغییر-پسورد).
 
 <Br>
 
-![عکس مربوطه](http://uupload.ir/files/6pv_manage-team.png)
+![عکس مربوطه](http://uupload.ir/files/x8zt_manage-team.png)
 
 <Br>
 
@@ -97,7 +96,7 @@ prev: settings.html
 
 تمام اطلاعات حساب شما در این صفحه ذخیره شده است. در این قسمت می‌توانید **آیکون** پنل خود را قرار دهید.
 
-![عکس مربوطه](http://uupload.ir/files/qlf_account-info.png)
+![عکس مربوطه](http://uupload.ir/files/1zb1_account-info.png)
 
 ### تغییر پسورد
 
