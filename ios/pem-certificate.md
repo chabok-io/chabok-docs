@@ -108,7 +108,7 @@ openssl pkcs12 -nocerts -out pushKey.pem -in Certificates.p12 -nodes
 ```
 فایل‌های ساخته شده را در پنل در بخش تنظیمات > تنظیمات پیشرفته آپلود کنید.
 
-![پنل چابک](http://uupload.ir/files/ymdf_17-chabok-panel-setting.png)
+![پنل چابک](http://uupload.ir/files/9kkg_ios-pem-settings.png)
 
 فایل `pushCert.pem` را در قسمت گواهی و فایل `pushKey.pem` را در قسمت کلید اضافه کنید.
 
