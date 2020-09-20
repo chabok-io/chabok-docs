@@ -3,8 +3,8 @@
     - id: required
       title: پیش‌نیازها
       subitems:
-        - title: ایجاد حساب
-          href: ایجاد-حساب-چابک
+        - title: تفاوت حساب‌های آزمایشی و عملیاتی
+          href: تفاوت-حسابهای-آزمایشی-و-عملیاتی-سندباکس-و-پروداکشن
         - title: دریافت کلیدهای گوگل
           href: دریافت-کلیدهای-گوگل
         - title: گواهی اپل
@@ -37,6 +37,8 @@
           href: قابلیت-دعوت-دوستان
         - title: مکانیزم ضد تقلب
           href: مکانیزم-ضد-تقلب-fraud-prevention
+        - title: تست ترکر
+          href: تست-ترکر
     
     - id: chabok-messaging
       title: پیام چابک
@@ -59,6 +61,8 @@
           href: پوشنوتیفیکیشن-چندرسانهای-rich-push-notifcation
         - title: دریافت اکشن‌های نوتیفیکیشن
           href: دریافت-اکشنهای-نوتیفیکیشن
+        - title: تست ارسال پوش
+          href: تست-ارسال-پوش
 
     - id: deeplink
       title: دیپ لینک
@@ -91,6 +95,9 @@
           href: رصد-درآمد-tracking-revenue
         - title: ارسال پیام براساس رفتار
           href: ارسال-پیام-براساس-رفتار
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت          
+          
     
     - id: event-handling
       title: پیام‌رسانی آنی
@@ -116,7 +123,18 @@
 
     - id: integration-test
       title: تست پیاده‌سازی
-      
+      subitems:
+        - title: تست sdk
+          href: تست-sdk
+        - title: تست login کاربران
+          href: تست-login-کاربران
+        - title: تست ارسال پوش  
+          href: تست-ارسال-پوش  
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت     
+        - title: تست ترکر
+          href: تست-ترکر
+          
     - id: troubleshoot
       title: عیب‌ یابی
       subitems:

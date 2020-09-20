@@ -3,8 +3,8 @@
     - id: required
       title: پیش‌نیازها
       subitems:
-        - title: ایجاد حساب
-          href: ایجاد-حساب-چابک
+        - title: تفاوت حساب‌های آزمایشی و عملیاتی
+          href: تفاوت-حسابهای-آزمایشی-و-عملیاتی-سندباکس-و-پروداکشن
           
     - id: sdk-setup
       title: راه‌اندازی
@@ -15,7 +15,9 @@
           href: ۲--مقداردهی-اولیه-initialize
         - title: ثبت کاربر
           href: ۳--ثبت-کاربر-register 
-                   
+        - title: تست پیاده‌سازی
+          href: ۴--تست-پیادهسازی
+                              
     - id: tracker
       title: ترکر نصب
       subitems:
@@ -29,6 +31,9 @@
           href: کالبکهای-ترکر-callback
         - title: مکانیزم ضد تقلب
           href: مکانیزم-ضد-تقلب-fraud-prevention
+        - title: تست ترکر
+          href: تست-ترکر
+    
 
     - id: user-management
       title: گروه‌بندی کاربران
@@ -45,9 +50,20 @@
           href: متد-رصد
         - title: ارسال پیام براساس رفتار
           href: ارسال-پیام-براساس-رفتار
-
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت   
+          
     - id: integration-test
       title: تست پیاده‌سازی
+      subitems:
+        - title: تست sdk
+          href: تست-sdk
+        - title: تست login کاربران
+          href: تست-login-کاربران
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت     
+        - title: تست ترکر
+          href: تست-ترکر
           
     - id: release-note
       title: لیست تغییرات
