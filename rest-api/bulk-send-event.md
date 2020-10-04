@@ -98,6 +98,7 @@ curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installa
 }]'
 ```
 
+<!-- 
 ### ارسال رویداد درآمد (Tracking Purchase)
 ---
 
@@ -202,3 +203,4 @@ curl --location --request POST 'https://sandbox.push.adpdigital.com/api/installa
   }
 }]'
 ```
+-->
