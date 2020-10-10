@@ -101,7 +101,7 @@ next: account-management.html
   
 ![عکس مربوطه](http://uupload.ir/files/r9hf_import-tokens.png)  
   
-> `نکته ` : برای ایمپورت موفقیت‌آمیز از **وان‌سیگنال** به چابک، حتما [مستندات آن را با دقت مطالعه فرمایید](https://documentation.onesignal.com/reference#csv-export).  
+> `نکته ` : برای ایمپورت موفقیت‌آمیز از **وان‌سیگنال** به چابک، حتما [مستندات آن را با دقت مطالعه فرمایید](https://documentation.onesignal.com/reference/csv-export).  
   
 > `نکته ` : در ایمپورت از وان سیگنال دقت داشته باشید که فیلد‌های `id` ، `identifier` ، `device_type` ، `device_model` و `session_count` **اجباری** و  فیلد‌های `game_version` ، `created_at` ، `last_active` ، `device_os` و `tags`  **اختیاری** می‌باشند. همچنین از آن جایی که **تگ‌ها** در وان‌سیگنال به صورت `key/value` می‌باشند اما در چابک به صورت `key`، در صورت ایمپورت، تگ‌ها به صورت `key_value` ذخیره می‌شوند.    
   
