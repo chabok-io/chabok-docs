@@ -33,7 +33,38 @@ curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/toUsers?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
--d "@payload.json"
+-d '{
+  "user": "USER_ID",
+  "content": "Test webpush",
+  "channel": "default",
+  "data": {
+      "key": "value1",
+      "key2": "value2"
+  },
+  "notification": {
+    "title": "عنوان نوتیفیکیشن شما",
+    "body": "این یک متن تستی هست که بتونیم باهاش بررسی کنیم آیا بدنه نوتیفیکیشن به خوبی نمایش داده میشه یا نه!",
+    "mediaUrl": "https://github.com/chabokpush/chabok-assets/raw/master/samples/notification/chabokpush_twitter.jpeg",
+    "vibrate": [10, 20, 30, 40],
+    "sound": "toy.mp3",
+    "dir": "rtl",
+    "color" : "#FF0000",
+    "largeIcon": "https://raw.githubusercontent.com/chabok-io/chabok-assets/master/sdk-logo/Android.png",
+    "chromeBadge": "https://github.com/chabokpush/chabok-assets/raw/master/chaboklogowhite.png",
+    "actions":[{
+    	"id": "sent",
+    	"title": "Message sent",
+    	"icon":  "https://github.com/chabokpush/chabok-assets/raw/master/chaboklogowhite.png",
+    	"url": "https://www.google.com"
+    },
+    {
+    	"id": "reply",
+    	"action": "reply",
+    	"title": "Reply",
+    	"icon":  "https://github.com/chabokpush/chabok-assets/raw/master/chaboklogowhite.png"
+    }]
+  }
+}'
 ```
 <details style="text-align: right"><summary>جدول پارامترها</summary>
 <p>
@@ -403,7 +434,37 @@ curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/notifyUsers?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
--d "@payload.json"
+-d '{
+  "user": "USER_ID",
+  "content": "Test webpush",
+  "data": {
+      "key": "value1",
+      "key2": "value2"
+  },
+  "notification": {
+    "title": "عنوان نوتیفیکیشن شما",
+    "body": "این یک متن تستی هست که بتونیم باهاش بررسی کنیم آیا بدنه نوتیفیکیشن به خوبی نمایش داده میشه یا نه!",
+    "mediaUrl": "https://github.com/chabokpush/chabok-assets/raw/master/samples/notification/chabokpush_twitter.jpeg",
+    "vibrate": [10, 20, 30, 40],
+    "sound": "toy.mp3",
+    "dir": "rtl",
+    "color" : "#FF0000",
+    "largeIcon": "https://raw.githubusercontent.com/chabok-io/chabok-assets/master/sdk-logo/Android.png",
+    "chromeBadge": "https://github.com/chabokpush/chabok-assets/raw/master/chaboklogowhite.png",
+    "actions":[{
+    	"id": "sent",
+    	"title": "Message sent",
+    	"icon":  "https://github.com/chabokpush/chabok-assets/raw/master/chaboklogowhite.png",
+    	"url": "https://www.google.com"
+    },
+    {
+    	"id": "reply",
+    	"action": "reply",
+    	"title": "Reply",
+    	"icon":  "https://github.com/chabokpush/chabok-assets/raw/master/chaboklogowhite.png"
+    }]
+  }
+}'
 ```
 >` نکته:` متد ارسال نوتیفیکیشن پی‌لودهای ارسال پیام چابک را پشتیبانی می‌کند، بنابراین می‌توانید از مثال‌های آن استفاده کنید و فقط کافیست متد را از `toUsers` به `notifyUsers` تغییر دهید.
 
@@ -426,7 +487,7 @@ curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/byQuery?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
--d "@payload.json"
+-d "{\"segment\": { \"all\": [ { \"name\": \"deviceType\", \"operator\": \"include\", \"value\": [ \"android\", \"ios\" ] }, { \"name\": \"tags\", \"operator\": \"include\", \"value\": [ \"FEMALE\" ] }, { \"name\": \"purchase.count\", \"operator\": \"greater_than\", \"value\": 1 } ] },\"content\": \"خریدهای عیدتان را از همین الان شروع کنید!\",\"useAsAlert\": \"true\"}"
 ```
 <details style="text-align: right"><summary>جدول پارامترها</summary>
 <p>
@@ -716,7 +777,7 @@ curl -X POST \
 "https://sandbox.push.adpdigital.com/api/push/notifyUsers?access_token=<ACCESS_TOKEN>" \
 -H "accept: application/json" \
 -H "Content-Type: application/json" \
--d "@payload.json"
+-d "{\"segment\": { \"all\": [ { \"name\": \"deviceType\", \"operator\": \"include\", \"value\": [ \"android\", \"ios\" ] }, { \"name\": \"tags\", \"operator\": \"include\", \"value\": [ \"FEMALE\" ] }, { \"name\": \"purchase.count\", \"operator\": \"greater_than\", \"value\": 1 } ] },\"content\": \"خریدهای عیدتان را از همین الان شروع کنید!\",\"useAsAlert\": \"true\"}"
 ```
 >` نکته:` متد ارسال نوتیفیکیشن پی‌لودهای ارسال پیام چابک را پشتیبانی می‌کند، بنابراین می‌توانید از مثال‌های آن استفاده کنید و فقط کافیست متد را از `byQuery` به `notifyUsers` تغییر دهید.
 
