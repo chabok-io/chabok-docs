@@ -11,6 +11,54 @@ next: event-handling.html
 
 <br>
 
+### ارسال موقعیت مکانی بدون پیاده‌سازی کتابخانه موقعیت مکانی چابک
+
+اگر سرویس لوکیشن در اپلیکیشن‌تان پیاده‌سازی شده و قصد اضافه کردن کتابخانه جدید برای ارسال موقعیت مکانی را ندارید، از طریق کد زیر می‌توانید موقعیت مکانی کاربران را برای چابک ارسال کنید: 
+
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
+```objectivec
+- (void) publishLocation:(CLLocation *)location {
+    NSDate *date = location.timestamp;
+    double lat = location.coordinate.latitude;
+    double lng = location.coordinate.longitude;
+    NSTimeInterval ts = [date timeIntervalSince1970] * 1000;
+    
+    NSDictionary *payload = @{
+        @"lat": @(lat),
+        @"lng": @(lng),
+        @"ts" : @(ts)
+    }
+    
+    [PushClientManager.defaultManager publishEvent:@"geo" data:payload];
+}
+```
+
+{% endtab %}
+{% tab SWIFT %}
+
+```swift
+func publishLocation(location: CLLocation) {
+ let ts = location?.timestamp
+ let lat = location?.coordinate.latitude ?? 0.0
+ let lng = location?.coordinate.longitude ?? 0.0
+ 
+ var payload = [
+  "lat": NSNumber(value: lat),
+  "lng": NSNumber(value: lng),
+  "ts": NSNumber(value: ts)
+ ]
+        
+ PushClientManager.default()?.publishEvent("geo", data: payload)
+}
+```
+{% endtab %}
+{% endtabs %}
+
+> `نکته:` از ارسال موقعیت مکانی در کمتر از ۵ الی ۱۰ ثانیه خودداری نمایید.
+
+
 ### مجوز های مورد نیاز موقعیت مکانی
 
 برای استفاده از امکان موقعیت مکانی، نیازمند دریافت مجوزهای زیر می باشد که توضیحات لازم برای هر بخش در زیر آورده شده است :
@@ -56,6 +104,31 @@ next: event-handling.html
 <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 <string>Allow use to access your current location Always or InUse</string>
 ```
+
+### ارسال موقعیت مکانی در هنگام باز شدن اپلیکیشن
+
+با فعال کردن قابلیت `enableLocationOnLaunch`، کتابخانه چابک به هنگام باز شدن برنامه و در صورت پیدا کردن موقعیت مکانی کاربر،‌ موقعیت آن را توسط [انتشار رویداد](/ios/events.html) به سرور ارسال می کند.
+
+> `نکته` : برای ارسال داده خاصی همراه با انتشار رویداد فوق می توانید
+> داده خود را property به `locationOnLaunchWithDictionary` داده تا همراه
+> با انتشار رویداد ارسال شود.
+
+{% tabs %}
+{% tab OBJECTIVE-C %}
+
+```objectivec
+[self.manager.enableLocationOnLaunch = YES];
+```
+{% endtab %}
+{% tab SWIFT %}
+
+```swift
+self.manager?.enableLocationOnLaunch = true
+```
+{% endtab %}
+{% endtabs %}
+
+<br><br>
 
 ### کلاس CoreGeoLocation 
 در ابزار جدید چابک، امکان دریافت موقعیت مکانی کاربر فراهم شده است. برای استفاده از کلاس `CoreGeoLocation` می توانید کلاس فوق را به کلاس خود import کنید:
