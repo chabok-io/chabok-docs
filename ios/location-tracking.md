@@ -45,9 +45,9 @@ func publishLocation(location: CLLocation) {
  let lng = location?.coordinate.longitude ?? 0.0
  
  var payload = [
-  "lat": NSNumber(value: lat),
-  "lng": NSNumber(value: lng),
-  "ts": NSNumber(value: ts)
+  "lat": lat,
+  "lng": lng,
+  "ts": ts
  ]
         
  PushClientManager.default()?.publishEvent("geo", data: payload)
