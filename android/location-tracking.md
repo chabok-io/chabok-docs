@@ -39,7 +39,7 @@ public void publishLocation(Location location) {
         data.put("ts", location.getTime());
         
         AdpPushClient.get().publishEvent("geo", data);
-    } catch (JSONException e) {
+    } catch (Exception e) {
         Logger.e(TAG, "Cant publish geo location event ", e);
     }
 }
