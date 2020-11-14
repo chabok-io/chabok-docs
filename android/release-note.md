@@ -9,6 +9,13 @@ prev: troubleshoot.html
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 <br>
 
+## [نسخه ۳.۴.۱ - ۱۳۹۹/۰۸/۲۴](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.4.1)
+
+###  تغییرات 
+
+- حل مشکل خطای ANR به هنگام دریافت شناسه تبلیغاتی
+
+
 ## [نسخه ۳.۴.۰ - ۱۳۹۹/۰۵/۱۳](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.4.0)
 
 ###  تغییرات 
