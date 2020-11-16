@@ -10,6 +10,12 @@ prev: troubleshoot.html
 
 <Br>
 
+##  [نسخه ۲.۲.۱ - ۱۳۹۹/۰۸/۲۶](https://github.com/chabok-io/chabok-client-ios/releases/tag/v2.2.1)
+
+### تغییرات
+
+- حل مشکل ارسال اتریبیوت `DateTime` در ارسال اتریبیوت در پروفایل کاربر و ایونت
+
 ##  [نسخه ۲.۲.۰ - ۱۳۹۸/۱۱/۱۹](https://github.com/chabok-io/chabok-client-ios/releases/tag/v2.2.0)
 
 ### تغییرات
