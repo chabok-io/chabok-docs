@@ -10,7 +10,7 @@ next: introducing.html
 
 <br>
 
-## [نسخه ۲.۰.۰ - ۱۳۹۹/۰۸/۲۷](https://github.com/chabok-io/chabok-client-rn/releases/tag/v2.1.0)
+## [نسخه ۲.۱.۰ - ۱۳۹۹/۰۸/۲۷](https://github.com/chabok-io/chabok-client-rn/releases/tag/v2.1.0)
 
 ### تغییرات
 
