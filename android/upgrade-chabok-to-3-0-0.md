@@ -48,7 +48,7 @@ buildscript {
 ```diff
 dependencies {
 -   implementation 'com.adpdigital.push:chabok-lib:2.18.0'
-+   implementation 'com.adpdigital.push:chabok-lib:3.1.3'
++   implementation 'com.adpdigital.push:chabok-lib:3.3.1'
 
 -   implementation 'com.google.android.gms:play-services-gcm:10.2.6'
 +   implementation 'com.google.firebase:firebase-messaging:17.1.0'
@@ -66,7 +66,7 @@ dependencies {
 ```diff
 dependencies {
 -   implementation 'com.adpdigital.push:chabok-lib-geo:2.18.0'
-+   implementation 'com.adpdigital.push:chabok-lib-geo:3.1.3'
++   implementation 'com.adpdigital.push:chabok-lib-geo:3.3.1'
 }
 ```
 
@@ -103,7 +103,7 @@ public class MyAppClass extends Application {
 -       ); 
 -       AdpPushClient.get().setDevelopment(DEV_MODE);
 
-+       AdpPushClient.configureEnvironment(Environment.SANDBOX); // or PEODUCTION
++       AdpPushClient.configureEnvironment(Environment.SANDBOX); // or PRODUCTION
     }
  
 -   @Override

@@ -3,8 +3,8 @@
     - id: required
       title: پیش‌نیازها
       subitems:
-        - title: ایجاد حساب
-          href: ایجاد-حساب-چابک
+        - title: تفاوت حساب‌های آزمایشی و عملیاتی
+          href: تفاوت-حسابهای-آزمایشی-و-عملیاتی-سندباکس-و-پروداکشن
           
     - id: sdk-setup
       title: راه‌اندازی
@@ -14,7 +14,9 @@
         - title: مقداردهی اولیه
           href: ۲--مقداردهی-اولیه-initialize
         - title: ثبت کاربر
-          href: ۳--ثبت-کاربر-register    
+          href: ۳--ثبت-کاربر
+        - title: تست پیاده‌سازی
+          href: ۴--تست-پیادهسازی
              
     - id: chabok-messaging
       title: پیام چابک
@@ -35,6 +37,9 @@
           href: background-notification
         - title: آیکون وب‌پوش
           href: آیکون-پیشفرض-وب-پوش
+        - title: تست ارسال پوش
+          href: تست-ارسال-پوش
+
 
     - id: custom-data
       title: ‌داده‌های سفارشی کاربر
@@ -53,6 +58,8 @@
           href: رصد-درآمد-tracking-revenue
         - title: ارسال پیام براساس رفتار
           href: ارسال-پیام-براساس-رفتار
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت
   
     - id: event-handling
       title: پیام‌رسانی آنی
@@ -75,7 +82,19 @@
           href: دریافت-شناسه-کاربر
         - title: وضعیت اتصال به سرور
           href: وضعیت-اتصال-به-سرور    
-      
+
+    - id: integration-test
+      title: تست پیاده‌سازی
+      subitems:
+        - title: تست sdk
+          href: تست-sdk
+        - title: تست login کاربران
+          href: تست-login-کاربران
+        - title: تست ارسال پوش  
+          href: تست-ارسال-پوش  
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت     
+          
     - id: troubleshoot
       title: عیب‌ یابی
       subitems:

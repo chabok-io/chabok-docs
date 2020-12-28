@@ -10,6 +10,13 @@ prev: features.html
 
 <Br>
 
+
+## [نسخه ۱.۱.۲ - ۱۳۹۹/۰۸/۲۷](https://github.com/chabok-io/chabok-starter-cordova/releases/tag/v1.1.2)
+
+- بروزرسانی کتابخانه آی‌او‌اس ([۲.۲.۱](https://github.com/chabok-io/chabok-client-ios/releases/tag/v2.2.1))  
+- بروزرسانی کتابخانه اندروید ([۳.۴.۱](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.4.1))
+
+
 ## [نسخه ۱.۱.۱ - ۱۳۹۸/۱۱/۲۱](https://github.com/chabok-io/chabok-starter-cordova/releases/tag/v1.1.1)
 
 - بروزرسانی کتابخانه آی‌او‌اس ([۲.۲.۰](https://github.com/chabok-io/chabok-client-ios/releases/tag/v2.2.0))  

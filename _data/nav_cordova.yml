@@ -1,22 +1,89 @@
-- title: شروع سریع cordova
+- title: نصب و راه ‌اندازی
   items:
     - id: required
       title: پیش‌نیازها
-    
+      subitems:
+        - title: تفاوت حساب‌های آزمایشی و عملیاتی
+          href: تفاوت-حسابهای-آزمایشی-و-عملیاتی-سندباکس-و-پروداکشن
+        - title: دریافت کلیدهای گوگل
+          href: دریافت-کلیدهای-گوگل
+        - title: گواهی اپل
+          href: ایجاد-گواهی-اپل
+          
     - id: sdk-setup
       title: راه‌اندازی
-    
+      subitems:
+        - title: دانلود-فایل-پیکربندی
+          href: ۱---دانلود-فایل-پیکربندی
+        - title: نصب و راه‌اندازی
+          href: ۲--نصب-کتابخانه-و-راهاندازی
+        - title: ثبت کاربر
+          href: ۳--ثبت-کاربر
+        - title: تست پیاده‌سازی
+          href: ۴--تست-پیادهسازی
+           
     - id: tracker
       title: ترکر نصب
-
+      subitems:
+        - title: شروع به کار
+          href: شروع-به-کار
+        - title: رصد ایونت‌ها
+          href: رصد-ایونتها-رفتار-یا-اهداف-تبلیغ
+        - title: استورها
+          href: پیادهسازی-شمارش-نصب-از-گوگل-پلی
+        - title: کال‌بک
+          href: کالبکهای-ترکر-callback
+        - title: قابلیت دعوت دوستان
+          href: قابلیت-دعوت-دوستان
+        - title: مکانیزم ضد تقلب
+          href: مکانیزم-ضد-تقلب-fraud-prevention
+        - title: تست ترکر
+          href: تست-ترکر
+    
     - id: custom-data
-      title: داده‌های سفارشی کاربر
-
+      title: ‌داده‌های سفارشی کاربر
+      subitems:
+        - title: مدیریت Attributes
+          href: مدیریت-اطلاعات-کاربر-user-attributes
+        - title: مدیریت تگ‌ها
+          href: مدیریت-تگها
+    
     - id: behavior-tracking
       title: رصد رفتار درون‌برنامه‌ای
-
+      subitems:
+        - title: متد رصد
+          href: متد-رصد
+        - title: رصد درآمد
+          href: رصد-درآمد-tracking-revenue
+        - title: ارسال پیام براساس رفتار
+          href: ارسال-پیام-براساس-رفتار
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت          
+          
     - id: features
-      title: امکانات دیگر
+      title: امکانات‌ دیگر 
+      subitems:
+        - title: دریافت شناسه دستگاه
+          href: دریافت-شناسه-دستگاه
+        - title: دریافت شناسه کاربر
+          href: دریافت-شناسه-کاربر
+        - title: وضعیت اتصال به سرور
+          href: وضعیت-اتصال-به-سرور
 
+    - id: integration-test
+      title: تست پیاده‌سازی
+      subitems:
+        - title: تست sdk
+          href: تست-sdk
+        - title: تست login کاربران
+          href: تست-login-کاربران
+        - title: تست ارسال پوش  
+          href: تست-ارسال-پوش  
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت     
+        - title: تست ترکر
+          href: تست-ترکر
+          
     - id: release-note
       title: لیست تغییرات
+

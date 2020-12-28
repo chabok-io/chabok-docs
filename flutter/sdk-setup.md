@@ -15,11 +15,15 @@ next: tracker.html
 
 [۲- مقداردهی اولیه (Initialize)](/flutter/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
 
-[۳- ثبت کاربر (Register)](/flutter/sdk-setup.html#۳--ثبت-کاربر)
+[۳- ثبت کاربر](/flutter/sdk-setup.html#۳--ثبت-کاربر)
+
+[ ۴- تست پیاده‌سازی](/flutter/sdk-setup.html#۴--تست-پیادهسازی)
+
 
 <br>
 
 ### ۱- نصب کتابخانه  
+---
 
 #### نصب کتابخانه فلاتر 
 
@@ -86,18 +90,17 @@ $ pod install --repo-update
 
 حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کردید، نصب کتابخانه آی‌او‌اس موفقیت آمیز بوده است.
 
-<br>
+<br><br>
 
-### ۳- مقداردهی اولیه (Initialize)  
-
+### ۲- مقداردهی اولیه (Initialize)  
+---
 #### مقدار‌دهی اولیه اندروید 
 
 چابک برای راه اندازی نیاز به **مقداردهی اولیه** دارد.
 <br>
 ۱. برای مقداردهی ابتدا از پنل خود وارد بخش **تنظیمات**> **دسترسی و توکن‌ها**> **کتابخانه موبایل**> **فعال‌سازی راه‌اندازی هوشمند**> شوید و فایل **Chabok.sandbox.json** یا **Chabok.production.json** را بسته به محیطتان دانلود کنید.
-<p class="text-center">
-<img src="http://uupload.ir/files/9tlr_sandbox-android-chabok-doc.gif">
-</p>
+
+![enter image description here](http://uupload.ir/files/o0d_android-access-tokens.png)
 
 >`نکته:`
 برای غیرفعال کردن قابلیت **پوش نوتیفیکیشن**(pushNotification)، کافیست مقدار پیش ‌فرض آن را در فایل دانلود شده تغییر بدید.
@@ -160,7 +163,7 @@ public class MyAppClass extends FlutterApplication {
 
 ۱- برای مقداردهی ابتدا از پنل خود بخش **تنظیمات> دسترسی و توکن‌ها> کتابخانه موبایل> راه‌اندازی هوشمند** فایل **Chabok.sandbox.plist**  یا  **Chabok.production.plist**  (بسته به محیطتان) را دانلود کنید.
 
-![enter image description here](http://uupload.ir/files/hgt4_ios-configuration-file.png)
+![enter image description here](http://uupload.ir/files/labq_ios-setup-access-tokens.png)
 
 > `نکته:` برای غیر فعال کردن دریافت توکن پوش‌نوتیفیکیشن، کافیست مقدار پیش‌فرض آن را در فایل دانلود شده تغییر دهید.
 
@@ -185,7 +188,7 @@ public class MyAppClass extends FlutterApplication {
 - (BOOL)application:(UIApplication *)application
             didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
             
-    [PushClientManager.defaultManager configureEnvironment:Sandbox]; // or PEODUCTION
+    [PushClientManager.defaultManager configureEnvironment:Sandbox]; // or PRODUCTION
     
     [GeneratedPluginRegistrant registerWithRegistry:self];
     // Override point for customization after application launch.
@@ -203,7 +206,7 @@ import AdpPushClient
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
             didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    PushClientManager.default()?.configureEnvironment(.Sandbox) // or PEODUCTION
+    PushClientManager.default()?.configureEnvironment(.Sandbox) // or PRODUCTION
     
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -220,10 +223,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. این قابلیت در[ پیام چابک](/ios/chabok-messaging.html) و [پیام‌رسانی آنی](/ios/event-handling.html) استفاده می‌شود.
 
-<br>
+<br><br>
 
 ### ۳- ثبت کاربر 
-
+---
 یکی از مزیت‌های چابک نسبت به درگاه‌های ارسال پوش‌نوتیفیکیشن، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید.       
 این شناسه می‌تواند برای **دستگاه‌های متعدد یک کاربر** استفاده شود. شناسه کاربر می‌تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. **شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی **شناسه دیتابیس‌تان** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود.      
  
@@ -247,5 +250,45 @@ ChabokPush.shared.login("user_id");
 ```dart
 ChabokPush.shared.logout();
 ```
+
+<br><br>
+
+### ۴- تست پیاده‌سازی
+---
+برای اطمینان از موفقیت‌آمیز بودن راه‌اندازی لطفا تست‌های زیر را انجام دهید.
+
+#### تست SDK
+
+##### آیا پس از راه‌اندازی، دستگاه شما به پنل اضافه شده است؟
+در منوی **کاربران** می‌توانید دستگاه‌های موجود را همراه با جزئیات مشاهده کنید. **پس از بازدید اول** از اپلیکیشن اطلاعات دستگاه خود را در پنل با دقت **مطابقت دهید**.
+
+> `نکته:` دقت داشته باشید که **آخرین نسخه SDK** را دریافت کنید و موارد **لیست تغییرات** را مطالعه کنید.
+
+<br>
+
+![](http://uupload.ir/files/w2il_sdk-test.png)
+
+<br><br>
+
+#### تست login کاربران
+
+##### ۱- آیا وضعیت کاربران درست ثبت شده است؟ (لاگین، مهمان، حذف کرده/نکرده)
+
+در صورتی که در اپلیکیشن بخش لاگین دارید، ( [پیاده‌سازی](/flutter/sdk-setup.html#%D9%88%D8%B1%D9%88%D8%AF-%D8%A8%D9%87-%D8%AD%D8%B3%D8%A7%D8%A8-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%DB%8C-login) آن را از چابک کرده‌اید) می‌توانید در فیلتر سگمنت جدید  گزینه **وضعیت کاربر** را انتخاب کنید تا متوجه شوید کاربر در چه وضعیتی (لاگین، مهمان، حذف کرده و حذف نکرده)  قرار دارد.
+
+<br>
+
+![](http://uupload.ir/files/ud1r_user-status.png)
+
+<br>
+
+##### ۲- آیا پنل به درستی کاربران را در صورت خروج از اپلیکیشن (logout) به کاربر مهمان تبدیل می‌کند؟
+وقتی کاربران بر روی گزینه logout در اپلیکیشن کلیک می‌کنند و از اپ خارج می‌شوند، اطلاعاتشان در چابک ذخیره می‌شود و یک شناسه دیگری به هر کاربر خارج شده اختصاص می‌دهد تا وقتی مجدد وارد اپلیکیشن شود شناسه کاربری او تغییر کند. این کاربران در بخش سگمنت قابل مشاهده‌اند.
+
+<br>
+
+![enter image description here](http://uupload.ir/files/h13x_login-vs-guest.png)
+
+<br><br>
 
 > `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-client-flutter/tree/master/example) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.

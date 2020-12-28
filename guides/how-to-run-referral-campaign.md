@@ -21,20 +21,12 @@ permalink: guides/how-to-run-referral-campaign.html
 
 <br>
 
-<a href="https://doc.chabok.io/panel/tracker.html#%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%AA%D8%B1%DA%A9%D8%B1">
-         <img alt="tracker" src="http://uupload.ir/files/et0_information-tracker.png">
-      </a>
 
 > `نکته`: در برنامه ریفرال از شبکه تبلیغاتی خاصی استفاده نمی‌شود، چرا که کمپین ریفرال درون برنامه اجرا می‌شود و نام شبکه تبلیغاتی، دعوت دوستان است.
 
 > `نکته`: در صورتی می‌توانید از لیست شبکه‌های تبلیغاتی استفاده کنید که کمپینی غیر از کمپین ریفرال را در خارج از اپلیکیشن یا وب‌سایت خود اجرا کرده باشید.
 
 ۳.لینک مقصد خود را همراه با اطلاعات  وارد کنید.
-
-
-<a href="https://doc.chabok.io/panel/tracker.html#%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%AA%D8%B1%DA%A9%D8%B1">
-         <img alt="tracker" src="http://uupload.ir/files/uokj_link-default-in-tracker.png">
-      </a>
 
 ۴. در صورت استفاده از کال‌بک، نیاز به تکمیل تنظیمات پیشرفته دارید.
 
@@ -44,7 +36,7 @@ permalink: guides/how-to-run-referral-campaign.html
   تمامی مراحل ساخت لینک ترکر را می‌توانید از طریق گیف زیر مشاهده و اجرا کنید:
 
 
- ![عکس مربوطه](http://uupload.ir/files/hcjr_ezgif.com-video-to-gif_(19).gif)
+ ![عکس مربوطه](http://uupload.ir/files/nuq5_referal-tracker-gif.gif)
 
 
 ۶. بعد از اتمام این مراحل، لینک ترکر ساخته می‌شود که کافیست آن را کپی کنید.

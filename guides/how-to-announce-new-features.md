@@ -15,7 +15,7 @@ permalink: guides/how-to-announce-new-features.html
 
 تمامی مراحل را می‌توانید از طریق گیف زیر مشاهده کنید:
 
- ![عکس مربوطه](http://uupload.ir/files/8itt_announcing-new-features-gif.gif)
+ ![عکس مربوطه](http://uupload.ir/files/a36a_new-version-announcement-gif.gif)
 
 
 ۱- وارد پنل شوید و به صفحه **کمپین جدید** در تب **پیام‌ها** بروید.

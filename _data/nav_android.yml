@@ -3,8 +3,8 @@
     - id: required
       title: پیش‌نیازها
       subitems:
-        - title: ایجاد حساب
-          href: ایجاد-حساب-چابک
+        - title: تفاوت حساب آزمایشی و عملیاتی
+          href: تفاوت-حسابهای-آزمایشی-و-عملیاتی-سندباکس-و-پروداکشن
         - title: دریافت کلیدهای گوگل
           href: دریافت-کلیدهای-گوگل
            
@@ -13,26 +13,30 @@
       subitems:
         - title: نصب کتابخانه
           href: ۱--نصب-کتابخانه
-        - title: افزودن GcmReceiver
-          href: ۲--افزودن-کلاس-gcmreceiver-به-فایل-manifest
         - title: مقداردهی اولیه
-          href: ۳--مقداردهی-اولیه-initialize
+          href: ۲--مقداردهی-اولیه-initialize
         - title: ثبت کاربر
-          href: ۴--ثبت-کاربر-register    
-           
+          href: ۳--ثبت-کاربر
+        - title: تست پیاده‌سازی
+          href: ۴--تست-پیادهسازی
+
     - id: tracker
       title: ترکر نصب
       subitems:
-        - title: پیاده‌سازی
-          href: ۱-پیادهسازی-sdk-integration
-        - title: ترک نصب‌ها
-          href: ۲-ترک-نصبها-tracking-installs
-        - title: ترک نصب‌ها از استورها
-          href: ۳-ترک-کمپینهای-نصب-از-استورها
+        - title: شروع به کار
+          href: شروع-به-کار
+        - title: رصد ایونت‌ها
+          href: رصد-ایونتها-رفتار-یا-اهداف-تبلیغ
+        - title: استورها
+          href: پیادهسازی-شمارش-نصب-از-گوگل-پلی
+        - title: کال‌بک
+          href: کالبکهای-ترکر-callback
+        - title: قابلیت دعوت دوستان
+          href: قابلیت-دعوت-دوستان
         - title: مکانیزم ضد تقلب
-          href: ۶-مکانیزم-ضد-تقلب-fraud-prevention
-        - title: مفاهیم ترکر
-          href: ۷-آشنایی-با-برخی-مفاهیم-ترکر
+          href: مکانیزم-ضد-تقلب-fraud-prevention
+        - title: تست ترکر
+          href: تست-ترکر
     
     
     - id: chabok-messaging
@@ -52,6 +56,8 @@
           href: شخصیسازی-نمایش-و-کلیک-روی-نوتیفیکیشن
         - title: نوتیفیکیشن چند‌رسانه‌ای
           href: تنظیم-پوشنوتیفیکیشن-چندرسانهای-rich-push-notification
+        - title: تست ارسال پوش
+          href: تست-ارسال-پوش
 
     - id: deeplink
       title: دیپ لینک
@@ -82,6 +88,8 @@
           href: رصد-درآمد-tracking-revenue
         - title: ارسال پیام براساس رفتار
           href: ارسال-پیام-براساس-رفتار
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-یا-ایونت
   
     
     - id: location-tracking
@@ -113,6 +121,8 @@
         - title: تغییر نام پیش‌فرض کانال نوتیفیکیشن
           href: تغییر-نام-پیشفرض-کانال-نوتیفیکیشن-مخصوص-اندروید-۸-به-بالا
     
+    - id: integration-test
+      title: تست پیاده‌سازی
       
     - id: troubleshoot
       title: عیب‌ یابی

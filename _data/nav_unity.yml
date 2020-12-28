@@ -3,8 +3,8 @@
     - id: required
       title: پیش‌نیازها
       subitems:
-        - title: ایجاد حساب
-          href: ایجاد-حساب-چابک
+        - title: تفاوت حساب‌های آزمایشی و عملیاتی
+          href: تفاوت-حسابهای-آزمایشی-و-عملیاتی-سندباکس-و-پروداکشن
           
     - id: sdk-setup
       title: راه‌اندازی
@@ -15,20 +15,25 @@
           href: ۲--مقداردهی-اولیه-initialize
         - title: ثبت کاربر
           href: ۳--ثبت-کاربر-register 
-                   
+        - title: تست پیاده‌سازی
+          href: ۴--تست-پیادهسازی
+                              
     - id: tracker
       title: ترکر نصب
       subitems:
-        - title: پیاده‌سازی
-          href: ۱-پیادهسازی-sdk-integration
-        - title: ترک نصب‌ها
-          href: ۲-ترک-نصبها-tracking-installs
-        - title: ترک نصب از استورها
-          href: ۳-ترک-کمپینهای-نصب-از-استورها-pre-install-campaigns
+        - title: شروع به کار
+          href: شروع-به-کار
+        - title: رصد ایونت‌ها
+          href: رصد-ایونتها-رفتار-یا-اهداف-تبلیغ
+        - title: استورها
+          href: پیادهسازی-شمارش-نصب-از-گوگل-پلی
+        - title: کال‌بک
+          href: کالبکهای-ترکر-callback
         - title: مکانیزم ضد تقلب
-          href: ۵-مکانیزم-ضد-تقلب-fraud-prevention
-        - title: مفاهیم ترکر
-          href: ۶-آشنایی-با-برخی-مفاهیم-ترکر
+          href: مکانیزم-ضد-تقلب-fraud-prevention
+        - title: تست ترکر
+          href: تست-ترکر
+    
 
     - id: user-management
       title: گروه‌بندی کاربران
@@ -45,6 +50,20 @@
           href: متد-رصد
         - title: ارسال پیام براساس رفتار
           href: ارسال-پیام-براساس-رفتار
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت   
+          
+    - id: integration-test
+      title: تست پیاده‌سازی
+      subitems:
+        - title: تست sdk
+          href: تست-sdk
+        - title: تست login کاربران
+          href: تست-login-کاربران
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت     
+        - title: تست ترکر
+          href: تست-ترکر
           
     - id: release-note
       title: لیست تغییرات

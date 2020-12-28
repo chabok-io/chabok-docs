@@ -3,8 +3,8 @@
     - id: required
       title: پیش‌نیازها
       subitems:
-        - title: ایجاد حساب
-          href: ایجاد-حساب-چابک
+        - title: تفاوت حساب‌های آزمایشی و عملیاتی
+          href: تفاوت-حسابهای-آزمایشی-و-عملیاتی-سندباکس-و-پروداکشن
         - title: تنظیمات اولیه پوش
           href: تنظیمات-اولیه-پوشنوتیفیکیشن
         - title: گواهی اپل
@@ -18,21 +18,27 @@
         - title: مقداردهی اولیه
           href: ۲--مقداردهی-اولیه-initialize
         - title: ثبت کاربر
-          href: ۳--ثبت-کاربر-register    
+          href: ۳--ثبت-کاربر
+        - title: تست پیاده‌سازی
+          href: ۴--تست-پیادهسازی
            
     - id: tracker
       title: ترکر نصب
       subitems:
-        - title: پیاده‌سازی
-          href: ۱-پیادهسازی-sdk-integration
-        - title: ترک نصب‌ها
-          href: ۲-ترک-نصبها-tracking-installs
-        - title: ترک نصب از استورها
-          href: ۳-ترک-نصب-از-استورها
+        - title: شروع به کار
+          href: شروع-به-کار
+        - title: رصد ایونت‌ها
+          href: رصد-ایونتها-رفتار-یا-اهداف-تبلیغ
+        - title: استورها
+          href: روش-آیدی-یا-دیفالت-ترکر-pre-install-campaigns
+        - title: کال‌بک
+          href: کالبکهای-ترکر-callback
+        - title: قابلیت دعوت دوستان
+          href: قابلیت-دعوت-دوستان
         - title: مکانیزم ضد تقلب
-          href: ۵-مکانیزم-ضد-تقلب-fraud-prevention
-        - title: مفاهیم ترکر
-          href: ۶-آشنایی-با-برخی-مفاهیم-ترکر
+          href: مکانیزم-ضد-تقلب-fraud-prevention
+        - title: تست ترکر
+          href: تست-ترکر
     
     
     - id: chabok-messaging
@@ -54,6 +60,8 @@
           href: کلیک-و-دریافت-دیتای-نوتیفیکیشن-آیاواس-۱۰-به-بالا
         - title: نوتیفیکیشن چند‌رسانه‌ای
           href: تنظیم-نوتیفیکیشن-چندرسانهای-rich-push-notification
+        - title: تست ارسال پوش
+          href: تست-ارسال-پوش
 
     - id: deeplink
       title: دیپ لینک
@@ -84,6 +92,8 @@
           href: رصد-درآمد-tracking-revenue
         - title: ارسال پیام براساس رفتار
           href: ارسال-پیام-براساس-رفتار
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت
   
     
     - id: location-tracking
@@ -114,8 +124,10 @@
           href: وضعیت-اتصال-به-چابک
         - title: فعال‌سازی گزارش‌ها
           href: فعالسازی-گزارشهای-چابک
-    
-      
+
+    - id: integration-test
+      title: تست پیاده‌سازی
+
     - id: troubleshoot
       title: عیب‌ یابی
       subitems:

@@ -3,8 +3,8 @@
     - id: required
       title: پیش‌نیازها
       subitems:
-        - title: ایجاد حساب
-          href: ایجاد-حساب-چابک
+        - title: تفاوت حساب‌های آزمایشی و عملیاتی
+          href: تفاوت-حسابهای-آزمایشی-و-عملیاتی-سندباکس-و-پروداکشن
         - title: دریافت کلیدهای گوگل
           href: دریافت-کلیدهای-گوگل
         - title: گواهی اپل
@@ -18,21 +18,27 @@
         - title: مقداردهی اولیه
           href: ۲--مقداردهی-اولیه-initialize
         - title: ثبت کاربر
-          href: ۳--ثبت-کاربر-register    
+          href: ۳--ثبت-کاربر
+        - title: تست پیاده‌سازی
+          href: ۴--تست-پیادهسازی
            
     - id: tracker
       title: ترکر نصب
       subitems:
-        - title: پیاده‌سازی
-          href: ۱-پیادهسازی-sdk-integration
-        - title: ترک نصب‌ها
-          href: ۲-ترک-نصبها-tracking-installs
-        - title: ترک نصب از استورها
-          href: ۳-ترک-کمپینهای-نصب-از-استورها
+        - title: شروع به کار
+          href: شروع-به-کار
+        - title: رصد ایونت‌ها
+          href: رصد-ایونتها-رفتار-یا-اهداف-تبلیغ
+        - title: استورها
+          href: پیادهسازی-شمارش-نصب-از-گوگل-پلی
+        - title: کال‌بک
+          href: کالبکهای-ترکر-callback
+        - title: قابلیت دعوت دوستان
+          href: قابلیت-دعوت-دوستان
         - title: مکانیزم ضد تقلب
-          href: ۶-مکانیزم-ضد-تقلب-fraud-prevention
-        - title: مفاهیم ترکر
-          href: ۷-آشنایی-با-برخی-مفاهیم-ترکر
+          href: مکانیزم-ضد-تقلب-fraud-prevention
+        - title: تست ترکر
+          href: تست-ترکر
     
     - id: chabok-messaging
       title: پیام چابک
@@ -55,6 +61,8 @@
           href: پوشنوتیفیکیشن-چندرسانهای-rich-push-notifcation
         - title: دریافت اکشن‌های نوتیفیکیشن
           href: دریافت-اکشنهای-نوتیفیکیشن
+        - title: تست ارسال پوش
+          href: تست-ارسال-پوش
 
     - id: deeplink
       title: دیپ لینک
@@ -87,6 +95,9 @@
           href: رصد-درآمد-tracking-revenue
         - title: ارسال پیام براساس رفتار
           href: ارسال-پیام-براساس-رفتار
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت          
+          
     
     - id: event-handling
       title: پیام‌رسانی آنی
@@ -109,7 +120,21 @@
           href: دریافت-شناسه-کاربر
         - title: وضعیت اتصال به سرور
           href: وضعیت-اتصال-به-سرور
-      
+
+    - id: integration-test
+      title: تست پیاده‌سازی
+      subitems:
+        - title: تست sdk
+          href: تست-sdk
+        - title: تست login کاربران
+          href: تست-login-کاربران
+        - title: تست ارسال پوش  
+          href: تست-ارسال-پوش  
+        - title: تست رصد رفتار
+          href: تست-رصد-رفتار-ایونت     
+        - title: تست ترکر
+          href: تست-ترکر
+          
     - id: troubleshoot
       title: عیب‌ یابی
       subitems:

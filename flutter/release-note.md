@@ -10,6 +10,12 @@ prev: features.html
 
 <br>
 
+## [نسخه ۱.۰.۴ - ۱۳۹۹/۰۸/۲۶](https://github.com/chabok-io/chabok-client-flutter/releases/tag/v1.0.4)
+
+### تغییرات
+- به روز رسانی کتابخانه اندروید به [نسخه ۳.۴.۱](/android/release-note.html#نسخه-۳۴۱---۱۳۹۹۰۸۲۶)
+- افزودن کتابخانه آی‌او‌اس [نسخه ۲.۲.۱](/ios/release-note.html#نسخه-۲۲۱---۱۳۹۹۰۸۲۶)
+
 ## [نسخه ۱.۰.۲ - ۱۳۹۸/۱۲/۶](https://github.com/chabok-io/chabok-client-flutter/releases/tag/v1.0.2)
 
 ### تغییرات

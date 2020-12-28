@@ -15,7 +15,7 @@ permalink: guides/how-to-re-engage-dormant-users.html
 
 تمامی مراحل را می‌توانید از طریق گیف زیر مشاهده کنید:
 
- ![عکس مربوطه](http://uupload.ir/files/14e4_dormant-users-gif.gif)
+ ![عکس مربوطه](http://uupload.ir/files/i93j_engaging-dormant-gif.gif)
 
 
 ۱- وارد پنل شوید و به صفحه **کمپین جدید** در تب **پیام‌ها** بروید.

@@ -13,7 +13,7 @@ permalink: guides/how-to-reduce-shopping-cart-abandonment.html
 
 تمامی مراحل را می‌توانید از طریق گیف زیر مشاهده کنید:
 
- ![عکس مربوطه](http://uupload.ir/files/xsoy_automated-push.gif)
+ ![عکس مربوطه](http://uupload.ir/files/o023_reduce-shopping-cart-abandonment-gif.gif)
 
 <br>
 

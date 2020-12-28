@@ -9,7 +9,7 @@ permalink: guides/How-can-users-be-happy-by-recognizing-achievements.html
 
 تمامی مراحل را می‌توانید از طریق گیف زیر مشاهده کنید:
 
- ![عکس مربوطه](http://uupload.ir/files/eco_ezgif.com-video-to-gif_(22).gif)
+ ![عکس مربوطه](http://uupload.ir/files/tnt_recognizing-achievments-gif.gif)
 
 <br>
 

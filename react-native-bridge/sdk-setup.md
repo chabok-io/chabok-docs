@@ -8,7 +8,7 @@ next: tracker.html
 ---
 
 > `نکته:` مستندات پیاده‌سازی زیر براساس **نسخه‌های ۲.۰.۰ به بالا** کتابخانه چابک نوشته شده است. در صورتی که از نسخه‌ پایین‌تری استفاده می‌کنید به [ این صفحه](/react-native-bridge/sdk-setup-old.html) مراجعه کنید.
->
+
 > در صورتی که می‌خواهید نسخه خود را ارتقا دهید، حتما [مستندات مهاجرت](/react-native-bridge/upgrade-chabok-to-2-0-0.html) به نسخه ۲ چابک را مطالعه کنید. 
 
 پس از طی کردن مراحل صفحه [پیش‌نیازها](/react-native-bridge/required.html)، می‌توانید **راه‌اندازی SDK چابک** را شروع کنید. در ابتدا شما باید کتابخانه چابک را [نصب کنید](/react-native-bridge/sdk-setup.html#۱--نصب-کتابخانه). در انتها، [مقداردهی و راه‌اندازی](/react-native-bridge/sdk-setup.html#۲--مقداردهی-اولیه-initialize) کتابخانه چابک را در اپلیکیشنتان انجام دهید و برای شناخت کاربر توسط چابک، مرحله [ثبت کاربر](/react-native-bridge/sdk-setup.html#۳--ثبت-کاربر) را حتما پشت سر بگذارید.
@@ -19,13 +19,16 @@ next: tracker.html
 
 [۲- مقداردهی اولیه (Initialize)](/react-native-bridge/sdk-setup.html#۲--مقداردهی-اولیه-initialize)
 
-[۳- ثبت کاربر (Register)](/react-native-bridge/sdk-setup.html#۳--ثبت-کاربر)
+[۳- ثبت کاربر](/react-native-bridge/sdk-setup.html#۳--ثبت-کاربر)
+
+[۴- تست پیاده‌سازی](/react-native-bridge/sdk-setup.html#۴--تست-پیادهسازی)
 
 <Br>
 
 ### ۱- نصب کتابخانه 
+---
 
-#### نصب کتابخانه جاوااسکریپ
+#### نصب کتابخانه جاوا اسکریپت
 
 برای نصب از طریق `npm`:
 
@@ -98,23 +101,23 @@ $ pod update
 ```
 حالا برای اطمینان از نصب، پروژه را در `xcode` باز کنید ، اگر header فایل چابک را مشاهده کردید، نصب کتابخانه آی‌او‌اس موفقیت آمیز بوده است.
 
-<Br>
+<Br><Br>
 
 ### ۲- مقدار‌دهی اولیه (Initialize)
-
+---
 #### مقدار‌دهی اولیه اندروید
 
 چابک برای راه اندازی نیاز به **مقداردهی اولیه** دارد.
 <br>
 ۱. برای مقداردهی ابتدا از پنل خود وارد بخش **تنظیمات**> **دسترسی و توکن‌ها**> **کتابخانه موبایل**> **فعال‌سازی راه‌اندازی هوشمند**> شوید و فایل **Chabok.sandbox.json** یا **Chabok.production.json** را بسته به محیطتان دانلود کنید.
-<p class="text-center">
-<img src="http://uupload.ir/files/9tlr_sandbox-android-chabok-doc.gif">
-</p>
+
+![enter image description here](http://uupload.ir/files/o0d_android-access-tokens.png)
 
 >`نکته:`
 برای غیرفعال کردن قابلیت **پوش نوتیفیکیشن**(pushNotification)، کافیست مقدار پیش ‌فرض آن را در فایل دانلود شده تغییر بدید.
 
-۲. فایل دانلود شده را در پوشه ماژول اصلی پروژه قرار دهید.
+۲. فایل دانلود شده (از پنل چابک) را به همراه فایل ‍‍`google-services.json` که از فایربیس دانلود کردید،  در پوشه ماژول اصلی پروژه قرار دهید.
+
 <p class="text-center">
 <img width="90%" src="http://uupload.ir/files/pby6_download-file-in-main-module-of-project.gif">
 </p>
@@ -171,7 +174,7 @@ public class MainApplication extends Application implements ReactApplication {
     public void onCreate() {
         super.onCreate();
 
-        AdpPushClient.configureEnvironment(Environment.SANDBOX); // or PEODUCTION
+        AdpPushClient.configureEnvironment(Environment.SANDBOX); // or PRODUCTION
     }
 }
 ```
@@ -193,10 +196,9 @@ public class MainApplication extends Application implements ReactApplication {
 
 چابک برای راه‌اندازی نیاز به **مقداردهی اولیه** دارد.
 
-
 ۱- برای مقداردهی ابتدا از پنل خود بخش **تنظیمات> دسترسی و توکن‌ها> کتابخانه موبایل> راه‌اندازی هوشمند** فایل **Chabok.sandbox.plist**  یا  **Chabok.production.plist**  (بسته به محیطتان) را دانلود کنید.
 
-![enter image description here](http://uupload.ir/files/hgt4_ios-configuration-file.png)
+![enter image description here](http://uupload.ir/files/labq_ios-setup-access-tokens.png)
 
 > `نکته:` برای غیر فعال کردن دریافت توکن پوش‌نوتیفیکیشن، کافیست مقدار پیش‌فرض آن را در فایل دانلود شده تغییر دهید.
 
@@ -221,7 +223,7 @@ public class MainApplication extends Application implements ReactApplication {
 - (BOOL)application:(UIApplication *)application
             didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
             
-    [PushClientManager.defaultManager configureEnvironment:Sandbox]; // or PEODUCTION
+    [PushClientManager.defaultManager configureEnvironment:Sandbox]; // or PRODUCTION
     return YES;
 }
 ```
@@ -236,7 +238,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
-    PushClientManager.default()?.configureEnvironment(.Sandbox) // or PEODUCTION
+    PushClientManager.default()?.configureEnvironment(.Sandbox) // or PRODUCTION
     
     return true
 }
@@ -253,10 +255,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 > `نکته:` دقت داشته باشید که **قابلیت آنی (realtime)**  چابک به طور پیش فرض **غیر فعال** است. این قابلیت در[ پیام چابک](/ios/chabok-messaging.html) و [پیام‌رسانی آنی](/ios/event-handling.html) استفاده می‌شود.
 
-<br>
- 
+<Br><Br>
 
 ### ۳- ثبت کاربر
+---
 
 یکی از مزیت‌های چابک نسبت به درگاه‌های ارسال پوش‌نوتیفیکیشن، امکان **معرفی** هر کاربر با یک شناسه منحصر به فرد است. این قابلیت به شما امکان می‌دهد دستگاه‌های کاربر را **مدیریت کنید** و سوابق جمع‌آوری شده را همانند یک سیستم مدیریت مشتریان (CRM) در اختیار داشته باشید.       
 این شناسه می‌تواند برای **دستگاه‌های متعدد یک کاربر** استفاده شود. شناسه کاربر می‌تواند هر فیلد با ارزش و معنا‌دار برای کسب و کار شما باشد که کاربر خود را با آن شناسایی می‌کنید. **شماره موبایل**، **کدملی**، **شماره‌حساب**، **ایمیل** و یا حتی **شناسه دیتابیس‌تان** مثال‌هایی از شناسه‌های کاربری مناسب در موارد واقعی هستند. ارسال پیام‌ به کاربران توسط همین شناسه‌ها و بدون استفاده از توکن یا شناسه گوشی، به سادگی امکان پذیر خواهد بود.      
@@ -298,5 +300,45 @@ chabokEmitter.addListener('onRegister', (status)=>{
 	}  
 })
 ```
+
+<br><br>
+
+### ۴- تست پیاده‌سازی
+---
+برای اطمینان از موفقیت‌آمیز بودن راه‌اندازی لطفا تست‌های زیر را انجام دهید.
+
+#### تست SDK
+
+##### آیا پس از راه‌اندازی، دستگاه شما به پنل اضافه شده است؟
+در منوی **کاربران** می‌توانید دستگاه‌های موجود را همراه با جزئیات مشاهده کنید. **پس از بازدید اول** از اپلیکیشن اطلاعات دستگاه خود را در پنل با دقت **مطابقت دهید**.
+
+> `نکته:` دقت داشته باشید که **آخرین نسخه SDK** را دریافت کنید و موارد **لیست تغییرات** را مطالعه کنید.
+
+<br>
+
+![](http://uupload.ir/files/w2il_sdk-test.png)
+
+<br><br>
+
+#### تست login کاربران
+
+##### ۱- آیا وضعیت کاربران درست ثبت شده است؟ (لاگین، مهمان، حذف کرده/نکرده)
+
+در صورتی که در اپلیکیشن بخش لاگین دارید، ( [پیاده‌سازی](/react-native-bridge/sdk-setup.html#%D9%88%D8%B1%D9%88%D8%AF-%D8%A8%D9%87-%D8%AD%D8%B3%D8%A7%D8%A8-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%DB%8C-login) آن را از چابک کرده‌اید) می‌توانید در فیلتر سگمنت جدید  گزینه **وضعیت کاربر** را انتخاب کنید تا متوجه شوید کاربر در چه وضعیتی (لاگین، مهمان، حذف کرده و حذف نکرده)  قرار دارد.
+
+<br>
+
+![](http://uupload.ir/files/ud1r_user-status.png)
+
+<br>
+
+##### ۲- آیا پنل به درستی کاربران را در صورت خروج از اپلیکیشن (logout) به کاربر مهمان تبدیل می‌کند؟
+وقتی کاربران بر روی گزینه logout در اپلیکیشن کلیک می‌کنند و از اپ خارج می‌شوند، اطلاعاتشان در چابک ذخیره می‌شود و یک شناسه دیگری به هر کاربر خارج شده اختصاص می‌دهد تا وقتی مجدد وارد اپلیکیشن شود شناسه کاربری او تغییر کند. این کاربران در بخش سگمنت قابل مشاهده‌اند.
+
+<br>
+
+![enter image description here](http://uupload.ir/files/h13x_login-vs-guest.png)
+
+<br><br>
 
 > `نکته:` پروژه [Starter](https://github.com/chabok-io/chabok-client-rn) به شما کمک می‌کند بدون هیچ کد اضافه‌ای و فقط با اجرای آن، از پلتفرم چابک استفاده کنید. همچنین به کمک این پروژه با نحوه صحیح پیاده سازی متدهای چابک آشنا خواهید شد.

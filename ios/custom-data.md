@@ -157,7 +157,7 @@ PushClientManager.default().userAttributes = [
 
 #### افزایش داده‌های کمیتی کاربر
 
-شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی و ..** را **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
+شما می‌توانید داده‌های کمیتی کاربر را مانند **بازدید از محصول یا صفحه‌ای، خرید آیتم خاصی و ..** **افزایش** دهید. برای این کار متد زیر را فراخوانی کنید: 
 
 {% tabs %}
 {% tab OBJECTIVE-C %}
@@ -235,6 +235,92 @@ let attributesDic = ["visit":NSNumber(5),
 		             "workout":NSNumber(100)]
 
 PushClientManager.default().incrementUserAttributeValues(attributesDic)
+```
+{% endtab %}
+ {% endtabs %}
+
+<br>
+
+#### کاهش داده‌های کمیتی کاربر
+
+شما همچنین می‌توانید داده‌های کمیتی کاربر را **کاهش** دهید. برای این کار متد زیر را فراخوانی کنید: 
+
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
+[PushClientManager.defaultManager decrementUserAttribute:@"visit_comedy_shows"];
+```
+{% endtab %}
+{% tab SWIFT %}
+``` swift
+
+PushClientManager.default().decrementUserAttribute("visit_comedy_shows")
+```
+{% endtab %}
+{% endtabs %}
+
+<br>
+
+##### کم کردن از چند attribute
+
+همچنین متد بالا از آرایه‌ای از اطلاعات کاربر (attribute) هم پشتیبانی می‌کند. برای همین می‌توانید از بیش از یک attribute کم کنید. به نمونه زیر دقت کنید: 
+
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
+NSArray<NSString *> *attributes = @[@"comedy_move", @"shoes_size"];
+
+[PushClientManager.defaultManager decrementUserAttributes:attributes];
+```
+{% endtab %}
+{% tab SWIFT %}
+``` swift
+let attributes = ["comedy_move", "shoes_size"]
+
+PushClientManager.default().decrementUserAttributes(attributes)
+```
+{% endtab %}
+{% endtabs %}
+<br>
+
+##### کاهش مقدار دلخواه از یک attribute
+
+با متد زیر می‌توانید از یک attribute مقدار دلخواهتان را کم کنید:
+
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
+[PushClientManager.defaultManager decrementUserAttributeValue:@"player_level" value:2];
+```
+{% endtab %}
+{% tab SWIFT %}
+``` swift
+PushClientManager.default().decrementUserAttributeValue("player_level", value: 2)
+```
+{% endtab %}
+{% endtabs %}
+<br>
+
+##### کاهش مقدار دلخواه از چند attribute
+
+متد زیر از dictionary از attributeها پشتیبانی می‌کند، بنابراین می‌توانید از چند attribute مقدار دلخواهتان را کم کنید:
+
+{% tabs %}
+{% tab OBJECTIVE-C %}
+```objectivec
+NSMutableDictionary<NSString *, NSNumber *> *attributesDic = [NSMutableDictionary new];
+[attributesDic setObject:[NSNumber numberWithDouble:5] forKey:@"visit"];
+[attributesDic setObject:[NSNumber numberWithDouble:100] forKey:@"workout"];
+    
+[PushClientManager.defaultManager decrementUserAttributeValues:[attributesDic copy]];
+```
+{% endtab %}
+{% tab SWIFT %}
+``` swift
+let attributesDic = ["visit":NSNumber(5),
+		             "workout":NSNumber(100)]
+
+PushClientManager.default().decrementUserAttributeValues(attributesDic)
 ```
 {% endtab %}
  {% endtabs %}

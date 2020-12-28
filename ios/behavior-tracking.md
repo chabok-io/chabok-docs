@@ -115,6 +115,9 @@ PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 {% endtab %}
 {% endtabs %}
 
+
+>  نکته : با پیاده‌سازی متدهای بالا می‌توانید **مجموع درآمد** را در [پروفایل کاربر(بخش جزییات و کارت‌ رویداد)](/panel/users.html#%D9%BE%D8%B1%D9%88%D9%81%D8%A7%DB%8C%D9%84-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1)، [دستگاه (کارت رویداد)](/panel/users.html#%D8%AC%D8%B2%D8%A6%DB%8C%D8%A7%D8%AA-%D8%AF%D8%B3%D8%AA%DA%AF%D8%A7%D9%87) و [سگمنت (فیلتر درآمد)](/panel/segment.html#%D8%AF%D8%B1%D8%A2%D9%85%D8%AF) پنل مشاهده کنید.
+
 <Br>
 
 ### ارسال پیام براساس رفتار
@@ -143,3 +146,24 @@ PushClientManager.default().trackPurchase("Purchase", chabokEvent: chabokEvent)
 - تاریخچه رویداد‌ها در جزئیات دستگاه
 
 ![عکس مربوطه](http://uupload.ir/files/xurb_activity.png)
+
+<br><br>
+
+### تست رصد رفتار (ایونت)
+---
+##### ۱- آیا ایونت‌ها به درستی رصد و در پروفایل پروفایل کاربر و جزئیات دستگاه در پنل نمایش داده می‌شوند؟
+
+پس از [پیاده‌سازی](/ios/behavior-tracking.html) ایونت‌ها، می‌توانید آن را در **پروفایل کاربران** بلافاصله **بعد وقوع ایونت** بررسی کنید.
+
+<br>
+
+![enter image description here](http://uupload.ir/files/u9ki_event-test-in-user-profile.png)
+
+<br>
+
+#####  ۲- آیا در سگمنت نام و نوع داده ایونت (تحت عنوان رفتار کاربر) قابل نمایش است و کاربران به درستی فیلتر می‌شوند؟
+به کمک سگمنت می‌توانید  کاربران  را به همراه تمامی رویدادهایی که در اپلیکیشن اتفاق افتاده است را (مثل خرید) مشاهده و دسته‌بندی کنید.
+
+<br>
+
+![enter image description here](http://uupload.ir/files/m57a_event-test-in-segment.png)

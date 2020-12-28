@@ -9,6 +9,57 @@ prev: troubleshoot.html
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 <br>
 
+## [نسخه ۳.۵.۰ - ۱۳۹۹/۰۹/۰۴](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.5.0)
+
+###  تغییرات 
+
+- بهبود موارد امنیتی.
+
+
+## [نسخه ۳.۴.۱ - ۱۳۹۹/۰۸/۲۴](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.4.1)
+
+###  تغییرات 
+
+- حل مشکل خطای ANR به هنگام دریافت شناسه تبلیغاتی
+
+
+## [نسخه ۳.۴.۰ - ۱۳۹۹/۰۵/۱۳](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.4.0)
+
+###  تغییرات 
+
+- بهینه‌سازی قواعد و دیکشنری `DexGuard`
+- از این پس، برای سفارشی‌سازی صدای نوتیفیکیشن باید از `androidChannelId` و `androidChannelName` در پی‌لود نوتیفیکیشن استفاده کنید
+- از این پس چابک، نام اپراتور کاربر هم را برای آنالیتیکس شناسایی می‌کند
+- افزودن متد `isLoggedIn` برای تشخیص اینکه کاربر وارد حساب است  یا مهمان 
+
+## [نسخه ۳.۳.۱ - ۱۳۹۹/۰۳/۳۱](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.3.1)
+
+###  تغییرات 
+
+- افزودن تمپلیت جدید و بهبود یافته نوتیفیکیشن برای بقیه نسخه‌های اندروید (۶ به پایین)
+
+## [نسخه ۳.۳.۰ - ۱۳۹۹/۰۳/۱۹](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.3.0)
+
+###  تغییرات 
+  
+- افزودن تمپلت جدید و بهبود یافته نوتیفیکیشن برای اندروید ۷‌ به بالا (پشتیبانی از راست‌چین RTL، بهبود عنوان و نمایش کامل متن حین استفاده از تصویر نوتیفیکیشن)
+- برای استفاده از رنگ پیش‌فرض نوتیفیکیشن، کد زیر را در فایل `AndroidManifest.xml` داخل تگ `<Application>` قرار دهید:
+
+```xml
+<meta-data
+	        android:name="com.adpdigital.push.client.default_notification_color"
+	        android:resource="@color/green_color" />
+```              
+
+## [نسخه ۳.۲.۱ - ۱۳۹۹/۰۲/۳۱](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.2.1)
+
+###  تغییرات 
+  
+- حل مشکل کرش هنگام آپدیت توکن پوش
+- حل مشکل کال‌بک متد لاگین
+- حل مشکل کرش هنگام ارسال داده Install Referrer در DexGuard
+
+
 ## [نسخه ۳.۲.۰ - ۱۳۹۸/۱۲/۰۴](https://github.com/chabok-io/chabok-client-android/releases/tag/v3.2.0)
 
 ###  تغییرات 
@@ -16,6 +67,7 @@ prev: troubleshoot.html
 - بهبود مدیریت خطاهای توکن پوش‌نوتیفیکیشن
 - بهبود پیاده‌سازی متد `publishEvent`
 - اضافه شدن متد `unsetUserAttributes`
+- افزودن متد `decrementUserAttribute` برای کاهش داده‌های کمیتی کاربر
 - جلوگیری از Full Backup کتابخانه در اندرویدهای ۷ به بالا
 - بهبود روند بروزرسانی توکن پوش‌نوتیفیکیشن
 - بهبود نمایش رنگ LED در اندرویدهای بالاتر از ۷

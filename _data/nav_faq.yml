@@ -5,8 +5,8 @@
     - id: account-management
       title: ثبت نام و مدیریت حساب
     - id: attribution
-      title: اتریبیوشن
+      title: اتریبیوشن (ترکر)
     - id: push-notification
       title: پوش‌نوتیفیکیشن
     - id: custom-data
-      title: داده‌های سفارشی
+      title: رویداد و اتریبیوت (داده سفارشی)

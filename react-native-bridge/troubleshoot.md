@@ -7,20 +7,27 @@ prev: features.html
 next: release-note.html
 ---
 
-در این صفحه به عیب‌یابی مشکلات متداول توسعه‌دهندگان در پیاده‌سازی چابک و ارائه راه‌‌حل‌های مربوط به آن می‌پردازیم. برخی از این مشکلات عبارتند از عدم [دریافت پوش‌نوتیفیکیشن](/react-native-bridge/troubleshoot.html#پوش-نمیگیرم)، [نمایش نوتیفیکیشن](/react-native-bridge/troubleshoot.html#نوتیفیکیشنها-نمایش-داده-نمیشوند) و [نمایش تصویر نوتیفیکیشن](#تصویر-نوتیفیکیشن-نمایش-داده-نمیشود)
+در این صفحه به عیب‌یابی مشکلات متداول توسعه‌دهندگان در پیاده‌سازی چابک و ارائه راه‌‌حل‌های مربوط به آن می‌پردازیم. برخی از این مشکلات عبارتند از: [کرش کردن اپلیکیشن](/react-native-bridge/troubleshoot.html#%D8%A7%D9%BE%D9%84%DB%8C%DA%A9%DB%8C%D8%B4%D9%86%D9%85-%DA%A9%D8%B1%D8%B4-%D9%85%DB%8C%DA%A9%D9%86%D8%AF)، عدم [دریافت پوش‌نوتیفیکیشن](/react-native-bridge/troubleshoot.html#پوش-نمیگیرم)، [نمایش نوتیفیکیشن](/react-native-bridge/troubleshoot.html#نوتیفیکیشنها-نمایش-داده-نمیشوند) و [نمایش تصویر نوتیفیکیشن](#تصویر-نوتیفیکیشن-نمایش-داده-نمیشود)
 
 <Br>
  
 ## اپلیکیشنم کرش می‌کند
 ---
 
-#### چابک را حتما intialize کنید
+##### ۱- چابک را حتما intialize کنید
 
-در صورتی که با ارور **AdpPushClient not initialized, Make sure to call AdpPushClient.init in your Application class onCreate** مواجه شدید، اطمینان یابید چابک را intialize کرده باشید. این کار را از طریق متد `init` با وارد کردن پارامتر‌های مخصوص حساب خود انجام دهید.
+در صورتی که با خطای:
+
+```java
+AdpPushClient not initialized, Make sure to call AdpPushClient.init in your Application class onCreate
+```
+
+ مواجه شدید، اطمینان یابید چابک را **intialize** کرده باشید. این کار را از طریق متد `init` با وارد کردن پارامتر‌های مخصوص حساب خود انجام دهید.
 
 <Br>
 
-#### به مقدار `APP_ID/SENDER_ID` دقت کنید
+##### ۲- به مقدار `APP_ID/SENDER_ID` دقت کنید
+
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
 در صورتی که با خطای **Application ID should be in `app-name/number` format** مواجه شدید، از صحیح بودن مقدار `APP_ID/SENDER_ID` در متد `init` اطمینان یابید. مقدار این پارامتر باید `APP_ID` به اضافه `SENDER_ID` (بدون فاصله) باشد. به عنوان مثال این مقدار برای حساب دموی چابک 839879285435/chabok-starter می‌شود. (مقدار عددی **SENDER_ID** است.) 
@@ -32,17 +39,28 @@ next: release-note.html
 
 <Br>
 
-#### نسخه‌ سرویس‌های گوگل پلی را بررسی کنید
+##### ۳- نسخه‌ سرویس‌های گوگل پلی را بررسی کنید
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
-در صورتی با ارورهای **;java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/iid/InstanceID** و یا **Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.android.gms.iid.InstanceID** مواجه شدید، دقت کنید که نسخه‌ سرویس‌های گوگل پلی شما با هم، همخوانی و تطابق داشته باشند.
+در صورتی با خطاهای:
+
+```java
+;java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/iid/InstanceID
+```
+ و یا
+
+```java
+Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.android.gms.iid.InstanceID
+```
+
+ مواجه شدید، دقت کنید که نسخه‌ سرویس‌های گوگل پلی شما با هم، همخوانی و تطابق داشته باشند.
 
 <Br><Br>
  
 ## یک پوش را چند بار می‌گیرم
 ---
 
-#### از قطعه کد زیر استفاده کنید
+##### ۱- از قطعه کد زیر استفاده کنید
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
 در صورتی که از سرویس‌های دیگر پوش استفاده کنید (3rd parties)، حتما از کد زیر استفاده کنید. 
@@ -53,7 +71,7 @@ next: release-note.html
 ```
 <Br>
 
-#### از AutoNotify فایربیس استفاده نکنید
+##### ۲- از AutoNotify فایربیس استفاده نکنید
 <span style="background-color: #a4c639; height: 30px; color: #fff; display: inline-block; padding: 0px 10px 0px 10px; font-weight: bold; font-size:12px; border-radius: 5px;">Android</span>
 
 در صورتی که از Auto Notify سرویس فایربیس استفاده می‌کنید (در این مدل نمایش نوتیفیکیشن را سیستم‌عامل برعهده دارد)، در زمان‌هایی که اپلیکیشن در بک‌گراند یا بسته است، کد رسیور چابک و شما فراخوانی نخواهد شد در نتیجه نوتیفیکیشن ۲بار نمایش داده خواهد شد.
@@ -66,7 +84,7 @@ next: release-note.html
 
 یکی از مشکلات متداولی که توسعه‌دهندگان پس از نصب چابک با آن مواجه می‌شوند،‌ **عدم دریافت پیام** (هم پیام چابک و هم پوش‌نوتیفیشکن) است. این مشکل معمولا به راه‌اندازی ناقص یا غیر صحیح چابک بر می‌گردد. عیب‌یابی این مشکل را در دو حالت باز و بسته بودن اپلیکیشن بررسی خواهیم کرد.
 
-- #### اپ باز است (Background یا Foreground) و پوش نمی‌گیرم:
+#### حالت اول: اپ باز است (Background یا Foreground) و پوش نمی‌گیرم:
 
 ##### ۱- از ثبت موفق دستگاه کاربر اطمینان یابید
 
@@ -95,7 +113,7 @@ next: release-note.html
 
 <Br>
 
-- #### اپ بسته است (Terminated) و پوش نمی‌گیرم:
+#### حالت دوم: اپ بسته است (Terminated) و پوش نمی‌گیرم:
 
 ##### ۱- از مراحل ثبت موفق دستگاه و عضویت در کانال ارسال مانند بالا اطمینان یابید
 
@@ -260,13 +278,13 @@ RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNo
 ## تصویر نوتیفیکیشن نمایش داده نمی‌شود
 ---
 
-#### پوش را با پنل ارسال کرده‌ام
+##### ۱- پوش را با پنل ارسال کرده‌ام
 
 دقت داشته باشید پس از انتخاب تصویر، دکمه **بارگذاری** را حتما بزنید و پیام موفقیت را مشاهده کنید.
 
 <br>
 
-#### پوش را با API ارسال کرده‌ام
+##### ۲- پوش را با API ارسال کرده‌ام
 
 در این حالت باید به پارامترهای `mediaType`، `mediaUrl` و `mutableContent` (در آی‌اواس) مقادیر درست دهید.
 
@@ -276,7 +294,7 @@ RNPushNotification:    at com.dieam.reactnativepushnotification.modules.RNPushNo
 
 <br>
 
-## موارد بالا را بررسی کردم اما همچنان مشکلم برطرف نشده
+## موارد بالا را بررسی کردم اما همچنان مشکلم برطرف نشده!
 ---
 
 در صورتی هم که موارد این صفحه را بررسی کردید و همچنان مشکلتان **برطرف نشده بود**، می‌توانید از **پشتیبانی چابک** در [گیت‌هاب](https://github.com/chabok-io/chabok-client-rn/issues) استفاده کنید. در آن جا `issue`های قبلی را مطالعه کنید و اگر مشکل شما بین آن‌ها نبود، می‌توانید یک `issue` جدید برای بررسی تیم فنی چابک باز نمایید.

@@ -1,10 +1,10 @@
 ---
 id: tracker
-title: ترکر
+title: منابع جذب
 layout: panel
 permalink: panel/tracker.html
 prev: dashboard.html
-next: users.html
+next: funnel.html
 ---
 
 **ترکرها** (یا شمارنده‌ها) ابزاری برای اندازه‌گیری نتایج کمپین‌های تبلیغاتی هستند؛ با این مکانیزم که داده‌های آماری کمپین (مانند تعداد کلیک، نصب، منابع هر کدام و ...) را در اختیار شما می‌گذارند تا با تحلیل آن‌ها بتوانید کمپین‌های جذب کاربر خود را بهینه‌سازی کنید.
@@ -30,9 +30,11 @@ next: users.html
 
 ### سطح‌بندی پویا 
 
-سطح‌بندی پویا به شما امکان می‌دهد تا با ساخت یک ترکر، بی نهایت **زیر ترکر (subtracker)** داشته باشید. هدف زیر ترکرها در واقع دسته‌بندی مخاطبان، برای ارزیابی و در نتیجه بهینه‌سازی هرچه بیشتر است. به عنوان مثال شما می‌خواهید کمپین‌های تابستانه خود را برای گرفتن نصب بروید. طبیعی است که شما این کار را با یک کمپین و یا یک محتوا منتشر نکنید. در این حالت می‌توانید به سادگی به تعداد کمپین‌های خود زیر ترکر بسازید و عملکرد جمعی و فردی هر کدام را بررسی کنید. در ادامه باز هم می‌توانید برای هر زیر ترکر کمپین، زیر ترکر‌های ریزتر (برای محتوا) بسازید و به همین ترتیب ادامه دهید.
+سطح‌بندی پویا به شما امکان می‌دهد تا با ساخت یک ترکر، بی نهایت **زیر ترکر (subtracker)** داشته باشید. هدف زیر ترکرها **در واقع دسته‌بندی مخاطبان**، برای ارزیابی و در نتیجه بهینه‌سازی هرچه بیشتر است. به عنوان مثال شما می‌خواهید کمپین‌های تابستانه خود را برای گرفتن نصب بروید. **طبیعی است که شما این کار را با یک کمپین، یک شبکه یا یک محتوا منتشر نکنید**. در این حالت می‌توانید به سادگی به تعداد کمپین‌های خود زیر ترکر بسازید و عملکرد جمعی و فردی هر کدام را بررسی کنید. در ادامه باز هم می‌توانید برای هر زیر ترکر کمپین، زیر ترکر‌های ریزتر (برای محتوا) بسازید و به همین ترتیب ادامه دهید. به مثال زیر دقت کنید.
 
-<div style="text-align: center;"><img src="http://uupload.ir/files/kipk_subtracker-chart.png" class="img-fluid" style="
+فرض کنید که می‌خواهید کمپینی را در اینستاگرام اجرا کنید. یکی از راه‌های متدوال، انتشار کمپین در صفحه‌ اینفلوئنسرها است. بدیهی است که اگر کمپین خود را دقیقا **با یک لینک** به تعدادی از اینفلوئنسرها بدهید، **دیگر نمی‌توانید بفهمید کاربران جذب شده از کدام صفحه آمده‌اند یا به عبارت دیگر کدام اینفلوئنسر، کاربران بیش‌تر و بهتری به شما اضافه کردند**. از این رو سطح‌بندی چابک به شما امکان می‌دهد تا با دادن پارامترهایی به لینک ترکر خود بتوانید **آمار هر اینفلوئنسر را جدا ببینید.** این سطح‌بندی حتی ریزتر هم می‌شود، طوری که مثلا می‌توانید محتوای متفاوت به کمپین خود بدهید. 
+
+<div style="text-align: center;"><img src="http://uupload.ir/files/u5zv_subtrackers.png" class="img-fluid" style="
     width: 800px;
 "></div>
 
@@ -91,7 +93,7 @@ https://sand.chabok.io/637z3i?campaign=CAMPAIGN_1&adgroup=AD_GROUP&creative=CREA
 شما می‌توانید برای هدایت کاربران به جای دلخواه از پارامترهای `fallback` ،`redirect_ios` ،`redirect_android` در لینک ترکر خود استفاده کنید. لینک زیر مثالی از تمام پارامترهایی است که می‌توانید در لینک خود قرار دهید. 
 
 ```markup
-https://sand.chabok.io/637z3i?redirect_ios=https://itunes.apple.com/us/genre/ios/id36?mt=8&redirect_android=https://play.google.com/store&fallback=https://mylandingpage.com/&click_id=11111&android_id=ANDROID_ID&
+https://sand.chabok.io/637z3i?redirect_ios=https%3A%2F%2Fitunes.apple.com%2Fus%2Fgenre%2Fios%2Fid36%3Fmt%3D8&redirect_android=https%3A%2F%2Fplay.google.com%2Fstore&fallback=https%3A%2F%2Fmylandingpage.com%2F&click_id=11111&android_id=ANDROID_ID&
 ```
 
 ##### کال‌بک داینامیک (Dynamic Callback)
@@ -100,7 +102,7 @@ https://sand.chabok.io/637z3i?redirect_ios=https://itunes.apple.com/us/genre/ios
 
 
 ```markup
-https://sand.chabok.io/637z3i?callback=https://campaign.90tv.ir/?event={{activity_kind}}&tracker={{tracker_name}}&install_callback=https://campaign.90tv.ir/?event={{activity_kind}}&tracker={{tracker_name}}&os={{os_name}}&ip={{ip_address}}
+https://sand.chabok.io/637z3i?callback=https%3A%2F%2Fcampaign.90tv.ir%2F%3Factivity%3D%7B%7Bactivity_kind%7D%7D%26tracker%3D%7B%7Btracker_name%7D%7D&install_callback=https%3A%2F%2Fcampaign.90tv.ir%2F123%3Ftracker%3D%7B%7Btracker_name%7D%7D%26os%3D%7B%7Bos_name%7D%7D%26ip%3D%7B%7Bip_address%7D%7D
 ```
 
 <br>
@@ -110,19 +112,22 @@ https://sand.chabok.io/637z3i?callback=https://campaign.90tv.ir/?event={{activit
 - همیشه پارامترها را با **&** جدا کنید.
 - حتما از **حروف کوچک** استفاده کنید زیرا پارامتر به حروف بزرگ و کوچک حساس هستند.
 - از درست نوشتن پارامترها اطمینان یابید.
+- دقت کنید که اگر لینکی در پارامترهای شما بود آن را حتما [**encode**](https://www.url-encode-decode.com/) کنید.
 - از ترتیب سطح‌بندی پیروی کنید. به عنوان مثال زمانی که گروه تبلیغاتی هنوز خالی است خلاقانه را پر نکنید.
 
 <Br>
 
 ### ایجاد ترکر 
 
+![enter image description here](http://uupload.ir/files/pfr_new-tracker.png)
+
 شما می‌توانید علاوه بر **نام** و **لینک مقصد** به ترکر خود پارامترهای دیگری هم مانند **نام کمپین، شبکه، گروه تبلیغاتی و خلاقانه**، **پارامتر لینک مقصد و دیپ لینک (Deeplink)**، **کال‌بک** و **محدوده اتریبیوشن** اضافه کنید: 
 
 <Br>
 
-![عکس مربوطه](http://uupload.ir/files/046x_new-tracker-1.png)
-![عکس مربوطه](http://uupload.ir/files/xmzo_new-tracker-2.png)
-
+![عکس مربوطه](http://uupload.ir/files/dqeb_tracker-form-1.png)
+![عکس مربوطه](http://uupload.ir/files/nisn_tracker-form-2.png)
+![enter image description here](http://uupload.ir/files/qqgk_tracker-form-3.png)
 
 <Br>
 
@@ -158,7 +163,7 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 
 در لینک مقصد می‌توانید پارامترهایی را مانند منبع، فرم یا مدل کمپین، نام کمپین و ... قرار دهید و بازخوردش را در پنل گوگل آنالییکس خود نگاه کنید:
 
-![عکس مربوطه](http://uupload.ir/files/kihu_parameters.png)
+![عکس مربوطه](http://uupload.ir/files/dgec_tracker-parameters.png)
 
 ##### دیپ لینک (Deeplink)
 
@@ -182,7 +187,7 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 </thead>
 <tbody><tr>
 <td align="center">activity_kind</td>
-<td align="right">نوع فعالیت (کلیک، نصب و...)</td>
+<td align="right">نوع فعالیت (کلیک، نصب و رویداد)</td>
 </tr>
 <tr>
 <td align="center">tracker</td>
@@ -249,7 +254,7 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 </thead>
 <tbody><tr>
 <td align="center">activity_kind</td>
-<td align="right">نوع فعالیت (کلیک، نصب و...)</td>
+<td align="right">نوع فعالیت (کلیک، نصب و رویداد)</td>
 </tr>
 <tr>
 <td align="center">tracker</td>
@@ -328,11 +333,125 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 
 <Br>
 
+##### جدول پارامترهای کال‌بک رویداد
+
+ <p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">پارامترها</th>
+<th style="text-align: right">توضیح</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">event_name</td>
+<td align="right">نام رویداد</td>
+</tr>
+<tr>
+<td align="center">revenue</td>
+<td align="right">درآمد</td>
+</tr>
+<tr>
+<td align="center">tracker</td>
+<td align="right">شناسه ترکر</td>
+</tr>
+<tr>
+<td align="center">tracker_name</td>
+<td align="right">نام ترکر</td>
+</tr>
+<tr>
+<td align="center">label</td>
+<td align="right">لیبل (دعوت دوستان)</td>
+</tr>
+<tr>
+<td align="center">conversion_duration</td>
+<td align="right">زمان بین کلیک و نصب</td>
+</tr>
+<tr>
+<td align="center">network_name</td>
+<td align="right">نام شبکه تبلیغاتی</td>
+</tr>
+<tr>
+<td align="center">campaign_name</td>
+<td align="right">نام کمپین</td>
+</tr>
+<tr>
+<td align="center">app_id</td>
+<td align="right">شناسه اپلیکیشن</td>
+</tr>
+<tr>
+<td align="center">app_version</td>
+<td align="right">نسخه اپلیکیشن</td>
+</tr>
+<tr>
+<td align="center">connection_type</td>
+<td align="right">نوع اتصال</td>
+</tr>
+<tr>
+<td align="center">ip_address</td>
+<td align="right">آی‌پی کاربر</td>
+</tr>
+<tr>
+<td align="center">os_name</td>
+<td align="right">سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">os_version</td>
+<td align="right">نسخه سیستم‌عامل</td>
+</tr>
+<tr>
+<td align="center">device_manufacturer</td>
+<td align="right">برند دستگاه</td>
+</tr>
+<tr>
+<td align="center">device_name</td>
+<td align="right">مدل دستگاه</td>
+</tr>
+<tr>
+<td align="center">click_id</td>
+<td align="right">شناسه کلیک</td>
+</tr>
+<tr>
+<td align="center">click_time</td>
+<td align="right">زمان کلیک</td>
+</tr>
+<tr>
+<td align="center">installed_at</td>
+<td align="right">زمان نصب</td>
+</tr>
+<tr>
+<td align="center">adid</td>
+<td align="right">شناسه تبلیغ</td>
+</tr>
+</tbody></table>
+</p>
+
+<Br>
+
+##### کال‌بک داینامیک برای دریافت رفتار کاربر
+
+شما می‌توانید پشت لینک ترکر پارامترهایی را برای دریافت **رویداد‌های رفتاری** مورد نظر در وب‌سرویس خود قرار دهید. برای این کار فقط کافیست از پارامتر `event_callback` برای **همه رویداد‌ها** و `event_callback_eventname` برای **رویداد مورد نظر** مانند زیر استفاده کنید:
+
+```markup
+https://a.chabok.io/abc123?event_callback=https%3A%2F%2Fyourdomain.com%2Fevents
+
+urldecode : https://a.chabok.io/abc123?event_callback=https://yourdomain.com/events
+```
+
+```markup
+https://a.chabok.io/abc123?event_callback_purchase=https%3A%2F%2Fyourdomain.com%2Fevent_purchase
+
+urldecode : https://a.chabok.io/abc123?event_callback_purchase=https://yourdomain.com/event_purchase
+```
+
+> `نکته:` توکن رویداد‌ها در چابک (مغایر با ادجاست) همان نام رویداد‌ها است.
+
 > `نکته:` شما می‌توانید از `click_id` هم به عنوان پارامتر کال‌بک استفاده کنید. این شناسه را خودتان (یا آژانس تبلیغاتی‌تان) تعیین می‌کنید و به لینک ترکر چابک اضافه می‌کنید و در کال‌بک آن را می‌توانید دریافت کنید.
 
 برای مثال به کال‌بک زیر توجه کنید:
 
-![عکس مربوطه](http://uupload.ir/files/ut47_callback-example.png)
+![عکس مربوطه](http://uupload.ir/files/8tr9_tracker-callback.png)
 
 <Br>
 
@@ -344,16 +463,14 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 
 شما می‌توانید کمپین‌های نصب خود را با مدل CPA یا همان هزینه براساس اکشن (رفتار) اجرا کنید. دکمه افزودن CPA **بلافاصله بعد از کلیک روی ایجاد** در صفحه ترکر جدید ظاهر می‌شود. همینطور می‌توانید پس از ایجاد، وارد صفحه جزئیات ترکر شوید و **افزودن رویداد** را بزنید.
 
-![عکس مربوطه](http://uupload.ir/files/gdsu_add-event-in-tracker.png)
+![عکس مربوطه](http://uupload.ir/files/0ebk_cpa.png)
 
 <br>
-
-
 
 در این صفحه علاوه بر تعیین رویداد (یا اکشن) می‌توانید **هدف** نیز مشخص کنید.
 سربرگ هدف علاوه بر مشخص کردن نام هدف، به شما این امکان را می‌دهد تا برای رسیدن به یک یا چند رویداد، سگمنت‌های متفاوتی همراه با چندین ویژگی (attribute) را تعریف کنید.
 
-![عکس مربوطه](http://uupload.ir/files/uxwy_goal_in_panel.png)
+![عکس مربوطه](http://uupload.ir/files/ix4q_cpg.png)
 
 <Br>
 
@@ -375,18 +492,21 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 
 **ارگانیک**: کاربرانی که خودشان، جدا از کمپین‌های تبلیغاتی به اپلیکیشن شما پیوسته‌اند.  
 
-![عکس مربوطه](http://uupload.ir/files/fy72_all-trackers.png)
-
 <Br>
 
 با کلیک روی هر ترکر، **وارد سطح‌ کوچکتر آن ترکر می‌شوید**. به عنوان مثال کلیک روی ترکر وارد شبکه‌های آن می‌شود سپس کلیک روی شبکه وارد کمپین‌های آن شبکه می‌شود و به همین ترتیب ادامه پیدا می‌کند. 
 
 #### جزئیات ترکر
 
-برای مشاهده آمار دقیق هر ترکر کافی است در لیست ترکرهای فعال خود از بخش دستورات، وارد **جزئیات** شوید.
+برای مشاهده آمار دقیق هر ترکر کافی است در لیست ترکرهای فعال خود از بخش دستورات، 
 
-![عکس مربوطه](http://uupload.ir/files/3ad_lqtz_53ep_tracker-detail-1.png)
-![عکس مربوطه](http://uupload.ir/files/xymw_tracker-detail-2.png)
+![عکس مربوطه](http://uupload.ir/files/phjc_tracker-details.png)
+
+
+وارد **جزئیات** شوید:
+
+![عکس مربوطه](http://uupload.ir/files/5j44_tracker-details-1.png)
+![عکس مربوطه](http://uupload.ir/files/lz67_ezxn_tracker-details-2.png)
 
 <br>
 
@@ -398,22 +518,50 @@ itms-services://?action=download-manifest&url=https://mobileapp.adpdigital.com/n
 
 شما می‌توانید آمار ترکر خود را با آژانس‌های مورد نظر **به اشتراک بگذارید**. فقط کافی است نام ایمیل آن‌ها را در **افزودن دسترسی** وارد کنید. درصورتی که آژانس از قبل حساب داشته باشد به لیست ترکرهایش اضافه خواهد شد، در غیر این صورت به صفحه **ثبت نام** هدایت خواهد شد.
 
+![enter image description here](http://uupload.ir/files/vq0z_tracker-access.png)
+
 ##### جدول آمار
 
-در جدول **آمار ترکر** می‌توانید آمار سطح‌های ترکر (شبکه تبلیغاتی، نام کمپین، گروه تبلیغاتی و خلاقانه) خود را مشاهده کنید. با کلیک روی شبکه وارد کمپین‌های آن می‌شوید و به همین ترتیب وارد سطح‌های کوچکتر شوید. این آمار شامل **کلیک، نصب، نرخ تبدیل، رد شده، رویدادهای تعیین شده (در اینجا purchase)، درآمد، حذف و نرخ حذف** است.
+در جدول **آمار ترکر** می‌توانید آمار سطح‌های ترکر (شبکه تبلیغاتی، نام کمپین، گروه تبلیغاتی و خلاقانه) خود را مشاهده کنید. با کلیک روی شبکه وارد کمپین‌های آن می‌شوید و به همین ترتیب وارد سطح‌های کوچکتر شوید. این آمار شامل **کلیک، نصب، نصب مجدد، نرخ تبدیل، رد شده، رویدادهای تعیین شده (در اینجا purchase)، درآمد، حذف و نرخ حذف** است.
+
+- **کلیک**: تعداد کلیک‌هایی که روی کمپین شده است.
+
+- **نصب**: تعداد نصب‌هایی که سالم و موفق نسبت (اتریبیوت) داده شده‌اند. نصب در چابک به معنای اولین باری است که کاربر اپلیکیشن را باز می‌کند.
+
+- **نصب مجدد**: تعداد نصب‌هایی که در محدوده اتریبیوشن مجدد (Re-Attribution) حذف کردند و دوباره نصب کردند.
+
+-  **نرخ تبدیل**: نسبت نصب به کلیک است (درصد). چه درصدی از کاربرانی که کلیک کرده‌اند، نصب موفق داشته‌اند.
+
+- **رد شده (یا تقلب)**: تعداد کل نصب‌هایی که چابک **غیر واقعی** تشخیص داده است. در این نمودار می‌توانید سه مورد از عواملی که منجر به رد شده‌اند را در ماه جاری مشاهده کنید. **خارج از محدوده** همان محدوده اتریبیوشن یا زمان قابل قبولی که بین کلیک و نصب تعیین کرده‌اید. عامل بعدی **کوتاه بودن فاصله بین نصب و کلیک** است. عامل آخر **نصب نامعتبر** است که به معنی عدم تطابق امضاهای کاربر در کلیک و نصب می‌باشد.
+
+- **رویداد**: تعداد دفعاتی که رویداد (سفارشی) در اپلیکیشن فراخوانی شده است.
+
+- **حذف**: تعداد نصب‌هایی که منجر به حذف شده‌اند.
+
+- **نرخ حذف**: نسبت حذف به نصب است (درصد). چه درصدی از کاربران پس از نصب، حذف کرده‌اند.
+
+<br>
 
 ##### نمودارهای آماری
 
-- **ترافیک**: روند نصب و کلیک‌هایی که ترکر شمارش می‌کند. موارد **رد شده** تعداد کل نصب‌هایی که چابک **غیر واقعی** تشخیص داده است. در این نمودار می‌توانید سه مورد از عواملی که منجر به رد شده‌اند را در ماه جاری مشاهده کنید. **خارج از محدوده** همان محدوده اتریبیوشن یا زمان قابل قبولی که بین کلیک و نصب تعیین کرده‌اید. عامل بعدی **کوتاه بودن فاصله بین نصب و کلیک** است. عامل آخر **نصب نامعتبر** است که به معنی عدم تطابق امضاهای کاربر در کلیک و نصب می‌باشد.
-
-- **رویداد**: رویداد‌هایی که شما تعیین کرده‌اید تا توسط ترکر رصد شوند.
+- **ترافیک**: روند نصب و کلیک‌هایی که ترکر شمارش می‌کند. 
 
 - **بازدید**: درصد کاربرانی که از کمپین نصب مورد نظر آمده‌اند و **بازدید** داشته‌اند. 
-
-- **حذف**: تعداد حذف‌های یک کمپین در ماه جاری.
 
 - **سگمنت**: در این قسمت تمام سگمنت‌هایی که کاربران با کمپین نصب مورد نظر جذب شده‌اند، به صورت هوشمند قابل مشاهده می‌باشند. با این قابلیت می‌توانید برای کاربران جدید خود هدف‌ تعیین کنید و از نتایج آن با خبر شوید.
 
 ### ترکرهای پیش‌فرض چابک
 
-چابک به طور پیش‌فرض **۴ ترکر** را برای هر حساب قرار می‌دهد. این ترکرها **ارگانیک** (نصب‌هایی که  به طور طبیعی و بدون کمپین رخ داده‌اند)، **تبلیغات گوگل** (Google Ads)[، **جستجوی گوگل پلی استور**](/android/tracker.html#۴-ترک-جستجوی-ارگانیک-گوگل) و [**تبلیغات کافه بازار**](/panel/settings.html#تبلیغات-کافه-بازار) هستند. 
+چابک به طور پیش‌فرض **۲ ترکر** را برای هر حساب قرار می‌دهد. این ترکرها **ارگانیک** (نصب‌هایی که  به طور طبیعی و بدون کمپین رخ داده‌اند) و **تبلیغات گوگل** (Google Ads).
+
+#### تبلیغات کافه بازار  
+در این قسمت می‌توانید نصب‌هایی که از **تبلیغات در جستجوی کافه‌بازار (Search Ads)** می‌گیرید را **رصد** کنید.  
+برای رصد کافیست یک لینک ترکر با شبکه تبلیغاتی **«Cafe Bazaar Search Ads»** بسازید و آن را در پنل کافه بازار خود، در بخش لینک اثرگذاری قرار دهید:
+
+۱- به پنل خود وارد شود و در صفحه منابع جذب، لینک ترکر جدیدی بسازید که شبکه تبلیغاتی آن کافه بازار باشد:
+
+![](http://uupload.ir/files/yo00_cafe-bazaar-tracker.png)
+  
+۲- سپس **لینک داده شده** را کپی کنید و آن را در پنل کافه بازار خود> تبلیغات> کمپین‌ها در **لینک اثرگذاری Tracker** مانند زیر قرار دهید:  
+ 
+![عکس مربوطه](http://uupload.ir/files/uwhu_cafe-bazaar.png)

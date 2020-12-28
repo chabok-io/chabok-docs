@@ -25,6 +25,28 @@ next: event-handling.html
 
 <br>
 
+### ارسال موقعیت مکانی بدون پیاده‌سازی کتابخانه موقعیت مکانی چابک
+
+اگر سرویس لوکیشن در اپلیکیشن‌تان پیاده‌سازی شده و قصد اضافه کردن کتابخانه جدید برای ارسال موقعیت مکانی را ندارید، از طریق کد زیر می‌توانید موقعیت مکانی کاربران را برای چابک ارسال کنید: 
+
+```java
+public void publishLocation(Location location) {
+    try {
+        JSONObject data = new JSONObject();
+        
+        data.put("lat", location.getLatitude());
+        data.put("lng", location.getLongitude());
+        data.put("ts", location.getTime());
+        
+        AdpPushClient.get().publishEvent("geo", data);
+    } catch (Exception e) {
+        Logger.e(TAG, "Cant publish geo location event ", e);
+    }
+}
+```
+
+> `نکته:` از ارسال موقعیت مکانی در فاصله زمانی کمتر از ۱۰ ثانیه خودداری کنید.
+
 ### تعریف مجوزهای دسترسی به موقعیت مکانی
 
 برای استفاده از امکانات مکان‌یابی چابک لازم است حتما دو مجوز `ACCESS_FINE_LOCATION` و `ACCESS_COARSE_LOCATION`  را در فایل `AndroidManifest.xml` قرار دهید:
@@ -49,6 +71,17 @@ next: event-handling.html
 در ادامه این بخش به معرفی امکانات مکان‌یابی چابک خواهیم پرداخت:
 
 <br>
+
+### دریافت موقعیت مکانی یک‌بار در زمان شروع برنامه 
+با استفاده از متد `enableLocationOnLaunch` می توانید موقعیت مکانی را در کلاس listener ‌خود برای یک‌بار دریافت نمایید، پس از یکبار گزارش، سرویس مکان‌یابی بصورت خودکار متوقف خواهد شد.
+می‌توانید این متد را در جای مناسبی مانند `onCreate` اکتیویتی یا کلاس `Application‌` فراخوانی نمایید.
+
+```java
+public void enableLocationOnLaunch()
+```
+
+<br>
+
 
 ### دریافت موقعیت مکانی در حالت kill
 
@@ -362,14 +395,6 @@ locationManager.addCallbackIntent(intent);
 
 >`نکته:`
 >برای اینکه دریافت موقعیت مکانی در این سرویس پس از خروج از برنامه یعنی حالات Kill و Background ادامه یابد بایستی حالت Background ‌را توسط متد `enableBackgroundMode` فعال کرده باشید.
-
-### دریافت موقعیت مکانی یک‌بار در زمان شروع برنامه 
-با استفاده از متد `enableLocationOnLaunch` می توانید موقعیت مکانی را در کلاس listener ‌خود برای یک‌بار دریافت نمایید، پس از یکبار گزارش، سرویس مکان‌یابی بصورت خودکار متوقف خواهد شد.
-می‌توانید این متد را در جای مناسبی مانند `onCreate` اکتیویتی یا کلاس `Application‌` فراخوانی نمایید.
-
-```java
-public void enableLocationOnLaunch()
-```
 
 <br>
 

@@ -6,6 +6,7 @@ permalink: android/troubleshoot.html
 prev: features.html
 next: release-note.html
 ---
+
 > `نکته:`  عیب‌یابی مشکلات متداول زیر بر اساس نسخه‌های ۳ به بالا کتابخانه چابک نوشته شده است. در صورتی که از نسخه پایین‌تری استفاده می‌کنید به [این صفحه](/android/troubleshoot-old.html) مراجعه کنید.
 
 
@@ -13,34 +14,69 @@ next: release-note.html
 
 <Br>
 
-## اپلیکیشنم کرش می‌کند.
+## اپلیکیشنم کرش می‌کند
 ---
 
-#### چابک را حتما initialize کنید.
+##### ۱- چابک را حتما initialize کنید
 
  اگر چابک را initialize نکنید، ممکن است با یکی از خطاهای زیر مواجه شوید:
  
-۱. در صورتی که با خطای **AdpPushClient not initialized, Make sure to call AdpPushClient.configureEnvironment(Environment) in onCreate() method of your Application class** مواجه شدید، اطمینان یابید چابک را initialize کرده باشید. معمولا این خطا به دلیل صدا نزدن متد `configureEnvironment` اتفاق می‌افتد و برای رفع مشکل، تنها باید [متد](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) را بسته به محیط صدا بزنید.
+ در صورتی که با خطای:
+
+```java
+AdpPushClient not initialized, Make sure to call AdpPushClient.configureEnvironment(Environment) in onCreate() method of your Application class
+```
+ مواجه شدید، اطمینان یابید چابک را initialize کرده باشید. معمولا این خطا به دلیل صدا نزدن متد `configureEnvironment` اتفاق می‌افتد و برای رفع مشکل، تنها باید [متد](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) را بسته به محیط صدا بزنید.
 
 <br>
-۲. اگر با یکی از خطاهای **AdpPushClient not initialized, Make sure to configure correct environment** و یا **AdpPushClient not initialized, Make sure to put the json files in root of your project** مواجه شدید، یعنی فایل **Chabok.sandbox.json** یا **Chabok.production.json** در جای مناسبی قرار نگرفته و یا اگر در جای درستی هست، محتویاتش کامل نیست.
+
+ اگر با یکی از خطاهای:
+
+```java
+AdpPushClient not initialized, Make sure to configure correct environment
+```
+  و یا
+
+```java
+AdpPushClient not initialized, Make sure to put the json files in root of your project 
+```
+
+مواجه شدید، یعنی فایل **Chabok.sandbox.json** یا **Chabok.production.json** در جای مناسبی قرار نگرفته و یا اگر در جای درستی هست، محتویاتش کامل نیست.
 برای اطلاعات بیشتر می‌توانید مستندات [راه‌اندازی](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize) را مطالعه کنید.
 
 <br>
 
-#### نسخه‌ سرویس‌های گوگل پلی را بررسی کنید
+##### ۲- نسخه‌ سرویس‌های گوگل پلی را بررسی کنید
 ---
 
-در صورتی که با خطاهای **;java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/iid/InstanceID** و یا **Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.android.gms.iid.InstanceID** مواجه شدید، دقت کنید که نسخه‌ سرویس‌های گوگل پلی شما با هم، همخوانی و تطابق داشته باشند.
+در صورتی که با خطاهای:
+
+```java
+;java.lang.NoClassDefFoundError: Failed resolution of: Lcom/google/android/gms/iid/InstanceID
+```
+ و یا
+
+```java
+Caused by: java.lang.ClassNotFoundException: Didn’t find class com.google.android.gms.iid.InstanceID
+```
+ مواجه شدید، دقت کنید که نسخه‌ سرویس‌های گوگل پلی شما با هم، همخوانی و تطابق داشته باشند.
 
 <Br>
 
 
-<h3>
-کرش کردن اپلیکیشن در هنگام دریافت پوش نوتیفیکیشن
-</h3>
+### کرش کردن اپلیکیشن در هنگام دریافت پوش نوتیفیکیشن
 
-اگر هنگام دریافت پوش، اپلیکیشن کرش کرد و یکی از دو خطای **Unable to instantiate service com.adpdigital.push.ChabokFirebaseMessaging**، یا **java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService** را در **logcat** دریافت کردید:
+اگر هنگام دریافت پوش، اپلیکیشن کرش کرد و یکی از دو خطای:
+
+```java
+Unable to instantiate service com.adpdigital.push.ChabokFirebaseMessaging
+```
+ یا
+
+```java
+java.lang.IllegalAccessError: com.google.firebase.messaging.FirebaseMessagingService
+```
+ را در **logcat** دریافت کردید:
 
 برای رفع خطاهای بالا باید قطعه کد زیر را در فایل `build.gradle` ماژول اصلی اپلیکیشن اضافه کنید:
 
@@ -51,7 +87,7 @@ implementation 'com.google.firebase:firebase-messaging:17.1.0'
 
 ## یک پوش را چند بار می‌گیرم
 ---
-#### از قطعه کد زیر استفاده کنید
+##### ۱- از قطعه کد زیر استفاده کنید
 
 در صورتی که از سرویس‌های دیگر پوش استفاده کنید (3rd parties)، حتما از کد زیر استفاده کنید. 
 این کد باعث می‌شود تا فقط پوش‌نوتیفیکشن‌های چابک نمایش داده شوند؛ برای این کار کد زیر در فایل `AndroidManifest.xml` قرار دهید:
@@ -61,7 +97,8 @@ implementation 'com.google.firebase:firebase-messaging:17.1.0'
 ```
 <Br>
 
-#### از AutoNotify فایربیس استفاده نکنید
+##### ۲- از AutoNotify فایربیس استفاده نکنید
+
 در صورتی که از Auto Notify سرویس فایربیس استفاده می‌کنید (در این مدل نمایش نوتیفیکیشن را سیستم‌عامل برعهده دارد)، در زمان‌هایی که اپلیکیشن در بک‌گراند یا بسته است، کد رسیور چابک و شما فراخوانی نخواهد شد در نتیجه نوتیفیکیشن ۲بار نمایش داده خواهد شد.
 
 
@@ -73,7 +110,7 @@ implementation 'com.google.firebase:firebase-messaging:17.1.0'
 
 یکی از مشکلات متداولی که توسعه‌دهندگان پس از نصب چابک با آن مواجه می‌شوند،‌ **عدم دریافت پیام** (هم پیام چابک و هم پوش‌نوتیفیکیشن) است. این مشکل معمولا به راه‌اندازی ناقص یا غیر صحیح چابک بر می‌گردد.
 
-- #### اپ باز است (Background یا Foreground) و پوش نمی‌گیرم:  
+#### حالت اول: اپ باز است (Background یا Foreground) و پوش نمی‌گیرم:  
 
 ##### ۱- از ثبت موفق دستگاه کاربر اطمینان یابید
 
@@ -102,7 +139,7 @@ implementation 'com.google.firebase:firebase-messaging:17.1.0'
 
 <Br>
 
-### اپ بسته است (Terminated) و پوش نمی‌گیرم:
+### حالت دوم: اپ بسته است (Terminated) و پوش نمی‌گیرم:
 
 ##### ۳- از مراحل ثبت موفق دستگاه و عضویت در کانال ارسال مانند بالا اطمینان یابید
 
@@ -204,20 +241,20 @@ implementation 'com.google.firebase:firebase-messaging:17.1.0'
 ## تصویر نوتیفیکیشن نمایش داده نمی‌شود
 ---
 
-#### پوش را با پنل ارسال کرده‌ام
+##### حالت اول:  پوش را با پنل ارسال کرده‌ام
 
 دقت داشته باشید پس از انتخاب تصویر، دکمه **بارگذاری** را حتما بزنید و پیام موفقیت را مشاهده کنید.
 
 <br>
 
-#### پوش را با API ارسال کرده‌ام
+#### حالت دوم: پوش را با API ارسال کرده‌ام
 
 در این حالت باید به پارامترهای `mediaType`و `mediaUrl` مقادیر درست دهید.
 
 
 <br>
 
-## موارد بالا را بررسی کردم اما همچنان مشکلم برطرف نشده
+## موارد بالا را بررسی کردم اما همچنان مشکلم برطرف نشده!
 ---
 
 در صورتی هم که موارد این صفحه را بررسی کردید و همچنان مشکلتان **برطرف نشده بود**، می‌توانید از **پشتیبانی چابک** در [گیت‌هاب](https://github.com/chabok-io/chabok-client-android/issues) استفاده کنید. در آن جا `issue`های قبلی را مطالعه کنید و اگر مشکل شما بین آن‌ها نبود، می‌توانید یک `issue` جدید برای بررسی تیم فنی چابک باز نمایید.
