@@ -280,7 +280,7 @@
         <ul>
             {% for item in section.items %}
             <li>
-                {{ item | glossary_sidebar_link}}
+                {{ item | glossary_sidebar_link: site.baseurl }}
                 <!--{% if item.subitems %}-->
                 <!--<ul>-->
                 <!--{% for subitem in item.subitems %}-->

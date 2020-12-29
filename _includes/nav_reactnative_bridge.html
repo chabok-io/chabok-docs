@@ -102,7 +102,7 @@
         <ul>
             {% for item in section.items %}
             <li>
-                {{ item | react_native_bridge_sidebar_link}}
+                {{ item | react_native_bridge_sidebar_link: site.baseurl }}
                 <!--{% if item.subitems %}-->
                 <!--<ul>-->
                     <!--{% for subitem in item.subitems %}-->

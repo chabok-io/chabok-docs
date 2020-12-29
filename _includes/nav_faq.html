@@ -268,7 +268,7 @@
         <ul>
             {% for item in section.items %}
             <li>
-                {{ item | faq_sidebar_link}}
+                {{ item | faq_sidebar_link: site.baseurl }}
                 <!--{% if item.subitems %}-->
                 <!--<ul>-->
                 <!--{% for subitem in item.subitems %}-->

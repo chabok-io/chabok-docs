@@ -225,7 +225,7 @@
         <ul>
             {% for item in section.items %}
             <li>
-                {{ item | mobile_usecases_sidebar_link}}
+                {{ item | mobile_usecases_sidebar_link: site.baseurl }}
                 <!--{% if item.subitems %}-->
                 <!--<ul>-->
                     <!--{% for subitem in item.subitems %}-->
