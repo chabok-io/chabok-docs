@@ -10,14 +10,11 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    container:
-      image: ubuntu
-      options: --user root -v ${{ github.workspace }}/_site:/srv/jekyll/:rw
 
     steps:
     - uses: actions/checkout@v2
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        -v ${{ github.workspace }}:/srv/jekyll:rw -v ${{ github.workspace }}/_site:/srv/jekyll/_site:rw \
         jekyll/builder:latest /bin/bash -c "bundle install && bundle update --bundler && bundle update && chmod 777 /srv/jekyll && jekyll build"
