@@ -44,7 +44,7 @@ module Jekyll
           return sidebar_helper(item, 'mobile-usecases')
     end
 
-    def panel_sidebar_link(item, baseurl)
+    def panel_sidebar_link(item, baseurl = '---')
         return sidebar_helper(item, 'panel', baseurl)
     end
 

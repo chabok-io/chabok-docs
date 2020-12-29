@@ -209,7 +209,7 @@
         <ul>
             {% for item in section.items %}
             <li>
-                {{ panel_sidebar_link: site.baseurl, item}}
+                {{ item | panel_sidebar_link: site.baseurl }}
                 <!--{% if item.subitems %}-->
                 <!--<ul>-->
                     <!--{% for subitem in item.subitems %}-->
