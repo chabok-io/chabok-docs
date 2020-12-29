@@ -17,4 +17,4 @@ jobs:
       run: | 
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll:rw -v ${{ github.workspace }}/_site:/srv/jekyll/_site:rw \
-        jekyll/builder:latest /bin/bash -c "touch /srv/jekyll/Gemfile.lock && chmod a+w /srv/jekyll/Gemfile.lock && rm -rf /srv/jekyll/Gemfile.lock && touch /srv/jekyll/Gemfile.lock && chmod a+w /srv/jekyll/Gemfile.lock && bundle install && bundle update --bundler && bundle update && chmod 777 /srv/jekyll && jekyll build && chmod 777 /srv/jekyll/_site && mkdir /srv/jekyll/docs && cp -rf /srv/jekyll/_site /srv/jekyll/docs"
+        jekyll/builder:latest /bin/bash -c "touch /srv/jekyll/Gemfile.lock && chmod a+w /srv/jekyll/Gemfile.lock && rm -rf /srv/jekyll/Gemfile.lock && touch /srv/jekyll/Gemfile.lock && chmod a+w /srv/jekyll/Gemfile.lock && bundle install && bundle update --bundler && bundle update && chmod 777 /srv/jekyll && jekyll build && bundle exec jekyll serve"
