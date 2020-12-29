@@ -17,4 +17,4 @@ jobs:
       run: | 
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll:rw -v ${{ github.workspace }}/_site:/srv/jekyll/_site:rw \
-        jekyll/builder:latest /bin/bash -c "touch /srv/jekyll/Gemfile.lock && chmod a+w /srv/jekyll/Gemfile.lock && rm -rf /srv/jekyll/Gemfile.lock && touch /srv/jekyll/Gemfile.lock && chmod a+w /srv/jekyll/Gemfile.lock && bundle install && bundle update --bundler && bundle update && chmod 777 /srv/jekyll && jekyll build"
+        ubuntu /bin/bash -c "apt-get update && apt-get install ruby-full build-essential zlib1g-dev && echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc && echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc && echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc && gem install jekyll bundler && touch /srv/jekyll/Gemfile.lock && chmod a+w /srv/jekyll/Gemfile.lock && rm -rf /srv/jekyll/Gemfile.lock && touch /srv/jekyll/Gemfile.lock && chmod a+w /srv/jekyll/Gemfile.lock && bundle install && bundle update --bundler && bundle update && chmod 777 /srv/jekyll && jekyll build"
