@@ -9,7 +9,7 @@ name: مستندات پلتفرم چابک
 description: پلتفرم چابک امکان ارسال پوش و پیام‌ درون‌برنامه‌ای را به اپ موبایل و وب شما اضافه می‌کند. شما می‌توانید از ارسال پوش نوتیفیکیشن مطمئن و با تاخیر پایین روی پلت فرم‌های اندروید، iOS، ویندوز، دسکتاپ و وب پوش بهر‌منده شوید.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/chabokpush/chabok-assets/master/chaboklogoblue.png
+avatar: https://raw.githubusercontent.com/chabok-io/chabok-assets/master/chaboklogoblue.png
 
 timezone: 'Asia/Tehran'
 
@@ -99,7 +99,7 @@ baseurl: "/chabok-docs"
 permalink: /:title/
 
 # The release of Jekyll Now that you're using
-version: v1.2.0
+version: v4.3.0
 
 # Jekyll 3 now only supports Kramdown for Markdown
 kramdown:
@@ -117,7 +117,7 @@ sass:
   style: :compressed
 
 sources:
-  - _assets/javascript
+  - assets/javascript
 
 assets:
   compress:
