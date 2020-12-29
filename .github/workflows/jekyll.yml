@@ -17,4 +17,4 @@ jobs:
       run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "cp /srv/jekyll /srv/jekyll-repo && cd /srv/jekyll-repo && bundle install && bundle update --bundler && bundle update && chmod 777 /srv/jekyll-repo && jekyll build"
+        jekyll/builder:latest /bin/bash -c "cp -rf /srv/jekyll /srv/jekyll-repo && cd /srv/jekyll-repo && bundle install && bundle update --bundler && bundle update && chmod 777 /srv/jekyll-repo && jekyll build"
