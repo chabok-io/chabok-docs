@@ -4,67 +4,67 @@ module Jekyll
       return sidebar_helper(item, 'docs')
     end
 
-    def ios_sidebar_link(item, baseurl)
-      return sidebar_helper(item, baseurl, 'ios')
+    def ios_sidebar_link(item)
+      return sidebar_helper(item, 'ios')
     end
 
-    def android_sidebar_link(item, baseurl)
-      return sidebar_helper(item, baseurl, 'android')
+    def android_sidebar_link(item)
+      return sidebar_helper(item, 'android')
     end
 
-    def glossary_sidebar_link(item, baseurl)
-      return sidebar_helper(item, baseurl, 'glossary')
+    def glossary_sidebar_link(item)
+      return sidebar_helper(item, 'glossary')
     end
 
-    def unity_sidebar_link(item, baseurl)
-        return sidebar_helper(item, baseurl, 'unity')
+    def unity_sidebar_link(item)
+        return sidebar_helper(item, 'unity')
     end
 
-    def flutter_sidebar_link(item, baseurl)
-        return sidebar_helper(item, baseurl, 'flutter')
+    def flutter_sidebar_link(item)
+        return sidebar_helper(item, 'flutter')
     end
 
-    def cordova_sidebar_link(item, baseurl)
-        return sidebar_helper(item, baseurl, 'cordova')
+    def cordova_sidebar_link(item)
+        return sidebar_helper(item, 'cordova')
     end
 
-    def faq_sidebar_link(item, baseurl)
-        return sidebar_helper(item, baseurl, 'faq')
+    def faq_sidebar_link(item)
+        return sidebar_helper(item, 'faq')
     end
 
-    def windows_sidebar_link(item, baseurl)
-      return sidebar_helper(item, baseurl, 'windows')
+    def windows_sidebar_link(item)
+      return sidebar_helper(item, 'windows')
     end
 
-    def guides_sidebar_link(item, baseurl)
-          return sidebar_helper(item, baseurl, 'guides')
+    def guides_sidebar_link(item)
+          return sidebar_helper(item, 'guides')
     end
 
-    def mobile_usecases_sidebar_link(item, baseurl)
-          return sidebar_helper(item, baseurl, 'mobile-usecases')
+    def mobile_usecases_sidebar_link(item)
+          return sidebar_helper(item, 'mobile-usecases')
     end
 
-    def panel_sidebar_link(item, baseurl)
-        return sidebar_helper(item, baseurl, 'panel')
+    def panel_sidebar_link(item)
+        return sidebar_helper(item, 'panel')
     end
 
-    def javascript_sidebar_link(item, baseurl)
-          return sidebar_helper(item, baseurl, 'javascript')
+    def javascript_sidebar_link(item)
+          return sidebar_helper(item, 'javascript')
     end
 
-    def react_native_sidebar_link(item, baseurl)
-          return sidebar_helper(item, baseurl, 'react-native')
+    def react_native_sidebar_link(item)
+          return sidebar_helper(item, 'react-native')
     end
 
-    def react_native_bridge_sidebar_link(item, baseurl)
-          return sidebar_helper(item, baseurl, 'react-native-bridge')
+    def react_native_bridge_sidebar_link(item)
+          return sidebar_helper(item, 'react-native-bridge')
     end
 
-    def rest_api_sidebar_link(item, baseurl)
-          return sidebar_helper(item, baseurl, 'rest-api')
+    def rest_api_sidebar_link(item)
+          return sidebar_helper(item, 'rest-api')
     end
 
-    def sidebar_helper(item, baseurl, group)
+    def sidebar_helper(item, group)
       forceInternal = item["forceInternal"]
 
       subItems = item["subitems"]
@@ -86,6 +86,7 @@ module Jekyll
       className = classes.size > 0  ? " class=\"#{classes.join(' ')}\"" : ""
 
       result = ""
+      baseurl = item["baseurl"]
       if subItems != nil && pageID == itemID
         result = "<ul><a href=\"#{baseurl}#{href}\"#{className}>#{item["title"]}</a>"
         subItems.each {|curItem|
