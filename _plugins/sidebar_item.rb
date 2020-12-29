@@ -44,8 +44,8 @@ module Jekyll
           return sidebar_helper(item, 'mobile-usecases')
     end
 
-    def panel_sidebar_link(item)
-        return sidebar_helper(item, 'panel')
+    def panel_sidebar_link(item, baseurl)
+        return sidebar_helper(item, 'panel', baseurl)
     end
 
     def javascript_sidebar_link(item)
@@ -64,7 +64,7 @@ module Jekyll
           return sidebar_helper(item, 'rest-api')
     end
 
-    def sidebar_helper(item, group)
+    def sidebar_helper(item, group, baseurl)
       forceInternal = item["forceInternal"]
 
       subItems = item["subitems"]
@@ -87,7 +87,6 @@ module Jekyll
 
       result = ""
       config = Rails.root.join('_config.yml')
-      baseurl = config.baseurl
       if subItems != nil && pageID == itemID
         result = "<ul><a href=\"#{baseurl}#{href}\"#{className}>#{item["title"]}</a>"
         subItems.each {|curItem|
