@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      image: jekyll/builder
+      image: ubuntu
       options: --user root -v ${{ github.workspace }}:/srv/jekyll/:rw
       
     steps:
