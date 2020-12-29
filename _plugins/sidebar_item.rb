@@ -1,6 +1,6 @@
 module Jekyll
   module SidebarItemFilter
-    def docs_sidebar_link(item, , baseurl = '---')
+    def docs_sidebar_link(item, baseurl = '---')
       return sidebar_helper(item, 'docs', baseurl)
     end
 
