@@ -19,5 +19,5 @@ jobs:
     - name: Build the site in the jekyll/builder container
       run: | 
         docker run \
-        -v ${{ github.workspace }}:/srv/jekyll:rw --user root -v ${{ github.workspace }}/_site:/srv/jekyll/_site:rw \
+        -v ${{ github.workspace }}:/srv/jekyll:rw -v ${{ github.workspace }}/_site:/srv/jekyll/_site:rw \
         jekyll/builder:latest /bin/bash -c "touch /srv/jekyll/Gemfile.lock && chmod a+w /srv/jekyll/Gemfile.lock && echo '-----------> GEMLOCK PERMISSION SETS' && bundle install && echo '-----------> BUNDLE INSTALLED' && bundle update --bundler && echo '-----------> BUNDLE UPDATAED 1' && bundle update && echo '-----------> BUNDLE UPDATAED 2' && chmod 777 /srv/jekyll && echo '-----------> BEFORE JEKYLL BUILD' && jekyll build"
