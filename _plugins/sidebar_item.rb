@@ -86,7 +86,6 @@ module Jekyll
       className = classes.size > 0  ? " class=\"#{classes.join(' ')}\"" : ""
 
       result = ""
-      config = Rails.root.join('_config.yml')
       if subItems != nil && pageID == itemID
         result = "<ul><a href=\"#{baseurl}#{href}\"#{className}>#{item["title"]}</a>"
         subItems.each {|curItem|
