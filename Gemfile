@@ -4,7 +4,7 @@ gem 'rake'
 
 # jekyll, which builds it all
 # 3.0 includes sass processing
-gem 'jekyll', '~>3.1'
+gem 'jekyll'
 
 # Jekyll extensions
 gem 'jekyll-redirect-from'
@@ -20,7 +20,7 @@ gem 'json'
 gem 'rb-fsevent'
 
 # For markdown header cleanup
-gem 'sanitize', '~>2.0'
+gem 'sanitize'
 
 gem "uglifier"
 
@@ -35,4 +35,4 @@ gem 'redcarpet'
 gem 'pygments.rb'
 
 # Avoid having to poll for changes on Windows
-gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'wdm' if Gem.win_platform?
