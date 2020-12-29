@@ -2,7 +2,7 @@
 id: introducing
 title: معرفی چابک
 layout: android
-permalink: {{ site.baseurl }}/android/introducing.html
+permalink: android/introducing.html
 next: required.html
 ---
 
