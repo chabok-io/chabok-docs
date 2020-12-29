@@ -18,3 +18,11 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll:rw -v ${{ github.workspace }}/_site:/srv/jekyll/_site:rw \
         jekyll/builder:latest /bin/bash -c "touch /srv/jekyll/Gemfile.lock && chmod a+w /srv/jekyll/Gemfile.lock && rm -rf /srv/jekyll/Gemfile.lock && touch /srv/jekyll/Gemfile.lock && chmod a+w /srv/jekyll/Gemfile.lock && bundle install && bundle update --bundler && bundle update && chmod 777 /srv/jekyll && jekyll build && chmod 777 /srv/jekyll/_site && mkdir /srv/jekyll/docs && cp -rf /srv/jekyll/_site /srv/jekyll/docs"
+      
+    - uses: fabacab/jekyll-builder-for-github-pages-action@master
+      with:
+        # Provide this action with your repository's `GH_PAGES_TOKEN`
+        # "Secret" variable. This should be the value of a personal
+        # access token granted, at a minimum, the `public_repo` and
+        # the `repo_deployment` scopes needed to deploy to GH Pages.
+        secret_gh_pages_api_token: ${{ secrets.GH_PAGES_TOKEN }}        
