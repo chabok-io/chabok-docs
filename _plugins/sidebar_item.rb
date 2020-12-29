@@ -89,7 +89,7 @@ module Jekyll
       if subItems != nil && pageID == itemID
         result = "<ul><a href=\"{{ site.baseurl }}#{href}\"#{className}>#{item["title"]}</a>"
         subItems.each {|curItem|
-          result += "<li><a style='font-size: 12px;' href=\"{{ site.baseurl }}#{pageID}.html##{curItem["href"]}\">#{curItem["title"]}</a></li>"
+          result += "<li><a style='font-size: 12px;' href=\"#{pageID}.html##{curItem["href"]}\">#{curItem["title"]}</a></li>"
         }
         result += "</ul>"
       else
