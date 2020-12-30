@@ -25,10 +25,6 @@ touch /srv/jekyll/Gemfile-dev &&
 chmod a+w /srv/jekyll/Gemfile-dev &&
 mv /srv/jekyll/Gemfile-dev /srv/jekyll/Gemfile
 
-ll &&
-
-echo pwd &&
-
 
 echo '===> Start Installing bundle' &&
 
@@ -54,7 +50,7 @@ git add . &&
 
 echo -n 'Files to Commit:' && ls -l | wc -l && 
 echo -n 'Before Commit' &&
-git commit -m \"action build\" && 
+git commit -m "action build" &&
 
 echo -n 'Before push' &&
 git push --force https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master:gh-pages && 
