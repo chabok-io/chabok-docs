@@ -1,70 +1,70 @@
 module Jekyll
   module SidebarItemFilter
-    def docs_sidebar_link(item)
-      return sidebar_helper(item, 'docs')
+    def docs_sidebar_link(item, baseurl = '---')
+      return sidebar_helper(item, 'docs', baseurl)
     end
 
-    def ios_sidebar_link(item)
-      return sidebar_helper(item, 'ios')
+    def ios_sidebar_link(item, baseurl = '---')
+      return sidebar_helper(item, 'ios', baseurl)
     end
 
-    def android_sidebar_link(item)
-      return sidebar_helper(item, 'android')
+    def android_sidebar_link(item, baseurl = '---')
+      return sidebar_helper(item, 'android', baseurl)
     end
 
-    def glossary_sidebar_link(item)
-      return sidebar_helper(item, 'glossary')
+    def glossary_sidebar_link(item, baseurl = '---')
+      return sidebar_helper(item, 'glossary', baseurl)
     end
 
-    def unity_sidebar_link(item)
-        return sidebar_helper(item, 'unity')
+    def unity_sidebar_link(item, baseurl = '---')
+        return sidebar_helper(item, 'unity', baseurl)
     end
 
-    def flutter_sidebar_link(item)
-        return sidebar_helper(item, 'flutter')
+    def flutter_sidebar_link(item, baseurl = '---')
+        return sidebar_helper(item, 'flutter', baseurl)
     end
 
-    def cordova_sidebar_link(item)
-        return sidebar_helper(item, 'cordova')
+    def cordova_sidebar_link(item, baseurl = '---')
+        return sidebar_helper(item, 'cordova', baseurl)
     end
 
-    def faq_sidebar_link(item)
-        return sidebar_helper(item, 'faq')
+    def faq_sidebar_link(item, baseurl = '---')
+        return sidebar_helper(item, 'faq', baseurl)
     end
 
-    def windows_sidebar_link(item)
-      return sidebar_helper(item, 'windows')
+    def windows_sidebar_link(item, baseurl = '---')
+      return sidebar_helper(item, 'windows', baseurl)
     end
 
-    def guides_sidebar_link(item)
-          return sidebar_helper(item, 'guides')
+    def guides_sidebar_link(item, baseurl = '---')
+          return sidebar_helper(item, 'guides', baseurl)
     end
 
-    def mobile_usecases_sidebar_link(item)
-          return sidebar_helper(item, 'mobile-usecases')
+    def mobile_usecases_sidebar_link(item, baseurl = '---')
+          return sidebar_helper(item, 'mobile-usecases', baseurl)
     end
 
-    def panel_sidebar_link(item)
-        return sidebar_helper(item, 'panel')
+    def panel_sidebar_link(item, baseurl = '---')
+        return sidebar_helper(item, 'panel', baseurl)
     end
 
-    def javascript_sidebar_link(item)
-          return sidebar_helper(item, 'javascript')
+    def javascript_sidebar_link(item, baseurl = '---')
+          return sidebar_helper(item, 'javascript', baseurl)
     end
 
-    def react_native_sidebar_link(item)
-          return sidebar_helper(item, 'react-native')
+    def react_native_sidebar_link(item, baseurl = '---')
+          return sidebar_helper(item, 'react-native', baseurl)
     end
 
-    def react_native_bridge_sidebar_link(item)
-          return sidebar_helper(item, 'react-native-bridge')
+    def react_native_bridge_sidebar_link(item, baseurl = '---')
+          return sidebar_helper(item, 'react-native-bridge', baseurl)
     end
 
-    def rest_api_sidebar_link(item)
-          return sidebar_helper(item, 'rest-api')
+    def rest_api_sidebar_link(item, baseurl = '---')
+          return sidebar_helper(item, 'rest-api', baseurl)
     end
 
-    def sidebar_helper(item, group)
+    def sidebar_helper(item, group, baseurl)
       forceInternal = item["forceInternal"]
 
       subItems = item["subitems"]
@@ -87,13 +87,13 @@ module Jekyll
 
       result = ""
       if subItems != nil && pageID == itemID
-        result = "<ul><a href=\"#{href}\"#{className}>#{item["title"]}</a>"
+        result = "<ul><a href=\"#{baseurl}#{href}\"#{className}>#{item["title"]}</a>"
         subItems.each {|curItem|
-          result += "<li><a style='font-size: 12px;' href=\"#{pageID}.html##{curItem["href"]}\">#{curItem["title"]}</a></li>"
+          result += "<li><a style='font-size: 12px;' href=\"#{baseurl}#{href}##{curItem["href"]}\">#{curItem["title"]}</a></li>"
         }
         result += "</ul>"
       else
-        result = "<a href=\"#{href}\"#{className}>#{item["title"]}</a>"
+        result = "<a href=\"#{baseurl}#{href}\"#{className}>#{item["title"]}</a>"
       end
       return result
     end

@@ -14,7 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the site in the jekyll/builder container
-      run: |
+      env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
+          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+      run: | 
         docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+        -v ${{ github.workspace }}:/srv/jekyll:rw -v ${{ github.workspace }}/_site:/srv/jekyll/_site:rw \
+        jekyll/builder:latest /bin/bash -c "chmod 777 ./build-and-deploy.sh && ./build-and-deploy.sh ${GITHUB_TOKEN} ${GITHUB_REPOSITORY} ${GITHUB_ACTOR}"
+
