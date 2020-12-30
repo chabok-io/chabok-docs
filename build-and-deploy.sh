@@ -30,6 +30,7 @@ touch /srv/jekyll/Gemfile-dev &&
 chmod a+w /srv/jekyll/Gemfile-dev &&
 mv /srv/jekyll/Gemfile-dev /srv/jekyll/Gemfile
 
+sed -i -e "s/baseurl:/baseurl: \"chabok-docs\"/g" _config.yml
 
 echo '===> Start Installing bundle' &&
 
