@@ -1,5 +1,13 @@
 #!/bin/sh
 
+GITHUB_TOKEN=$1 &&
+GITHUB_REPOSITORY=$2 &&
+GITHUB_ACTOR=$3 &&
+
+echo ${GITHUB_REPOSITORY} &&
+echo ${GITHUB_TOKEN} &&
+echo ${GITHUB_ACTOR} &&
+
 echo '===> Start running scripts for jekyll build.' &&
 
 echo 'Removing Gemfile.lock' &&
@@ -36,16 +44,16 @@ jekyll build &&
 
 echo '👍 THE SITE IS BUILT—PUSHING IT BACK TO GITHUB-PAGES' && 
 
-cd /srv/jekyll/_site && 
-remote_repo="https://x-access-token:${env.GITHUB_TOKEN}@github.com/${env.GITHUB_REPOSITORY}.git" &&
+cd /srv/jekyll/_site &&
+remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" &&
 remote_branch="gh-pages" && 
 
 echo remote_branch $remote_branch &&
 echo remote_repo $remote_repo &&
 
 git init && 
-git config user.name --global "${env.GITHUB_ACTOR}" &&
-git config --global user.email "${env.GITHUB_ACTOR}@users.noreply.github.com" &&
+git config user.name --global "${GITHUB_ACTOR}" &&
+git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com" &&
 git add . && 
 
 echo -n 'Files to Commit:' && ls -l | wc -l && 
