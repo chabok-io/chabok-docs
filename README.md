@@ -1,7 +1,8 @@
 # Chabok Documentation 
 Present chabok push sdk documentaition by jekyl static site generator
  
-## [Read the chabok Documentation](http://doc.chabok.io)
+## [Read the chabok Documentation pre-release](https://chabok-io.github.io/chabok-docs/)
+## [Read the chabok Documentation](https://doc.chabok.io)
 
 ## Installing some necessary packages
 
