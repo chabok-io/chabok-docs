@@ -1,9 +1,6 @@
 #!/bin/sh
 
-set -e
-
 echo '===> Start running scripts for jekyll build.' &&
-
 
 echo 'Removing Gemfile.lock' &&
 touch /srv/jekyll/Gemfile.lock && 
@@ -40,7 +37,7 @@ jekyll build &&
 echo '👍 THE SITE IS BUILT—PUSHING IT BACK TO GITHUB-PAGES' && 
 
 cd /srv/jekyll/_site && 
-remote_repo=https://x-access-token:"${GITHUB_TOKEN}"@github.com/"${GITHUB_REPOSITORY}".git &&
+remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" &&
 remote_branch="gh-pages" && 
 
 echo remote_branch $remote_branch &&
