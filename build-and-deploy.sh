@@ -53,7 +53,7 @@ echo -n 'Before Commit' &&
 git commit -m "action build" &&
 
 echo -n 'Before push' &&
-git push --force $remote_repo master:$remote_branch &&
+git push --force "$remote_repo" master:"$remote_branch" &&
 
 echo -n 'After push' &&
 rm -fr .git && 
