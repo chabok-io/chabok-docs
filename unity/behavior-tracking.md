@@ -3,7 +3,7 @@ id: behavior-tracking
 title: رصد رفتار درون‌برنامه‌ای
 layout: unity
 permalink: unity/behavior-tracking.html
-prev: user-management.html
+prev: custom-data.html
 ---
 
 شما می‌توانید رفتارهای کاربر را در اپلیکیشن خود به طور لحظه‌ای [رصد کنید](/unity/behavior-tracking.html#متد-رصد) و علاوه بر گرفتن بازخورد، براساس این رفتارها آن‌ها را [دسته‌بندی کنید](/panel/dashboard.html#سگمنت) و برایشان [پیام بفرستید](/unity/behavior-tracking.html#ارسال-پیام-براساس-رفتار). همچنین [آمار رفتار کاربران](/unity/behavior-tracking.html#تحلیل-رفتار) را می‌توانید تحلیل کنید.
@@ -12,12 +12,12 @@ prev: user-management.html
 
 ### متد رصد 
 
-برای رصد رفتار کاربر باید از متد `track` استفاده کنید. این متد دارای مقدار ورودی **نام** (`trackName`) است.
+برای رصد رفتار کاربر باید از متد `track` استفاده کنید. این متد دارای مقدار ورودی های **نام** `track Name` و  **اتریبیوت ها** `Data` است.
 
  به عنوان مثال می‌خواهید رفتار **خرید‌** از فروشگاه اینترنتی خودتان را رصد کنید. برای ثبت این رفتار کد زیر را با الگوی بالا وارد می‌نماییم.
 
 ```csharp
-chabok.Track("Purchase");
+chabokPush.Track("Track Name",Data);
 ```
 
 پس از اعمال کد بالا، هر **خرید** به همراه زمان وقوع ذخیره خواهد شد.
