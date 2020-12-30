@@ -53,7 +53,7 @@ echo -n 'Before Commit' &&
 git commit -m "action build" &&
 
 echo -n 'Before push' &&
-git push --force https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master:gh-pages && 
+git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" master:gh-pages &&
 
 echo -n 'After push' &&
 rm -fr .git && 
