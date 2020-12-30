@@ -25,6 +25,10 @@ touch /srv/jekyll/Gemfile-dev &&
 chmod a+w /srv/jekyll/Gemfile-dev &&
 mv /srv/jekyll/Gemfile-dev /srv/jekyll/Gemfile
 
+ll &&
+
+echo pwd &&
+
 
 echo '===> Start Installing bundle' &&
 
