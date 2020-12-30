@@ -23,7 +23,7 @@ chmod a+w /srv/jekyll/Gemfile &&
 echo 'Renaming Gemfile-dev to Gemfile' &&
 touch /srv/jekyll/Gemfile-dev && 
 chmod a+w /srv/jekyll/Gemfile-dev &&
-mv -rf /srv/jekyll/Gemfile-dev /srv/jekyll/Gemfile
+mv /srv/jekyll/Gemfile-dev /srv/jekyll/Gemfile
 
 
 echo '===> Start Installing bundle' &&
