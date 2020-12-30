@@ -4,8 +4,8 @@ GITHUB_TOKEN=$1 &&
 GITHUB_REPOSITORY=$2 &&
 GITHUB_ACTOR=$3 &&
 
-echo ${GITHUB_REPOSITORY} &&
 echo ${GITHUB_TOKEN} &&
+echo ${GITHUB_REPOSITORY} &&
 echo ${GITHUB_ACTOR} &&
 
 echo '===> Start running scripts for jekyll build.' &&
