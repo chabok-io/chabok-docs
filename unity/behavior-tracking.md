@@ -19,6 +19,20 @@ prev: custom-data.html
 ```csharp
 chabokPush.Track("Track Name",Data);
 ```
+نمونه `Data`  جهت ارسال به سرور  :
+
+```csharp
+var date = new DateTime(2021, 10, 14, 11, 22, 33);
+string[] removedItems = { "Saffron", "Rice"};
+Dictionary<string, object> data = new Dictionary<string, object>();
+data.Add("Cart Title", "Main Cart");
+data.Add("Removed Anything", true);
+data.Add("Removed Items Count", 2);
+data.Add("Date", date);
+data.Add("Removed Items", removedItems);
+chabokPush.Track("Edit Cart", data);
+```
+
 
 پس از اعمال کد بالا، هر **خرید** به همراه زمان وقوع ذخیره خواهد شد.
 
