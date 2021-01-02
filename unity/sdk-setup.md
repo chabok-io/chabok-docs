@@ -144,7 +144,7 @@ android.enableJetifier=true
 
 ### 2) نصب iOS
 ---
- > `نکته`:تمام مراحل افزودن Podfile و نصب SDK iOS به صورت خودکار انجام می شود در صورت انجام نشدن, مراحل نصب را طی کنید.  
+ > `نکته`:تمام مراحل افزودن Podfile و نصب SDK iOS  چابک به **صورت خودکار** انجام می شود در صورت انجام نشدن, مراحل نصب را طی کنید.  
 
 کتابخانه چابک از طریق CocoaPods در دسترس است، برای نصب خط زیر را به `Podfile` خود اضافه کنید:
 
@@ -153,7 +153,7 @@ android.enableJetifier=true
 target 'YourProject' do
   use_frameworks!
 
-  pod 'ChabokPush', '~> 2.2.1'
+  pod 'ChabokPush', '~> 2.3.0'
   
 end
 ```
@@ -239,6 +239,8 @@ public class MyAppClass extends Application {
     
     [PushClientManager  resetBadge]; //Optional
     [PushClientManager.defaultManager addDelegate:self]; //Optional
+    
+    [PushClientManager.defaultManager setEnableRealtime:NO];
 
     return [super application:application 
     		didFinishLaunchingWithOptions:launchOptions];
@@ -254,11 +256,9 @@ IMPL_APP_CONTROLLER_SUBCLASS( AppDelegate )
 
 > `نکته` :‌ در متد init در اندروید و initWithAppId در iOS به جای پارامتر‌های `APP_ID`, `API_KEY`, `SDK_USERNAME`, `SDK_PASSWORD` مقادیر مربوط به حساب چابک خود را وارد نمایید. نحوه ایجاد حساب در بخش [پیش‌نیازها](/unity/required.html) توضیح داده شده است. در صورت داشتن حساب چابک هم می‌توانید این مقادیر را از [**پنل بخش تنظیمات قسمت دسترسی‌ و توکن‌ها**](/panel/settings.html#دسترسیها-و-توکنها) بردارید.
 
->  مقدار `SENDER_ID` در پارامتر `APP_ID/SENDER_ID` همان **شناسه گوگل** برای *دریافت پوش‌نوتیفیکیشن* می‌باشد که در پنل در بخش [تنظیمات پلتفرم اندروید](/panel/settings.html#پلتفرمها) قرار داده‌اید و `APP_ID` همان `APP_ID‌`ای که در پنل در بخش [دسترسی و توکن‌ها](/panel/settings.html#دسترسیها-و-توکنها) قرار داده شده است، می‌باشد.
 
 > متد `setDevelopment` تعیین می‌کند که اپلیکیشن شما به محیط [آزمایشی (Sandbox)](https://sandbox.push.adpdigital.com) و یا [عملیاتی (Production) ](https://panel.push.adpdigital.com) چابک متصل شود. این موضوع بستگی به این دارد که حساب کاربری شما روی کدام محیط تعریف شده باشد.
-
-> مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
+ مقدار `true` به محیط آزمایشی و  مقدار`false` به محیط عملیاتی متصل می‌شود. در نظر داشته باشید، هر محیط به کلیدهای دسترسی (AppId, APIKey, Username و Password) خودش در متد `init` نیاز دارد. بنابراین در صورت تغییر مقدار `setDevelopment` کلید‌های دسترسی آن هم باید تغییر داده شود.
 
 <br>
 
@@ -267,23 +267,11 @@ IMPL_APP_CONTROLLER_SUBCLASS( AppDelegate )
 کدهای زیر را در کلاس اسکریپت خود وارد کنید.
 
 ```csharp
-#if UNITY_ANDROID
-    AndroidJavaClass androidChabokPush;
-    AndroidPluginCallback callback;
-#endif
-
     ChabokPush chabokPush;
 
-    void Start()
-    {
-
-#if UNITY_ANDROID
-        androidChabokPush = new AndroidJavaClass("io.chabok.starter.ChabokPush");
-        callback = new AndroidPluginCallback();
-        chabokPush = ChabokPush.GetInstance(androidChabokPush);
-#elif UNITY_IOS
-        chabokPush = ChabokPush.GetInstance(null);
-#endif
+    void Start() {
+		chabokPush = ChabokPush.GetInstance();
+	 }
 ```
 
 ### ۳- ثبت کاربر

@@ -113,12 +113,12 @@ chabokPush.DecrementUserAttribute("Age", 5.0);
 با استفاده از متد `addTag`، شما می‌توانید به کاربر یک یا مجموعه‌ای از `Tag`ها اختصاص دهید:
 
 ```csharp
-chabokPush.AddTag("Tag Name", null);
+chabokPush.AddTag("Tag Name");
 ```
 در مثال زیر به کاربر جاری تگ `Premium_User` اختصاص داده شده است:
 
 ```java
-chabokPush.AddTag("Premium_User", null);
+chabokPush.AddTag("Premium_User");
 ```
 اگر عملیات افزودن تگ با موفقیت انجام شود، می‌توانید از طریق پنل چابک، تگ اضافه شده به کاربر را در بخش مشترکین همانند تصویر زیر مشاهده کنید:
 
@@ -130,5 +130,5 @@ chabokPush.AddTag("Premium_User", null);
 با استفاده از متد `removeTag`، می‌توانید یک `Tag` خاص از کاربر جاری را حذف کنید:
 
 ```csharp
-chabokPush.RemoveTag("Tag Name", null);
+chabokPush.RemoveTag("Tag Name");
 ```
