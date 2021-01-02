@@ -19,9 +19,10 @@ build:
   preview_env:
   - JEKYLL_ENV=staging
   preview_output_directory: _site
-  install_dependencies_command: bundle install --path vendor/bundle
+  install_dependencies_command: rm -rf Gemfile.lock && mv Gemfile-dev Gemfile && bundle
+    install --path vendor/bundle
   preview_docker_image: forestryio/ruby:2.6
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: rm -rf Gemfile.lock && mv Gemfile-dev Gemfile && bundle
-    exec jekyll serve --drafts --unpublished --future -d _site
+  instant_preview_command: bundle exec jekyll serve --drafts --unpublished --future
+    -d _site
