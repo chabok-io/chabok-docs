@@ -5,7 +5,7 @@
       subitems:
         - title: تفاوت حساب‌های آزمایشی و عملیاتی
           href: تفاوت-حسابهای-آزمایشی-و-عملیاتی-سندباکس-و-پروداکشن
-          
+
     - id: sdk-setup
       title: راه‌اندازی
       subitems:
@@ -14,10 +14,10 @@
         - title: مقداردهی اولیه
           href: ۲--مقداردهی-اولیه-initialize
         - title: ثبت کاربر
-          href: ۳--ثبت-کاربر-register 
+          href: ۳--ثبت-کاربر-register
         - title: تست پیاده‌سازی
           href: ۴--تست-پیادهسازی
-                              
+
     - id: tracker
       title: ترکر نصب
       subitems:
@@ -33,7 +33,7 @@
           href: مکانیزم-ضد-تقلب-fraud-prevention
         - title: تست ترکر
           href: تست-ترکر
-    
+
 
     - id: user-management
       title: گروه‌بندی کاربران
@@ -43,6 +43,16 @@
         - title: تگ‌ها
           href: تگها
 
+
+    - id: custom-data
+      title: ‌داده‌های سفارشی کاربر
+      subitems:
+        - title: مدیریت Attributes
+          href: مدیریت-اطلاعات-کاربر-user-attributes
+        - title: مدیریت تگ‌ها
+          href: مدیریت-تگها
+
+
     - id: behavior-tracking
       title: رصد رفتار درون‌برنامه‌ای
       subitems:
@@ -51,8 +61,8 @@
         - title: ارسال پیام براساس رفتار
           href: ارسال-پیام-براساس-رفتار
         - title: تست رصد رفتار
-          href: تست-رصد-رفتار-ایونت   
-          
+          href: تست-رصد-رفتار-ایونت
+
     - id: integration-test
       title: تست پیاده‌سازی
       subitems:
@@ -61,9 +71,9 @@
         - title: تست login کاربران
           href: تست-login-کاربران
         - title: تست رصد رفتار
-          href: تست-رصد-رفتار-ایونت     
+          href: تست-رصد-رفتار-ایونت
         - title: تست ترکر
           href: تست-ترکر
-          
+
     - id: release-note
       title: لیست تغییرات
