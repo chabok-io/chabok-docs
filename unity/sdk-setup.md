@@ -23,7 +23,7 @@ next: custom-data.html
 ### ۱- نصب کتابخانه
 ---
 
-برای نصب کتابخانه کافیست تا این [پکیج](https://github.com/chabok-io/chabok-starter-unity/raw/master/chabok-unity.unitypackage) را دریافت کنید و پس از باز نمودن فایل روی دکمه **Import** کلیک کنید.
+برای نصب کتابخانه کافیست تا این [پکیج](https://github.com/chabok-io/chabok-starter-unity/releases/download/1.0.0/ChabokPush.unitypackage) را دریافت کنید و پس از باز نمودن فایل روی دکمه **Import** کلیک کنید.
 
 <div style="text-align: center ;"><img src="https://uupload.ir/files/o5th_import_screenshot.png" class="img-fluid" style="
     height: 500px;
