@@ -25,11 +25,6 @@ sections:
   create: all
   match: "**/*"
 - type: directory
-  path: panel
-  label: Panel
-  create: all
-  match: "**/*"
-- type: directory
   path: mobile-usecases
   label: Usecase
   create: all
@@ -79,12 +74,6 @@ sections:
   label: Android
   create: all
   match: "**/*"
-- type: jekyll-pages
-  label: Pages
-  create: all
-- type: jekyll-posts
-  label: Posts
-  create: all
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
