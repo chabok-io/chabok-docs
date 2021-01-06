@@ -68,7 +68,7 @@ next: account-management.html
 
 ![](/uploads/kavenegarpanel.png)
 
-> نکته: برای راه‌اندازی سرویس کاوه نگار باید وارد از این آدرس [https://panel.kavenegar.com/client/setting/account]() وارد پنلش شده و اطلاعات **API KEY** را کپی کرده و در پنل چابک در قسمت **کلید** قرار دهید و دکمۀ ذخیره را بزنید تا به چابک وصل شوید
+> نکته: برای راه‌اندازی سرویس کاوه نگار باید از این آدرس [https://panel.kavenegar.com/client/setting/account]() وارد پنلش شده و اطلاعات **API KEY** را کپی کرده و در پنل چابک در قسمت **کلید** قرار دهید و دکمۀ ذخیره را بزنید تا به چابک وصل شوید
 
 ![](/uploads/kave.png)
 
