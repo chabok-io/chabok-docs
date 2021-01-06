@@ -5,6 +5,11 @@ admin_path: "/admins"
 webhook_url: 
 sections:
 - type: directory
+  path: panel
+  label: Panel
+  create: all
+  match: "**/*"
+- type: directory
   path: windows
   label: Windows
   create: all
@@ -57,11 +62,6 @@ sections:
 - type: directory
   path: cordova
   label: Cordova
-  create: all
-  match: "**/*"
-- type: directory
-  path: panel
-  label: Panel
   create: all
   match: "**/*"
 - type: directory
