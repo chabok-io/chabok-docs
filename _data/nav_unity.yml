@@ -9,8 +9,8 @@
     - id: sdk-setup
       title: راه‌اندازی
       subitems:
-        - title: نصب کتابخانه
-          href: ۱--نصب-کتابخانه
+        - title: نصب پکیج
+          href: ۱--نصب-پکیج
         - title: مقداردهی اولیه
           href: ۲--مقداردهی-اولیه-initialize
         - title: ثبت کاربر
