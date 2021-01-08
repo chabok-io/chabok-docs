@@ -20,14 +20,20 @@ next: custom-data.html
 
 <Br>
 
-### ۱- نصب کتابخانه
+### ۱- نصب پکیج
 ---
 
-برای نصب کتابخانه کافیست تا این [پکیج](https://github.com/chabok-io/chabok-starter-unity/raw/master/chabok-unity.unitypackage) را دریافت کنید و پس از باز نمودن فایل روی دکمه **Import** کلیک کنید.
+برای نصب کتابخانه کافیست تا این [پکیج](https://github.com/chabok-io/chabok-starter-unity/blob/master/ChabokPush.unitypackage) را دریافت کنید و پس از باز نمودن فایل روی دکمه **Import** کلیک کنید.
 
-<div style="text-align: center ;"><img src="https://uupload.ir/files/o5th_import_screenshot.png" class="img-fluid" style="
+<div style="text-align: center ;"><img src="https://uupload.ir/files/4f9u_chabok_package.png" class="img-fluid" style="
     height: 500px;
 "></div> 
+
+<br>
+
+ > `نکته`:در صورت وجود **External Dependency Manager** در پروژه خود تیک آن را بردارید.  
+
+ > `نکته`:با import کردن پکیج چابک تمام مراحل افزودن و نصب **SDK چابک** به صورت **خودکار** انجام می شود در صورت انجام نشدن, مراحل نصب را طی کنید.  
 
 <br>
 
