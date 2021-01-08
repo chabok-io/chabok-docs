@@ -10,7 +10,7 @@ next: custom-data.html
 
 برای انجام موفق این کار باید تمام مراحل زیر را به ترتیب انجام دهید:
 
-[ ۱- نصب کتابخانه](/android/sdk-setup.html#۱--نصب-کتابخانه)  
+[ ۱- نصب کتابخانه](/android/sdk-setup.html#۱--نصب-پکیج)  
   
 [۲- مقداردهی اولیه (Initialize)](/android/sdk-setup.html#۲--مقداردهی-اولیه-initialize)  
   
