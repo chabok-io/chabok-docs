@@ -321,6 +321,8 @@ next: tracker.html
 
 **Control Group Conversion=تعداد ایونت‌های گروه کنترل/ تعداد گروه کنترل اصلی**
 
+**رشد=(( PrimeryConversion - ControlGroupConversion ) / ontrolGroupConversion ) * 100**
+
 #### ARPU چیست؟
 
 **ARPU** مخفف **Averange Rate Per User** است که نشان دهندۀ متوسط درآمد به ازای هر کاربر است.
