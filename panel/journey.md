@@ -321,7 +321,9 @@ next: tracker.html
 
 **Control Group Conversion=تعداد ایونت‌های گروه کنترل/ تعداد گروه کنترل اصلی**
 
-**رشد=( PrimeryConversion - ControlGroupConversion ) / (ControlGroupConversion ) * 100**
+**رشد= ((Primary Conversion-ControlGroupConversion**
+
+**)/ ControlGroupConversion) *100**
 
 #### ARPU چیست؟
 
