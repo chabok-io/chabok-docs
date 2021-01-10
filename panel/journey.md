@@ -323,7 +323,7 @@ next: tracker.html
 
 فرمول رشد:
 
-**PrimaryConversion-ControlGroupConversion)/ControlGroupConversion*100**
+**PrimaryConversion-ControlGroupConversion/ControlGroupConversion*100**
 
 #### ARPU چیست؟
 
