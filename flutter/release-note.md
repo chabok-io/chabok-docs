@@ -10,6 +10,15 @@ prev: features.html
 
 <br>
 
+## [نسخه ۲.۰.۰ - ۱۳۹۹/۱۰/۲۹](https://github.com/chabok-io/chabok-client-flutter/releases/tag/v2.0.0)
+
+### تغییرات
+- تغییر نام پکیج از`chabokpush` به `chabokpush_flutter`
+- به روز رسانی کتابخانه اندروید به [نسخه ۳.۵.۰](https://doc.chabok.io/android/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B3%DB%B5%DB%B0---%DB%B1%DB%B3%DB%B9%DB%B9%DB%B0%DB%B9%DB%B0%DB%B4)
+- به روز رسانی کتابخانه آی‌او‌اس به [نسخه ۲.۳.۰](https://doc.chabok.io/ios/release-note.html#%D9%86%D8%B3%D8%AE%D9%87-%DB%B2%DB%B2%DB%B1---%DB%B1%DB%B3%DB%B9%DB%B9%DB%B0%DB%B8%DB%B2%DB%B6)
+
+
+
 ## [نسخه ۱.۰.۴ - ۱۳۹۹/۰۸/۲۶](https://github.com/chabok-io/chabok-client-flutter/releases/tag/v1.0.4)
 
 ### تغییرات
