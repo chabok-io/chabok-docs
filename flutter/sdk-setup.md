@@ -31,7 +31,7 @@ next: tracker.html
 
 ```yaml
 dependencies:
-    chabokpush: ^1.0.2 
+    chabokpush_flutter: ^2.0.0 
 ```
 
 و پس از آن دستور زیر را در ترمینال در مسیر پروژه خود اجرا کنید:
@@ -43,7 +43,7 @@ flutter pub get
 حالا باید در پروژه خود کد زیر را ایمپورت کنید:
 
 ```bash
-import 'package:chabokpush/chabokpush.dart';
+import 'package:chabokpush_flutter/chabokpush.dart';
 ```
 
 >`نکته:` دقت داشته باشید که [اندروید](/sdk-setup.html#۱-۲-نصب-کتابخانه-اندروید) و [آی‌اواس](/sdk-setup.html#۱-۳-نصب-کتابخانه-آیاواس) نیاز به نصب جداگانه دارند که در ادامه به هر دو پرداخته می‌شود:
