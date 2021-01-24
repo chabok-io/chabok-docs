@@ -10,7 +10,7 @@ next: custom-data.html
 
 برای انجام موفق این کار باید تمام مراحل زیر را به ترتیب انجام دهید:
 
-[ ۱- نصب پکیج](/android/sdk-setup.html#۱--نصب-پکیج)  
+[ ۱- نصب پکیج](/unity/sdk-setup.html#۱--نصب-پکیج)  
   
 [۲- مقداردهی اولیه (Initialize)](/unity/sdk-setup.html#۲--مقداردهی-اولیه-initialize)  
   
