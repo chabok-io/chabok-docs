@@ -9,6 +9,13 @@ prev: troubleshoot.html
 شما در این صفحه می‌توانید از تغییرات هر نسخه کتابخانه چابک مطلع شوید. چابک برای نسخه‌گذاری از مدل **Semantic Versioning** استفاده می‌کند. برای آشنایی با این مدل [این قسمت](#مدل-نسخهگذاری-در-چابک-semantic-versioning) را مطالعه نمایید.
 
 <Br>
+ 
+##  [نسخه ۲.۳.۰ - ۱۳۹۹/۱۰/۱۳](https://github.com/chabok-io/chabok-client-ios/releases/tag/2.3.0)
+
+### تغییرات
+
+- بهبود و ارتقا موارد امنیتی به هنگام نصب و بازدید کاربر
+- رفع مشکل فراخوانی  callback در متد`login:userAttributes`.
 
 ##  [نسخه ۲.۲.۱ - ۱۳۹۹/۰۸/۲۶](https://github.com/chabok-io/chabok-client-ios/releases/tag/v2.2.1)
 
