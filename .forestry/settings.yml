@@ -1,15 +1,79 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: 
+admin_path: "/admins"
 webhook_url: 
 sections:
-- type: jekyll-pages
-  label: Pages
+- type: directory
+  path: panel
+  label: Panel
   create: all
-- type: jekyll-posts
-  label: Posts
+  match: "**/*"
+- type: directory
+  path: windows
+  label: Windows
   create: all
+  match: "**/*"
+- type: directory
+  path: unity
+  label: Unity
+  create: all
+  match: "**/*"
+- type: directory
+  path: rest-api
+  label: REST API
+  create: all
+  match: "**/*"
+- type: directory
+  path: react-native-bridge
+  label: React-Native Bridge
+  create: all
+  match: "**/*"
+- type: directory
+  path: mobile-usecases
+  label: Usecase
+  create: all
+  match: "**/*"
+- type: directory
+  path: javascript
+  label: Javascript Web SDK
+  create: all
+  match: "**/*"
+- type: directory
+  path: guides
+  label: Guides
+  create: all
+  match: "**/*"
+- type: directory
+  path: glossary
+  label: Glossary
+  create: all
+  match: "**/*"
+- type: directory
+  path: flutter
+  label: Flutter
+  create: all
+  match: "**/*"
+- type: directory
+  path: faq
+  label: F&Q
+  create: all
+  match: "**/*"
+- type: directory
+  path: cordova
+  label: Cordova
+  create: all
+  match: "**/*"
+- type: directory
+  path: ios
+  label: iOS
+  create: all
+  match: "**/*"
+- type: directory
+  path: android
+  label: Android
+  create: all
+  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
