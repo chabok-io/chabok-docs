@@ -246,10 +246,6 @@ next: inbox.html
 
 ![enter image description here](http://uupload.ir/files/myzr_preview.png)
 
-<Br>
-
-<Br>
-
 > نکته: شما می‌توانید قبل از اجرای کمپین پیش نمایش محتوا را برای دستگاه 
 >
 > **اندروید**، **آی اُ اس** و **وب** مشاهده کنید.
