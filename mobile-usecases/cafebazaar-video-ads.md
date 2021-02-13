@@ -1,8 +1,8 @@
 ---
 id: cafebazaar-video-ads
 title: تبلیغات بستر ویدئویی بازار
-layout: guides
-permalink: guides/cafebazaar-video-ads.html
+layout: mobile-usecases
+permalink: mobile-usecases/cafebazaar-video-ads.html
 ---
 
 # تبلیغات بستر ویدئویی بازار
