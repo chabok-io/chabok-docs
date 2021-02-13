@@ -1,7 +1,10 @@
+----
+id: make-an-email-marketing-campaigns
+title: چگونه کمپین ایمیل مارکتینگ ایجاد کنیم؟
+layout: guides
+permalink: guides/make-an-email-marketing-campaigns
 ---
-published: false
 
----
 # چگونه کمپین ایمیل مارکتینگ ایجاد کنیم؟
 
 برای انجام تبلیغات ایمیل مارکتینگ قبل از هر کاری باید [سرویس پاکت‌تان](https://doc.chabok.io/panel/settings.html#%D9%81%D8%B9%D8%A7%D9%84%D8%B3%D8%A7%D8%B2%DB%8C-%D8%AF%D8%B1%DA%AF%D8%A7%D9%87-%D8%A7%D8%B1%D8%B3%D8%A7%D9%84-%D8%A7%DB%8C%D9%85%DB%8C%D9%84) را فعال کرده باشید، سپس باید در پنل چابک کمپین ارسال ایمیل ایجاد کنید.
