@@ -1,8 +1,4 @@
 ---
-published: false
-
----
----
 id: cafebazaar-video-ads
 title: تبلیغات بستر ویدئویی بازار
 layout: guides
