@@ -1,4 +1,4 @@
-----
+---
 id: make-an-email-marketing-campaigns
 title: چگونه کمپین ایمیل مارکتینگ ایجاد کنیم؟
 layout: guides
