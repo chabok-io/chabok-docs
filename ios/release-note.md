@@ -10,6 +10,13 @@ prev: troubleshoot.html
 
 <Br>
  
+ > `نکته:` ۲.۳.۰ حذف و پشتیبانی نخواهد شد. لطفا موقتا به نسخه ۲.۴.۰ بروزرسانی کنید.
+
+##  [نسخه ۲.۴.۰ - ۱۳۹۹/۱۲/۱۱](https://github.com/chabok-io/chabok-client-ios/releases/tag/2.4.0)
+
+### تغییرات
+- غیرفعال‌سازی قابلیت SSL Pinning 
+
 ##  [نسخه ۲.۳.۰ - ۱۳۹۹/۱۰/۱۳](https://github.com/chabok-io/chabok-client-ios/releases/tag/2.3.0)
 
 ### تغییرات
