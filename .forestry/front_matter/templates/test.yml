@@ -3,6 +3,5 @@ label: test
 hide_body: false
 fields: []
 pages:
-- guides/چگونه کمپین ایمیل مارکتینگ ایجاد و اجرا کنیم؟.md
-- mobile-usecases/ایمیل مارکتینگ.md
-- mobile-usecases/تبلیغات ویدئویی کافه بازار.md
+- guides/نحوۀ سگمنت کردن کاربران چگونه است؟.md
+- mobile-usecases/سگمنت چیست؟.md
