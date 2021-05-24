@@ -10,6 +10,12 @@ prev: troubleshoot.html
 
 <Br>
 
+## [نسخه ۲.۰.۱ - ۱۴۰۰/۰۳/۰۳](https://github.com/chabok-io/chabok-client-js/releases/tag/v2.1.0)
+
+### تغییرات
+
+- بهبود علمکرد تشخیص اتریبیوشن در پلتفرم وب و TWA
+      
 ## [نسخه ۲.۰.۱ - ۱۳۹۸/۱۱/۲۰](https://github.com/chabok-io/chabok-client-js/releases/tag/v2.0.1)
 
 ### تغییرات
